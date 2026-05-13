@@ -1,19 +1,32 @@
 {
-  "name": "tefi-design-system",
-  "private": true,
-  "version": "0.0.0",
+  "name": "tefi-design-system-react",
+  "version": "0.1.1",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/tefi-design-system.umd.cjs",
+  "module": "./dist/tefi-design-system.js",
+  "exports": {
+    ".": {
+      "import": "./dist/tefi-design-system.js",
+      "require": "./dist/tefi-design-system.umd.cjs"
+    },
+    "./dist/tefi-design-system.css": "./dist/tefi-design-system.css"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   },
   "devDependencies": {
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "@eslint/js": "^10.0.1",
     "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",
@@ -25,6 +38,7 @@
     "globals": "^17.5.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.2",
-    "vite": "^8.0.10"
+    "vite": "^8.0.10",
+    "vite-plugin-dts": "^5.0.0"
   }
 }
