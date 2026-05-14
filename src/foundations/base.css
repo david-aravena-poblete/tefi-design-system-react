@@ -1,0 +1,91 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
+@import "./states.css";
+
+
+/* ======================================
+   BASE RESET
+====================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ======================================
+   DOCUMENT
+====================================== */
+
+body {
+  line-height: 1.5;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ======================================
+   MEDIA
+====================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+
+  max-width: 100%;
+}
+
+
+/* ======================================
+   FORM ELEMENTS
+====================================== */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* ======================================
+   LINKS
+====================================== */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* ======================================
+   GLOBAL FOCUS RING
+====================================== */
+
+:where(
+  button,
+  input,
+  select,
+  textarea,
+  [role="button"]
+):focus-visible {
+  outline: none;
+
+  box-shadow:
+    0 0 0 2px
+    color-mix(
+      in srgb,
+      var(--color-border-focus) 30%,
+      transparent
+    );
+}

@@ -1,0 +1,264 @@
+/* ======================================
+   DESIGN TOKENS
+====================================== */
+
+:root {
+
+  /* ======================================
+     PRIMITIVES — COLORS
+  ====================================== */
+
+  /* PRIMARY */
+
+  --color-primary-base: #4f46e5;
+  --color-primary-hover: #4338ca;
+
+  /* ACTION LINKS */
+
+  --color-link-base:
+    var(--color-primary-base);
+
+  --color-link-hover:
+    var(--color-primary-hover);
+
+  --color-link-visited:
+    var(--color-primary-hover);
+
+  /* SUCCESS */
+
+  --color-success-base: #16a34a;
+  --color-success-hover: #15803d;
+  --color-success-soft: #ecfdf5;
+
+  /* WARNING */
+
+  --color-warning-base: #d97706;
+  --color-warning-hover: #b45309;
+  --color-warning-soft: #fffbeb;
+
+  /* DANGER */
+
+  --color-danger-base: #dc2626;
+  --color-danger-hover: #b91c1c;
+  --color-danger-soft: #fef2f2;
+
+  /* INFO */
+
+  --color-info-base: #2563eb;
+  --color-info-hover: #1d4ed8;
+  --color-info-soft: #eff6ff;
+
+  /* BACKGROUNDS */
+
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-tertiary: #eeeeee;
+
+  /* TEXT */
+
+  --color-text-primary: #111827;
+
+  --color-text-secondary: #6b7280;
+
+  --color-text-muted: #9ca3af;
+
+  --color-text-inverse: #ffffff;
+
+  /* BORDERS */
+
+  --color-border-primary: #d1d5db;
+  --color-border-secondary: #9ca3af;
+  --color-border-focus: #4f46e5;
+
+
+  /* ======================================
+     FOUNDATIONS — SPACING
+  ====================================== */
+
+  --space-xxs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-xxl: 32px;
+  --space-xxxl: 40px;
+
+
+  /* ======================================
+     FOUNDATIONS — RADIUS
+  ====================================== */
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 999px;
+
+
+  /* ======================================
+     FOUNDATIONS — TYPOGRAPHY
+  ====================================== */
+
+  --font-family-sans:
+    Inter,
+    system-ui,
+    -apple-system,
+    sans-serif;
+
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 18px;
+  --font-xl: 20px;
+  --font-2xl: 24px;
+  --font-3xl: 30px;
+  --font-4xl: 36px;
+
+  --line-tight: 1.2;
+  --line-normal: 1.5;
+  --line-relaxed: 1.7;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+
+  /* ======================================
+     FOUNDATIONS — SHADOWS
+  ====================================== */
+
+  --shadow-xs:
+    0 1px 2px rgba(0, 0, 0, 0.05);
+
+  --shadow-sm:
+    0 2px 4px rgba(0, 0, 0, 0.06);
+
+  --shadow-md:
+    0 4px 10px rgba(0, 0, 0, 0.08);
+
+
+  /* ======================================
+     FOUNDATIONS — SIZE
+  ====================================== */
+
+  /* CONTROLS */
+
+  --size-control-sm: 16px;
+  --size-control-md: 20px;
+  --size-control-lg: 24px;
+
+  /* FIELDS */
+
+  --size-field-sm: 36px;
+  --size-field-md: 44px;
+  --size-field-lg: 52px;
+
+
+  /* ======================================
+     TRANSITIONS
+  ====================================== */
+
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+
+  /* ======================================
+     CONTROL SYSTEM
+  ====================================== */
+
+  --control-border-width: 2px;
+  --control-padding: 2px;
+
+  --control-radius:
+    var(--radius-sm);
+
+  --control-gap-sm:
+    var(--space-xs);
+
+  --control-gap-md:
+    var(--space-sm);
+
+  --control-gap-lg:
+    var(--space-md);
+
+  --state-default-border:
+    var(--color-border-primary);
+
+  --state-default-hover:
+    var(--color-border-secondary);
+
+  --state-default-ring: color-mix(
+    in srgb,
+    var(--color-primary-base) 40%,
+    transparent
+  );
+
+
+  /* ======================================
+     FIELD SYSTEM
+  ====================================== */
+
+  /* BASE */
+
+  --field-bg-color:
+    var(--color-bg-primary);
+
+  --field-border-color:
+    var(--color-border-primary);
+
+  --field-border-hover:
+    var(--color-border-secondary);
+
+  --field-border-focus:
+    var(--color-border-focus);
+
+  --field-text-color:
+    var(--color-text-primary);
+
+  --field-placeholder-color:
+    var(--color-text-secondary);
+
+  /* DISABLED */
+
+  --field-disabled-bg:
+    var(--color-bg-tertiary);
+
+  --field-disabled-text:
+    var(--color-text-secondary);
+
+  /* STATES */
+
+  --field-border-error:
+    var(--color-danger-base);
+
+  --field-border-success:
+    var(--color-success-base);
+
+  --field-border-warning:
+    var(--color-warning-base);
+
+  /* SIZES */
+
+  --field-height-sm:
+    var(--size-field-sm);
+
+  --field-height-md:
+    var(--size-field-md);
+
+  --field-height-lg:
+    var(--size-field-lg);
+
+
+  /* ======================================
+     CONTROL SAFETY TOKENS
+  ====================================== */
+
+  --control-size:
+    var(--size-control-md);
+
+  --control-gap:
+    var(--control-gap-md);
+
+}

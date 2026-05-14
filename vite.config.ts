@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react(), dts()],
   build: {
     lib: {
-      entry: resolve(import.meta.dirname, 'src/main.ts'),
+      entry: resolve(import.meta.dirname, 'src/index.ts'),
       name: 'tefi-design-system',
       fileName: 'tefi-design-system',
     },

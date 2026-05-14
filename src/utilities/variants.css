@@ -1,0 +1,50 @@
+/* ======================================
+   STATE VARIANT UTILITIES
+====================================== */
+
+.variant-info {
+    background:
+      var(--state-info-bg);
+  
+    border-color:
+      var(--state-info-border);
+  
+    color:
+      var(--state-info-text);
+  }
+  
+  
+  .variant-success {
+    background:
+      var(--state-success-bg);
+  
+    border-color:
+      var(--state-success-border);
+  
+    color:
+      var(--state-success-text);
+  }
+  
+  
+  .variant-warning {
+    background:
+      var(--state-warning-bg);
+  
+    border-color:
+      var(--state-warning-border);
+  
+    color:
+      var(--state-warning-text);
+  }
+  
+  
+  .variant-danger {
+    background:
+      var(--state-danger-bg);
+  
+    border-color:
+      var(--state-danger-border);
+  
+    color:
+      var(--state-danger-text);
+  }

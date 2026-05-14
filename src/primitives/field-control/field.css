@@ -1,0 +1,111 @@
+/* ======================================
+   FIELD BASE
+====================================== */
+
+.field {
+    position: relative;
+  
+    width: 100%;
+  
+    /* DEFAULT TOKENS */
+  
+    --field-border-color:
+      var(--state-default-border);
+  
+    --field-bg-color:
+      var(--color-bg-primary);
+  }
+  
+  
+  /* ======================================
+     STATES
+  ====================================== */
+  
+  .field[data-state="error"] {
+    --field-border-color:
+      var(--state-danger-border);
+  }
+  
+  .field[data-state="success"] {
+    --field-border-color:
+      var(--state-success-border);
+  }
+  
+  .field[data-state="warning"] {
+    --field-border-color:
+      var(--state-warning-border);
+  }
+  
+  
+  /* ======================================
+     HOVER
+  ====================================== */
+  
+  .field[data-state="default"]
+  .field__control:hover:not(:disabled) {
+  
+    --field-border-color:
+      var(--state-default-hover);
+  }
+  
+  
+  /* ======================================
+     FOCUS
+  ====================================== */
+  
+  .field[data-state="default"]
+  .field__control:focus-visible {
+  
+    outline: none;
+  
+    box-shadow:
+      0 0 0 2px
+      var(--state-default-ring);
+  }
+  
+  
+  .field[data-state="error"]
+  .field__control:focus-visible {
+  
+    outline: none;
+  
+    box-shadow:
+      0 0 0 2px
+      var(--state-danger-ring);
+  }
+  
+  
+  .field[data-state="success"]
+  .field__control:focus-visible {
+  
+    outline: none;
+  
+    box-shadow:
+      0 0 0 2px
+      var(--state-success-ring);
+  }
+  
+  
+  .field[data-state="warning"]
+  .field__control:focus-visible {
+  
+    outline: none;
+  
+    box-shadow:
+      0 0 0 2px
+      var(--state-warning-ring);
+  }
+  
+  
+  /* ======================================
+     DISABLED
+  ====================================== */
+  
+  .field[data-disabled="true"]
+  .field__control {
+  
+    pointer-events: none;
+  
+    background-color:
+      var(--color-bg-secondary);
+  }
