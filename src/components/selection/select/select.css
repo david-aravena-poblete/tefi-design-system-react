@@ -1,0 +1,225 @@
+/* ======================================
+   WRAPPER
+====================================== */
+
+.select-wrapper {
+    position: relative;
+  
+    width: 100%;
+  }
+  
+  
+  /* ======================================
+     BASE
+  ====================================== */
+  
+  .select {
+    width: 100%;
+  
+    min-width: 0;
+  
+    box-sizing: border-box;
+  
+    height:
+      var(--field-height-md);
+  
+    padding:
+      0 var(--space-md);
+  
+    padding-right:
+      calc(
+        var(--space-xl) +
+        var(--space-md)
+      );
+  
+    border: 1px solid
+      var(--state-default-border);
+  
+    border-radius:
+      var(--radius-md);
+  
+    background-color:
+      var(--color-bg-primary);
+  
+    color:
+      var(--color-text-primary);
+  
+    font-size:
+      var(--font-md);
+  
+    font-family:
+      var(--font-family-sans);
+  
+    appearance: none;
+  
+    cursor: pointer;
+  
+    outline: none;
+  
+    transition:
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      background-color var(--transition-fast);
+  }
+  
+  
+  /* ======================================
+     SIZES
+  ====================================== */
+  
+  .select--sm {
+    height:
+      var(--field-height-sm);
+  
+    font-size:
+      var(--font-sm);
+  }
+  
+  
+  .select--md {
+    height:
+      var(--field-height-md);
+  
+    font-size:
+      var(--font-md);
+  }
+  
+  
+  .select--lg {
+    height:
+      var(--field-height-lg);
+  
+    font-size:
+      var(--font-lg);
+  }
+  
+  
+  /* ======================================
+     HOVER
+  ====================================== */
+  
+  .select:hover:not(:disabled):not(.select--error):not(.select--success):not(.select--warning) {
+    border-color:
+      var(--state-default-hover);
+  }
+  
+  
+  /* ======================================
+     FOCUS
+  ====================================== */
+  
+  .select:focus-visible {
+    border-color:
+      var(--state-default-border);
+  
+    box-shadow:
+      0 0 0 3px
+      var(--state-default-ring);
+  }
+  
+  
+  .select--error {
+    border-color:
+      var(--state-danger-border);
+  }
+  
+  
+  .select--error:focus-visible {
+    box-shadow:
+      0 0 0 3px
+      var(--state-danger-ring);
+  }
+  
+  
+  .select--success {
+    border-color:
+      var(--state-success-border);
+  }
+  
+  
+  .select--success:focus-visible {
+    box-shadow:
+      0 0 0 3px
+      var(--state-success-ring);
+  }
+  
+  
+  .select--warning {
+    border-color:
+      var(--state-warning-border);
+  }
+  
+  
+  .select--warning:focus-visible {
+    box-shadow:
+      0 0 0 3px
+      var(--state-warning-ring);
+  }
+  
+  
+  /* ======================================
+     DISABLED
+  ====================================== */
+  
+  .select--disabled {
+    background:
+      var(--color-bg-secondary);
+  
+    color:
+      var(--color-text-secondary);
+  
+    cursor: not-allowed;
+  }
+  
+  
+  /* ======================================
+     LOADING
+  ====================================== */
+  
+  .select--loading {
+    padding-right:
+      calc(
+        var(--space-xxl) +
+        var(--space-md)
+      );
+  }
+  
+  
+  /* ======================================
+     ARROW
+  ====================================== */
+  
+  .select__arrow {
+    position: absolute;
+  
+    right:
+      var(--space-md);
+  
+    top: 50%;
+  
+    transform:
+      translateY(-50%);
+  
+    display: flex;
+  
+    align-items: center;
+    justify-content: center;
+  
+    pointer-events: none;
+  
+    color:
+      var(--color-text-secondary);
+  
+    font-size:
+      var(--font-sm);
+  }
+  
+  
+  /* ======================================
+     DISABLED ARROW
+  ====================================== */
+  
+  .field[data-disabled="true"]
+  .select__arrow {
+    opacity: 0.6;
+  }

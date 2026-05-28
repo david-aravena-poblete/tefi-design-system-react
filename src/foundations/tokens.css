@@ -156,12 +156,40 @@
 
 
   /* ======================================
-     TRANSITIONS
+     MOTION
   ====================================== */
 
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.2s ease;
-  --transition-slow: 0.3s ease;
+  /* STANDARD UI */
+
+  --transition-fast:
+    0.15s ease;
+
+  --transition-normal:
+    0.2s ease;
+
+  --transition-slow:
+    0.3s ease;
+
+  /* MICROINTERACTIONS */
+
+  --motion-snappy:
+    0.22s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+
+
+  /* ======================================
+     INTERACTION TOKENS
+  ====================================== */
+
+  --interaction-hover-bg: color-mix(
+    in srgb,
+    var(--color-text-primary) 4%,
+    transparent
+  );
 
 
   /* ======================================

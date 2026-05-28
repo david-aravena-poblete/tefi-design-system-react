@@ -1,0 +1,257 @@
+/* ======================================
+   WRAPPER
+====================================== */
+
+.input__wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+
+/* ======================================
+   BASE
+====================================== */
+
+.input {
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  border: 1px solid
+    var(--state-default-border);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--color-bg-primary);
+
+  color:
+    var(--color-text-primary);
+
+  line-height: 1;
+
+  /* ======================================
+     PADDING
+  ====================================== */
+
+  padding-top: 0;
+
+  padding-bottom: 0;
+
+  padding-left:
+    var(--space-md);
+
+  padding-right:
+    var(--space-md);
+
+  font-family:
+    var(--font-family-sans);
+
+  outline: none;
+
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+
+/* ======================================
+   SIZES
+====================================== */
+
+.input--sm {
+  min-height:
+    var(--field-height-sm);
+
+  font-size:
+    var(--font-sm);
+}
+
+
+.input--md {
+  min-height:
+    var(--field-height-md);
+
+  font-size:
+    var(--font-md);
+}
+
+
+.input--lg {
+  min-height:
+    var(--field-height-lg);
+
+  font-size:
+    var(--font-lg);
+}
+
+
+/* ======================================
+   HOVER
+====================================== */
+
+.input:hover:not(:disabled):not(.input--error):not(.input--success):not(.input--warning) {
+  border-color:
+    var(--state-default-hover);
+}
+
+
+/* ======================================
+   FOCUS
+====================================== */
+
+.input:focus-visible {
+  border-color:
+    var(--state-default-border);
+
+  box-shadow:
+    0 0 0 3px
+    var(--state-default-ring);
+}
+
+
+.input--error {
+  border-color:
+    var(--state-danger-border);
+}
+
+
+.input--error:focus-visible {
+  box-shadow:
+    0 0 0 3px
+    var(--state-danger-ring);
+}
+
+
+.input--success {
+  border-color:
+    var(--state-success-border);
+}
+
+
+.input--success:focus-visible {
+  box-shadow:
+    0 0 0 3px
+    var(--state-success-ring);
+}
+
+
+.input--warning {
+  border-color:
+    var(--state-warning-border);
+}
+
+
+.input--warning:focus-visible {
+  box-shadow:
+    0 0 0 3px
+    var(--state-warning-ring);
+}
+
+
+/* ======================================
+   DISABLED
+====================================== */
+
+.input--disabled {
+  background:
+    var(--color-bg-secondary);
+
+  color:
+    var(--color-text-secondary);
+
+  cursor: not-allowed;
+}
+
+
+/* ======================================
+   PREFIX / SUFFIX
+====================================== */
+
+.input__prefix,
+.input__suffix {
+  position: absolute;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color:
+    var(--color-text-secondary);
+}
+
+
+/* ======================================
+   PREFIX
+====================================== */
+
+.input__prefix {
+  left:
+    var(--space-md);
+
+  pointer-events: none;
+}
+
+
+/* ======================================
+   SUFFIX
+====================================== */
+
+.input__suffix {
+  right:
+    var(--space-md);
+
+  pointer-events: auto;
+}
+
+
+/* ======================================
+   HAS PREFIX
+====================================== */
+
+.input--has-prefix {
+  padding-left:
+    calc(
+      16px +
+      var(--space-md) +
+      var(--space-sm)
+    );
+}
+
+
+/* ======================================
+   HAS SUFFIX
+====================================== */
+
+.input--has-suffix {
+  padding-right:
+    calc(
+      16px +
+      var(--space-md) +
+      var(--space-sm)
+    );
+}
+
+
+/* ======================================
+   PLACEHOLDER
+====================================== */
+
+.input::placeholder {
+  color:
+    var(--color-text-secondary);
+
+  opacity: 1;
+}

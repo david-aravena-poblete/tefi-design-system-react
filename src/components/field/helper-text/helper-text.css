@@ -1,0 +1,33 @@
+/* ======================================
+   HELPER TEXT
+====================================== */
+
+.helper-text {
+    color:
+      var(--color-text-secondary);
+  
+    line-height:
+      var(--line-normal);
+  }
+  
+  
+  /* ======================================
+     SIZES
+  ====================================== */
+  
+  .helper-text--sm {
+    font-size:
+      var(--font-xs);
+  }
+  
+  
+  .helper-text--md {
+    font-size:
+      var(--font-sm);
+  }
+  
+  
+  .helper-text--lg {
+    font-size:
+      var(--font-md);
+  }

@@ -1,0 +1,33 @@
+/* ======================================
+   ERROR MESSAGE
+====================================== */
+
+.error-message {
+    color:
+      var(--state-danger-text);
+  
+    line-height:
+      var(--line-normal);
+  }
+  
+  
+  /* ======================================
+     SIZES
+  ====================================== */
+  
+  .error-message--sm {
+    font-size:
+      var(--font-xs);
+  }
+  
+  
+  .error-message--md {
+    font-size:
+      var(--font-sm);
+  }
+  
+  
+  .error-message--lg {
+    font-size:
+      var(--font-md);
+  }

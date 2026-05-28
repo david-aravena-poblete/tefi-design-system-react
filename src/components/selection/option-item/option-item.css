@@ -1,0 +1,77 @@
+/* ======================================
+   BASE
+====================================== */
+
+.option-item {
+    padding:
+      var(--space-sm)
+      var(--space-md);
+  
+    cursor: pointer;
+  
+    font-size:
+      var(--font-md);
+  
+    line-height:
+      var(--line-normal);
+  
+    color:
+      var(--color-text-primary);
+  
+    transition:
+      background-color
+      var(--transition-fast),
+  
+      color
+      var(--transition-fast);
+  }
+  
+  
+  /* ======================================
+     HOVER
+  ====================================== */
+  
+  .option-item:hover {
+    background-color:
+      var(--interaction-hover-bg);
+  }
+  
+  
+  /* ======================================
+     ACTIVE
+  ====================================== */
+  
+  .option-item--active {
+    background-color:
+      var(--interaction-hover-bg);
+  }
+  
+  
+  /* ======================================
+     SELECTED
+  ====================================== */
+  
+  .option-item--selected {
+    background-color: color-mix(
+      in srgb,
+      var(--color-primary-base) 12%,
+      transparent
+    );
+  
+    font-weight:
+      var(--font-weight-medium);
+  }
+  
+  
+  /* ======================================
+     DISABLED
+  ====================================== */
+  
+  .option-item--disabled {
+    background: transparent;
+  
+    color:
+      var(--color-text-secondary);
+  
+    cursor: not-allowed;
+  }

@@ -1,5 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import "./foundations/tokens.css";
+@import "./foundations/states.css";
+@import "./foundations/typography.css";
+@import "./foundations/base.css";

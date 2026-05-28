@@ -1,0 +1,54 @@
+/* ======================================
+   BASE
+====================================== */
+
+.field {
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+}
+
+
+/* ======================================
+   DISABLED
+====================================== */
+
+.field[data-disabled="true"] {
+  pointer-events: none;
+}
+
+
+/* ======================================
+   LOADING
+====================================== */
+
+.field[data-loading="true"] {
+  pointer-events: none;
+}
+
+
+/* ======================================
+   SPINNER
+====================================== */
+
+.field__spinner {
+  position: absolute;
+
+  right: var(--space-md);
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+
+  z-index: 2;
+}

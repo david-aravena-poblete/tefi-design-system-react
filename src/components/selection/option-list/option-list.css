@@ -1,0 +1,70 @@
+/* ======================================
+   BASE
+====================================== */
+
+.option-list {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding:
+    var(--space-xs) 0;
+
+  background:
+    var(--color-bg-primary);
+
+  border: 1px solid
+    var(--color-border-primary);
+
+  border-radius:
+    var(--radius-md);
+
+  box-shadow:
+    var(--shadow-md);
+
+  max-height: 240px;
+
+  overflow-y: auto;
+}
+
+
+/* ======================================
+   EMPTY
+====================================== */
+
+.option-list__empty {
+  padding:
+    var(--space-md);
+
+  color:
+    var(--color-text-secondary);
+
+  font-size:
+    var(--font-sm);
+}
+
+/* ======================================
+   DISABLED
+====================================== */
+
+.option-list--disabled {
+  opacity: 0.6;
+
+  pointer-events: none;
+}
+
+/* ======================================
+   EMBEDDED
+====================================== */
+
+.option-list--embedded {
+  border: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+
+  background: transparent;
+}
