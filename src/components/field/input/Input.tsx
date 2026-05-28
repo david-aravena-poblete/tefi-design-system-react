@@ -3,17 +3,9 @@
 ====================================== */
 
 import "./input.css";
-
-import { Field }
-  from "../../../primitives/field";
-
-import {
-  useFormField,
-} from "../../form/form-field/form-field.context";
-
-import type {
-  InputProps,
-} from "./input.types";
+import { Field } from "@/primitives/field";
+import { useFormField } from "@/components/form/form-field/form-field.context";
+import type { InputProps } from "./input.types";
 
 /* ======================================
    INPUT

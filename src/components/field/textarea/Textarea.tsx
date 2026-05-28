@@ -3,8 +3,8 @@
 ====================================== */
 
 import "./textarea.css";
-import { Field } from "../../../primitives/field";
-import { useFormField } from "../../form/form-field/form-field.context";
+import { Field } from "@/primitives/field";
+import { useFormField } from "@/components/form/form-field/form-field.context";
 import type { TextareaProps } from "./textarea.types";
 
 /* ======================================

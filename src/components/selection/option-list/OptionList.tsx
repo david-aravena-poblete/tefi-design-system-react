@@ -2,21 +2,10 @@
    IMPORTS
 ====================================== */
 
-import {
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-
+import { useEffect, useRef, useState } from "react";
 import "./option-list.css";
-
-import {
-  OptionItem,
-} from "../option-item";
-
-import type {
-  OptionListProps,
-} from "./option-list.types";
+import { OptionItem } from "@/components/selection";
+import type { OptionListProps } from "./option-list.types";
 
 /* ======================================
    OPTION LIST

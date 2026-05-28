@@ -12,10 +12,10 @@ import {
 } from "react";
 
 import "./combobox.css";
-import { Chip } from "../../chip";
-import { SearchField } from "../../field/search-field";
-import { OptionList } from "../option-list";
-import { FloatingSurface } from "../../overlay/floating-surface";
+import { Chip } from "@/components/chip";
+import { SearchField } from "@/components/field";
+import { OptionList } from "@/components/selection";
+import { FloatingSurface } from "@/components/overlay";
 import type { ComboboxProps } from "./combobox.types";
 
 /* ======================================

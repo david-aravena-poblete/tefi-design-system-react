@@ -3,10 +3,7 @@
 ====================================== */
 
 import "./form-section.css";
-
-import type {
-  FormSectionProps,
-} from "./form-section.types";
+import type { FormSectionProps } from "./form-section.types";
 
 /* ======================================
    FORM SECTION

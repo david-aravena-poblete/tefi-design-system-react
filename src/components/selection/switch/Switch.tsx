@@ -3,10 +3,8 @@
 ====================================== */
 
 import "./switch.css";
-
-import { Control } from "../../../primitives/control";
-
-import type { SwitchProps,} from "./switch.types";
+import { Control } from "@/primitives/control";
+import type { SwitchProps } from "./switch.types";
 
 /* ======================================
    SWITCH

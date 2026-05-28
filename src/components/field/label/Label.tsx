@@ -3,7 +3,6 @@
 ====================================== */
 
 import "./label.css";
-
 import type { LabelProps, } from "./label.types";
 
 /* ======================================

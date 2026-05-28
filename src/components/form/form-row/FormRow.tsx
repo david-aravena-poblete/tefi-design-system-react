@@ -3,7 +3,6 @@
 ====================================== */
 
 import "./form-row.css";
-
 import type { FormRowProps } from "./form-row.types";
 
 /* ======================================

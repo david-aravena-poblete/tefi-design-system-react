@@ -3,8 +3,8 @@
 ====================================== */
 
 import "./checkbox.css";
-import { Control } from "../../../../primitives/control";
-import { useCheckboxGroup } from "../checkbox-group/checkbox-group.context";
+import { Control } from "@/primitives/control";
+import { useCheckboxGroup } from "@/components/selection/checkbox/checkbox-group/checkbox-group.context";
 import type { CheckboxProps } from "./checkbox.types";
 
 /* ======================================

@@ -3,8 +3,8 @@
 ====================================== */
 
 import "./radio.css";
-import { Control } from "../../../../primitives/control";
-import { useRadioGroup } from "../radio-group/radio-group.context";
+import { Control } from "@/primitives/control";
+import { useRadioGroup } from "@/components/selection/radio/radio-group/radio-group.context";
 import type { RadioProps } from "./radio.types";
 
 /* ======================================

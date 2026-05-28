@@ -2,15 +2,9 @@
    IMPORTS
 ====================================== */
 
-import React, {
-  useId,
-} from "react";
-
+import React, { useId } from "react";
 import "./control.css";
-
-import type {
-  ControlProps,
-} from "./control.types";
+import type { ControlProps } from "./control.types";
 
 /* ======================================
    CONTROL

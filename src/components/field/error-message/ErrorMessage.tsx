@@ -3,7 +3,6 @@
 ====================================== */
 
 import "./error-message.css";
-
 import type { ErrorMessageProps } from "./error-message.types";
 
 /* ======================================

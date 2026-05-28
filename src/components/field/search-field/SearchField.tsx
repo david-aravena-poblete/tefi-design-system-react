@@ -4,7 +4,7 @@
 
 import { Search, X } from "lucide-react";
 import "./search-field.css";
-import { Input } from "../input";
+import { Input } from "@/components/field";
 import type { SearchFieldProps } from "./search-field.types";
 
 /* ======================================

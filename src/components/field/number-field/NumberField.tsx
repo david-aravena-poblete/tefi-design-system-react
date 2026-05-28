@@ -3,13 +3,8 @@
 ====================================== */
 
 import "./number-field.css";
-
-import { Input }
-  from "../input";
-
-import type {
-  NumberFieldProps,
-} from "./number-field.types";
+import { Input } from "@/components/field";
+import type { NumberFieldProps } from "./number-field.types";
 
 /* ======================================
    NUMBER FIELD

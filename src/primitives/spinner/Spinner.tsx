@@ -1,10 +1,6 @@
 import clsx from "clsx";
-
 import "./spinner.css";
-
-import type {
-  SpinnerSize,
-} from "./spinner.types";
+import type { SpinnerSize } from "./spinner.types";
 
 /* ======================================
    TYPES

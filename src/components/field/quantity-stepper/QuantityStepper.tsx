@@ -3,16 +3,9 @@
 ====================================== */
 
 import { useState } from "react";
-
 import "./quantity-stepper.css";
-
-import {
-  FIELD_SIZES,
-} from "../../../shared/field.constants";
-
-import type {
-  QuantityStepperProps,
-} from "./quantity-stepper.types";
+import { FIELD_SIZES } from "@/shared/field.constants";
+import type { QuantityStepperProps } from "./quantity-stepper.types";
 
 /* ======================================
    QUANTITY STEPPER

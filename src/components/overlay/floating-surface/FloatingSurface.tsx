@@ -3,10 +3,7 @@
 ====================================== */
 
 import "./floating-surface.css";
-
-import type {
-  FloatingSurfaceProps,
-} from "./floating-surface.types";
+import type { FloatingSurfaceProps } from "./floating-surface.types";
 
 /* ======================================
    FLOATING SURFACE

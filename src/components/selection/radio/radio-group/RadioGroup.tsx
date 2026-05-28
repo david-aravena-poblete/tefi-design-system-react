@@ -2,19 +2,10 @@
    IMPORTS
 ====================================== */
 
-import {
-    useId,
-  } from "react";
-  
-  import "./radio-group.css";
-  
-  import {
-    RadioGroupProvider,
-  } from "./radio-group.context";
-  
-  import type {
-    RadioGroupProps,
-  } from "./radio-group.types";
+import { useId } from "react";
+import "./radio-group.css";
+import { RadioGroupProvider } from "./radio-group.context";
+import type { RadioGroupProps } from "./radio-group.types";
   
   /* ======================================
      RADIO GROUP

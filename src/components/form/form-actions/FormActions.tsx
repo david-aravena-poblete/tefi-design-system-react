@@ -3,10 +3,7 @@
 ====================================== */
 
 import "./form-actions.css";
-
-import type {
-  FormActionsProps,
-} from "./form-actions.types";
+import type { FormActionsProps } from "./form-actions.types";
 
 /* ======================================
    FORM ACTIONS

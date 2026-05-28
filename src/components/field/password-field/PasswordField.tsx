@@ -3,20 +3,10 @@
 ====================================== */
 
 import { useState } from "react";
-
-import {
-  Eye,
-  EyeClosed,
-} from "lucide-react";
-
+import { Eye, EyeClosed } from "lucide-react";
 import "./password-field.css";
-
-import { Input }
-  from "../input";
-
-import type {
-  PasswordFieldProps,
-} from "./password-field.types";
+import { Input } from "@/components/field";
+import type { PasswordFieldProps } from "./password-field.types";
 
 /* ======================================
    PASSWORD FIELD

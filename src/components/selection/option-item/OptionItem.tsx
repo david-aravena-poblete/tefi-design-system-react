@@ -3,10 +3,7 @@
 ====================================== */
 
 import "./option-item.css";
-
-import type {
-  OptionItemProps,
-} from "./option-item.types";
+import type { OptionItemProps } from "./option-item.types";
 
 /* ======================================
    OPTION ITEM

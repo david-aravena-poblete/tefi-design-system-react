@@ -2,13 +2,8 @@
    IMPORTS
 ====================================== */
 
-import React from "react";
-
-import { useState }
-  from "react";
-
-import { Combobox }
-  from "./Combobox";
+import React, { useState } from "react";
+import { Combobox } from "./Combobox";
 
 /* ======================================
    OPTIONS
