@@ -3,103 +3,129 @@
 ====================================== */
 
 body {
-    font-family: var(--font-family-sans);
-  
-    font-size: var(--font-md);
-    line-height: var(--line-normal);
-  
-    font-weight:
-      var(--font-weight-regular);
-  
-    color: var(--color-text-primary);
-  
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  
-  /* ======================================
-     HEADINGS BASE
-  ====================================== */
-  
-  .heading {
-    margin: 0;
-  
-    line-height: var(--line-tight);
-  
-    color: var(--color-text-primary);
-  }
-  
-  
-  /* ======================================
-     HEADINGS LEVELS
-  ====================================== */
-  
-  .heading-1 {
-    font-size: var(--font-2xl);
-  
-    font-weight:
-      var(--font-weight-bold);
-  }
-  
-  .heading-2 {
-    font-size: var(--font-xl);
-  
-    font-weight:
-      var(--font-weight-semibold);
-  }
-  
-  .heading-3 {
-    font-size: var(--font-lg);
-  
-    font-weight:
-      var(--font-weight-medium);
-  }
-  
-  
-  /* ======================================
-     TEXT BASE
-  ====================================== */
-  
-  .text {
-    margin: 0;
-  
-    font-size: var(--font-md);
-  
-    line-height:
-      var(--line-normal);
-  
-    font-weight:
-      var(--font-weight-regular);
-  
-    color: var(--color-text-primary);
-  }
-  
-  
-  /* ======================================
-     TEXT VARIANTS
-  ====================================== */
-  
-  .text-secondary {
-    color: var(--color-text-secondary);
-  }
-  
-  .text-muted {
-    color: var(--color-text-muted);
-  }
-  
-  .text-inverse {
-    color: var(--color-text-inverse);
-  }
-  
-  
-  /* ======================================
-     SMALL TEXT
-  ====================================== */
-  
-  .text-small {
-    font-size: var(--font-sm);
-  
-    line-height:
-      var(--line-normal);
-  }
+  font-family: var(--font-family-sans);
+
+  font-size: var(--font-md);
+
+  line-height:
+    var(--line-normal);
+
+  font-weight:
+    var(--font-weight-regular);
+
+  color:
+    var(--color-text-primary);
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+}
+
+
+/* ======================================
+   HEADINGS BASE
+====================================== */
+
+.heading {
+  margin: 0;
+
+  line-height:
+    var(--line-tight);
+
+  color:
+    var(--color-text-primary);
+
+  font-weight:
+    var(--font-weight-semibold);
+}
+
+
+/* ======================================
+   HEADINGS LEVELS
+====================================== */
+
+.heading-1 {
+  font-size:
+    var(--font-2xl);
+}
+
+.heading-2 {
+  font-size:
+    var(--font-xl);
+}
+
+.heading-3 {
+  font-size:
+    var(--font-lg);
+}
+
+.heading-4 {
+  font-size:
+    var(--font-md);
+}
+
+.heading-5 {
+  font-size:
+    var(--font-sm);
+}
+
+.heading-6 {
+  font-size:
+    var(--font-xs);
+}
+
+
+/* ======================================
+   TEXT BASE
+====================================== */
+
+.text {
+  margin: 0;
+
+  font-size:
+    var(--font-md);
+
+  line-height:
+    var(--line-normal);
+
+  font-weight:
+    var(--font-weight-regular);
+
+  color:
+    var(--color-text-primary);
+}
+
+
+/* ======================================
+   TEXT VARIANTS
+====================================== */
+
+.text-secondary {
+  color:
+    var(--color-text-secondary);
+}
+
+.text-muted {
+  color:
+    var(--color-text-muted);
+}
+
+.text-inverse {
+  color:
+    var(--color-text-inverse);
+}
+
+
+/* ======================================
+   SMALL TEXT
+====================================== */
+
+.text-small {
+  font-size:
+    var(--font-sm);
+
+  line-height:
+    var(--line-normal);
+}

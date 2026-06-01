@@ -4,6 +4,5 @@ export * from "./input";
 export * from "./label";
 export * from "./number-field";
 export * from "./password-field";
-export * from "./quantity-stepper";
 export * from "./search-field";
 export * from "./textarea";

@@ -3,7 +3,7 @@
 ====================================== */
 
 import type { HTMLAttributes } from "react";
-import { FIELD_SIZES } from "../../../shared/field.constants";
+import { FIELD_SIZES } from "../../shared/field.constants";
   
   /* ======================================
      QUANTITY STEPPER SIZE

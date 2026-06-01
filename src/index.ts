@@ -33,7 +33,14 @@ export { Control } from "./primitives/control";
 ====================================== */
 
 export { Button } from "./components/button";
+export { Card } from "./components/card";
 export { Chip } from "./components/chip";
+export { QuantityStepper } from "./components/quantity-stepper";
+
+export {
+  Heading,
+  Text,
+} from "./components/typography";
 
 
 /* ======================================
@@ -47,7 +54,6 @@ export {
   Label,
   NumberField,
   PasswordField,
-  QuantityStepper,
   SearchField,
   Textarea,
 } from "./components/field";
@@ -95,9 +101,9 @@ export {
 ====================================== */
 
 export {
-  Stack,
-  Inline,
   Container,
-  Section,
   Grid,
+  Inline,
+  Section,
+  Stack,
 } from "./layouts";

@@ -1,0 +1,51 @@
+/* ======================================
+   HEADING
+====================================== */
+
+.heading {
+    margin: 0;
+  
+    line-height:
+      var(--line-tight);
+  
+    color:
+      var(--color-text-primary);
+  
+    font-weight:
+      var(--font-weight-semibold);
+  }
+  
+  
+  /* ======================================
+     LEVELS
+  ====================================== */
+  
+  .heading-1 {
+    font-size:
+      var(--font-2xl);
+  }
+  
+  .heading-2 {
+    font-size:
+      var(--font-xl);
+  }
+  
+  .heading-3 {
+    font-size:
+      var(--font-lg);
+  }
+  
+  .heading-4 {
+    font-size:
+      var(--font-md);
+  }
+  
+  .heading-5 {
+    font-size:
+      var(--font-sm);
+  }
+  
+  .heading-6 {
+    font-size:
+      var(--font-xs);
+  }

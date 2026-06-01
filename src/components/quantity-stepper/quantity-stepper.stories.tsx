@@ -3,17 +3,14 @@
 ====================================== */
 
 import React from "react";
-
 import { QuantityStepper } from "./QuantityStepper";
-import { FormField } from "../../form/form-field";
-import { Label } from "../label";
 
 /* ======================================
    META
 ====================================== */
 
 export default {
-  title: "Components/Field/QuantityStepper",
+  title: "Components/QuantityStepper",
 
   component: QuantityStepper,
 };
@@ -26,15 +23,7 @@ export default {
 export function Default() {
 
   return (
-    <FormField>
-
-      <Label>
-        Quantity
-      </Label>
-
-      <QuantityStepper />
-
-    </FormField>
+    <QuantityStepper />
   );
 }
 
