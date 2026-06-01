@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2023",
+    "target": "ES2023",
 
     "baseUrl": ".",
 
@@ -8,20 +8,20 @@
       "@/*": ["src/*"]
     },
 
-    "ignoreDeprecations": "6.0",
-
     "lib": [
       "ES2023",
       "DOM"
     ],
 
-    "module": "esnext",
+    "module": "ESNext",
 
     "types": [
       "vite/client"
     ],
 
     "skipLibCheck": true,
+
+    "ignoreDeprecations": "6.0",
 
     /* Bundler mode */
 

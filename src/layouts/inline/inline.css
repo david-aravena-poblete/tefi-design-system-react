@@ -1,0 +1,91 @@
+/* ======================================
+   BASE
+====================================== */
+
+.inline {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  
+  /* ======================================
+     GAP
+  ====================================== */
+  
+  .inline--gap-xs {
+    gap: var(--space-xs);
+  }
+  
+  .inline--gap-sm {
+    gap: var(--space-sm);
+  }
+  
+  .inline--gap-md {
+    gap: var(--space-md);
+  }
+  
+  .inline--gap-lg {
+    gap: var(--space-lg);
+  }
+  
+  .inline--gap-xl {
+    gap: var(--space-xl);
+  }
+  
+  .inline--gap-xxl {
+    gap: var(--space-xxl);
+  }
+  
+  .inline--gap-xxxl {
+    gap: var(--space-xxxl);
+  }
+  
+  
+  /* ======================================
+     ALIGN
+  ====================================== */
+  
+  .inline--align-start {
+    align-items: flex-start;
+  }
+  
+  .inline--align-center {
+    align-items: center;
+  }
+  
+  .inline--align-end {
+    align-items: flex-end;
+  }
+  
+  .inline--align-stretch {
+    align-items: stretch;
+  }
+  
+  .inline--align-baseline {
+    align-items: baseline;
+  }
+  
+  
+  /* ======================================
+     JUSTIFY
+  ====================================== */
+  
+  .inline--justify-start {
+    justify-content: flex-start;
+  }
+  
+  .inline--justify-center {
+    justify-content: center;
+  }
+  
+  .inline--justify-end {
+    justify-content: flex-end;
+  }
+  
+  .inline--justify-between {
+    justify-content: space-between;
+  }
+  
+  .inline--justify-around {
+    justify-content: space-around;
+  }

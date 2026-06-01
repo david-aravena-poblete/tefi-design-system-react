@@ -33,8 +33,71 @@ export { Control } from "./primitives/control";
 ====================================== */
 
 export { Button } from "./components/button";
-export { Input } from "./components/field/input";
-export { Textarea } from "./components/field/textarea";
-export { Select } from "./components/selection/select";
-export { Checkbox } from "./components/selection/checkbox/checkbox";
-export { CheckboxGroup } from "./components/selection/checkbox/checkbox-group";
+export { Chip } from "./components/chip";
+
+
+/* ======================================
+   FIELD
+====================================== */
+
+export {
+  ErrorMessage,
+  HelperText,
+  Input,
+  Label,
+  NumberField,
+  PasswordField,
+  QuantityStepper,
+  SearchField,
+  Textarea,
+} from "./components/field";
+
+
+/* ======================================
+   FORM
+====================================== */
+
+export {
+  FormActions,
+  FormField,
+  FormRow,
+  FormSection,
+} from "./components/form";
+
+
+/* ======================================
+   OVERLAY
+====================================== */
+
+export {
+  FloatingSurface,
+} from "./components/overlay";
+
+
+/* ======================================
+   SELECTION
+====================================== */
+
+export {
+  Checkbox,
+  CheckboxGroup,
+  Combobox,
+  OptionItem,
+  OptionList,
+  Radio,
+  Select,
+  Switch,
+} from "./components/selection";
+
+
+/* ======================================
+   LAYOUTS
+====================================== */
+
+export {
+  Stack,
+  Inline,
+  Container,
+  Section,
+  Grid,
+} from "./layouts";
