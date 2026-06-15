@@ -1,3 +1,10 @@
-[data-brand="daravena"] {
+/* ======================================
+   DARAVENA BRAND
+====================================== */
 
-}
+:root {
+
+    --color-primary-base: #ff7a00;
+    --color-primary-hover: #e36c00;
+  
+  }

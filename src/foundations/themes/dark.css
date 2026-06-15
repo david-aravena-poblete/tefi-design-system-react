@@ -2,9 +2,7 @@
    DARK THEME
 ====================================== */
 
-/* TODO: Replace :root with [data-theme="dark"] when theme switching is implemented. */
-
-:root {
+[data-theme="dark"] {
 
     /* BACKGROUNDS */
   
