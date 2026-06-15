@@ -4,7 +4,55 @@
 
 :root {
 
+    /* ======================================
+       PRIMARY
+    ====================================== */
+  
     --color-primary-base: #ff7a00;
     --color-primary-hover: #e36c00;
+  
+  
+    /* ======================================
+       SURFACES
+    ====================================== */
+  
+    --surface-card-bg:
+      rgba(255, 255, 255, 0.03);
+  
+    --surface-card-hover:
+      rgba(255, 255, 255, 0.08);
+  
+    --surface-card-border:
+      rgba(255, 255, 255, 0.05);
+  
+    --surface-card-border-hover:
+      rgba(255, 255, 255, 0.20);
+  
+    --surface-card-radius:
+      16px;
+  
+    --surface-card-shadow:
+      0 4px 30px rgba(
+        0,
+        0,
+        0,
+        0.10
+      );
+  
+    --surface-card-shadow-hover:
+      0 10px 40px rgba(
+        0,
+        255,
+        204,
+        0.15
+      );
+  
+  
+    /* ======================================
+       EFFECTS
+    ====================================== */
+  
+    --effect-blur-md:
+      10px;
   
   }

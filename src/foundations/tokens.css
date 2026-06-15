@@ -28,6 +28,7 @@ Brand tokens:
   --space-xxl: 32px;
   --space-xxxl: 40px;
 
+
   /* ======================================
      FOUNDATIONS — RADIUS
   ====================================== */
@@ -81,6 +82,51 @@ Brand tokens:
     0 4px 10px rgba(0, 0, 0, 0.08);
 
 
+/* ======================================
+   FOUNDATIONS — SURFACES
+====================================== */
+
+--surface-card-bg:
+  var(--color-bg-secondary);
+
+--surface-card-hover:
+  var(--color-bg-tertiary);
+
+--surface-card-border:
+  var(--color-border-primary);
+
+--surface-card-border-hover:
+  var(--color-border-secondary);
+
+/* CARD APPEARANCE */
+
+--surface-card-radius:
+  var(--radius-lg);
+
+/* CARD EFFECTS */
+
+--surface-card-shadow:
+  var(--shadow-sm);
+
+--surface-card-shadow-hover:
+  var(--effect-glow-primary);
+
+/* ======================================
+   FOUNDATIONS — EFFECTS
+====================================== */
+
+--effect-blur-sm: 4px;
+--effect-blur-md: 10px;
+--effect-blur-lg: 20px;
+
+--effect-glow-primary:
+  0 0 24px
+  color-mix(
+    in srgb,
+    var(--color-primary-base) 20%,
+    transparent
+  );
+  
   /* ======================================
      FOUNDATIONS — SIZE
   ====================================== */
