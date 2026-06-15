@@ -8,8 +8,8 @@
        PRIMARY
     ====================================== */
   
-    --color-primary-base: #ff7a00;
-    --color-primary-hover: #e36c00;
+    --color-primary-base: #00ffcc;
+    --color-primary-hover: #00ccff;
   
   
     /* ======================================
@@ -45,6 +45,39 @@
         255,
         204,
         0.15
+      );
+  
+  
+    /* ======================================
+       BUTTON
+    ====================================== */
+  
+    --surface-button-radius:
+      8px;
+  
+    --surface-button-primary-bg:
+      linear-gradient(
+        135deg,
+        #00ffcc 0%,
+        #00ccff 100%
+      );
+  
+    --surface-button-primary-hover:
+      linear-gradient(
+        135deg,
+        #00ffd5 0%,
+        #33d6ff 100%
+      );
+  
+    --surface-button-shadow:
+      none;
+  
+    --surface-button-shadow-hover:
+      0 4px 15px rgba(
+        0,
+        255,
+        204,
+        0.40
       );
   
   

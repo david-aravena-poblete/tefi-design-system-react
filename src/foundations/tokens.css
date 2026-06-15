@@ -112,6 +112,29 @@ Brand tokens:
   var(--effect-glow-primary);
 
 /* ======================================
+   BUTTON APPEARANCE
+====================================== */
+
+--surface-button-radius:
+  var(--radius-md);
+
+--surface-button-primary-bg:
+  var(--color-primary-base);
+
+--surface-button-primary-hover:
+  var(--color-primary-hover);
+
+/* ======================================
+   BUTTON EFFECTS
+====================================== */
+
+--surface-button-shadow:
+  none;
+
+--surface-button-shadow-hover:
+  none;
+
+/* ======================================
    FOUNDATIONS — EFFECTS
 ====================================== */
 
@@ -126,7 +149,7 @@ Brand tokens:
     var(--color-primary-base) 20%,
     transparent
   );
-  
+
   /* ======================================
      FOUNDATIONS — SIZE
   ====================================== */

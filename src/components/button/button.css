@@ -12,7 +12,7 @@
   box-sizing: border-box;
 
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--surface-button-radius);
 
   min-height: 40px;
 
@@ -56,9 +56,14 @@
 /* PRIMARY */
 
 .button--primary {
-  background: var(--color-primary-base);
+  background:
+    var(--surface-button-primary-bg);
 
-  color: var(--color-text-inverse);
+  color:
+    var(--color-text-inverse);
+
+  box-shadow:
+    var(--surface-button-shadow);
 }
 
 
@@ -119,7 +124,11 @@
 /* PRIMARY */
 
 .button--primary:hover:not(:disabled) {
-  background: var(--color-primary-hover);
+  background:
+    var(--surface-button-primary-hover);
+
+  box-shadow:
+    var(--surface-button-shadow-hover);
 }
 
 
