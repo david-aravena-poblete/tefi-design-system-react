@@ -1,10 +1,25 @@
+/* ======================================
+   TOKENS
+====================================== */
+
 @import "./foundations/tokens.css";
 
-@import "./foundations/themes/light.css";
+/* ======================================
+   THEME
+====================================== */
+
 @import "./foundations/themes/dark.css";
+
+/* ======================================
+   BRAND
+====================================== */
 
 @import "./foundations/brands/daravena.css";
 
+
+/* ======================================
+   FOUNDATIONS
+====================================== */
 
 @import "./foundations/states.css";
 @import "./foundations/typography.css";
