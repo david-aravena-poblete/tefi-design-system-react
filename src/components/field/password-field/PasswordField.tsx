@@ -14,7 +14,6 @@ import type { PasswordFieldProps } from "./password-field.types";
 
 export function PasswordField({
   endIcon,
-
   ...rest
 }: PasswordFieldProps) {
 
@@ -46,15 +45,17 @@ export function PasswordField({
       }
 
       endIcon={
-
         endIcon ?? (
-
           <button
             type="button"
 
             className="
               password-field__toggle
             "
+
+            onMouseDown={(e) => {
+              e.preventDefault();
+            }}
 
             onClick={handleToggle}
 
@@ -64,13 +65,11 @@ export function PasswordField({
                 : "Show password"
             }
           >
-
             {visible ? (
               <Eye size={16} />
             ) : (
               <EyeClosed size={16} />
             )}
-
           </button>
         )
       }

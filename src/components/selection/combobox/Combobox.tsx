@@ -2,8 +2,6 @@
    IMPORTS
 ====================================== */
 
-"use client";
-
 import {
   useEffect,
   useMemo,

@@ -105,7 +105,7 @@
    FOCUS
 ====================================== */
 
-.input:focus-visible {
+.input:focus {
   border-color:
     var(--state-default-border);
 
@@ -121,7 +121,7 @@
 }
 
 
-.input--error:focus-visible {
+.input--error:focus {
   box-shadow:
     0 0 0 3px
     var(--state-danger-ring);
@@ -134,7 +134,7 @@
 }
 
 
-.input--success:focus-visible {
+.input--success:focus {
   box-shadow:
     0 0 0 3px
     var(--state-success-ring);
@@ -147,7 +147,7 @@
 }
 
 
-.input--warning:focus-visible {
+.input--warning:focus {
   box-shadow:
     0 0 0 3px
     var(--state-warning-ring);

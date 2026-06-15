@@ -7,7 +7,14 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [
     react(),
-    dts(),
+
+    dts({
+      exclude: [
+        "**/*.stories.ts",
+        "**/*.stories.tsx",
+        "src/stories/**",
+      ],
+    }),
   ],
 
   resolve: {

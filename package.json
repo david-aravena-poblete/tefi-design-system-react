@@ -1,21 +1,33 @@
 {
   "name": "@tefi/design-system",
-  "version": "0.4.0",
+  "version": "0.4.12",
   "type": "module",
+
   "files": [
     "dist"
   ],
+
   "main": "./dist/tefi-design-system.umd.cjs",
   "module": "./dist/tefi-design-system.js",
-  "types": "./dist/index.d.ts",
+
+  "types": "./dist/src/index.d.ts",
+
+  "style": "./dist/tefi-design-system.css",
+
+  "sideEffects": [
+    "**/*.css"
+  ],
+
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/src/index.d.ts",
       "import": "./dist/tefi-design-system.js",
       "require": "./dist/tefi-design-system.umd.cjs"
     },
+
     "./styles.css": "./dist/tefi-design-system.css"
   },
+
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -24,14 +36,17 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
+
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
   },
+
   "dependencies": {
     "clsx": "^2.1.1",
     "lucide-react": "^1.14.0"
   },
+
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@storybook/react-vite": "^10.4.1",

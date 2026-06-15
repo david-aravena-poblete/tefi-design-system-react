@@ -1,0 +1,28 @@
+/* ======================================
+   LIGHT THEME
+====================================== */
+
+/* TODO: Replace :root with [data-theme="light"] when theme switching is implemented. */
+
+:root {
+
+  /* BACKGROUNDS */
+
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-tertiary: #eeeeee;
+
+  /* TEXT */
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-text-inverse: #ffffff;
+
+  /* BORDERS */
+
+  --color-border-primary: #d1d5db;
+  --color-border-secondary: #9ca3af;
+  --color-border-focus: #4f46e5;
+
+}
