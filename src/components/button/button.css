@@ -57,15 +57,20 @@
 
 .button--primary {
   background:
-    var(--surface-button-primary-bg);
+    var(
+      --surface-button-primary-bg,
+      var(--color-primary-base)
+    );
 
   color:
-    var(--color-text-inverse);
+    var(--surface-button-primary-text);
 
   box-shadow:
-    var(--surface-button-shadow);
+    var(
+      --surface-button-shadow,
+      none
+    );
 }
-
 
 /* SECONDARY */
 
@@ -125,10 +130,16 @@
 
 .button--primary:hover:not(:disabled) {
   background:
-    var(--surface-button-primary-hover);
+    var(
+      --surface-button-primary-hover,
+      var(--color-primary-hover)
+    );
 
   box-shadow:
-    var(--surface-button-shadow-hover);
+    var(
+      --surface-button-shadow-hover,
+      none
+    );
 }
 
 

@@ -124,6 +124,9 @@ Brand tokens:
 --surface-button-primary-hover:
   var(--color-primary-hover);
 
+--surface-button-primary-text:
+  var(--color-text-inverse);
+  
 /* ======================================
    BUTTON EFFECTS
 ====================================== */
