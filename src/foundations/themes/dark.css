@@ -1,3 +1,28 @@
-[data-theme="dark"] {
+/* ======================================
+   DARK THEME
+====================================== */
 
-}
+/* TODO: Replace :root with [data-theme="dark"] when theme switching is implemented. */
+
+:root {
+
+    /* BACKGROUNDS */
+  
+    --color-bg-primary: #111827;
+    --color-bg-secondary: #1f2937;
+    --color-bg-tertiary: #374151;
+  
+    /* TEXT */
+  
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #d1d5db;
+    --color-text-muted: #9ca3af;
+    --color-text-inverse: #111827;
+  
+    /* BORDERS */
+  
+    --color-border-primary: #4b5563;
+    --color-border-secondary: #6b7280;
+    --color-border-focus: #4f46e5;
+  
+  }

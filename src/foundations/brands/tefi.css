@@ -1,3 +1,11 @@
-[data-brand="tefi"] {
+/* ======================================
+   TEFI BRAND
+====================================== */
 
-}
+:root {
+
+    /* PRIMARY */
+  
+    --color-primary-base: #71C9BF;
+    --color-primary-hover: #86CBC3;
+  }
