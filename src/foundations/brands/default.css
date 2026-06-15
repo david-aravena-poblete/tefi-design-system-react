@@ -1,3 +1,49 @@
-[data-brand="default"] {
+/* ======================================
+   DEFAULT BRAND
+====================================== */
 
-}
+/* TODO: Replace :root with [data-brand="default"] when brand switching is implemented. */
+
+:root {
+
+    /* PRIMARY */
+  
+    --color-primary-base: #4f46e5;
+    --color-primary-hover: #4338ca;
+  
+    /* LINKS */
+  
+    --color-link-base:
+      var(--color-primary-base);
+  
+    --color-link-hover:
+      var(--color-primary-hover);
+  
+    --color-link-visited:
+      var(--color-primary-hover);
+  
+    /* SUCCESS */
+  
+    --color-success-base: #16a34a;
+    --color-success-hover: #15803d;
+    --color-success-soft: #ecfdf5;
+  
+    /* WARNING */
+  
+    --color-warning-base: #d97706;
+    --color-warning-hover: #b45309;
+    --color-warning-soft: #fffbeb;
+  
+    /* DANGER */
+  
+    --color-danger-base: #dc2626;
+    --color-danger-hover: #b91c1c;
+    --color-danger-soft: #fef2f2;
+  
+    /* INFO */
+  
+    --color-info-base: #2563eb;
+    --color-info-hover: #1d4ed8;
+    --color-info-soft: #eff6ff;
+  
+  }
