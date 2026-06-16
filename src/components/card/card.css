@@ -39,25 +39,21 @@
 }
 
 .card--outlined:hover {
-  transform:
-    translateY(-4px);
-
-  background:
-    var(--surface-card-hover);
-
   border-color:
     var(--surface-card-border-hover);
-
-  box-shadow:
-    var(--surface-card-shadow-hover);
 }
 
 .card--elevated {
   background-color:
-    var(--color-bg-primary);
+    var(--surface-card-bg);
 
   box-shadow:
     var(--surface-card-shadow);
+}
+
+.card--elevated:hover {
+  box-shadow:
+    var(--surface-card-shadow-hover);
 }
 
 .card--flat {
@@ -84,7 +80,6 @@
   --card-padding:
     var(--space-xl);
 }
-
 
 /* ======================================
    SECTIONS

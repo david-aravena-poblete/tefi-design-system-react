@@ -27,10 +27,10 @@
     var(--radius-md);
 
   background:
-    var(--color-bg-primary);
+    var(--field-bg-color);
 
   color:
-    var(--color-text-primary);
+    var(--field-text-color);
 
   line-height: 1;
 
@@ -160,10 +160,10 @@
 
 .input--disabled {
   background:
-    var(--color-bg-secondary);
+    var(--field-disabled-bg);
 
   color:
-    var(--color-text-secondary);
+    var(--field-disabled-text);
 
   cursor: not-allowed;
 }
@@ -251,7 +251,7 @@
 
 .input::placeholder {
   color:
-    var(--color-text-secondary);
+    var(--field-placeholder-color);
 
   opacity: 1;
 }

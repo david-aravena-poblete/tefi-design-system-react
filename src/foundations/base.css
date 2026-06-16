@@ -24,6 +24,12 @@
 ====================================== */
 
 body {
+  background:
+    var(--surface-page-bg);
+
+  color:
+    var(--color-text-primary);
+
   line-height: 1.5;
 
   -webkit-font-smoothing: antialiased;

@@ -86,7 +86,14 @@ Brand tokens:
    FOUNDATIONS — SURFACES
 ====================================== */
 
---surface-card-bg:
+/* PAGE */
+
+--surface-page-bg:
+  var(--color-bg-primary);
+
+/* CARD */
+
+--surface-card-bg: 
   var(--color-bg-secondary);
 
 --surface-card-hover:
@@ -110,7 +117,7 @@ Brand tokens:
 
 --surface-card-shadow-hover:
   var(--effect-glow-primary);
-
+  
 /* ======================================
    BUTTON APPEARANCE
 ====================================== */
@@ -246,7 +253,7 @@ Brand tokens:
   /* BASE */
 
   --field-bg-color:
-    var(--color-bg-primary);
+    var(--color-bg-tertiary);
 
   --field-border-color:
     var(--color-border-primary);

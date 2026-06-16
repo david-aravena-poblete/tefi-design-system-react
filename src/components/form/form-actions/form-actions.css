@@ -3,11 +3,13 @@
 ====================================== */
 
 .form-actions {
-    display: flex;
-  
-    justify-content: flex-end;
-  
-    gap: var(--space-sm);
-  
-    padding-top: var(--space-md);
-  }
+   display: flex;
+ 
+   justify-content: center;
+ 
+   gap: var(--space-md);
+ 
+   padding-top: var(--space-md);
+ 
+   flex-wrap: wrap;
+ }
