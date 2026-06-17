@@ -15,36 +15,11 @@
    --color-text-primary: #f8fafc;
    --color-text-secondary: #cbd5e1;
    --color-text-muted: #94a3b8;
-   --color-text-inverse: #0f172a;
+   --color-text-inverse: #f8fafc;
  
    /* BORDERS */
  
    --color-border-primary: rgba(255, 255, 255, 0.08);
    --color-border-secondary: rgba(255, 255, 255, 0.14);
    --color-border-focus: #6366f1;
- 
-   /* SUCCESS */
- 
-   --color-success-base: #22c55e;
-   --color-success-hover: #16a34a;
-   --color-success-soft: rgba(34, 197, 94, 0.12);
- 
-   /* WARNING */
- 
-   --color-warning-base: #f59e0b;
-   --color-warning-hover: #d97706;
-   --color-warning-soft: rgba(245, 158, 11, 0.12);
- 
-   /* DANGER */
- 
-   --color-danger-base: #ef4444;
-   --color-danger-hover: #dc2626;
-   --color-danger-soft: rgba(239, 68, 68, 0.12);
- 
-   /* INFO */
- 
-   --color-info-base: #3b82f6;
-   --color-info-hover: #2563eb;
-   --color-info-soft: rgba(59, 130, 246, 0.12);
- 
  }
