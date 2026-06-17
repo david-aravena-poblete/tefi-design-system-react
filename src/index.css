@@ -8,13 +8,13 @@
    THEME
 ====================================== */
 
-@import "./foundations/themes/light.css";
+@import "./foundations/themes/dark.css";
 
 /* ======================================
    BRAND
 ====================================== */
 
-@import "./foundations/brands/default.css";
+@import "./foundations/brands/daravena.css";
 
 
 /* ======================================

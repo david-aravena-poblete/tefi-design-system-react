@@ -108,3 +108,23 @@
 .card--flat .card__footer {
   border: none;
 }
+
+
+/* ======================================
+   MEDIA
+====================================== */
+
+.card__media {
+  overflow: hidden;
+
+  border-top-left-radius:
+    var(--surface-card-radius);
+
+  border-top-right-radius:
+    var(--surface-card-radius);
+}
+
+.card__media img {
+  display: block;
+  width: 100%;
+}

@@ -8,8 +8,6 @@
    justify-content: center;
  
    gap: var(--space-md);
- 
-   padding-top: var(--space-md);
- 
+
    flex-wrap: wrap;
  }

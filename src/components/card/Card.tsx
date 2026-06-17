@@ -62,6 +62,31 @@ function Header({
 }
 
 /* ======================================
+   MEDIA
+====================================== */
+
+function Media({
+  children,
+  className = "",
+  ...props
+}: CardSectionProps) {
+
+  return (
+    <div
+      className={[
+        "card__media",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      {...props}
+    >
+      {children}
+    </div>
+  );
+}
+
+/* ======================================
    BODY
 ====================================== */
 
@@ -116,5 +141,6 @@ function Footer({
 ====================================== */
 
 Card.Header = Header;
+Card.Media = Media;
 Card.Body = Body;
 Card.Footer = Footer;

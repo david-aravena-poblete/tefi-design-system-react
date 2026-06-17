@@ -21,97 +21,100 @@ export function ContactPage() {
   return (
     <Container size="sm">
 
-      <Stack gap="xl">
+      <Card>
 
-        <Stack
-          gap="sm"
-          align="center"
-        >
-          <Heading level={1}>
-            Contacto
-          </Heading>
+        <Card.Header>
 
-          <Text>
-            Envíame un mensaje o entra con tu clave de acceso.
-          </Text>
-        </Stack>
+          <Stack gap="sm">
 
-        <Card>
+            <Heading level={1}>
+              Contacto
+            </Heading>
 
-          <Card.Body>
+            <Text>
+              Envíame un mensaje o entra con tu clave de acceso.
+            </Text>
 
-            <Stack gap="lg">
+          </Stack>
+
+        </Card.Header>
+
+        <Card.Body>
+
+          <Stack gap="lg">
+
+            <FormField>
+              <Label>
+                Tu Nombre
+              </Label>
+
+              <Input
+                placeholder="Escribe tu nombre"
+              />
+            </FormField>
+
+            <FormRow>
 
               <FormField>
                 <Label>
-                  Tu Nombre
+                  Email (Opcional)
                 </Label>
 
                 <Input
-                  placeholder="Escribe tu nombre"
+                  placeholder="tu@email.com"
                 />
               </FormField>
-
-              <FormRow>
-
-                <FormField>
-                  <Label>
-                    Email (Opcional)
-                  </Label>
-
-                  <Input
-                    placeholder="tu@email.com"
-                  />
-                </FormField>
-
-                <FormField>
-                  <Label>
-                    Fono (Opcional)
-                  </Label>
-
-                  <Input
-                    placeholder="+569..."
-                  />
-                </FormField>
-
-              </FormRow>
 
               <FormField>
                 <Label>
-                  Mensaje para David Aravena
+                  Fono (Opcional)
                 </Label>
 
-                <Textarea
-                  placeholder="Escribe tu mensaje..."
+                <Input
+                  placeholder="+569..."
                 />
               </FormField>
 
-              <Button
-                variant="primary"
-                fullWidth
-              >
-                Enviar mensaje
-              </Button>
+            </FormRow>
 
-              <FormActions>
+            <FormField>
+              <Label>
+                Mensaje para David Aravena
+              </Label>
 
-                <Button variant="link">
-                  Tengo clave de acceso
-                </Button>
+              <Textarea
+                placeholder="Escribe tu mensaje..."
+              />
+            </FormField>
 
-                <Button variant="link">
-                  ← Volver al inicio
-                </Button>
+            <Button
+              variant="primary"
+              fullWidth
+            >
+              Enviar mensaje
+            </Button>
 
-              </FormActions>
+          </Stack>
 
-            </Stack>
+        </Card.Body>
 
-          </Card.Body>
+        <Card.Footer>
 
-        </Card>
+          <FormActions>
 
-      </Stack>
+            <Button variant="link">
+              Tengo clave de acceso
+            </Button>
+
+            <Button variant="link">
+              ← Volver al inicio
+            </Button>
+
+          </FormActions>
+
+        </Card.Footer>
+
+      </Card>
 
     </Container>
   );
