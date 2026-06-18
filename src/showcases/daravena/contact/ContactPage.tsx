@@ -2,6 +2,7 @@ import { Button } from "@/components/button";
 import { Card } from "@/components/card";
 
 import {
+  Form,
   FormActions,
   FormField,
   FormRow,
@@ -41,60 +42,73 @@ export function ContactPage() {
 
         <Card.Body>
 
-          <Stack gap="lg">
+          <Form>
 
-            <FormField>
-              <Label>
-                Tu Nombre
-              </Label>
-
-              <Input
-                placeholder="Escribe tu nombre"
-              />
-            </FormField>
-
-            <FormRow>
+            <Stack gap="lg">
 
               <FormField>
+
                 <Label>
-                  Email (Opcional)
+                  Tu Nombre
                 </Label>
 
                 <Input
-                  placeholder="tu@email.com"
+                  placeholder="Escribe tu nombre"
                 />
+
               </FormField>
+
+              <FormRow>
+
+                <FormField>
+
+                  <Label>
+                    Email (Opcional)
+                  </Label>
+
+                  <Input
+                    placeholder="tu@email.com"
+                  />
+
+                </FormField>
+
+                <FormField>
+
+                  <Label>
+                    Fono (Opcional)
+                  </Label>
+
+                  <Input
+                    placeholder="+569..."
+                  />
+
+                </FormField>
+
+              </FormRow>
 
               <FormField>
+
                 <Label>
-                  Fono (Opcional)
+                  Mensaje para David Aravena
                 </Label>
 
-                <Input
-                  placeholder="+569..."
+                <Textarea
+                  placeholder="Escribe tu mensaje..."
                 />
+
               </FormField>
 
-            </FormRow>
+              <Button
+                type="submit"
+                variant="primary"
+                fullWidth
+              >
+                Enviar mensaje
+              </Button>
 
-            <FormField>
-              <Label>
-                Mensaje para David Aravena
-              </Label>
+            </Stack>
 
-              <Textarea
-                placeholder="Escribe tu mensaje..."
-              />
-            </FormField>
-
-            <Button
-              variant="primary"
-              fullWidth
-            >
-              Enviar mensaje
-            </Button>
-
-          </Stack>
+          </Form>
 
         </Card.Body>
 

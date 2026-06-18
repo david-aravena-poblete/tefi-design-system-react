@@ -1,7 +1,10 @@
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
 
-import { FormActions } from "@/components/form";
+import {
+  Form,
+  FormActions,
+} from "@/components/form";
 
 import { Input } from "@/components/field/input";
 
@@ -26,20 +29,25 @@ export function AccessPage() {
 
         <Card.Body>
 
-          <Stack gap="xl">
+          <Form>
 
-            <Input
-              placeholder="Ingresa tu clave de acceso"
-            />
+            <Stack gap="lg">
 
-            <Button
-              variant="primary"
-              fullWidth
-            >
-              Ingresar al chat
-            </Button>
+              <Input
+                placeholder="Ingresa tu clave de acceso"
+              />
 
-          </Stack>
+              <Button
+                type="submit"
+                variant="primary"
+                fullWidth
+              >
+                Ingresar al chat
+              </Button>
+
+            </Stack>
+
+          </Form>
 
         </Card.Body>
 
