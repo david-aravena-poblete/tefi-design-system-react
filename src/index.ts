@@ -124,3 +124,12 @@ export {
 export {
    DesignSystemProvider,
  } from "./providers/design-system-provider";
+ 
+ /* ======================================
+    TYPES
+ ====================================== */
+ 
+ export type {
+   Theme,
+   Brand,
+ } from "./shared/design-system.types";

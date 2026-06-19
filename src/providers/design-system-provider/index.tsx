@@ -3,24 +3,26 @@
 import { useEffect } from "react";
 import type { ReactNode } from "react";
 
-type Theme =
-  | "light"
-  | "dark";
+import {
+  DEFAULT_BRAND,
+  DEFAULT_THEME,
+} from "../../shared/design-system.types";
 
-type Brand =
-  | "default"
-  | "daravena";
+import type {
+  Brand,
+  Theme,
+} from "../../shared/design-system.types";
 
 interface DesignSystemProviderProps {
-  children: ReactNode;
+  children?: ReactNode;
   theme?: Theme;
   brand?: Brand;
 }
 
 export function DesignSystemProvider({
   children,
-  theme = "light",
-  brand = "default",
+  theme = DEFAULT_THEME,
+  brand = DEFAULT_BRAND,
 }: DesignSystemProviderProps) {
 
   useEffect(() => {
