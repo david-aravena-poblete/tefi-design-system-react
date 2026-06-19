@@ -115,3 +115,11 @@ export {
   Section,
   Stack,
 } from "./layouts";
+
+/* ======================================
+   PROVIDERS
+====================================== */
+
+export {
+   DesignSystemProvider,
+ } from "./providers/design-system-provider";
