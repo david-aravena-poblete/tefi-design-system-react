@@ -5,6 +5,12 @@
 ====================================== */
 
 import "./foundations/tokens.css";
+
+import "./foundations/themes/light.css";
+import "./foundations/themes/dark.css";
+
+import "./foundations/brands/default.css";
+
 import "./foundations/states.css";
 import "./foundations/base.css";
 import "./foundations/typography.css";

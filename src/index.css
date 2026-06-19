@@ -8,6 +8,7 @@
    THEME
 ====================================== */
 
+@import "./foundations/themes/light.css";
 @import "./foundations/themes/dark.css";
 
 /* ======================================
