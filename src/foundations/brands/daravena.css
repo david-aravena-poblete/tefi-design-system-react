@@ -2,164 +2,141 @@
    DARAVENA BRAND
 ====================================== */
 
-:root {
+[data-brand="daravena"] {
 
   /* ======================================
      PRIMARY
   ====================================== */
 
-  --color-primary-base:
-    #00ffcc;
-
-  --color-primary-hover:
-    #00ccff;
+  --color-primary-base: #00ffcc;
+  --color-primary-hover: #00ccff;
 
 
   /* ======================================
      TEXT
   ====================================== */
 
-  --color-text-primary:
-    #ffffff;
+  --color-text-primary: #ffffff;
 
-  --color-text-secondary:
-    rgba(
-      255,
-      255,
-      255,
-      0.70
-    );
+  --color-text-secondary: rgba(
+    255,
+    255,
+    255,
+    0.70
+  );
 
 
   /* ======================================
      LINKS
   ====================================== */
 
-  --color-link-base:
-    #00ffcc;
+  --color-link-base: #00ffcc;
 
-  --color-link-hover:
-    #7dd3fc;
+  --color-link-hover: #7dd3fc;
 
 
   /* ======================================
      BORDERS
   ====================================== */
 
-  --color-border-primary:
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
+  --color-border-primary: rgba(
+    255,
+    255,
+    255,
+    0.08
+  );
 
-  --color-border-secondary:
-    rgba(
-      255,
-      255,
-      255,
-      0.20
-    );
+  --color-border-secondary: rgba(
+    255,
+    255,
+    255,
+    0.20
+  );
 
 
   /* ======================================
      SURFACES
   ====================================== */
 
-  --surface-card-bg:
-    rgba(
-      255,
-      255,
-      255,
-      0.03
-    );
+  --surface-card-bg: rgba(
+    255,
+    255,
+    255,
+    0.03
+  );
 
-  --surface-card-hover:
-    rgba(
-      255,
-      255,
-      255,
-      0.08
-    );
+  --surface-card-hover: rgba(
+    255,
+    255,
+    255,
+    0.08
+  );
 
-  --surface-card-border:
-    rgba(
-      255,
-      255,
-      255,
-      0.05
-    );
+  --surface-card-border: rgba(
+    255,
+    255,
+    255,
+    0.05
+  );
 
-  --surface-card-border-hover:
-    rgba(
-      255,
-      255,
-      255,
-      0.20
-    );
+  --surface-card-border-hover: rgba(
+    255,
+    255,
+    255,
+    0.20
+  );
 
-  --surface-card-radius:
-    16px;
+  --surface-card-radius: 16px;
 
-  --surface-card-shadow:
-    0 4px 30px rgba(
-      0,
-      0,
-      0,
-      0.10
-    );
+  --surface-card-shadow: 0 4px 30px rgba(
+    0,
+    0,
+    0,
+    0.10
+  );
 
-  --surface-card-shadow-hover:
-    0 10px 40px rgba(
-      0,
-      255,
-      204,
-      0.15
-    );
+  --surface-card-shadow-hover: 0 10px 40px rgba(
+    0,
+    255,
+    204,
+    0.15
+  );
 
 
   /* ======================================
      BUTTON
   ====================================== */
 
-  --surface-button-radius:
-    8px;
+  --surface-button-radius: 8px;
 
-  --surface-button-primary-text:
-    #0a0a1a;
+  --surface-button-primary-text: #0a0a1a;
 
-  --surface-button-primary-bg:
-    linear-gradient(
-      135deg,
-      #00ffcc 0%,
-      #00ccff 100%
-    );
+  --surface-button-primary-bg: linear-gradient(
+    135deg,
+    #00ffcc 0%,
+    #00ccff 100%
+  );
 
-  --surface-button-primary-hover:
-    linear-gradient(
-      135deg,
-      #00ffd5 0%,
-      #33d6ff 100%
-    );
+  --surface-button-primary-hover: linear-gradient(
+    135deg,
+    #00ffd5 0%,
+    #33d6ff 100%
+  );
 
-  --surface-button-shadow:
-    none;
+  --surface-button-shadow: none;
 
-  --surface-button-shadow-hover:
-    0 4px 15px rgba(
-      0,
-      255,
-      204,
-      0.40
-    );
+  --surface-button-shadow-hover: 0 4px 15px rgba(
+    0,
+    255,
+    204,
+    0.40
+  );
 
 
   /* ======================================
      EFFECTS
   ====================================== */
 
-  --effect-blur-md:
-    10px;
+  --effect-blur-md: 10px;
 
 }

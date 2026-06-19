@@ -2,9 +2,7 @@
    DEFAULT BRAND
 ====================================== */
 
-/* TODO: Replace :root with [data-brand="default"] when brand switching is implemented. */
-
-:root {
+[data-brand="default"] {
 
   /* PRIMARY */
 
@@ -40,4 +38,5 @@
   --color-info-base: #2563eb;
   --color-info-hover: #1d4ed8;
   --color-info-soft: #eff6ff;
+
 }
