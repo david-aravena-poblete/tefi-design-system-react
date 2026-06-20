@@ -12,7 +12,7 @@ export function SkillsPage() {
   return (
     <Container>
 
-      <Grid columns={3} gap="lg">
+      <Grid gap="lg">
 
         {[1, 2, 3].map((item) => (
 

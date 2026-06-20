@@ -6,7 +6,10 @@ import type {
 } from "@storybook/react";
 
 import { Grid } from "./Grid";
+
 import { Button } from "../../components/button";
+import { Card } from "../../components/card";
+import { Stack } from "../stack";
 
 
 const meta: Meta<typeof Grid> = {
@@ -67,10 +70,10 @@ const itemStyle = {
 
 
 /* ======================================
-   STORIES
+   RESPONSIVE GRID
 ====================================== */
 
-export const AutoFit: Story = {
+export const ResponsiveGrid: Story = {
   args: {
     gap: "lg",
 
@@ -86,7 +89,50 @@ export const AutoFit: Story = {
 };
 
 
-export const TwoColumns: Story = {
+/* ======================================
+   RESPONSIVE CARDS
+====================================== */
+
+export const ResponsiveCards: Story = {
+  args: {
+    gap: "lg",
+
+    children: (
+      <>
+        {[1, 2, 3].map((item) => (
+
+          <Card key={item}>
+
+            <Card.Body>
+
+              <Stack gap="md">
+
+                <strong>
+                  Skill {item}
+                </strong>
+
+                <p>
+                  Example responsive card.
+                </p>
+
+              </Stack>
+
+            </Card.Body>
+
+          </Card>
+
+        ))}
+      </>
+    ),
+  },
+};
+
+
+/* ======================================
+   FIXED COLUMNS
+====================================== */
+
+export const FixedTwoColumns: Story = {
   args: {
     columns: 2,
 
@@ -104,7 +150,7 @@ export const TwoColumns: Story = {
 };
 
 
-export const ThreeColumns: Story = {
+export const FixedThreeColumns: Story = {
   args: {
     columns: 3,
 
@@ -121,6 +167,10 @@ export const ThreeColumns: Story = {
   },
 };
 
+
+/* ======================================
+   COMPOSITION
+====================================== */
 
 export const CompositionExample: Story = {
   args: {
