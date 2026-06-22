@@ -35,6 +35,7 @@ export { Spinner } from "./primitives/spinner";
 export { Icon } from "./primitives/icon";
 export { Field } from "./primitives/field";
 export { Control } from "./primitives/control";
+export { Image } from "./primitives/image";
 
 
 /* ======================================
@@ -45,6 +46,7 @@ export { Button } from "./components/button";
 export { Card } from "./components/card";
 export { Chip } from "./components/chip";
 export { QuantityStepper } from "./components/quantity-stepper";
+export { Typewriter } from "./components/typewriter";
 
 export {
   Heading,
