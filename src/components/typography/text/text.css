@@ -19,6 +19,9 @@
 
   overflow-wrap:
     break-word;
+
+  white-space:
+    pre-line;
 }
 
 

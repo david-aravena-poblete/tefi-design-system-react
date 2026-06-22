@@ -13,7 +13,11 @@
   
     font-weight:
       var(--font-weight-semibold);
+
+    overflow-wrap:
+      break-word;
   }
+
   
   
   /* ======================================

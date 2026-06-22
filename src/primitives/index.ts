@@ -3,3 +3,4 @@ export * from "./field";
 export * from "./icon";
 export * from "./image";
 export * from "./spinner";
+export * from "./skeleton";

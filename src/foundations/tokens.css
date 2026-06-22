@@ -91,9 +91,14 @@ Brand tokens:
 --surface-page-bg:
   var(--color-bg-primary);
 
+/* SKELETON */
+
+--surface-skeleton-bg:
+  var(--color-bg-secondary);
+
 /* CARD */
 
---surface-card-bg: 
+--surface-card-bg:
   var(--color-bg-secondary);
 
 --surface-card-hover:
@@ -117,10 +122,8 @@ Brand tokens:
 
 --surface-card-shadow-hover:
   var(--effect-glow-primary);
-  
-/* ======================================
-   BUTTON APPEARANCE
-====================================== */
+
+/* BUTTON APPEARANCE */
 
 --surface-button-radius:
   var(--radius-md);
@@ -133,6 +136,14 @@ Brand tokens:
 
 --surface-button-primary-text:
   var(--color-text-inverse);
+
+/* BUTTON EFFECTS */
+
+--surface-button-shadow:
+  none;
+
+--surface-button-shadow-hover:
+  none;
   
 /* ======================================
    BUTTON EFFECTS

@@ -36,6 +36,7 @@ export { Icon } from "./primitives/icon";
 export { Field } from "./primitives/field";
 export { Control } from "./primitives/control";
 export { Image } from "./primitives/image";
+export { Skeleton } from "./primitives/skeleton";
 
 
 /* ======================================
