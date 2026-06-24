@@ -1,42 +1,42 @@
 /* ======================================
-   IMPORTS
+IMPORTS
 ====================================== */
 
 import type {
-    HTMLAttributes,
-    ReactNode,
+  HTMLAttributes,
+  ReactNode,
   } from "react";
   
   /* ======================================
-     TEXT
+  TEXT
   ====================================== */
   
   export type TextSize =
-    | "sm"
-    | "md";
+  | "sm"
+  | "md";
   
   export type TextVariant =
-    | "default"
-    | "secondary"
-    | "muted"
-    | "inverse";
+  | "default"
+  | "secondary"
+  | "muted"
+  | "inverse";
   
   /* ======================================
-     PROPS
+  PROPS
   ====================================== */
   
   export interface TextProps
-    extends HTMLAttributes<HTMLElement> {
+  extends HTMLAttributes<HTMLElement> {
   
-    children?: ReactNode;
+  children?: ReactNode;
   
-    as?:
-      | "p"
-      | "span"
-      | "label"
-      | "div";
+  as?:
+  | "p"
+  | "span"
+  | "label"
+  | "div";
   
-    size?: TextSize;
+  size?: TextSize;
   
-    variant?: TextVariant;
+  variant?: TextVariant;
   }

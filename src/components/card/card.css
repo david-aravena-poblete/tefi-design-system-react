@@ -6,6 +6,8 @@
   display: flex;
   flex-direction: column;
 
+  height: 100%;
+
   border-radius:
     var(--surface-card-radius);
 
@@ -81,6 +83,7 @@
     var(--space-xl);
 }
 
+
 /* ======================================
    SECTIONS
 ====================================== */
@@ -90,6 +93,10 @@
 .card__footer {
   padding:
     var(--card-padding);
+}
+
+.card__body {
+  flex: 1;
 }
 
 .card__header {

@@ -1,57 +1,59 @@
 /* ======================================
-   IMPORTS
+IMPORTS
 ====================================== */
 
 import type {
-    ElementType,
+  ElementType,
   } from "react";
   
   import "./text.css";
   
   import type {
-    TextProps,
+  TextProps,
   } from "./text.types";
   
   /* ======================================
-     TEXT
+  TEXT
   ====================================== */
   
   export function Text({
-    children,
+  children,
   
-    as = "p",
+  as = "p",
   
-    size = "md",
+  size = "md",
   
-    variant = "default",
+  variant = "default",
   
-    className = "",
+  className = "",
   
-    ...props
+  ...props
   }: TextProps) {
   
-    const Tag =
-      as as ElementType;
+  const Tag =
+  as as ElementType;
   
-    const classes = [
-      "text",
+  const classes = [
+  "text",
   
-      `text--${size}`,
+  `text--${size}`,
   
-      `text--${variant}`,
+  `text--${variant}`,
   
-      className,
-    ]
-      .filter(Boolean)
-      .join(" ");
+  className,
   
-    return (
-      <Tag
-        className={classes}
+  ]
+  .filter(Boolean)
+  .join(" ");
   
-        {...props}
-      >
-        {children}
-      </Tag>
-    );
+  return (
+  
+  <Tag
+    className={classes}
+    {...props}
+  >
+    {children}
+  </Tag>
+  
+  );
   }

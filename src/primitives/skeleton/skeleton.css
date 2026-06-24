@@ -28,6 +28,23 @@
   aspect-ratio: 16 / 9;
 }
 
+/* ======================================
+   WRAPPER
+====================================== */
+
+.skeleton-wrapper {
+  position: relative;
+}
+
+.skeleton-content--hidden {
+  visibility: hidden;
+}
+
+.skeleton-wrapper > .skeleton {
+  position: absolute;
+
+  inset: 0;
+}
 
 /* ======================================
    ANIMATION

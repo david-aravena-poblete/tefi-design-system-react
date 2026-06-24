@@ -4,6 +4,7 @@
 
 import type {
   HTMLAttributes,
+  ReactNode,
 } from "react";
 
 /* ======================================
@@ -30,6 +31,10 @@ export type SkeletonVariant =
 
 export interface SkeletonProps
   extends HTMLAttributes<HTMLDivElement> {
+
+  children?: ReactNode;
+
+  loading?: boolean;
 
   width?: string;
 
