@@ -7,19 +7,19 @@ import {
     type CSSProperties,
     } from "react";
     
-    import "./expandable-text.css";
+    import "./read-more.css";
     
     import { Text } from "../text";
     
     import type {
-    ExpandableTextProps,
-    } from "./expandable-text.types";
+    ReadMoreProps,
+    } from "./read-more.types";
     
     /* ======================================
-    EXPANDABLE TEXT
+    READ MORE
     ====================================== */
     
-    export function ExpandableText({
+    export function ReadMore({
     children,
     
     lines = 4,
@@ -31,7 +31,7 @@ import {
     className = "",
     
     ...props
-    }: ExpandableTextProps) {
+    }: ReadMoreProps) {
     
     const [expanded, setExpanded] =
     useState(false);
@@ -47,7 +47,7 @@ import {
     
     <div
       className={[
-        "expandable-text",
+        "read-more",
     
         className,
       ]
@@ -59,7 +59,7 @@ import {
       <Text
         className={
           !expanded
-            ? "expandable-text__content--clamp"
+            ? "read-more__content--clamp"
             : ""
         }
         style={style}
@@ -69,7 +69,7 @@ import {
     
       <button
         type="button"
-        className="expandable-text__toggle"
+        className="read-more__toggle"
         onClick={() =>
           setExpanded(
             !expanded

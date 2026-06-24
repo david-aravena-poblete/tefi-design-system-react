@@ -11,7 +11,7 @@ import type {
      PROPS
   ====================================== */
   
-  export interface ExpandableTextProps
+  export interface ReadMoreProps
     extends HTMLAttributes<HTMLDivElement> {
   
     children?: ReactNode;

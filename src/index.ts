@@ -52,7 +52,7 @@ export { Typewriter } from "./components/typewriter";
 export {
   Heading,
   Text,
-  ExpandableText,
+  ReadMore,
 } from "./components/typography";
 
 
