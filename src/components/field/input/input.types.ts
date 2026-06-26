@@ -2,15 +2,15 @@ import type { InputHTMLAttributes, ReactNode} from "react";
 import type { FieldState} from "../../../primitives/field";
 
 import {
-  FIELD_SIZES,
-} from "../../../shared/field.constants";
+  SIZES,
+} from "../../../shared/constants";
 
 /* ======================================
    INPUT SIZE
 ====================================== */
 
 export type InputSize =
-  typeof FIELD_SIZES[number];
+  typeof SIZES[number];
 
 /* ======================================
    INPUT PROPS

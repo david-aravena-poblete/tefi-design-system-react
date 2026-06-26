@@ -7,15 +7,15 @@ import type {
   } from "../../../primitives/field";
   
   import {
-    FIELD_SIZES,
-  } from "../../../shared/field.constants";
+    SIZES,
+  } from "../../../shared/constants";
   
   /* ======================================
      SELECT SIZE
   ====================================== */
   
   export type SelectSize =
-    typeof FIELD_SIZES[number];
+    typeof SIZES[number];
   
   /* ======================================
      SELECT PROPS

@@ -22,9 +22,9 @@ import "./foundations/typography.css";
 ====================================== */
 
 export {
-  FIELD_STATES,
-  FIELD_SIZES,
-} from "./shared/field.constants";
+  STATES as FIELD_STATES,
+  SIZES as FIELD_SIZES,
+} from "./shared/constants";
 
 
 /* ======================================

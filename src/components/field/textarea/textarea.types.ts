@@ -1,14 +1,14 @@
 import type { TextareaHTMLAttributes } from "react";
   
   import type { FieldState } from "../../../primitives/field"; 
-  import { FIELD_SIZES } from "../../../shared/field.constants";
+  import { SIZES } from "../../../shared/constants";
   
   /* ======================================
      TEXTAREA SIZE
   ====================================== */
   
   export type TextareaSize =
-    typeof FIELD_SIZES[number];
+    typeof SIZES[number];
   
   /* ======================================
      TEXTAREA PROPS

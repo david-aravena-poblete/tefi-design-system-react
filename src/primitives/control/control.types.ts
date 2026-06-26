@@ -8,15 +8,15 @@ import type {
   } from "../field";
   
   import {
-    FIELD_SIZES,
-  } from "../../shared/field.constants";
+    SIZES,
+  } from "../../shared/constants";
   
   /* ======================================
      CONTROL SIZE
   ====================================== */
   
   export type ControlSize =
-    typeof FIELD_SIZES[number];
+    typeof SIZES[number];
   
   /* ======================================
      CONTROL SHAPE

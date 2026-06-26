@@ -1,10 +1,15 @@
-import type {
-    BUTTON_VARIANTS,
-    BUTTON_SIZES,
-  } from "./button.constants";
-  
-  export type ButtonVariant =
-    (typeof BUTTON_VARIANTS)[number];
-  
-  export type ButtonSize =
-    (typeof BUTTON_SIZES)[number];
+import { SIZES } from "../../shared/constants";
+
+const BUTTON_VARIANTS = [
+  "primary",
+  "secondary",
+  "ghost",
+  "link",
+  "danger",
+] as const;
+
+export type ButtonVariant =
+  (typeof BUTTON_VARIANTS)[number];
+
+export type ButtonSize =
+  (typeof SIZES)[number];

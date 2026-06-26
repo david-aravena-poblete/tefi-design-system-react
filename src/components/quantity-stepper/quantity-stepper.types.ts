@@ -3,14 +3,14 @@
 ====================================== */
 
 import type { HTMLAttributes } from "react";
-import { FIELD_SIZES } from "../../shared/field.constants";
+import { SIZES } from "../../shared/constants";
   
   /* ======================================
      QUANTITY STEPPER SIZE
   ====================================== */
   
   export type QuantityStepperSize =
-    typeof FIELD_SIZES[number];
+    typeof SIZES[number];
   
   /* ======================================
      QUANTITY STEPPER PROPS

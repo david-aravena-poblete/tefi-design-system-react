@@ -1,3 +1,5 @@
+import React from "react";
+
 import type {
   Meta,
   StoryObj,
@@ -10,12 +12,21 @@ import {
 
 import { Button } from "./Button";
 
-import {
-  BUTTON_VARIANTS,
-  BUTTON_SIZES,
-} from "./button.constants";
+import { SIZES } from "../../shared/constants";
 
 import { Icon } from "../../primitives/icon";
+
+/* ======================================
+   CONSTANTS
+====================================== */
+
+const BUTTON_VARIANTS = [
+  "primary",
+  "secondary",
+  "ghost",
+  "link",
+  "danger",
+] as const;
 
 /* ======================================
    META
@@ -37,7 +48,7 @@ const meta = {
     size: {
       control: "select",
 
-      options: BUTTON_SIZES,
+      options: SIZES,
     },
 
     fullWidth: {

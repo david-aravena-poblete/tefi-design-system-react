@@ -5,9 +5,9 @@
 import { Textarea } from "./Textarea";
 
 import {
-  FIELD_STATES,
-  FIELD_SIZES,
-} from "../../../shared/field.constants";
+  STATES,
+  SIZES,
+} from "../../../shared/constants";
 
 /* ======================================
    META
@@ -26,13 +26,13 @@ export default {
     state: {
       control: "select",
 
-      options: FIELD_STATES,
+      options: STATES,
     },
 
     textareaSize: {
       control: "select",
 
-      options: FIELD_SIZES,
+      options: SIZES,
     },
   },
 };

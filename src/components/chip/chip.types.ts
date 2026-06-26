@@ -3,14 +3,14 @@
 ====================================== */
 
 import type { HTMLAttributes, ReactNode } from "react";
-import { FIELD_SIZES } from "../../shared/field.constants";
+import { SIZES } from "../../shared/constants";
   
   /* ======================================
      CHIP SIZE
   ====================================== */
   
   export type ChipSize =
-    typeof FIELD_SIZES[number];
+    typeof SIZES[number];
   
   /* ======================================
      CHIP PROPS

@@ -4,7 +4,7 @@
 
 import { useState } from "react";
 import "./quantity-stepper.css";
-import { FIELD_SIZES } from "@/shared/field.constants";
+import { SIZES } from "@/shared/constants";
 import type { QuantityStepperProps } from "./quantity-stepper.types";
 
 /* ======================================
@@ -51,7 +51,7 @@ export function QuantityStepper({
       : internal;
 
   const safeSize =
-    FIELD_SIZES.includes(size)
+    SIZES.includes(size)
       ? size
       : "md";
 

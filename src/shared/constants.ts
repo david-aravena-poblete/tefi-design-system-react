@@ -1,8 +1,8 @@
 /* ======================================
-   FIELD STATES
+   STATES
 ====================================== */
 
-export const FIELD_STATES = [
+export const STATES = [
     "default",
     "error",
     "success",
@@ -11,10 +11,10 @@ export const FIELD_STATES = [
   
   
   /* ======================================
-     FIELD SIZES
+     SIZES
   ====================================== */
   
-  export const FIELD_SIZES = [
+  export const SIZES = [
     "sm",
     "md",
     "lg",

@@ -1,15 +1,15 @@
 import type { ReactNode } from "react";
 
 import {
-  FIELD_STATES,
-} from "../../shared/field.constants";
+  STATES,
+} from "../../shared/constants";
 
 /* ======================================
    FIELD STATE
 ====================================== */
 
 export type FieldState =
-  typeof FIELD_STATES[number];
+  typeof STATES[number];
 
 /* ======================================
    FIELD PROPS
