@@ -9,8 +9,12 @@ import clsx from "clsx";
 import "./button.css";
 
 import { Spinner } from "../../primitives/spinner";
+import { Skeleton } from "../../primitives/skeleton";
 
-import type {ButtonVariant, ButtonSize} from "./button.types";
+import type {
+  ButtonVariant,
+  ButtonSize,
+} from "./button.types";
 
 /* ======================================
    TYPES
@@ -25,6 +29,7 @@ interface ButtonProps
   fullWidth?: boolean;
 
   loading?: boolean;
+  skeleton?: boolean;
 
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
@@ -47,6 +52,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       fullWidth = false,
 
       loading = false,
+      skeleton = false,
 
       disabled,
 
@@ -85,10 +91,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
 
     /* ======================================
-       RENDER
+       BUTTON
     ====================================== */
 
-    return (
+    const button = (
       <button
         ref={ref}
         type={type}
@@ -132,6 +138,29 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         )}
       </button>
     );
+
+    /* ======================================
+       SKELETON
+    ====================================== */
+
+    if (skeleton) {
+
+      return (
+        <Skeleton
+          loading
+          fullWidth={fullWidth}
+        >
+          {button}
+        </Skeleton>
+      );
+
+    }
+
+    /* ======================================
+       RENDER
+    ====================================== */
+
+    return button;
   }
 );
 

@@ -36,6 +36,8 @@ export interface SkeletonProps
 
   loading?: boolean;
 
+  fullWidth?: boolean;
+
   width?: string;
 
   height?: string;

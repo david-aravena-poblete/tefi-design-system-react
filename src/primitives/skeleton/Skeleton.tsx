@@ -1,5 +1,5 @@
 /* ======================================
-IMPORTS
+   IMPORTS
 ====================================== */
 
 import clsx from "clsx";
@@ -7,142 +7,145 @@ import clsx from "clsx";
 import "./skeleton.css";
 
 import type {
-SkeletonProps,
+  SkeletonProps,
 } from "./skeleton.types";
 
 /* ======================================
-VARIANTS
+   VARIANTS
 ====================================== */
 
 const variants = {
-heading: {
-width: "70%",
-height: "22px",
-},
+  heading: {
+    width: "70%",
+    height: "22px",
+  },
 
-text: {
-width: "100%",
-height: "56px",
-},
+  text: {
+    width: "100%",
+    height: "56px",
+  },
 
-button: {
-width: "100%",
-height: "44px",
-},
+  button: {
+    width: "100%",
+    height: "44px",
+  },
 } as const;
 
 /* ======================================
-SKELETON
+   SKELETON
 ====================================== */
 
 export function Skeleton({
-children,
+  children,
 
-loading = true,
+  loading = true,
 
-width,
+  fullWidth = false,
 
-height,
+  width,
 
-radius = "8px",
+  height,
 
-animated = true,
+  radius = "8px",
 
-ratio,
+  animated = true,
 
-variant,
+  ratio,
 
-className,
+  variant,
 
-style,
+  className,
 
-...props
+  style,
+
+  ...props
 }: SkeletonProps) {
 
-const preset =
-variant
-? variants[variant]
-: undefined;
+  const preset =
+    variant
+      ? variants[variant]
+      : undefined;
 
-const classes = clsx(
-"skeleton",
+  const classes = clsx(
+    "skeleton",
 
-ratio &&
-  `skeleton--${ratio.replace(":", "-")}`,
+    ratio &&
+      `skeleton--${ratio.replace(":", "-")}`,
 
-animated &&
-  "skeleton--animated",
+    animated &&
+      "skeleton--animated",
 
-className
+    className
+  );
 
-);
+  /* ======================================
+     WRAPPER MODE
+  ====================================== */
 
-/* ======================================
-WRAPPER MODE
-====================================== */
+  if (children !== undefined) {
 
-if (children !== undefined) {
+    if (!loading) {
+      return <>{children}</>;
+    }
 
-if (!loading) {
-  return <>{children}</>;
-}
+    return (
+      <div
+        className={clsx(
+          "skeleton-wrapper",
+          {
+            "skeleton-wrapper--full": fullWidth,
+          }
+        )}
+      >
+        <div
+          className="
+            skeleton-content
+            skeleton-content--hidden
+          "
+        >
+          {children}
+        </div>
 
-return (
-  <div
-    className="skeleton-wrapper"
-  >
+        <div
+          className={classes}
+          style={{
+            borderRadius: radius,
+          }}
+        />
 
-    <div
-      className="
-        skeleton-content
-        skeleton-content--hidden
-      "
-    >
-      {children}
-    </div>
+      </div>
+    );
 
+  }
+
+  /* ======================================
+     DEFAULT MODE
+  ====================================== */
+
+  return (
     <div
       className={classes}
       style={{
+        width:
+          width ??
+          preset?.width ??
+          "100%",
+
+        height:
+          ratio
+            ? undefined
+            : (
+                height ??
+                preset?.height ??
+                "1rem"
+              ),
+
         borderRadius: radius,
+
+        ...style,
       }}
+
+      {...props}
     />
-
-  </div>
-);
-
-}
-
-/* ======================================
-DEFAULT MODE
-====================================== */
-
-return (
-<div
-className={classes}
-
-  style={{
-    width:
-      width ??
-      preset?.width ??
-      "100%",
-
-    height:
-      ratio
-        ? undefined
-        : (
-            height ??
-            preset?.height ??
-            "1rem"
-          ),
-
-    borderRadius: radius,
-
-    ...style,
-  }}
-
-  {...props}
-/>
-
-);
+  );
 }

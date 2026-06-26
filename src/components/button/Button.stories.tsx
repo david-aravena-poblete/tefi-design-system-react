@@ -187,3 +187,10 @@ export const FullWidth: Story = {
     fullWidth: true,
   },
 };
+
+export const Skeleton: Story = {
+  args: {
+    children: "Guardar",
+    skeleton: true,
+  },
+};
