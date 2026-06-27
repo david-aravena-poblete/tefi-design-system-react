@@ -1,4 +1,17 @@
 /* ======================================
+   SKELETON
+====================================== */
+
+.skeleton {
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    var(--surface-skeleton-bg);
+}
+
+/* ======================================
    RATIO
 ====================================== */
 
@@ -24,9 +37,7 @@
   display: inline-flex;
 }
 
-.skeleton-wrapper--full {
-  display: flex;
-
+.skeleton-wrapper--fill {
   width: 100%;
 }
 
@@ -38,4 +49,48 @@
   position: absolute;
 
   inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* ======================================
+   ANIMATION
+====================================== */
+
+.skeleton--animated::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  transform:
+    translateX(-100%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+
+  animation:
+    skeleton-shimmer
+    1.5s
+    infinite;
+}
+
+/* ======================================
+   KEYFRAMES
+====================================== */
+
+@keyframes skeleton-shimmer {
+
+  100% {
+    transform:
+      translateX(100%);
+  }
+
 }

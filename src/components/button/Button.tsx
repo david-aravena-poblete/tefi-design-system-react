@@ -1,3 +1,7 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import {
   forwardRef,
   type ButtonHTMLAttributes,
@@ -24,14 +28,17 @@ interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
 
   variant?: ButtonVariant;
+
   size?: ButtonSize;
 
   fullWidth?: boolean;
 
   loading?: boolean;
+
   skeleton?: boolean;
 
   iconLeft?: ReactNode;
+
   iconRight?: ReactNode;
 }
 
@@ -47,16 +54,19 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       type = "button",
 
       variant = "primary",
+
       size = "md",
 
       fullWidth = false,
 
       loading = false,
+
       skeleton = false,
 
       disabled,
 
       iconLeft,
+
       iconRight,
 
       className,
@@ -67,7 +77,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
 
     /* ======================================
-       DERIVED STATE
+       DERIVED
     ====================================== */
 
     const isDisabled =
@@ -79,11 +89,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     const classes = clsx(
       "button",
+
       `button--${variant}`,
+
       `button--${size}`,
 
       {
         "button--full": fullWidth,
+
         "button--loading": loading,
       },
 
@@ -97,16 +110,21 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const button = (
       <button
         ref={ref}
+
         type={type}
+
         className={classes}
+
         disabled={isDisabled}
+
         aria-busy={loading}
+
         {...rest}
       >
+
         {iconLeft && !loading && (
           <span
             className="button__icon button__icon--left"
-            data-slot="icon-left"
           >
             {iconLeft}
           </span>
@@ -114,7 +132,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
         <span
           className="button__label"
-          data-slot="label"
         >
           {children}
         </span>
@@ -122,7 +139,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {loading && (
           <span
             className="button__spinner"
-            data-slot="spinner"
           >
             <Spinner size="sm" />
           </span>
@@ -131,11 +147,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {iconRight && !loading && (
           <span
             className="button__icon button__icon--right"
-            data-slot="icon-right"
           >
             {iconRight}
           </span>
         )}
+
       </button>
     );
 
@@ -147,8 +163,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
       return (
         <Skeleton
-          loading
-          fullWidth={fullWidth}
+          fill={fullWidth}
         >
           {button}
         </Skeleton>
@@ -161,6 +176,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ====================================== */
 
     return button;
+
   }
 );
 

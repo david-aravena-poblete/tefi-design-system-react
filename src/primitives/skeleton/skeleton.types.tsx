@@ -17,15 +17,6 @@ export type SkeletonRatio =
   | "16:9";
 
 /* ======================================
-   SKELETON VARIANT
-====================================== */
-
-export type SkeletonVariant =
-  | "heading"
-  | "text"
-  | "button";
-
-/* ======================================
    SKELETON PROPS
 ====================================== */
 
@@ -34,9 +25,7 @@ export interface SkeletonProps
 
   children?: ReactNode;
 
-  loading?: boolean;
-
-  fullWidth?: boolean;
+  fill?: boolean;
 
   width?: string;
 
@@ -47,6 +36,4 @@ export interface SkeletonProps
   animated?: boolean;
 
   ratio?: SkeletonRatio;
-
-  variant?: SkeletonVariant;
 }

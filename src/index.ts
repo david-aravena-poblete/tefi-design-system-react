@@ -13,7 +13,6 @@ import "./foundations/brands/default.css";
 import "./foundations/brands/daravena.css";
 
 import "./foundations/states.css";
-import "./foundations/skeleton.css";
 import "./foundations/base.css";
 import "./foundations/typography.css";
 

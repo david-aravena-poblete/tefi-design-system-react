@@ -24,6 +24,5 @@
 ====================================== */
 
 @import "./foundations/states.css";
-@import "./foundations/skeleton.css";
 @import "./foundations/typography.css";
 @import "./foundations/base.css";

@@ -29,4 +29,7 @@ import type {
     fit?: ImageFit;
   
     ratio?: ImageRatio;
+
+    skeleton?: boolean;
+    
   }

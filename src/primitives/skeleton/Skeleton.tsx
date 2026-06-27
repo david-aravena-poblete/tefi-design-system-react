@@ -11,38 +11,15 @@ import type {
 } from "./skeleton.types";
 
 /* ======================================
-   VARIANTS
-====================================== */
-
-const variants = {
-  heading: {
-    width: "70%",
-    height: "22px",
-  },
-
-  text: {
-    width: "100%",
-    height: "56px",
-  },
-
-  button: {
-    width: "100%",
-    height: "44px",
-  },
-} as const;
-
-/* ======================================
    SKELETON
 ====================================== */
 
 export function Skeleton({
   children,
 
-  loading = true,
+  fill = false,
 
-  fullWidth = false,
-
-  width,
+  width = "100%",
 
   height,
 
@@ -52,8 +29,6 @@ export function Skeleton({
 
   ratio,
 
-  variant,
-
   className,
 
   style,
@@ -61,10 +36,9 @@ export function Skeleton({
   ...props
 }: SkeletonProps) {
 
-  const preset =
-    variant
-      ? variants[variant]
-      : undefined;
+  /* ======================================
+     CLASSES
+  ====================================== */
 
   const classes = clsx(
     "skeleton",
@@ -79,66 +53,19 @@ export function Skeleton({
   );
 
   /* ======================================
-     WRAPPER MODE
+     BASE
   ====================================== */
 
-  if (children !== undefined) {
-
-    if (!loading) {
-      return <>{children}</>;
-    }
-
-    return (
-      <div
-        className={clsx(
-          "skeleton-wrapper",
-          {
-            "skeleton-wrapper--full": fullWidth,
-          }
-        )}
-      >
-        <div
-          className="
-            skeleton-content
-            skeleton-content--hidden
-          "
-        >
-          {children}
-        </div>
-
-        <div
-          className={classes}
-          style={{
-            borderRadius: radius,
-          }}
-        />
-
-      </div>
-    );
-
-  }
-
-  /* ======================================
-     DEFAULT MODE
-  ====================================== */
-
-  return (
+  const skeleton = (
     <div
       className={classes}
       style={{
-        width:
-          width ??
-          preset?.width ??
-          "100%",
+        width,
 
         height:
           ratio
             ? undefined
-            : (
-                height ??
-                preset?.height ??
-                "1rem"
-              ),
+            : height,
 
         borderRadius: radius,
 
@@ -148,4 +75,43 @@ export function Skeleton({
       {...props}
     />
   );
+
+  /* ======================================
+     WRAPPER
+  ====================================== */
+
+  if (children !== undefined) {
+
+    return (
+      <div
+        className={clsx(
+          "skeleton-wrapper",
+          {
+            "skeleton-wrapper--fill": fill,
+          }
+        )}
+      >
+
+        <div
+          className="
+            skeleton-content
+            skeleton-content--hidden
+          "
+        >
+          {children}
+        </div>
+
+        {skeleton}
+
+      </div>
+    );
+
+  }
+
+  /* ======================================
+     RENDER
+  ====================================== */
+
+  return skeleton;
+
 }
