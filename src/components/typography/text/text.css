@@ -1,63 +1,130 @@
 /* ======================================
-BASE
+   BASE
 ====================================== */
 
 .text {
   margin: 0;
-  
+
   font-size:
-  var(--font-md);
-  
+    var(--font-md);
+
   line-height:
-  var(--line-normal);
-  
+    var(--line-normal);
+
   font-weight:
-  var(--font-weight-regular);
-  
+    var(--font-weight-regular);
+
   color:
-  var(--color-text-primary);
-  
+    var(--color-text-primary);
+
   overflow-wrap:
-  break-word;
-  
+    break-word;
+
   white-space:
-  pre-line;
-  }
-  
-  /* ======================================
-  SIZE
-  ====================================== */
-  
-  .text--sm {
+    pre-line;
+}
+
+/* ======================================
+   SIZE
+====================================== */
+
+.text--sm {
   font-size:
-  var(--font-sm);
-  }
-  
-  .text--md {
+    var(--font-sm);
+}
+
+.text--md {
   font-size:
-  var(--font-md);
-  }
-  
-  /* ======================================
-  VARIANTS
-  ====================================== */
-  
-  .text--default {
+    var(--font-md);
+}
+
+/* ======================================
+   VARIANTS
+====================================== */
+
+.text--default {
   color:
-  var(--color-text-primary);
-  }
-  
-  .text--secondary {
+    var(--color-text-primary);
+}
+
+.text--secondary {
   color:
-  var(--color-text-secondary);
-  }
-  
-  .text--muted {
+    var(--color-text-secondary);
+}
+
+.text--muted {
   color:
-  var(--color-text-muted);
-  }
-  
-  .text--inverse {
+    var(--color-text-muted);
+}
+
+.text--inverse {
   color:
-  var(--color-text-inverse);
-  }
+    var(--color-text-inverse);
+}
+
+/* ======================================
+   EXPANDABLE
+====================================== */
+
+.read-more {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  width: 100%;
+
+  gap: var(--space-xs);
+}
+
+.read-more__content--clamp {
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.read-more__toggle {
+  align-self: flex-start;
+
+  padding: 0;
+
+  margin: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  color:
+    var(--color-primary);
+
+  font: inherit;
+
+  font-weight:
+    var(--font-weight-medium);
+
+  text-decoration: none;
+}
+
+.read-more__toggle:hover {
+  text-decoration: underline;
+}
+
+.read-more__toggle:focus-visible {
+  outline: 2px solid
+    var(--color-primary);
+
+  outline-offset: 2px;
+
+  border-radius: 4px;
+}
+
+.read-more__toggle-skeleton {
+  align-self: flex-start;
+}
