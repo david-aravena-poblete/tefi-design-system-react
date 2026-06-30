@@ -3,53 +3,66 @@
 ====================================== */
 
 .heading {
-    margin: 0;
-  
-    line-height:
-      var(--line-tight);
-  
-    color:
-      var(--color-text-primary);
-  
-    font-weight:
-      var(--font-weight-semibold);
+  margin: 0;
 
-    overflow-wrap:
-      break-word;
-  }
+  line-height:
+    var(--line-tight);
 
-  
-  
-  /* ======================================
-     LEVELS
-  ====================================== */
-  
-  .heading-1 {
-    font-size:
-      var(--font-2xl);
-  }
-  
-  .heading-2 {
-    font-size:
-      var(--font-xl);
-  }
-  
-  .heading-3 {
-    font-size:
-      var(--font-lg);
-  }
-  
-  .heading-4 {
-    font-size:
-      var(--font-md);
-  }
-  
-  .heading-5 {
-    font-size:
-      var(--font-sm);
-  }
-  
-  .heading-6 {
-    font-size:
-      var(--font-xs);
-  }
+  color:
+    var(--color-text-primary);
+
+  font-weight:
+    var(--font-weight-semibold);
+
+  overflow-wrap:
+    break-word;
+}
+
+/* ======================================
+   SIZES
+====================================== */
+
+.heading--xs {
+  font-size:
+    var(--font-xs);
+}
+
+.heading--sm {
+  font-size:
+    var(--font-sm);
+}
+
+.heading--md {
+  font-size:
+    var(--font-md);
+}
+
+.heading--lg {
+  font-size:
+    var(--font-lg);
+}
+
+.heading--xl {
+  font-size:
+    var(--font-xl);
+}
+
+.heading--2xl {
+  font-size:
+    var(--font-2xl);
+}
+
+.heading--3xl {
+  font-size:
+    var(--font-3xl);
+}
+
+.heading--4xl {
+  font-size:
+    var(--font-4xl);
+}
+
+.heading--5xl {
+  font-size:
+    var(--font-5xl);
+}

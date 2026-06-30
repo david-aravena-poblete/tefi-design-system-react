@@ -20,6 +20,21 @@ export type HeadingLevel =
   | 6;
 
 /* ======================================
+   SIZE
+====================================== */
+
+export type HeadingSize =
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "3xl"
+  | "4xl"
+  | "5xl";
+
+/* ======================================
    PROPS
 ====================================== */
 
@@ -30,5 +45,8 @@ export interface HeadingProps
 
   level?: HeadingLevel;
 
+  size?: HeadingSize;
+
   skeleton?: boolean;
+
 }

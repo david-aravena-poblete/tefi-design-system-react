@@ -23,6 +23,8 @@ export function Heading({
 
   level = 1,
 
+  size = "2xl",
+
   skeleton = false,
 
   className = "",
@@ -54,7 +56,7 @@ export function Heading({
   const classes = [
     "heading",
 
-    `heading-${safeLevel}`,
+    `heading--${size}`,
 
     className,
   ]
@@ -94,4 +96,4 @@ export function Heading({
 
   return heading;
 
-} 
+}
