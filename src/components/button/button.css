@@ -111,14 +111,12 @@
 
   border: none;
 
-  min-height: auto;
-
-  padding: 0;
-
   color: var(--color-link-base);
 
   font-weight:
     var(--font-weight-medium);
+
+  text-decoration: none;
 }
 
 
@@ -245,6 +243,21 @@
     var(--space-lg);
 
   font-size: var(--font-lg);
+}
+
+
+/* ======================================
+   LINK SIZE OVERRIDES
+====================================== */
+
+.button--link.button--sm,
+.button--link.button--md,
+.button--link.button--lg {
+  padding: 0;
+
+  min-height: auto;
+
+  border-radius: 0;
 }
 
 

@@ -11,6 +11,7 @@ import {
 import "./text.css";
 
 import { Skeleton } from "@/primitives";
+import { Button } from "@/components/button";
 
 import type {
   TextProps,
@@ -87,43 +88,18 @@ export function ExpandableText({
         };
 
   /* ======================================
-     SKELETON
+     CONTENT
   ====================================== */
 
-  if (skeleton) {
-
-    return (
-
-      <div className="read-more">
-
-        <Skeleton>
-
-          <Tag
-            className={classes}
-            style={style}
-            {...props}
-          >
-            {children}
-          </Tag>
-
-        </Skeleton>
-
-        <Skeleton>
-
-          <button
-            type="button"
-            className="read-more__toggle"
-          >
-            {expandLabel}
-          </button>
-
-        </Skeleton>
-
-      </div>
-
-    );
-
-  }
+  const content = (
+    <Tag
+      className={classes}
+      style={style}
+      {...props}
+    >
+      {children}
+    </Tag>
+  );
 
   /* ======================================
      RENDER
@@ -133,17 +109,22 @@ export function ExpandableText({
 
     <div className="read-more">
 
-      <Tag
-        className={classes}
-        style={style}
-        {...props}
-      >
-        {children}
-      </Tag>
+      {skeleton ? (
 
-      <button
-        type="button"
-        className="read-more__toggle"
+        <Skeleton>
+          {content}
+        </Skeleton>
+
+      ) : (
+
+        content
+
+      )}
+
+      <Button
+        variant="link"
+        skeleton={skeleton}
+        disabled={skeleton}
         onClick={() =>
           setExpanded(!expanded)
         }
@@ -151,7 +132,7 @@ export function ExpandableText({
         {expanded
           ? collapseLabel
           : expandLabel}
-      </button>
+      </Button>
 
     </div>
 
