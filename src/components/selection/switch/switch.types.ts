@@ -30,7 +30,7 @@ export interface SwitchProps
 
   size?: SwitchSize;
 
-  children?: ReactNode;
+  thumb?: ReactNode;
 
-  icon?: ReactNode;
+  children?: ReactNode;
 }

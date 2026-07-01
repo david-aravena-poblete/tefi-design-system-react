@@ -39,18 +39,23 @@
   background:
     var(--control-indicator-color);
 
+  color:
+    var(--control-content-color);
+
   transition:
     transform var(--motion-snappy);
 }
 
 /* ======================================
-   ICON
+   THUMB CONTENT
 ====================================== */
 
-.switch__thumb .icon {
-  width: 60%;
+.switch__thumb > * {
+  width: 80%;
 
-  height: 60%;
+  height: 80%;
+
+  flex-shrink: 0;
 }
 
 /* ======================================

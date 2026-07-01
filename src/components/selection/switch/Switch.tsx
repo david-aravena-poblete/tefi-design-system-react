@@ -19,9 +19,9 @@ export function Switch({
 
   size = "md",
 
-  children,
+  thumb,
 
-  icon,
+  children,
 
   className = "",
 
@@ -46,7 +46,7 @@ export function Switch({
 
           <span className="switch__thumb">
 
-            {icon}
+            {thumb}
 
           </span>
 

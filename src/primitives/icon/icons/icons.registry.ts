@@ -2,6 +2,8 @@ import {
     Search,
     Plus,
     X,
+    Sun,
+    Moon,
   } from "lucide-react";
   
   /* ======================================
@@ -12,4 +14,6 @@ import {
     search: Search,
     plus: Plus,
     close: X,
+    sun: Sun,
+    moon: Moon,
   };
