@@ -1,7 +1,10 @@
 import clsx from "clsx";
-import "./container.css";
-import type { ContainerProps } from "@/layouts/container/container.types";
 
+import "./container.css";
+
+import type {
+  ContainerProps,
+} from "@/layouts/container/container.types";
 
 /* ======================================
    CONTAINER
@@ -9,9 +12,17 @@ import type { ContainerProps } from "@/layouts/container/container.types";
 
 export function Container({
   children,
+
   as: Component = "div",
+
   size = "md",
+
+  paddingTop,
+
+  paddingBottom,
+
   className,
+
   ...props
 }: ContainerProps) {
 
@@ -19,6 +30,12 @@ export function Container({
     "container",
 
     `container--${size}`,
+
+    paddingTop &&
+      `container--pt-${paddingTop}`,
+
+    paddingBottom &&
+      `container--pb-${paddingBottom}`,
 
     className,
   );

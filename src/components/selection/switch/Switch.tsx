@@ -3,8 +3,12 @@
 ====================================== */
 
 import "./switch.css";
+
 import { Control } from "@/primitives/control";
-import type { SwitchProps } from "./switch.types";
+
+import type {
+  SwitchProps,
+} from "./switch.types";
 
 /* ======================================
    SWITCH
@@ -16,6 +20,8 @@ export function Switch({
   size = "md",
 
   children,
+
+  icon,
 
   className = "",
 
@@ -35,11 +41,17 @@ export function Switch({
       className={className}
 
       renderControl={() => (
+
         <span className="switch">
 
-          <span className="switch__thumb" />
+          <span className="switch__thumb">
+
+            {icon}
+
+          </span>
 
         </span>
+
       )}
 
       {...rest}
