@@ -47,23 +47,33 @@ export function Variants() {
     <Stack gap="md">
 
       <Button variant="primary">
+
         Primary
+
       </Button>
 
       <Button variant="secondary">
+
         Secondary
+
       </Button>
 
       <Button variant="ghost">
+
         Ghost
+
       </Button>
 
       <Button variant="link">
+
         Link
+
       </Button>
 
       <Button variant="danger">
+
         Danger
+
       </Button>
 
     </Stack>
@@ -83,15 +93,21 @@ export function Sizes() {
     <Stack gap="md">
 
       <Button size="sm">
+
         Small
+
       </Button>
 
       <Button size="md">
+
         Medium
+
       </Button>
 
       <Button size="lg">
+
         Large
+
       </Button>
 
     </Stack>
@@ -101,34 +117,69 @@ export function Sizes() {
 }
 
 /* ======================================
-   WITH ICONS
+   ICONS
 ====================================== */
 
-export function WithIcons() {
+export function Icons() {
 
   return (
 
     <Stack gap="md">
 
-      <Button>
-
-        <Icon name="search" />
+      <Button
+        startIcon={
+          <Icon name="search" />
+        }
+      >
 
         Search
 
       </Button>
 
-      <Button variant="secondary">
+      <Button
+        variant="secondary"
+        endIcon={
+          <Icon name="search" />
+        }
+      >
 
         Settings
 
-        <Icon name="settings" />
+      </Button>
+
+      <Button
+        variant="primary"
+        startIcon={
+          <Icon name="search" />
+        }
+        endIcon={
+          <Icon name="search" />
+        }
+      >
+
+        Download
 
       </Button>
 
-      <Button variant="danger">
+      <Button
+        variant="danger"
+        startIcon={
+          <Icon name="search" />
+        }
+      >
 
-        <Icon name="trash" />
+        Delete
+
+      </Button>
+
+      <Button
+        variant="ghost"
+        startIcon={
+          <Icon name="search" />
+        }
+      >
+
+        Profile
 
       </Button>
 

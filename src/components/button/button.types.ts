@@ -40,6 +40,10 @@ export interface ButtonProps
 
   children?: ReactNode;
 
+  startIcon?: ReactNode;
+
+  endIcon?: ReactNode;
+
   variant?: ButtonVariant;
 
   size?: ButtonSize;

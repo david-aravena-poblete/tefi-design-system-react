@@ -31,6 +31,10 @@ export const Button = forwardRef<
     {
       children,
 
+      startIcon,
+
+      endIcon,
+
       type = "button",
 
       variant = "primary",
@@ -76,7 +80,7 @@ export const Button = forwardRef<
         "button--loading": loading,
       },
 
-      className
+      className,
     );
 
     /* ======================================
@@ -100,10 +104,18 @@ export const Button = forwardRef<
           align="center"
         >
 
+          {startIcon}
+
           {children}
 
+          {endIcon}
+
           {loading && (
-            <Spinner size="sm" />
+
+            <Spinner
+              size="sm"
+            />
+
           )}
 
         </Inline>
@@ -120,7 +132,9 @@ export const Button = forwardRef<
 
       return (
 
-        <Skeleton fill={fullWidth}>
+        <Skeleton
+          fill={fullWidth}
+        >
 
           {button}
 

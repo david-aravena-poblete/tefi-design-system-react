@@ -20,6 +20,10 @@ import type {
 export function Chip({
   children,
 
+  startIcon,
+
+  endIcon,
+
   size = "md",
 
   disabled = false,
@@ -76,7 +80,11 @@ export function Chip({
         align="center"
       >
 
+        {startIcon}
+
         {children}
+
+        {endIcon}
 
         {removable && (
 

@@ -1,5 +1,6 @@
 import type {
   HTMLAttributes,
+  ReactNode,
 } from "react";
 
 import { SIZES } from "../../shared/constants";
@@ -9,6 +10,12 @@ export type ChipSize =
 
 export interface ChipProps
   extends HTMLAttributes<HTMLDivElement> {
+
+  children?: ReactNode;
+
+  startIcon?: ReactNode;
+
+  endIcon?: ReactNode;
 
   size?: ChipSize;
 

@@ -40,28 +40,79 @@ export function Default() {
 
 
 /* ======================================
-   WITH ICON
+   ICONS
 ====================================== */
 
-export function WithIcon() {
+export function Icons() {
 
   return (
 
-    <Chip>
+    <Inline gap="md" wrap>
 
-      <Icon
-        name="search"
-        size="sm"
-      />
+      <Chip
+        startIcon={
+          <Icon
+            name="search"
+            size="sm"
+          />
+        }
+      >
 
-      Search
+        Search
 
-    </Chip>
+      </Chip>
+
+      <Chip
+        endIcon={
+          <Icon
+            name="search"
+            size="sm"
+          />
+        }
+      >
+
+        Search
+
+      </Chip>
+
+      <Chip
+        startIcon={
+          <Icon
+            name="search"
+            size="sm"
+          />
+        }
+        endIcon={
+          <Icon
+            name="search"
+            size="sm"
+          />
+        }
+      >
+
+        Search
+
+      </Chip>
+
+      <Chip
+        startIcon={
+          <Icon
+            name="search"
+            size="sm"
+          />
+        }
+        removable
+      >
+
+        Search
+
+      </Chip>
+
+    </Inline>
 
   );
 
 }
-
 
 /* ======================================
    REMOVABLE

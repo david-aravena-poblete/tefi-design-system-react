@@ -364,8 +364,6 @@ export function Combobox({
                 <Chip
                   key={option.value}
 
-                  label={option.label}
-
                   size={inputSize}
 
                   removable
@@ -377,11 +375,11 @@ export function Combobox({
                       option.value
                     )
                   }
-                />
-
-              )
-            )}
-
+                >
+                  {option.label}
+                  </Chip>
+                )
+              )}
           </div>
         )}
 
