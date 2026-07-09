@@ -3,16 +3,11 @@
 ====================================== */
 
 import { useState } from "react";
-
 import clsx from "clsx";
-
 import "./image.css";
-
 import { Skeleton } from "../../primitives/skeleton";
 
-import type {
-  ImageProps,
-} from "./image.types";
+import type { ImageProps } from "./image.types";
 
 /* ======================================
    IMAGE
@@ -20,17 +15,11 @@ import type {
 
 export function Image({
   fit = "cover",
-
   ratio = "16:9",
-
   skeleton = false,
-
   className,
-
   alt,
-
   onLoad,
-
   ...props
 }: ImageProps) {
 
@@ -38,8 +27,7 @@ export function Image({
      STATE
   ====================================== */
 
-  const [loaded, setLoaded] =
-    useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   /* ======================================
      CLASSES
@@ -53,7 +41,9 @@ export function Image({
 
   const imageClasses = clsx(
     "image__content",
-    `image__content--${fit}`
+    `image__content--${fit}`,
+    // Añadimos la clase de opacidad solo cuando ya cargó
+    loaded && "image__content--loaded"
   );
 
   /* ======================================
@@ -61,7 +51,6 @@ export function Image({
   ====================================== */
 
   if (skeleton) {
-
     return (
       <div className={wrapperClasses}>
         <Skeleton
@@ -71,7 +60,6 @@ export function Image({
         />
       </div>
     );
-
   }
 
   /* ======================================
@@ -81,6 +69,7 @@ export function Image({
   return (
     <div className={wrapperClasses}>
 
+      {/* Mantenemos el skeleton interno mientras no esté cargada */}
       {!loaded && (
         <Skeleton
           fill
@@ -89,23 +78,18 @@ export function Image({
         />
       )}
 
+      {/* La imagen descarga de fondo invisible (opacity: 0 por CSS) 
+          hasta que dispara el onLoad */}
       <img
         className={imageClasses}
-
         alt={alt}
-
         onLoad={(event) => {
-
           setLoaded(true);
-
           onLoad?.(event);
-
         }}
-
         {...props}
       />
 
     </div>
   );
-
 }

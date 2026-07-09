@@ -1,196 +1,193 @@
 import React from "react";
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
-
-import {
-  Search,
-  ArrowRight,
-} from "lucide-react";
-
 import { Button } from "./Button";
-
-import { SIZES } from "../../shared/constants";
 
 import { Icon } from "../../primitives/icon";
 
-/* ======================================
-   CONSTANTS
-====================================== */
-
-const BUTTON_VARIANTS = [
-  "primary",
-  "secondary",
-  "ghost",
-  "link",
-  "danger",
-] as const;
+import { Stack } from "../../layouts/stack";
 
 /* ======================================
    META
 ====================================== */
 
-const meta = {
+export default {
+
   title: "Components/Button",
 
   component: Button,
 
-  argTypes: {
-
-    variant: {
-      control: "select",
-
-      options: BUTTON_VARIANTS,
-    },
-
-    size: {
-      control: "select",
-
-      options: SIZES,
-    },
-
-    fullWidth: {
-      control: "boolean",
-    },
-
-    disabled: {
-      control: "boolean",
-    },
-
-    loading: {
-      control: "boolean",
-    },
-
-    children: {
-      control: "text",
-    },
-
-    iconLeft: {
-      table: {
-        disable: true,
-      },
-    },
-
-    iconRight: {
-      table: {
-        disable: true,
-      },
-    },
-
-    className: {
-      table: {
-        disable: true,
-      },
-    },
-  },
-} satisfies Meta<typeof Button>;
-
-export default meta;
+};
 
 /* ======================================
-   STORIES
+   DEFAULT
 ====================================== */
 
-type Story = StoryObj<typeof meta>;
+export function Default() {
 
-export const Playground: Story = {
-  args: {
-    children: "Hola Tefi",
+  return (
 
-    variant: "primary",
-    size: "md",
+    <Button>
 
-    disabled: false,
-    loading: false,
-    fullWidth: false,
-  },
-};
+      Button
 
-export const Primary: Story = {
-  args: {
-    children: "Primary",
-    variant: "primary",
-  },
-};
+    </Button>
 
-export const Secondary: Story = {
-  args: {
-    children: "Secondary",
-    variant: "secondary",
-  },
-};
+  );
 
-export const Ghost: Story = {
-  args: {
-    children: "Ghost",
-    variant: "ghost",
-  },
-};
+}
 
-export const Danger: Story = {
-  args: {
-    children: "Danger",
-    variant: "danger",
-  },
-};
+/* ======================================
+   VARIANTS
+====================================== */
 
-export const Link: Story = {
-  args: {
-    children: "Link",
-    variant: "link",
-  },
-};
+export function Variants() {
 
-export const Loading: Story = {
-  args: {
-    children: "Guardando",
-    loading: true,
-  },
-};
+  return (
 
-export const WithLeftIcon: Story = {
-  args: {
-    children: "Buscar",
+    <Stack gap="md">
 
-    iconLeft: (
-      <Icon>
-        <Search />
-      </Icon>
-    ),
-  },
-};
+      <Button variant="primary">
+        Primary
+      </Button>
 
-export const WithRightIcon: Story = {
-  args: {
-    children: "Continuar",
+      <Button variant="secondary">
+        Secondary
+      </Button>
 
-    iconRight: (
-      <Icon>
-        <ArrowRight />
-      </Icon>
-    ),
-  },
-};
+      <Button variant="ghost">
+        Ghost
+      </Button>
 
-export const Disabled: Story = {
-  args: {
-    children: "Disabled",
-    disabled: true,
-  },
-};
+      <Button variant="link">
+        Link
+      </Button>
 
-export const FullWidth: Story = {
-  args: {
-    children: "Full Width",
-    fullWidth: true,
-  },
-};
+      <Button variant="danger">
+        Danger
+      </Button>
 
-export const Skeleton: Story = {
-  args: {
-    children: "Guardar",
-    skeleton: true,
-  },
-};
+    </Stack>
+
+  );
+
+}
+
+/* ======================================
+   SIZES
+====================================== */
+
+export function Sizes() {
+
+  return (
+
+    <Stack gap="md">
+
+      <Button size="sm">
+        Small
+      </Button>
+
+      <Button size="md">
+        Medium
+      </Button>
+
+      <Button size="lg">
+        Large
+      </Button>
+
+    </Stack>
+
+  );
+
+}
+
+/* ======================================
+   WITH ICONS
+====================================== */
+
+export function WithIcons() {
+
+  return (
+
+    <Stack gap="md">
+
+      <Button>
+
+        <Icon name="search" />
+
+        Search
+
+      </Button>
+
+      <Button variant="secondary">
+
+        Settings
+
+        <Icon name="settings" />
+
+      </Button>
+
+      <Button variant="danger">
+
+        <Icon name="trash" />
+
+      </Button>
+
+    </Stack>
+
+  );
+
+}
+
+/* ======================================
+   LOADING
+====================================== */
+
+export function Loading() {
+
+  return (
+
+    <Button loading>
+
+      Saving...
+
+    </Button>
+
+  );
+
+}
+
+/* ======================================
+   FULL WIDTH
+====================================== */
+
+export function FullWidth() {
+
+  return (
+
+    <Button fullWidth>
+
+      Continue
+
+    </Button>
+
+  );
+
+}
+
+/* ======================================
+   SKELETON
+====================================== */
+
+export function Skeleton() {
+
+  return (
+
+    <Button skeleton>
+
+      Button
+
+    </Button>
+
+  );
+
+}

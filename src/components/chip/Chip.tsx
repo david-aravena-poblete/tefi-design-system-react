@@ -2,16 +2,23 @@
    IMPORTS
 ====================================== */
 
-import { X } from "lucide-react";
+import clsx from "clsx";
+
 import "./chip.css";
-import type { ChipProps } from "./chip.types";
+
+import { Inline } from "@/layouts/inline";
+import { Icon } from "@/primitives/icon";
+
+import type {
+  ChipProps,
+} from "./chip.types";
 
 /* ======================================
    CHIP
 ====================================== */
 
 export function Chip({
-  label,
+  children,
 
   size = "md",
 
@@ -21,7 +28,7 @@ export function Chip({
 
   onRemove,
 
-  className = "",
+  className,
 
   ...rest
 }: ChipProps) {
@@ -30,18 +37,15 @@ export function Chip({
      CLASSES
   ====================================== */
 
-  const classes = [
+  const classes = clsx(
     "chip",
 
     `chip--${size}`,
 
-    disabled &&
-      "chip--disabled",
+    disabled && "chip--disabled",
 
     className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  );
 
   /* ======================================
      REMOVE
@@ -49,11 +53,10 @@ export function Chip({
 
   function handleRemove() {
 
-    if (disabled) {
-      return;
-    }
+    if (disabled) return;
 
     onRemove?.();
+
   }
 
   /* ======================================
@@ -61,40 +64,43 @@ export function Chip({
   ====================================== */
 
   return (
+
     <div
       className={classes}
-
       {...rest}
     >
 
-      {/* LABEL */}
+      <Inline
+        as="span"
+        gap="xs"
+        align="center"
+      >
 
-      <span className="chip__label">
-        {label}
-      </span>
+        {children}
 
-      {/* REMOVE */}
+        {removable && (
 
-      {removable && (
-        <button
-          type="button"
+          <button
+            type="button"
+            className="chip__remove"
+            onClick={handleRemove}
+            disabled={disabled}
+            aria-label="Remove item"
+          >
 
-          className="
-            chip__remove
-          "
+            <Icon
+              name="close"
+              size="sm"
+            />
 
-          onClick={handleRemove}
+          </button>
 
-          disabled={disabled}
+        )}
 
-          aria-label="
-            Remove item
-          "
-        >
-          <X size={14} />
-        </button>
-      )}
+      </Inline>
 
     </div>
+
   );
+
 }

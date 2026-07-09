@@ -7,8 +7,6 @@
   align-items: center;
   justify-content: center;
 
-  gap: var(--space-sm);
-
   box-sizing: border-box;
 
   border: none;
@@ -38,7 +36,6 @@
     transform 0.15s ease,
     opacity var(--transition-fast);
 }
-
 
 /* ======================================
    FULL WIDTH
@@ -72,24 +69,29 @@
     );
 }
 
+
 /* SECONDARY */
 
 .button--secondary {
-  background: var(--color-bg-secondary);
+  background:
+    var(--color-bg-secondary);
 
   border: 1px solid
     var(--color-border-primary);
 
-  color: var(--color-text-primary);
+  color:
+    var(--color-text-primary);
 }
 
 
 /* DANGER */
 
 .button--danger {
-  background: var(--color-danger-base);
+  background:
+    var(--color-danger-base);
 
-  color: var(--color-text-inverse);
+  color:
+    var(--color-text-inverse);
 }
 
 
@@ -100,7 +102,8 @@
 
   border: 1px solid transparent;
 
-  color: var(--color-text-primary);
+  color:
+    var(--color-text-primary);
 }
 
 
@@ -111,7 +114,8 @@
 
   border: none;
 
-  color: var(--color-link-base);
+  color:
+    var(--color-link-base);
 
   font-weight:
     var(--font-weight-medium);
@@ -123,8 +127,6 @@
 /* ======================================
    HOVER
 ====================================== */
-
-/* PRIMARY */
 
 .button--primary:hover:not(:disabled) {
   background:
@@ -141,34 +143,30 @@
 }
 
 
-/* SECONDARY */
-
 .button--secondary:hover:not(:disabled) {
-  background: var(--color-bg-tertiary);
+  background:
+    var(--color-bg-tertiary);
 
   border-color:
     var(--color-border-secondary);
 }
 
 
-/* DANGER */
-
 .button--danger:hover:not(:disabled) {
-  background: var(--color-danger-hover);
+  background:
+    var(--color-danger-hover);
 }
 
-
-/* GHOST */
 
 .button--ghost:hover:not(:disabled) {
-  background: var(--color-bg-secondary);
+  background:
+    var(--interaction-hover-bg);
 }
 
 
-/* LINK */
-
 .button--link:hover:not(:disabled) {
-  color: var(--color-link-hover);
+  color:
+    var(--color-link-hover);
 }
 
 
@@ -210,6 +208,15 @@
 
 
 /* ======================================
+   LOADING
+====================================== */
+
+.button--loading {
+  cursor: progress;
+}
+
+
+/* ======================================
    SIZES
 ====================================== */
 
@@ -220,7 +227,8 @@
     var(--space-xs)
     var(--space-sm);
 
-  font-size: var(--font-sm);
+  font-size:
+    var(--font-sm);
 }
 
 
@@ -231,7 +239,8 @@
     var(--space-sm)
     var(--space-md);
 
-  font-size: var(--font-md);
+  font-size:
+    var(--font-md);
 }
 
 
@@ -242,7 +251,8 @@
     var(--space-md)
     var(--space-lg);
 
-  font-size: var(--font-lg);
+  font-size:
+    var(--font-lg);
 }
 
 
@@ -262,7 +272,7 @@
 
 
 /* ======================================
-   ICON
+   ICONS
 ====================================== */
 
 .button svg {
@@ -270,63 +280,4 @@
   height: 1em;
 
   flex-shrink: 0;
-}
-
-
-.button__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.button__icon--left {
-  margin-right: var(--space-xs);
-}
-
-
-.button__icon--right {
-  margin-left: var(--space-xs);
-}
-
-
-/* ======================================
-   LABEL
-====================================== */
-
-.button__label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* ======================================
-   LOADING
-====================================== */
-
-.button--loading {
-  cursor: progress;
-}
-
-
-/* ======================================
-   LOADING LABEL
-====================================== */
-
-.button--loading .button__label {
-  opacity: 0.7;
-}
-
-
-/* ======================================
-   SPINNER
-====================================== */
-
-.button__spinner {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-left: var(--space-xs);
 }

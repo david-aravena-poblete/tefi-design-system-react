@@ -23,6 +23,21 @@
   height: 100%;
 
   display: block;
+  
+  /* LA IMAGEN NACE INVISIBLE */
+  opacity: 0;
+  
+  /* ANIMACIÓN SUAVE CUANDO APARECE */
+  transition: opacity 0.3s ease-out;
+}
+
+/* ======================================
+   LOADED STATE
+====================================== */
+
+/* ESTA CLASE SE APLICA DESDE JS CUANDO EL ONLOAD DISPARA */
+.image__content--loaded {
+  opacity: 1;
 }
 
 /* ======================================

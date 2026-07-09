@@ -1,17 +1,20 @@
 import "./inline.css";
 
-import type { InlineProps } from "./inline.types";
-
+import type {
+  InlineProps,
+} from "./inline.types";
 
 /* ======================================
    INLINE
 ====================================== */
 
 export function Inline({
+  as: Component = "div",
   children,
   gap = "md",
   align = "center",
   justify = "start",
+  wrap = false,
   className = "",
   ...props
 }: InlineProps) {
@@ -25,17 +28,24 @@ export function Inline({
 
     `inline--justify-${justify}`,
 
+    wrap && "inline--wrap",
+
     className,
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <div
+
+    <Component
       className={classes}
       {...props}
     >
+
       {children}
-    </div>
+
+    </Component>
+
   );
+
 }

@@ -1,0 +1,42 @@
+/* ======================================
+   DIVIDER
+====================================== */
+
+.divider {
+
+    border: none;
+  
+    margin: 0;
+  
+    background:
+      var(--surface-divider-color);
+  
+    flex-shrink: 0;
+  
+  }
+  
+  
+  /* ======================================
+     HORIZONTAL
+  ====================================== */
+  
+  .divider--horizontal {
+  
+    width: 100%;
+  
+    height: 1px;
+  
+  }
+  
+  
+  /* ======================================
+     VERTICAL
+  ====================================== */
+  
+  .divider--vertical {
+  
+    width: 1px;
+  
+    align-self: stretch;
+  
+  }

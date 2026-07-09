@@ -2,7 +2,9 @@ import clsx from "clsx";
 
 import "./grid.css";
 
-import type { GridProps } from "./grid.types";
+import type {
+  GridProps,
+} from "./grid.types";
 
 
 /* ======================================
@@ -11,8 +13,10 @@ import type { GridProps } from "./grid.types";
 
 export function Grid({
   children,
+  as: Component = "div",
   gap = "lg",
   columns,
+  template,
   className,
   ...props
 }: GridProps) {
@@ -22,17 +26,26 @@ export function Grid({
 
     `grid--gap-${gap}`,
 
-    columns && `grid--cols-${columns}`,
+    columns &&
+      `grid--cols-${columns}`,
+
+    template &&
+      `grid--template-${template}`,
 
     className,
   );
 
   return (
-    <div
+
+    <Component
       className={classes}
       {...props}
     >
+
       {children}
-    </div>
+
+    </Component>
+
   );
+
 }

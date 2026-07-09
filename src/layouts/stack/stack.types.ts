@@ -46,4 +46,7 @@ export interface StackProps
   align?: StackAlign;
 
   justify?: StackJustify;
+
+  wrap?: boolean;
+
 }

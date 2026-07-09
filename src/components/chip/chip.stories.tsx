@@ -3,7 +3,11 @@
 ====================================== */
 
 import React from "react";
+
 import { Chip } from "./Chip";
+
+import { Icon } from "../../primitives/icon";
+import { Inline } from "../../layouts/inline";
 
 /* ======================================
    META
@@ -23,10 +27,39 @@ export default {
 export function Default() {
 
   return (
-    <Chip
-      label="Design System"
-    />
+
+    <Chip>
+
+      Design System
+
+    </Chip>
+
   );
+
+}
+
+
+/* ======================================
+   WITH ICON
+====================================== */
+
+export function WithIcon() {
+
+  return (
+
+    <Chip>
+
+      <Icon
+        name="search"
+        size="sm"
+      />
+
+      Search
+
+    </Chip>
+
+  );
+
 }
 
 
@@ -36,25 +69,29 @@ export function Default() {
 
 export function Removable() {
 
-    const [visible, setVisible] =
-      React.useState(true);
-  
-    if (!visible) {
-      return null;
-    }
-  
-    return (
-      <Chip
-        label="React"
-  
-        removable
-  
-        onRemove={() =>
-          setVisible(false)
-        }
-      />
-    );
+  const [visible, setVisible] =
+    React.useState(true);
+
+  if (!visible) {
+    return null;
   }
+
+  return (
+
+    <Chip
+      removable
+      onRemove={() =>
+        setVisible(false)
+      }
+    >
+
+      React
+
+    </Chip>
+
+  );
+
+}
 
 
 /* ======================================
@@ -64,36 +101,31 @@ export function Removable() {
 export function Sizes() {
 
   return (
-    <div
-      style={{
-        display: "flex",
 
-        alignItems: "center",
+    <Inline gap="md">
 
-        gap: "12px",
-      }}
-    >
+      <Chip size="sm">
 
-      <Chip
-        label="Small"
+        Small
 
-        size="sm"
-      />
+      </Chip>
 
-      <Chip
-        label="Medium"
+      <Chip size="md">
 
-        size="md"
-      />
+        Medium
 
-      <Chip
-        label="Large"
+      </Chip>
 
-        size="lg"
-      />
+      <Chip size="lg">
 
-    </div>
+        Large
+
+      </Chip>
+
+    </Inline>
+
   );
+
 }
 
 
@@ -104,14 +136,18 @@ export function Sizes() {
 export function Disabled() {
 
   return (
+
     <Chip
-      label="Disabled"
-
       removable
-
       disabled
-    />
+    >
+
+      Disabled
+
+    </Chip>
+
   );
+
 }
 
 
@@ -122,6 +158,7 @@ export function Disabled() {
 export function LongContent() {
 
   return (
+
     <div
       style={{
         width: "220px",
@@ -129,14 +166,15 @@ export function LongContent() {
     >
 
       <Chip
-        label="
-          Very long selected item
-          for testing truncation
-        "
-
         removable
-      />
+      >
+
+        Very long selected item for testing truncation
+
+      </Chip>
 
     </div>
+
   );
+
 }

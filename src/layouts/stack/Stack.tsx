@@ -1,6 +1,10 @@
 import clsx from "clsx";
+
 import "./stack.css";
-import type { StackProps } from "@/layouts/stack/stack.types";
+
+import type {
+  StackProps,
+} from "@/layouts/stack/stack.types";
 
 
 /* ======================================
@@ -13,6 +17,7 @@ export function Stack({
   gap = "md",
   align,
   justify,
+  wrap = false,
   className,
   ...props
 }: StackProps) {
@@ -26,15 +31,22 @@ export function Stack({
 
     justify && `stack--justify-${justify}`,
 
+    wrap && "stack--wrap",
+
     className,
   );
 
   return (
+
     <Component
       className={classes}
       {...props}
     >
+
       {children}
+
     </Component>
+
   );
+
 }

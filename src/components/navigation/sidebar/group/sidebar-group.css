@@ -1,0 +1,43 @@
+/* ======================================
+   GROUP
+====================================== */
+
+.sidebar-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap:
+    var(--space-xs);
+
+  padding-block:
+    var(--space-xs);
+
+}
+
+/* ======================================
+   CONTENT
+====================================== */
+
+.sidebar-group__content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap:
+    var(--space-xs);
+
+}
+
+/* ======================================
+   HEADING
+====================================== */
+
+.sidebar-group__heading {
+
+  font-weight:
+    var(--font-weight-medium);
+
+}

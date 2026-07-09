@@ -83,94 +83,22 @@ Brand tokens:
     0 4px 10px rgba(0, 0, 0, 0.08);
 
 
-/* ======================================
-   FOUNDATIONS — SURFACES
-====================================== */
+  /* ======================================
+     FOUNDATIONS — EFFECTS
+  ====================================== */
 
-/* PAGE */
+  --effect-blur-sm: 4px;
+  --effect-blur-md: 10px;
+  --effect-blur-lg: 20px;
 
---surface-page-bg:
-  var(--color-bg-primary);
+  --effect-glow-primary:
+    0 0 24px
+    color-mix(
+      in srgb,
+      var(--color-primary-base) 20%,
+      transparent
+    );
 
-/* SKELETON */
-
---surface-skeleton-bg:
-  var(--color-bg-secondary);
-
-/* CARD */
-
---surface-card-bg:
-  var(--color-bg-secondary);
-
---surface-card-hover:
-  var(--color-bg-tertiary);
-
---surface-card-border:
-  var(--color-border-primary);
-
---surface-card-border-hover:
-  var(--color-border-secondary);
-
-/* CARD APPEARANCE */
-
---surface-card-radius:
-  var(--radius-lg);
-
-/* CARD EFFECTS */
-
---surface-card-shadow:
-  var(--shadow-sm);
-
---surface-card-shadow-hover:
-  var(--effect-glow-primary);
-
-/* BUTTON APPEARANCE */
-
---surface-button-radius:
-  var(--radius-md);
-
---surface-button-primary-bg:
-  var(--color-primary-base);
-
---surface-button-primary-hover:
-  var(--color-primary-hover);
-
---surface-button-primary-text:
-  var(--color-text-inverse);
-
-/* BUTTON EFFECTS */
-
---surface-button-shadow:
-  none;
-
---surface-button-shadow-hover:
-  none;
-  
-/* ======================================
-   BUTTON EFFECTS
-====================================== */
-
---surface-button-shadow:
-  none;
-
---surface-button-shadow-hover:
-  none;
-
-/* ======================================
-   FOUNDATIONS — EFFECTS
-====================================== */
-
---effect-blur-sm: 4px;
---effect-blur-md: 10px;
---effect-blur-lg: 20px;
-
---effect-glow-primary:
-  0 0 24px
-  color-mix(
-    in srgb,
-    var(--color-primary-base) 20%,
-    transparent
-  );
 
   /* ======================================
      FOUNDATIONS — SIZE
@@ -190,7 +118,7 @@ Brand tokens:
 
 
   /* ======================================
-     MOTION
+     FOUNDATIONS — MOTION
   ====================================== */
 
   /* STANDARD UI */
@@ -213,21 +141,166 @@ Brand tokens:
       0.36,
       1
     );
-
-
-  /* ======================================
-     INTERACTION TOKENS
+/* ======================================
+     SEMANTIC TOKENS
   ====================================== */
 
-  --interaction-hover-bg: color-mix(
-    in srgb,
-    var(--color-text-primary) 4%,
-    transparent
-  );
+  /* ======================================
+     PAGE
+  ====================================== */
+
+  --surface-page-bg:
+    var(--color-bg-primary);
 
 
   /* ======================================
-     CONTROL SYSTEM
+     SKELETON
+  ====================================== */
+
+  --surface-skeleton-bg:
+    var(--color-bg-secondary);
+
+
+  /* ======================================
+     CARD
+  ====================================== */
+
+  /* APPEARANCE */
+
+  --surface-card-bg:
+    var(--color-bg-secondary);
+
+  --surface-card-hover:
+    var(--color-bg-tertiary);
+
+  --surface-card-border:
+    var(--color-border-primary);
+
+  --surface-card-border-hover:
+    var(--color-border-secondary);
+
+  --surface-card-radius:
+    var(--radius-lg);
+
+  /* EFFECTS */
+
+  --surface-card-shadow:
+    var(--shadow-sm);
+
+  --surface-card-shadow-hover:
+    var(--effect-glow-primary);
+
+
+  /* ======================================
+     BUTTON
+  ====================================== */
+
+  /* APPEARANCE */
+
+  --surface-button-radius:
+    var(--radius-md);
+
+  --surface-button-primary-bg:
+    var(--color-primary-base);
+
+  --surface-button-primary-hover:
+    var(--color-primary-hover);
+
+  --surface-button-primary-text:
+    var(--color-text-inverse);
+
+  /* EFFECTS */
+
+  --surface-button-shadow:
+    none;
+
+  --surface-button-shadow-hover:
+    none;
+ 
+  /* ======================================
+     DIVIDER
+  ====================================== */
+
+--surface-divider-color:
+  var(--color-border-primary);
+
+  /* ======================================
+     NAVBAR
+  ====================================== */
+
+--surface-navbar-bg:
+  var(--color-bg-secondary);
+
+--surface-navbar-text:
+  var(--color-text-primary);
+
+--surface-navbar-shadow:
+  none;
+
+/* ======================================
+   SIDEBAR
+====================================== */
+
+/* SURFACE */
+
+--surface-sidebar-bg:
+  var(--color-bg-secondary);
+
+--surface-sidebar-border:
+  var(--color-border-primary);
+
+/* LAYOUT */
+
+--surface-sidebar-width:
+  280px;
+
+--surface-sidebar-padding:
+  var(--space-lg);
+
+/* SECTION */
+
+--surface-sidebar-section-gap:
+  var(--space-lg);
+
+/* GROUP */
+
+--surface-sidebar-group-gap:
+  var(--space-sm);
+
+/* ITEM */
+
+--surface-sidebar-item-radius:
+  var(--radius-md);
+
+--surface-sidebar-item-active-bg:
+  var(--color-bg-secondary);
+
+--surface-sidebar-item-active-text:
+  var(--color-text-primary);
+
+--surface-sidebar-item-hover-bg:
+  var(--interaction-hover-bg);
+
+/* HEADING */
+
+--surface-sidebar-heading-color:
+  var(--color-text-secondary);
+
+
+  /* ======================================
+     INTERACTION
+  ====================================== */
+
+  --interaction-hover-bg:
+    color-mix(
+      in srgb,
+      var(--color-text-primary) 4%,
+      transparent
+    );
+
+
+  /* ======================================
+     CONTROL
   ====================================== */
 
   --control-border-width: 2px;
@@ -251,15 +324,22 @@ Brand tokens:
   --state-default-hover:
     var(--color-border-secondary);
 
-  --state-default-ring: color-mix(
-    in srgb,
-    var(--color-primary-base) 40%,
-    transparent
-  );
+  --state-default-ring:
+    color-mix(
+      in srgb,
+      var(--color-primary-base) 40%,
+      transparent
+    );
+
+  --control-size:
+    var(--size-control-md);
+
+  --control-gap:
+    var(--control-gap-md);
 
 
   /* ======================================
-     FIELD SYSTEM
+     FIELD
   ====================================== */
 
   /* BASE */
@@ -311,16 +391,5 @@ Brand tokens:
 
   --field-height-lg:
     var(--size-field-lg);
-
-
-  /* ======================================
-     CONTROL SAFETY TOKENS
-  ====================================== */
-
-  --control-size:
-    var(--size-control-md);
-
-  --control-gap:
-    var(--control-gap-md);
 
 }

@@ -48,6 +48,7 @@ export { Card } from "./components/card";
 export { Chip } from "./components/chip";
 export { QuantityStepper } from "./components/quantity-stepper";
 export { Typewriter } from "./components/typewriter";
+export { Divider } from "./components/divider";
 
 export {
   Heading,

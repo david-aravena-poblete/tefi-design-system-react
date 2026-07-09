@@ -1,0 +1,46 @@
+/* ======================================
+   SECTION
+====================================== */
+
+.sidebar-section {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap:
+    var(--space-sm);
+
+}
+
+/* ======================================
+   CONTENT
+====================================== */
+
+.sidebar-section__content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap:
+    var(--space-xs);
+
+}
+
+/* ======================================
+   HEADING
+====================================== */
+
+.sidebar-section__heading {
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.08em;
+
+  font-weight:
+    var(--font-weight-semibold);
+
+}

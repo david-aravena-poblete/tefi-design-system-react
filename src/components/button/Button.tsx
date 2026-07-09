@@ -4,49 +4,29 @@
 
 import {
   forwardRef,
-  type ButtonHTMLAttributes,
-  type ReactNode,
 } from "react";
 
 import clsx from "clsx";
 
 import "./button.css";
 
+import { Inline } from "../../layouts/inline";
+
 import { Spinner } from "../../primitives/spinner";
 import { Skeleton } from "../../primitives/skeleton";
 
 import type {
-  ButtonVariant,
-  ButtonSize,
+  ButtonProps,
 } from "./button.types";
-
-/* ======================================
-   TYPES
-====================================== */
-
-interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
-
-  variant?: ButtonVariant;
-
-  size?: ButtonSize;
-
-  fullWidth?: boolean;
-
-  loading?: boolean;
-
-  skeleton?: boolean;
-
-  iconLeft?: ReactNode;
-
-  iconRight?: ReactNode;
-}
 
 /* ======================================
    BUTTON
 ====================================== */
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<
+  HTMLButtonElement,
+  ButtonProps
+>(
   (
     {
       children,
@@ -64,10 +44,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       skeleton = false,
 
       disabled,
-
-      iconLeft,
-
-      iconRight,
 
       className,
 
@@ -108,51 +84,32 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ====================================== */
 
     const button = (
+
       <button
         ref={ref}
-
         type={type}
-
         className={classes}
-
         disabled={isDisabled}
-
         aria-busy={loading}
-
         {...rest}
       >
 
-        {iconLeft && !loading && (
-          <span
-            className="button__icon button__icon--left"
-          >
-            {iconLeft}
-          </span>
-        )}
-
-        <span
-          className="button__label"
+        <Inline
+          as="span"
+          gap="sm"
+          align="center"
         >
+
           {children}
-        </span>
 
-        {loading && (
-          <span
-            className="button__spinner"
-          >
+          {loading && (
             <Spinner size="sm" />
-          </span>
-        )}
+          )}
 
-        {iconRight && !loading && (
-          <span
-            className="button__icon button__icon--right"
-          >
-            {iconRight}
-          </span>
-        )}
+        </Inline>
 
       </button>
+
     );
 
     /* ======================================
@@ -162,11 +119,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     if (skeleton) {
 
       return (
-        <Skeleton
-          fill={fullWidth}
-        >
+
+        <Skeleton fill={fullWidth}>
+
           {button}
+
         </Skeleton>
+
       );
 
     }
@@ -180,4 +139,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
-Button.displayName = "Button";
+Button.displayName =
+  "Button";

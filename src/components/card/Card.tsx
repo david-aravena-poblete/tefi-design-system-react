@@ -1,6 +1,13 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
+import clsx from "clsx";
+
 import "./card.css";
 
 import type {
+  CardComponent,
   CardProps,
   CardSectionProps,
 } from "./card.types";
@@ -9,32 +16,38 @@ import type {
    CARD
 ====================================== */
 
-export function Card({
+const CardBase = ({
   children,
   variant = "outlined",
   size = "md",
   className = "",
   ...props
-}: CardProps) {
+}: CardProps) => {
 
-  const classes = [
+  const classes = clsx(
     "card",
+
     `card--${variant}`,
+
     `card--${size}`,
+
     className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  );
 
   return (
+
     <div
       className={classes}
       {...props}
     >
+
       {children}
+
     </div>
+
   );
-}
+
+};
 
 /* ======================================
    HEADER
@@ -47,18 +60,22 @@ function Header({
 }: CardSectionProps) {
 
   return (
+
     <div
-      className={[
+      className={clsx(
         "card__header",
+
         className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      )}
       {...props}
     >
+
       {children}
+
     </div>
+
   );
+
 }
 
 /* ======================================
@@ -72,18 +89,22 @@ function Media({
 }: CardSectionProps) {
 
   return (
+
     <div
-      className={[
+      className={clsx(
         "card__media",
+
         className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      )}
       {...props}
     >
+
       {children}
+
     </div>
+
   );
+
 }
 
 /* ======================================
@@ -97,18 +118,22 @@ function Body({
 }: CardSectionProps) {
 
   return (
+
     <div
-      className={[
+      className={clsx(
         "card__body",
+
         className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      )}
       {...props}
     >
+
       {children}
+
     </div>
+
   );
+
 }
 
 /* ======================================
@@ -122,25 +147,35 @@ function Footer({
 }: CardSectionProps) {
 
   return (
+
     <div
-      className={[
+      className={clsx(
         "card__footer",
+
         className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      )}
       {...props}
     >
+
       {children}
+
     </div>
+
   );
+
 }
 
 /* ======================================
-   COMPOUND COMPONENTS
+   COMPOUND COMPONENT
 ====================================== */
 
+export const Card =
+  CardBase as CardComponent;
+
 Card.Header = Header;
+
 Card.Media = Media;
+
 Card.Body = Body;
+
 Card.Footer = Footer;
