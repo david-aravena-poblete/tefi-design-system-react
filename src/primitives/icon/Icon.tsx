@@ -1,8 +1,14 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import clsx from "clsx";
 
 import "./icon.css";
 
-import { iconRegistry } from "./icons/icons.registry";
+import {
+  iconRegistry,
+} from "./icons/icons.registry";
 
 import type {
   IconProps,
@@ -13,31 +19,52 @@ import type {
 ====================================== */
 
 export function Icon({
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
   name,
 
   size = "md",
+
+  ariaHidden = true,
+
+  /* ======================================
+     REACT PROPS
+  ====================================== */
 
   className,
 
   children,
 
-  ariaHidden = true,
+  /* ======================================
+     REST PROPS
+  ====================================== */
 
-  ...props
+  ...rest
+
 }: IconProps) {
 
   /* ======================================
      RESOLVE ICON
   ====================================== */
 
-  const IconComponent = name
-    ? iconRegistry[name as keyof typeof iconRegistry]
-    : null;
+  const IconComponent =
+    name
+      ? iconRegistry[name]
+      : undefined;
+
+  /* ======================================
+     DEV WARNING
+  ====================================== */
 
   if (name && !IconComponent) {
+
     console.warn(
-      `Icon "${name}" not found in registry.`
+      `Icon "${name}" not found in registry.`,
     );
+
   }
 
   /* ======================================
@@ -45,9 +72,13 @@ export function Icon({
   ====================================== */
 
   const classes = clsx(
+
     "icon",
+
     `icon--${size}`,
-    className
+
+    className,
+
   );
 
   /* ======================================
@@ -55,14 +86,19 @@ export function Icon({
   ====================================== */
 
   return (
+
     <span
       className={classes}
       aria-hidden={ariaHidden}
-      {...props}
+      {...rest}
     >
+
       {IconComponent
         ? <IconComponent />
         : children}
+
     </span>
+
   );
+
 }

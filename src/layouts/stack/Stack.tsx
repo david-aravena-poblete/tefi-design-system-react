@@ -1,46 +1,84 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import clsx from "clsx";
 
 import "./stack.css";
 
 import type {
   StackProps,
-} from "@/layouts/stack/stack.types";
-
+} from "./stack.types";
 
 /* ======================================
    STACK
 ====================================== */
 
 export function Stack({
-  children,
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
   as: Component = "div",
+
   gap = "md",
+
   align,
+
   justify,
+
   wrap = false,
+
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
   className,
-  ...props
+
+  children,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
 }: StackProps) {
 
+  /* ======================================
+     CLASSES
+  ====================================== */
+
   const classes = clsx(
+
     "stack",
 
     `stack--gap-${gap}`,
 
-    align && `stack--align-${align}`,
+    align &&
+      `stack--align-${align}`,
 
-    justify && `stack--justify-${justify}`,
+    justify &&
+      `stack--justify-${justify}`,
 
-    wrap && "stack--wrap",
+    {
+      "stack--wrap": wrap,
+    },
 
     className,
+
   );
+
+  /* ======================================
+     RENDER
+  ====================================== */
 
   return (
 
     <Component
       className={classes}
-      {...props}
+      {...rest}
     >
 
       {children}

@@ -1,10 +1,22 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import type {
-    SPINNER_SIZES,
-  } from "./spinner.constants";
-  
-  /* ======================================
-     SPINNER TYPES
-  ====================================== */
-  
-  export type SpinnerSize =
-    (typeof SPINNER_SIZES)[number];
+  ComponentProps,
+} from "react";
+
+import type {
+  Size,
+} from "@/foundations/design-system.types";
+
+/* ======================================
+   PROPS
+====================================== */
+
+export interface SpinnerProps
+  extends ComponentProps<"div"> {
+
+  size?: Size;
+
+}

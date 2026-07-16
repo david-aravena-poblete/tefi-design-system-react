@@ -2,50 +2,72 @@
    IMPORTS
 ====================================== */
 
+import clsx from "clsx";
+
 import "./error-message.css";
-import type { ErrorMessageProps } from "./error-message.types";
+
+import type {
+  ErrorMessageProps,
+} from "./error-message.types";
 
 /* ======================================
    ERROR MESSAGE
 ====================================== */
 
 export function ErrorMessage({
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
   size = "md",
+
+  /* ======================================
+     REACT PROPS
+  ====================================== */
 
   children,
 
-  className = "",
+  className,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
 
   ...rest
+
 }: ErrorMessageProps) {
 
   /* ======================================
      CLASSES
   ====================================== */
 
-  const classes = [
+  const classes = clsx(
+
     "error-message",
 
     `error-message--${size}`,
 
     className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+
+  );
 
   /* ======================================
      RENDER
   ====================================== */
 
   return (
+
     <p
       className={classes}
-
       role="alert"
-
       {...rest}
     >
+
       {children}
+
     </p>
+
   );
+
 }

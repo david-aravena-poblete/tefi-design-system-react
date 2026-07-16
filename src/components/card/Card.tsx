@@ -16,15 +16,34 @@ import type {
    CARD
 ====================================== */
 
-const CardBase = ({
-  children,
+function CardBase({
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
   variant = "outlined",
+
   size = "md",
-  className = "",
-  ...props
-}: CardProps) => {
+
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
+  className,
+
+  children,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
+}: CardProps) {
 
   const classes = clsx(
+
     "card",
 
     `card--${variant}`,
@@ -32,13 +51,14 @@ const CardBase = ({
     `card--${size}`,
 
     className,
+
   );
 
   return (
 
     <div
       className={classes}
-      {...props}
+      {...rest}
     >
 
       {children}
@@ -47,33 +67,59 @@ const CardBase = ({
 
   );
 
-};
+}
 
 /* ======================================
-   HEADER
+   SECTION
 ====================================== */
 
-function Header({
+function Section({
+
   children,
-  className = "",
-  ...props
-}: CardSectionProps) {
+
+  className,
+
+  section,
+
+  ...rest
+
+}: CardSectionProps & {
+
+  section: string;
+
+}) {
 
   return (
 
     <div
       className={clsx(
-        "card__header",
-
+        section,
         className,
       )}
-      {...props}
+      {...rest}
     >
 
       {children}
 
     </div>
 
+  );
+
+}
+
+/* ======================================
+   HEADER
+====================================== */
+
+function Header(
+  props: CardSectionProps
+) {
+
+  return (
+    <Section
+      section="card__header"
+      {...props}
+    />
   );
 
 }
@@ -82,27 +128,15 @@ function Header({
    MEDIA
 ====================================== */
 
-function Media({
-  children,
-  className = "",
-  ...props
-}: CardSectionProps) {
+function Media(
+  props: CardSectionProps
+) {
 
   return (
-
-    <div
-      className={clsx(
-        "card__media",
-
-        className,
-      )}
+    <Section
+      section="card__media"
       {...props}
-    >
-
-      {children}
-
-    </div>
-
+    />
   );
 
 }
@@ -111,27 +145,15 @@ function Media({
    BODY
 ====================================== */
 
-function Body({
-  children,
-  className = "",
-  ...props
-}: CardSectionProps) {
+function Body(
+  props: CardSectionProps
+) {
 
   return (
-
-    <div
-      className={clsx(
-        "card__body",
-
-        className,
-      )}
+    <Section
+      section="card__body"
       {...props}
-    >
-
-      {children}
-
-    </div>
-
+    />
   );
 
 }
@@ -140,27 +162,15 @@ function Body({
    FOOTER
 ====================================== */
 
-function Footer({
-  children,
-  className = "",
-  ...props
-}: CardSectionProps) {
+function Footer(
+  props: CardSectionProps
+) {
 
   return (
-
-    <div
-      className={clsx(
-        "card__footer",
-
-        className,
-      )}
+    <Section
+      section="card__footer"
       {...props}
-    >
-
-      {children}
-
-    </div>
-
+    />
   );
 
 }

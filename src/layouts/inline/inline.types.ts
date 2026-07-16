@@ -1,44 +1,32 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import type {
+  ComponentProps,
   ElementType,
-  HTMLAttributes,
-  ReactNode,
 } from "react";
 
-export type InlineGap =
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "xxl"
-  | "xxxl";
+import type {
+  Align,
+  Justify,
+  Spacing,
+} from "../../foundations/design-system.types";
 
-export type InlineAlign =
-  | "start"
-  | "center"
-  | "end"
-  | "stretch"
-  | "baseline";
-
-export type InlineJustify =
-  | "start"
-  | "center"
-  | "end"
-  | "between"
-  | "around";
+/* ======================================
+   PROPS
+====================================== */
 
 export interface InlineProps
-  extends HTMLAttributes<HTMLElement> {
+  extends ComponentProps<"div"> {
 
   as?: ElementType;
 
-  children?: ReactNode;
+  gap?: Spacing;
 
-  gap?: InlineGap;
+  align?: Align;
 
-  align?: InlineAlign;
-
-  justify?: InlineJustify;
+  justify?: Justify;
 
   wrap?: boolean;
 

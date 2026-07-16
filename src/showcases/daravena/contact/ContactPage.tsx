@@ -8,9 +8,9 @@ import {
   FormRow,
 } from "@/components/form";
 
-import { Input } from "@/components/field/input";
+import { Input } from "@/components/input/input";
 import { Label } from "@/components/field/label";
-import { Textarea } from "@/components/field/textarea";
+import { Textarea } from "@/components/textarea";
 
 import { Heading } from "@/components/typography/heading";
 import { Text } from "@/components/typography/text";

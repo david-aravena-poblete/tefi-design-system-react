@@ -1,48 +1,62 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import React from "react";
 
-import { Button } from "./Button";
+import type {
+  Meta,
+  StoryObj,
+} from "@storybook/react";
 
-import { Icon } from "../../primitives/icon";
+import {
+  Button,
+} from "./Button";
 
-import { Stack } from "../../layouts/stack";
+import {
+  Icon,
+} from "../../primitives/icon";
+
+import {
+  Stack,
+} from "../../layouts/stack";
 
 /* ======================================
    META
 ====================================== */
 
-export default {
+const meta: Meta<typeof Button> = {
 
   title: "Components/Button",
 
   component: Button,
 
+  tags: ["autodocs"],
+
 };
 
-/* ======================================
-   DEFAULT
-====================================== */
+export default meta;
 
-export function Default() {
-
-  return (
-
-    <Button>
-
-      Button
-
-    </Button>
-
-  );
-
-}
+type Story =
+  StoryObj<typeof Button>;
 
 /* ======================================
-   VARIANTS
+   STORIES
 ====================================== */
 
-export function Variants() {
+export const Default: Story = {
 
-  return (
+  args: {
+
+    children: "Button",
+
+  },
+
+};
+
+export const Variant: Story = {
+
+  render: () => (
 
     <Stack gap="md">
 
@@ -78,17 +92,13 @@ export function Variants() {
 
     </Stack>
 
-  );
+  ),
 
-}
+};
 
-/* ======================================
-   SIZES
-====================================== */
+export const Size: Story = {
 
-export function Sizes() {
-
-  return (
+  render: () => (
 
     <Stack gap="md">
 
@@ -112,17 +122,13 @@ export function Sizes() {
 
     </Stack>
 
-  );
+  ),
 
-}
+};
 
-/* ======================================
-   ICONS
-====================================== */
+export const WithIcons: Story = {
 
-export function Icons() {
-
-  return (
+  render: () => (
 
     <Stack gap="md">
 
@@ -132,23 +138,21 @@ export function Icons() {
         }
       >
 
-        Search
+        Start Icon
 
       </Button>
 
       <Button
-        variant="secondary"
         endIcon={
           <Icon name="search" />
         }
       >
 
-        Settings
+        End Icon
 
       </Button>
 
       <Button
-        variant="primary"
         startIcon={
           <Icon name="search" />
         }
@@ -157,88 +161,60 @@ export function Icons() {
         }
       >
 
-        Download
-
-      </Button>
-
-      <Button
-        variant="danger"
-        startIcon={
-          <Icon name="search" />
-        }
-      >
-
-        Delete
-
-      </Button>
-
-      <Button
-        variant="ghost"
-        startIcon={
-          <Icon name="search" />
-        }
-      >
-
-        Profile
+        Start + End Icon
 
       </Button>
 
     </Stack>
 
-  );
+  ),
 
-}
+};
 
-/* ======================================
-   LOADING
-====================================== */
+export const Loading: Story = {
 
-export function Loading() {
+  args: {
 
-  return (
+    loading: true,
 
-    <Button loading>
+    children: "Loading",
 
-      Saving...
+  },
 
-    </Button>
+};
 
-  );
+export const Disabled: Story = {
 
-}
+  args: {
 
-/* ======================================
-   FULL WIDTH
-====================================== */
+    disabled: true,
 
-export function FullWidth() {
+    children: "Disabled",
 
-  return (
+  },
 
-    <Button fullWidth>
+};
 
-      Continue
+export const FullWidth: Story = {
 
-    </Button>
+  args: {
 
-  );
+    fullWidth: true,
 
-}
+    children: "Full Width",
 
-/* ======================================
-   SKELETON
-====================================== */
+  },
 
-export function Skeleton() {
+};
 
-  return (
+export const Skeleton: Story = {
 
-    <Button skeleton>
+  args: {
 
-      Button
+    skeleton: true,
 
-    </Button>
+    children: "Skeleton",
 
-  );
+  },
 
-}
+};

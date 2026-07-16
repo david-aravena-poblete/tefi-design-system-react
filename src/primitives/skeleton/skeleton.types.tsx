@@ -3,37 +3,31 @@
 ====================================== */
 
 import type {
-  HTMLAttributes,
-  ReactNode,
+  ComponentProps,
+  CSSProperties,
 } from "react";
 
-/* ======================================
-   SKELETON RATIO
-====================================== */
-
-export type SkeletonRatio =
-  | "1:1"
-  | "4:3"
-  | "16:9";
+import type {
+  Aspect,
+} from "../../foundations/design-system.types";
 
 /* ======================================
-   SKELETON PROPS
+   PROPS
 ====================================== */
 
 export interface SkeletonProps
-  extends HTMLAttributes<HTMLDivElement> {
-
-  children?: ReactNode;
+  extends ComponentProps<"div"> {
 
   fill?: boolean;
 
-  width?: string;
+  width?: CSSProperties["width"];
 
-  height?: string;
+  height?: CSSProperties["height"];
 
-  radius?: string;
+  radius?: CSSProperties["borderRadius"];
 
   animated?: boolean;
 
-  ratio?: SkeletonRatio;
+  aspect?: Aspect;
+
 }

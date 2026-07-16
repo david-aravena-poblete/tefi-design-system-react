@@ -1,17 +1,24 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import clsx from "clsx";
 
 import "./container.css";
 
 import type {
   ContainerProps,
-} from "@/layouts/container/container.types";
+} from "./container.types";
 
 /* ======================================
    CONTAINER
 ====================================== */
 
 export function Container({
-  children,
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
 
   as: Component = "div",
 
@@ -21,12 +28,28 @@ export function Container({
 
   paddingBottom,
 
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
   className,
 
-  ...props
+  children,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
 }: ContainerProps) {
 
+  /* ======================================
+     CLASSES
+  ====================================== */
+
   const classes = clsx(
+
     "container",
 
     `container--${size}`,
@@ -38,14 +61,24 @@ export function Container({
       `container--pb-${paddingBottom}`,
 
     className,
+
   );
 
+  /* ======================================
+     RENDER
+  ====================================== */
+
   return (
+
     <Component
       className={classes}
-      {...props}
+      {...rest}
     >
+
       {children}
+
     </Component>
+
   );
+
 }

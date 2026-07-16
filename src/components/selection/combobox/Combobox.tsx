@@ -10,11 +10,18 @@ import {
 } from "react";
 
 import "./combobox.css";
+
 import { Chip } from "@/components/chip";
-import { SearchField } from "@/components/field";
+
+import { SearchField } from "@/components/input";
+
 import { OptionList } from "@/components/selection";
+
 import { FloatingSurface } from "@/components/overlay";
-import type { ComboboxProps } from "./combobox.types";
+
+import type {
+  ComboboxProps,
+} from "./combobox.types";
 
 /* ======================================
    COMBOBOX
@@ -396,7 +403,7 @@ export function Combobox({
 
         placeholder={placeholder}
 
-        inputSize={inputSize}
+        size={inputSize}
 
         state={state}
 

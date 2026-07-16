@@ -3,37 +3,28 @@
 ====================================== */
 
 import type {
-  HTMLAttributes,
-  ReactNode,
+  ComponentProps,
 } from "react";
 
-import { SIZES } from "../../shared/constants";
+import type {
+  Size,
+} from "@/foundations/design-system.types";
+
+import type {
+  IconName,
+} from "./icons/icons.registry";
 
 /* ======================================
-   CHIP SIZE
+   PROPS
 ====================================== */
 
-export type ChipSize =
-  (typeof SIZES)[number];
+export interface IconProps
+  extends ComponentProps<"span"> {
 
-/* ======================================
-   CHIP PROPS
-====================================== */
+  name?: IconName;
 
-export interface ChipProps
-  extends Omit<
-    HTMLAttributes<HTMLDivElement>,
-    "children"
-  > {
+  size?: Size;
 
-  children?: ReactNode;
-
-  size?: ChipSize;
-
-  disabled?: boolean;
-
-  removable?: boolean;
-
-  onRemove?: () => void;
+  ariaHidden?: boolean;
 
 }

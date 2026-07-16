@@ -6,7 +6,7 @@ import {
   FormActions,
 } from "@/components/form";
 
-import { Input } from "@/components/field/input";
+import { Input } from "@/components/input/input";
 
 import { Heading } from "@/components/typography/heading";
 

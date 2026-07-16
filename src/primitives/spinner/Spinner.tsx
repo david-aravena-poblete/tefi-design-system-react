@@ -1,37 +1,68 @@
-
-import clsx from "clsx";
-import "./spinner.css";
-import type { SpinnerSize } from "./spinner.types";
-
 /* ======================================
-   TYPES
+   IMPORTS
 ====================================== */
 
-interface SpinnerProps {
-  size?: SpinnerSize;
-  className?: string;
-}
+import clsx from "clsx";
+
+import "./spinner.css";
+
+import type {
+  SpinnerProps,
+} from "./spinner.types";
 
 /* ======================================
    SPINNER
 ====================================== */
 
 export function Spinner({
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
   size = "md",
+
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
   className,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
 }: SpinnerProps) {
 
+  /* ======================================
+     CLASSES
+  ====================================== */
+
   const classes = clsx(
+
     "spinner",
+
     `spinner--${size}`,
-    className
+
+    className,
+
   );
 
+  /* ======================================
+     RENDER
+  ====================================== */
+
   return (
+
     <div
       className={classes}
-      aria-label="Loading"
       role="status"
+      aria-label="Loading"
+      {...rest}
     />
+
   );
+
 }

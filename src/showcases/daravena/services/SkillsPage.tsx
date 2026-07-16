@@ -27,7 +27,7 @@ export function SkillsPage() {
             <Image
               src="https://images.unsplash.com/photo-1658243762577-d781c4726412?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0"
               alt="Spec Driven Development"
-              ratio="16:9"
+              aspect="16:9"
             />
 
           </Card.Media>
@@ -36,7 +36,7 @@ export function SkillsPage() {
 
             <Stack gap="lg">
 
-              <Heading level={3}>
+              <Heading as="h3">
                 Spec Driven Development
               </Heading>
 
@@ -70,7 +70,7 @@ export function SkillsPage() {
             <Image
               src="https://images.unsplash.com/photo-1658243762588-bbe78d88f4aa?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0"
               alt="Fine Tuning"
-              ratio="16:9"
+              aspect="16:9"
             />
 
           </Card.Media>
@@ -79,7 +79,7 @@ export function SkillsPage() {
 
             <Stack gap="lg">
 
-              <Heading level={3}>
+              <Heading as="h3">
                 Fine Tuning
               </Heading>
 
@@ -113,7 +113,7 @@ export function SkillsPage() {
             <Image
               src="https://images.unsplash.com/photo-1658243766433-0144532e850c?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0"
               alt="Desarrollo de Skills"
-              ratio="16:9"
+              aspect="16:9"
             />
 
           </Card.Media>
@@ -122,7 +122,7 @@ export function SkillsPage() {
 
             <Stack gap="lg">
 
-              <Heading level={3}>
+              <Heading as="h3">
                 Desarrollo de Skills
               </Heading>
 

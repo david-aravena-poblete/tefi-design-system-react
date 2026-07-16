@@ -1,35 +1,41 @@
-import type {
-    ImgHTMLAttributes,
-  } from "react";
-  
-  /* ======================================
-     IMAGE FIT
-  ====================================== */
-  
-  export type ImageFit =
-    | "cover"
-    | "contain";
-  
-  /* ======================================
-     IMAGE RATIO
-  ====================================== */
-  
-  export type ImageRatio =
-    | "1:1"
-    | "4:3"
-    | "16:9";
-  
-  /* ======================================
-     IMAGE PROPS
-  ====================================== */
-  
-  export interface ImageProps
-    extends ImgHTMLAttributes<HTMLImageElement> {
-  
-    fit?: ImageFit;
-  
-    ratio?: ImageRatio;
+/* ======================================
+   IMPORTS
+====================================== */
 
-    skeleton?: boolean;
-    
-  }
+import type {
+  ComponentProps,
+} from "react";
+
+import type {
+  Aspect,
+} from "../../foundations/design-system.types";
+
+/* ======================================
+   TYPES
+====================================== */
+
+export type ImageFit =
+  | "cover"
+  | "contain";
+
+/* ======================================
+   SOURCE PROPS
+====================================== */
+
+export interface ImageSourceProps
+  extends ComponentProps<"img"> {}
+
+/* ======================================
+   IMAGE PROPS
+====================================== */
+
+export interface ImageProps
+  extends ImageSourceProps {
+
+  fit?: ImageFit;
+
+  aspect?: Aspect;
+
+  skeleton?: boolean;
+
+}

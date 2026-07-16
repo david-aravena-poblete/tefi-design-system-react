@@ -33,7 +33,6 @@ export {
 
 export { Spinner } from "./primitives/spinner";
 export { Icon } from "./primitives/icon";
-export { Field } from "./primitives/field";
 export { Control } from "./primitives/control";
 export { Image } from "./primitives/image";
 export { Skeleton } from "./primitives/skeleton";
@@ -43,12 +42,13 @@ export { Skeleton } from "./primitives/skeleton";
    COMPONENTS
 ====================================== */
 
+export { Avatar } from "./components/avatar";
 export { Button } from "./components/button";
 export { Card } from "./components/card";
 export { Chip } from "./components/chip";
+export { Divider } from "./components/divider";
 export { QuantityStepper } from "./components/quantity-stepper";
 export { Typewriter } from "./components/typewriter";
-export { Divider } from "./components/divider";
 
 export {
   Heading,
@@ -61,15 +61,32 @@ export {
 ====================================== */
 
 export {
-  ErrorMessage,
-  HelperText,
-  Input,
+  Field,
   Label,
+  HelperText,
+  ErrorMessage,
+} from "./components/field";
+
+
+/* ======================================
+   INPUT
+====================================== */
+
+export {
+  Input,
   NumberField,
   PasswordField,
   SearchField,
+} from "./components/input";
+
+
+/* ======================================
+   TEXTAREA
+====================================== */
+
+export {
   Textarea,
-} from "./components/field";
+} from "./components/textarea";
 
 
 /* ======================================
@@ -122,19 +139,21 @@ export {
   Stack,
 } from "./layouts";
 
+
 /* ======================================
    PROVIDERS
 ====================================== */
 
 export {
-   DesignSystemProvider,
- } from "./providers/design-system-provider";
- 
- /* ======================================
-    TYPES
- ====================================== */
- 
- export type {
-   Theme,
-   Brand,
- } from "./shared/design-system.types";
+  DesignSystemProvider,
+} from "./providers/design-system-provider";
+
+
+/* ======================================
+   TYPES
+====================================== */
+
+export type {
+  Theme,
+  Brand,
+} from "./shared/design-system.types";

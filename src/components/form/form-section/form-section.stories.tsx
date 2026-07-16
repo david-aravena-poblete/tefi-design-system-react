@@ -2,22 +2,14 @@
    IMPORTS
 ====================================== */
 
-import React from "react";
+import { FormSection } from "@/components/form/form-section";
 
-import { FormSection }
-  from "./FormSection";
+import { FormRow } from "@/components/form/form-row";
+import { FormField } from "@/components/form/form-field";
 
-import { FormRow }
-  from "../form-row";
+import { Label } from "@/components/field/label";
 
-import { FormField }
-  from "../form-field";
-
-import { Label }
-  from "../../field/label";
-
-import { Input }
-  from "../../field/input";
+import { Input } from "@/components/input";
 
 /* ======================================
    META
@@ -29,7 +21,6 @@ export default {
   component: FormSection,
 };
 
-
 /* ======================================
    DEFAULT
 ====================================== */
@@ -37,9 +28,9 @@ export default {
 export function Default() {
 
   return (
+
     <FormSection
       title="Personal information"
-
       description="
         Fill in your basic profile data.
       "
@@ -50,7 +41,9 @@ export function Default() {
         <FormField>
 
           <Label>
+
             First name
+
           </Label>
 
           <Input
@@ -62,7 +55,9 @@ export function Default() {
         <FormField>
 
           <Label>
+
             Last name
+
           </Label>
 
           <Input
@@ -74,9 +69,10 @@ export function Default() {
       </FormRow>
 
     </FormSection>
-  );
-}
 
+  );
+
+}
 
 /* ======================================
    MULTIPLE FIELDS
@@ -85,9 +81,9 @@ export function Default() {
 export function MultipleFields() {
 
   return (
+
     <FormSection
       title="Account settings"
-
       description="
         Configure your account details.
       "
@@ -96,7 +92,9 @@ export function MultipleFields() {
       <FormField>
 
         <Label>
+
           Email
+
         </Label>
 
         <Input
@@ -108,17 +106,20 @@ export function MultipleFields() {
       <FormField>
 
         <Label>
+
           Password
+
         </Label>
 
         <Input
           type="password"
-
           placeholder="••••••••"
         />
 
       </FormField>
 
     </FormSection>
+
   );
+
 }

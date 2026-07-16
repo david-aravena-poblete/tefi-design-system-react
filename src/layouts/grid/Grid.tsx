@@ -1,3 +1,7 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import clsx from "clsx";
 
 import "./grid.css";
@@ -6,40 +10,73 @@ import type {
   GridProps,
 } from "./grid.types";
 
-
 /* ======================================
    GRID
 ====================================== */
 
 export function Grid({
-  children,
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
   as: Component = "div",
+
   gap = "lg",
+
   columns,
+
   template,
+
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
   className,
-  ...props
+
+  children,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
 }: GridProps) {
 
+  /* ======================================
+     CLASSES
+  ====================================== */
+
   const classes = clsx(
+
     "grid",
 
     `grid--gap-${gap}`,
 
-    columns &&
-      `grid--cols-${columns}`,
+    {
 
-    template &&
-      `grid--template-${template}`,
+      [`grid--cols-${columns}`]:
+        columns,
+
+      [`grid--template-${template}`]:
+        template,
+
+    },
 
     className,
+
   );
+
+  /* ======================================
+     RENDER
+  ====================================== */
 
   return (
 
     <Component
       className={classes}
-      {...props}
+      {...rest}
     >
 
       {children}

@@ -1,11 +1,6 @@
 /* ======================================
    IMPORTS
 ====================================== */
-
-import {
-  forwardRef,
-} from "react";
-
 import clsx from "clsx";
 
 import "./button.css";
@@ -23,135 +18,124 @@ import type {
    BUTTON
 ====================================== */
 
-export const Button = forwardRef<
-  HTMLButtonElement,
-  ButtonProps
->(
-  (
+export function Button({
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
+  variant = "primary",
+  size = "md",
+  fullWidth = false,
+  loading = false,
+  skeleton = false,
+  startIcon,
+  endIcon,
+
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
+  type = "button",
+  disabled,
+  className,
+  children,
+  ref,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
+}: ButtonProps) {
+
+  /* ======================================
+     DERIVED
+  ====================================== */
+
+  const isDisabled =
+    loading || disabled;
+
+  /* ======================================
+     CLASSES
+  ====================================== */
+
+  const classes = clsx(
+
+    "button",
+    `button--${variant}`,
+    `button--${size}`,
+
     {
-      children,
-
-      startIcon,
-
-      endIcon,
-
-      type = "button",
-
-      variant = "primary",
-
-      size = "md",
-
-      fullWidth = false,
-
-      loading = false,
-
-      skeleton = false,
-
-      disabled,
-
-      className,
-
-      ...rest
+      "button--full": fullWidth,
+      "button--loading": loading,
     },
-    ref
-  ) => {
 
-    /* ======================================
-       DERIVED
-    ====================================== */
+    className,
 
-    const isDisabled =
-      disabled || loading;
+  );
 
-    /* ======================================
-       CLASSES
-    ====================================== */
+  /* ======================================
+     CONTENT
+  ====================================== */
 
-    const classes = clsx(
-      "button",
+  const content = (
 
-      `button--${variant}`,
+    <button
+      ref={ref}
+      type={type}
+      className={classes}
+      disabled={isDisabled}
+      aria-busy={loading}
+      {...rest}
+    >
 
-      `button--${size}`,
-
-      {
-        "button--full": fullWidth,
-
-        "button--loading": loading,
-      },
-
-      className,
-    );
-
-    /* ======================================
-       BUTTON
-    ====================================== */
-
-    const button = (
-
-      <button
-        ref={ref}
-        type={type}
-        className={classes}
-        disabled={isDisabled}
-        aria-busy={loading}
-        {...rest}
+      <Inline
+        as="span"
+        gap="sm"
+        align="center"
       >
 
-        <Inline
-          as="span"
-          gap="sm"
-          align="center"
-        >
+        {startIcon}
+        {children}
+        {endIcon}
 
-          {startIcon}
+        {loading && (
+          <Spinner size="sm" />
+        )}
 
-          {children}
+      </Inline>
 
-          {endIcon}
+    </button>
 
-          {loading && (
+  );
 
-            <Spinner
-              size="sm"
-            />
+  /* ======================================
+     SKELETON
+  ====================================== */
 
-          )}
+  if (skeleton) {
 
-        </Inline>
-
-      </button>
-
+    return (
+  
+      <Skeleton
+        fill={fullWidth}
+        radius="var(--surface-button-radius)"
+      >
+  
+        {content}
+  
+      </Skeleton>
+  
     );
-
-    /* ======================================
-       SKELETON
-    ====================================== */
-
-    if (skeleton) {
-
-      return (
-
-        <Skeleton
-          fill={fullWidth}
-        >
-
-          {button}
-
-        </Skeleton>
-
-      );
-
-    }
-
-    /* ======================================
-       RENDER
-    ====================================== */
-
-    return button;
-
+  
   }
-);
 
-Button.displayName =
-  "Button";
+  /* ======================================
+     RENDER
+  ====================================== */
+
+  return content;
+
+}

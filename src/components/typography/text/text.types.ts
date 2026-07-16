@@ -3,24 +3,16 @@
 ====================================== */
 
 import type {
-  HTMLAttributes,
-  ReactNode,
+  ComponentProps,
 } from "react";
 
-/* ======================================
-   TEXT
-====================================== */
+import type {
+  FontSize,
+} from "@/foundations/design-system.types";
 
-export type TextSize =
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "2xl"
-  | "3xl"
-  | "4xl"
-  | "5xl";
+/* ======================================
+   TYPES
+====================================== */
 
 export type TextVariant =
   | "default"
@@ -33,17 +25,9 @@ export type TextVariant =
 ====================================== */
 
 export interface TextProps
-  extends HTMLAttributes<HTMLElement> {
+  extends ComponentProps<"p"> {
 
-  children?: ReactNode;
-
-  as?:
-    | "p"
-    | "span"
-    | "label"
-    | "div";
-
-  size?: TextSize;
+  size?: FontSize;
 
   variant?: TextVariant;
 

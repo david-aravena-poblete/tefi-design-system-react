@@ -2,48 +2,71 @@
    IMPORTS
 ====================================== */
 
+import clsx from "clsx";
+
 import "./helper-text.css";
-import type { HelperTextProps } from "./helper-text.types";
+
+import type {
+  HelperTextProps,
+} from "./helper-text.types";
 
 /* ======================================
    HELPER TEXT
 ====================================== */
 
 export function HelperText({
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
   size = "md",
+
+  /* ======================================
+     REACT PROPS
+  ====================================== */
 
   children,
 
-  className = "",
+  className,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
 
   ...rest
+
 }: HelperTextProps) {
 
   /* ======================================
      CLASSES
   ====================================== */
 
-  const classes = [
+  const classes = clsx(
+
     "helper-text",
 
     `helper-text--${size}`,
 
     className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+
+  );
 
   /* ======================================
      RENDER
   ====================================== */
 
   return (
+
     <p
       className={classes}
-
       {...rest}
     >
+
       {children}
+
     </p>
+
   );
+
 }

@@ -3,13 +3,16 @@
 ====================================== */
 
 import type {
-  HTMLAttributes,
-  ReactNode,
+  ComponentProps,
   JSX,
 } from "react";
 
+import type {
+  Size,
+} from "../../foundations/design-system.types";
+
 /* ======================================
-   CARD
+   TYPES
 ====================================== */
 
 export type CardVariant =
@@ -17,32 +20,21 @@ export type CardVariant =
   | "elevated"
   | "flat";
 
-export type CardSize =
-  | "sm"
-  | "md"
-  | "lg";
-
 /* ======================================
    PROPS
 ====================================== */
 
 export interface CardProps
-  extends HTMLAttributes<HTMLDivElement> {
-
-  children?: ReactNode;
+  extends ComponentProps<"div"> {
 
   variant?: CardVariant;
 
-  size?: CardSize;
+  size?: Size;
 
 }
 
 export interface CardSectionProps
-  extends HTMLAttributes<HTMLDivElement> {
-
-  children?: ReactNode;
-
-}
+  extends ComponentProps<"div"> {}
 
 /* ======================================
    COMPOUND COMPONENT

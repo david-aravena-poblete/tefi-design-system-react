@@ -1,13 +1,11 @@
-import React from "react";
+import { Form } from "@/components/form/form";
 
-import { Form } from "./Form";
+import { Button } from "@/components/button";
 
-import { Button } from "../../button";
+import { FormField } from "@/components/form/form-field";
 
-import { FormField } from "../form-field";
-
-import { Input } from "../../field/input";
-import { Label } from "../../field/label";
+import { Input } from "@/components/input";
+import { Label } from "@/components/field/label";
 
 /* ======================================
    META
@@ -23,7 +21,9 @@ export default {
 ====================================== */
 
 export function Default() {
+
   return (
+
     <Form>
 
       <FormField>
@@ -44,9 +44,13 @@ export function Default() {
           marginTop: "16px",
         }}
       >
+
         Enviar
+
       </Button>
 
     </Form>
+
   );
+
 }

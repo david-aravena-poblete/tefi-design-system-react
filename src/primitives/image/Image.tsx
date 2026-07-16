@@ -2,48 +2,120 @@
    IMPORTS
 ====================================== */
 
-import { useState } from "react";
-import clsx from "clsx";
-import "./image.css";
-import { Skeleton } from "../../primitives/skeleton";
+import {
+  useState,
+  type ComponentProps,
+} from "react";
 
-import type { ImageProps } from "./image.types";
+import clsx from "clsx";
+
+import "./image.css";
+
+import {
+  Skeleton,
+} from "../../primitives/skeleton";
+
+import type {
+  ImageProps,
+} from "./image.types";
 
 /* ======================================
    IMAGE
 ====================================== */
 
 export function Image({
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
   fit = "cover",
-  ratio = "16:9",
+
+  aspect = "16:9",
+
   skeleton = false,
+
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
   className,
+
   alt,
+
   onLoad,
-  ...props
+
+  onError,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
 }: ImageProps) {
 
   /* ======================================
      STATE
   ====================================== */
 
-  const [loaded, setLoaded] = useState(false);
+  const [
+    isLoaded,
+    setIsLoaded,
+  ] = useState(false);
+
+  const [
+    hasError,
+    setHasError,
+  ] = useState(false);
+
+  /* ======================================
+     HANDLERS
+  ====================================== */
+
+  const handleLoad: ComponentProps<"img">["onLoad"] = (event) => {
+
+    setIsLoaded(true);
+
+    onLoad?.(event);
+
+  };
+
+  const handleError: ComponentProps<"img">["onError"] = (event) => {
+
+    setHasError(true);
+
+    setIsLoaded(false);
+
+    onError?.(event);
+
+  };
 
   /* ======================================
      CLASSES
   ====================================== */
 
   const wrapperClasses = clsx(
+
     "image",
-    `image--${ratio.replace(":", "-")}`,
-    className
+
+    `image--${aspect.replace(":", "-")}`,
+
+    className,
+
   );
 
   const imageClasses = clsx(
+
     "image__content",
+
     `image__content--${fit}`,
-    // Añadimos la clase de opacidad solo cuando ya cargó
-    loaded && "image__content--loaded"
+
+    {
+      "image__content--loaded":
+        isLoaded,
+    },
+
   );
 
   /* ======================================
@@ -51,15 +123,24 @@ export function Image({
   ====================================== */
 
   if (skeleton) {
+
     return (
+
       <div className={wrapperClasses}>
-        <Skeleton
-          fill
-          ratio={ratio}
-          className="image__skeleton"
-        />
+
+        <div className="image__surface">
+
+          <Skeleton
+            fill
+            className="image__skeleton"
+          />
+
+        </div>
+
       </div>
+
     );
+
   }
 
   /* ======================================
@@ -67,29 +148,32 @@ export function Image({
   ====================================== */
 
   return (
+
     <div className={wrapperClasses}>
 
-      {/* Mantenemos el skeleton interno mientras no esté cargada */}
-      {!loaded && (
-        <Skeleton
-          fill
-          ratio={ratio}
-          className="image__skeleton"
-        />
-      )}
+      <div className="image__surface">
 
-      {/* La imagen descarga de fondo invisible (opacity: 0 por CSS) 
-          hasta que dispara el onLoad */}
-      <img
-        className={imageClasses}
-        alt={alt}
-        onLoad={(event) => {
-          setLoaded(true);
-          onLoad?.(event);
-        }}
-        {...props}
-      />
+        {!isLoaded && !hasError && (
+
+          <Skeleton
+            fill
+            className="image__skeleton"
+          />
+
+        )}
+
+        <img
+          {...rest}
+          className={imageClasses}
+          alt={alt}
+          onLoad={handleLoad}
+          onError={handleError}
+        />
+
+      </div>
 
     </div>
+
   );
+
 }

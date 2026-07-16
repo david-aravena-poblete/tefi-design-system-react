@@ -2,27 +2,38 @@
    IMPORTS
 ====================================== */
 
-import React from "react";
+import type {
+  Meta,
+  StoryObj,
+} from "@storybook/react";
 
-import { HelperText }
-  from "./HelperText";
+import {
+  HelperText,
+} from "@/components/field/helper-text";
 
 /* ======================================
    META
 ====================================== */
 
-export default {
+const meta: Meta<typeof HelperText> = {
+
   title: "Components/Field/HelperText",
 
   component: HelperText,
 
+  tags: ["autodocs"],
+
   args: {
+
     children:
       "We never share your email.",
+
   },
 
   argTypes: {
+
     size: {
+
       control: "select",
 
       options: [
@@ -30,25 +41,40 @@ export default {
         "md",
         "lg",
       ],
+
     },
+
   },
+
 };
 
+export default meta;
+
+type Story =
+  StoryObj<typeof HelperText>;
 
 /* ======================================
    PLAYGROUND
 ====================================== */
 
-export const Playground = {};
+export const Playground: Story = {
 
+  render: (args) => (
+
+    <HelperText {...args} />
+
+  ),
+
+};
 
 /* ======================================
    SIZES
 ====================================== */
 
-export function Sizes() {
+export const Sizes: Story = {
 
-  return (
+  render: () => (
+
     <div
       style={{
         display: "flex",
@@ -58,17 +84,25 @@ export function Sizes() {
     >
 
       <HelperText size="sm">
+
         Small helper text
+
       </HelperText>
 
       <HelperText size="md">
+
         Medium helper text
+
       </HelperText>
 
       <HelperText size="lg">
+
         Large helper text
+
       </HelperText>
 
     </div>
-  );
-}
+
+  ),
+
+};

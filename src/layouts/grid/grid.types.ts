@@ -1,23 +1,19 @@
-import type {
-  ElementType,
-  HTMLAttributes,
-  ReactNode,
-} from "react";
-
-
 /* ======================================
-   GRID
+   IMPORTS
 ====================================== */
 
-export type GridGap =
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "xxl"
-  | "xxxl";
+import type {
+  ComponentProps,
+  ElementType,
+} from "react";
 
+import type {
+  Spacing,
+} from "../../foundations/design-system.types";
+
+/* ======================================
+   TYPES
+====================================== */
 
 export type GridColumns =
   | 1
@@ -27,23 +23,19 @@ export type GridColumns =
   | 6
   | 12;
 
-
 export type GridTemplate =
   | "auto-1fr-auto";
-
 
 /* ======================================
    PROPS
 ====================================== */
 
 export interface GridProps
-  extends HTMLAttributes<HTMLElement> {
-
-  children?: ReactNode;
+  extends ComponentProps<"div"> {
 
   as?: ElementType;
 
-  gap?: GridGap;
+  gap?: Spacing;
 
   columns?: GridColumns;
 

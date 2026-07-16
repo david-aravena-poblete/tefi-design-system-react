@@ -1,12 +1,13 @@
 /* ======================================
    IMPORTS
 ====================================== */
-import React from "react";
 
-import { FormRow } from "./FormRow";
-import { FormField } from "../form-field";
-import { Label } from "../../field/label";
-import { Input } from "../../field/input";
+import { FormRow } from "@/components/form/form-row";
+import { FormField } from "@/components/form/form-field";
+
+import { Label } from "@/components/field/label";
+
+import { Input } from "@/components/input";
 
 /* ======================================
    META
@@ -18,7 +19,6 @@ export default {
   component: FormRow,
 };
 
-
 /* ======================================
    DEFAULT
 ====================================== */
@@ -26,12 +26,15 @@ export default {
 export function Default() {
 
   return (
+
     <FormRow>
 
       <FormField>
 
         <Label>
+
           First name
+
         </Label>
 
         <Input
@@ -43,7 +46,9 @@ export function Default() {
       <FormField>
 
         <Label>
+
           Last name
+
         </Label>
 
         <Input
@@ -53,9 +58,10 @@ export function Default() {
       </FormField>
 
     </FormRow>
-  );
-}
 
+  );
+
+}
 
 /* ======================================
    THREE COLUMNS
@@ -64,12 +70,15 @@ export function Default() {
 export function ThreeColumns() {
 
   return (
+
     <FormRow>
 
       <FormField>
 
         <Label>
+
           City
+
         </Label>
 
         <Input
@@ -81,7 +90,9 @@ export function ThreeColumns() {
       <FormField>
 
         <Label>
+
           Region
+
         </Label>
 
         <Input
@@ -93,7 +104,9 @@ export function ThreeColumns() {
       <FormField>
 
         <Label>
+
           Country
+
         </Label>
 
         <Input
@@ -103,5 +116,7 @@ export function ThreeColumns() {
       </FormField>
 
     </FormRow>
+
   );
+
 }

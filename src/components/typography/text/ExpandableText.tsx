@@ -5,8 +5,9 @@
 import {
   useState,
   type CSSProperties,
-  type ElementType,
 } from "react";
+
+import clsx from "clsx";
 
 import "./text.css";
 
@@ -37,9 +38,10 @@ interface ExpandableTextProps
 ====================================== */
 
 export function ExpandableText({
-  children,
 
-  as = "p",
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
 
   size = "md",
 
@@ -53,32 +55,51 @@ export function ExpandableText({
 
   collapseLabel = "Ver menos",
 
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
   className = "",
 
-  ...props
+  children,
+
+  ref,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
 }: ExpandableTextProps) {
 
   const [expanded, setExpanded] =
     useState(false);
 
-  const Tag =
-    as as ElementType;
+  /* ======================================
+     CLASSES
+  ====================================== */
 
-  const classes = [
+  const classes = clsx(
+
     "text",
 
     `text--${size}`,
 
     `text--${variant}`,
 
-    !expanded &&
-      "read-more__content--clamp",
+    {
+      "read-more__content--clamp":
+        !expanded,
+    },
 
     className,
 
-  ]
-    .filter(Boolean)
-    .join(" ");
+  );
+
+  /* ======================================
+     STYLE
+  ====================================== */
 
   const style: CSSProperties =
     expanded
@@ -92,13 +113,18 @@ export function ExpandableText({
   ====================================== */
 
   const content = (
-    <Tag
+
+    <p
+      ref={ref}
       className={classes}
       style={style}
-      {...props}
+      {...rest}
     >
+
       {children}
-    </Tag>
+
+    </p>
+
   );
 
   /* ======================================
@@ -112,7 +138,9 @@ export function ExpandableText({
       {skeleton ? (
 
         <Skeleton>
+
           {content}
+
         </Skeleton>
 
       ) : (
@@ -129,9 +157,11 @@ export function ExpandableText({
           setExpanded(!expanded)
         }
       >
+
         {expanded
           ? collapseLabel
           : expandLabel}
+
       </Button>
 
     </div>

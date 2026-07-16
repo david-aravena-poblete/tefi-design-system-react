@@ -3,49 +3,35 @@
 ====================================== */
 
 import type {
-  HTMLAttributes,
-  ReactNode,
+  ComponentProps,
 } from "react";
 
-/* ======================================
-   HEADING
-====================================== */
-
-export type HeadingLevel =
-  | 1
-  | 2
-  | 3
-  | 4
-  | 5
-  | 6;
+import type {
+  FontSize,
+} from "@/foundations/design-system.types";
 
 /* ======================================
-   SIZE
+   TYPES
 ====================================== */
 
-export type HeadingSize =
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "2xl"
-  | "3xl"
-  | "4xl"
-  | "5xl";
+export type HeadingElement =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6";
 
 /* ======================================
    PROPS
 ====================================== */
 
 export interface HeadingProps
-  extends HTMLAttributes<HTMLHeadingElement> {
+  extends ComponentProps<"h1"> {
 
-  children?: ReactNode;
+  as?: HeadingElement;
 
-  level?: HeadingLevel;
-
-  size?: HeadingSize;
+  size?: FontSize;
 
   skeleton?: boolean;
 

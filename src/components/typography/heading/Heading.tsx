@@ -2,9 +2,7 @@
    IMPORTS
 ====================================== */
 
-import type {
-  ElementType,
-} from "react";
+import clsx from "clsx";
 
 import "./heading.css";
 
@@ -19,61 +17,62 @@ import type {
 ====================================== */
 
 export function Heading({
-  children,
 
-  level = 1,
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
+  as: Component = "h1",
 
   size = "2xl",
 
   skeleton = false,
 
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
   className = "",
 
-  ...props
+  children,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
 }: HeadingProps) {
-
-  /* ======================================
-     SAFE LEVEL
-  ====================================== */
-
-  const safeLevel =
-    level >= 1 &&
-    level <= 6
-      ? level
-      : 1;
-
-  /* ======================================
-     TAG
-  ====================================== */
-
-  const Tag =
-    `h${safeLevel}` as ElementType;
 
   /* ======================================
      CLASSES
   ====================================== */
 
-  const classes = [
+  const classes = clsx(
+
     "heading",
 
     `heading--${size}`,
 
     className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+
+  );
 
   /* ======================================
-     HEADING
+     CONTENT
   ====================================== */
 
-  const heading = (
-    <Tag
+  const content = (
+
+    <Component
       className={classes}
-      {...props}
+      {...rest}
     >
+
       {children}
-    </Tag>
+
+    </Component>
+
   );
 
   /* ======================================
@@ -84,7 +83,7 @@ export function Heading({
 
     return (
       <Skeleton>
-        {heading}
+        {content}
       </Skeleton>
     );
 
@@ -94,6 +93,6 @@ export function Heading({
      RENDER
   ====================================== */
 
-  return heading;
+  return content;
 
 }

@@ -1,51 +1,32 @@
-import type {
-  ElementType,
-  HTMLAttributes,
-  ReactNode,
-} from "react";
-
-
 /* ======================================
-   STACK
+   IMPORTS
 ====================================== */
 
-export type StackGap =
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "xxl"
-  | "xxxl";
+import type {
+  ComponentProps,
+  ElementType,
+} from "react";
 
+import type {
+  Align,
+  Justify,
+  Spacing,
+} from "../../foundations/design-system.types";
 
-export type StackAlign =
-  | "start"
-  | "center"
-  | "end"
-  | "stretch";
-
-
-export type StackJustify =
-  | "start"
-  | "center"
-  | "end"
-  | "between"
-  | "around";
-
+/* ======================================
+   PROPS
+====================================== */
 
 export interface StackProps
-  extends HTMLAttributes<HTMLElement> {
-
-  children?: ReactNode;
+  extends ComponentProps<"div"> {
 
   as?: ElementType;
 
-  gap?: StackGap;
+  gap?: Spacing;
 
-  align?: StackAlign;
+  align?: Align;
 
-  justify?: StackJustify;
+  justify?: Justify;
 
   wrap?: boolean;
 

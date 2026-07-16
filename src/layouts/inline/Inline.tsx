@@ -1,3 +1,9 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
+import clsx from "clsx";
+
 import "./inline.css";
 
 import type {
@@ -9,17 +15,43 @@ import type {
 ====================================== */
 
 export function Inline({
+
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
+
   as: Component = "div",
-  children,
+
   gap = "md",
+
   align = "center",
+
   justify = "start",
+
   wrap = false,
+
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
   className = "",
-  ...props
+
+  children,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
 }: InlineProps) {
 
-  const classes = [
+  /* ======================================
+     CLASSES
+  ====================================== */
+
+  const classes = clsx(
+
     "inline",
 
     `inline--gap-${gap}`,
@@ -28,18 +60,23 @@ export function Inline({
 
     `inline--justify-${justify}`,
 
-    wrap && "inline--wrap",
+    {
+      "inline--wrap": wrap,
+    },
 
     className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+
+  );
+
+  /* ======================================
+     RENDER
+  ====================================== */
 
   return (
 
     <Component
       className={classes}
-      {...props}
+      {...rest}
     >
 
       {children}

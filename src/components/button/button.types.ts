@@ -3,55 +3,44 @@
 ====================================== */
 
 import type {
-  ButtonHTMLAttributes,
+  ComponentProps,
   ReactNode,
 } from "react";
 
-import { SIZES } from "../../shared/constants";
-
-/* ======================================
-   VARIANTS
-====================================== */
-
-const BUTTON_VARIANTS = [
-  "primary",
-  "secondary",
-  "ghost",
-  "link",
-  "danger",
-] as const;
+import type {
+  Size,
+} from "../../foundations/design-system.types";
 
 /* ======================================
    TYPES
 ====================================== */
 
 export type ButtonVariant =
-  (typeof BUTTON_VARIANTS)[number];
-
-export type ButtonSize =
-  (typeof SIZES)[number];
+  | "primary"
+  | "secondary"
+  | "ghost"
+  | "link"
+  | "danger";
 
 /* ======================================
    PROPS
 ====================================== */
 
 export interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
-
-  children?: ReactNode;
-
-  startIcon?: ReactNode;
-
-  endIcon?: ReactNode;
+  extends ComponentProps<"button"> {
 
   variant?: ButtonVariant;
 
-  size?: ButtonSize;
+  size?: Size;
 
   fullWidth?: boolean;
 
   loading?: boolean;
 
   skeleton?: boolean;
+
+  startIcon?: ReactNode;
+
+  endIcon?: ReactNode;
 
 }

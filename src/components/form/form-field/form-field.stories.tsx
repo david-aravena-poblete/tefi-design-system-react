@@ -2,13 +2,13 @@
    IMPORTS
 ====================================== */
 
-import React from "react";
+import { FormField } from "@/components/form/form-field";
 
-import { FormField } from "./FormField";
-import { Label } from "../../field/label";
-import { Input } from "../../field/input";
-import { HelperText } from "../../field/helper-text";
-import { ErrorMessage } from "../../field/error-message";
+import { Label } from "@/components/field/label";
+import { HelperText } from "@/components/field/helper-text";
+import { ErrorMessage } from "@/components/field/error-message";
+
+import { Input } from "@/components/input";
 
 /* ======================================
    META
@@ -20,7 +20,6 @@ export default {
   component: FormField,
 };
 
-
 /* ======================================
    DEFAULT
 ====================================== */
@@ -28,10 +27,13 @@ export default {
 export function Default() {
 
   return (
+
     <FormField>
 
       <Label>
+
         Email
+
       </Label>
 
       <Input
@@ -39,13 +41,16 @@ export function Default() {
       />
 
       <HelperText>
+
         We never share your email.
+
       </HelperText>
 
     </FormField>
-  );
-}
 
+  );
+
+}
 
 /* ======================================
    ERROR
@@ -54,10 +59,13 @@ export function Default() {
 export function Error() {
 
   return (
+
     <FormField state="error">
 
       <Label>
+
         Email
+
       </Label>
 
       <Input
@@ -65,13 +73,16 @@ export function Error() {
       />
 
       <ErrorMessage>
+
         Invalid email address.
+
       </ErrorMessage>
 
     </FormField>
-  );
-}
 
+  );
+
+}
 
 /* ======================================
    DISABLED
@@ -80,10 +91,13 @@ export function Error() {
 export function Disabled() {
 
   return (
+
     <FormField disabled>
 
       <Label>
+
         Email
+
       </Label>
 
       <Input
@@ -91,9 +105,13 @@ export function Disabled() {
       />
 
       <HelperText>
+
         Disabled field example.
+
       </HelperText>
 
     </FormField>
+
   );
+
 }

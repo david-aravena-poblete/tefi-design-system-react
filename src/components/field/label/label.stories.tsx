@@ -2,25 +2,37 @@
    IMPORTS
 ====================================== */
 
-import React from "react";
+import type {
+  Meta,
+  StoryObj,
+} from "@storybook/react";
 
-import { Label } from "./Label";
+import {
+  Label,
+} from "@/components/field/label";
 
 /* ======================================
    META
 ====================================== */
 
-export default {
+const meta: Meta<typeof Label> = {
+
   title: "Components/Field/Label",
 
   component: Label,
 
+  tags: ["autodocs"],
+
   args: {
+
     children: "Email",
+
   },
 
   argTypes: {
+
     size: {
+
       control: "select",
 
       options: [
@@ -28,36 +40,57 @@ export default {
         "md",
         "lg",
       ],
+
     },
+
   },
+
 };
 
+export default meta;
+
+type Story =
+  StoryObj<typeof Label>;
 
 /* ======================================
    PLAYGROUND
 ====================================== */
 
-export const Playground = {};
+export const Playground: Story = {
 
+  render: (args) => (
+
+    <Label {...args} />
+
+  ),
+
+};
 
 /* ======================================
    REQUIRED
 ====================================== */
 
-export const Required = {
-  args: {
-    required: true,
-  },
-};
+export const Required: Story = {
 
+  render: (args) => (
+
+    <Label
+      {...args}
+      required
+    />
+
+  ),
+
+};
 
 /* ======================================
    SIZES
 ====================================== */
 
-export function Sizes() {
+export const Sizes: Story = {
 
-  return (
+  render: () => (
+
     <div
       style={{
         display: "flex",
@@ -67,17 +100,25 @@ export function Sizes() {
     >
 
       <Label size="sm">
+
         Small
+
       </Label>
 
       <Label size="md">
+
         Medium
+
       </Label>
 
       <Label size="lg">
+
         Large
+
       </Label>
 
     </div>
-  );
-}
+
+  ),
+
+};

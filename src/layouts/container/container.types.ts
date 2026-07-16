@@ -1,11 +1,18 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import type {
+  ComponentProps,
   ElementType,
-  HTMLAttributes,
-  ReactNode,
 } from "react";
 
+import type {
+  Spacing,
+} from "../../foundations/design-system.types";
+
 /* ======================================
-   CONTAINER
+   TYPES
 ====================================== */
 
 export type ContainerSize =
@@ -15,30 +22,19 @@ export type ContainerSize =
   | "xl"
   | "full";
 
-export type ContainerPadding =
-  | "xxs"
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "xxl"
-  | "xxxl";
-
 /* ======================================
    PROPS
 ====================================== */
 
 export interface ContainerProps
-  extends HTMLAttributes<HTMLElement> {
-
-  children?: ReactNode;
+  extends ComponentProps<"div"> {
 
   as?: ElementType;
 
   size?: ContainerSize;
 
-  paddingTop?: ContainerPadding;
+  paddingTop?: Spacing;
 
-  paddingBottom?: ContainerPadding;
+  paddingBottom?: Spacing;
+
 }

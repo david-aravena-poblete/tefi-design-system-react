@@ -2,9 +2,7 @@
    IMPORTS
 ====================================== */
 
-import type {
-  ElementType,
-} from "react";
+import clsx from "clsx";
 
 import "./text.css";
 
@@ -21,9 +19,10 @@ import type {
 ====================================== */
 
 export function Text({
-  children,
 
-  as = "p",
+  /* ======================================
+     TEFI PROPS
+  ====================================== */
 
   size = "md",
 
@@ -39,15 +38,30 @@ export function Text({
 
   collapseLabel = "Ver menos",
 
+  /* ======================================
+     REACT PROPS
+  ====================================== */
+
   className = "",
 
-  ...props
+  children,
+
+  ref,
+
+  /* ======================================
+     REST PROPS
+  ====================================== */
+
+  ...rest
+
 }: TextProps) {
 
-  const Tag =
-    as as ElementType;
+  /* ======================================
+     CLASSES
+  ====================================== */
 
-  const classes = [
+  const classes = clsx(
+
     "text",
 
     `text--${size}`,
@@ -56,21 +70,24 @@ export function Text({
 
     className,
 
-  ]
-    .filter(Boolean)
-    .join(" ");
+  );
 
   /* ======================================
-     TEXT
+     CONTENT
   ====================================== */
 
-  const text = (
-    <Tag
+  const content = (
+
+    <p
+      ref={ref}
       className={classes}
-      {...props}
+      {...rest}
     >
+
       {children}
-    </Tag>
+
+    </p>
+
   );
 
   /* ======================================
@@ -83,16 +100,17 @@ export function Text({
 
       <ExpandableText
         skeleton={skeleton}
-        as={as}
         size={size}
         variant={variant}
         lines={lines}
         expandLabel={expandLabel}
         collapseLabel={collapseLabel}
         className={className}
-        {...props}
+        {...rest}
       >
+
         {children}
+
       </ExpandableText>
 
     );
@@ -106,9 +124,13 @@ export function Text({
   if (skeleton) {
 
     return (
+
       <Skeleton>
-        {text}
+
+        {content}
+
       </Skeleton>
+
     );
 
   }
@@ -117,6 +139,6 @@ export function Text({
      RENDER
   ====================================== */
 
-  return text;
+  return content;
 
 }
