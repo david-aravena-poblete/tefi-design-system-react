@@ -6,16 +6,13 @@ import clsx from "clsx";
 
 import "./error-message.css";
 
-import type {
-  ErrorMessageProps,
-} from "./error-message.types";
+import type { ErrorMessageProps } from "./error-message.types";
 
 /* ======================================
    ERROR MESSAGE
 ====================================== */
 
 export function ErrorMessage({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -35,21 +32,17 @@ export function ErrorMessage({
   ====================================== */
 
   ...rest
-
 }: ErrorMessageProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "error-message",
 
     `error-message--${size}`,
 
     className,
-
   );
 
   /* ======================================
@@ -57,17 +50,8 @@ export function ErrorMessage({
   ====================================== */
 
   return (
-
-    <p
-      className={classes}
-      role="alert"
-      {...rest}
-    >
-
+    <p className={classes} role="alert" {...rest}>
       {children}
-
     </p>
-
   );
-
 }

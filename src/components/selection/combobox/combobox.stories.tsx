@@ -32,12 +32,7 @@ const OPTIONS = [
    WRAPPER
 ====================================== */
 
-function StoryWrapper({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-
+function StoryWrapper({ children }: { children: React.ReactNode }) {
   return (
     <div
       style={{
@@ -70,13 +65,10 @@ export default {
 ====================================== */
 
 export function Single() {
-
-  const [value, setValue] =
-    useState("");
+  const [value, setValue] = useState("");
 
   return (
     <StoryWrapper>
-
       <Combobox
         variant="single"
 
@@ -86,13 +78,8 @@ export function Single() {
 
         placeholder="Select framework"
 
-        onChange={(next) =>
-          setValue(
-            next as string
-          )
-        }
+        onChange={(next) => setValue(next as string)}
       />
-
     </StoryWrapper>
   );
 }
@@ -102,13 +89,10 @@ export function Single() {
 ====================================== */
 
 export function Multiple() {
-
-  const [value, setValue] =
-    useState<string[]>([]);
+  const [value, setValue] = useState<string[]>([]);
 
   return (
     <StoryWrapper>
-
       <Combobox
         variant="multiple"
 
@@ -118,13 +102,8 @@ export function Multiple() {
 
         placeholder="Search frameworks"
 
-        onChange={(next) =>
-          setValue(
-            next as string[]
-          )
-        }
+        onChange={(next) => setValue(next as string[])}
       />
-
     </StoryWrapper>
   );
 }
@@ -134,10 +113,8 @@ export function Multiple() {
 ====================================== */
 
 export function Disabled() {
-
   return (
     <StoryWrapper>
-
       <Combobox
         disabled
 
@@ -147,7 +124,6 @@ export function Disabled() {
 
         placeholder="Disabled combobox"
       />
-
     </StoryWrapper>
   );
 }
@@ -157,10 +133,8 @@ export function Disabled() {
 ====================================== */
 
 export function Error() {
-
   return (
     <StoryWrapper>
-
       <Combobox
         state="error"
 
@@ -170,7 +144,6 @@ export function Error() {
 
         placeholder="Select framework"
       />
-
     </StoryWrapper>
   );
 }

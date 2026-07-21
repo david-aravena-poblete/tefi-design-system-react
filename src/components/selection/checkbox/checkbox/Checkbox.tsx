@@ -28,69 +28,43 @@ export function Checkbox({
 
   ...rest
 }: CheckboxProps) {
-
   /* ======================================
      GROUP CONTEXT
   ====================================== */
 
-  const group =
-    useCheckboxGroup();
+  const group = useCheckboxGroup();
 
   /* ======================================
      GROUP VALUE
   ====================================== */
 
-  const groupValue =
-    Array.isArray(group?.value)
-      ? group.value
-      : [];
+  const groupValue = Array.isArray(group?.value) ? group.value : [];
 
   /* ======================================
      DERIVED
   ====================================== */
 
-  const checked =
-    value !== undefined
-      ? groupValue.includes(
-          String(value)
-        )
-      : undefined;
+  const checked = value !== undefined ? groupValue.includes(String(value)) : undefined;
 
-  const disabled =
-    disabledProp ??
-    group?.disabled ??
-    false;
+  const disabled = disabledProp ?? group?.disabled ?? false;
 
   /* ======================================
      CHANGE
   ====================================== */
 
-  const handleChange = (
-    event:
-      React.ChangeEvent<HTMLInputElement>
-  ) => {
-
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!group) {
       onChange?.(event);
       return;
     }
 
     if (event.target.checked) {
-
-      group.onChange?.([
-        ...groupValue,
-        String(value),
-      ]);
+      group.onChange?.([...groupValue, String(value)]);
 
       return;
     }
 
-    group.onChange?.(
-      groupValue.filter(
-        (item) =>
-          item !== String(value)
-      )
-    );
+    group.onChange?.(groupValue.filter((item) => item !== String(value)));
   };
 
   /* ======================================
@@ -117,14 +91,9 @@ export function Checkbox({
 
       renderControl={() => (
         <span className="checkbox">
-
-          <svg
-            viewBox="0 0 16 16"
-            className="checkbox__icon"
-          >
+          <svg viewBox="0 0 16 16" className="checkbox__icon">
             <path d="M3 8L6.5 11.5L13 5" />
           </svg>
-
         </span>
       )}
 

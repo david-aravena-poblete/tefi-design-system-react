@@ -3,22 +3,11 @@
 ====================================== */
 
 .sidebar {
-
   display: flex;
-
   flex-direction: column;
-
   width: 280px;
-
   min-width: 280px;
-
   height: 100%;
-
-  background:
-    var(--surface-sidebar-bg);
-
-  border-right:
-    1px solid
-    var(--surface-sidebar-border);
-
+  background: var(--surface-sidebar-bg);
+  border-right: 1px solid var(--surface-sidebar-border);
 }

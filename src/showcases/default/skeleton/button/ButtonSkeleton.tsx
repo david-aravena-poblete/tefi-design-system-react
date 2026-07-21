@@ -45,96 +45,67 @@ export function ButtonSkeleton() {
       </div>
 
       <div>
-        <Button fullWidth>
-          Full Width
-        </Button>
+        <Button fullWidth>Full Width</Button>
 
         <br />
         <br />
 
-        <Button
-          skeleton
-          fullWidth
-        >
+        <Button skeleton fullWidth>
           Full Width
         </Button>
       </div>
 
       <div>
-        <Button variant="secondary">
-          Secondary
-        </Button>
+        <Button variant="secondary">Secondary</Button>
 
         <br />
         <br />
 
-        <Button
-          skeleton
-          variant="secondary"
-        >
+        <Button skeleton variant="secondary">
           Secondary
         </Button>
       </div>
 
       <div>
-        <Button variant="ghost">
-          Ghost
-        </Button>
+        <Button variant="ghost">Ghost</Button>
 
         <br />
         <br />
 
-        <Button
-          skeleton
-          variant="ghost"
-        >
+        <Button skeleton variant="ghost">
           Ghost
         </Button>
       </div>
 
       <div>
-        <Button variant="danger">
-          Danger
-        </Button>
+        <Button variant="danger">Danger</Button>
 
         <br />
         <br />
 
-        <Button
-          skeleton
-          variant="danger"
-        >
+        <Button skeleton variant="danger">
           Danger
         </Button>
       </div>
 
       <div>
-        <Button variant="link">
-          Link
-        </Button>
+        <Button variant="link">Link</Button>
 
         <br />
         <br />
 
-        <Button
-          skeleton
-          variant="link"
-        >
+        <Button skeleton variant="link">
           Link
         </Button>
       </div>
 
       <div>
-        <Button>
-          Guardar cambios del formulario
-        </Button>
+        <Button>Guardar cambios del formulario</Button>
 
         <br />
         <br />
 
-        <Button skeleton>
-          Guardar cambios del formulario
-        </Button>
+        <Button skeleton>Guardar cambios del formulario</Button>
       </div>
 
       <div>
@@ -143,9 +114,7 @@ export function ButtonSkeleton() {
         <br />
         <br />
 
-        <Button skeleton>
-          OK
-        </Button>
+        <Button skeleton>OK</Button>
       </div>
     </div>
   );

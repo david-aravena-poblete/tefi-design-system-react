@@ -1,257 +1,192 @@
 /* ======================================
    WRAPPER
 ====================================== */
-
 .input__wrapper {
   position: relative;
-
   width: 100%;
 }
-
 
 /* ======================================
    BASE
 ====================================== */
-
+/* Appearance */
 .input {
-  width: 100%;
-
-  min-width: 0;
-
+  /* Box Model */
   box-sizing: border-box;
 
-  border: 1px solid
-    var(--state-default-border);
+  /* Sizing */
+  width: 100%;
+  min-width: 0;
+  padding: 0 var(--space-md);
 
-  border-radius:
-    var(--radius-md);
+  /* Fonts */
+  font-family: var(--font-family-sans);
 
-  background:
-    var(--field-bg-color);
-
-  color:
-    var(--field-text-color);
-
+  /* Text */
   line-height: 1;
+  color: var(--field-text-color);
 
-  /* ======================================
-     PADDING
-  ====================================== */
-
-  padding-top: 0;
-
-  padding-bottom: 0;
-
-  padding-left:
-    var(--space-md);
-
-  padding-right:
-    var(--space-md);
-
-  font-family:
-    var(--font-family-sans);
-
+  /* UI */
   outline: none;
 
+  /* Backgrounds and Borders */
+  background: var(--field-bg-color);
+  border: 1px solid var(--state-default-border);
+  border-radius: var(--radius-md);
+
+  /* Transitions */
   transition:
     border-color var(--transition-fast),
     box-shadow var(--transition-fast),
     background-color var(--transition-fast);
 }
 
+/* Interaction */
+.input:hover {
+  border-color: var(--state-default-hover);
+}
+
+.input:focus {
+  border-color: var(--state-default-border);
+  box-shadow: 0 0 0 3px var(--state-default-ring);
+}
 
 /* ======================================
    SIZES
 ====================================== */
-
 .input--sm {
-  min-height:
-    var(--field-height-sm);
-
-  font-size:
-    var(--font-sm);
+  min-height: var(--field-height-sm);
+  font-size: var(--font-sm);
 }
-
 
 .input--md {
-  min-height:
-    var(--field-height-md);
-
-  font-size:
-    var(--font-md);
+  min-height: var(--field-height-md);
+  font-size: var(--font-md);
 }
-
 
 .input--lg {
-  min-height:
-    var(--field-height-lg);
-
-  font-size:
-    var(--font-lg);
+  min-height: var(--field-height-lg);
+  font-size: var(--font-lg);
 }
-
 
 /* ======================================
-   HOVER
+   VARIANTS
 ====================================== */
-
-.input:hover:not(:disabled):not(.input--error):not(.input--success):not(.input--warning) {
-  border-color:
-    var(--state-default-hover);
-}
-
-
-/* ======================================
-   FOCUS
-====================================== */
-
-.input:focus {
-  border-color:
-    var(--state-default-border);
-
-  box-shadow:
-    0 0 0 3px
-    var(--state-default-ring);
-}
-
-
+/* Error */
 .input--error {
-  border-color:
-    var(--state-danger-border);
+  border-color: var(--state-danger-border);
 }
 
+.input--error:hover {
+  border-color: var(--state-danger-border);
+}
 
 .input--error:focus {
-  box-shadow:
-    0 0 0 3px
-    var(--state-danger-ring);
+  box-shadow: 0 0 0 3px var(--state-danger-ring);
 }
 
-
+/* Success */
 .input--success {
-  border-color:
-    var(--state-success-border);
+  border-color: var(--state-success-border);
 }
 
+.input--success:hover {
+  border-color: var(--state-success-border);
+}
 
 .input--success:focus {
-  box-shadow:
-    0 0 0 3px
-    var(--state-success-ring);
+  box-shadow: 0 0 0 3px var(--state-success-ring);
 }
 
-
+/* Warning */
 .input--warning {
-  border-color:
-    var(--state-warning-border);
+  border-color: var(--state-warning-border);
 }
 
+.input--warning:hover {
+  border-color: var(--state-warning-border);
+}
 
 .input--warning:focus {
-  box-shadow:
-    0 0 0 3px
-    var(--state-warning-ring);
+  box-shadow: 0 0 0 3px var(--state-warning-ring);
 }
 
-
 /* ======================================
-   DISABLED
+   STATES
 ====================================== */
-
+/* Disabled */
 .input--disabled {
-  background:
-    var(--field-disabled-bg);
-
-  color:
-    var(--field-disabled-text);
-
+  color: var(--field-disabled-text);
   cursor: not-allowed;
+  background: var(--field-disabled-bg);
 }
 
+/* Has Prefix */
+.input--has-prefix {
+  padding-left: calc(16px + var(--space-md) + var(--space-sm));
+}
+
+/* Has Suffix */
+.input--has-suffix {
+  padding-right: calc(16px + var(--space-md) + var(--space-sm));
+}
 
 /* ======================================
-   PREFIX / SUFFIX
+   ELEMENTS
 ====================================== */
-
-.input__prefix,
-.input__suffix {
+/* Prefix */
+.input__prefix {
+  /* Positioned Layout */
   position: absolute;
-
   top: 50%;
+  left: var(--space-md);
 
-  transform:
-    translateY(-50%);
-
+  /* Display */
   display: inline-flex;
 
+  /* Flexible Box Layout */
   align-items: center;
-
   justify-content: center;
 
-  color:
-    var(--color-text-secondary);
-}
+  /* Text */
+  color: var(--color-text-secondary);
 
-
-/* ======================================
-   PREFIX
-====================================== */
-
-.input__prefix {
-  left:
-    var(--space-md);
-
+  /* UI */
   pointer-events: none;
+
+  /* Transforms */
+  transform: translateY(-50%);
 }
 
-
-/* ======================================
-   SUFFIX
-====================================== */
-
+/* Suffix */
 .input__suffix {
-  right:
-    var(--space-md);
+  /* Positioned Layout */
+  position: absolute;
+  top: 50%;
+  right: var(--space-md);
 
+  /* Display */
+  display: inline-flex;
+
+  /* Flexible Box Layout */
+  align-items: center;
+  justify-content: center;
+
+  /* Text */
+  color: var(--color-text-secondary);
+
+  /* UI */
   pointer-events: auto;
+
+  /* Transforms */
+  transform: translateY(-50%);
 }
 
-
 /* ======================================
-   HAS PREFIX
+   ELEMENT STATES
 ====================================== */
-
-.input--has-prefix {
-  padding-left:
-    calc(
-      16px +
-      var(--space-md) +
-      var(--space-sm)
-    );
-}
-
-
-/* ======================================
-   HAS SUFFIX
-====================================== */
-
-.input--has-suffix {
-  padding-right:
-    calc(
-      16px +
-      var(--space-md) +
-      var(--space-sm)
-    );
-}
-
-
-/* ======================================
-   PLACEHOLDER
-====================================== */
-
+/* Placeholder */
 .input::placeholder {
-  color:
-    var(--field-placeholder-color);
-
+  color: var(--field-placeholder-color);
   opacity: 1;
 }

@@ -12,11 +12,11 @@ import { Button } from "@tefi/design-system";
 import "@tefi/design-system/styles.css";
 
 export default function Example() {
-  return (
-    <Button>
-      Hola mundo
-    </Button>
-  );
+return (
+<Button>
+Hola mundo
+</Button>
+);
 }
 
 Requisitos

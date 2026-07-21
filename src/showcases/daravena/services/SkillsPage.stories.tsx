@@ -1,8 +1,4 @@
-
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { SkillsPage } from "./SkillsPage";
 import { SkillsSkeletonPage } from "./SkillsSkeletonPage";
@@ -14,13 +10,10 @@ const meta: Meta<typeof SkillsPage> = {
 
 export default meta;
 
-type Story =
-  StoryObj<typeof SkillsPage>;
+type Story = StoryObj<typeof SkillsPage>;
 
 export const Default: Story = {};
 
 export const Skeleton: Story = {
-  render: () => (
-    <SkillsSkeletonPage />
-  ),
+  render: () => <SkillsSkeletonPage />,
 };

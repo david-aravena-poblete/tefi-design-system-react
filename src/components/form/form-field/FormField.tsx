@@ -22,31 +22,23 @@ export function FormField({
 
   ...rest
 }: FormFieldProps) {
-
   /* ======================================
      IDS
   ====================================== */
 
-  const generatedId =
-    useId();
+  const generatedId = useId();
 
-  const inputId =
-    `${generatedId}-input`;
+  const inputId = `${generatedId}-input`;
 
-  const helperTextId =
-    `${generatedId}-helper`;
+  const helperTextId = `${generatedId}-helper`;
 
-  const errorMessageId =
-    `${generatedId}-error`;
+  const errorMessageId = `${generatedId}-error`;
 
   /* ======================================
      DESCRIBED BY
   ====================================== */
 
-  const describedBy =
-    state === "error"
-      ? errorMessageId
-      : helperTextId;
+  const describedBy = state === "error" ? errorMessageId : helperTextId;
 
   /* ======================================
      CONTEXT
@@ -75,8 +67,7 @@ export function FormField({
 
     `form-field--${state}`,
 
-    disabled &&
-      "form-field--disabled",
+    disabled && "form-field--disabled",
 
     className,
   ]
@@ -88,9 +79,7 @@ export function FormField({
   ====================================== */
 
   return (
-    <FormFieldProvider
-      value={contextValue}
-    >
+    <FormFieldProvider value={contextValue}>
       <div
         className={classes}
 

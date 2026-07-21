@@ -3,7 +3,6 @@ import type { Preview } from "@storybook/react-vite";
 import "../src/index.css";
 
 const preview: Preview = {
-
   globalTypes: {
     theme: {
       name: "Theme",
@@ -36,16 +35,9 @@ const preview: Preview = {
 
   decorators: [
     (Story, context) => {
+      document.documentElement.setAttribute("data-theme", context.globals.theme);
 
-      document.documentElement.setAttribute(
-        "data-theme",
-        context.globals.theme
-      );
-
-      document.documentElement.setAttribute(
-        "data-brand",
-        context.globals.brand
-      );
+      document.documentElement.setAttribute("data-brand", context.globals.brand);
 
       return Story();
     },

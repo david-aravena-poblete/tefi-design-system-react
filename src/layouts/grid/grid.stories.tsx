@@ -1,16 +1,10 @@
-import * as React from "react";
-
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Grid } from "./Grid";
 
 import { Button } from "../../components/button";
 import { Card } from "../../components/card";
 import { Stack } from "../stack";
-
 
 const meta: Meta<typeof Grid> = {
   title: "Layouts/Grid",
@@ -27,28 +21,13 @@ const meta: Meta<typeof Grid> = {
     columns: {
       control: "select",
 
-      options: [
-        1,
-        2,
-        3,
-        4,
-        6,
-        12,
-      ],
+      options: [1, 2, 3, 4, 6, 12],
     },
 
     gap: {
       control: "select",
 
-      options: [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-        "xxl",
-        "xxxl",
-      ],
+      options: ["xs", "sm", "md", "lg", "xl", "xxl", "xxxl"],
     },
   },
 };
@@ -56,7 +35,6 @@ const meta: Meta<typeof Grid> = {
 export default meta;
 
 type Story = StoryObj<typeof Grid>;
-
 
 /* ======================================
    SHARED
@@ -67,7 +45,6 @@ const itemStyle = {
   border: "1px dashed var(--color-border-primary)",
   background: "var(--color-bg-secondary)",
 };
-
 
 /* ======================================
    RESPONSIVE GRID
@@ -88,7 +65,6 @@ export const ResponsiveGrid: Story = {
   },
 };
 
-
 /* ======================================
    RESPONSIVE CARDS
 ====================================== */
@@ -100,33 +76,20 @@ export const ResponsiveCards: Story = {
     children: (
       <>
         {[1, 2, 3].map((item) => (
-
           <Card key={item}>
-
             <Card.Body>
-
               <Stack gap="md">
+                <strong>Skill {item}</strong>
 
-                <strong>
-                  Skill {item}
-                </strong>
-
-                <p>
-                  Example responsive card.
-                </p>
-
+                <p>Example responsive card.</p>
               </Stack>
-
             </Card.Body>
-
           </Card>
-
         ))}
       </>
     ),
   },
 };
-
 
 /* ======================================
    FIXED COLUMNS
@@ -149,7 +112,6 @@ export const FixedTwoColumns: Story = {
   },
 };
 
-
 export const FixedThreeColumns: Story = {
   args: {
     columns: 3,
@@ -167,7 +129,6 @@ export const FixedThreeColumns: Story = {
   },
 };
 
-
 /* ======================================
    COMPOSITION
 ====================================== */
@@ -180,17 +141,11 @@ export const CompositionExample: Story = {
 
     children: (
       <>
-        <Button>
-          Action
-        </Button>
+        <Button>Action</Button>
 
-        <Button>
-          Action
-        </Button>
+        <Button>Action</Button>
 
-        <Button>
-          Action
-        </Button>
+        <Button>Action</Button>
       </>
     ),
   },

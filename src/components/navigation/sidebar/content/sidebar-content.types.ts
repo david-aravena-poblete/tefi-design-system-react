@@ -2,18 +2,12 @@
    IMPORTS
 ====================================== */
 
-import type {
-    HTMLAttributes,
-    ReactNode,
-  } from "react";
-  
-  /* ======================================
+import type { HTMLAttributes, ReactNode } from "react";
+
+/* ======================================
      PROPS
   ====================================== */
-  
-  export interface SidebarContentProps
-    extends HTMLAttributes<HTMLDivElement> {
-  
-    children?: ReactNode;
-  
-  }
+
+export interface SidebarContentProps extends HTMLAttributes<HTMLDivElement> {
+  children?: ReactNode;
+}

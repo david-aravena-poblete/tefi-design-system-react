@@ -3,48 +3,25 @@
 ====================================== */
 
 .variant-info {
-    background:
-      var(--state-info-bg);
-  
-    border-color:
-      var(--state-info-border);
-  
-    color:
-      var(--state-info-text);
-  }
-  
-  
-  .variant-success {
-    background:
-      var(--state-success-bg);
-  
-    border-color:
-      var(--state-success-border);
-  
-    color:
-      var(--state-success-text);
-  }
-  
-  
-  .variant-warning {
-    background:
-      var(--state-warning-bg);
-  
-    border-color:
-      var(--state-warning-border);
-  
-    color:
-      var(--state-warning-text);
-  }
-  
-  
-  .variant-danger {
-    background:
-      var(--state-danger-bg);
-  
-    border-color:
-      var(--state-danger-border);
-  
-    color:
-      var(--state-danger-text);
-  }
+  color: var(--state-info-text);
+  background: var(--state-info-bg);
+  border-color: var(--state-info-border);
+}
+
+.variant-success {
+  color: var(--state-success-text);
+  background: var(--state-success-bg);
+  border-color: var(--state-success-border);
+}
+
+.variant-warning {
+  color: var(--state-warning-text);
+  background: var(--state-warning-bg);
+  border-color: var(--state-warning-border);
+}
+
+.variant-danger {
+  color: var(--state-danger-text);
+  background: var(--state-danger-bg);
+  border-color: var(--state-danger-border);
+}

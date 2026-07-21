@@ -2,10 +2,7 @@
    IMPORTS
 ====================================== */
 
-import React from "react";
-
-import { OptionItem }
-  from "./OptionItem";
+import { OptionItem } from "@/components/selection/";
 
 /* ======================================
    META
@@ -17,107 +14,75 @@ export default {
   component: OptionItem,
 };
 
-
 /* ======================================
    DEFAULT
 ====================================== */
 
 export function Default() {
-
   return (
     <div
       style={{
         width: "240px",
       }}
     >
-
-      <OptionItem
-        label="React"
-      />
-
+      <OptionItem>React</OptionItem>
     </div>
   );
 }
-
 
 /* ======================================
    ACTIVE
 ====================================== */
 
 export function Active() {
-
   return (
     <div
       style={{
         width: "240px",
       }}
     >
-
-      <OptionItem
-        label="React"
-
-        active
-      />
-
+      <OptionItem active>React</OptionItem>
     </div>
   );
 }
-
 
 /* ======================================
    SELECTED
 ====================================== */
 
 export function Selected() {
-
   return (
     <div
       style={{
         width: "240px",
       }}
     >
-
-      <OptionItem
-        label="React"
-
-        selected
-      />
-
+      <OptionItem selected>React</OptionItem>
     </div>
   );
 }
-
 
 /* ======================================
    DISABLED
 ====================================== */
 
 export function Disabled() {
-
   return (
     <div
       style={{
         width: "240px",
       }}
     >
-
-      <OptionItem
-        label="React"
-
-        disabled
-      />
-
+      <OptionItem disabled>React</OptionItem>
     </div>
   );
 }
-
 
 /* ======================================
    STATES
 ====================================== */
 
 export function States() {
-
   return (
     <div
       style={{
@@ -128,29 +93,13 @@ export function States() {
         flexDirection: "column",
       }}
     >
+      <OptionItem>Default</OptionItem>
 
-      <OptionItem
-        label="Default"
-      />
+      <OptionItem active>Active</OptionItem>
 
-      <OptionItem
-        label="Active"
+      <OptionItem selected>Selected</OptionItem>
 
-        active
-      />
-
-      <OptionItem
-        label="Selected"
-
-        selected
-      />
-
-      <OptionItem
-        label="Disabled"
-
-        disabled
-      />
-
+      <OptionItem disabled>Disabled</OptionItem>
     </div>
   );
 }

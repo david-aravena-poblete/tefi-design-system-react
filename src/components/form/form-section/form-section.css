@@ -3,73 +3,50 @@
 ====================================== */
 
 .form-section {
-    display: flex;
-  
-    flex-direction: column;
-  
-    gap: var(--space-md);
-  }
-  
-  
-  /* ======================================
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ======================================
      HEADER
   ====================================== */
-  
-  .form-section__header {
-    display: flex;
-  
-    flex-direction: column;
-  
-    gap: var(--space-xs);
-  }
-  
-  
-  /* ======================================
+
+.form-section__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* ======================================
      TITLE
   ====================================== */
-  
-  .form-section__title {
-    margin: 0;
-  
-    font-size: var(--font-lg);
-  
-    font-weight:
-      var(--font-weight-semibold);
-  
-    line-height:
-      var(--line-tight);
-  
-    color:
-      var(--color-text-primary);
-  }
-  
-  
-  /* ======================================
+
+.form-section__title {
+  margin: 0;
+  font-size: var(--font-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-tight);
+  color: var(--color-text-primary);
+}
+
+/* ======================================
      DESCRIPTION
   ====================================== */
-  
-  .form-section__description {
-    margin: 0;
-  
-    font-size:
-      var(--font-sm);
-  
-    line-height:
-      var(--line-normal);
-  
-    color:
-      var(--color-text-secondary);
-  }
-  
-  
-  /* ======================================
+
+.form-section__description {
+  margin: 0;
+  font-size: var(--font-sm);
+  line-height: var(--line-normal);
+  color: var(--color-text-secondary);
+}
+
+/* ======================================
      CONTENT
   ====================================== */
-  
-  .form-section__content {
-    display: flex;
-  
-    flex-direction: column;
-  
-    gap: var(--space-md);
-  }
+
+.form-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}

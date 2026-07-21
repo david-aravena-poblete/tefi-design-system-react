@@ -2,21 +2,13 @@
    IMPORTS
 ====================================== */
 
-import {
-  Search,
-  Plus,
-  X,
-  Sun,
-  Moon,
-  User,
-} from "lucide-react";
+import { Search, Plus, X, Sun, Moon, User } from "lucide-react";
 
 /* ======================================
    ICON REGISTRY
 ====================================== */
 
 export const iconRegistry = {
-
   search: Search,
 
   plus: Plus,
@@ -28,21 +20,16 @@ export const iconRegistry = {
   moon: Moon,
 
   user: User,
-
 };
 
 /* ======================================
    TYPES
 ====================================== */
 
-export type IconName =
-  keyof typeof iconRegistry;
+export type IconName = keyof typeof iconRegistry;
 
 /* ======================================
    CONSTANTS
 ====================================== */
 
-export const ICON_NAMES =
-  Object.keys(
-    iconRegistry,
-  ) as IconName[];
+export const ICON_NAMES = Object.keys(iconRegistry) as IconName[];

@@ -1,5 +1,3 @@
 export { SidebarItem } from "./SidebarItem";
 
-export type {
-  SidebarItemProps,
-} from "./sidebar-item.types";
+export type { SidebarItemProps } from "./sidebar-item.types";

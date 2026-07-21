@@ -6,16 +6,13 @@ import clsx from "clsx";
 
 import "./skeleton.css";
 
-import type {
-  SkeletonProps,
-} from "./skeleton.types";
+import type { SkeletonProps } from "./skeleton.types";
 
 /* ======================================
    SKELETON
 ====================================== */
 
 export function Skeleton({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -47,27 +44,21 @@ export function Skeleton({
   ====================================== */
 
   ...rest
-
 }: SkeletonProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "skeleton",
 
-    aspect &&
-      `skeleton--${aspect.replace(":", "-")}`,
+    aspect && `skeleton--${aspect.replace(":", "-")}`,
 
     {
-      "skeleton--animated":
-        animated,
+      "skeleton--animated": animated,
     },
 
     className,
-
   );
 
   /* ======================================
@@ -75,16 +66,12 @@ export function Skeleton({
   ====================================== */
 
   const content = (
-
     <div
       className={classes}
       style={{
         width,
 
-        height:
-          aspect
-            ? undefined
-            : height,
+        height: aspect ? undefined : height,
 
         borderRadius: radius,
 
@@ -92,7 +79,6 @@ export function Skeleton({
       }}
       {...rest}
     />
-
   );
 
   /* ======================================
@@ -100,31 +86,17 @@ export function Skeleton({
   ====================================== */
 
   if (children !== undefined) {
-
     return (
-
       <div
-        className={clsx(
-          "skeleton-wrapper",
-          {
-            "skeleton-wrapper--fill":
-              fill,
-          },
-        )}
+        className={clsx("skeleton-wrapper", {
+          "skeleton-wrapper--fill": fill,
+        })}
       >
-
-        <div className="skeleton-content skeleton-content--hidden">
-
-          {children}
-
-        </div>
+        <div className="skeleton-content skeleton-content--hidden">{children}</div>
 
         {content}
-
       </div>
-
     );
-
   }
 
   /* ======================================
@@ -132,5 +104,4 @@ export function Skeleton({
   ====================================== */
 
   return content;
-
 }

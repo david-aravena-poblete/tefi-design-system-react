@@ -2,54 +2,36 @@
    IMPORTS
 ====================================== */
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-  PasswordField,
-} from "@/components/input/password-field";
+import { PasswordField } from "@/components/input/password-field";
 
-import {
-  FormField,
-} from "@/components/form/form-field";
+import { FormField } from "@/components/form/form-field";
 
-import {
-  Label,
-} from "@/components/field/label";
+import { Label } from "@/components/field/label";
 
 /* ======================================
    META
 ====================================== */
 
 const meta: Meta<typeof PasswordField> = {
-
   title: "Components/Input/PasswordField",
 
   component: PasswordField,
 
   tags: ["autodocs"],
-
 };
 
 export default meta;
 
-type Story =
-  StoryObj<typeof PasswordField>;
+type Story = StoryObj<typeof PasswordField>;
 
 /* ======================================
    PLAYGROUND
 ====================================== */
 
 export const Playground: Story = {
-
-  render: (args) => (
-
-    <PasswordField {...args} />
-
-  ),
-
+  render: (args) => <PasswordField {...args} />,
 };
 
 /* ======================================
@@ -57,25 +39,13 @@ export const Playground: Story = {
 ====================================== */
 
 export const Default: Story = {
-
   render: () => (
-
     <FormField>
+      <Label>Password</Label>
 
-      <Label>
-
-        Password
-
-      </Label>
-
-      <PasswordField
-        placeholder="••••••••"
-      />
-
+      <PasswordField placeholder="••••••••" />
     </FormField>
-
   ),
-
 };
 
 /* ======================================
@@ -83,9 +53,7 @@ export const Default: Story = {
 ====================================== */
 
 export const States: Story = {
-
   render: () => (
-
     <div
       style={{
         display: "flex",
@@ -93,70 +61,31 @@ export const States: Story = {
         gap: "16px",
       }}
     >
-
       <FormField>
+        <Label>Default</Label>
 
-        <Label>
-
-          Default
-
-        </Label>
-
-        <PasswordField
-          placeholder="Default state"
-        />
-
+        <PasswordField placeholder="Default state" />
       </FormField>
 
       <FormField>
+        <Label>Error</Label>
 
-        <Label>
-
-          Error
-
-        </Label>
-
-        <PasswordField
-          state="error"
-          placeholder="Error state"
-        />
-
+        <PasswordField state="error" placeholder="Error state" />
       </FormField>
 
       <FormField>
+        <Label>Success</Label>
 
-        <Label>
-
-          Success
-
-        </Label>
-
-        <PasswordField
-          state="success"
-          placeholder="Success state"
-        />
-
+        <PasswordField state="success" placeholder="Success state" />
       </FormField>
 
       <FormField>
+        <Label>Disabled</Label>
 
-        <Label>
-
-          Disabled
-
-        </Label>
-
-        <PasswordField
-          disabled
-          placeholder="Disabled state"
-        />
-
+        <PasswordField disabled placeholder="Disabled state" />
       </FormField>
-
     </div>
-
   ),
-
 };
 
 /* ======================================
@@ -164,9 +93,7 @@ export const States: Story = {
 ====================================== */
 
 export const Sizes: Story = {
-
   render: () => (
-
     <div
       style={{
         display: "flex",
@@ -174,24 +101,11 @@ export const Sizes: Story = {
         gap: "16px",
       }}
     >
+      <PasswordField size="sm" placeholder="Small" />
 
-      <PasswordField
-        size="sm"
-        placeholder="Small"
-      />
+      <PasswordField size="md" placeholder="Medium" />
 
-      <PasswordField
-        size="md"
-        placeholder="Medium"
-      />
-
-      <PasswordField
-        size="lg"
-        placeholder="Large"
-      />
-
+      <PasswordField size="lg" placeholder="Large" />
     </div>
-
   ),
-
 };

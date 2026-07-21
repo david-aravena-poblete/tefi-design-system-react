@@ -6,16 +6,13 @@ import clsx from "clsx";
 
 import "./grid.css";
 
-import type {
-  GridProps,
-} from "./grid.types";
+import type { GridProps } from "./grid.types";
 
 /* ======================================
    GRID
 ====================================== */
 
 export function Grid({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -41,31 +38,23 @@ export function Grid({
   ====================================== */
 
   ...rest
-
 }: GridProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "grid",
 
     `grid--gap-${gap}`,
 
     {
+      [`grid--cols-${columns}`]: columns,
 
-      [`grid--cols-${columns}`]:
-        columns,
-
-      [`grid--template-${template}`]:
-        template,
-
+      [`grid--template-${template}`]: template,
     },
 
     className,
-
   );
 
   /* ======================================
@@ -73,16 +62,8 @@ export function Grid({
   ====================================== */
 
   return (
-
-    <Component
-      className={classes}
-      {...rest}
-    >
-
+    <Component className={classes} {...rest}>
       {children}
-
     </Component>
-
   );
-
 }

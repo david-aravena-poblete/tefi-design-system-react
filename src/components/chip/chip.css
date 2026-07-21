@@ -3,131 +3,81 @@
 ====================================== */
 
 .chip {
-    display: inline-flex;
-  
-    align-items: center;
-  
-    gap: var(--space-xs);
-  
-    max-width: 100%;
-  
-    border: 1px solid
-      var(--color-border-primary);
-  
-    border-radius:
-      var(--radius-full);
-  
-    background-color:
-      var(--color-bg-secondary);
-  
-    color:
-      var(--color-text-primary);
-  
-    line-height: 1;
-  }
-  
-  
-  /* ======================================
+  display: inline-flex;
+  gap: var(--space-xs);
+  align-items: center;
+  max-width: 100%;
+  line-height: 1;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--radius-full);
+}
+
+/* ======================================
      LABEL
   ====================================== */
-  
-  .chip__label {
-    overflow: hidden;
-  
-    text-overflow: ellipsis;
-  
-    white-space: nowrap;
-  }
-  
-  
-  /* ======================================
+
+.chip__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ======================================
      REMOVE
   ====================================== */
-  
-  .chip__remove {
-    display: inline-flex;
-  
-    align-items: center;
-    justify-content: center;
-  
-    flex-shrink: 0;
-  
-    padding: 0;
-  
-    border: none;
-  
-    background: transparent;
-  
-    border-radius: 50%;
-  
-    color:
-      var(--color-text-secondary);
-  
-    cursor: pointer;
-  
-    transition:
-      background-color
-      var(--transition-fast),
-  
-      color
-      var(--transition-fast);
-  }
-  
-  
-  .chip__remove:hover {
-    background-color:
-      var(--interaction-hover-bg);
-  
-    color:
-      var(--color-danger-base);
-  }
-  
-  
-  .chip__remove:focus-visible {
-    outline: 2px solid
-      var(--color-border-focus);
-  
-    outline-offset: 2px;
-  }
-  
-  
-  /* ======================================
+
+.chip__remove {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.chip__remove:hover {
+  color: var(--color-danger-base);
+  background-color: var(--interaction-hover-bg);
+}
+
+.chip__remove:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* ======================================
      SIZES
   ====================================== */
-  
-  .chip--sm {
-    padding:
-      2px 6px;
-  
-    font-size:
-      var(--font-sm);
-  }
-  
-  
-  .chip--md {
-    padding:
-      4px 10px;
-  
-    font-size:
-      var(--font-md);
-  }
-  
-  
-  .chip--lg {
-    padding:
-      6px 14px;
-  
-    font-size:
-      var(--font-lg);
-  }
-  
-  
-  /* ======================================
+
+.chip--sm {
+  padding: 2px 6px;
+  font-size: var(--font-sm);
+}
+
+.chip--md {
+  padding: 4px 10px;
+  font-size: var(--font-md);
+}
+
+.chip--lg {
+  padding: 6px 14px;
+  font-size: var(--font-lg);
+}
+
+/* ======================================
      DISABLED
   ====================================== */
-  
-  .chip--disabled {
-    opacity: 0.6;
-  
-    pointer-events: none;
-  }
+
+.chip--disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}

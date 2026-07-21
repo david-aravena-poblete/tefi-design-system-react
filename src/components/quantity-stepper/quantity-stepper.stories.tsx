@@ -15,25 +15,19 @@ export default {
   component: QuantityStepper,
 };
 
-
 /* ======================================
    DEFAULT
 ====================================== */
 
 export function Default() {
-
-  return (
-    <QuantityStepper />
-  );
+  return <QuantityStepper />;
 }
-
 
 /* ======================================
    SIZES
 ====================================== */
 
 export function Sizes() {
-
   return (
     <div
       style={{
@@ -44,44 +38,28 @@ export function Sizes() {
         gap: "16px",
       }}
     >
+      <QuantityStepper size="sm" />
 
-      <QuantityStepper
-        size="sm"
-      />
+      <QuantityStepper size="md" />
 
-      <QuantityStepper
-        size="md"
-      />
-
-      <QuantityStepper
-        size="lg"
-      />
-
+      <QuantityStepper size="lg" />
     </div>
   );
 }
-
 
 /* ======================================
    DISABLED
 ====================================== */
 
 export function Disabled() {
-
-  return (
-    <QuantityStepper
-      disabled
-    />
-  );
+  return <QuantityStepper disabled />;
 }
-
 
 /* ======================================
    LIMITS
 ====================================== */
 
 export function Limits() {
-
   return (
     <QuantityStepper
       min={1}

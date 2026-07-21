@@ -3,40 +3,26 @@
 ====================================== */
 
 .divider {
+  flex-shrink: 0;
+  margin: 0;
+  background: var(--surface-divider-color);
+  border: none;
+}
 
-    border: none;
-  
-    margin: 0;
-  
-    background:
-      var(--surface-divider-color);
-  
-    flex-shrink: 0;
-  
-  }
-  
-  
-  /* ======================================
+/* ======================================
      HORIZONTAL
   ====================================== */
-  
-  .divider--horizontal {
-  
-    width: 100%;
-  
-    height: 1px;
-  
-  }
-  
-  
-  /* ======================================
+
+.divider--horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+/* ======================================
      VERTICAL
   ====================================== */
-  
-  .divider--vertical {
-  
-    width: 1px;
-  
-    align-self: stretch;
-  
-  }
+
+.divider--vertical {
+  align-self: stretch;
+  width: 1px;
+}

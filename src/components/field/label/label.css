@@ -3,50 +3,34 @@
 ====================================== */
 
 .label {
-    display: inline-flex;
-  
-    align-items: center;
-  
-    gap: var(--space-xxs);
-  
-    color:
-      var(--color-text-primary);
-  
-    font-weight:
-      var(--font-weight-medium);
-  
-    line-height:
-      var(--line-normal);
-  }
-  
-  
-  /* ======================================
+  display: inline-flex;
+  gap: var(--space-xxs);
+  align-items: center;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-normal);
+  color: var(--color-text-primary);
+}
+
+/* ======================================
      SIZES
   ====================================== */
-  
-  .label--sm {
-    font-size:
-      var(--font-sm);
-  }
-  
-  
-  .label--md {
-    font-size:
-      var(--font-md);
-  }
-  
-  
-  .label--lg {
-    font-size:
-      var(--font-lg);
-  }
-  
-  
-  /* ======================================
+
+.label--sm {
+  font-size: var(--font-sm);
+}
+
+.label--md {
+  font-size: var(--font-md);
+}
+
+.label--lg {
+  font-size: var(--font-lg);
+}
+
+/* ======================================
      REQUIRED
   ====================================== */
-  
-  .label__required {
-    color:
-      var(--color-danger-base);
-  }
+
+.label__required {
+  color: var(--color-danger-base);
+}

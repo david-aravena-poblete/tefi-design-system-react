@@ -3,9 +3,8 @@
 ====================================== */
 
 :root {
+  /* PRIMARY */
 
-    /* PRIMARY */
-  
-    --color-primary-base: #71C9BF;
-    --color-primary-hover: #86CBC3;
-  }
+  --color-primary-base: #71c9bf;
+  --color-primary-hover: #86cbc3;
+}

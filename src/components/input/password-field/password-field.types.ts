@@ -2,13 +2,10 @@
    IMPORTS
 ====================================== */
 
-import type {
-   InputProps,
- } from "../input";
- 
- /* ======================================
+import type { InputProps } from "../input";
+
+/* ======================================
     PASSWORD FIELD PROPS
  ====================================== */
- 
- export interface PasswordFieldProps
-   extends InputProps {}
+
+export type PasswordFieldProps = InputProps;

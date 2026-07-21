@@ -2,15 +2,11 @@
    IMPORTS
 ====================================== */
 
-import React, {
-  useState,
-} from "react";
+import React, { useState } from "react";
 
-import { Radio }
-  from "./Radio";
+import { Radio } from "./Radio";
 
-import { RadioGroup }
-  from "../radio-group/RadioGroup";
+import { RadioGroup } from "../radio-group/RadioGroup";
 
 /* ======================================
    META
@@ -29,33 +25,22 @@ export default {
     state: {
       control: "select",
 
-      options: [
-        "default",
-        "error",
-        "success",
-        "warning",
-      ],
+      options: ["default", "error", "success", "warning"],
     },
 
     size: {
       control: "select",
 
-      options: [
-        "sm",
-        "md",
-        "lg",
-      ],
+      options: ["sm", "md", "lg"],
     },
   },
 };
-
 
 /* ======================================
    PLAYGROUND
 ====================================== */
 
 export const Playground = {};
-
 
 /* ======================================
    CHECKED
@@ -66,7 +51,6 @@ export const Checked = {
     defaultChecked: true,
   },
 };
-
 
 /* ======================================
    STATES
@@ -80,7 +64,6 @@ export const Error = {
   },
 };
 
-
 export const Success = {
   args: {
     state: "success",
@@ -89,7 +72,6 @@ export const Success = {
   },
 };
 
-
 export const Warning = {
   args: {
     state: "warning",
@@ -97,7 +79,6 @@ export const Warning = {
     defaultChecked: true,
   },
 };
-
 
 /* ======================================
    SIZES
@@ -109,20 +90,17 @@ export const Small = {
   },
 };
 
-
 export const Medium = {
   args: {
     size: "md",
   },
 };
 
-
 export const Large = {
   args: {
     size: "lg",
   },
 };
-
 
 /* ======================================
    DISABLED
@@ -134,7 +112,6 @@ export const Disabled = {
   },
 };
 
-
 export const DisabledChecked = {
   args: {
     disabled: true,
@@ -143,15 +120,12 @@ export const DisabledChecked = {
   },
 };
 
-
 /* ======================================
    RADIO GROUP
 ====================================== */
 
 export function Group() {
-
-  const [value, setValue] =
-    useState("react");
+  const [value, setValue] = useState("react");
 
   return (
     <RadioGroup
@@ -159,19 +133,11 @@ export function Group() {
 
       onChange={setValue}
     >
+      <Radio value="react">React</Radio>
 
-      <Radio value="react">
-        React
-      </Radio>
+      <Radio value="vue">Vue</Radio>
 
-      <Radio value="vue">
-        Vue
-      </Radio>
-
-      <Radio value="svelte">
-        Svelte
-      </Radio>
-
+      <Radio value="svelte">Svelte</Radio>
     </RadioGroup>
   );
 }

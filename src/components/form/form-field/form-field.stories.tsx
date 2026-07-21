@@ -25,31 +25,15 @@ export default {
 ====================================== */
 
 export function Default() {
-
   return (
-
     <FormField>
+      <Label>Email</Label>
 
-      <Label>
+      <Input placeholder="Enter your email" />
 
-        Email
-
-      </Label>
-
-      <Input
-        placeholder="Enter your email"
-      />
-
-      <HelperText>
-
-        We never share your email.
-
-      </HelperText>
-
+      <HelperText>We never share your email.</HelperText>
     </FormField>
-
   );
-
 }
 
 /* ======================================
@@ -57,31 +41,15 @@ export function Default() {
 ====================================== */
 
 export function Error() {
-
   return (
-
     <FormField state="error">
+      <Label>Email</Label>
 
-      <Label>
+      <Input placeholder="Enter your email" />
 
-        Email
-
-      </Label>
-
-      <Input
-        placeholder="Enter your email"
-      />
-
-      <ErrorMessage>
-
-        Invalid email address.
-
-      </ErrorMessage>
-
+      <ErrorMessage>Invalid email address.</ErrorMessage>
     </FormField>
-
   );
-
 }
 
 /* ======================================
@@ -89,29 +57,13 @@ export function Error() {
 ====================================== */
 
 export function Disabled() {
-
   return (
-
     <FormField disabled>
+      <Label>Email</Label>
 
-      <Label>
+      <Input placeholder="Enter your email" />
 
-        Email
-
-      </Label>
-
-      <Input
-        placeholder="Enter your email"
-      />
-
-      <HelperText>
-
-        Disabled field example.
-
-      </HelperText>
-
+      <HelperText>Disabled field example.</HelperText>
     </FormField>
-
   );
-
 }

@@ -3,170 +3,106 @@
 ====================================== */
 
 .textarea {
-  width: 100%;
-
-  min-width: 0;
-
   box-sizing: border-box;
-
-  padding:
-    var(--space-md);
-
-  border: 1px solid
-    var(--state-default-border);
-
-  border-radius:
-    var(--radius-md);
-
-  background:
-    var(--field-bg-color);
-
-  color:
-    var(--field-text-color);
-
-  font-family:
-    var(--font-family-sans);
-
-  outline: none;
-
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-md);
+  font-family: var(--font-family-sans);
+  color: var(--field-text-color);
   resize: vertical;
-
+  outline: none;
+  background: var(--field-bg-color);
+  border: 1px solid var(--state-default-border);
+  border-radius: var(--radius-md);
   transition:
     border-color var(--transition-fast),
     box-shadow var(--transition-fast),
     background-color var(--transition-fast);
 }
 
-
 /* ======================================
    SIZES
 ====================================== */
 
 .textarea--sm {
-  min-height:
-    80px;
-
-  font-size:
-    var(--font-sm);
+  min-height: 80px;
+  font-size: var(--font-sm);
 }
-
 
 .textarea--md {
-  min-height:
-    120px;
-
-  font-size:
-    var(--font-md);
+  min-height: 120px;
+  font-size: var(--font-md);
 }
-
 
 .textarea--lg {
-  min-height:
-    160px;
-
-  font-size:
-    var(--font-lg);
+  min-height: 160px;
+  font-size: var(--font-lg);
 }
-
 
 /* ======================================
    HOVER
 ====================================== */
 
-.textarea:hover:not(:disabled):not(.textarea--error):not(.textarea--success):not(.textarea--warning) {
-  border-color:
-    var(--state-default-hover);
+.textarea:hover:not(:disabled, .textarea--error, .textarea--success, .textarea--warning) {
+  border-color: var(--state-default-hover);
 }
-
 
 /* ======================================
    FOCUS
 ====================================== */
 
 .textarea:focus-visible {
-  border-color:
-    var(--state-default-border);
-
-  box-shadow:
-    0 0 0 3px
-    var(--state-default-ring);
+  border-color: var(--state-default-border);
+  box-shadow: 0 0 0 3px var(--state-default-ring);
 }
-
 
 .textarea--error {
-  border-color:
-    var(--state-danger-border);
+  border-color: var(--state-danger-border);
 }
-
 
 .textarea--error:focus-visible {
-  box-shadow:
-    0 0 0 3px
-    var(--state-danger-ring);
+  box-shadow: 0 0 0 3px var(--state-danger-ring);
 }
-
 
 .textarea--success {
-  border-color:
-    var(--state-success-border);
+  border-color: var(--state-success-border);
 }
-
 
 .textarea--success:focus-visible {
-  box-shadow:
-    0 0 0 3px
-    var(--state-success-ring);
+  box-shadow: 0 0 0 3px var(--state-success-ring);
 }
-
 
 .textarea--warning {
-  border-color:
-    var(--state-warning-border);
+  border-color: var(--state-warning-border);
 }
-
 
 .textarea--warning:focus-visible {
-  box-shadow:
-    0 0 0 3px
-    var(--state-warning-ring);
+  box-shadow: 0 0 0 3px var(--state-warning-ring);
 }
-
 
 /* ======================================
    DISABLED
 ====================================== */
 
 .textarea--disabled {
-  background:
-    var(--field-disabled-bg);
-
-  color:
-    var(--field-disabled-text);
-
+  color: var(--field-disabled-text);
   cursor: not-allowed;
+  background: var(--field-disabled-bg);
 }
-
 
 /* ======================================
    LOADING
 ====================================== */
 
 .textarea--loading {
-  padding-right:
-    calc(
-      var(--space-xl) +
-      var(--space-md)
-    );
+  padding-right: calc(var(--space-xl) + var(--space-md));
 }
-
 
 /* ======================================
    PLACEHOLDER
 ====================================== */
 
 .textarea::placeholder {
-  color:
-    var(--field-placeholder-color);
-
+  color: var(--field-placeholder-color);
   opacity: 1;
 }

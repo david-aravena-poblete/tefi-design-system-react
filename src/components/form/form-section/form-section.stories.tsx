@@ -26,52 +26,28 @@ export default {
 ====================================== */
 
 export function Default() {
-
   return (
-
     <FormSection
       title="Personal information"
       description="
         Fill in your basic profile data.
       "
     >
-
       <FormRow>
-
         <FormField>
+          <Label>First name</Label>
 
-          <Label>
-
-            First name
-
-          </Label>
-
-          <Input
-            placeholder="John"
-          />
-
+          <Input placeholder="John" />
         </FormField>
 
         <FormField>
+          <Label>Last name</Label>
 
-          <Label>
-
-            Last name
-
-          </Label>
-
-          <Input
-            placeholder="Doe"
-          />
-
+          <Input placeholder="Doe" />
         </FormField>
-
       </FormRow>
-
     </FormSection>
-
   );
-
 }
 
 /* ======================================
@@ -79,47 +55,24 @@ export function Default() {
 ====================================== */
 
 export function MultipleFields() {
-
   return (
-
     <FormSection
       title="Account settings"
       description="
         Configure your account details.
       "
     >
-
       <FormField>
+        <Label>Email</Label>
 
-        <Label>
-
-          Email
-
-        </Label>
-
-        <Input
-          placeholder="john@example.com"
-        />
-
+        <Input placeholder="john@example.com" />
       </FormField>
 
       <FormField>
+        <Label>Password</Label>
 
-        <Label>
-
-          Password
-
-        </Label>
-
-        <Input
-          type="password"
-          placeholder="••••••••"
-        />
-
+        <Input type="password" placeholder="••••••••" />
       </FormField>
-
     </FormSection>
-
   );
-
 }

@@ -30,41 +30,28 @@ export function QuantityStepper({
 
   ...rest
 }: QuantityStepperProps) {
-
   /* ======================================
      CONTROLLED
   ====================================== */
 
-  const isControlled =
-    value !== undefined;
+  const isControlled = value !== undefined;
 
-  const [internal, setInternal] =
-    useState(defaultValue);
+  const [internal, setInternal] = useState(defaultValue);
 
   /* ======================================
      DERIVED
   ====================================== */
 
-  const current =
-    isControlled
-      ? value
-      : internal;
+  const current = isControlled ? value : internal;
 
-  const safeSize =
-    SIZES.includes(size)
-      ? size
-      : "md";
+  const safeSize = SIZES.includes(size) ? size : "md";
 
   /* ======================================
      UPDATE
   ====================================== */
 
   function update(next: number) {
-
-    const clamped = Math.min(
-      max,
-      Math.max(min, next)
-    );
+    const clamped = Math.min(max, Math.max(min, next));
 
     if (!isControlled) {
       setInternal(clamped);
@@ -78,11 +65,7 @@ export function QuantityStepper({
   ====================================== */
 
   function decrease() {
-
-    if (
-      disabled ||
-      current <= min
-    ) {
+    if (disabled || current <= min) {
       return;
     }
 
@@ -90,11 +73,7 @@ export function QuantityStepper({
   }
 
   function increase() {
-
-    if (
-      disabled ||
-      current >= max
-    ) {
+    if (disabled || current >= max) {
       return;
     }
 
@@ -110,8 +89,7 @@ export function QuantityStepper({
 
     `quantity-stepper--${safeSize}`,
 
-    disabled &&
-      "quantity-stepper--disabled",
+    disabled && "quantity-stepper--disabled",
 
     className,
   ]
@@ -128,7 +106,6 @@ export function QuantityStepper({
 
       {...rest}
     >
-
       {/* DECREASE */}
 
       <button
@@ -140,10 +117,7 @@ export function QuantityStepper({
 
         onClick={decrease}
 
-        disabled={
-          disabled ||
-          current <= min
-        }
+        disabled={disabled || current <= min}
 
         aria-label="
           Decrease quantity
@@ -173,10 +147,7 @@ export function QuantityStepper({
 
         onClick={increase}
 
-        disabled={
-          disabled ||
-          current >= max
-        }
+        disabled={disabled || current >= max}
 
         aria-label="
           Increase quantity
@@ -184,7 +155,6 @@ export function QuantityStepper({
       >
         +
       </button>
-
     </div>
   );
 }

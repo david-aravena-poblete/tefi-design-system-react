@@ -3,24 +3,22 @@
 ====================================== */
 
 [data-theme="light"] {
-
   /* BACKGROUNDS */
 
-  --color-bg-primary: #ffffff;
+  --color-bg-primary: #fff;
   --color-bg-secondary: #f5f5f5;
-  --color-bg-tertiary: #eeeeee;
+  --color-bg-tertiary: #eee;
 
   /* TEXT */
 
   --color-text-primary: #111827;
   --color-text-secondary: #6b7280;
   --color-text-muted: #9ca3af;
-  --color-text-inverse: #ffffff;
+  --color-text-inverse: #fff;
 
   /* BORDERS */
 
   --color-border-primary: #d1d5db;
   --color-border-secondary: #bcc3cd;
   --color-border-focus: #4f46e5;
-
 }

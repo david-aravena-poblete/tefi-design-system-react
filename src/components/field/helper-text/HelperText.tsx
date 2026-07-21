@@ -6,16 +6,13 @@ import clsx from "clsx";
 
 import "./helper-text.css";
 
-import type {
-  HelperTextProps,
-} from "./helper-text.types";
+import type { HelperTextProps } from "./helper-text.types";
 
 /* ======================================
    HELPER TEXT
 ====================================== */
 
 export function HelperText({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -35,21 +32,17 @@ export function HelperText({
   ====================================== */
 
   ...rest
-
 }: HelperTextProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "helper-text",
 
     `helper-text--${size}`,
 
     className,
-
   );
 
   /* ======================================
@@ -57,16 +50,8 @@ export function HelperText({
   ====================================== */
 
   return (
-
-    <p
-      className={classes}
-      {...rest}
-    >
-
+    <p className={classes} {...rest}>
       {children}
-
     </p>
-
   );
-
 }

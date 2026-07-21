@@ -1,6 +1,3 @@
-export { CheckboxGroup }
-  from "./CheckboxGroup";
+export { CheckboxGroup } from "./CheckboxGroup";
 
-export {
-  useCheckboxGroup,
-} from "./checkbox-group.context";
+export { useCheckboxGroup } from "./checkbox-group.context";

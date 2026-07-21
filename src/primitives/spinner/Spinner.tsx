@@ -6,16 +6,13 @@ import clsx from "clsx";
 
 import "./spinner.css";
 
-import type {
-  SpinnerProps,
-} from "./spinner.types";
+import type { SpinnerProps } from "./spinner.types";
 
 /* ======================================
    SPINNER
 ====================================== */
 
 export function Spinner({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -33,36 +30,22 @@ export function Spinner({
   ====================================== */
 
   ...rest
-
 }: SpinnerProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "spinner",
 
     `spinner--${size}`,
 
     className,
-
   );
 
   /* ======================================
      RENDER
   ====================================== */
 
-  return (
-
-    <div
-      className={classes}
-      role="status"
-      aria-label="Loading"
-      {...rest}
-    />
-
-  );
-
+  return <div className={classes} role="status" aria-label="Loading" {...rest} />;
 }

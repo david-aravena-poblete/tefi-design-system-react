@@ -2,9 +2,7 @@
    VARIANT
 ====================================== */
 
-export type ComboboxVariant =
-  | "single"
-  | "multiple";
+export type ComboboxVariant = "single" | "multiple";
 
 /* ======================================
    OPTION
@@ -20,16 +18,13 @@ export interface ComboboxOption {
    VALUE
 ====================================== */
 
-export type ComboboxValue =
-  | string
-  | string[];
+export type ComboboxValue = string | string[];
 
 /* ======================================
    PROPS
 ====================================== */
 
 export interface ComboboxProps {
-
   /* ======================================
      DATA
   ====================================== */
@@ -48,16 +43,9 @@ export interface ComboboxProps {
 
   variant?: ComboboxVariant;
 
-  inputSize?:
-    | "sm"
-    | "md"
-    | "lg";
+  inputSize?: "sm" | "md" | "lg";
 
-  state?:
-    | "default"
-    | "error"
-    | "success"
-    | "warning";
+  state?: "default" | "error" | "success" | "warning";
 
   disabled?: boolean;
 
@@ -67,9 +55,7 @@ export interface ComboboxProps {
      EVENTS
   ====================================== */
 
-  onChange?: (
-    value: ComboboxValue
-  ) => void;
+  onChange?: (value: ComboboxValue) => void;
 
   /* ======================================
      STYLES

@@ -10,16 +10,13 @@ import { Skeleton } from "@/primitives";
 
 import { ExpandableText } from "./ExpandableText";
 
-import type {
-  TextProps,
-} from "./text.types";
+import type { TextProps } from "./text.types";
 
 /* ======================================
    TEXT
 ====================================== */
 
 export function Text({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -53,15 +50,12 @@ export function Text({
   ====================================== */
 
   ...rest
-
 }: TextProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "text",
 
     `text--${size}`,
@@ -69,7 +63,6 @@ export function Text({
     `text--${variant}`,
 
     className,
-
   );
 
   /* ======================================
@@ -77,17 +70,9 @@ export function Text({
   ====================================== */
 
   const content = (
-
-    <p
-      ref={ref}
-      className={classes}
-      {...rest}
-    >
-
+    <p ref={ref} className={classes} {...rest}>
       {children}
-
     </p>
-
   );
 
   /* ======================================
@@ -95,9 +80,7 @@ export function Text({
   ====================================== */
 
   if (expandable) {
-
     return (
-
       <ExpandableText
         skeleton={skeleton}
         size={size}
@@ -108,13 +91,9 @@ export function Text({
         className={className}
         {...rest}
       >
-
         {children}
-
       </ExpandableText>
-
     );
-
   }
 
   /* ======================================
@@ -122,17 +101,7 @@ export function Text({
   ====================================== */
 
   if (skeleton) {
-
-    return (
-
-      <Skeleton>
-
-        {content}
-
-      </Skeleton>
-
-    );
-
+    return <Skeleton>{content}</Skeleton>;
   }
 
   /* ======================================
@@ -140,5 +109,4 @@ export function Text({
   ====================================== */
 
   return content;
-
 }

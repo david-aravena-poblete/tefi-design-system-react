@@ -9,9 +9,7 @@ import "./chip.css";
 import { Inline } from "@/layouts/inline";
 import { Icon } from "@/primitives/icon";
 
-import type {
-  ChipProps,
-} from "./chip.types";
+import type { ChipProps } from "./chip.types";
 
 /* ======================================
    CHIP
@@ -36,7 +34,6 @@ export function Chip({
 
   ...rest
 }: ChipProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
@@ -56,11 +53,9 @@ export function Chip({
   ====================================== */
 
   function handleRemove() {
-
     if (disabled) return;
 
     onRemove?.();
-
   }
 
   /* ======================================
@@ -68,18 +63,8 @@ export function Chip({
   ====================================== */
 
   return (
-
-    <div
-      className={classes}
-      {...rest}
-    >
-
-      <Inline
-        as="span"
-        gap="xs"
-        align="center"
-      >
-
+    <div className={classes} {...rest}>
+      <Inline as="span" gap="xs" align="center">
         {startIcon}
 
         {children}
@@ -87,7 +72,6 @@ export function Chip({
         {endIcon}
 
         {removable && (
-
           <button
             type="button"
             className="chip__remove"
@@ -95,20 +79,10 @@ export function Chip({
             disabled={disabled}
             aria-label="Remove item"
           >
-
-            <Icon
-              name="close"
-              size="sm"
-            />
-
+            <Icon name="close" size="sm" />
           </button>
-
         )}
-
       </Inline>
-
     </div>
-
   );
-
 }

@@ -2,33 +2,21 @@
    IMPORTS
 ====================================== */
 
-import type {
-  ComponentProps,
-  ElementType,
-} from "react";
+import type { ComponentProps, ElementType } from "react";
 
-import type {
-  Spacing,
-} from "../../foundations/design-system.types";
+import type { Spacing } from "../../foundations/design-system.types";
 
 /* ======================================
    TYPES
 ====================================== */
 
-export type ContainerSize =
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "full";
+export type ContainerSize = "sm" | "md" | "lg" | "xl" | "full";
 
 /* ======================================
    PROPS
 ====================================== */
 
-export interface ContainerProps
-  extends ComponentProps<"div"> {
-
+export interface ContainerProps extends ComponentProps<"div"> {
   as?: ElementType;
 
   size?: ContainerSize;
@@ -36,5 +24,4 @@ export interface ContainerProps
   paddingTop?: Spacing;
 
   paddingBottom?: Spacing;
-
 }

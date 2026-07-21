@@ -4,12 +4,9 @@
 
 .field {
   position: relative;
-
   width: 100%;
-
   min-width: 0;
 }
-
 
 /* ======================================
    DISABLED
@@ -19,7 +16,6 @@
   pointer-events: none;
 }
 
-
 /* ======================================
    LOADING
 ====================================== */
@@ -28,27 +24,18 @@
   pointer-events: none;
 }
 
-
 /* ======================================
    SPINNER
 ====================================== */
 
 .field__spinner {
   position: absolute;
-
-  right: var(--space-md);
-
   top: 50%;
-
-  transform:
-    translateY(-50%);
-
+  right: var(--space-md);
+  z-index: 2;
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   pointer-events: none;
-
-  z-index: 2;
+  transform: translateY(-50%);
 }

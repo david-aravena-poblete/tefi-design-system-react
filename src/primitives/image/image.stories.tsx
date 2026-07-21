@@ -2,81 +2,58 @@
    IMPORTS
 ====================================== */
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-  Grid,
-} from "../../layouts/grid";
+import { Grid } from "../../layouts/grid";
 
-import {
-  Stack,
-} from "../../layouts/stack";
+import { Stack } from "../../layouts/stack";
 
-import {
-  Text,
-} from "../../components/typography/text";
+import { Text } from "../../components/typography/text";
 
-import {
-  Image,
-} from "./Image";
+import { Image } from "./Image";
 
 /* ======================================
    META
 ====================================== */
 
 const meta: Meta<typeof Image> = {
-
   title: "Primitives/Image",
 
   component: Image,
 
   tags: ["autodocs"],
-
 };
 
 export default meta;
 
-type Story =
-  StoryObj<typeof Image>;
+type Story = StoryObj<typeof Image>;
 
 /* ======================================
    CONSTANTS
 ====================================== */
 
-const image =
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200";
+const image = "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200";
 
 /* ======================================
    DEFAULT
 ====================================== */
 
 export const Default: Story = {
-
   args: {
-
     src: image,
 
     alt: "Workspace",
-
   },
 
   render: (args) => (
-
     <div
       style={{
         width: 320,
       }}
     >
-
       <Image {...args} />
-
     </div>
-
   ),
-
 };
 
 /* ======================================
@@ -84,87 +61,45 @@ export const Default: Story = {
 ====================================== */
 
 export const Aspect: Story = {
-
   render: () => (
-
     <Stack gap="xl">
-
       <div>
-
-        <Text>
-
-          1:1
-
-        </Text>
+        <Text>1:1</Text>
 
         <div
           style={{
             width: 320,
           }}
         >
-
-          <Image
-            src={image}
-            alt="1:1"
-            aspect="1:1"
-          />
-
+          <Image src={image} alt="1:1" aspect="1:1" />
         </div>
-
       </div>
 
       <div>
-
-        <Text>
-
-          4:3
-
-        </Text>
+        <Text>4:3</Text>
 
         <div
           style={{
             width: 320,
           }}
         >
-
-          <Image
-            src={image}
-            alt="4:3"
-            aspect="4:3"
-          />
-
+          <Image src={image} alt="4:3" aspect="4:3" />
         </div>
-
       </div>
 
       <div>
-
-        <Text>
-
-          16:9
-
-        </Text>
+        <Text>16:9</Text>
 
         <div
           style={{
             width: 320,
           }}
         >
-
-          <Image
-            src={image}
-            alt="16:9"
-            aspect="16:9"
-          />
-
+          <Image src={image} alt="16:9" aspect="16:9" />
         </div>
-
       </div>
-
     </Stack>
-
   ),
-
 };
 
 /* ======================================
@@ -172,21 +107,10 @@ export const Aspect: Story = {
 ====================================== */
 
 export const Fit: Story = {
-
   render: () => (
-
-    <Grid
-      columns={2}
-      gap="lg"
-    >
-
+    <Grid columns={2} gap="lg">
       <div>
-
-        <strong>
-
-          Cover
-
-        </strong>
+        <strong>Cover</strong>
 
         <div
           style={{
@@ -195,25 +119,12 @@ export const Fit: Story = {
             background: "#f3f4f6",
           }}
         >
-
-          <Image
-            src={image}
-            alt="Cover"
-            aspect="16:9"
-            fit="cover"
-          />
-
+          <Image src={image} alt="Cover" aspect="16:9" fit="cover" />
         </div>
-
       </div>
 
       <div>
-
-        <strong>
-
-          Contain
-
-        </strong>
+        <strong>Contain</strong>
 
         <div
           style={{
@@ -222,44 +133,24 @@ export const Fit: Story = {
             background: "#f3f4f6",
           }}
         >
-
-          <Image
-            src={image}
-            alt="Contain"
-            aspect="16:9"
-            fit="contain"
-          />
-
+          <Image src={image} alt="Contain" aspect="16:9" fit="contain" />
         </div>
-
       </div>
-
     </Grid>
-
   ),
-
 };
 /* ======================================
    SKELETON
 ====================================== */
 
 export const Skeleton: Story = {
-
   render: () => (
-
     <div
       style={{
         width: 320,
       }}
     >
-
-      <Image
-        skeleton
-        aspect="16:9"
-      />
-
+      <Image skeleton aspect="16:9" />
     </div>
-
   ),
-
 };

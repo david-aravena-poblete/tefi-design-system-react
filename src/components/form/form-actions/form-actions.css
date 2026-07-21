@@ -3,11 +3,8 @@
 ====================================== */
 
 .form-actions {
-   display: flex;
- 
-   justify-content: center;
- 
-   gap: var(--space-md);
-
-   flex-wrap: wrap;
- }
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}

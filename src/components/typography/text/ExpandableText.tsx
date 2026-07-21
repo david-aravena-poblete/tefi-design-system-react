@@ -2,10 +2,7 @@
    IMPORTS
 ====================================== */
 
-import {
-  useState,
-  type CSSProperties,
-} from "react";
+import { useState, type CSSProperties } from "react";
 
 import clsx from "clsx";
 
@@ -14,23 +11,18 @@ import "./text.css";
 import { Skeleton } from "@/primitives";
 import { Button } from "@/components/button";
 
-import type {
-  TextProps,
-} from "./text.types";
+import type { TextProps } from "./text.types";
 
 /* ======================================
    EXPANDABLE TEXT
 ====================================== */
 
-interface ExpandableTextProps
-  extends TextProps {
-
+interface ExpandableTextProps extends TextProps {
   lines?: number;
 
   expandLabel?: string;
 
   collapseLabel?: string;
-
 }
 
 /* ======================================
@@ -38,7 +30,6 @@ interface ExpandableTextProps
 ====================================== */
 
 export function ExpandableText({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -70,18 +61,14 @@ export function ExpandableText({
   ====================================== */
 
   ...rest
-
 }: ExpandableTextProps) {
-
-  const [expanded, setExpanded] =
-    useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "text",
 
     `text--${size}`,
@@ -89,42 +76,30 @@ export function ExpandableText({
     `text--${variant}`,
 
     {
-      "read-more__content--clamp":
-        !expanded,
+      "read-more__content--clamp": !expanded,
     },
 
     className,
-
   );
 
   /* ======================================
      STYLE
   ====================================== */
 
-  const style: CSSProperties =
-    expanded
-      ? {}
-      : {
-          WebkitLineClamp: lines,
-        };
+  const style: CSSProperties = expanded
+    ? {}
+    : {
+        WebkitLineClamp: lines,
+      };
 
   /* ======================================
      CONTENT
   ====================================== */
 
   const content = (
-
-    <p
-      ref={ref}
-      className={classes}
-      style={style}
-      {...rest}
-    >
-
+    <p ref={ref} className={classes} style={style} {...rest}>
       {children}
-
     </p>
-
   );
 
   /* ======================================
@@ -132,40 +107,17 @@ export function ExpandableText({
   ====================================== */
 
   return (
-
     <div className="read-more">
-
-      {skeleton ? (
-
-        <Skeleton>
-
-          {content}
-
-        </Skeleton>
-
-      ) : (
-
-        content
-
-      )}
+      {skeleton ? <Skeleton>{content}</Skeleton> : content}
 
       <Button
         variant="link"
         skeleton={skeleton}
         disabled={skeleton}
-        onClick={() =>
-          setExpanded(!expanded)
-        }
+        onClick={() => setExpanded(!expanded)}
       >
-
-        {expanded
-          ? collapseLabel
-          : expandLabel}
-
+        {expanded ? collapseLabel : expandLabel}
       </Button>
-
     </div>
-
   );
-
 }

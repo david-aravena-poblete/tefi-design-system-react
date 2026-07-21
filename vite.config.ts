@@ -9,11 +9,7 @@ export default defineConfig({
     react(),
 
     dts({
-      exclude: [
-        "**/*.stories.ts",
-        "**/*.stories.tsx",
-        "src/stories/**",
-      ],
+      exclude: ["**/*.stories.ts", "**/*.stories.tsx", "src/stories/**"],
     }),
   ],
 
@@ -25,33 +21,23 @@ export default defineConfig({
 
   build: {
     lib: {
-      entry: resolve(
-        import.meta.dirname,
-        "src/index.ts"
-      ),
+      entry: resolve(import.meta.dirname, "src/index.ts"),
 
       name: "tefi-design-system",
 
-      fileName:
-        "tefi-design-system",
+      fileName: "tefi-design-system",
     },
 
     rolldownOptions: {
-      external: [
-        "react",
-        "react-dom",
-        "react/jsx-runtime",
-      ],
+      external: ["react", "react-dom", "react/jsx-runtime"],
 
       output: {
         globals: {
           react: "React",
 
-          "react-dom":
-            "ReactDom",
+          "react-dom": "ReactDom",
 
-          "react/jsx-runtime":
-            "react/jsx-runtime",
+          "react/jsx-runtime": "react/jsx-runtime",
         },
       },
     },

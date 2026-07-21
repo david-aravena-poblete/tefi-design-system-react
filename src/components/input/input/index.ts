@@ -1,5 +1,3 @@
 export { Input } from "./Input";
 
-export type {
-  InputProps,
-} from "./input.types";
+export type { InputProps } from "./input.types";

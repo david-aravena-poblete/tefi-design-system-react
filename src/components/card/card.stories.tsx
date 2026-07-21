@@ -2,76 +2,44 @@
    IMPORTS
 ====================================== */
 
-import * as React from "react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import { Card } from "./Card";
 
-import {
-  Card,
-} from "./Card";
-
-import {
-  Grid,
-} from "../../layouts/grid";
+import { Grid } from "../../layouts/grid";
 
 /* ======================================
    META
 ====================================== */
 
 const meta: Meta<typeof Card> = {
-
   title: "Components/Card",
 
   component: Card,
 
   tags: ["autodocs"],
-
 };
 
 export default meta;
 
-type Story =
-  StoryObj<typeof Card>;
+type Story = StoryObj<typeof Card>;
 
 /* ======================================
    DEFAULT
 ====================================== */
 
 export const Default: Story = {
-
   render: () => (
-
     <Grid columns={3} gap="lg">
-
       <Card>
+        <Card.Header>Header</Card.Header>
 
-        <Card.Header>
+        <Card.Body>Body content</Card.Body>
 
-          Header
-
-        </Card.Header>
-
-        <Card.Body>
-
-          Body content
-
-        </Card.Body>
-
-        <Card.Footer>
-
-          Footer
-
-        </Card.Footer>
-
+        <Card.Footer>Footer</Card.Footer>
       </Card>
-
     </Grid>
-
   ),
-
 };
 
 /* ======================================
@@ -79,63 +47,27 @@ export const Default: Story = {
 ====================================== */
 
 export const Variants: Story = {
-
   render: () => (
-
     <Grid columns={3} gap="lg">
-
       <Card variant="outlined">
+        <Card.Header>Outlined</Card.Header>
 
-        <Card.Header>
-
-          Outlined
-
-        </Card.Header>
-
-        <Card.Body>
-
-          Default card style.
-
-        </Card.Body>
-
+        <Card.Body>Default card style.</Card.Body>
       </Card>
 
       <Card variant="elevated">
+        <Card.Header>Elevated</Card.Header>
 
-        <Card.Header>
-
-          Elevated
-
-        </Card.Header>
-
-        <Card.Body>
-
-          Uses shadow.
-
-        </Card.Body>
-
+        <Card.Body>Uses shadow.</Card.Body>
       </Card>
 
       <Card variant="flat">
+        <Card.Header>Flat</Card.Header>
 
-        <Card.Header>
-
-          Flat
-
-        </Card.Header>
-
-        <Card.Body>
-
-          Transparent background.
-
-        </Card.Body>
-
+        <Card.Body>Transparent background.</Card.Body>
       </Card>
-
     </Grid>
-
   ),
-
 };
 
 /* ======================================
@@ -143,63 +75,27 @@ export const Variants: Story = {
 ====================================== */
 
 export const Sizes: Story = {
-
   render: () => (
-
     <Grid columns={3} gap="lg">
-
       <Card size="sm">
+        <Card.Header>Small</Card.Header>
 
-        <Card.Header>
-
-          Small
-
-        </Card.Header>
-
-        <Card.Body>
-
-          Small padding.
-
-        </Card.Body>
-
+        <Card.Body>Small padding.</Card.Body>
       </Card>
 
       <Card size="md">
+        <Card.Header>Medium</Card.Header>
 
-        <Card.Header>
-
-          Medium
-
-        </Card.Header>
-
-        <Card.Body>
-
-          Medium padding.
-
-        </Card.Body>
-
+        <Card.Body>Medium padding.</Card.Body>
       </Card>
 
       <Card size="lg">
+        <Card.Header>Large</Card.Header>
 
-        <Card.Header>
-
-          Large
-
-        </Card.Header>
-
-        <Card.Body>
-
-          Large padding.
-
-        </Card.Body>
-
+        <Card.Body>Large padding.</Card.Body>
       </Card>
-
     </Grid>
-
   ),
-
 };
 
 /* ======================================
@@ -207,40 +103,22 @@ export const Sizes: Story = {
 ====================================== */
 
 export const Media: Story = {
-
   render: () => (
-
     <Grid columns={3} gap="lg">
-
       <Card>
-
-        <Card.Header>
-
-          Card Media
-
-        </Card.Header>
+        <Card.Header>Card Media</Card.Header>
 
         <Card.Media>
-
           <img
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200"
             alt="Workspace"
           />
-
         </Card.Media>
 
-        <Card.Body>
-
-          Image without body padding.
-
-        </Card.Body>
-
+        <Card.Body>Image without body padding.</Card.Body>
       </Card>
-
     </Grid>
-
   ),
-
 };
 
 /* ======================================
@@ -248,35 +126,15 @@ export const Media: Story = {
 ====================================== */
 
 export const Sections: Story = {
-
   render: () => (
-
     <Grid columns={3} gap="lg">
-
       <Card>
+        <Card.Header>Header</Card.Header>
 
-        <Card.Header>
+        <Card.Body>Main content</Card.Body>
 
-          Header
-
-        </Card.Header>
-
-        <Card.Body>
-
-          Main content
-
-        </Card.Body>
-
-        <Card.Footer>
-
-          Footer actions
-
-        </Card.Footer>
-
+        <Card.Footer>Footer actions</Card.Footer>
       </Card>
-
     </Grid>
-
   ),
-
 };

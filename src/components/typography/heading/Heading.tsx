@@ -8,16 +8,13 @@ import "./heading.css";
 
 import { Skeleton } from "@/primitives";
 
-import type {
-  HeadingProps,
-} from "./heading.types";
+import type { HeadingProps } from "./heading.types";
 
 /* ======================================
    HEADING
 ====================================== */
 
 export function Heading({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -41,21 +38,17 @@ export function Heading({
   ====================================== */
 
   ...rest
-
 }: HeadingProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "heading",
 
     `heading--${size}`,
 
     className,
-
   );
 
   /* ======================================
@@ -63,16 +56,9 @@ export function Heading({
   ====================================== */
 
   const content = (
-
-    <Component
-      className={classes}
-      {...rest}
-    >
-
+    <Component className={classes} {...rest}>
       {children}
-
     </Component>
-
   );
 
   /* ======================================
@@ -80,13 +66,7 @@ export function Heading({
   ====================================== */
 
   if (skeleton) {
-
-    return (
-      <Skeleton>
-        {content}
-      </Skeleton>
-    );
-
+    return <Skeleton>{content}</Skeleton>;
   }
 
   /* ======================================
@@ -94,5 +74,4 @@ export function Heading({
   ====================================== */
 
   return content;
-
 }

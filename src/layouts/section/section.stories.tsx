@@ -1,11 +1,9 @@
-import * as React from "react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Section } from "./Section";
 import { Container } from "../container";
 import { Stack } from "../stack";
 import { Button } from "../../components/button";
-
 
 const meta: Meta<typeof Section> = {
   title: "Layouts/Section",
@@ -22,14 +20,7 @@ const meta: Meta<typeof Section> = {
     size: {
       control: "select",
 
-      options: [
-        "none",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-        "xxl",
-      ],
+      options: ["none", "sm", "md", "lg", "xl", "xxl"],
     },
   },
 };
@@ -37,7 +28,6 @@ const meta: Meta<typeof Section> = {
 export default meta;
 
 type Story = StoryObj<typeof Section>;
-
 
 /* ======================================
    SHARED
@@ -49,7 +39,6 @@ const sharedStyle = {
   padding: "var(--space-lg)",
 };
 
-
 /* ======================================
    STORIES
 ====================================== */
@@ -60,14 +49,11 @@ export const Default: Story = {
 
     children: (
       <Container>
-        <div style={sharedStyle}>
-          Section md
-        </div>
+        <div style={sharedStyle}>Section md</div>
       </Container>
     ),
   },
 };
-
 
 export const Small: Story = {
   args: {
@@ -75,14 +61,11 @@ export const Small: Story = {
 
     children: (
       <Container>
-        <div style={sharedStyle}>
-          Section sm
-        </div>
+        <div style={sharedStyle}>Section sm</div>
       </Container>
     ),
   },
 };
-
 
 export const Large: Story = {
   args: {
@@ -90,14 +73,11 @@ export const Large: Story = {
 
     children: (
       <Container>
-        <div style={sharedStyle}>
-          Section lg
-        </div>
+        <div style={sharedStyle}>Section lg</div>
       </Container>
     ),
   },
 };
-
 
 export const ExtraLarge: Story = {
   args: {
@@ -105,14 +85,11 @@ export const ExtraLarge: Story = {
 
     children: (
       <Container>
-        <div style={sharedStyle}>
-          Section xl
-        </div>
+        <div style={sharedStyle}>Section xl</div>
       </Container>
     ),
   },
 };
-
 
 export const NoSpacing: Story = {
   args: {
@@ -120,14 +97,11 @@ export const NoSpacing: Story = {
 
     children: (
       <Container>
-        <div style={sharedStyle}>
-          Section none
-        </div>
+        <div style={sharedStyle}>Section none</div>
       </Container>
     ),
   },
 };
-
 
 export const CompositionExample: Story = {
   args: {
@@ -136,17 +110,11 @@ export const CompositionExample: Story = {
     children: (
       <Container>
         <Stack gap="lg">
-          <div style={sharedStyle}>
-            Header
-          </div>
+          <div style={sharedStyle}>Header</div>
 
-          <div style={sharedStyle}>
-            Content
-          </div>
+          <div style={sharedStyle}>Content</div>
 
-          <Button>
-            Action
-          </Button>
+          <Button>Action</Button>
         </Stack>
       </Container>
     ),

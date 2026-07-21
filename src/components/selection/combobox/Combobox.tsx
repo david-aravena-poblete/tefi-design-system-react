@@ -2,12 +2,7 @@
    IMPORTS
 ====================================== */
 
-import {
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import "./combobox.css";
 
@@ -19,9 +14,7 @@ import { OptionList } from "@/components/selection";
 
 import { FloatingSurface } from "@/components/overlay";
 
-import type {
-  ComboboxProps,
-} from "./combobox.types";
+import type { ComboboxProps } from "./combobox.types";
 
 /* ======================================
    COMBOBOX
@@ -52,156 +45,94 @@ export function Combobox({
 
   ...rest
 }: ComboboxProps) {
-
   /* ======================================
      VARIANT
   ====================================== */
 
-  const isMultiple =
-    variant === "multiple";
+  const isMultiple = variant === "multiple";
 
   /* ======================================
      CONTROLLED
   ====================================== */
 
-  const isControlled =
-    value !== undefined;
+  const isControlled = value !== undefined;
 
   /* ======================================
      INTERNAL VALUE
   ====================================== */
 
-  const [internalValue, setInternalValue] =
-    useState(
-      defaultValue ??
-      (
-        isMultiple
-          ? []
-          : ""
-      )
-    );
+  const [internalValue, setInternalValue] = useState(defaultValue ?? (isMultiple ? [] : ""));
 
-  const currentValue =
-    isControlled
-      ? value
-      : internalValue;
+  const currentValue = isControlled ? value : internalValue;
 
   /* ======================================
      QUERY
   ====================================== */
 
-  const [query, setQuery] =
-    useState("");
+  const [query, setQuery] = useState("");
 
   /* ======================================
      OPEN
   ====================================== */
 
-  const [open, setOpen] =
-    useState(false);
+  const [open, setOpen] = useState(false);
 
   /* ======================================
      CONTAINER
   ====================================== */
 
-  const containerRef =
-    useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   /* ======================================
      CLICK OUTSIDE
   ====================================== */
 
   useEffect(() => {
-
-    function handleClickOutside(
-      event: MouseEvent
-    ) {
-
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(
-          event.target as Node
-        )
-      ) {
-
+    function handleClickOutside(event: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setOpen(false);
 
         setQuery("");
       }
     }
 
-    document.addEventListener(
-      "mousedown",
-      handleClickOutside
-    );
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-
   }, []);
 
   /* ======================================
      FILTERED OPTIONS
   ====================================== */
 
-  const filteredOptions =
-    useMemo(() => {
+  const filteredOptions = useMemo(() => {
+    const normalizedQuery = query.toLowerCase();
 
-      const normalizedQuery =
-        query.toLowerCase();
+    return options
+      .filter((option) => {
+        return option.label.toLowerCase().startsWith(normalizedQuery);
+      })
+      .filter((option) => {
+        if (!isMultiple) {
+          return true;
+        }
 
-      return options
-        .filter((option) => {
-
-          return option.label
-            .toLowerCase()
-            .startsWith(
-              normalizedQuery
-            );
-        })
-        .filter((option) => {
-
-          if (!isMultiple) {
-            return true;
-          }
-
-          return !(
-            currentValue as string[]
-          ).includes(
-            option.value
-          );
-        });
-
-    }, [
-      options,
-      query,
-      currentValue,
-      isMultiple,
-    ]);
+        return !(currentValue as string[]).includes(option.value);
+      });
+  }, [options, query, currentValue, isMultiple]);
 
   /* ======================================
      SELECT
   ====================================== */
 
-  function handleSelect(
-    optionValue: string
-  ) {
-
+  function handleSelect(optionValue: string) {
     if (disabled) {
       return;
     }
 
-    const selectedOption =
-      options.find(
-        (option) =>
-          option.value ===
-          optionValue
-      );
+    const selectedOption = options.find((option) => option.value === optionValue);
 
     if (!selectedOption) {
       return;
@@ -212,22 +143,13 @@ export function Combobox({
     ====================================== */
 
     if (isMultiple) {
-
-      const nextValue = [
-        ...(currentValue as string[]),
-        optionValue,
-      ];
+      const nextValue = [...(currentValue as string[]), optionValue];
 
       if (!isControlled) {
-
-        setInternalValue(
-          nextValue
-        );
+        setInternalValue(nextValue);
       }
 
-      onChange?.(
-        nextValue
-      );
+      onChange?.(nextValue);
 
       setQuery("");
 
@@ -239,15 +161,10 @@ export function Combobox({
     ====================================== */
 
     if (!isControlled) {
-
-      setInternalValue(
-        optionValue
-      );
+      setInternalValue(optionValue);
     }
 
-    onChange?.(
-      optionValue
-    );
+    onChange?.(optionValue);
 
     setQuery("");
 
@@ -258,71 +175,37 @@ export function Combobox({
      REMOVE
   ====================================== */
 
-  function handleRemove(
-    optionValue: string
-  ) {
-
-    if (
-      !isMultiple ||
-      disabled
-    ) {
+  function handleRemove(optionValue: string) {
+    if (!isMultiple || disabled) {
       return;
     }
 
-    const nextValue =
-      (
-        currentValue as string[]
-      ).filter(
-        (item) =>
-          item !== optionValue
-      );
+    const nextValue = (currentValue as string[]).filter((item) => item !== optionValue);
 
     if (!isControlled) {
-
-      setInternalValue(
-        nextValue
-      );
+      setInternalValue(nextValue);
     }
 
-    onChange?.(
-      nextValue
-    );
+    onChange?.(nextValue);
   }
 
   /* ======================================
      SELECTED OPTIONS
   ====================================== */
 
-  const selectedOptions =
-    options.filter((option) => {
+  const selectedOptions = options.filter((option) => {
+    if (isMultiple) {
+      return (currentValue as string[]).includes(option.value);
+    }
 
-      if (isMultiple) {
-
-        return (
-          currentValue as string[]
-        ).includes(
-          option.value
-        );
-      }
-
-      return (
-        currentValue ===
-        option.value
-      );
-    });
+    return currentValue === option.value;
+  });
 
   /* ======================================
      INPUT VALUE
   ====================================== */
 
-  const inputValue =
-    query ||
-    (
-      !isMultiple
-        ? selectedOptions[0]?.label
-        : ""
-    ) ||
-    "";
+  const inputValue = query || (!isMultiple ? selectedOptions[0]?.label : "") || "";
 
   /* ======================================
      CLASSES
@@ -335,8 +218,7 @@ export function Combobox({
 
     `combobox--${state}`,
 
-    disabled &&
-      "combobox--disabled",
+    disabled && "combobox--disabled",
 
     className,
   ]
@@ -355,51 +237,36 @@ export function Combobox({
 
       {...rest}
     >
-
       {/* ======================================
           CHIPS
       ====================================== */}
 
-      {isMultiple &&
-        selectedOptions.length > 0 && (
+      {isMultiple && selectedOptions.length > 0 && (
+        <div className="combobox__chips">
+          {selectedOptions.map((option) => (
+            <Chip
+              key={option.value}
 
-          <div className="combobox__chips">
+              size={inputSize}
 
-            {selectedOptions.map(
-              (option) => (
+              removable
 
-                <Chip
-                  key={option.value}
+              disabled={disabled}
 
-                  size={inputSize}
-
-                  removable
-
-                  disabled={disabled}
-
-                  onRemove={() =>
-                    handleRemove(
-                      option.value
-                    )
-                  }
-                >
-                  {option.label}
-                  </Chip>
-                )
-              )}
-          </div>
-        )}
+              onRemove={() => handleRemove(option.value)}
+            >
+              {option.label}
+            </Chip>
+          ))}
+        </div>
+      )}
 
       {/* ======================================
           INPUT
       ====================================== */}
 
       <SearchField
-        value={
-          open
-            ? query
-            : inputValue
-        }
+        value={open ? query : inputValue}
 
         placeholder={placeholder}
 
@@ -412,7 +279,6 @@ export function Combobox({
         clearable={clearable}
 
         onFocus={() => {
-
           if (disabled) {
             return;
           }
@@ -421,22 +287,16 @@ export function Combobox({
         }}
 
         onChange={(event) => {
-
-          setQuery(
-            event.target.value
-          );
+          setQuery(event.target.value);
 
           setOpen(true);
         }}
 
         onClear={() => {
-
           setQuery("");
 
           if (!isMultiple) {
-
             if (!isControlled) {
-
               setInternalValue("");
             }
 
@@ -449,34 +309,19 @@ export function Combobox({
           OPTIONS
       ====================================== */}
 
-      <FloatingSurface
-        open={open}
-      >
-
+      <FloatingSurface open={open}>
         {filteredOptions.length > 0 ? (
-
           <OptionList
             embedded
 
-            options={
-              filteredOptions
-            }
+            options={filteredOptions}
 
-            onChange={
-              handleSelect
-            }
+            onChange={handleSelect}
           />
-
         ) : (
-
-          <div className="combobox__empty">
-            No results found
-          </div>
-
+          <div className="combobox__empty">No results found</div>
         )}
-
       </FloatingSurface>
-
     </div>
   );
 }

@@ -3,31 +3,22 @@
 ====================================== */
 
 .error-message {
-    color:
-      var(--state-danger-text);
-  
-    line-height:
-      var(--line-normal);
-  }
-  
-  
-  /* ======================================
+  line-height: var(--line-normal);
+  color: var(--state-danger-text);
+}
+
+/* ======================================
      SIZES
   ====================================== */
-  
-  .error-message--sm {
-    font-size:
-      var(--font-xs);
-  }
-  
-  
-  .error-message--md {
-    font-size:
-      var(--font-sm);
-  }
-  
-  
-  .error-message--lg {
-    font-size:
-      var(--font-md);
-  }
+
+.error-message--sm {
+  font-size: var(--font-xs);
+}
+
+.error-message--md {
+  font-size: var(--font-sm);
+}
+
+.error-message--lg {
+  font-size: var(--font-md);
+}

@@ -2,9 +2,14 @@
    IMPORTS
 ====================================== */
 
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+
+import clsx from "clsx";
+
 import "./select.css";
-import { Field } from "@/primitives/field";
-import { useFormField } from "@/components/form/form-field/form-field.context";
+
+import { OptionList } from "../option-list";
+
 import type { SelectProps } from "./select.types";
 
 /* ======================================
@@ -12,104 +17,123 @@ import type { SelectProps } from "./select.types";
 ====================================== */
 
 export function Select({
-  selectSize = "md",
+  options = [],
 
-  state = "default",
+  value = null,
+
+  placeholder = "Select...",
 
   disabled = false,
 
-  loading = false,
+  onChange,
 
-  className = "",
-
-  children,
+  className,
 
   ...rest
 }: SelectProps) {
-
   /* ======================================
-     FORM FIELD
+     STATE
   ====================================== */
 
-  const field = useFormField();
+  const [open, setOpen] = useState(false);
+
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  const listId = useId();
 
   /* ======================================
-     DERIVED
+   SELECTED OPTION
+====================================== */
+
+  const selectedOption = useMemo(
+    () => options.find((option) => option.value === value) ?? null,
+    [options, value],
+  );
+
+  const selectedIndex = useMemo(
+    () => options.findIndex((option) => option.value === value),
+    [options, value],
+  );
+
+  /* ======================================
+     CLOSE OUTSIDE
   ====================================== */
 
-  const resolvedId =
-    rest.id ??
-    field?.id;
+  useEffect(() => {
+    function handlePointerDown(event: PointerEvent) {
+      if (rootRef.current && !event.composedPath().includes(rootRef.current)) {
+        setOpen(false);
+      }
+    }
 
-  const resolvedState =
-    state !== "default"
-      ? state
-      : field?.state ?? "default";
+    document.addEventListener("pointerdown", handlePointerDown);
 
-  const resolvedDisabled =
-    disabled ||
-    field?.disabled ||
-    false;
-
-  const resolvedDescribedBy =
-    rest["aria-describedby"] ??
-    field?.describedBy;
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+    };
+  }, []);
 
   /* ======================================
      CLASSES
   ====================================== */
 
-  const classes = [
+  const classes = clsx(
     "select",
 
-    `select--${selectSize}`,
-
-    `select--${resolvedState}`,
-
-    resolvedDisabled &&
-      "select--disabled",
-
-    loading &&
-      "select--loading",
-
     className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  );
+
+  /* ======================================
+     HANDLERS
+  ====================================== */
+
+  function handleToggle() {
+    if (disabled) {
+      return;
+    }
+
+    setOpen((current) => !current);
+  }
+
+  function handleChange(nextValue: string) {
+    onChange?.(nextValue);
+
+    setOpen(false);
+  }
 
   /* ======================================
      RENDER
   ====================================== */
 
   return (
-    <Field
-      state={resolvedState}
+    <div
+      ref={rootRef}
 
-      disabled={resolvedDisabled}
+      className={classes}
 
-      loading={loading}
+      aria-disabled={disabled}
 
-      className="select-wrapper"
+      data-open={open}
+
+      {...rest}
     >
-      <select
-        id={resolvedId}
+      <button
+        type="button"
 
-        aria-describedby={
-          resolvedDescribedBy
-        }
+        className="select__trigger"
 
-        className={classes}
+        disabled={disabled}
 
-        disabled={resolvedDisabled}
+        aria-haspopup="listbox"
 
-        {...rest}
+        aria-expanded={open}
+
+        aria-controls={listId}
+
+        onClick={handleToggle}
       >
-        {children}
-      </select>
+        <span className="select__value">{selectedOption?.label ?? placeholder}</span>
 
-      {/* ARROW */}
-
-      {!loading && (
         <span
           className="select__arrow"
 
@@ -117,8 +141,27 @@ export function Select({
         >
           ▾
         </span>
-      )}
+      </button>
 
-    </Field>
+      {open && (
+        <div className="select__content">
+          <OptionList
+            id={listId}
+
+            embedded
+
+            options={options}
+
+            value={value}
+
+            initialActiveIndex={selectedIndex}
+
+            disabled={disabled}
+
+            onChange={handleChange}
+          />
+        </div>
+      )}
+    </div>
   );
 }

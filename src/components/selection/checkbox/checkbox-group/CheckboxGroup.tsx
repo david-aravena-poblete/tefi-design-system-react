@@ -3,7 +3,7 @@
 ====================================== */
 
 import "./checkbox-group.css";
-import {CheckboxGroupProvider} from "./checkbox-group.context";
+import { CheckboxGroupProvider } from "./checkbox-group.context";
 import type { CheckboxGroupProps } from "./checkbox-group.types";
 
 /* ======================================
@@ -23,7 +23,6 @@ export function CheckboxGroup({
 
   children,
 }: CheckboxGroupProps) {
-
   /* ======================================
      CONTEXT
   ====================================== */
@@ -41,17 +40,9 @@ export function CheckboxGroup({
   ====================================== */
 
   return (
-    <CheckboxGroupProvider
-      value={contextValue}
-    >
+    <CheckboxGroupProvider value={contextValue}>
       <div
-        className={[
-          "checkbox-group",
-
-          `checkbox-group--${direction}`,
-        ]
-          .filter(Boolean)
-          .join(" ")}
+        className={["checkbox-group", `checkbox-group--${direction}`].filter(Boolean).join(" ")}
 
         data-gap={gap}
       >

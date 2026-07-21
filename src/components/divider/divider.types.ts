@@ -1,16 +1,9 @@
-import type {
-    HTMLAttributes,
-  } from "react";
-  
-  /* ======================================
+import type { HTMLAttributes } from "react";
+
+/* ======================================
      PROPS
   ====================================== */
-  
-  export interface DividerProps
-    extends HTMLAttributes<HTMLHRElement> {
-  
-    orientation?:
-      | "horizontal"
-      | "vertical";
-  
-  }
+
+export interface DividerProps extends HTMLAttributes<HTMLHRElement> {
+  orientation?: "horizontal" | "vertical";
+}

@@ -2,27 +2,26 @@
    TOKENS
 ====================================== */
 
-@import "./foundations/tokens.css";
+@import url("./foundations/tokens.css");
 
 /* ======================================
    THEME
 ====================================== */
 
-@import "./foundations/themes/light.css";
-@import "./foundations/themes/dark.css";
+@import url("./foundations/themes/light.css");
+@import url("./foundations/themes/dark.css");
 
 /* ======================================
    BRAND
 ====================================== */
 
-@import "./foundations/brands/default.css";
-@import "./foundations/brands/daravena.css";
-
+@import url("./foundations/brands/default.css");
+@import url("./foundations/brands/daravena.css");
 
 /* ======================================
    FOUNDATIONS
 ====================================== */
 
-@import "./foundations/states.css";
-@import "./foundations/typography.css";
-@import "./foundations/base.css";
+@import url("./foundations/states.css");
+@import url("./foundations/typography.css");
+@import url("./foundations/base.css");

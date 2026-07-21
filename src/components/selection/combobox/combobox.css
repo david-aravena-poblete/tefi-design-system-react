@@ -4,11 +4,10 @@
 
 .combobox {
   position: relative;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
-
 
 /* ======================================
    CHIPS
@@ -16,31 +15,20 @@
 
 .combobox__chips {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: var(--space-xs);
-
-  margin-bottom:
-    var(--space-xs);
+  margin-bottom: var(--space-xs);
 }
-
 
 /* ======================================
    EMPTY
 ====================================== */
 
 .combobox__empty {
-  padding:
-    var(--space-sm);
-
-  color:
-    var(--color-text-secondary);
-
-  font-size:
-    var(--font-sm);
+  padding: var(--space-sm);
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
 }
-
 
 /* ======================================
    DISABLED

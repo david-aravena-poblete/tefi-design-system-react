@@ -1,15 +1,7 @@
 .sidebar-footer {
-
   display: flex;
-
   flex-direction: column;
-
   gap: var(--space-md);
-
-  padding:
-    var(--surface-sidebar-padding);
-
-  border-top:
-    1px solid var(--surface-sidebar-border);
-
+  padding: var(--surface-sidebar-padding);
+  border-top: 1px solid var(--surface-sidebar-border);
 }

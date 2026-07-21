@@ -6,16 +6,13 @@ import clsx from "clsx";
 
 import "./label.css";
 
-import type {
-  LabelProps,
-} from "./label.types";
+import type { LabelProps } from "./label.types";
 
 /* ======================================
    LABEL
 ====================================== */
 
 export function Label({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -37,21 +34,17 @@ export function Label({
   ====================================== */
 
   ...rest
-
 }: LabelProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "label",
 
     `label--${size}`,
 
     className,
-
   );
 
   /* ======================================
@@ -59,33 +52,14 @@ export function Label({
   ====================================== */
 
   return (
-
-    <label
-      className={classes}
-      {...rest}
-    >
-
-      <span className="label__text">
-
-        {children}
-
-      </span>
+    <label className={classes} {...rest}>
+      <span className="label__text">{children}</span>
 
       {required && (
-
-        <span
-          className="label__required"
-          aria-hidden="true"
-        >
-
+        <span className="label__required" aria-hidden="true">
           *
-
         </span>
-
       )}
-
     </label>
-
   );
-
 }

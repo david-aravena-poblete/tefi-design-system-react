@@ -3,33 +3,22 @@
 ====================================== */
 
 .sidebar-item {
-
   width: 100%;
-
 }
-
 
 /* ======================================
    BUTTON
 ====================================== */
 
 .sidebar-item .button {
-
   justify-content: flex-start;
-
 }
-
 
 /* ======================================
    ACTIVE
 ====================================== */
 
 .sidebar-item[data-active="true"] .button {
-
-  background:
-    var(--color-bg-secondary);
-
-  font-weight:
-    var(--font-weight-medium);
-
+  font-weight: var(--font-weight-medium);
+  background: var(--color-bg-secondary);
 }

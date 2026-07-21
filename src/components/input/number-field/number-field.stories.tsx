@@ -2,54 +2,36 @@
    IMPORTS
 ====================================== */
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-  NumberField,
-} from "@/components/input/number-field";
+import { NumberField } from "@/components/input/number-field";
 
-import {
-  FormField,
-} from "@/components/form/form-field";
+import { FormField } from "@/components/form/form-field";
 
-import {
-  Label,
-} from "@/components/field/label";
+import { Label } from "@/components/field/label";
 
 /* ======================================
    META
 ====================================== */
 
 const meta: Meta<typeof NumberField> = {
-
   title: "Components/Input/NumberField",
 
   component: NumberField,
 
   tags: ["autodocs"],
-
 };
 
 export default meta;
 
-type Story =
-  StoryObj<typeof NumberField>;
+type Story = StoryObj<typeof NumberField>;
 
 /* ======================================
    PLAYGROUND
 ====================================== */
 
 export const Playground: Story = {
-
-  render: (args) => (
-
-    <NumberField {...args} />
-
-  ),
-
+  render: (args) => <NumberField {...args} />,
 };
 
 /* ======================================
@@ -57,25 +39,13 @@ export const Playground: Story = {
 ====================================== */
 
 export const Default: Story = {
-
   render: () => (
-
     <FormField>
+      <Label>Quantity</Label>
 
-      <Label>
-
-        Quantity
-
-      </Label>
-
-      <NumberField
-        placeholder="0"
-      />
-
+      <NumberField placeholder="0" />
     </FormField>
-
   ),
-
 };
 
 /* ======================================
@@ -83,9 +53,7 @@ export const Default: Story = {
 ====================================== */
 
 export const States: Story = {
-
   render: () => (
-
     <div
       style={{
         display: "flex",
@@ -93,70 +61,31 @@ export const States: Story = {
         gap: "16px",
       }}
     >
-
       <FormField>
+        <Label>Default</Label>
 
-        <Label>
-
-          Default
-
-        </Label>
-
-        <NumberField
-          placeholder="100"
-        />
-
+        <NumberField placeholder="100" />
       </FormField>
 
       <FormField>
+        <Label>Error</Label>
 
-        <Label>
-
-          Error
-
-        </Label>
-
-        <NumberField
-          state="error"
-          placeholder="100"
-        />
-
+        <NumberField state="error" placeholder="100" />
       </FormField>
 
       <FormField>
+        <Label>Success</Label>
 
-        <Label>
-
-          Success
-
-        </Label>
-
-        <NumberField
-          state="success"
-          placeholder="100"
-        />
-
+        <NumberField state="success" placeholder="100" />
       </FormField>
 
       <FormField>
+        <Label>Disabled</Label>
 
-        <Label>
-
-          Disabled
-
-        </Label>
-
-        <NumberField
-          disabled
-          placeholder="100"
-        />
-
+        <NumberField disabled placeholder="100" />
       </FormField>
-
     </div>
-
   ),
-
 };
 
 /* ======================================
@@ -164,9 +93,7 @@ export const States: Story = {
 ====================================== */
 
 export const Sizes: Story = {
-
   render: () => (
-
     <div
       style={{
         display: "flex",
@@ -174,26 +101,13 @@ export const Sizes: Story = {
         gap: "16px",
       }}
     >
+      <NumberField size="sm" placeholder="Small" />
 
-      <NumberField
-        size="sm"
-        placeholder="Small"
-      />
+      <NumberField size="md" placeholder="Medium" />
 
-      <NumberField
-        size="md"
-        placeholder="Medium"
-      />
-
-      <NumberField
-        size="lg"
-        placeholder="Large"
-      />
-
+      <NumberField size="lg" placeholder="Large" />
     </div>
-
   ),
-
 };
 
 /* ======================================
@@ -201,25 +115,11 @@ export const Sizes: Story = {
 ====================================== */
 
 export const WithLimits: Story = {
-
   render: () => (
-
     <FormField>
+      <Label>Age</Label>
 
-      <Label>
-
-        Age
-
-      </Label>
-
-      <NumberField
-        min={18}
-        max={99}
-        placeholder="18"
-      />
-
+      <NumberField min={18} max={99} placeholder="18" />
     </FormField>
-
   ),
-
 };

@@ -6,16 +6,13 @@ import clsx from "clsx";
 
 import "./stack.css";
 
-import type {
-  StackProps,
-} from "./stack.types";
+import type { StackProps } from "./stack.types";
 
 /* ======================================
    STACK
 ====================================== */
 
 export function Stack({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -43,31 +40,25 @@ export function Stack({
   ====================================== */
 
   ...rest
-
 }: StackProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "stack",
 
     `stack--gap-${gap}`,
 
-    align &&
-      `stack--align-${align}`,
+    align && `stack--align-${align}`,
 
-    justify &&
-      `stack--justify-${justify}`,
+    justify && `stack--justify-${justify}`,
 
     {
       "stack--wrap": wrap,
     },
 
     className,
-
   );
 
   /* ======================================
@@ -75,16 +66,8 @@ export function Stack({
   ====================================== */
 
   return (
-
-    <Component
-      className={classes}
-      {...rest}
-    >
-
+    <Component className={classes} {...rest}>
       {children}
-
     </Component>
-
   );
-
 }

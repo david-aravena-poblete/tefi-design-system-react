@@ -6,9 +6,7 @@ import "./switch.css";
 
 import { Control } from "@/primitives/control";
 
-import type {
-  SwitchProps,
-} from "./switch.types";
+import type { SwitchProps } from "./switch.types";
 
 /* ======================================
    SWITCH
@@ -27,7 +25,6 @@ export function Switch({
 
   ...rest
 }: SwitchProps) {
-
   return (
     <Control
       type="checkbox"
@@ -41,17 +38,9 @@ export function Switch({
       className={className}
 
       renderControl={() => (
-
         <span className="switch">
-
-          <span className="switch__thumb">
-
-            {thumb}
-
-          </span>
-
+          <span className="switch__thumb">{thumb}</span>
         </span>
-
       )}
 
       {...rest}

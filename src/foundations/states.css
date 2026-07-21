@@ -3,84 +3,39 @@
 ====================================== */
 
 :root {
-
-    /* ======================================
+  /* ======================================
        INFO
     ====================================== */
-  
-    --state-info-bg:
-      var(--color-info-soft);
-  
-    --state-info-border:
-      var(--color-info-base);
-  
-    --state-info-text:
-      var(--color-info-base);
-  
-    --state-info-ring: color-mix(
-      in srgb,
-      var(--state-info-border) 30%,
-      transparent
-    );
-  
-  
-    /* ======================================
+
+  --state-info-bg: var(--color-info-soft);
+  --state-info-border: var(--color-info-base);
+  --state-info-text: var(--color-info-base);
+  --state-info-ring: color-mix(in srgb, var(--state-info-border) 30%, transparent);
+
+  /* ======================================
        SUCCESS
     ====================================== */
-  
-    --state-success-bg:
-      var(--color-success-soft);
-  
-    --state-success-border:
-      var(--color-success-base);
-  
-    --state-success-text:
-      var(--color-success-base);
-  
-    --state-success-ring: color-mix(
-      in srgb,
-      var(--state-success-border) 30%,
-      transparent
-    );
-  
-  
-    /* ======================================
+
+  --state-success-bg: var(--color-success-soft);
+  --state-success-border: var(--color-success-base);
+  --state-success-text: var(--color-success-base);
+  --state-success-ring: color-mix(in srgb, var(--state-success-border) 30%, transparent);
+
+  /* ======================================
        WARNING
     ====================================== */
-  
-    --state-warning-bg:
-      var(--color-warning-soft);
-  
-    --state-warning-border:
-      var(--color-warning-base);
-  
-    --state-warning-text:
-      var(--color-warning-base);
-  
-    --state-warning-ring: color-mix(
-      in srgb,
-      var(--state-warning-border) 30%,
-      transparent
-    );
-  
-  
-    /* ======================================
+
+  --state-warning-bg: var(--color-warning-soft);
+  --state-warning-border: var(--color-warning-base);
+  --state-warning-text: var(--color-warning-base);
+  --state-warning-ring: color-mix(in srgb, var(--state-warning-border) 30%, transparent);
+
+  /* ======================================
        DANGER
     ====================================== */
-  
-    --state-danger-bg:
-      var(--color-danger-soft);
-  
-    --state-danger-border:
-      var(--color-danger-base);
-  
-    --state-danger-text:
-      var(--color-danger-base);
-  
-    --state-danger-ring: color-mix(
-      in srgb,
-      var(--state-danger-border) 30%,
-      transparent
-    );
-  
-  }
+
+  --state-danger-bg: var(--color-danger-soft);
+  --state-danger-border: var(--color-danger-base);
+  --state-danger-text: var(--color-danger-base);
+  --state-danger-ring: color-mix(in srgb, var(--state-danger-border) 30%, transparent);
+}

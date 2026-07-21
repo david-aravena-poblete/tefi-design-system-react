@@ -1,7 +1,3 @@
-export {
-    SidebarContent,
-  } from "./SidebarContent";
-  
-  export type {
-    SidebarContentProps,
-  } from "./sidebar-content.types";
+export { SidebarContent } from "./SidebarContent";
+
+export type { SidebarContentProps } from "./sidebar-content.types";

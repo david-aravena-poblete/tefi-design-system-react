@@ -21,25 +21,15 @@ export function Field({
 
   className = "",
 }: FieldProps) {
-
   return (
     <div
-      className={[
-        "field",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      className={["field", className].filter(Boolean).join(" ")}
 
       data-state={state}
 
-      data-disabled={
-        disabled || undefined
-      }
+      data-disabled={disabled || undefined}
 
-      data-loading={
-        loading || undefined
-      }
+      data-loading={loading || undefined}
     >
       {children}
 

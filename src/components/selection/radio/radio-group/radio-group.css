@@ -3,42 +3,40 @@
 ====================================== */
 
 .radio-group {
-    display: flex;
-    width: 100%;
-  }
-  
-  
-  /* ======================================
+  display: flex;
+  width: 100%;
+}
+
+/* ======================================
      DIRECTION
   ====================================== */
-  
-  .radio-group--column {
-    flex-direction: column;
-  }
-  
-  .radio-group--row {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  
-  
-  /* ======================================
+
+.radio-group--column {
+  flex-direction: column;
+}
+
+.radio-group--row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ======================================
      GAP
   ====================================== */
-  
-  .radio-group[data-gap="xs"] {
-    gap: var(--space-xs);
-  }
-  
-  .radio-group[data-gap="sm"] {
-    gap: var(--space-sm);
-  }
-  
-  .radio-group[data-gap="md"] {
-    gap: var(--space-md);
-  }
-   
-  .radio-group[data-gap="lg"] {
-    gap: var(--space-lg);
-  }
+
+.radio-group[data-gap="xs"] {
+  gap: var(--space-xs);
+}
+
+.radio-group[data-gap="sm"] {
+  gap: var(--space-sm);
+}
+
+.radio-group[data-gap="md"] {
+  gap: var(--space-md);
+}
+
+.radio-group[data-gap="lg"] {
+  gap: var(--space-lg);
+}

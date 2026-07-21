@@ -5,14 +5,10 @@
 .card {
   display: flex;
   flex-direction: column;
-
   height: 100%;
+  border-radius: var(--surface-card-radius);
 
-  border-radius:
-    var(--surface-card-radius);
-
-  --card-padding:
-    var(--space-lg);
+  --card-padding: var(--space-lg);
 
   transition:
     background-color var(--transition-slow),
@@ -21,68 +17,48 @@
     box-shadow var(--transition-slow);
 }
 
-
 /* ======================================
    VARIANTS
 ====================================== */
 
 .card--outlined {
-  background-color:
-    var(--surface-card-bg);
-
-  border: 1px solid
-    var(--surface-card-border);
-
-  backdrop-filter:
-    blur(var(--effect-blur-md));
-
-  -webkit-backdrop-filter:
-    blur(var(--effect-blur-md));
+  background-color: var(--surface-card-bg);
+  border: 1px solid var(--surface-card-border);
+  backdrop-filter: blur(var(--effect-blur-md));
 }
 
 .card--outlined:hover {
-  border-color:
-    var(--surface-card-border-hover);
+  border-color: var(--surface-card-border-hover);
 }
 
 .card--elevated {
-  background-color:
-    var(--surface-card-bg);
-
-  box-shadow:
-    var(--surface-card-shadow);
+  background-color: var(--surface-card-bg);
+  box-shadow: var(--surface-card-shadow);
 }
 
 .card--elevated:hover {
-  box-shadow:
-    var(--surface-card-shadow-hover);
+  box-shadow: var(--surface-card-shadow-hover);
 }
 
 .card--flat {
-  background-color:
-    transparent;
+  background-color: transparent;
 }
-
 
 /* ======================================
    SIZES
 ====================================== */
 
 .card--sm {
-  --card-padding:
-    var(--space-md);
+  --card-padding: var(--space-md);
 }
 
 .card--md {
-  --card-padding:
-    var(--space-lg);
+  --card-padding: var(--space-lg);
 }
 
 .card--lg {
-  --card-padding:
-    var(--space-xl);
+  --card-padding: var(--space-xl);
 }
-
 
 /* ======================================
    SECTIONS
@@ -91,8 +67,7 @@
 .card__header,
 .card__body,
 .card__footer {
-  padding:
-    var(--card-padding);
+  padding: var(--card-padding);
 }
 
 .card__body {
@@ -100,15 +75,11 @@
 }
 
 .card__header {
-  border-bottom:
-    1px solid
-    var(--surface-card-border);
+  border-bottom: 1px solid var(--surface-card-border);
 }
 
 .card__footer {
-  border-top:
-    1px solid
-    var(--surface-card-border);
+  border-top: 1px solid var(--surface-card-border);
 }
 
 .card--flat .card__header,
@@ -116,19 +87,14 @@
   border: none;
 }
 
-
 /* ======================================
    MEDIA
 ====================================== */
 
 .card__media {
   overflow: hidden;
-
-  border-top-left-radius:
-    var(--surface-card-radius);
-
-  border-top-right-radius:
-    var(--surface-card-radius);
+  border-top-left-radius: var(--surface-card-radius);
+  border-top-right-radius: var(--surface-card-radius);
 }
 
 .card__media img {

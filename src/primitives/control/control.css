@@ -4,113 +4,68 @@
 
 .control {
   position: relative;
-
   display: flex;
+  gap: var(--control-gap);
   align-items: center;
-
   width: fit-content;
+  cursor: pointer;
+  user-select: none;
 
   /* SIZE SYSTEM */
 
-  --control-size:
-    var(--size-control-md);
+  --control-size: var(--size-control-md);
+  --control-gap: var(--control-gap-md);
 
-  --control-gap:
-    var(--control-gap-md);
+  /* STATE COLORS */
 
-  gap:
-    var(--control-gap);
-
-  cursor: pointer;
-
-  user-select: none;
-
-/* STATE COLORS */
-
---control-color:
-  var(--color-primary-base);
-
---control-color-hover:
-  var(--color-primary-hover);
-
---control-indicator-color:
-  var(--color-text-inverse);
-
---control-content-color:
-  var(--color-primary-base);
+  --control-color: var(--color-primary-base);
+  --control-color-hover: var(--color-primary-hover);
+  --control-indicator-color: var(--color-text-inverse);
+  --control-content-color: var(--color-primary-base);
 }
-
 
 /* ======================================
    SIZE
 ====================================== */
 
 .control[data-size="sm"] {
-  --control-size:
-    var(--size-control-sm, 16px);
-
-  --control-gap:
-    var(--control-gap-sm);
+  --control-size: var(--size-control-sm, 16px);
+  --control-gap: var(--control-gap-sm);
 }
-
 
 .control[data-size="md"] {
-  --control-size:
-    var(--size-control-md, 20px);
-
-  --control-gap:
-    var(--control-gap-md);
+  --control-size: var(--size-control-md, 20px);
+  --control-gap: var(--control-gap-md);
 }
-
 
 .control[data-size="lg"] {
-  --control-size:
-    var(--size-control-lg, 24px);
-
-  --control-gap:
-    var(--control-gap-lg);
+  --control-size: var(--size-control-lg, 24px);
+  --control-gap: var(--control-gap-lg);
 }
-
 
 /* ======================================
    STATES
 ====================================== */
 
 .control[data-state="default"] {
-  --control-color:
-    var(--color-primary-base);
-
-  --control-color-hover:
-    var(--color-primary-hover);
+  --control-color: var(--color-primary-base);
+  --control-color-hover: var(--color-primary-hover);
 }
-
 
 .control[data-state="error"] {
-  --control-color:
-    var(--color-danger-base);
-
-  --control-color-hover:
-    var(--color-danger-hover);
+  --control-color: var(--color-danger-base);
+  --control-color-hover: var(--color-danger-hover);
 }
-
 
 .control[data-state="success"] {
-  --control-color:
-    var(--color-success-base);
-
-  --control-color-hover:
-    var(--color-success-hover);
+  --control-color: var(--color-success-base);
+  --control-color-hover: var(--color-success-hover);
 }
-
 
 .control[data-state="warning"] {
-  --control-color:
-    var(--color-warning-base);
-
-  --control-color-hover:
-    var(--color-warning-hover);
+  --control-color: var(--color-warning-base);
+  --control-color-hover: var(--color-warning-hover);
 }
-
 
 /* ======================================
    VISUAL
@@ -118,53 +73,30 @@
 
 .control__visual {
   position: relative;
-
-  width:
-    var(--control-size);
-
-  height:
-    var(--control-size);
-
+  box-sizing: border-box;
   display: inline-flex;
-
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-
-  flex-shrink: 0;
-
-  padding:
-    var(--control-padding);
-
-  background:
-    var(--color-bg-primary);
-
-  border:
-    var(--control-border-width)
-    solid
-    var(--color-border-primary);
-
-  box-sizing: border-box;
-
+  width: var(--control-size);
+  height: var(--control-size);
+  padding: var(--control-padding);
+  background: var(--color-bg-primary);
+  border: var(--control-border-width) solid var(--color-border-primary);
   transition:
     transform var(--transition-fast),
     background var(--transition-fast),
     border-color var(--transition-fast);
 }
 
-
 /* ======================================
    CHECKED
 ====================================== */
 
-.control:has(.control__input:checked):not([data-disabled="true"])
-.control__visual {
-  background:
-    var(--control-color);
-
-  border-color:
-    var(--control-color);
+.control:has(.control__input:checked):not([data-disabled="true"]) .control__visual {
+  background: var(--control-color);
+  border-color: var(--control-color);
 }
-
 
 /* ======================================
    DISABLED
@@ -174,26 +106,18 @@
   cursor: not-allowed;
 }
 
-
-.control[data-disabled="true"]
-.control__visual {
-  background:
-    var(--color-bg-tertiary);
-
-  border-color:
-    var(--color-border-primary);
+.control[data-disabled="true"] .control__visual {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border-primary);
 }
-
 
 /* ======================================
    ACTIVE
 ====================================== */
 
-.control:not([data-disabled="true"])
-.control__visual:active {
+.control:not([data-disabled="true"]) .control__visual:active {
   transform: scale(0.95);
 }
-
 
 /* ======================================
    INPUT
@@ -201,29 +125,22 @@
 
 .control__input {
   position: absolute;
-
   inset: 0;
-
-  opacity: 0;
-
   cursor: inherit;
+  opacity: 0;
 }
-
 
 /* ======================================
    BOX
 ====================================== */
 
 .control__box {
-  width: 100%;
-  height: 100%;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
-
 
 /* ======================================
    LABEL
@@ -231,96 +148,57 @@
 
 .control__label {
   display: flex;
-
   align-items: center;
 }
-
 
 /* ======================================
    SHAPES
 ====================================== */
 
-.control[data-shape="circle"]
-.control__visual {
+.control[data-shape="circle"] .control__visual {
   border-radius: 50%;
 }
 
-
-.control[data-shape="square"]
-.control__visual {
-  border-radius:
-    var(--control-radius);
+.control[data-shape="square"] .control__visual {
+  border-radius: var(--control-radius);
 }
-
 
 /* ======================================
    SWITCH
 ====================================== */
 
-.control[data-shape="pill"]
-.control__visual {
-  width:
-    calc(var(--control-size) * 1.8);
-
-  height:
-    var(--control-size);
-
-  border-radius:
-    var(--radius-full);
-
+.control[data-shape="pill"] .control__visual {
+  width: calc(var(--control-size) * 1.8);
+  height: var(--control-size);
   padding: 0;
-
-  background:
-    var(--color-bg-tertiary);
-
+  background: var(--color-bg-tertiary);
   border: none;
+  border-radius: var(--radius-full);
 }
-
 
 .control[data-shape="pill"]:has(.control__input:checked):not([data-disabled="true"])
-.control__visual {
-  background:
-    var(--control-color);
+  .control__visual {
+  background: var(--control-color);
 }
 
-
-.control[data-shape="pill"][data-disabled="true"]
-.control__visual {
-  background:
-    var(--color-bg-tertiary);
+.control[data-shape="pill"][data-disabled="true"] .control__visual {
+  background: var(--color-bg-tertiary);
 }
-
 
 /* ======================================
    HOVER
 ====================================== */
 
 .control:hover:not([data-disabled="true"]) {
-  background:
-    color-mix(
-      in srgb,
-      var(--control-color) 6%,
-      transparent
-    );
-
-  border-radius:
-    var(--radius-sm);
+  background: color-mix(in srgb, var(--control-color) 6%, transparent);
+  border-radius: var(--radius-sm);
 }
-
 
 /* ======================================
    FOCUS
 ====================================== */
 
 .control:has(.control__input:focus-visible) {
-  box-shadow:
-    0 0 0 3px
-    color-mix(
-      in srgb,
-      var(--control-color) 25%,
-      transparent
-    );
-
-  border-radius:
-    var(--radius-sm);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--control-color) 25%, transparent);
 }

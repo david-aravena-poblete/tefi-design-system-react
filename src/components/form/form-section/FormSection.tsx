@@ -20,18 +20,11 @@ export function FormSection({
 
   ...rest
 }: FormSectionProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
-  const classes = [
-    "form-section",
-
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const classes = ["form-section", className].filter(Boolean).join(" ");
 
   /* ======================================
      RENDER
@@ -43,29 +36,15 @@ export function FormSection({
 
       {...rest}
     >
-
       {(title || description) && (
         <div className="form-section__header">
+          {title && <h2 className="form-section__title">{title}</h2>}
 
-          {title && (
-            <h2 className="form-section__title">
-              {title}
-            </h2>
-          )}
-
-          {description && (
-            <p className="form-section__description">
-              {description}
-            </p>
-          )}
-
+          {description && <p className="form-section__description">{description}</p>}
         </div>
       )}
 
-      <div className="form-section__content">
-        {children}
-      </div>
-
+      <div className="form-section__content">{children}</div>
     </section>
   );
 }

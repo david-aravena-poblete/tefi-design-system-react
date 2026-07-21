@@ -30,20 +30,16 @@ const OPTIONS = [
 ====================================== */
 
 export default {
-  title:
-    "Components/Overlay/FloatingSurface",
+  title: "Components/Overlay/FloatingSurface",
 
-  component:
-    FloatingSurface,
+  component: FloatingSurface,
 };
-
 
 /* ======================================
    DEFAULT
 ====================================== */
 
 export function Default() {
-
   return (
     <div
       style={{
@@ -54,7 +50,6 @@ export function Default() {
         paddingTop: "44px",
       }}
     >
-
       {/* TRIGGER */}
 
       <button
@@ -63,8 +58,7 @@ export function Default() {
 
           height: "44px",
 
-          border:
-            "1px solid #d1d5db",
+          border: "1px solid #d1d5db",
 
           borderRadius: "6px",
 
@@ -83,26 +77,21 @@ export function Default() {
       {/* DROPDOWN */}
 
       <FloatingSurface open>
-
         <OptionList
           embedded
 
           options={OPTIONS}
         />
-
       </FloatingSurface>
-
     </div>
   );
 }
-
 
 /* ======================================
    CLOSED
 ====================================== */
 
 export function Closed() {
-
   return (
     <div
       style={{
@@ -113,7 +102,6 @@ export function Closed() {
         paddingTop: "44px",
       }}
     >
-
       {/* TRIGGER */}
 
       <button
@@ -122,8 +110,7 @@ export function Closed() {
 
           height: "44px",
 
-          border:
-            "1px solid #d1d5db",
+          border: "1px solid #d1d5db",
 
           borderRadius: "6px",
 
@@ -142,15 +129,12 @@ export function Closed() {
       {/* DROPDOWN */}
 
       <FloatingSurface>
-
         <OptionList
           embedded
 
           options={OPTIONS}
         />
-
       </FloatingSurface>
-
     </div>
   );
 }

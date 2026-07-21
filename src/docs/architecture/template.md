@@ -68,20 +68,20 @@ Describe cómo el componente decide qué mostrar.
 # API pública
 
 | Prop | Descripción |
-|------|-------------|
-| | |
+| ---- | ----------- |
+|      |             |
 
 ---
 
 # Estados
 
-| Estado | Descripción |
-|--------|-------------|
-| Por defecto | |
-| Cargando | |
-| Cargado | |
-| Error | |
-| Vacío | |
+| Estado      | Descripción |
+| ----------- | ----------- |
+| Por defecto |             |
+| Cargando    |             |
+| Cargado     |             |
+| Error       |             |
+| Vacío       |             |
 
 ---
 

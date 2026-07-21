@@ -1,6 +1,3 @@
 export { Select } from "./Select";
 
-export type {
-  SelectProps,
-  SelectSize,
-} from "./select.types";
+export type { SelectProps } from "./select.types";

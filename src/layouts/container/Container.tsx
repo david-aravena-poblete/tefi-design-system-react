@@ -6,16 +6,13 @@ import clsx from "clsx";
 
 import "./container.css";
 
-import type {
-  ContainerProps,
-} from "./container.types";
+import type { ContainerProps } from "./container.types";
 
 /* ======================================
    CONTAINER
 ====================================== */
 
 export function Container({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -41,27 +38,21 @@ export function Container({
   ====================================== */
 
   ...rest
-
 }: ContainerProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "container",
 
     `container--${size}`,
 
-    paddingTop &&
-      `container--pt-${paddingTop}`,
+    paddingTop && `container--pt-${paddingTop}`,
 
-    paddingBottom &&
-      `container--pb-${paddingBottom}`,
+    paddingBottom && `container--pb-${paddingBottom}`,
 
     className,
-
   );
 
   /* ======================================
@@ -69,16 +60,8 @@ export function Container({
   ====================================== */
 
   return (
-
-    <Component
-      className={classes}
-      {...rest}
-    >
-
+    <Component className={classes} {...rest}>
       {children}
-
     </Component>
-
   );
-
 }

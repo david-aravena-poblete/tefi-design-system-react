@@ -2,29 +2,21 @@
    IMPORTS
 ====================================== */
 
-import {
-  useState,
-  type ComponentProps,
-} from "react";
+import { useState, type ComponentProps } from "react";
 
 import clsx from "clsx";
 
 import "./image.css";
 
-import {
-  Skeleton,
-} from "../../primitives/skeleton";
+import { Skeleton } from "../../primitives/skeleton";
 
-import type {
-  ImageProps,
-} from "./image.types";
+import type { ImageProps } from "./image.types";
 
 /* ======================================
    IMAGE
 ====================================== */
 
 export function Image({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -52,43 +44,31 @@ export function Image({
   ====================================== */
 
   ...rest
-
 }: ImageProps) {
-
   /* ======================================
      STATE
   ====================================== */
 
-  const [
-    isLoaded,
-    setIsLoaded,
-  ] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  const [
-    hasError,
-    setHasError,
-  ] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   /* ======================================
      HANDLERS
   ====================================== */
 
   const handleLoad: ComponentProps<"img">["onLoad"] = (event) => {
-
     setIsLoaded(true);
 
     onLoad?.(event);
-
   };
 
   const handleError: ComponentProps<"img">["onError"] = (event) => {
-
     setHasError(true);
 
     setIsLoaded(false);
 
     onError?.(event);
-
   };
 
   /* ======================================
@@ -96,26 +76,21 @@ export function Image({
   ====================================== */
 
   const wrapperClasses = clsx(
-
     "image",
 
     `image--${aspect.replace(":", "-")}`,
 
     className,
-
   );
 
   const imageClasses = clsx(
-
     "image__content",
 
     `image__content--${fit}`,
 
     {
-      "image__content--loaded":
-        isLoaded,
+      "image__content--loaded": isLoaded,
     },
-
   );
 
   /* ======================================
@@ -123,24 +98,13 @@ export function Image({
   ====================================== */
 
   if (skeleton) {
-
     return (
-
       <div className={wrapperClasses}>
-
         <div className="image__surface">
-
-          <Skeleton
-            fill
-            className="image__skeleton"
-          />
-
+          <Skeleton fill className="image__skeleton" />
         </div>
-
       </div>
-
     );
-
   }
 
   /* ======================================
@@ -148,19 +112,9 @@ export function Image({
   ====================================== */
 
   return (
-
     <div className={wrapperClasses}>
-
       <div className="image__surface">
-
-        {!isLoaded && !hasError && (
-
-          <Skeleton
-            fill
-            className="image__skeleton"
-          />
-
-        )}
+        {!isLoaded && !hasError && <Skeleton fill className="image__skeleton" />}
 
         <img
           {...rest}
@@ -169,11 +123,7 @@ export function Image({
           onLoad={handleLoad}
           onError={handleError}
         />
-
       </div>
-
     </div>
-
   );
-
 }

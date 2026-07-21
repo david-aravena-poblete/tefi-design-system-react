@@ -2,16 +2,10 @@
    COMPONENT
 ====================================== */
 
-export {
-    Image,
-  } from "./Image";
-  
-  /* ======================================
+export { Image } from "./Image";
+
+/* ======================================
      TYPES
   ====================================== */
-  
-  export type {
-    ImageFit,
-    ImageProps,
-    ImageSourceProps,
-  } from "./image.types";
+
+export type { ImageFit, ImageProps, ImageSourceProps } from "./image.types";

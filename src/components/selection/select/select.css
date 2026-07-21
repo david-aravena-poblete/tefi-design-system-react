@@ -1,225 +1,98 @@
 /* ======================================
-   WRAPPER
+   BASE
 ====================================== */
 
-.select-wrapper {
-    position: relative;
-  
-    width: 100%;
-  }
-  
-  
-  /* ======================================
-     BASE
-  ====================================== */
-  
-  .select {
-    width: 100%;
-  
-    min-width: 0;
-  
-    box-sizing: border-box;
-  
-    height:
-      var(--field-height-md);
-  
-    padding:
-      0 var(--space-md);
-  
-    padding-right:
-      calc(
-        var(--space-xl) +
-        var(--space-md)
-      );
-  
-    border: 1px solid
-      var(--state-default-border);
-  
-    border-radius:
-      var(--radius-md);
-  
-    background-color:
-      var(--color-bg-primary);
-  
-    color:
-      var(--color-text-primary);
-  
-    font-size:
-      var(--font-md);
-  
-    font-family:
-      var(--font-family-sans);
-  
-    appearance: none;
-  
-    cursor: pointer;
-  
-    outline: none;
-  
-    transition:
-      border-color var(--transition-fast),
-      box-shadow var(--transition-fast),
-      background-color var(--transition-fast);
-  }
-  
-  
-  /* ======================================
-     SIZES
-  ====================================== */
-  
-  .select--sm {
-    height:
-      var(--field-height-sm);
-  
-    font-size:
-      var(--font-sm);
-  }
-  
-  
-  .select--md {
-    height:
-      var(--field-height-md);
-  
-    font-size:
-      var(--font-md);
-  }
-  
-  
-  .select--lg {
-    height:
-      var(--field-height-lg);
-  
-    font-size:
-      var(--font-lg);
-  }
-  
-  
-  /* ======================================
-     HOVER
-  ====================================== */
-  
-  .select:hover:not(:disabled):not(.select--error):not(.select--success):not(.select--warning) {
-    border-color:
-      var(--state-default-hover);
-  }
-  
-  
-  /* ======================================
-     FOCUS
-  ====================================== */
-  
-  .select:focus-visible {
-    border-color:
-      var(--state-default-border);
-  
-    box-shadow:
-      0 0 0 3px
-      var(--state-default-ring);
-  }
-  
-  
-  .select--error {
-    border-color:
-      var(--state-danger-border);
-  }
-  
-  
-  .select--error:focus-visible {
-    box-shadow:
-      0 0 0 3px
-      var(--state-danger-ring);
-  }
-  
-  
-  .select--success {
-    border-color:
-      var(--state-success-border);
-  }
-  
-  
-  .select--success:focus-visible {
-    box-shadow:
-      0 0 0 3px
-      var(--state-success-ring);
-  }
-  
-  
-  .select--warning {
-    border-color:
-      var(--state-warning-border);
-  }
-  
-  
-  .select--warning:focus-visible {
-    box-shadow:
-      0 0 0 3px
-      var(--state-warning-ring);
-  }
-  
-  
-  /* ======================================
-     DISABLED
-  ====================================== */
-  
-  .select--disabled {
-    background:
-      var(--color-bg-secondary);
-  
-    color:
-      var(--color-text-secondary);
-  
-    cursor: not-allowed;
-  }
-  
-  
-  /* ======================================
-     LOADING
-  ====================================== */
-  
-  .select--loading {
-    padding-right:
-      calc(
-        var(--space-xxl) +
-        var(--space-md)
-      );
-  }
-  
-  
-  /* ======================================
-     ARROW
-  ====================================== */
-  
-  .select__arrow {
-    position: absolute;
-  
-    right:
-      var(--space-md);
-  
-    top: 50%;
-  
-    transform:
-      translateY(-50%);
-  
-    display: flex;
-  
-    align-items: center;
-    justify-content: center;
-  
-    pointer-events: none;
-  
-    color:
-      var(--color-text-secondary);
-  
-    font-size:
-      var(--font-sm);
-  }
-  
-  
-  /* ======================================
-     DISABLED ARROW
-  ====================================== */
-  
-  .field[data-disabled="true"]
-  .select__arrow {
-    opacity: 0.6;
-  }
+/* Layout */
+.select {
+  position: relative;
+  width: 100%;
+}
+
+/* ======================================
+   TRIGGER
+====================================== */
+
+/* Appearance */
+.select__trigger {
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 0;
+  min-height: var(--field-height-md);
+  padding: 0 var(--space-md);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-md);
+  line-height: 1;
+  color: var(--field-text-color);
+  cursor: pointer;
+  outline: none;
+  background: var(--field-bg-color);
+  border: 1px solid var(--state-default-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* Interaction */
+.select__trigger:hover {
+  border-color: var(--state-default-hover);
+}
+
+.select__trigger:focus-visible {
+  border-color: var(--state-default-border);
+  box-shadow: 0 0 0 3px var(--state-default-ring);
+}
+
+.select__trigger:disabled {
+  color: var(--field-disabled-text);
+  cursor: not-allowed;
+  background: var(--field-disabled-bg);
+}
+
+/* ======================================
+   VALUE
+====================================== */
+
+/* Text */
+.select__value {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* ======================================
+   ARROW
+====================================== */
+
+/* Icon */
+.select__arrow {
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+/* States */
+.select[data-open="true"] .select__arrow {
+  transform: rotate(180deg);
+}
+
+/* ======================================
+   CONTENT
+====================================== */
+
+/* Layout */
+.select__content {
+  position: absolute;
+  top: calc(100% + var(--space-xs));
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}

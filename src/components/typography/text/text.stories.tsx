@@ -12,27 +12,19 @@ export default {
   component: Text,
 };
 
-
 /* ======================================
    DEFAULT
 ====================================== */
 
 export function Default() {
-
-  return (
-    <Text>
-      Lorem ipsum dolor sit amet.
-    </Text>
-  );
+  return <Text>Lorem ipsum dolor sit amet.</Text>;
 }
-
 
 /* ======================================
    VARIANTS
 ====================================== */
 
 export function Variants() {
-
   return (
     <div
       style={{
@@ -40,18 +32,11 @@ export function Variants() {
         gap: "12px",
       }}
     >
+      <Text>Default text</Text>
 
-      <Text>
-        Default text
-      </Text>
+      <Text variant="secondary">Secondary text</Text>
 
-      <Text variant="secondary">
-        Secondary text
-      </Text>
-
-      <Text variant="muted">
-        Muted text
-      </Text>
+      <Text variant="muted">Muted text</Text>
 
       <div
         style={{
@@ -59,22 +44,17 @@ export function Variants() {
           padding: "12px",
         }}
       >
-        <Text variant="inverse">
-          Inverse text
-        </Text>
+        <Text variant="inverse">Inverse text</Text>
       </div>
-
     </div>
   );
 }
-
 
 /* ======================================
    SIZES
 ====================================== */
 
 export function Sizes() {
-
   return (
     <div
       style={{
@@ -82,26 +62,18 @@ export function Sizes() {
         gap: "12px",
       }}
     >
+      <Text size="sm">Small text</Text>
 
-      <Text size="sm">
-        Small text
-      </Text>
-
-      <Text size="md">
-        Medium text
-      </Text>
-
+      <Text size="md">Medium text</Text>
     </div>
   );
 }
-
 
 /* ======================================
    ELEMENTS
 ====================================== */
 
 export function Elements() {
-
   return (
     <div
       style={{
@@ -109,23 +81,13 @@ export function Elements() {
         gap: "12px",
       }}
     >
+      <Text as="p">Paragraph</Text>
 
-      <Text as="p">
-        Paragraph
-      </Text>
+      <Text as="span">Span</Text>
 
-      <Text as="span">
-        Span
-      </Text>
+      <Text as="label">Label</Text>
 
-      <Text as="label">
-        Label
-      </Text>
-
-      <Text as="div">
-        Div
-      </Text>
-
+      <Text as="div">Div</Text>
     </div>
   );
 }

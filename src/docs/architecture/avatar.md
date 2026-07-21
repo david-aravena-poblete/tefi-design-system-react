@@ -100,28 +100,28 @@ Mostrar icono por defecto
 
 # API pública
 
-| Prop | Descripción |
-|------|-------------|
-| src | Imagen del avatar. |
-| alt | Texto alternativo e iniciales. |
-| size | Tamaño del avatar. |
-| shape | Forma del avatar. |
-| fallback | Contenido personalizado cuando no existe imagen. |
-| icon | Icono mostrado cuando no existe imagen, fallback ni iniciales. |
-| as | Elemento HTML raíz. |
+| Prop     | Descripción                                                    |
+| -------- | -------------------------------------------------------------- |
+| src      | Imagen del avatar.                                             |
+| alt      | Texto alternativo e iniciales.                                 |
+| size     | Tamaño del avatar.                                             |
+| shape    | Forma del avatar.                                              |
+| fallback | Contenido personalizado cuando no existe imagen.               |
+| icon     | Icono mostrado cuando no existe imagen, fallback ni iniciales. |
+| as       | Elemento HTML raíz.                                            |
 
 ---
 
 # Estados
 
-| Estado | Descripción |
-|--------|-------------|
-| Imagen | La imagen carga correctamente. |
-| Cargando | Se muestra Skeleton. |
-| Error | La imagen falla y se usa el flujo de respaldo. |
-| Fallback | Se muestra el contenido personalizado. |
-| Iniciales | Se generan desde `alt`. |
-| Icono | Último estado disponible. |
+| Estado    | Descripción                                    |
+| --------- | ---------------------------------------------- |
+| Imagen    | La imagen carga correctamente.                 |
+| Cargando  | Se muestra Skeleton.                           |
+| Error     | La imagen falla y se usa el flujo de respaldo. |
+| Fallback  | Se muestra el contenido personalizado.         |
+| Iniciales | Se generan desde `alt`.                        |
+| Icono     | Último estado disponible.                      |
 
 ---
 

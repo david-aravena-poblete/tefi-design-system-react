@@ -1,5 +1,3 @@
 export { Sidebar } from "./Sidebar";
 
-export type {
-  SidebarProps,
-} from "./sidebar.types";
+export type { SidebarProps } from "./sidebar.types";

@@ -3,34 +3,33 @@
 ====================================== */
 
 .section {
-    width: 100%;
-  }
-  
-  
-  /* ======================================
+  width: 100%;
+}
+
+/* ======================================
      SPACING
   ====================================== */
-  
-  .section--none {
-    padding-block: 0;
-  }
-  
-  .section--sm {
-    padding-block: var(--space-md);
-  }
-  
-  .section--md {
-    padding-block: var(--space-lg);
-  }
-  
-  .section--lg {
-    padding-block: var(--space-xl);
-  }
-  
-  .section--xl {
-    padding-block: var(--space-xxl);
-  }
-  
-  .section--xxl {
-    padding-block: var(--space-xxxl);
-  }
+
+.section--none {
+  padding-block: 0;
+}
+
+.section--sm {
+  padding-block: var(--space-md);
+}
+
+.section--md {
+  padding-block: var(--space-lg);
+}
+
+.section--lg {
+  padding-block: var(--space-xl);
+}
+
+.section--xl {
+  padding-block: var(--space-xxl);
+}
+
+.section--xxl {
+  padding-block: var(--space-xxxl);
+}

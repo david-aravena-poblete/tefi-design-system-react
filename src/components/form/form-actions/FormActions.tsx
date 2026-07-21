@@ -14,26 +14,15 @@ export function FormActions({
 
   className = "",
 }: FormActionsProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
-  const classes = [
-    "form-actions",
-
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const classes = ["form-actions", className].filter(Boolean).join(" ");
 
   /* ======================================
      RENDER
   ====================================== */
 
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  );
+  return <div className={classes}>{children}</div>;
 }

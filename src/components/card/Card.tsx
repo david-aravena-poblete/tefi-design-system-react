@@ -3,21 +3,15 @@
 ====================================== */
 
 import clsx from "clsx";
-
 import "./card.css";
 
-import type {
-  CardComponent,
-  CardProps,
-  CardSectionProps,
-} from "./card.types";
+import type { CardComponent, CardProps, CardSectionProps } from "./card.types";
 
 /* ======================================
    CARD
 ====================================== */
 
 function CardBase({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -39,11 +33,8 @@ function CardBase({
   ====================================== */
 
   ...rest
-
 }: CardProps) {
-
   const classes = clsx(
-
     "card",
 
     `card--${variant}`,
@@ -51,22 +42,13 @@ function CardBase({
     `card--${size}`,
 
     className,
-
   );
 
   return (
-
-    <div
-      className={classes}
-      {...rest}
-    >
-
+    <div className={classes} {...rest}>
       {children}
-
     </div>
-
   );
-
 }
 
 /* ======================================
@@ -74,7 +56,6 @@ function CardBase({
 ====================================== */
 
 function Section({
-
   children,
 
   className,
@@ -82,105 +63,53 @@ function Section({
   section,
 
   ...rest
-
 }: CardSectionProps & {
-
   section: string;
-
 }) {
-
   return (
-
-    <div
-      className={clsx(
-        section,
-        className,
-      )}
-      {...rest}
-    >
-
+    <div className={clsx(section, className)} {...rest}>
       {children}
-
     </div>
-
   );
-
 }
 
 /* ======================================
    HEADER
 ====================================== */
 
-function Header(
-  props: CardSectionProps
-) {
-
-  return (
-    <Section
-      section="card__header"
-      {...props}
-    />
-  );
-
+function Header(props: CardSectionProps) {
+  return <Section section="card__header" {...props} />;
 }
 
 /* ======================================
    MEDIA
 ====================================== */
 
-function Media(
-  props: CardSectionProps
-) {
-
-  return (
-    <Section
-      section="card__media"
-      {...props}
-    />
-  );
-
+function Media(props: CardSectionProps) {
+  return <Section section="card__media" {...props} />;
 }
 
 /* ======================================
    BODY
 ====================================== */
 
-function Body(
-  props: CardSectionProps
-) {
-
-  return (
-    <Section
-      section="card__body"
-      {...props}
-    />
-  );
-
+function Body(props: CardSectionProps) {
+  return <Section section="card__body" {...props} />;
 }
 
 /* ======================================
    FOOTER
 ====================================== */
 
-function Footer(
-  props: CardSectionProps
-) {
-
-  return (
-    <Section
-      section="card__footer"
-      {...props}
-    />
-  );
-
+function Footer(props: CardSectionProps) {
+  return <Section section="card__footer" {...props} />;
 }
 
 /* ======================================
    COMPOUND COMPONENT
 ====================================== */
 
-export const Card =
-  CardBase as CardComponent;
+export const Card = CardBase as CardComponent;
 
 Card.Header = Header;
 

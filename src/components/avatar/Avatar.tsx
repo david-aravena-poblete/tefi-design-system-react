@@ -2,49 +2,34 @@
    IMPORTS
 ====================================== */
 
-import type {
-  ElementType,
-} from "react";
-
 import clsx from "clsx";
 
 import "./avatar.css";
 
-import {
-  Image,
-} from "@/primitives/image";
+import { Icon } from "@/primitives/icon";
 
-import {
-  Icon,
-} from "@/primitives/icon";
+import { Image } from "@/primitives/image";
 
-import type {
-  AvatarProps,
-} from "./avatar.types";
+import type { AvatarProps } from "./avatar.types";
 
 /* ======================================
    AVATAR
 ====================================== */
 
-export function Avatar<
-  T extends ElementType = "span",
->({
-
+export function Avatar({
   /* ======================================
      TEFI PROPS
   ====================================== */
 
-  as,
+  src,
+
+  alt,
 
   size = "md",
 
   shape = "circle",
 
   fallback,
-
-  src,
-
-  alt,
 
   /* ======================================
      REACT PROPS
@@ -57,16 +42,7 @@ export function Avatar<
   ====================================== */
 
   ...rest
-
-}: AvatarProps<T>) {
-
-  /* ======================================
-     COMPONENT
-  ====================================== */
-
-  const Component =
-    as ?? "span";
-
+}: AvatarProps) {
   /* ======================================
      HELPERS
   ====================================== */
@@ -75,9 +51,7 @@ export function Avatar<
     ?.trim()
     .split(/\s+/)
     .slice(0, 2)
-    .map(
-      (word) => word[0]?.toUpperCase(),
-    )
+    .map((word) => word[0]?.toUpperCase())
     .join("");
 
   /* ======================================
@@ -85,7 +59,6 @@ export function Avatar<
   ====================================== */
 
   const classes = clsx(
-
     "avatar",
 
     `avatar--${size}`,
@@ -93,7 +66,6 @@ export function Avatar<
     `avatar--${shape}`,
 
     className,
-
   );
 
   /* ======================================
@@ -101,39 +73,12 @@ export function Avatar<
   ====================================== */
 
   return (
-
-    <Component
-      className={classes}
-      {...rest}
-    >
-
+    <span className={classes} {...rest}>
       {src ? (
-
-        <Image
-          className="avatar__image"
-          src={src}
-          alt={alt}
-          aspect="1:1"
-        />
-
+        <Image className="avatar__image" src={src} alt={alt} aspect="1:1" />
       ) : (
-
-        <span className="avatar__fallback">
-
-          {fallback
-            ?? initials
-            ?? (
-              <Icon
-                name="user"
-              />
-            )}
-
-        </span>
-
+        <span className="avatar__fallback">{fallback ?? initials ?? <Icon name="user" />}</span>
       )}
-
-    </Component>
-
+    </span>
   );
-
 }

@@ -24,43 +24,21 @@ export default {
 ====================================== */
 
 export function Default() {
-
   return (
-
     <FormRow>
-
       <FormField>
+        <Label>First name</Label>
 
-        <Label>
-
-          First name
-
-        </Label>
-
-        <Input
-          placeholder="John"
-        />
-
+        <Input placeholder="John" />
       </FormField>
 
       <FormField>
+        <Label>Last name</Label>
 
-        <Label>
-
-          Last name
-
-        </Label>
-
-        <Input
-          placeholder="Doe"
-        />
-
+        <Input placeholder="Doe" />
       </FormField>
-
     </FormRow>
-
   );
-
 }
 
 /* ======================================
@@ -68,55 +46,25 @@ export function Default() {
 ====================================== */
 
 export function ThreeColumns() {
-
   return (
-
     <FormRow>
-
       <FormField>
+        <Label>City</Label>
 
-        <Label>
-
-          City
-
-        </Label>
-
-        <Input
-          placeholder="Santiago"
-        />
-
+        <Input placeholder="Santiago" />
       </FormField>
 
       <FormField>
+        <Label>Region</Label>
 
-        <Label>
-
-          Region
-
-        </Label>
-
-        <Input
-          placeholder="RM"
-        />
-
+        <Input placeholder="RM" />
       </FormField>
 
       <FormField>
+        <Label>Country</Label>
 
-        <Label>
-
-          Country
-
-        </Label>
-
-        <Input
-          placeholder="Chile"
-        />
-
+        <Input placeholder="Chile" />
       </FormField>
-
     </FormRow>
-
   );
-
 }

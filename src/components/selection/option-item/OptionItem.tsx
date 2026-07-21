@@ -6,11 +6,11 @@ import "./option-item.css";
 import type { OptionItemProps } from "./option-item.types";
 
 /* ======================================
-   OPTION ITEM
+   OPTION ITEM BASE
 ====================================== */
 
-export function OptionItem({
-  label,
+function OptionItemBase({
+  children,
 
   selected = false,
 
@@ -22,27 +22,11 @@ export function OptionItem({
 
   ...rest
 }: OptionItemProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
-  const classes = [
-    "option-item",
-
-    selected &&
-      "option-item--selected",
-
-    active &&
-      "option-item--active",
-
-    disabled &&
-      "option-item--disabled",
-
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const classes = ["option-item", className].filter(Boolean).join(" ");
 
   /* ======================================
      RENDER
@@ -54,17 +38,21 @@ export function OptionItem({
 
       aria-selected={selected}
 
-      data-selected={selected}
+      aria-disabled={disabled}
 
       data-active={active}
-
-      data-disabled={disabled}
 
       className={classes}
 
       {...rest}
     >
-      {label}
+      {children}
     </div>
   );
 }
+
+/* ======================================
+   OPTION ITEM
+====================================== */
+
+export const OptionItem = OptionItemBase;

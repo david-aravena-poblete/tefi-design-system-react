@@ -6,16 +6,13 @@ import clsx from "clsx";
 
 import "./inline.css";
 
-import type {
-  InlineProps,
-} from "./inline.types";
+import type { InlineProps } from "./inline.types";
 
 /* ======================================
    INLINE
 ====================================== */
 
 export function Inline({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -43,15 +40,12 @@ export function Inline({
   ====================================== */
 
   ...rest
-
 }: InlineProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "inline",
 
     `inline--gap-${gap}`,
@@ -65,7 +59,6 @@ export function Inline({
     },
 
     className,
-
   );
 
   /* ======================================
@@ -73,16 +66,8 @@ export function Inline({
   ====================================== */
 
   return (
-
-    <Component
-      className={classes}
-      {...rest}
-    >
-
+    <Component className={classes} {...rest}>
       {children}
-
     </Component>
-
   );
-
 }

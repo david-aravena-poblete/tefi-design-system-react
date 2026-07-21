@@ -28,45 +28,31 @@ export function Radio({
 
   ...rest
 }: RadioProps) {
-
   /* ======================================
      GROUP CONTEXT
   ====================================== */
 
-  const group =
-    useRadioGroup();
+  const group = useRadioGroup();
 
   /* ======================================
      DERIVED
   ====================================== */
 
-  const checked =
-    value !== undefined
-      ? group?.value === String(value)
-      : undefined;
+  const checked = value !== undefined ? group?.value === String(value) : undefined;
 
-  const disabled =
-    disabledProp ??
-    group?.disabled ??
-    false;
+  const disabled = disabledProp ?? group?.disabled ?? false;
 
   /* ======================================
      CHANGE
   ====================================== */
 
-  const handleChange = (
-    event:
-      React.ChangeEvent<HTMLInputElement>
-  ) => {
-
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (!group) {
       onChange?.(event);
       return;
     }
 
-    group.onChange?.(
-      String(value)
-    );
+    group.onChange?.(String(value));
   };
 
   /* ======================================
@@ -97,9 +83,7 @@ export function Radio({
 
       renderControl={() => (
         <span className="radio">
-
           <span className="radio__dot" />
-
         </span>
       )}
 

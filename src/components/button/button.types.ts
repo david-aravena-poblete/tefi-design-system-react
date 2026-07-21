@@ -2,33 +2,21 @@
    IMPORTS
 ====================================== */
 
-import type {
-  ComponentProps,
-  ReactNode,
-} from "react";
+import type { ComponentProps, ReactNode } from "react";
 
-import type {
-  Size,
-} from "../../foundations/design-system.types";
+import type { Size } from "../../foundations/design-system.types";
 
 /* ======================================
    TYPES
 ====================================== */
 
-export type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "ghost"
-  | "link"
-  | "danger";
+export type ButtonVariant = "primary" | "secondary" | "ghost" | "link" | "danger";
 
 /* ======================================
    PROPS
 ====================================== */
 
-export interface ButtonProps
-  extends ComponentProps<"button"> {
-
+export interface ButtonProps extends ComponentProps<"button"> {
   variant?: ButtonVariant;
 
   size?: Size;
@@ -42,5 +30,4 @@ export interface ButtonProps
   startIcon?: ReactNode;
 
   endIcon?: ReactNode;
-
 }

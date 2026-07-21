@@ -21,21 +21,12 @@ export default {
 ====================================== */
 
 export function Default() {
-
   return (
-
     <Form>
-
       <FormField>
+        <Label>Nombre</Label>
 
-        <Label>
-          Nombre
-        </Label>
-
-        <Input
-          placeholder="Escribe tu nombre"
-        />
-
+        <Input placeholder="Escribe tu nombre" />
       </FormField>
 
       <Button
@@ -44,13 +35,8 @@ export function Default() {
           marginTop: "16px",
         }}
       >
-
         Enviar
-
       </Button>
-
     </Form>
-
   );
-
 }

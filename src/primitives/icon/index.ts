@@ -2,14 +2,10 @@
    COMPONENT
 ====================================== */
 
-export {
-    Icon,
-  } from "./Icon";
-  
-  /* ======================================
+export { Icon } from "./Icon";
+
+/* ======================================
      TYPES
   ====================================== */
-  
-  export type {
-    IconProps,
-  } from "./icon.types";
+
+export type { IconProps } from "./icon.types";

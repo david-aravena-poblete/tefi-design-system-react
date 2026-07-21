@@ -6,24 +6,17 @@ import clsx from "clsx";
 
 import "./input.css";
 
-import {
-  Field,
-} from "@/primitives/field";
+import { Field } from "@/primitives/field";
 
-import {
-  useFormField,
-} from "@/components/form/form-field/form-field.context";
+import { useFormField } from "@/components/form/form-field/form-field.context";
 
-import type {
-  InputProps,
-} from "./input.types";
+import type { InputProps } from "./input.types";
 
 /* ======================================
    INPUT
 ====================================== */
 
 export function Input({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -53,50 +46,34 @@ export function Input({
   ====================================== */
 
   ...rest
-
 }: InputProps) {
-
   /* ======================================
      FORM FIELD
   ====================================== */
 
-  const field =
-    useFormField();
+  const field = useFormField();
 
   /* ======================================
      DERIVED
   ====================================== */
 
-  const resolvedId =
-    rest.id ??
-    field?.id;
+  const resolvedId = rest.id ?? field?.id;
 
-  const resolvedState =
-    state !== "default"
-      ? state
-      : field?.state ??
-        "default";
+  const resolvedState = state !== "default" ? state : (field?.state ?? "default");
 
-  const resolvedDisabled =
-    field?.disabled ||
-    disabled;
+  const resolvedDisabled = field?.disabled || disabled;
 
-  const resolvedDescribedBy =
-    rest["aria-describedby"] ??
-    field?.describedBy;
+  const resolvedDescribedBy = rest["aria-describedby"] ?? field?.describedBy;
 
-  const hasPrefix =
-    Boolean(startIcon);
+  const hasPrefix = Boolean(startIcon);
 
-  const hasSuffix =
-    Boolean(endIcon);
+  const hasSuffix = Boolean(endIcon);
 
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "input",
 
     `input--${size}`,
@@ -104,23 +81,16 @@ export function Input({
     `input--${resolvedState}`,
 
     {
+      "input--has-prefix": hasPrefix,
 
-      "input--has-prefix":
-        hasPrefix,
+      "input--has-suffix": hasSuffix,
 
-      "input--has-suffix":
-        hasSuffix,
+      "input--disabled": resolvedDisabled,
 
-      "input--disabled":
-        resolvedDisabled,
-
-      "input--loading":
-        loading,
-
+      "input--loading": loading,
     },
 
     className,
-
   );
 
   /* ======================================
@@ -128,24 +98,9 @@ export function Input({
   ====================================== */
 
   return (
-
-    <Field
-      state={resolvedState}
-      disabled={resolvedDisabled}
-      loading={loading}
-    >
-
+    <Field state={resolvedState} disabled={resolvedDisabled} loading={loading}>
       <div className="input__wrapper">
-
-        {hasPrefix && (
-
-          <span className="input__prefix">
-
-            {startIcon}
-
-          </span>
-
-        )}
+        {hasPrefix && <span className="input__prefix">{startIcon}</span>}
 
         <input
           {...rest}
@@ -154,29 +109,15 @@ export function Input({
 
           id={resolvedId}
 
-          aria-describedby={
-            resolvedDescribedBy
-          }
+          aria-describedby={resolvedDescribedBy}
 
           className={classes}
 
           disabled={resolvedDisabled}
         />
 
-        {hasSuffix && (
-
-          <span className="input__suffix">
-
-            {endIcon}
-
-          </span>
-
-        )}
-
+        {hasSuffix && <span className="input__suffix">{endIcon}</span>}
       </div>
-
     </Field>
-
   );
-
 }

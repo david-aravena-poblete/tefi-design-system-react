@@ -37,24 +37,19 @@ export function Control({
 
   className = "",
 }: ControlProps) {
-
   /* ======================================
      IDS
   ====================================== */
 
   const generatedId = useId();
 
-  const inputId =
-    id ?? generatedId;
+  const inputId = id ?? generatedId;
 
   /* ======================================
      CHANGE
   ====================================== */
 
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
 
     onChange?.(event);
@@ -64,9 +59,7 @@ export function Control({
      INPUT PROPS
   ====================================== */
 
-  const inputProps:
-    React.InputHTMLAttributes<HTMLInputElement> = {
-
+  const inputProps: React.InputHTMLAttributes<HTMLInputElement> = {
     id: inputId,
 
     type,
@@ -95,8 +88,7 @@ export function Control({
   ====================================== */
 
   if (defaultChecked !== undefined) {
-    inputProps.defaultChecked =
-      defaultChecked;
+    inputProps.defaultChecked = defaultChecked;
   }
 
   /* ======================================
@@ -107,46 +99,27 @@ export function Control({
     <label
       htmlFor={inputId}
 
-      className={[
-        "control",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      className={["control", className].filter(Boolean).join(" ")}
 
       data-state={state}
 
-      data-disabled={
-        disabled
-          ? "true"
-          : undefined
-      }
+      data-disabled={disabled ? "true" : undefined}
 
       data-shape={shape}
 
       data-size={size}
     >
-
       {/* VISUAL */}
 
       <span className="control__visual">
-
         <input {...inputProps} />
 
-        <span className="control__box">
-          {renderControl?.()}
-        </span>
-
+        <span className="control__box">{renderControl?.()}</span>
       </span>
 
       {/* LABEL */}
 
-      {children && (
-        <span className="control__label">
-          {children}
-        </span>
-      )}
-
+      {children && <span className="control__label">{children}</span>}
     </label>
   );
 }

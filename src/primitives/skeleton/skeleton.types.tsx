@@ -2,22 +2,15 @@
    IMPORTS
 ====================================== */
 
-import type {
-  ComponentProps,
-  CSSProperties,
-} from "react";
+import type { ComponentProps, CSSProperties } from "react";
 
-import type {
-  Aspect,
-} from "../../foundations/design-system.types";
+import type { Aspect } from "../../foundations/design-system.types";
 
 /* ======================================
    PROPS
 ====================================== */
 
-export interface SkeletonProps
-  extends ComponentProps<"div"> {
-
+export interface SkeletonProps extends ComponentProps<"div"> {
   fill?: boolean;
 
   width?: CSSProperties["width"];
@@ -29,5 +22,4 @@ export interface SkeletonProps
   animated?: boolean;
 
   aspect?: Aspect;
-
 }

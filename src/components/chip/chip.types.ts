@@ -1,16 +1,10 @@
-import type {
-  HTMLAttributes,
-  ReactNode,
-} from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 
 import { SIZES } from "../../shared/constants";
 
-export type ChipSize =
-  (typeof SIZES)[number];
+export type ChipSize = (typeof SIZES)[number];
 
-export interface ChipProps
-  extends HTMLAttributes<HTMLDivElement> {
-
+export interface ChipProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 
   startIcon?: ReactNode;
@@ -24,5 +18,4 @@ export interface ChipProps
   removable?: boolean;
 
   onRemove?: () => void;
-
 }

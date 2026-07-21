@@ -21,27 +21,13 @@ export default {
 ====================================== */
 
 export function Default() {
-
   return (
-
     <FormActions>
+      <Button size="sm">Cancel</Button>
 
-      <Button size="sm">
-
-        Cancel
-
-      </Button>
-
-      <Button size="sm">
-
-        Save
-
-      </Button>
-
+      <Button size="sm">Save</Button>
     </FormActions>
-
   );
-
 }
 
 /* ======================================
@@ -49,28 +35,13 @@ export function Default() {
 ====================================== */
 
 export function WithPrimaryAction() {
-
   return (
-
     <FormActions>
-
-      <Button
-        variant="ghost"
-        size="sm"
-      >
-
+      <Button variant="ghost" size="sm">
         Back
-
       </Button>
 
-      <Button size="sm">
-
-        Continue
-
-      </Button>
-
+      <Button size="sm">Continue</Button>
     </FormActions>
-
   );
-
 }

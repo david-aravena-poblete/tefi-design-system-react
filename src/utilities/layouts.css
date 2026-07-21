@@ -3,110 +3,90 @@
 ====================================== */
 
 .container {
-    width: 100%;
-  
-    max-width: 1200px;
-  
-    margin-inline: auto;
-  
-    padding-inline:
-      var(--space-lg);
-  }
-  
-  
-  /* ======================================
+  width: 100%;
+  max-width: 1200px;
+  padding-inline: var(--space-lg);
+  margin-inline: auto;
+}
+
+/* ======================================
      STACK
   ====================================== */
-  
-  .stack {
-    display: flex;
-  
-    flex-direction: column;
-  
-    gap: var(--space-md);
-  }
-  
-  .stack-sm {
-    gap: var(--space-sm);
-  }
-  
-  .stack-lg {
-    gap: var(--space-lg);
-  }
-  
-  .stack-xl {
-    gap: var(--space-xl);
-  }
-  
-  
-  /* ======================================
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.stack-sm {
+  gap: var(--space-sm);
+}
+
+.stack-lg {
+  gap: var(--space-lg);
+}
+
+.stack-xl {
+  gap: var(--space-xl);
+}
+
+/* ======================================
      ROW
   ====================================== */
-  
-  .row {
-    display: flex;
-  
-    align-items: center;
-  
-    gap: var(--space-md);
-  }
-  
-  .row-between {
-    justify-content: space-between;
-  }
-  
-  .row-center {
-    justify-content: center;
-  }
-  
-  
-  /* ======================================
+
+.row {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.row-between {
+  justify-content: space-between;
+}
+
+.row-center {
+  justify-content: center;
+}
+
+/* ======================================
      GRID
   ====================================== */
-  
-  .grid {
-    display: grid;
-  
-    gap: var(--space-md);
-  }
-  
-  .grid-2 {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-  
-  .grid-3 {
-    grid-template-columns:
-      repeat(3, 1fr);
-  }
-  
-  .grid-4 {
-    grid-template-columns:
-      repeat(4, 1fr);
-  }
-  
-  
-  /* ======================================
+
+.grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ======================================
      SECTION
   ====================================== */
-  
-  .section {
-    padding-block:
-      var(--space-xl);
-  }
-  
-  .section-lg {
-    padding-block:
-      var(--space-xxl);
-  }
-  
-  
-  /* ======================================
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+.section-lg {
+  padding-block: var(--space-xxl);
+}
+
+/* ======================================
      CENTER
   ====================================== */
-  
-  .center {
-    display: grid;
-  
-    place-items: center;
-  }
+
+.center {
+  display: grid;
+  place-items: center;
+}

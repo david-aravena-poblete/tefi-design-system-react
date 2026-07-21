@@ -2,75 +2,50 @@
    IMPORTS
 ====================================== */
 
-import {
-  useState,
-} from "react";
+import { useState } from "react";
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-  SearchField,
-} from "@/components/input/search-field";
+import { SearchField } from "@/components/input/search-field";
 
-import {
-  FormField,
-} from "@/components/form/form-field";
+import { FormField } from "@/components/form/form-field";
 
-import {
-  Label,
-} from "@/components/field/label";
+import { Label } from "@/components/field/label";
 
 /* ======================================
    META
 ====================================== */
 
 const meta: Meta<typeof SearchField> = {
-
   title: "Components/Input/SearchField",
 
   component: SearchField,
 
   tags: ["autodocs"],
-
 };
 
 export default meta;
 
-type Story =
-  StoryObj<typeof SearchField>;
+type Story = StoryObj<typeof SearchField>;
 
 /* ======================================
    PLAYGROUND
 ====================================== */
 
 export const Playground: Story = {
-
   render: (args) => {
-
-    const [value, setValue] =
-      useState("");
+    const [value, setValue] = useState("");
 
     return (
-
       <SearchField
         {...args}
         value={value}
         onChange={(event) => {
-
-          setValue(
-            event.target.value,
-          );
-
+          setValue(event.target.value);
         }}
       />
-
     );
-
   },
-
 };
 
 /* ======================================
@@ -78,40 +53,23 @@ export const Playground: Story = {
 ====================================== */
 
 export const Default: Story = {
-
   render: () => {
-
-    const [value, setValue] =
-      useState("");
+    const [value, setValue] = useState("");
 
     return (
-
       <FormField>
-
-        <Label>
-
-          Search
-
-        </Label>
+        <Label>Search</Label>
 
         <SearchField
           value={value}
           onChange={(event) => {
-
-            setValue(
-              event.target.value,
-            );
-
+            setValue(event.target.value);
           }}
           placeholder="Search products..."
         />
-
       </FormField>
-
     );
-
   },
-
 };
 
 /* ======================================
@@ -119,9 +77,7 @@ export const Default: Story = {
 ====================================== */
 
 export const Sizes: Story = {
-
   render: () => (
-
     <div
       style={{
         display: "flex",
@@ -129,26 +85,13 @@ export const Sizes: Story = {
         gap: "16px",
       }}
     >
+      <SearchField size="sm" placeholder="Small" />
 
-      <SearchField
-        size="sm"
-        placeholder="Small"
-      />
+      <SearchField size="md" placeholder="Medium" />
 
-      <SearchField
-        size="md"
-        placeholder="Medium"
-      />
-
-      <SearchField
-        size="lg"
-        placeholder="Large"
-      />
-
+      <SearchField size="lg" placeholder="Large" />
     </div>
-
   ),
-
 };
 
 /* ======================================
@@ -156,16 +99,7 @@ export const Sizes: Story = {
 ====================================== */
 
 export const Disabled: Story = {
-
-  render: () => (
-
-    <SearchField
-      disabled
-      value="Search disabled"
-    />
-
-  ),
-
+  render: () => <SearchField disabled value="Search disabled" />,
 };
 
 /* ======================================
@@ -173,14 +107,5 @@ export const Disabled: Story = {
 ====================================== */
 
 export const WithoutClear: Story = {
-
-  render: () => (
-
-    <SearchField
-      clearable={false}
-      placeholder="Search without clear"
-    />
-
-  ),
-
+  render: () => <SearchField clearable={false} placeholder="Search without clear" />,
 };

@@ -3,18 +3,10 @@
 ====================================== */
 
 .sidebar-content {
-
-    display: flex;
-  
-    flex: 1;
-  
-    flex-direction: column;
-  
-    min-height: 0;
-  
-    overflow-y: auto;
-  
-    padding:
-      var(--surface-sidebar-padding);
-  
-  }
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: var(--surface-sidebar-padding);
+  overflow-y: auto;
+}

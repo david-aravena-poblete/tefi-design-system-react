@@ -2,29 +2,20 @@
    IMPORTS
 ====================================== */
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-  Skeleton,
-} from "./Skeleton";
+import { Skeleton } from "./Skeleton";
 
 /* ======================================
    META
 ====================================== */
 
 const meta = {
-
   title: "Primitives/Skeleton",
 
   component: Skeleton,
 
-  tags: [
-    "autodocs",
-  ],
-
+  tags: ["autodocs"],
 } satisfies Meta<typeof Skeleton>;
 
 export default meta;
@@ -33,54 +24,43 @@ export default meta;
    STORIES
 ====================================== */
 
-type Story =
-  StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
 export const Text: Story = {
-
   args: {
     width: "200px",
     height: "16px",
   },
-
 };
 
 export const Title: Story = {
-
   args: {
     width: "300px",
     height: "32px",
   },
-
 };
 
 export const Image: Story = {
-
   args: {
     width: "100%",
     height: "300px",
   },
-
 };
 
 export const Avatar: Story = {
-
   args: {
     width: "64px",
     height: "64px",
     radius: "50%",
   },
-
 };
 
 export const Static: Story = {
-
   args: {
     width: "300px",
     height: "32px",
     animated: false,
   },
-
 };

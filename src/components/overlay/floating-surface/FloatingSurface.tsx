@@ -18,19 +18,11 @@ export function FloatingSurface({
 
   ...rest
 }: FloatingSurfaceProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
-  const classes = [
-    "floating-surface",
-
-    open &&
-      "floating-surface--open",
-
-    className,
-  ]
+  const classes = ["floating-surface", open && "floating-surface--open", className]
     .filter(Boolean)
     .join(" ");
 

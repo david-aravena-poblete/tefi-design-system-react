@@ -3,7 +3,6 @@
 ====================================== */
 
 [data-brand="default"] {
-
   /* PRIMARY */
 
   --color-primary-base: #6366f1;
@@ -38,5 +37,4 @@
   --color-info-base: #2563eb;
   --color-info-hover: #1d4ed8;
   --color-info-soft: #eff6ff;
-
 }

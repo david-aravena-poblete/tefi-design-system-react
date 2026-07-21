@@ -2,26 +2,19 @@
    IMPORTS
 ====================================== */
 
-import type {
-  WheelEvent,
-} from "react";
+import type { WheelEvent } from "react";
 
 import "./number-field.css";
 
-import {
-  Input,
-} from "@/components/input";
+import { Input } from "@/components/input";
 
-import type {
-  NumberFieldProps,
-} from "./number-field.types";
+import type { NumberFieldProps } from "./number-field.types";
 
 /* ======================================
    NUMBER FIELD
 ====================================== */
 
 export function NumberField({
-
   /* ======================================
      TEFI PROPS
   ====================================== */
@@ -33,39 +26,22 @@ export function NumberField({
   ====================================== */
 
   ...rest
-
 }: NumberFieldProps) {
-
   /* ======================================
      EVENTS
   ====================================== */
 
-  const handleWheel = (
-    event: WheelEvent<HTMLInputElement>,
-  ) => {
-
+  const handleWheel = (event: WheelEvent<HTMLInputElement>) => {
     if (allowWheel) {
-
       return;
-
     }
 
     event.currentTarget.blur();
-
   };
 
   /* ======================================
      RENDER
   ====================================== */
 
-  return (
-
-    <Input
-      type="number"
-      onWheel={handleWheel}
-      {...rest}
-    />
-
-  );
-
+  return <Input type="number" onWheel={handleWheel} {...rest} />;
 }

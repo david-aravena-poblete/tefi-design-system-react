@@ -2,13 +2,9 @@
    IMPORTS
 ====================================== */
 
-import type {
-  HTMLAttributes,
-} from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 
-import type {
-  OptionItemProps,
-} from "../option-item";
+import type { OptionItemProps } from "../option-item";
 
 /* ======================================
    OPTION
@@ -26,26 +22,18 @@ export interface Option {
    OPTION LIST PROPS
 ====================================== */
 
-export interface OptionListProps
-  extends Omit<
-    HTMLAttributes<HTMLDivElement>,
-    "onChange"
-  > {
-
+export interface OptionListProps extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
   options?: Option[];
 
   value?: string | null;
+
+  initialActiveIndex?: number;
 
   disabled?: boolean;
 
   embedded?: boolean;
 
-  onChange?: (
-    value: string
-  ) => void;
+  onChange?: (value: string) => void;
 
-  renderOption?: (
-    option: Option,
-    props: OptionItemProps
-  ) => React.ReactNode;
+  renderOption?: (option: Option, props: Omit<OptionItemProps, "children">) => ReactNode;
 }

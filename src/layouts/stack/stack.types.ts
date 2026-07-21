@@ -2,24 +2,15 @@
    IMPORTS
 ====================================== */
 
-import type {
-  ComponentProps,
-  ElementType,
-} from "react";
+import type { ComponentProps, ElementType } from "react";
 
-import type {
-  Align,
-  Justify,
-  Spacing,
-} from "../../foundations/design-system.types";
+import type { Align, Justify, Spacing } from "../../foundations/design-system.types";
 
 /* ======================================
    PROPS
 ====================================== */
 
-export interface StackProps
-  extends ComponentProps<"div"> {
-
+export interface StackProps extends ComponentProps<"div"> {
   as?: ElementType;
 
   gap?: Spacing;
@@ -29,5 +20,4 @@ export interface StackProps
   justify?: Justify;
 
   wrap?: boolean;
-
 }

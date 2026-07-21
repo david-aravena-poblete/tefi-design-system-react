@@ -5,24 +5,11 @@ import type { FormProps } from "./form.types";
    FORM
 ====================================== */
 
-export function Form({
-  children,
-  className = "",
-  ...props
-}: FormProps) {
-
-  const classes = [
-    "form",
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+export function Form({ children, className = "", ...props }: FormProps) {
+  const classes = ["form", className].filter(Boolean).join(" ");
 
   return (
-    <form
-      className={classes}
-      {...props}
-    >
+    <form className={classes} {...props}>
       {children}
     </form>
   );

@@ -2,193 +2,75 @@
    IMPORTS
 ====================================== */
 
-import React from "react";
+import { useState } from "react";
 
-import { Select }
-  from "./Select";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-  STATES,
-  SIZES,
-} from "../../../shared/constants";
+import { Select } from "./Select";
+
+/* ======================================
+   OPTIONS
+====================================== */
+
+const OPTIONS = [
+  {
+    label: "Apple",
+    value: "apple",
+  },
+
+  {
+    label: "Banana",
+    value: "banana",
+  },
+
+  {
+    label: "Orange",
+    value: "orange",
+  },
+];
 
 /* ======================================
    META
 ====================================== */
 
-export default {
+const meta: Meta<typeof Select> = {
   title: "Components/Selection/Select",
 
   component: Select,
-
-  argTypes: {
-    state: {
-      control: "select",
-
-      options: STATES,
-    },
-
-    selectSize: {
-      control: "select",
-
-      options: SIZES,
-    },
-  },
 };
 
+export default meta;
+
+type Story = StoryObj<typeof Select>;
 
 /* ======================================
-   PLAYGROUND
+   STORIES
 ====================================== */
 
-export const Playground = {
-  args: {
-    children: (
-      <>
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
-      </>
-    ),
+export const Default: Story = {
+  render: () => {
+    const [value, setValue] = useState<string | null>(null);
+
+    return (
+      <Select
+        options={OPTIONS}
+
+        value={value}
+
+        placeholder="Selecciona una fruta"
+
+        onChange={setValue}
+      />
+    );
   },
 };
 
-
-/* ======================================
-   DEFAULT
-====================================== */
-
-export const Default = {
+export const Disabled: Story = {
   args: {
-    children: (
-      <>
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
-      </>
-    ),
-  },
-};
+    options: OPTIONS,
 
+    value: "orange",
 
-/* ======================================
-   STATES
-====================================== */
-
-export const Error = {
-  args: {
-    state: "error",
-
-    children: (
-      <>
-        <option>Option 1</option>
-        <option>Option 2</option>
-      </>
-    ),
-  },
-};
-
-
-export const Success = {
-  args: {
-    state: "success",
-
-    children: (
-      <>
-        <option>Option 1</option>
-        <option>Option 2</option>
-      </>
-    ),
-  },
-};
-
-
-export const Warning = {
-  args: {
-    state: "warning",
-
-    children: (
-      <>
-        <option>Option 1</option>
-        <option>Option 2</option>
-      </>
-    ),
-  },
-};
-
-
-/* ======================================
-   SIZES
-====================================== */
-
-export const Small = {
-  args: {
-    selectSize: "sm",
-
-    children: (
-      <>
-        <option>Option 1</option>
-      </>
-    ),
-  },
-};
-
-
-export const Medium = {
-  args: {
-    selectSize: "md",
-
-    children: (
-      <>
-        <option>Option 1</option>
-      </>
-    ),
-  },
-};
-
-
-export const Large = {
-  args: {
-    selectSize: "lg",
-
-    children: (
-      <>
-        <option>Option 1</option>
-      </>
-    ),
-  },
-};
-
-
-/* ======================================
-   DISABLED
-====================================== */
-
-export const Disabled = {
-  args: {
     disabled: true,
-
-    children: (
-      <>
-        <option>Option 1</option>
-      </>
-    ),
-  },
-};
-
-
-/* ======================================
-   LOADING
-====================================== */
-
-export const Loading = {
-  args: {
-    loading: true,
-
-    children: (
-      <>
-        <option>Option 1</option>
-      </>
-    ),
   },
 };

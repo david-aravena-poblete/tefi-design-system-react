@@ -16,18 +16,11 @@ export function FormRow({
 
   ...rest
 }: FormRowProps) {
-
   /* ======================================
      CLASSES
   ====================================== */
 
-  const classes = [
-    "form-row",
-
-    className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  const classes = ["form-row", className].filter(Boolean).join(" ");
 
   /* ======================================
      RENDER

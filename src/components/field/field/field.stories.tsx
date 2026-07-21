@@ -2,68 +2,42 @@
    IMPORTS
 ====================================== */
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-  Field,
-} from "@/components/field";
+import { Field } from "@/components/field";
 
-import {
-  Input,
-} from "@/components/input";
+import { Input } from "@/components/input";
 
 /* ======================================
    META
 ====================================== */
 
 const meta: Meta<typeof Field> = {
-
   title: "Components/Field/Field",
 
   component: Field,
 
   tags: ["autodocs"],
-
 };
 
 export default meta;
 
-type Story =
-  StoryObj<typeof Field>;
+type Story = StoryObj<typeof Field>;
 
 /* ======================================
    DEFAULT
 ====================================== */
 
 export const Default: Story = {
-
   render: () => (
-
     <Field>
+      <Field.Label>Name</Field.Label>
 
-      <Field.Label>
+      <Input placeholder="Enter your name" />
 
-        Name
-
-      </Field.Label>
-
-      <Input
-        placeholder="Enter your name"
-      />
-
-      <Field.HelperText>
-
-        This field is required.
-
-      </Field.HelperText>
-
+      <Field.HelperText>This field is required.</Field.HelperText>
     </Field>
-
   ),
-
 };
 
 /* ======================================
@@ -71,31 +45,15 @@ export const Default: Story = {
 ====================================== */
 
 export const Error: Story = {
-
   render: () => (
-
     <Field>
+      <Field.Label>Email</Field.Label>
 
-      <Field.Label>
+      <Input placeholder="Enter your email" />
 
-        Email
-
-      </Field.Label>
-
-      <Input
-        placeholder="Enter your email"
-      />
-
-      <Field.ErrorMessage>
-
-        Invalid email address.
-
-      </Field.ErrorMessage>
-
+      <Field.ErrorMessage>Invalid email address.</Field.ErrorMessage>
     </Field>
-
   ),
-
 };
 
 /* ======================================
@@ -103,38 +61,17 @@ export const Error: Story = {
 ====================================== */
 
 export const HelperAndError: Story = {
-
   render: () => (
-
     <Field>
+      <Field.Label>Password</Field.Label>
 
-      <Field.Label>
+      <Input type="password" placeholder="Enter your password" />
 
-        Password
+      <Field.HelperText>Minimum 8 characters.</Field.HelperText>
 
-      </Field.Label>
-
-      <Input
-        type="password"
-        placeholder="Enter your password"
-      />
-
-      <Field.HelperText>
-
-        Minimum 8 characters.
-
-      </Field.HelperText>
-
-      <Field.ErrorMessage>
-
-        Password is too short.
-
-      </Field.ErrorMessage>
-
+      <Field.ErrorMessage>Password is too short.</Field.ErrorMessage>
     </Field>
-
   ),
-
 };
 
 /* ======================================
@@ -142,17 +79,9 @@ export const HelperAndError: Story = {
 ====================================== */
 
 export const WithoutLabel: Story = {
-
   render: () => (
-
     <Field>
-
-      <Input
-        placeholder="Search..."
-      />
-
+      <Input placeholder="Search..." />
     </Field>
-
   ),
-
 };

@@ -2,61 +2,28 @@
    IMPORTS
 ====================================== */
 
-import type {
-  ComponentProps,
-  ElementType,
-} from "react";
+import type { ComponentProps } from "react";
 
-import type {
-  Shape,
-} from "../../foundations/design-system.types";
-
-import type {
-  ImageSourceProps,
-} from "../image";
-
-import type {
-  PolymorphicProps,
-} from "../../shared/polymorphic";
+import type { Shape } from "@/foundations/design-system.types";
 
 /* ======================================
    TYPES
 ====================================== */
 
-export type AvatarSize =
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl";
+export type AvatarSize = "xs" | "sm" | "md" | "lg" | "xl";
 
 /* ======================================
-   OWN PROPS
+   PROPS
 ====================================== */
 
-export interface AvatarOwnProps
-  extends Omit<
-    ImageSourceProps,
-    | "className"
-    | "style"
-    | "children"
-  > {
+export interface AvatarProps extends ComponentProps<"span"> {
+  src?: string;
+
+  alt?: string;
 
   size?: AvatarSize;
 
   shape?: Shape;
 
   fallback?: ComponentProps<"span">["children"];
-
 }
-
-/* ======================================
-   PROPS
-====================================== */
-
-export type AvatarProps<
-  T extends ElementType = "span",
-> = PolymorphicProps<
-  T,
-  AvatarOwnProps
->;

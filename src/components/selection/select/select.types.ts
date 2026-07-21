@@ -1,32 +1,23 @@
-import type {
-    SelectHTMLAttributes,
-  } from "react";
-  
-  import type {
-    FieldState,
-  } from "../../../primitives/field";
-  
-  import {
-    SIZES,
-  } from "../../../shared/constants";
-  
-  /* ======================================
-     SELECT SIZE
-  ====================================== */
-  
-  export type SelectSize =
-    typeof SIZES[number];
-  
-  /* ======================================
-     SELECT PROPS
-  ====================================== */
-  
-  export interface SelectProps
-    extends SelectHTMLAttributes<HTMLSelectElement> {
-  
-    selectSize?: SelectSize;
-  
-    state?: FieldState;
-  
-    loading?: boolean;
-  }
+/* ======================================
+   IMPORTS
+====================================== */
+
+import type { HTMLAttributes } from "react";
+
+import type { Option } from "../option-list";
+
+/* ======================================
+   SELECT PROPS
+====================================== */
+
+export interface SelectProps extends Omit<HTMLAttributes<HTMLDivElement>, "onChange"> {
+  options?: Option[];
+
+  value?: string | null;
+
+  placeholder?: string;
+
+  disabled?: boolean;
+
+  onChange?: (value: string) => void;
+}

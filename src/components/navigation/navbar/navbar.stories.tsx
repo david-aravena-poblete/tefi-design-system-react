@@ -2,7 +2,6 @@
    IMPORTS
 ====================================== */
 
-
 import { Navbar } from "./Navbar";
 
 import { Button } from "../../button";
@@ -12,11 +11,9 @@ import { Button } from "../../button";
 ====================================== */
 
 export default {
-
   title: "Navigation/Navbar",
 
   component: Navbar,
-
 };
 
 /* ======================================
@@ -24,71 +21,25 @@ export default {
 ====================================== */
 
 export function Default() {
-
   return (
-
     <Navbar>
-
       <Navbar.Brand>
-
-        <strong>
-
-          TEFI
-
-        </strong>
-
+        <strong>TEFI</strong>
       </Navbar.Brand>
 
       <Navbar.Navigation>
+        <Button variant="ghost">Inicio</Button>
 
-        <Button
-          variant="ghost"
-        >
+        <Button variant="ghost">Productos</Button>
 
-          Inicio
-
-        </Button>
-
-        <Button
-          variant="ghost"
-        >
-
-          Productos
-
-        </Button>
-
-        <Button
-          variant="ghost"
-        >
-
-          Contacto
-
-        </Button>
-
+        <Button variant="ghost">Contacto</Button>
       </Navbar.Navigation>
 
       <Navbar.Actions>
+        <Button variant="secondary">Registrarse</Button>
 
-        <Button
-          variant="secondary"
-        >
-
-          Registrarse
-
-        </Button>
-
-        <Button
-          variant="primary"
-        >
-
-          Iniciar Sesion
-
-        </Button>
-
+        <Button variant="primary">Iniciar Sesion</Button>
       </Navbar.Actions>
-
     </Navbar>
-
   );
-
 }

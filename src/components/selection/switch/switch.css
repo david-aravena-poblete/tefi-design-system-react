@@ -3,17 +3,12 @@
 ====================================== */
 
 .switch {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
-
-  display: flex;
-
-  align-items: center;
-
   padding: 2px;
-
-  box-sizing: border-box;
-
   pointer-events: none;
 }
 
@@ -22,28 +17,15 @@
 ====================================== */
 
 .switch__thumb {
-  width:
-    calc(var(--control-size) - 8px);
-
-  height:
-    calc(var(--control-size) - 8px);
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
+  width: calc(var(--control-size) - 8px);
+  height: calc(var(--control-size) - 8px);
+  color: var(--control-content-color);
+  background: var(--control-indicator-color);
   border-radius: 50%;
-
-  background:
-    var(--control-indicator-color);
-
-  color:
-    var(--control-content-color);
-
-  transition:
-    transform var(--motion-snappy);
+  transition: transform var(--motion-snappy);
 }
 
 /* ======================================
@@ -51,18 +33,15 @@
 ====================================== */
 
 .switch__thumb > * {
-  width: 80%;
-
-  height: 80%;
-
   flex-shrink: 0;
+  width: 80%;
+  height: 80%;
 }
 
 /* ======================================
    CHECKED
 ====================================== */
 
-.control:has(.control__input:checked)
-.switch {
+.control:has(.control__input:checked) .switch {
   justify-content: flex-end;
 }

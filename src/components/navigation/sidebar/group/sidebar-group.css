@@ -3,17 +3,10 @@
 ====================================== */
 
 .sidebar-group {
-
   display: flex;
-
   flex-direction: column;
-
-  gap:
-    var(--space-xs);
-
-  padding-block:
-    var(--space-xs);
-
+  gap: var(--space-xs);
+  padding-block: var(--space-xs);
 }
 
 /* ======================================
@@ -21,14 +14,9 @@
 ====================================== */
 
 .sidebar-group__content {
-
   display: flex;
-
   flex-direction: column;
-
-  gap:
-    var(--space-xs);
-
+  gap: var(--space-xs);
 }
 
 /* ======================================
@@ -36,8 +24,5 @@
 ====================================== */
 
 .sidebar-group__heading {
-
-  font-weight:
-    var(--font-weight-medium);
-
+  font-weight: var(--font-weight-medium);
 }

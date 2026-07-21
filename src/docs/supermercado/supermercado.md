@@ -57,10 +57,12 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 # 🛒 Departamentos
 
 ## 🟦 React
+
 **Dueño:** Meta
 
 ### Tipado
-- ComponentProps 
+
+- ComponentProps
 - ComponentPropsWithRef
 - ComponentPropsWithoutRef
 - ElementType
@@ -69,12 +71,14 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 - Ref
 
 ### Componentes
+
 - Fragment
 - Suspense
 - StrictMode
 - Profiler
 
 ### Hooks
+
 - useState
 - useEffect
 - useMemo
@@ -90,15 +94,18 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 - useActionState
 
 ### Renderizado
+
 - createPortal
 - lazy
 
 ---
 
 ## 🟧 HTML
+
 **Dueño:** WHATWG
 
 ### Elementos
+
 - div
 - span
 - button
@@ -126,6 +133,7 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 - audio
 
 ### Atributos
+
 - class
 - style
 - id
@@ -141,15 +149,18 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 - tabindex
 
 ### Accesibilidad
+
 - aria-*
 - data-*
 
 ---
 
 ## 🟨 CSS
+
 **Dueño:** CSS Working Group
 
 ### Layout
+
 - display
 - flex
 - grid
@@ -157,6 +168,7 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 - z-index
 
 ### Tamaño
+
 - width
 - height
 - min-width
@@ -164,31 +176,37 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 - aspect-ratio
 
 ### Espaciado
+
 - margin
 - padding
 - gap
 
 ### Tipografía
+
 - font
 - line-height
 - text-align
 
 ### Color
+
 - color
 - background
 - border
 - color-mix()
 
 ### Animaciones
+
 - transition
 - animation
 - @starting-style
 
 ### Responsive
+
 - media queries
 - container queries
 
 ### Modern CSS
+
 - nesting
 - cascade layers
 - :has()
@@ -201,9 +219,11 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 ---
 
 ## 🟪 TypeScript
+
 **Dueño:** Microsoft
 
 ### Tipos
+
 - type
 - interface
 - enum
@@ -213,6 +233,7 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 - extends
 
 ### Utilidades
+
 - Partial
 - Required
 - Pick
@@ -223,6 +244,7 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 - ReturnType
 
 ### Moderno
+
 - satisfies
 - const assertions
 - Generics
@@ -230,6 +252,7 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 ---
 
 ## 🟩 JavaScript
+
 **Dueño:** TC39
 
 - Array
@@ -246,6 +269,7 @@ Solo si ningún departamento ofrece una solución adecuada, esa capacidad podrá
 ---
 
 ## 🟫 Browser APIs
+
 **Dueño:** Web Platform
 
 - Fetch

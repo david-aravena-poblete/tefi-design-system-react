@@ -14,7 +14,6 @@ Brand tokens:
 */
 
 :root {
-
   /* ======================================
      FOUNDATIONS — SPACING
   ====================================== */
@@ -28,13 +27,12 @@ Brand tokens:
   --space-xxl: 32px;
   --space-xxxl: 40px;
 
-
   /* ======================================
      FOUNDATIONS — RADIUS
   ====================================== */
 
   --radius-none: 0;
-  --radius-sm: 4px; 
+  --radius-sm: 4px;
   --radius-md: 6px;
   --radius-lg: 10px;
   --radius-full: 999px;
@@ -43,12 +41,7 @@ Brand tokens:
      FOUNDATIONS — TYPOGRAPHY
   ====================================== */
 
-  --font-family-sans:
-    Inter,
-    system-ui,
-    -apple-system,
-    sans-serif;
-
+  --font-family-sans: inter, system-ui, -apple-system, sans-serif;
   --font-xs: 12px;
   --font-sm: 14px;
   --font-md: 16px;
@@ -58,30 +51,21 @@ Brand tokens:
   --font-3xl: 30px;
   --font-4xl: 36px;
   --font-5xl: 48px;
-
   --line-tight: 1.2;
   --line-normal: 1.5;
   --line-relaxed: 1.7;
-
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-
   /* ======================================
      FOUNDATIONS — SHADOWS
   ====================================== */
 
-  --shadow-xs:
-    0 1px 2px rgba(0, 0, 0, 0.05);
-
-  --shadow-sm:
-    0 2px 4px rgba(0, 0, 0, 0.06);
-
-  --shadow-md:
-    0 4px 10px rgba(0, 0, 0, 0.08);
-
+  --shadow-xs: 0 1px 2px rgb(0 0 0 / 5%);
+  --shadow-sm: 0 2px 4px rgb(0 0 0 / 6%);
+  --shadow-md: 0 4px 10px rgb(0 0 0 / 8%);
 
   /* ======================================
      FOUNDATIONS — EFFECTS
@@ -90,15 +74,7 @@ Brand tokens:
   --effect-blur-sm: 4px;
   --effect-blur-md: 10px;
   --effect-blur-lg: 20px;
-
-  --effect-glow-primary:
-    0 0 24px
-    color-mix(
-      in srgb,
-      var(--color-primary-base) 20%,
-      transparent
-    );
-
+  --effect-glow-primary: 0 0 24px color-mix(in srgb, var(--color-primary-base) 20%, transparent);
 
   /* ======================================
      FOUNDATIONS — SIZE
@@ -116,32 +92,21 @@ Brand tokens:
   --size-field-md: 44px;
   --size-field-lg: 52px;
 
-
   /* ======================================
      FOUNDATIONS — MOTION
   ====================================== */
 
   /* STANDARD UI */
 
-  --transition-fast:
-    0.15s ease;
-
-  --transition-normal:
-    0.2s ease;
-
-  --transition-slow:
-    0.3s ease;
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.2s ease;
+  --transition-slow: 0.3s ease;
 
   /* MICROINTERACTIONS */
 
-  --motion-snappy:
-    0.22s cubic-bezier(
-      0.22,
-      1,
-      0.36,
-      1
-    );
-/* ======================================
+  --motion-snappy: 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* ======================================
      SEMANTIC TOKENS
   ====================================== */
 
@@ -149,17 +114,13 @@ Brand tokens:
      PAGE
   ====================================== */
 
-  --surface-page-bg:
-    var(--color-bg-primary);
-
+  --surface-page-bg: var(--color-bg-primary);
 
   /* ======================================
      SKELETON
   ====================================== */
 
-  --surface-skeleton-bg:
-    var(--color-bg-secondary);
-
+  --surface-skeleton-bg: var(--color-bg-secondary);
 
   /* ======================================
      CARD
@@ -167,29 +128,16 @@ Brand tokens:
 
   /* APPEARANCE */
 
-  --surface-card-bg:
-    var(--color-bg-secondary);
-
-  --surface-card-hover:
-    var(--color-bg-tertiary);
-
-  --surface-card-border:
-    var(--color-border-primary);
-
-  --surface-card-border-hover:
-    var(--color-border-secondary);
-
-  --surface-card-radius:
-    var(--radius-lg);
+  --surface-card-bg: var(--color-bg-secondary);
+  --surface-card-hover: var(--color-bg-tertiary);
+  --surface-card-border: var(--color-border-primary);
+  --surface-card-border-hover: var(--color-border-secondary);
+  --surface-card-radius: var(--radius-lg);
 
   /* EFFECTS */
 
-  --surface-card-shadow:
-    var(--shadow-sm);
-
-  --surface-card-shadow-hover:
-    var(--effect-glow-primary);
-
+  --surface-card-shadow: var(--shadow-sm);
+  --surface-card-shadow-hover: var(--effect-glow-primary);
 
   /* ======================================
      BUTTON
@@ -197,107 +145,68 @@ Brand tokens:
 
   /* APPEARANCE */
 
-  --surface-button-radius:
-    var(--radius-md);
-
-  --surface-button-primary-bg:
-    var(--color-primary-base);
-
-  --surface-button-primary-hover:
-    var(--color-primary-hover);
-
-  --surface-button-primary-text:
-    var(--color-text-inverse);
+  --surface-button-radius: var(--radius-md);
+  --surface-button-primary-bg: var(--color-primary-base);
+  --surface-button-primary-hover: var(--color-primary-hover);
+  --surface-button-primary-text: var(--color-text-inverse);
 
   /* EFFECTS */
 
-  --surface-button-shadow:
-    none;
+  --surface-button-shadow: none;
+  --surface-button-shadow-hover: none;
 
-  --surface-button-shadow-hover:
-    none;
- 
   /* ======================================
      DIVIDER
   ====================================== */
 
---surface-divider-color:
-  var(--color-border-primary);
+  --surface-divider-color: var(--color-border-primary);
 
   /* ======================================
      NAVBAR
   ====================================== */
 
---surface-navbar-bg:
-  var(--color-bg-secondary);
+  --surface-navbar-bg: var(--color-bg-secondary);
+  --surface-navbar-text: var(--color-text-primary);
+  --surface-navbar-shadow: none;
 
---surface-navbar-text:
-  var(--color-text-primary);
-
---surface-navbar-shadow:
-  none;
-
-/* ======================================
+  /* ======================================
    SIDEBAR
 ====================================== */
 
-/* SURFACE */
+  /* SURFACE */
 
---surface-sidebar-bg:
-  var(--color-bg-secondary);
+  --surface-sidebar-bg: var(--color-bg-secondary);
+  --surface-sidebar-border: var(--color-border-primary);
 
---surface-sidebar-border:
-  var(--color-border-primary);
+  /* LAYOUT */
 
-/* LAYOUT */
+  --surface-sidebar-width: 280px;
+  --surface-sidebar-padding: var(--space-lg);
 
---surface-sidebar-width:
-  280px;
+  /* SECTION */
 
---surface-sidebar-padding:
-  var(--space-lg);
+  --surface-sidebar-section-gap: var(--space-lg);
 
-/* SECTION */
+  /* GROUP */
 
---surface-sidebar-section-gap:
-  var(--space-lg);
+  --surface-sidebar-group-gap: var(--space-sm);
 
-/* GROUP */
+  /* ITEM */
 
---surface-sidebar-group-gap:
-  var(--space-sm);
+  --surface-sidebar-item-radius: var(--radius-md);
+  --surface-sidebar-item-active-bg: var(--color-bg-secondary);
+  --surface-sidebar-item-active-text: var(--color-text-primary);
+  --surface-sidebar-item-hover-bg: var(--interaction-hover-bg);
 
-/* ITEM */
+  /* HEADING */
 
---surface-sidebar-item-radius:
-  var(--radius-md);
-
---surface-sidebar-item-active-bg:
-  var(--color-bg-secondary);
-
---surface-sidebar-item-active-text:
-  var(--color-text-primary);
-
---surface-sidebar-item-hover-bg:
-  var(--interaction-hover-bg);
-
-/* HEADING */
-
---surface-sidebar-heading-color:
-  var(--color-text-secondary);
-
+  --surface-sidebar-heading-color: var(--color-text-secondary);
 
   /* ======================================
      INTERACTION
   ====================================== */
 
-  --interaction-hover-bg:
-    color-mix(
-      in srgb,
-      var(--color-text-primary) 4%,
-      transparent
-    );
-
+  --interaction-hover-bg: color-mix(in srgb, var(--color-text-primary) 4%, transparent);
 
   /* ======================================
      CONTROL
@@ -305,38 +214,15 @@ Brand tokens:
 
   --control-border-width: 2px;
   --control-padding: 2px;
-
-  --control-radius:
-    var(--radius-sm);
-
-  --control-gap-sm:
-    var(--space-xs);
-
-  --control-gap-md:
-    var(--space-sm);
-
-  --control-gap-lg:
-    var(--space-md);
-
-  --state-default-border:
-    var(--color-border-primary);
-
-  --state-default-hover:
-    var(--color-border-secondary);
-
-  --state-default-ring:
-    color-mix(
-      in srgb,
-      var(--color-primary-base) 40%,
-      transparent
-    );
-
-  --control-size:
-    var(--size-control-md);
-
-  --control-gap:
-    var(--control-gap-md);
-
+  --control-radius: var(--radius-sm);
+  --control-gap-sm: var(--space-xs);
+  --control-gap-md: var(--space-sm);
+  --control-gap-lg: var(--space-md);
+  --state-default-border: var(--color-border-primary);
+  --state-default-hover: var(--color-border-secondary);
+  --state-default-ring: color-mix(in srgb, var(--color-primary-base) 40%, transparent);
+  --control-size: var(--size-control-md);
+  --control-gap: var(--control-gap-md);
 
   /* ======================================
      FIELD
@@ -344,52 +230,27 @@ Brand tokens:
 
   /* BASE */
 
-  --field-bg-color:
-    var(--color-bg-tertiary);
-
-  --field-border-color:
-    var(--color-border-primary);
-
-  --field-border-hover:
-    var(--color-border-secondary);
-
-  --field-border-focus:
-    var(--color-border-focus);
-
-  --field-text-color:
-    var(--color-text-primary);
-
-  --field-placeholder-color:
-    var(--color-text-secondary);
+  --field-bg-color: var(--color-bg-tertiary);
+  --field-border-color: var(--color-border-primary);
+  --field-border-hover: var(--color-border-secondary);
+  --field-border-focus: var(--color-border-focus);
+  --field-text-color: var(--color-text-primary);
+  --field-placeholder-color: var(--color-text-secondary);
 
   /* DISABLED */
 
-  --field-disabled-bg:
-    var(--color-bg-tertiary);
-
-  --field-disabled-text:
-    var(--color-text-secondary);
+  --field-disabled-bg: var(--color-bg-tertiary);
+  --field-disabled-text: var(--color-text-secondary);
 
   /* STATES */
 
-  --field-border-error:
-    var(--color-danger-base);
-
-  --field-border-success:
-    var(--color-success-base);
-
-  --field-border-warning:
-    var(--color-warning-base);
+  --field-border-error: var(--color-danger-base);
+  --field-border-success: var(--color-success-base);
+  --field-border-warning: var(--color-warning-base);
 
   /* SIZES */
 
-  --field-height-sm:
-    var(--size-field-sm);
-
-  --field-height-md:
-    var(--size-field-md);
-
-  --field-height-lg:
-    var(--size-field-lg);
-
+  --field-height-sm: var(--size-field-sm);
+  --field-height-md: var(--size-field-md);
+  --field-height-lg: var(--size-field-lg);
 }

@@ -12,10 +12,8 @@
 
 .image__surface {
   position: relative;
-
   width: 100%;
   height: 100%;
-
   overflow: hidden;
 }
 
@@ -25,19 +23,12 @@
 
 .image__content {
   position: absolute;
-
   inset: 0;
-
+  display: block;
   width: 100%;
   height: 100%;
-
-  display: block;
-
   opacity: 0;
-
-  transition:
-    opacity
-    var(--transition-slow);
+  transition: opacity var(--transition-slow);
 }
 
 .image__content--loaded {
@@ -78,9 +69,7 @@
 
 .image__skeleton {
   position: absolute;
-
   inset: 0;
-
   width: 100%;
   height: 100%;
 }

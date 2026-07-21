@@ -2,32 +2,19 @@
    IMPORTS
 ====================================== */
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-  Search,
-  Mail,
-  Eye,
-} from "lucide-react";
+import { Search, Mail, Eye } from "lucide-react";
 
-import {
-  Input,
-} from "@/components/input";
+import { Input } from "@/components/input";
 
-import {
-  STATES,
-  SIZES,
-} from "@/shared/constants";
+import { STATES, SIZES } from "@/shared/constants";
 
 /* ======================================
    META
 ====================================== */
 
 const meta: Meta<typeof Input> = {
-
   title: "Components/Input/Input",
 
   component: Input,
@@ -35,57 +22,38 @@ const meta: Meta<typeof Input> = {
   tags: ["autodocs"],
 
   parameters: {
-
     layout: "padded",
-
   },
 
   args: {
-
-    placeholder:
-      "Write something...",
-
+    placeholder: "Write something...",
   },
 
   argTypes: {
-
     state: {
-
       control: "select",
 
       options: STATES,
-
     },
 
     size: {
-
       control: "select",
 
       options: SIZES,
-
     },
-
   },
-
 };
 
 export default meta;
 
-type Story =
-  StoryObj<typeof Input>;
+type Story = StoryObj<typeof Input>;
 
 /* ======================================
    PLAYGROUND
 ====================================== */
 
 export const Playground: Story = {
-
-  render: (args) => (
-
-    <Input {...args} />
-
-  ),
-
+  render: (args) => <Input {...args} />,
 };
 
 /* ======================================
@@ -93,13 +61,9 @@ export const Playground: Story = {
 ====================================== */
 
 export const Default: Story = {
-
   args: {
-
     state: "default",
-
   },
-
 };
 
 /* ======================================
@@ -107,17 +71,11 @@ export const Default: Story = {
 ====================================== */
 
 export const Prefix: Story = {
-
   args: {
+    placeholder: "Search products...",
 
-    placeholder:
-      "Search products...",
-
-    startIcon:
-      <Search size={16} />,
-
+    startIcon: <Search size={16} />,
   },
-
 };
 
 /* ======================================
@@ -125,17 +83,11 @@ export const Prefix: Story = {
 ====================================== */
 
 export const Suffix: Story = {
-
   args: {
+    placeholder: "Enter email...",
 
-    placeholder:
-      "Enter email...",
-
-    endIcon:
-      <Mail size={16} />,
-
+    endIcon: <Mail size={16} />,
   },
-
 };
 
 /* ======================================
@@ -143,20 +95,13 @@ export const Suffix: Story = {
 ====================================== */
 
 export const PrefixAndSuffix: Story = {
-
   args: {
+    placeholder: "Search users...",
 
-    placeholder:
-      "Search users...",
+    startIcon: <Search size={16} />,
 
-    startIcon:
-      <Search size={16} />,
-
-    endIcon:
-      <Eye size={16} />,
-
+    endIcon: <Eye size={16} />,
   },
-
 };
 
 /* ======================================
@@ -164,33 +109,21 @@ export const PrefixAndSuffix: Story = {
 ====================================== */
 
 export const Error: Story = {
-
   args: {
-
     state: "error",
-
   },
-
 };
 
 export const Success: Story = {
-
   args: {
-
     state: "success",
-
   },
-
 };
 
 export const Warning: Story = {
-
   args: {
-
     state: "warning",
-
   },
-
 };
 
 /* ======================================
@@ -198,33 +131,21 @@ export const Warning: Story = {
 ====================================== */
 
 export const Small: Story = {
-
   args: {
-
     size: "sm",
-
   },
-
 };
 
 export const Medium: Story = {
-
   args: {
-
     size: "md",
-
   },
-
 };
 
 export const Large: Story = {
-
   args: {
-
     size: "lg",
-
   },
-
 };
 
 /* ======================================
@@ -232,13 +153,9 @@ export const Large: Story = {
 ====================================== */
 
 export const Disabled: Story = {
-
   args: {
-
     disabled: true,
-
   },
-
 };
 
 /* ======================================
@@ -246,11 +163,7 @@ export const Disabled: Story = {
 ====================================== */
 
 export const Loading: Story = {
-
   args: {
-
     loading: true,
-
   },
-
 };

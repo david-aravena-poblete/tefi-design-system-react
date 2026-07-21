@@ -2,21 +2,15 @@
    IMPORTS
 ====================================== */
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import {
-  ErrorMessage,
-} from "@/components/field/error-message";
+import { ErrorMessage } from "@/components/field/error-message";
 
 /* ======================================
    META
 ====================================== */
 
 const meta: Meta<typeof ErrorMessage> = {
-
   title: "Components/Field/ErrorMessage",
 
   component: ErrorMessage,
@@ -24,47 +18,28 @@ const meta: Meta<typeof ErrorMessage> = {
   tags: ["autodocs"],
 
   args: {
-
-    children:
-      "This field is required.",
-
+    children: "This field is required.",
   },
 
   argTypes: {
-
     size: {
-
       control: "select",
 
-      options: [
-        "sm",
-        "md",
-        "lg",
-      ],
-
+      options: ["sm", "md", "lg"],
     },
-
   },
-
 };
 
 export default meta;
 
-type Story =
-  StoryObj<typeof ErrorMessage>;
+type Story = StoryObj<typeof ErrorMessage>;
 
 /* ======================================
    PLAYGROUND
 ====================================== */
 
 export const Playground: Story = {
-
-  render: (args) => (
-
-    <ErrorMessage {...args} />
-
-  ),
-
+  render: (args) => <ErrorMessage {...args} />,
 };
 
 /* ======================================
@@ -72,9 +47,7 @@ export const Playground: Story = {
 ====================================== */
 
 export const Sizes: Story = {
-
   render: () => (
-
     <div
       style={{
         display: "flex",
@@ -82,27 +55,11 @@ export const Sizes: Story = {
         gap: "16px",
       }}
     >
+      <ErrorMessage size="sm">Small error message</ErrorMessage>
 
-      <ErrorMessage size="sm">
+      <ErrorMessage size="md">Medium error message</ErrorMessage>
 
-        Small error message
-
-      </ErrorMessage>
-
-      <ErrorMessage size="md">
-
-        Medium error message
-
-      </ErrorMessage>
-
-      <ErrorMessage size="lg">
-
-        Large error message
-
-      </ErrorMessage>
-
+      <ErrorMessage size="lg">Large error message</ErrorMessage>
     </div>
-
   ),
-
 };

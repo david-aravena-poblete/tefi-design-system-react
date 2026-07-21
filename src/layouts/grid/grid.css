@@ -6,7 +6,6 @@
   display: grid;
 }
 
-
 /* ======================================
    GAP
 ====================================== */
@@ -39,16 +38,13 @@
   gap: var(--space-xxxl);
 }
 
-
 /* ======================================
    AUTO
 ====================================== */
 
-.grid:not([class*="grid--cols-"]):not([class*="grid--template-"]) {
-  grid-template-columns:
-    repeat(auto-fit, minmax(260px, 1fr));
+.grid:not([class*="grid--cols-"], [class*="grid--template-"]) {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
-
 
 /* ======================================
    COLUMNS
@@ -78,14 +74,10 @@
   grid-template-columns: repeat(12, 1fr);
 }
 
-
 /* ======================================
    TEMPLATE
 ====================================== */
 
 .grid--template-auto-1fr-auto {
-
-  grid-template-columns:
-    auto 1fr auto;
-
+  grid-template-columns: auto 1fr auto;
 }

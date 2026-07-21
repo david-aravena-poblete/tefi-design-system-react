@@ -2,26 +2,21 @@
    IMPORTS
 ====================================== */
 import clsx from "clsx";
-
-import "./button.css";
-
 import { Inline } from "../../layouts/inline";
-
 import { Spinner } from "../../primitives/spinner";
 import { Skeleton } from "../../primitives/skeleton";
 
-import type {
-  ButtonProps,
-} from "./button.types";
+import "./button.css";
+
+import type { ButtonProps } from "./button.types";
 
 /* ======================================
    BUTTON
 ====================================== */
 
 export function Button({
-
   /* ======================================
-     TEFI PROPS
+     TEFI PROPS 
   ====================================== */
 
   variant = "primary",
@@ -47,22 +42,18 @@ export function Button({
   ====================================== */
 
   ...rest
-
 }: ButtonProps) {
-
   /* ======================================
      DERIVED
   ====================================== */
 
-  const isDisabled =
-    loading || disabled;
+  const isDisabled = loading || disabled;
 
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
-
     "button",
     `button--${variant}`,
     `button--${size}`,
@@ -73,7 +64,6 @@ export function Button({
     },
 
     className,
-
   );
 
   /* ======================================
@@ -81,7 +71,6 @@ export function Button({
   ====================================== */
 
   const content = (
-
     <button
       ref={ref}
       type={type}
@@ -90,25 +79,14 @@ export function Button({
       aria-busy={loading}
       {...rest}
     >
-
-      <Inline
-        as="span"
-        gap="sm"
-        align="center"
-      >
-
+      <Inline as="span" gap="sm" align="center">
         {startIcon}
         {children}
         {endIcon}
 
-        {loading && (
-          <Spinner size="sm" />
-        )}
-
+        {loading && <Spinner size="sm" />}
       </Inline>
-
     </button>
-
   );
 
   /* ======================================
@@ -116,20 +94,11 @@ export function Button({
   ====================================== */
 
   if (skeleton) {
-
     return (
-  
-      <Skeleton
-        fill={fullWidth}
-        radius="var(--surface-button-radius)"
-      >
-  
+      <Skeleton fill={fullWidth} radius="var(--surface-button-radius)">
         {content}
-  
       </Skeleton>
-  
     );
-  
   }
 
   /* ======================================
@@ -137,5 +106,4 @@ export function Button({
   ====================================== */
 
   return content;
-
 }

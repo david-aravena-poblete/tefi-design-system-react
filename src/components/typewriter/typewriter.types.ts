@@ -3,10 +3,9 @@
 ====================================== */
 
 export interface TypewriterProps {
+  text: string;
 
-    text: string;
-  
-    speed?: number;
-  
-    cursor?: boolean;
-  }
+  speed?: number;
+
+  cursor?: boolean;
+}

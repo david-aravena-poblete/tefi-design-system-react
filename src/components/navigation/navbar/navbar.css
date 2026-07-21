@@ -3,65 +3,42 @@
 ====================================== */
 
 .navbar {
-
   width: 100%;
-
-  background:
-    var(--surface-navbar-bg);
-
-  color:
-    var(--surface-navbar-text);
-
-  box-shadow:
-    var(--surface-navbar-shadow);
-
-  padding-block:
-    var(--space-lg);
-
+  padding-block: var(--space-lg);
+  color: var(--surface-navbar-text);
+  background: var(--surface-navbar-bg);
+  box-shadow: var(--surface-navbar-shadow);
 }
-
 
 /* ======================================
    CONTENT
 ====================================== */
 
 .navbar__content {
-
   width: 100%;
-
 }
-
 
 /* ======================================
    BRAND
 ====================================== */
 
 .navbar__brand {
-
   flex-shrink: 0;
-
 }
-
 
 /* ======================================
    NAVIGATION
 ====================================== */
 
 .navbar__navigation {
-
   flex: 1;
-
   min-width: 0;
-
 }
-
 
 /* ======================================
    ACTIONS
 ====================================== */
 
 .navbar__actions {
-
   flex-shrink: 0;
-
 }

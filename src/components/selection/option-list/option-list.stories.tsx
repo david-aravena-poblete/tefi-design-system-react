@@ -2,11 +2,9 @@
    IMPORTS
 ====================================== */
 
-import React from "react";
+import { useState } from "react";
 
-import {
-  OptionList,
-} from "./OptionList";
+import { OptionItem, OptionList } from "@/components/selection";
 
 /* ======================================
    OPTIONS
@@ -42,63 +40,44 @@ export default {
   component: OptionList,
 };
 
-
 /* ======================================
    DEFAULT
 ====================================== */
 
 export function Default() {
-
   return (
     <div
       style={{
         width: "280px",
       }}
     >
-
-      <OptionList
-        options={OPTIONS}
-      />
-
+      <OptionList options={OPTIONS} />
     </div>
   );
 }
-
 
 /* ======================================
    SELECTED
 ====================================== */
 
 export function Selected() {
-
   return (
     <div
       style={{
         width: "280px",
       }}
     >
-
-      <OptionList
-        options={OPTIONS}
-
-        value="vue"
-      />
-
+      <OptionList options={OPTIONS} value="vue" />
     </div>
   );
 }
-
 
 /* ======================================
    INTERACTIVE
 ====================================== */
 
 export function Interactive() {
-
-  const [value, setValue] =
-    React.useState(
-      "react"
-    );
+  const [value, setValue] = useState("react");
 
   return (
     <div
@@ -106,61 +85,59 @@ export function Interactive() {
         width: "280px",
       }}
     >
-
-      <OptionList
-        options={OPTIONS}
-
-        value={value}
-
-        onChange={setValue}
-      />
-
+      <OptionList options={OPTIONS} value={value} onChange={setValue} />
     </div>
   );
 }
 
+/* ======================================
+   CUSTOM OPTION
+====================================== */
+
+export function CustomOption() {
+  return (
+    <div
+      style={{
+        width: "280px",
+      }}
+    >
+      <OptionList
+        options={OPTIONS}
+
+        renderOption={(option, props) => <OptionItem {...props}>🚀 {option.label}</OptionItem>}
+      />
+    </div>
+  );
+}
 
 /* ======================================
    EMPTY
 ====================================== */
 
 export function Empty() {
-
   return (
     <div
       style={{
         width: "280px",
       }}
     >
-
-      <OptionList
-        options={[]}
-      />
-
+      <OptionList options={[]} />
     </div>
   );
 }
-
 
 /* ======================================
    DISABLED
 ====================================== */
 
 export function Disabled() {
-
   return (
     <div
       style={{
         width: "280px",
       }}
     >
-
-      <OptionList
-        options={OPTIONS}
-
-        disabled
-      />
-
+      <OptionList options={OPTIONS} disabled />
     </div>
   );
 }

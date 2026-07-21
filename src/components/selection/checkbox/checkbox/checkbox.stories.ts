@@ -21,26 +21,16 @@ export default {
     state: {
       control: "select",
 
-      options: [
-        "default",
-        "error",
-        "success",
-        "warning",
-      ],
+      options: ["default", "error", "success", "warning"],
     },
 
     size: {
       control: "select",
 
-      options: [
-        "sm",
-        "md",
-        "lg",
-      ],
+      options: ["sm", "md", "lg"],
     },
   },
 };
-
 
 /* ======================================
    PLAYGROUND
@@ -48,13 +38,11 @@ export default {
 
 export const Playground = {};
 
-
 /* ======================================
    DEFAULT
 ====================================== */
 
 export const Default = {};
-
 
 /* ======================================
    CHECKED
@@ -65,7 +53,6 @@ export const Checked = {
     defaultChecked: true,
   },
 };
-
 
 /* ======================================
    STATES
@@ -78,7 +65,6 @@ export const Error = {
   },
 };
 
-
 export const Success = {
   args: {
     state: "success",
@@ -86,14 +72,12 @@ export const Success = {
   },
 };
 
-
 export const Warning = {
   args: {
     state: "warning",
     defaultChecked: true,
   },
 };
-
 
 /* ======================================
    SIZES
@@ -105,20 +89,17 @@ export const Small = {
   },
 };
 
-
 export const Medium = {
   args: {
     size: "md",
   },
 };
 
-
 export const Large = {
   args: {
     size: "lg",
   },
 };
-
 
 /* ======================================
    DISABLED
@@ -129,7 +110,6 @@ export const Disabled = {
     disabled: true,
   },
 };
-
 
 export const DisabledChecked = {
   args: {

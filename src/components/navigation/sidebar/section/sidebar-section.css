@@ -3,14 +3,9 @@
 ====================================== */
 
 .sidebar-section {
-
   display: flex;
-
   flex-direction: column;
-
-  gap:
-    var(--space-sm);
-
+  gap: var(--space-sm);
 }
 
 /* ======================================
@@ -18,14 +13,9 @@
 ====================================== */
 
 .sidebar-section__content {
-
   display: flex;
-
   flex-direction: column;
-
-  gap:
-    var(--space-xs);
-
+  gap: var(--space-xs);
 }
 
 /* ======================================
@@ -33,14 +23,7 @@
 ====================================== */
 
 .sidebar-section__heading {
-
-  text-transform:
-    uppercase;
-
-  letter-spacing:
-    0.08em;
-
-  font-weight:
-    var(--font-weight-semibold);
-
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }

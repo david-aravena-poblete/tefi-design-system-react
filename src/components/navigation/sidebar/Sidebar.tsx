@@ -6,9 +6,7 @@ import clsx from "clsx";
 
 import "./sidebar.css";
 
-import type {
-  SidebarComponent,
-} from "./sidebar.types";
+import type { SidebarComponent } from "./sidebar.types";
 
 import { SidebarHeader } from "./header";
 import { SidebarContent } from "./content";
@@ -21,28 +19,12 @@ import { SidebarItem } from "./item";
    SIDEBAR
 ====================================== */
 
-export const Sidebar: SidebarComponent = ({
-  children,
-  className,
-  ...props
-}) => {
-
+export const Sidebar: SidebarComponent = ({ children, className, ...props }) => {
   return (
-
-    <aside
-      className={clsx(
-        "sidebar",
-        className,
-      )}
-      {...props}
-    >
-
+    <aside className={clsx("sidebar", className)} {...props}>
       {children}
-
     </aside>
-
   );
-
 };
 
 Sidebar.Header = SidebarHeader;
