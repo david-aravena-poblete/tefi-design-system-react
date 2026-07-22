@@ -6,7 +6,12 @@ import clsx from "clsx";
 
 import "./text.css";
 
+import type { ComponentPropsWithoutRef } from "react";
+
 import { Skeleton } from "@/primitives";
+
+import { renderPolymorphic } from "@/render/polymorphic";
+import type { As } from "@/foundations/contracts/polymorphic.contract";
 
 import { ExpandableText } from "./ExpandableText";
 
@@ -16,52 +21,49 @@ import type { TextProps } from "./text.types";
    TEXT
 ====================================== */
 
-export function Text({
+export function Text<
+  T extends As = "p",
+>(
+  props: TextProps<T>,
+) {
   /* ======================================
-     TEFI PROPS
+     PROPS
   ====================================== */
 
-  size = "md",
+  const {
+    as,
 
-  variant = "default",
+    size = "md",
 
-  skeleton = false,
+    variant = "default",
 
-  expandable = false,
+    skeleton = false,
 
-  lines = 4,
+    expandable = false,
 
-  expandLabel = "Ver más",
+    lines = 4,
 
-  collapseLabel = "Ver menos",
+    expandLabel = "Ver más",
 
-  /* ======================================
-     REACT PROPS
-  ====================================== */
+    collapseLabel = "Ver menos",
 
-  className = "",
+    className = "",
 
-  children,
+    children,
 
-  ref,
+    ...rest
+  } = props;
 
-  /* ======================================
-     REST PROPS
-  ====================================== */
+  const Component = (as ?? "p") as T;
 
-  ...rest
-}: TextProps) {
   /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
     "text",
-
     `text--${size}`,
-
     `text--${variant}`,
-
     className,
   );
 
@@ -69,14 +71,19 @@ export function Text({
      CONTENT
   ====================================== */
 
-  const content = (
-    <p ref={ref} className={classes} {...rest}>
-      {children}
-    </p>
+  const elementProps = {
+    className: classes,
+    ...rest,
+    children,
+  } as ComponentPropsWithoutRef<T>;
+
+  const text = renderPolymorphic(
+    Component,
+    elementProps,
   );
 
   /* ======================================
-     EXPANDABLE
+     CONDITIONAL RENDER
   ====================================== */
 
   if (expandable) {
@@ -96,17 +103,17 @@ export function Text({
     );
   }
 
-  /* ======================================
-     SKELETON
-  ====================================== */
-
   if (skeleton) {
-    return <Skeleton>{content}</Skeleton>;
+    return (
+      <Skeleton>
+        {text}
+      </Skeleton>
+    );
   }
 
   /* ======================================
      RENDER
   ====================================== */
 
-  return content;
+  return text;
 }

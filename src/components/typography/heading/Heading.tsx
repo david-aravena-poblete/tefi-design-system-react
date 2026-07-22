@@ -45,9 +45,7 @@ export function Heading({
 
   const classes = clsx(
     "heading",
-
     `heading--${size}`,
-
     className,
   );
 
@@ -55,23 +53,23 @@ export function Heading({
      CONTENT
   ====================================== */
 
-  const content = (
+  const heading = (
     <Component className={classes} {...rest}>
       {children}
     </Component>
   );
 
   /* ======================================
-     SKELETON
+     CONDITIONAL RENDER
   ====================================== */
 
   if (skeleton) {
-    return <Skeleton>{content}</Skeleton>;
+    return <Skeleton>{heading}</Skeleton>;
   }
 
   /* ======================================
      RENDER
   ====================================== */
 
-  return content;
+  return heading;
 }

@@ -15,7 +15,7 @@ export function AccessPage() {
     <Container size="sm">
       <Card>
         <Card.Header>
-          <Heading level={1}>Ingreso por Clave</Heading>
+          <Heading as="h1">Ingreso por Clave</Heading>
         </Card.Header>
 
         <Card.Body>

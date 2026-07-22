@@ -19,7 +19,7 @@ export function ContactPage() {
       <Card>
         <Card.Header>
           <Stack gap="sm">
-            <Heading level={1}>Contacto</Heading>
+            <Heading as="h1">Contacto</Heading>
 
             <Text>Envíame un mensaje o entra con tu clave de acceso.</Text>
           </Stack>

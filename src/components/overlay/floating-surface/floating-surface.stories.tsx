@@ -1,8 +1,6 @@
 /* ======================================
    IMPORTS
 ====================================== */
-
-import React from "react";
 import { FloatingSurface } from "./FloatingSurface";
 import { OptionList } from "../../selection/option-list";
 

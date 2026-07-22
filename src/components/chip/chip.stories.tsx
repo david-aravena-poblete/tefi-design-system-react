@@ -2,12 +2,12 @@
    IMPORTS
 ====================================== */
 
-import React from "react";
+import { useState } from "react";
 
 import { Chip } from "./Chip";
 
-import { Icon } from "../../primitives/icon";
-import { Inline } from "../../layouts/inline";
+import { Inline } from "@/layouts";
+import { Icon } from "@/primitives";
 
 /* ======================================
    META
@@ -20,16 +20,12 @@ export default {
 };
 
 /* ======================================
-   DEFAULT
+   STORIES
 ====================================== */
 
 export function Default() {
   return <Chip>Design System</Chip>;
 }
-
-/* ======================================
-   ICONS
-====================================== */
 
 export function Icons() {
   return (
@@ -38,7 +34,10 @@ export function Icons() {
 
       <Chip endIcon={<Icon name="search" size="sm" />}>Search</Chip>
 
-      <Chip startIcon={<Icon name="search" size="sm" />} endIcon={<Icon name="search" size="sm" />}>
+      <Chip
+        startIcon={<Icon name="search" size="sm" />}
+        endIcon={<Icon name="search" size="sm" />}
+      >
         Search
       </Chip>
 
@@ -49,12 +48,8 @@ export function Icons() {
   );
 }
 
-/* ======================================
-   REMOVABLE
-====================================== */
-
 export function Removable() {
-  const [visible, setVisible] = React.useState(true);
+  const [visible, setVisible] = useState(true);
 
   if (!visible) {
     return null;
@@ -66,10 +61,6 @@ export function Removable() {
     </Chip>
   );
 }
-
-/* ======================================
-   SIZES
-====================================== */
 
 export function Sizes() {
   return (
@@ -83,10 +74,6 @@ export function Sizes() {
   );
 }
 
-/* ======================================
-   DISABLED
-====================================== */
-
 export function Disabled() {
   return (
     <Chip removable disabled>
@@ -95,10 +82,6 @@ export function Disabled() {
   );
 }
 
-/* ======================================
-   LONG CONTENT
-====================================== */
-
 export function LongContent() {
   return (
     <div
@@ -106,7 +89,9 @@ export function LongContent() {
         width: "220px",
       }}
     >
-      <Chip removable>Very long selected item for testing truncation</Chip>
+      <Chip removable>
+        Very long selected item for testing truncation
+      </Chip>
     </div>
   );
 }

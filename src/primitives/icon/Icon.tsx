@@ -40,18 +40,10 @@ export function Icon({
   ...rest
 }: IconProps) {
   /* ======================================
-     RESOLVE ICON
+     DERIVED STATE
   ====================================== */
 
   const IconComponent = name ? iconRegistry[name] : undefined;
-
-  /* ======================================
-     DEV WARNING
-  ====================================== */
-
-  if (name && !IconComponent) {
-    console.warn(`Icon "${name}" not found in registry.`);
-  }
 
   /* ======================================
      CLASSES
@@ -59,18 +51,28 @@ export function Icon({
 
   const classes = clsx(
     "icon",
-
     `icon--${size}`,
-
     className,
   );
+
+  /* ======================================
+     CONDITIONAL RENDER
+  ====================================== */
+
+  if (name && !IconComponent) {
+    console.warn(`Icon "${name}" not found in registry.`);
+  }
 
   /* ======================================
      RENDER
   ====================================== */
 
   return (
-    <span className={classes} aria-hidden={ariaHidden} {...rest}>
+    <span
+      className={classes}
+      aria-hidden={ariaHidden}
+      {...rest}
+    >
       {IconComponent ? <IconComponent /> : children}
     </span>
   );

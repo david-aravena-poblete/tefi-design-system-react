@@ -54,8 +54,6 @@ export function ExpandableText({
 
   children,
 
-  ref,
-
   /* ======================================
      REST PROPS
   ====================================== */
@@ -70,15 +68,11 @@ export function ExpandableText({
 
   const classes = clsx(
     "text",
-
     `text--${size}`,
-
     `text--${variant}`,
-
     {
       "read-more__content--clamp": !expanded,
     },
-
     className,
   );
 
@@ -97,7 +91,7 @@ export function ExpandableText({
   ====================================== */
 
   const content = (
-    <p ref={ref} className={classes} style={style} {...rest}>
+    <p className={classes} style={style} {...rest}>
       {children}
     </p>
   );

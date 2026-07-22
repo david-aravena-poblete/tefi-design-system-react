@@ -1,3 +1,11 @@
+/* ======================================
+   COMPONENT
+====================================== */
+
 export { Textarea } from "./Textarea";
 
-export type { TextareaProps, TextareaSize } from "./textarea.types";
+/* ======================================
+   TYPES
+====================================== */
+
+export type { TextareaProps } from "./textarea.types";

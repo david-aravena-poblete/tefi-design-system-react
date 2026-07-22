@@ -32,14 +32,18 @@ export function Spinner({
   ...rest
 }: SpinnerProps) {
   /* ======================================
+     ACCESSIBILITY
+  ====================================== */
+
+  const ariaLabel = "Loading";
+
+  /* ======================================
      CLASSES
   ====================================== */
 
   const classes = clsx(
     "spinner",
-
     `spinner--${size}`,
-
     className,
   );
 
@@ -47,5 +51,12 @@ export function Spinner({
      RENDER
   ====================================== */
 
-  return <div className={classes} role="status" aria-label="Loading" {...rest} />;
+  return (
+    <div
+      className={classes}
+      role="status"
+      aria-label={ariaLabel}
+      {...rest}
+    />
+  );
 }

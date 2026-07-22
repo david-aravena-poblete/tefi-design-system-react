@@ -1,8 +1,6 @@
 /* ======================================
    IMPORTS
 ====================================== */
-import React from "react";
-
 import { useState } from "react";
 import { Switch } from "./Switch";
 

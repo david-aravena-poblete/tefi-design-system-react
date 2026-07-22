@@ -65,7 +65,7 @@ export function Skeleton({
      CONTENT
   ====================================== */
 
-  const content = (
+  const skeleton = (
     <div
       className={classes}
       style={{
@@ -82,7 +82,7 @@ export function Skeleton({
   );
 
   /* ======================================
-     WRAPPER
+     CONDITIONAL RENDER
   ====================================== */
 
   if (children !== undefined) {
@@ -92,9 +92,11 @@ export function Skeleton({
           "skeleton-wrapper--fill": fill,
         })}
       >
-        <div className="skeleton-content skeleton-content--hidden">{children}</div>
+        <div className="skeleton-content skeleton-content--hidden">
+          {children}
+        </div>
 
-        {content}
+        {skeleton}
       </div>
     );
   }
@@ -103,5 +105,5 @@ export function Skeleton({
      RENDER
   ====================================== */
 
-  return content;
+  return skeleton;
 }

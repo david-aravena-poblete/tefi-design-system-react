@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Sidebar } from "./Sidebar";
 import { Heading } from "../../typography/heading";
 import { Button } from "../../button";
@@ -22,7 +20,7 @@ export function Default() {
   return (
     <Sidebar>
       <Sidebar.Header>
-        <Heading level={2}>Tefi Design System</Heading>
+        <Heading as="h2">Tefi Design System</Heading>
       </Sidebar.Header>
 
       <Sidebar.Content>
@@ -68,7 +66,7 @@ export function LongNavigation() {
   return (
     <Sidebar>
       <Sidebar.Header>
-        <Heading level={2}>Tefi Design System</Heading>
+        <Heading as="h2">Tefi Design System</Heading>
       </Sidebar.Header>
 
       <Sidebar.Content>
@@ -98,7 +96,7 @@ export function WithoutGroups() {
   return (
     <Sidebar>
       <Sidebar.Header>
-        <Heading level={2}>Tefi Design System</Heading>
+        <Heading as="h2">Tefi Design System</Heading>
       </Sidebar.Header>
 
       <Sidebar.Content>

@@ -1,8 +1,6 @@
 /* ======================================
    IMPORTS
 ====================================== */
-
-import React from "react";
 import { QuantityStepper } from "./QuantityStepper";
 
 /* ======================================

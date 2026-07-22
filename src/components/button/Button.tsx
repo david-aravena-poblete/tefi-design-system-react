@@ -1,10 +1,12 @@
 /* ======================================
    IMPORTS
 ====================================== */
+
 import clsx from "clsx";
+
 import { Inline } from "../../layouts/inline";
-import { Spinner } from "../../primitives/spinner";
 import { Skeleton } from "../../primitives/skeleton";
+import { Spinner } from "../../primitives/spinner";
 
 import "./button.css";
 
@@ -16,7 +18,7 @@ import type { ButtonProps } from "./button.types";
 
 export function Button({
   /* ======================================
-     TEFI PROPS 
+     TEFI PROPS
   ====================================== */
 
   variant = "primary",
@@ -44,7 +46,7 @@ export function Button({
   ...rest
 }: ButtonProps) {
   /* ======================================
-     DERIVED
+     DERIVED STATE
   ====================================== */
 
   const isDisabled = loading || disabled;
@@ -57,12 +59,10 @@ export function Button({
     "button",
     `button--${variant}`,
     `button--${size}`,
-
     {
       "button--full": fullWidth,
       "button--loading": loading,
     },
-
     className,
   );
 
@@ -70,7 +70,7 @@ export function Button({
      CONTENT
   ====================================== */
 
-  const content = (
+  const button = (
     <button
       ref={ref}
       type={type}
@@ -81,7 +81,9 @@ export function Button({
     >
       <Inline as="span" gap="sm" align="center">
         {startIcon}
+
         {children}
+
         {endIcon}
 
         {loading && <Spinner size="sm" />}
@@ -90,13 +92,13 @@ export function Button({
   );
 
   /* ======================================
-     SKELETON
+     SPECIAL STATES
   ====================================== */
 
   if (skeleton) {
     return (
       <Skeleton fill={fullWidth} radius="var(--surface-button-radius)">
-        {content}
+        {button}
       </Skeleton>
     );
   }
@@ -105,5 +107,5 @@ export function Button({
      RENDER
   ====================================== */
 
-  return content;
+  return button;
 }

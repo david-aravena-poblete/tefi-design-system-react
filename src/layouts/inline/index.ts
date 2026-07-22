@@ -1,2 +1,11 @@
+/* ======================================
+   COMPONENT
+====================================== */
+
 export { Inline } from "./Inline";
-export type { InlineProps, InlineGap, InlineAlign, InlineJustify } from "./inline.types";
+
+/* ======================================
+   TYPES
+====================================== */
+
+export type { InlineProps } from "./inline.types";

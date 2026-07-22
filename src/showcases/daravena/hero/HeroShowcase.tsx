@@ -1,4 +1,4 @@
-import { Card, Heading, Stack, Text, Typewriter } from "@tefi/design-system";
+import { Card, Heading, Stack, Text, Typewriter } from "@/index";
 
 export function HeroShowcase() {
   const quoteText =
@@ -10,7 +10,7 @@ export function HeroShowcase() {
   return (
     <Stack gap="xl">
       <Stack gap="md">
-        <Heading level={1}>daravena</Heading>
+        <Heading as="h1">daravena</Heading>
 
         <Text>FINE TUNING · RAG · SKILLS · SPEC DRIVEN DEVELOPMENT</Text>
       </Stack>

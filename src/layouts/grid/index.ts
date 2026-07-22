@@ -1,2 +1,11 @@
+/* ======================================
+   COMPONENT
+====================================== */
+
 export { Grid } from "./Grid";
-export type { GridProps, GridGap, GridColumns } from "./grid.types";
+
+/* ======================================
+   TYPES
+====================================== */
+
+export type { GridProps, GridColumns, GridTemplate } from "./grid.types";

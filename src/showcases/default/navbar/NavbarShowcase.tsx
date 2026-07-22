@@ -10,7 +10,7 @@ export function NavbarShowcase() {
       <Navbar.Brand>
         <Avatar>TD</Avatar>
 
-        <Heading level={5}>Design System Tefi</Heading>
+        <Heading as="h5">Design System Tefi</Heading>
       </Navbar.Brand>
 
       <Navbar.Navigation>

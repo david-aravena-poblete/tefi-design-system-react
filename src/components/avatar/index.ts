@@ -8,4 +8,4 @@ export { Avatar } from "./Avatar";
    TYPES
 ====================================== */
 
-export type { AvatarProps, AvatarShape, AvatarSize } from "./avatar.types";
+export type { AvatarProps, AvatarSize } from "./avatar.types";

@@ -2,7 +2,7 @@
    IMPORTS
 ====================================== */
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { Radio } from "../radio/Radio";
 
