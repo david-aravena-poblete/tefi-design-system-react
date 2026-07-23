@@ -20,9 +20,7 @@ export const Page = () => {
         onCreateAccount={() => setUser({ name: "Jane Doe" })}
       />
 
-      <section className="storybook-page">
-        {/* ...resto del archivo igual... */}
-      </section>
+      <section className="storybook-page">{/* ...resto del archivo igual... */}</section>
     </article>
   );
 };

@@ -1,2 +1,14 @@
+/* ======================================
+   COMPONENT
+====================================== */
+
 export { Section } from "./Section";
-export type { SectionProps, SectionSize } from "./section.types";
+
+/* ======================================
+   TYPES
+====================================== */
+
+export type {
+  SectionProps,
+  SectionSize,
+} from "./section.types";

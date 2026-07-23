@@ -49,11 +49,7 @@ export function Icon({
      CLASSES
   ====================================== */
 
-  const classes = clsx(
-    "icon",
-    `icon--${size}`,
-    className,
-  );
+  const classes = clsx("icon", `icon--${size}`, className);
 
   /* ======================================
      CONDITIONAL RENDER
@@ -68,11 +64,7 @@ export function Icon({
   ====================================== */
 
   return (
-    <span
-      className={classes}
-      aria-hidden={ariaHidden}
-      {...rest}
-    >
+    <span className={classes} aria-hidden={ariaHidden} {...rest}>
       {IconComponent ? <IconComponent /> : children}
     </span>
   );

@@ -21,10 +21,6 @@ export function Container({
 
   size = "md",
 
-  paddingTop,
-
-  paddingBottom,
-
   /* ======================================
      REACT PROPS
   ====================================== */
@@ -47,10 +43,6 @@ export function Container({
     "container",
 
     `container--${size}`,
-
-    paddingTop && `container--pt-${paddingTop}`,
-
-    paddingBottom && `container--pb-${paddingBottom}`,
 
     className,
   );

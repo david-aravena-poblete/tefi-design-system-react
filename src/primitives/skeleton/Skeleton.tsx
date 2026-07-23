@@ -92,9 +92,7 @@ export function Skeleton({
           "skeleton-wrapper--fill": fill,
         })}
       >
-        <div className="skeleton-content skeleton-content--hidden">
-          {children}
-        </div>
+        <div className="skeleton-content skeleton-content--hidden">{children}</div>
 
         {skeleton}
       </div>

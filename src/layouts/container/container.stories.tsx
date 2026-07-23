@@ -1,8 +1,13 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Container } from "./Container";
-import { Stack } from "../stack";
-import { Button } from "../../components/button";
+import { Button } from "@/components/button";
+import { Container } from "@/layouts/container";
+import { Section } from "@/layouts/section";
+import { Stack } from "@/layouts/stack";
 
 /* ======================================
    META
@@ -92,15 +97,17 @@ export const Widths: Story = {
 
 export const PageLayout: Story = {
   render: () => (
-    <Container size="md">
-      <Stack gap="lg">
-        <div style={sharedStyle}>Header</div>
+    <Section>
+      <Container size="md">
+        <Stack gap="lg">
+          <div style={sharedStyle}>Header</div>
 
-        <div style={sharedStyle}>Main Content</div>
+          <div style={sharedStyle}>Main Content</div>
 
-        <div style={sharedStyle}>Footer</div>
-      </Stack>
-    </Container>
+          <div style={sharedStyle}>Footer</div>
+        </Stack>
+      </Container>
+    </Section>
   ),
 };
 
@@ -110,12 +117,14 @@ export const PageLayout: Story = {
 
 export const ContactFormExample: Story = {
   render: () => (
-    <Container size="sm">
-      <Stack gap="lg">
-        <div style={sharedStyle}>Contact Form</div>
+    <Section>
+      <Container size="sm">
+        <Stack gap="lg">
+          <div style={sharedStyle}>Contact Form</div>
 
-        <Button>Submit</Button>
-      </Stack>
-    </Container>
+          <Button>Submit</Button>
+        </Stack>
+      </Container>
+    </Section>
   ),
 };

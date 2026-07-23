@@ -13,7 +13,7 @@ import { Skeleton } from "@/primitives";
 import { renderPolymorphic } from "@/render/polymorphic";
 import type { As } from "@/foundations/contracts/polymorphic.contract";
 
-import { ExpandableText } from "./ExpandableText";
+import { ExpandableText } from "../expandable-text/ExpandableText";
 
 import type { TextProps } from "./text.types";
 
@@ -21,15 +21,7 @@ import type { TextProps } from "./text.types";
    TEXT
 ====================================== */
 
-export function Text<
-  T extends As = "p",
->(
-  props: TextProps<T>,
-) {
-  /* ======================================
-     PROPS
-  ====================================== */
-
+export function Text<T extends As = "p">(props: TextProps<T>) {
   const {
     as,
 
@@ -60,27 +52,17 @@ export function Text<
      CLASSES
   ====================================== */
 
-  const classes = clsx(
-    "text",
-    `text--${size}`,
-    `text--${variant}`,
-    className,
-  );
+  const classes = clsx("text", `text--${size}`, `text--${variant}`, className);
 
   /* ======================================
      CONTENT
   ====================================== */
 
-  const elementProps = {
+  const text = renderPolymorphic(Component, {
     className: classes,
     ...rest,
     children,
-  } as ComponentPropsWithoutRef<T>;
-
-  const text = renderPolymorphic(
-    Component,
-    elementProps,
-  );
+  } as ComponentPropsWithoutRef<T>);
 
   /* ======================================
      CONDITIONAL RENDER
@@ -90,25 +72,17 @@ export function Text<
     return (
       <ExpandableText
         skeleton={skeleton}
-        size={size}
-        variant={variant}
         lines={lines}
         expandLabel={expandLabel}
         collapseLabel={collapseLabel}
-        className={className}
-        {...rest}
       >
-        {children}
+        {text}
       </ExpandableText>
     );
   }
 
   if (skeleton) {
-    return (
-      <Skeleton>
-        {text}
-      </Skeleton>
-    );
+    return <Skeleton radius="var(--radius-md)">{text}</Skeleton>;
   }
 
   /* ======================================

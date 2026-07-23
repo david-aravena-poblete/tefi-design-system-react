@@ -25,8 +25,6 @@ export function Stack({
 
   justify,
 
-  wrap = false,
-
   /* ======================================
      REACT PROPS
   ====================================== */
@@ -53,10 +51,6 @@ export function Stack({
     align && `stack--align-${align}`,
 
     justify && `stack--justify-${justify}`,
-
-    {
-      "stack--wrap": wrap,
-    },
 
     className,
   );

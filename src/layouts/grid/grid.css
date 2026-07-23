@@ -42,7 +42,7 @@
    AUTO
 ====================================== */
 
-.grid:not([class*="grid--cols-"], [class*="grid--template-"]) {
+.grid:not([class*="grid--cols-"]) {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
@@ -72,12 +72,4 @@
 
 .grid--cols-12 {
   grid-template-columns: repeat(12, 1fr);
-}
-
-/* ======================================
-   TEMPLATE
-====================================== */
-
-.grid--template-auto-1fr-auto {
-  grid-template-columns: auto 1fr auto;
 }

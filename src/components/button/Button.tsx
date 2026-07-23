@@ -4,9 +4,8 @@
 
 import clsx from "clsx";
 
-import { Inline } from "../../layouts/inline";
-import { Skeleton } from "../../primitives/skeleton";
-import { Spinner } from "../../primitives/spinner";
+import { Skeleton } from "@/primitives/skeleton";
+import { Spinner } from "@/primitives/spinner";
 
 import "./button.css";
 
@@ -22,11 +21,17 @@ export function Button({
   ====================================== */
 
   variant = "primary",
+
   size = "md",
+
   fullWidth = false,
+
   loading = false,
+
   skeleton = false,
+
   startIcon,
+
   endIcon,
 
   /* ======================================
@@ -34,9 +39,13 @@ export function Button({
   ====================================== */
 
   type = "button",
+
   disabled,
+
   className,
+
   children,
+
   ref,
 
   /* ======================================
@@ -49,7 +58,7 @@ export function Button({
      DERIVED STATE
   ====================================== */
 
-  const isDisabled = loading || disabled;
+  const isDisabled = disabled || loading;
 
   /* ======================================
      CLASSES
@@ -57,20 +66,25 @@ export function Button({
 
   const classes = clsx(
     "button",
+
     `button--${variant}`,
+
     `button--${size}`,
+
     {
       "button--full": fullWidth,
+
       "button--loading": loading,
     },
+
     className,
   );
 
   /* ======================================
-     CONTENT
+     ELEMENT
   ====================================== */
 
-  const button = (
+  const element = (
     <button
       ref={ref}
       type={type}
@@ -79,7 +93,7 @@ export function Button({
       aria-busy={loading}
       {...rest}
     >
-      <Inline as="span" gap="sm" align="center">
+      <span className="button__content">
         {startIcon}
 
         {children}
@@ -87,18 +101,18 @@ export function Button({
         {endIcon}
 
         {loading && <Spinner size="sm" />}
-      </Inline>
+      </span>
     </button>
   );
 
   /* ======================================
-     SPECIAL STATES
+     CONDITIONAL RENDER
   ====================================== */
 
   if (skeleton) {
     return (
       <Skeleton fill={fullWidth} radius="var(--surface-button-radius)">
-        {button}
+        {element}
       </Skeleton>
     );
   }
@@ -107,5 +121,5 @@ export function Button({
      RENDER
   ====================================== */
 
-  return button;
+  return element;
 }

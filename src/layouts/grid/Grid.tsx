@@ -23,8 +23,6 @@ export function Grid({
 
   columns,
 
-  template,
-
   /* ======================================
      REACT PROPS
   ====================================== */
@@ -48,11 +46,7 @@ export function Grid({
 
     `grid--gap-${gap}`,
 
-    {
-      [`grid--cols-${columns}`]: columns,
-
-      [`grid--template-${template}`]: template,
-    },
+    columns && `grid--cols-${columns}`,
 
     className,
   );

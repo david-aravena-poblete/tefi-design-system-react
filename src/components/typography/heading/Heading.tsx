@@ -43,11 +43,7 @@ export function Heading({
      CLASSES
   ====================================== */
 
-  const classes = clsx(
-    "heading",
-    `heading--${size}`,
-    className,
-  );
+  const classes = clsx("heading", `heading--${size}`, className);
 
   /* ======================================
      CONTENT
@@ -60,11 +56,11 @@ export function Heading({
   );
 
   /* ======================================
-     CONDITIONAL RENDER
-  ====================================== */
+   CONDITIONAL RENDER
+====================================== */
 
   if (skeleton) {
-    return <Skeleton>{heading}</Skeleton>;
+    return <Skeleton radius="var(--radius-md)">{heading}</Skeleton>;
   }
 
   /* ======================================

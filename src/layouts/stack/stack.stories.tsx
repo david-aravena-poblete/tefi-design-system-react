@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Stack } from "./Stack";
-import { Button } from "../../components/button";
+import { Button } from "@/components/button";
+import { Stack } from "@/layouts/stack";
 
 const meta: Meta<typeof Stack> = {
   title: "Layouts/Stack",
@@ -63,9 +63,7 @@ export const Default: Story = {
     children: (
       <>
         <Button>Botón 1</Button>
-
         <Button>Botón 2</Button>
-
         <Button>Botón 3</Button>
       </>
     ),
@@ -83,9 +81,7 @@ export const AlignStart: Story = {
     children: (
       <>
         <Button>Botón 1</Button>
-
         <Button>Botón 2</Button>
-
         <Button>Botón 3</Button>
       </>
     ),
@@ -103,9 +99,7 @@ export const AlignCenter: Story = {
     children: (
       <>
         <Button>Botón 1</Button>
-
         <Button>Botón 2</Button>
-
         <Button>Botón 3</Button>
       </>
     ),
@@ -123,9 +117,7 @@ export const AlignEnd: Story = {
     children: (
       <>
         <Button>Botón 1</Button>
-
         <Button>Botón 2</Button>
-
         <Button>Botón 3</Button>
       </>
     ),
@@ -143,9 +135,7 @@ export const AlignStretch: Story = {
     children: (
       <>
         <Button>Botón 1</Button>
-
         <Button>Botón 2</Button>
-
         <Button>Botón 3</Button>
       </>
     ),
@@ -163,9 +153,61 @@ export const JustifyBetween: Story = {
     children: (
       <>
         <Button>Botón 1</Button>
-
         <Button>Botón 2</Button>
+        <Button>Botón 3</Button>
+      </>
+    ),
+  },
+};
 
+export const JustifyCenter: Story = {
+  args: {
+    justify: "center",
+
+    gap: "md",
+
+    style: sharedStyle,
+
+    children: (
+      <>
+        <Button>Botón 1</Button>
+        <Button>Botón 2</Button>
+        <Button>Botón 3</Button>
+      </>
+    ),
+  },
+};
+
+export const JustifyEnd: Story = {
+  args: {
+    justify: "end",
+
+    gap: "md",
+
+    style: sharedStyle,
+
+    children: (
+      <>
+        <Button>Botón 1</Button>
+        <Button>Botón 2</Button>
+        <Button>Botón 3</Button>
+      </>
+    ),
+  },
+};
+
+export const JustifyAround: Story = {
+  args: {
+    justify: "around",
+
+    gap: "md",
+
+    style: sharedStyle,
+
+    children: (
+      <>
+        <Button>Botón 1</Button>
+        <Button>Botón 2</Button>
         <Button>Botón 3</Button>
       </>
     ),

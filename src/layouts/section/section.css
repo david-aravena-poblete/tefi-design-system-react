@@ -7,29 +7,33 @@
 }
 
 /* ======================================
-     SPACING
-  ====================================== */
+   SPACING
+====================================== */
 
 .section--none {
-  padding-block: 0;
+  padding-block: var(--section-spacing-none);
+}
+
+.section--xs {
+  padding-block: var(--section-spacing-xs);
 }
 
 .section--sm {
-  padding-block: var(--space-md);
+  padding-block: var(--section-spacing-sm);
 }
 
 .section--md {
-  padding-block: var(--space-lg);
+  padding-block: var(--section-spacing-md);
 }
 
 .section--lg {
-  padding-block: var(--space-xl);
+  padding-block: var(--section-spacing-lg);
 }
 
 .section--xl {
-  padding-block: var(--space-xxl);
+  padding-block: var(--section-spacing-xl);
 }
 
-.section--xxl {
-  padding-block: var(--space-xxxl);
+.section--2xl {
+  padding-block: var(--section-spacing-2xl);
 }

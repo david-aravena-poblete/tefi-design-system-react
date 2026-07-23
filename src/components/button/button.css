@@ -1,41 +1,31 @@
 /* ======================================
    BASE
 ====================================== */
-/* Appearance */
+
 .button {
-  /* Positioned Layout */
   position: relative;
 
-  /* Box Model */
   box-sizing: border-box;
 
-  /* Display */
   display: inline-flex;
 
-  /* Flexible Box Layout */
   align-items: center;
   justify-content: center;
 
-  /* Sizing */
   min-height: 40px;
 
-  /* Fonts */
   font-family: var(--font-family-sans);
   font-size: var(--font-md);
   font-weight: var(--font-weight-medium);
 
-  /* Text */
   white-space: nowrap;
 
-  /* UI */
   cursor: pointer;
   user-select: none;
 
-  /* Backgrounds and Borders */
   border: none;
   border-radius: var(--surface-button-radius);
 
-  /* Transitions */
   transition:
     background-color var(--transition-fast),
     color var(--transition-fast),
@@ -43,12 +33,13 @@
     box-shadow var(--transition-fast),
     transform 0.15s ease,
     opacity var(--transition-fast);
+
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Interaction */
 .button:focus-visible:not(:disabled) {
   outline: none;
+
   box-shadow: 0 0 0 2px var(--state-default-ring);
 }
 
@@ -59,54 +50,66 @@
 /* ======================================
    SIZES
 ====================================== */
+
 .button--sm {
   min-height: 32px;
+
   padding: var(--space-xs) var(--space-sm);
+
   font-size: var(--font-sm);
 }
 
 .button--md {
   min-height: 40px;
+
   padding: var(--space-sm) var(--space-md);
+
   font-size: var(--font-md);
 }
 
 .button--lg {
   min-height: 48px;
+
   padding: var(--space-md) var(--space-lg);
+
   font-size: var(--font-lg);
 }
 
 /* ======================================
    VARIANTS
 ====================================== */
-/* Primary */
+
 .button--primary {
   color: var(--surface-button-primary-text);
+
   background: var(--surface-button-primary-bg, var(--color-primary-base));
+
   box-shadow: var(--surface-button-shadow, none);
 }
 
 .button--primary:hover:not(:disabled) {
   background: var(--surface-button-primary-hover, var(--color-primary-hover));
+
   box-shadow: var(--surface-button-shadow-hover, none);
 }
 
-/* Secondary */
 .button--secondary {
   color: var(--color-text-primary);
+
   background: var(--color-bg-secondary);
+
   border: 1px solid var(--color-border-primary);
 }
 
 .button--secondary:hover:not(:disabled) {
   background: var(--color-bg-tertiary);
+
   border-color: var(--color-border-secondary);
 }
 
-/* Danger */
 .button--danger {
   color: var(--color-text-inverse);
+
   background: var(--color-danger-base);
 }
 
@@ -114,10 +117,11 @@
   background: var(--color-danger-hover);
 }
 
-/* Ghost */
 .button--ghost {
   color: var(--color-text-primary);
+
   background: transparent;
+
   border: 1px solid transparent;
 }
 
@@ -125,12 +129,15 @@
   background: var(--interaction-hover-bg);
 }
 
-/* Link */
 .button--link {
   font-weight: var(--font-weight-medium);
+
   color: var(--color-link-base);
+
   text-decoration: none;
+
   background: transparent;
+
   border: none;
 }
 
@@ -138,31 +145,32 @@
   color: var(--color-link-hover);
 }
 
-/* Size Overrides */
 .button--link.button--sm,
 .button--link.button--md,
 .button--link.button--lg {
   min-height: auto;
+
   padding: 0;
+
   border-radius: 0;
 }
 
 /* ======================================
    STATES
 ====================================== */
-/* Full Width */
+
 .button--full {
   width: 100%;
 }
 
-/* Disabled */
 .button:disabled {
   pointer-events: none;
+
   cursor: not-allowed;
+
   opacity: 0.6;
 }
 
-/* Loading */
 .button--loading {
   cursor: progress;
 }
@@ -170,12 +178,19 @@
 /* ======================================
    ELEMENTS
 ====================================== */
-/* Icon */
+
+.button__content {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--space-sm);
+}
+
 .button svg {
-  /* Flexible Box Layout */
   flex-shrink: 0;
 
-  /* Sizing */
   width: 1em;
   height: 1em;
 }

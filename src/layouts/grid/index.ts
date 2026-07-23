@@ -8,4 +8,4 @@ export { Grid } from "./Grid";
    TYPES
 ====================================== */
 
-export type { GridProps, GridColumns, GridTemplate } from "./grid.types";
+export type { GridProps, GridColumns } from "./grid.types";

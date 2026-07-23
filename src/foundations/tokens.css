@@ -28,6 +28,18 @@ Brand tokens:
   --space-xxxl: 40px;
 
   /* ======================================
+   SECTION SPACING
+====================================== */
+
+  --section-spacing-none: 0;
+  --section-spacing-xs: 16px;
+  --section-spacing-sm: 24px;
+  --section-spacing-md: 32px;
+  --section-spacing-lg: 48px;
+  --section-spacing-xl: 64px;
+  --section-spacing-2xl: 96px;
+
+  /* ======================================
      FOUNDATIONS — RADIUS
   ====================================== */
 

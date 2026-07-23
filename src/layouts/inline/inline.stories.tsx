@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Inline } from "./Inline";
-import { Button } from "../../components/button";
+import { Button } from "@/components/button";
+import { Inline } from "@/layouts/inline";
 
 const meta: Meta<typeof Inline> = {
   title: "Layouts/Inline",
@@ -20,18 +20,6 @@ const meta: Meta<typeof Inline> = {
 
       options: ["xs", "sm", "md", "lg", "xl", "xxl", "xxxl"],
     },
-
-    align: {
-      control: "select",
-
-      options: ["start", "center", "end", "stretch", "baseline"],
-    },
-
-    justify: {
-      control: "select",
-
-      options: ["start", "center", "end", "between", "around"],
-    },
   },
 };
 
@@ -44,8 +32,6 @@ type Story = StoryObj<typeof Inline>;
 ====================================== */
 
 const sharedStyle = {
-  width: "600px",
-  minHeight: "160px",
   padding: "var(--space-md)",
   border: "1px dashed var(--color-border-primary)",
 };
@@ -72,11 +58,9 @@ export const Default: Story = {
   },
 };
 
-export const AlignStart: Story = {
+export const SmallGap: Story = {
   args: {
-    align: "start",
-
-    gap: "md",
+    gap: "sm",
 
     style: sharedStyle,
 
@@ -92,91 +76,9 @@ export const AlignStart: Story = {
   },
 };
 
-export const AlignCenter: Story = {
+export const LargeGap: Story = {
   args: {
-    align: "center",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-
-        <Button>Botón 2</Button>
-
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const AlignEnd: Story = {
-  args: {
-    align: "end",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-
-        <Button>Botón 2</Button>
-
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const AlignStretch: Story = {
-  args: {
-    align: "stretch",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-
-        <Button>Botón 2</Button>
-
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const AlignBaseline: Story = {
-  args: {
-    align: "baseline",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-
-        <Button>Botón 2</Button>
-
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const JustifyBetween: Story = {
-  args: {
-    justify: "between",
-
-    gap: "md",
+    gap: "xl",
 
     style: sharedStyle,
 

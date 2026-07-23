@@ -21,17 +21,11 @@ export function Inline({
 
   gap = "md",
 
-  align = "center",
-
-  justify = "start",
-
-  wrap = false,
-
   /* ======================================
      REACT PROPS
   ====================================== */
 
-  className = "",
+  className,
 
   children,
 
@@ -49,14 +43,6 @@ export function Inline({
     "inline",
 
     `inline--gap-${gap}`,
-
-    `inline--align-${align}`,
-
-    `inline--justify-${justify}`,
-
-    {
-      "inline--wrap": wrap,
-    },
 
     className,
   );

@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
+import { Button } from "@/components/button";
+import { Container } from "@/layouts/container";
+import { Stack } from "@/layouts/stack";
+
 import { Section } from "./Section";
-import { Container } from "../container";
-import { Stack } from "../stack";
-import { Button } from "../../components/button";
 
 const meta: Meta<typeof Section> = {
   title: "Layouts/Section",
@@ -20,7 +21,7 @@ const meta: Meta<typeof Section> = {
     size: {
       control: "select",
 
-      options: ["none", "sm", "md", "lg", "xl", "xxl"],
+      options: ["none", "sm", "md", "lg"],
     },
   },
 };
@@ -33,7 +34,7 @@ type Story = StoryObj<typeof Section>;
    SHARED
 ====================================== */
 
-const sharedStyle = {
+const blockStyle = {
   border: "1px dashed var(--color-border-primary)",
   background: "var(--color-bg-secondary)",
   padding: "var(--space-lg)",
@@ -43,80 +44,78 @@ const sharedStyle = {
    STORIES
 ====================================== */
 
-export const Default: Story = {
+export const Playground: Story = {
   args: {
     size: "md",
 
     children: (
       <Container>
-        <div style={sharedStyle}>Section md</div>
+        <div style={blockStyle}>Section Content</div>
       </Container>
     ),
   },
 };
 
-export const Small: Story = {
-  args: {
-    size: "sm",
+export const Sizes: Story = {
+  render: () => (
+    <>
+      <Section size="none">
+        <Container>
+          <div style={blockStyle}>Section none</div>
+        </Container>
+      </Section>
 
-    children: (
-      <Container>
-        <div style={sharedStyle}>Section sm</div>
-      </Container>
-    ),
-  },
+      <Section size="sm">
+        <Container>
+          <div style={blockStyle}>Section sm</div>
+        </Container>
+      </Section>
+
+      <Section size="md">
+        <Container>
+          <div style={blockStyle}>Section md</div>
+        </Container>
+      </Section>
+
+      <Section size="lg">
+        <Container>
+          <div style={blockStyle}>Section lg</div>
+        </Container>
+      </Section>
+    </>
+  ),
 };
 
-export const Large: Story = {
-  args: {
-    size: "lg",
+export const LandingPage: Story = {
+  render: () => (
+    <>
+      <Section size="lg">
+        <Container>
+          <div style={blockStyle}>Hero</div>
+        </Container>
+      </Section>
 
-    children: (
-      <Container>
-        <div style={sharedStyle}>Section lg</div>
-      </Container>
-    ),
-  },
-};
+      <Section size="md">
+        <Container>
+          <Stack gap="lg">
+            <div style={blockStyle}>Features</div>
 
-export const ExtraLarge: Story = {
-  args: {
-    size: "xl",
+            <Button>Learn More</Button>
+          </Stack>
+        </Container>
+      </Section>
 
-    children: (
-      <Container>
-        <div style={sharedStyle}>Section xl</div>
-      </Container>
-    ),
-  },
-};
+      <Section size="md">
+        <Container>
+          <div style={blockStyle}>Testimonials</div>
+        </Container>
+      </Section>
 
-export const NoSpacing: Story = {
-  args: {
-    size: "none",
-
-    children: (
-      <Container>
-        <div style={sharedStyle}>Section none</div>
-      </Container>
-    ),
-  },
-};
-
-export const CompositionExample: Story = {
-  args: {
-    size: "xl",
-
-    children: (
-      <Container>
-        <Stack gap="lg">
-          <div style={sharedStyle}>Header</div>
-
-          <div style={sharedStyle}>Content</div>
-
-          <Button>Action</Button>
-        </Stack>
-      </Container>
-    ),
-  },
+      <Section size="lg">
+        <Container>
+          <div style={blockStyle}>Footer</div>
+        </Container>
+      </Section>
+    </>
+  ),
 };

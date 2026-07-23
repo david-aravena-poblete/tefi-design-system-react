@@ -1,10 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Grid } from "./Grid";
-
-import { Button } from "../../components/button";
-import { Card } from "../../components/card";
-import { Stack } from "../stack";
+import { Card } from "@/components/card";
+import { Grid } from "@/layouts/grid";
+import { Stack } from "@/layouts/stack";
 
 const meta: Meta<typeof Grid> = {
   title: "Layouts/Grid",
@@ -47,7 +45,7 @@ const itemStyle = {
 };
 
 /* ======================================
-   RESPONSIVE GRID
+   STORIES
 ====================================== */
 
 export const ResponsiveGrid: Story = {
@@ -64,10 +62,6 @@ export const ResponsiveGrid: Story = {
     ),
   },
 };
-
-/* ======================================
-   RESPONSIVE CARDS
-====================================== */
 
 export const ResponsiveCards: Story = {
   args: {
@@ -90,10 +84,6 @@ export const ResponsiveCards: Story = {
     ),
   },
 };
-
-/* ======================================
-   FIXED COLUMNS
-====================================== */
 
 export const FixedTwoColumns: Story = {
   args: {
@@ -124,28 +114,6 @@ export const FixedThreeColumns: Story = {
         <div style={itemStyle}>Item 2</div>
         <div style={itemStyle}>Item 3</div>
         <div style={itemStyle}>Item 4</div>
-      </>
-    ),
-  },
-};
-
-/* ======================================
-   COMPOSITION
-====================================== */
-
-export const CompositionExample: Story = {
-  args: {
-    columns: 3,
-
-    gap: "lg",
-
-    children: (
-      <>
-        <Button>Action</Button>
-
-        <Button>Action</Button>
-
-        <Button>Action</Button>
       </>
     ),
   },

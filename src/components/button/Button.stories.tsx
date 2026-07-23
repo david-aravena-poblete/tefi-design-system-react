@@ -4,11 +4,9 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Button } from "./Button";
-
-import { Icon } from "../../primitives/icon";
-
-import { Stack } from "../../layouts/stack";
+import { Button } from "@/components/button";
+import { Stack } from "@/layouts/stack";
+import { Icon } from "@/primitives/icon";
 
 /* ======================================
    META
@@ -67,11 +65,18 @@ export const Size: Story = {
 export const WithIcons: Story = {
   render: () => (
     <Stack gap="md">
-      <Button startIcon={<Icon name="search" />}>Start Icon</Button>
+      <Button startIcon={<Icon name="search" />}>
+        Start Icon
+      </Button>
 
-      <Button endIcon={<Icon name="search" />}>End Icon</Button>
+      <Button endIcon={<Icon name="search" />}>
+        End Icon
+      </Button>
 
-      <Button startIcon={<Icon name="search" />} endIcon={<Icon name="search" />}>
+      <Button
+        startIcon={<Icon name="search" />}
+        endIcon={<Icon name="search" />}
+      >
         Start + End Icon
       </Button>
     </Stack>

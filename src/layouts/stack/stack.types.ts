@@ -4,7 +4,11 @@
 
 import type { ComponentProps, ElementType } from "react";
 
-import type { Align, Justify, Spacing } from "../../foundations/design-system.types";
+import type {
+  Align,
+  Justify,
+  Spacing,
+} from "../../foundations/design-system.types";
 
 /* ======================================
    PROPS
@@ -18,6 +22,4 @@ export interface StackProps extends ComponentProps<"div"> {
   align?: Align;
 
   justify?: Justify;
-
-  wrap?: boolean;
 }

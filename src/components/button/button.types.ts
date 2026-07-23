@@ -4,13 +4,18 @@
 
 import type { ComponentProps, ReactNode } from "react";
 
-import type { Size } from "../../foundations/design-system.types";
+import type { Size } from "@/foundations/design-system.types";
 
 /* ======================================
    TYPES
 ====================================== */
 
-export type ButtonVariant = "primary" | "secondary" | "ghost" | "link" | "danger";
+export type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "ghost"
+  | "link"
+  | "danger";
 
 /* ======================================
    PROPS

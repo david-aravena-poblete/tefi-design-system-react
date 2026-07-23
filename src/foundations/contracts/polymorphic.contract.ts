@@ -7,13 +7,9 @@ import type {
 
 export type As = ElementType;
 
-export type PropsOf<T extends As> =
-  ComponentPropsWithoutRef<T>;
+export type PropsOf<T extends As> = ComponentPropsWithoutRef<T>;
 
-export type MergeProps<
-  SourceProps,
-  TargetProps,
-> = Omit<
+export type MergeProps<SourceProps, TargetProps> = Omit<
   SourceProps,
   keyof TargetProps
 > &
@@ -21,7 +17,7 @@ export type MergeProps<
 
 export type PolymorphicProps<
   T extends As,
-  OwnProps = {},
+  OwnProps extends object = Record<string, never>,
 > = MergeProps<
   PropsOf<T>,
   OwnProps & {
@@ -29,12 +25,11 @@ export type PolymorphicProps<
   }
 >;
 
-export type PolymorphicRef<T extends As> =
-  ComponentRef<T>;
+export type PolymorphicRef<T extends As> = ComponentRef<T>;
 
 export interface PolymorphicComponent<
   DefaultAs extends As,
-  OwnProps = {},
+  OwnProps extends object = Record<string, never>,
 > {
   <T extends As = DefaultAs>(
     props: PolymorphicProps<T, OwnProps>,

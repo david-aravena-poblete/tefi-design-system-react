@@ -41,22 +41,11 @@ export function Spinner({
      CLASSES
   ====================================== */
 
-  const classes = clsx(
-    "spinner",
-    `spinner--${size}`,
-    className,
-  );
+  const classes = clsx("spinner", `spinner--${size}`, className);
 
   /* ======================================
      RENDER
   ====================================== */
 
-  return (
-    <div
-      className={classes}
-      role="status"
-      aria-label={ariaLabel}
-      {...rest}
-    />
-  );
+  return <div className={classes} role="status" aria-label={ariaLabel} {...rest} />;
 }
