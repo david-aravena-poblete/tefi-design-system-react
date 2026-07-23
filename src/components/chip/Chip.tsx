@@ -6,7 +6,6 @@ import clsx from "clsx";
 
 import "./chip.css";
 
-import { Inline } from "@/layouts/inline";
 import { Icon } from "@/primitives/icon";
 
 import type { ChipProps } from "./chip.types";
@@ -59,12 +58,12 @@ export function Chip({
   }
 
   /* ======================================
-     RENDER
+     ELEMENT
   ====================================== */
 
-  return (
+  const element = (
     <div className={classes} {...rest}>
-      <Inline as="span" gap="xs" align="center">
+      <span className="chip__content">
         {startIcon}
 
         {children}
@@ -82,7 +81,13 @@ export function Chip({
             <Icon name="close" size="sm" />
           </button>
         )}
-      </Inline>
+      </span>
     </div>
   );
+
+  /* ======================================
+     RENDER
+  ====================================== */
+
+  return element;
 }

@@ -1,17 +1,23 @@
-import type { HTMLAttributes, ReactNode } from "react";
+/* ======================================
+   IMPORTS
+====================================== */
 
-import { SIZES } from "../../shared/constants";
+import type { ComponentProps, ReactNode } from "react";
 
-export type ChipSize = (typeof SIZES)[number];
+import type { Size } from "@/foundations/design-system.types";
 
-export interface ChipProps extends HTMLAttributes<HTMLDivElement> {
+/* ======================================
+   PROPS
+====================================== */
+
+export interface ChipProps extends ComponentProps<"div"> {
   children?: ReactNode;
 
   startIcon?: ReactNode;
 
   endIcon?: ReactNode;
 
-  size?: ChipSize;
+  size?: Size;
 
   disabled?: boolean;
 

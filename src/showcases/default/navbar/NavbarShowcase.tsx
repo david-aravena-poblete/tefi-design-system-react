@@ -1,31 +1,31 @@
-import { Avatar } from "../../../components/avatar";
-import { Button } from "../../../components/button";
-import { Navbar } from "../../../components/navigation/navbar";
+import { Avatar } from "@/components/avatar";
+import { Button } from "@/components/button";
+import { Heading } from "@/components/typography/heading";
+import { Text } from "@/components/typography/text";
 
-import { Heading } from "../../../components/typography/heading";
+import { Bar } from "@/layouts/bar";
+import { Region } from "@/layouts/region";
 
 export function NavbarShowcase() {
   return (
-    <Navbar>
-      <Navbar.Brand>
-        <Avatar>TD</Avatar>
+    <Bar>
+      <Region>
+        <Avatar />
 
-        <Heading as="h5">Design System Tefi</Heading>
-      </Navbar.Brand>
+        <Heading>Tefi</Heading>
 
-      <Navbar.Navigation>
-        <Button variant="link">Home</Button>
+        <Text size="sm">Design System</Text>
+      </Region>
 
-        <Button variant="link">Components</Button>
+      <Region>
+        <Button variant="ghost">Inicio</Button>
 
-        <Button variant="link">Documentation</Button>
-      </Navbar.Navigation>
+        <Button variant="ghost">Componentes</Button>
 
-      <Navbar.Actions>
-        <Button variant="ghost">Sign In</Button>
+        <Button variant="ghost">Documentación</Button>
 
-        <Button>Get Started</Button>
-      </Navbar.Actions>
-    </Navbar>
+        <Button>Comenzar</Button>
+      </Region>
+    </Bar>
   );
 }

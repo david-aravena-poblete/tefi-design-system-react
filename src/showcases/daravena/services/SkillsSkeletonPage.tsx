@@ -56,7 +56,7 @@ export function SkillsSkeletonPage() {
             <Image
               skeleton={loading}
               src="https://images.unsplash.com/photo-1658243762577-d781c4726412?q=80&w=1498&auto=format&fit=crop&ixlib=rb-4.1.0"
-              alt="Spec Driven Development"
+              alt="Spec Driven DV"
               aspect="16:9"
             />
           </Card.Media>
@@ -64,7 +64,7 @@ export function SkillsSkeletonPage() {
           <Card.Body>
             <Stack gap="lg">
               <Heading skeleton={loading} as="h3">
-                Spec Driven Development
+                Spec Driven DV
               </Heading>
 
               <Text skeleton={loading} expandable lines={4}>

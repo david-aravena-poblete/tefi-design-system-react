@@ -6,7 +6,6 @@ import { useState } from "react";
 
 import { Chip } from "./Chip";
 
-import { Inline } from "@/layouts";
 import { Icon } from "@/primitives";
 
 /* ======================================
@@ -29,19 +28,28 @@ export function Default() {
 
 export function Icons() {
   return (
-    <Inline gap="md" wrap>
+    <div
+      style={{
+        display: "flex",
+        gap: "16px",
+        flexWrap: "wrap",
+      }}
+    >
       <Chip startIcon={<Icon name="search" size="sm" />}>Search</Chip>
 
       <Chip endIcon={<Icon name="search" size="sm" />}>Search</Chip>
 
-      <Chip startIcon={<Icon name="search" size="sm" />} endIcon={<Icon name="search" size="sm" />}>
+      <Chip
+        startIcon={<Icon name="search" size="sm" />}
+        endIcon={<Icon name="search" size="sm" />}
+      >
         Search
       </Chip>
 
       <Chip startIcon={<Icon name="search" size="sm" />} removable>
         Search
       </Chip>
-    </Inline>
+    </div>
   );
 }
 
@@ -61,13 +69,18 @@ export function Removable() {
 
 export function Sizes() {
   return (
-    <Inline gap="md">
+    <div
+      style={{
+        display: "flex",
+        gap: "16px",
+      }}
+    >
       <Chip size="sm">Small</Chip>
 
       <Chip size="md">Medium</Chip>
 
       <Chip size="lg">Large</Chip>
-    </Inline>
+    </div>
   );
 }
 
@@ -86,7 +99,9 @@ export function LongContent() {
         width: "220px",
       }}
     >
-      <Chip removable>Very long selected item for testing truncation</Chip>
+      <Chip removable>
+        Very long selected item for testing truncation
+      </Chip>
     </div>
   );
 }

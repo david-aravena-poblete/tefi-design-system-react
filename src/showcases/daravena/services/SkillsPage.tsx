@@ -40,7 +40,7 @@ export function SkillsPage() {
               <Card.Body>
                 <Stack gap="lg">
                   <Heading as="h3">
-                    Spec Driven Development
+                    Spec Driven DV
                   </Heading>
 
                   <Text expandable lines={4}>
