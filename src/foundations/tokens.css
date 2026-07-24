@@ -28,6 +28,17 @@ Brand tokens:
   --space-xxxl: 40px;
 
   /* ======================================
+   FOUNDATIONS — WIDTH
+   ====================================== */
+
+  --width-xs: 320px;
+  --width-sm: 480px;
+  --width-md: 640px;
+  --width-lg: 960px;
+  --width-xl: 1200px;
+  --width-2xl: 1440px;
+
+  /* ======================================
    SECTION SPACING
 ====================================== */
 

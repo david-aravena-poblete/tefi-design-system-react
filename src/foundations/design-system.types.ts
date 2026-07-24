@@ -11,6 +11,21 @@ export const SPACINGS = ["xxs", "xs", "sm", "md", "lg", "xl", "xxl", "xxxl"] as 
 export type Spacing = (typeof SPACINGS)[number];
 
 /* ======================================
+   WIDTH
+====================================== */
+
+export const WIDTHS = [
+    "xs",
+    "sm",
+    "md",
+    "lg",
+    "xl",
+    "2xl",
+  ] as const;
+  
+  export type Width = (typeof WIDTHS)[number];
+
+/* ======================================
     TYPOGRAPHY
  ====================================== */
 

@@ -8,13 +8,15 @@
   --color-bg-primary: #0f172a;
   --color-bg-secondary: #1e293b;
   --color-bg-tertiary: #263449;
+  --color-bg-inverse: #fff;
+
 
   /* TEXT */
 
   --color-text-primary: #f8fafc;
   --color-text-secondary: #cbd5e1;
   --color-text-muted: #94a3b8;
-  --color-text-inverse: #f8fafc;
+  --color-text-inverse: #111827;
 
   /* BORDERS */
 

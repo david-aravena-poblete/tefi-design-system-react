@@ -1,0 +1,38 @@
+.story-align {
+    min-height: 200px;
+  }
+  
+  .story-align-item-sm {
+    height: 40px;
+    border: 1px solid;
+  }
+  
+  .story-align-item-md {
+    height: 80px;
+    border: 1px solid;
+  }
+  
+  .story-align-item-lg {
+    height: 120px;
+    border: 1px solid;
+  }
+
+  .story-justify {
+    width: 100%;
+  }
+
+  .story-inside {
+    border: 1px solid;
+  }
+
+  .story-outside-container {
+    border: 1px dashed;
+  }
+  
+  .story-outside {
+    border: 1px solid;
+  }
+
+  .story-radius {
+    border: 1px solid;
+  }
