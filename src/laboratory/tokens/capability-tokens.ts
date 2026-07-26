@@ -12,6 +12,7 @@ export const HTML_ELEMENTS = [
     "nav",
     "aside",
     "span",
+    "button",
   ] as const;
   
   export type HtmlElement = (typeof HTML_ELEMENTS)[number];
@@ -44,3 +45,23 @@ export const HTML_ELEMENTS = [
   ] as const;
   
   export type Justify = (typeof JUSTIFIES)[number];
+
+/* ======================================
+   INTERACTION
+====================================== */
+
+export const HOVERS = [
+  "default",
+  "elevated",
+  "inverse",
+] as const;
+
+export type Hover = (typeof HOVERS)[number];
+
+export const PRESSEDS = [
+  "default",
+  "elevated",
+  "inverse",
+] as const;
+
+export type Pressed = (typeof PRESSEDS)[number];

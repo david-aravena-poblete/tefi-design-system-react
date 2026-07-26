@@ -6,11 +6,18 @@ const capabilityNames = [
   "align",
   "justify",
   "inside",
+  "insideX",
+  "insideY",
   "outside",
   "radius",
   "maxWidth",
+  "minHeight",
   "surface",
+  "background",
   "text",
+  "fontSize",
+  "fontWeight",
+  "shadow",
   "border",
 ] as const;
 

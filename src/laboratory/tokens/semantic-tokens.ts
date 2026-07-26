@@ -27,6 +27,7 @@ export const SURFACES = [
 ====================================== */
 
 export const BORDERS = [
+   "none",
    "default",
  ] as const;
  

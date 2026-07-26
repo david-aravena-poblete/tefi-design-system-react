@@ -178,7 +178,7 @@ export const Surface: Story = {
         inside="lg"
         radius="lg"
         surface="inverse"
-        text="inverse"
+        text="white"
       >
         Inverse
       </Box>
@@ -206,7 +206,6 @@ export const MaxWidth: Story = {
       inside="lg"
       radius="lg"
       surface="elevated"
-      text="primary"
       border="default"
       maxWidth="sm"
     >
@@ -218,3 +217,4 @@ export const MaxWidth: Story = {
     </Box>
   ),
 };
+

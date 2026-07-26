@@ -62,3 +62,5 @@ las capabilities simples no necesitan implementación individual cuando todas si
 BabyBox tendrá solo el código que sea necesario para expresar una capacidad real. Si algo puede eliminarse sin perder comportamiento, se elimina.
 
 Una Box no tiene que controlar todo sobre sí misma. Parte de su comportamiento puede surgir de la relación entre Boxes.
+
+Box = capacidades generales de construcción visual. Interaction = capacidades generales de comportamiento interactivo. Ninguna conoce Button, Card, Navbar, etc.

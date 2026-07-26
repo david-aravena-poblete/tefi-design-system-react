@@ -56,20 +56,61 @@ export const WIDTHS = [
  
  export type Width = (typeof WIDTHS)[number];
   
-  /* ======================================
-     COLOR
-  ====================================== */
-  
-  export const COLORS = [
-    "primary",
-    "secondary",
-    "success",
-    "warning",
-    "danger",
-    "neutral",
-    "white",
-    "black",
-  ] as const;
-  
-  export type Color = (typeof COLORS)[number];
+/* ======================================
+   COLOR
+====================================== */
 
+export const COLORS = [
+   "blue",
+   "blue-light",
+   "blue-transparent",
+   "white",
+ ] as const;
+ 
+ export type Color = (typeof COLORS)[number];
+
+ /* ======================================
+   FONT SIZE
+====================================== */
+
+  export const FONT_SIZES = [
+   "xs",
+   "sm",
+   "md",
+   "lg",
+   "xl",
+   "2xl",
+   "3xl",
+   "4xl",
+   "5xl",
+ ] as const;
+ 
+ export type FontSize =
+   (typeof FONT_SIZES)[number];
+
+/* ======================================
+   FONT WEIGHT
+====================================== */
+
+export const FONT_WEIGHTS = [
+   "regular",
+   "medium",
+   "semibold",
+   "bold",
+ ] as const;
+ 
+ export type FontWeight =
+   (typeof FONT_WEIGHTS)[number];
+
+/* ======================================
+   DIMENSION
+====================================== */
+
+export const DIMENSIONS = [
+   "32",
+   "40",
+   "48",
+ ] as const;
+ 
+ export type Dimension =
+   (typeof DIMENSIONS)[number];

@@ -102,6 +102,21 @@ Brand tokens:
   /* ======================================
      FOUNDATIONS — SIZE
   ====================================== */
+  /* SCALE */
+
+  --size-2: 2px;
+  --size-4: 4px;
+  --size-8: 8px;
+  --size-12: 12px;
+  --size-16: 16px;
+  --size-20: 20px;
+  --size-24: 24px;
+  --size-32: 32px;
+  --size-36: 36px;
+  --size-40: 40px;
+  --size-44: 44px;
+  --size-48: 48px;
+  --size-52: 52px;
 
   /* CONTROLS */
 
@@ -128,7 +143,20 @@ Brand tokens:
   /* MICROINTERACTIONS */
 
   --motion-snappy: 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+/* ======================================
+   FOUNDATIONS — COLORS
+====================================== */
 
+  --color-blue: #6366f1;
+  --color-blue-light: #818cf8;
+  --color-white: #fff;
+
+  --color-blue-transparent: color-mix(
+  in srgb,
+  var(--color-blue) 60%,
+  transparent
+);
+  
   /* ======================================
      SEMANTIC TOKENS
   ====================================== */
@@ -168,15 +196,47 @@ Brand tokens:
 
   /* APPEARANCE */
 
-  --surface-button-radius: var(--radius-md);
-  --surface-button-primary-bg: var(--color-primary-base);
-  --surface-button-primary-hover: var(--color-primary-hover);
-  --surface-button-primary-text: var(--color-text-inverse);
+  --button-radius: var(--radius-md);
+  --button-primary-bg: var(--color-primary-base);
+  --button-primary-hover: var(--color-primary-hover);
+  --button-primary-text: var(--color-text-inverse);
+
+  /* SECONDARY */
+
+  --button-secondary-bg: var(--color-bg-secondary);
+  --button-secondary-hover: var(--color-bg-tertiary);
+  --button-secondary-text: var(--color-text-primary);
+  --button-secondary-border: var(--color-border-primary);
+  --button-secondary-border-hover: var(--color-border-secondary);
+
+  /* DANGER */
+
+  --button-danger-bg: var(--color-danger-base);
+  --button-danger-hover: var(--color-danger-hover);
+  --button-danger-text: var(--color-text-inverse);
+
+  /* GHOST */
+
+  --button-ghost-bg: transparent;
+  --button-ghost-hover: var(--interaction-hover-bg);
+  --button-ghost-text: var(--color-text-primary);
+  --button-ghost-border: transparent;
+
+  /* LINK */
+
+  --button-link-text: var(--color-link-base);
+  --button-link-hover: var(--color-link-hover);
+
+  /* SIZES */
+
+  --button-size-sm: var(--size-32);
+  --button-size-md: var(--size-40);
+  --button-size-lg: var(--size-48);
 
   /* EFFECTS */
 
-  --surface-button-shadow: none;
-  --surface-button-shadow-hover: none;
+  --button-shadow: none;
+  --button-shadow-hover: none;
 
   /* ======================================
      DIVIDER
