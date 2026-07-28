@@ -9,10 +9,15 @@ import type { InteractionProps } from "./interaction.types";
 ====================================== */
 
 const interactionNames = [
-  "hover",
   "focusRing",
   "press",
   "transition",
+] as const;
+
+const compositionNames = [
+  "background",
+  "border",
+  "text",
 ] as const;
 
 /* ======================================
@@ -32,12 +37,27 @@ export function composeInteraction(
     return [`interaction--${name}-${value}`];
   });
 
-  if (classes.length === 0) {
+  const hoverClasses = compositionNames.flatMap((name) => {
+    const value = props.hover?.[name];
+
+    if (!value) {
+      return [];
+    }
+
+    return [`interaction--hover-${name}-${value}`];
+  });
+
+  const interactionClasses = [
+    ...classes,
+    ...hoverClasses,
+  ];
+
+  if (interactionClasses.length === 0) {
     return "";
   }
 
   return [
     "interaction",
-    ...classes,
+    ...interactionClasses,
   ].join(" ");
 }

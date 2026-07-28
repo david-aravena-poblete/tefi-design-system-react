@@ -28,7 +28,8 @@ export const SURFACES = [
 
 export const BORDERS = [
    "none",
-   "default",
+   "primary",
+   "secondary",
  ] as const;
  
  export type Border = (typeof BORDERS)[number];

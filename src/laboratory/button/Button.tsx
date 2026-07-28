@@ -13,9 +13,9 @@ import type { ButtonProps } from "./button.types";
 export function Button({
   children,
   size = "md",
+  variant = "primary",
   ...buttonProps
 }: ButtonProps) {
-
   const sizes = {
     sm: {
       insideX: "sm",
@@ -37,6 +37,58 @@ export function Button({
     },
   } as const;
 
+  const variants = {
+    primary: {
+      background: "blue",
+      text: "white",
+      border: "none",
+      hover: {
+        background: "blue-soft",
+      },
+    },
+  
+    secondary: {
+      background: "gray-soft",
+      text: "black",
+      border: "primary",
+      hover: {
+        background: "gray",
+        border: "secondary",
+      },
+    },
+  
+    danger: {
+      background: "red",
+      text: "white",
+      border: "none",
+      hover: {
+        background: "red-strong",
+      },
+    },
+  
+    ghost: {
+      background: "transparent",
+      text: "black",
+      border: "none",
+      hover: {
+        background: "soft",
+      },
+    },
+  
+    link: {
+      background: "transparent",
+      text: "blue",
+      border: "none",
+      insideX: "none",
+      insideY: "none",
+      minHeight: "auto",
+      radius: "none",
+      hover: {
+        text: "blue-soft",
+      },
+    },
+  } as const;
+
   return (
     <Box
       html="button"
@@ -44,15 +96,12 @@ export function Button({
       align="center"
       justify="center"
       radius="md"
-      background="blue"
-      text="white"
-      border="none"
-      hover="blue-light"
-      press= "move"
+      press="move"
       focusRing="blue-transparent"
       transition="fast"
       fontWeight="medium"
       {...sizes[size]}
+      {...variants[variant]}
       {...buttonProps}
     >
       {children}

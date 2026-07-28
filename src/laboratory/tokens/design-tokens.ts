@@ -62,9 +62,16 @@ export const WIDTHS = [
 
 export const COLORS = [
    "blue",
-   "blue-light",
+   "blue-soft",
    "blue-transparent",
+   "gray",
+   "gray-soft",
    "white",
+   "black",
+   "red",
+   "red-strong",
+   "transparent",
+   "soft"
  ] as const;
  
  export type Color = (typeof COLORS)[number];
@@ -107,6 +114,7 @@ export const FONT_WEIGHTS = [
 ====================================== */
 
 export const DIMENSIONS = [
+   "auto",
    "32",
    "40",
    "48",

@@ -2,69 +2,117 @@
    HOVER
 ====================================== */
 
-.interaction--hover-blue:hover:not(:disabled) {
-    background-color: var(--color-blue);
-  }
-  
-  .interaction--hover-blue-light:hover:not(:disabled) {
-    background-color: var(--color-blue-light);
-  }
-  
-  .interaction--hover-white:hover:not(:disabled) {
-    background-color: var(--color-white);
-  }
-  
-  /* ======================================
-     PRESS
-  ====================================== */
-  
-  .interaction--press-move:active:not(:disabled) {
-    transform: translateY(1px) scale(0.99);
-  }
-  
-  /* ======================================
-     FOCUS RING
-  ====================================== */
-  
-  .interaction--focusRing-blue:focus-visible {
-    outline: var(--size-2) solid var(--color-blue);
-    outline-offset: var(--space-xxs);
-  }
-  
-  .interaction--focusRing-blue-light:focus-visible {
-    outline: var(--size-2) solid var(--color-blue-light);
-    outline-offset: var(--space-xxs);
-  }
-  
-  .interaction--focusRing-blue-transparent:focus-visible {
-    outline: var(--size-2) solid var(--color-blue-transparent);
-    outline-offset: var(--space-xxs);
-  }
-  
-  .interaction--focusRing-white:focus-visible {
-    outline: var(--size-2) solid var(--color-white);
-    outline-offset: var(--space-xxs);
-  }
+.interaction--hover-background-blue:hover:not(:disabled) {
+  background-color: var(--color-blue);
+}
 
-  /* ======================================
+.interaction--hover-background-blue-soft:hover:not(:disabled) {
+  background-color: var(--color-blue-soft);
+}
+
+.interaction--hover-background-gray:hover:not(:disabled) {
+  background-color: var(--color-bg-tertiary);
+}
+
+.interaction--hover-background-gray-soft:hover:not(:disabled) {
+  background-color: var(--color-bg-secondary);
+}
+
+.interaction--hover-background-red:hover:not(:disabled) {
+  background-color: var(--color-danger-base);
+}
+
+.interaction--hover-background-red-strong:hover:not(:disabled) {
+  background-color: var(--color-danger-hover);
+}
+
+.interaction--hover-background-soft:hover:not(:disabled) {
+  background-color: var(--interaction-hover-bg);
+}
+
+.interaction--hover-background-transparent:hover:not(:disabled) {
+  background-color: transparent;
+}
+
+.interaction--hover-background-white:hover:not(:disabled) {
+  background-color: var(--color-white);
+}
+
+.interaction--hover-border-primary:hover:not(:disabled) {
+  border-color: var(--color-border-primary);
+}
+
+.interaction--hover-border-secondary:hover:not(:disabled) {
+  border-color: var(--color-border-secondary);
+}
+
+.interaction--hover-text-black:hover:not(:disabled) {
+  color: var(--color-black);
+}
+
+.interaction--hover-text-blue:hover:not(:disabled) {
+  color: var(--color-blue);
+}
+
+.interaction--hover-text-blue-soft:hover:not(:disabled) {
+  color: var(--color-blue-soft);
+}
+
+.interaction--hover-text-white:hover:not(:disabled) {
+  color: var(--color-white);
+}
+
+/* ======================================
+   PRESS
+====================================== */
+
+.interaction--press-move:active:not(:disabled) {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* ======================================
+   FOCUS RING
+====================================== */
+
+.interaction--focusRing-blue:focus-visible {
+  outline: var(--size-2) solid var(--color-blue);
+  outline-offset: var(--space-xxs);
+}
+
+.interaction--focusRing-blue-soft:focus-visible {
+  outline: var(--size-2) solid var(--color-blue-soft);
+  outline-offset: var(--space-xxs);
+}
+
+.interaction--focusRing-blue-transparent:focus-visible {
+  outline: var(--size-2) solid var(--color-blue-transparent);
+  outline-offset: var(--space-xxs);
+}
+
+.interaction--focusRing-white:focus-visible {
+  outline: var(--size-2) solid var(--color-white);
+  outline-offset: var(--space-xxs);
+}
+
+/* ======================================
    TRANSITION
 ====================================== */
 
 .interaction--transition-fast {
-    transition:
-      background-color var(--transition-fast),
-      color var(--transition-fast),
-      border-color var(--transition-fast),
-      box-shadow var(--transition-fast),
-      transform var(--transition-fast),
-      opacity var(--transition-fast);
-  }
-  
-  /* ======================================
-     DISABLED
-  ====================================== */
-  
-  .interaction:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+/* ======================================
+   DISABLED
+====================================== */
+
+.interaction:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

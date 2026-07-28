@@ -1,6 +1,14 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from "./Button";
+
+/* ======================================
+   META
+====================================== */
 
 const meta = {
   title: "Laboratory/Button",
@@ -10,6 +18,10 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+/* ======================================
+   STORIES
+====================================== */
 
 export const Default: Story = {
   render: () => (
@@ -21,7 +33,13 @@ export const Default: Story = {
 
 export const Sizes: Story = {
   render: () => (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        gap: "16px",
+        alignItems: "center",
+      }}
+    >
       <Button size="sm">
         Small
       </Button>
@@ -32,6 +50,39 @@ export const Sizes: Story = {
 
       <Button size="lg">
         Large
+      </Button>
+    </div>
+  ),
+};
+
+export const Variants: Story = {
+  render: () => (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "16px",
+        alignItems: "center",
+      }}
+    >
+      <Button variant="primary">
+        Primary
+      </Button>
+
+      <Button variant="secondary">
+        Secondary
+      </Button>
+
+      <Button variant="danger">
+        Danger
+      </Button>
+
+      <Button variant="ghost">
+        Ghost
+      </Button>
+
+      <Button variant="link">
+        Link
       </Button>
     </div>
   ),
@@ -64,4 +115,3 @@ export const BabyButton: Story = {
     </Button>
   ),
 };
-

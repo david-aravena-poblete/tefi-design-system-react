@@ -15,6 +15,13 @@ import type {
    | "md"
    | "lg";
  
+ export type ButtonVariant =
+   | "primary"
+   | "secondary"
+   | "danger"
+   | "ghost"
+   | "link";
+
  /* ======================================
     PROPS
  ====================================== */
@@ -23,4 +30,5 @@ import type {
    extends ComponentPropsWithoutRef<"button"> {
  
    size?: ButtonSize;
+   variant?: ButtonVariant;
  }
