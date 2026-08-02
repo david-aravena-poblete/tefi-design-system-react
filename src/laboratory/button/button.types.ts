@@ -2,33 +2,34 @@
    IMPORTS
 ====================================== */
 
-import type {
-   ComponentPropsWithoutRef,
- } from "react";
- 
- /* ======================================
-    TYPES
- ====================================== */
- 
- export type ButtonSize =
-   | "sm"
-   | "md"
-   | "lg";
- 
- export type ButtonVariant =
-   | "primary"
-   | "secondary"
-   | "danger"
-   | "ghost"
-   | "link";
+import type { ComponentPropsWithoutRef } from "react";
+import type { Size } from "@/foundations/design-system.types";
 
- /* ======================================
-    PROPS
- ====================================== */
- 
- export interface ButtonProps
-   extends ComponentPropsWithoutRef<"button"> {
- 
-   size?: ButtonSize;
-   variant?: ButtonVariant;
- }
+/* ======================================
+   TYPES
+====================================== */
+
+export type ButtonSize = Extract<
+  Size,
+  "sm" | "md"
+>;
+
+export type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "danger"
+  | "ghost"
+  | "link";
+
+/* ======================================
+   PROPS
+====================================== */
+
+export interface ButtonProps
+  extends Omit<
+    ComponentPropsWithoutRef<"button">,
+    "color"
+  > {
+  size?: ButtonSize;
+  variant?: ButtonVariant;
+}

@@ -1,15 +1,3 @@
-/* ======================================
-   SURFACE
-====================================== */
-
-export const SURFACES = [
-    "default",
-    "elevated",
-    "inverse",
-  ] as const;
-  
-  export type Surface = (typeof SURFACES)[number];
-  
   /* ======================================
      TEXT
   ====================================== */

@@ -22,6 +22,7 @@
    FOUNDATIONS
 ====================================== */
 
+@import url("./foundations/normalize.css");
 @import url("./foundations/states.css");
 @import url("./foundations/typography.css");
 @import url("./foundations/base.css");

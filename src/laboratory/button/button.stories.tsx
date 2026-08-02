@@ -3,7 +3,6 @@
 ====================================== */
 
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { Button } from "./Button";
 
 /* ======================================
@@ -46,10 +45,6 @@ export const Sizes: Story = {
 
       <Button size="md">
         Medium
-      </Button>
-
-      <Button size="lg">
-        Large
       </Button>
     </div>
   ),

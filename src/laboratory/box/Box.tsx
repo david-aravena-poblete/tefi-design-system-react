@@ -1,20 +1,56 @@
+/* ======================================
+   STYLES
+====================================== */
+
 import "./box.css";
 import "../interaction/interaction.css";
+
+/* ======================================
+   IMPORTS
+====================================== */
 
 import type {
   ComponentPropsWithoutRef,
   ElementType,
 } from "react";
 
-import { compose } from "../compose";
+import { compose } from "../core/compose";
 import { composeInteraction } from "../interaction/compose-interaction";
 
 import type { HtmlElement } from "../tokens";
+
 import type { BoxProps } from "./box.types";
+
+/* ======================================
+   CAPABILITIES
+====================================== */
+
+const boxCapabilities = [
+  "display",
+  "direction",
+  "between",
+  "align",
+  "justify",
+  "inside",
+  "insideX",
+  "insideY",
+  "outside",
+  "radius",
+  "maxWidth",
+  "minHeight",
+  "background",
+  "color",
+  "border",
+] as const;
+
+/* ======================================
+   COMPONENT
+====================================== */
 
 export function Box<T extends HtmlElement = "div">({
   children,
-  html = "div" as T,
+  as = "div" as T,
+  display,
   direction,
   align,
   justify,
@@ -26,40 +62,39 @@ export function Box<T extends HtmlElement = "div">({
   radius,
   maxWidth,
   minHeight,
-  surface,
   background,
-  text,
-  fontSize,
-  fontWeight,
+  color,
   border,
   hover,
   press,
   focusRing,
   transition,
   className,
-  ...htmlProps
+  ...elementProps
 }: BoxProps<T>) {
-  const Component = html as ElementType;
+  const Component = as as ElementType;
 
-  const capabilityClassName = compose({
-    direction,
-    align,
-    justify,
-    inside,
-    insideX,
-    insideY,
-    outside,
-    between,
-    radius,
-    maxWidth,
-    minHeight,
-    surface,
-    background,
-    text,
-    fontSize,
-    fontWeight,
-    border,
-  });
+  const capabilityClassName = compose(
+    "box",
+    boxCapabilities,
+    {
+      display,
+      direction,
+      align,
+      justify,
+      inside,
+      insideX,
+      insideY,
+      outside,
+      between,
+      radius,
+      maxWidth,
+      minHeight,
+      background,
+      color,
+      border,
+    },
+  );
 
   const interactionClassName = composeInteraction({
     hover,
@@ -77,7 +112,7 @@ export function Box<T extends HtmlElement = "div">({
     .join(" ");
 
   const componentProps =
-    htmlProps as ComponentPropsWithoutRef<T>;
+    elementProps as ComponentPropsWithoutRef<T>;
 
   return (
     <Component

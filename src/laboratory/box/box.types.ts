@@ -1,30 +1,37 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import type {
   ComponentPropsWithoutRef,
   ReactNode,
 } from "react";
 
 import type { InteractionProps } from "../interaction/interaction.types";
+
 import type {
   Align,
-  Border,
   Color,
   Dimension,
   Direction,
-  FontSize,
-  FontWeight,
+  Display,
   HtmlElement,
   Justify,
   Radius,
   Spacing,
-  Surface,
   Width,
 } from "../tokens";
+
+/* ======================================
+   TYPES
+====================================== */
 
 export type BoxProps<T extends HtmlElement = "div"> = {
   children?: ReactNode;
 
-  html?: T;
+  as?: T;
 
+  display?: Display;
   direction?: Direction;
   align?: Align;
   justify?: Justify;
@@ -36,13 +43,10 @@ export type BoxProps<T extends HtmlElement = "div"> = {
   between?: Spacing;
 
   radius?: Radius;
-  surface?: Surface;
   background?: Color;
-  text?: Color;
-  fontSize?: FontSize;
-  fontWeight?: FontWeight;
-  border?: Border;
+  color?: Color;
+  border?: Color;
   maxWidth?: Width;
   minHeight?: Dimension;
 } & InteractionProps &
-  Omit<ComponentPropsWithoutRef<T>, "children">;
+  Omit<ComponentPropsWithoutRef<T>, "children" | "as">

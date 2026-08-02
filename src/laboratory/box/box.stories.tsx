@@ -1,8 +1,16 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Box } from "./Box";
 
 import "./box.stories.css";
+
+/* ======================================
+   META
+====================================== */
 
 const meta = {
   title: "Laboratory/Box",
@@ -13,17 +21,21 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+/* ======================================
+   STORIES
+====================================== */
+
 export const Default: Story = {
   render: () => (
     <Box>
-      Hola BabyBox 👶
+      Hola Box 👶
     </Box>
   ),
 };
 
 export const Html: Story = {
   render: () => (
-    <Box html="section">
+    <Box as="section">
       Soy un &lt;section&gt; 👶
     </Box>
   ),
@@ -51,23 +63,7 @@ export const DirectionColumn: Story = {
 
 export const Between: Story = {
   render: () => (
-    <Box
-      direction="row"
-      between="md"
-    >
-      <div>A</div>
-      <div>B</div>
-      <div>C</div>
-    </Box>
-  ),
-};
-
-export const BetweenColumn: Story = {
-  render: () => (
-    <Box
-      direction="column"
-      between="md"
-    >
+    <Box direction="row" between="md">
       <div>A</div>
       <div>B</div>
       <div>C</div>
@@ -86,18 +82,6 @@ export const AlignCenter: Story = {
       <div className="story-align-item-sm">A</div>
       <div className="story-align-item-md">B</div>
       <div className="story-align-item-lg">C</div>
-    </Box>
-  ),
-};
-
-export const NativeProps: Story = {
-  render: () => (
-    <Box
-      id="babybox-native-test"
-      className="babybox-test"
-      aria-label="BabyBox native props test"
-    >
-      BabyBox acepta HTML nativo 👶
     </Box>
   ),
 };
@@ -152,36 +136,15 @@ export const Radius: Story = {
   ),
 };
 
-export const Surface: Story = {
+export const Background: Story = {
   render: () => (
     <Box
-      direction="column"
-      between="md"
+      inside="lg"
+      radius="lg"
+      background="blue"
+      color="white"
     >
-      <Box
-        inside="lg"
-        radius="lg"
-        surface="default"
-      >
-        Default
-      </Box>
-
-      <Box
-        inside="lg"
-        radius="lg"
-        surface="elevated"
-      >
-        Elevated
-      </Box>
-
-      <Box
-        inside="lg"
-        radius="lg"
-        surface="inverse"
-        text="white"
-      >
-        Inverse
-      </Box>
+      Background + Color 👶
     </Box>
   ),
 };
@@ -191,8 +154,7 @@ export const Border: Story = {
     <Box
       inside="lg"
       radius="lg"
-      surface="default"
-      border="default"
+      border="gray"
     >
       Tengo borde 👶
     </Box>
@@ -205,16 +167,27 @@ export const MaxWidth: Story = {
       direction="column"
       inside="lg"
       radius="lg"
-      surface="elevated"
-      border="default"
+      background="gray-soft"
+      border="gray"
       maxWidth="sm"
     >
-      <strong>BabyBox con límite 👶</strong>
+      <strong>Box con límite 👶</strong>
 
       <span>
-        Esta Box puede crecer, pero no debería superar el ancho definido por width-sm.
+        Esta Box puede crecer, pero no debería superar el ancho definido.
       </span>
     </Box>
   ),
 };
 
+export const NativeProps: Story = {
+  render: () => (
+    <Box
+      id="box-native-test"
+      className="box-test"
+      aria-label="Box native props test"
+    >
+      Box acepta HTML nativo 👶
+    </Box>
+  ),
+};

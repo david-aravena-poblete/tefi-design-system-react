@@ -17,7 +17,7 @@ const interactionNames = [
 const compositionNames = [
   "background",
   "border",
-  "text",
+  "color",
 ] as const;
 
 /* ======================================

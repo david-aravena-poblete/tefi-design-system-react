@@ -46,19 +46,19 @@
   border-color: var(--color-border-secondary);
 }
 
-.interaction--hover-text-black:hover:not(:disabled) {
+.interaction--hover-color-black:hover:not(:disabled) {
   color: var(--color-black);
 }
 
-.interaction--hover-text-blue:hover:not(:disabled) {
+.interaction--hover-color-blue:hover:not(:disabled) {
   color: var(--color-blue);
 }
 
-.interaction--hover-text-blue-soft:hover:not(:disabled) {
+.interaction--hover-color-blue-soft:hover:not(:disabled) {
   color: var(--color-blue-soft);
 }
 
-.interaction--hover-text-white:hover:not(:disabled) {
+.interaction--hover-color-white:hover:not(:disabled) {
   color: var(--color-white);
 }
 

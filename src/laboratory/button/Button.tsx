@@ -3,6 +3,7 @@
 ====================================== */
 
 import { Box } from "@/laboratory/box";
+import { Text } from "@/laboratory/text/Text";
 
 import type { ButtonProps } from "./button.types";
 
@@ -16,82 +17,100 @@ export function Button({
   variant = "primary",
   ...buttonProps
 }: ButtonProps) {
-  const sizes = {
+  const buttonSizes = {
     sm: {
       insideX: "sm",
       insideY: "xs",
-      fontSize: "sm",
       minHeight: "32",
     },
+
     md: {
       insideX: "md",
       insideY: "sm",
-      fontSize: "md",
       minHeight: "40",
-    },
-    lg: {
-      insideX: "lg",
-      insideY: "md",
-      fontSize: "lg",
-      minHeight: "48",
     },
   } as const;
 
-  const variants = {
+  const textSizes = {
+    sm: "sm",
+    md: "md",
+  } as const;
+
+  const buttonVariants = {
     primary: {
       background: "blue",
-      text: "white",
-      border: "none",
       hover: {
         background: "blue-soft",
       },
     },
-  
+
     secondary: {
       background: "gray-soft",
-      text: "black",
-      border: "primary",
+      border: "gray",
       hover: {
         background: "gray",
-        border: "secondary",
       },
     },
-  
+
     danger: {
       background: "red",
-      text: "white",
-      border: "none",
       hover: {
         background: "red-strong",
       },
     },
-  
+
     ghost: {
       background: "transparent",
-      text: "black",
-      border: "none",
       hover: {
         background: "soft",
       },
     },
-  
+
     link: {
       background: "transparent",
-      text: "blue",
-      border: "none",
+      color: "blue",
       insideX: "none",
       insideY: "none",
+      outside: "none",
       minHeight: "auto",
       radius: "none",
       hover: {
-        text: "blue-soft",
+        color: "blue-soft",
       },
     },
   } as const;
 
+  const textVariants = {
+    primary: {
+      color: "white",
+    },
+
+    secondary: {
+      color: "black",
+    },
+
+    danger: {
+      color: "white",
+    },
+
+    ghost: {
+      color: "black",
+    },
+
+    link: {},
+  } as const;
+
+  const boxProps =
+    variant === "link"
+      ? buttonVariants.link
+      : {
+          ...buttonSizes[size],
+          ...buttonVariants[variant],
+        };
+
   return (
     <Box
-      html="button"
+      as="button"
       direction="row"
       align="center"
       justify="center"
@@ -99,12 +118,15 @@ export function Button({
       press="move"
       focusRing="blue-transparent"
       transition="fast"
-      fontWeight="medium"
-      {...sizes[size]}
-      {...variants[variant]}
+      {...boxProps}
       {...buttonProps}
     >
-      {children}
+      <Text
+        size={textSizes[size]}
+        {...textVariants[variant]}
+      >
+        {children}
+      </Text>
     </Box>
   );
 }

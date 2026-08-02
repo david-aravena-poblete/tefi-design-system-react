@@ -4,6 +4,7 @@
 
 export const SPACINGS = [
     "none",
+    "xxs",
     "xs",
     "sm",
     "md",
@@ -71,7 +72,7 @@ export const COLORS = [
    "red",
    "red-strong",
    "transparent",
-   "soft"
+   "soft",
  ] as const;
  
  export type Color = (typeof COLORS)[number];
