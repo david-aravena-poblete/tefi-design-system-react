@@ -2,10 +2,11 @@
    TYPES
 ====================================== */
 
-type ComposeProps = Record<
-  string,
-  string | number | boolean | undefined
->;
+type ComposeValue =
+  | string
+  | number
+  | boolean
+  | undefined;
 
 /* ======================================
    CONSTANTS
@@ -23,17 +24,17 @@ const CSS_NAMESPACE = "laboratory";
    COMPOSE
 ====================================== */
 
-export function compose(
+export function compose<T extends object>(
   prefix: string,
-  capabilities: readonly string[],
-  props: ComposeProps,
+  capabilities: readonly (keyof T)[],
+  props: T,
 ) {
   const component = CSS_NAMESPACE
     ? `${CSS_NAMESPACE}-${prefix}`
     : prefix;
 
   const classes = capabilities.flatMap((name) => {
-    const value = props[name];
+    const value = props[name] as ComposeValue;
 
     if (
       value === undefined ||
@@ -43,7 +44,7 @@ export function compose(
       return [];
     }
 
-    return [`${component}--${name}-${value}`];
+    return [`${component}--${String(name)}-${value}`];
   });
 
   return [

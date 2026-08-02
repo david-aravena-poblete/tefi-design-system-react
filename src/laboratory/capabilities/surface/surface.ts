@@ -4,34 +4,29 @@
 
 import { compose } from "@/laboratory/core/compose";
 
-import type { LayoutProps } from "./layout.types";
+import type { SurfaceProps } from "./surface.types";
 
 /* ======================================
    CAPABILITIES
 ====================================== */
 
-const layoutCapabilities = [
-  "display",
-  "direction",
-  "align",
-  "justify",
-  "between",
-  "inside",
-  "insideX",
-  "insideY",
-  "outside",
-  "maxWidth",
-  "minHeight",
+const surfaceCapabilities = [
+  "background",
+  "text",
+  "border",
+  "borderWidth",
+  "borderStyle",
+  "radius",
 ] as const;
 
 /* ======================================
-   LAYOUT
+   SURFACE
 ====================================== */
 
-export function layout(props: LayoutProps) {
+export function surface(props: SurfaceProps) {
   return compose(
-    "layout",
-    layoutCapabilities,
+    "surface",
+    surfaceCapabilities,
     props,
   );
 }

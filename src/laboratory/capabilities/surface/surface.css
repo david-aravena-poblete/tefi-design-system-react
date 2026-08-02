@@ -1,0 +1,135 @@
+/* ======================================
+   BACKGROUND
+====================================== */
+
+.surface--background-blue {
+    background-color: var(--color-blue);
+  }
+  
+  .surface--background-blue-soft {
+    background-color: var(--color-blue-soft);
+  }
+  
+  .surface--background-gray {
+    background-color: var(--color-bg-tertiary);
+  }
+  
+  .surface--background-gray-soft {
+    background-color: var(--color-bg-secondary);
+  }
+  
+  .surface--background-red {
+    background-color: var(--color-danger-base);
+  }
+  
+  .surface--background-red-strong {
+    background-color: var(--color-danger-hover);
+  }
+  
+  .surface--background-soft {
+    background-color: var(--interaction-hover-bg);
+  }
+  
+  .surface--background-transparent {
+    background-color: transparent;
+  }
+  
+  /* ======================================
+     TEXT
+  ====================================== */
+  
+  .surface--text-white {
+    color: var(--color-white);
+  }
+  
+  .surface--text-black {
+    color: var(--color-black);
+  }
+  
+  .surface--text-blue {
+    color: var(--color-blue);
+  }
+  
+  .surface--text-blue-soft {
+    color: var(--color-blue-soft);
+  }
+  
+  .surface--text-gray {
+    color: var(--color-text-secondary);
+  }
+  
+  .surface--text-red {
+    color: var(--color-danger-base);
+  }
+  
+  .surface--text-red-strong {
+    color: var(--color-danger-hover);
+  }
+  
+  /* ======================================
+     BORDER
+  ====================================== */
+  
+  .surface--border-blue {
+    border-color: var(--color-blue);
+  }
+  
+  .surface--border-gray {
+    border-color: var(--color-border-secondary);
+  }
+  
+  .surface--border-red {
+    border-color: var(--color-danger-base);
+  }
+  
+  /* ======================================
+     BORDER WIDTH
+  ====================================== */
+  
+  .surface--borderWidth-none {
+    border-width: 0;
+  }
+  
+  .surface--borderWidth-1 {
+    border-width: 1px;
+  }
+  
+  .surface--borderWidth-2 {
+    border-width: 2px;
+  }
+  
+  /* ======================================
+     BORDER STYLE
+  ====================================== */
+  
+  .surface--borderStyle-solid {
+    border-style: solid;
+  }
+  
+  .surface--borderStyle-dashed {
+    border-style: dashed;
+  }
+  
+  /* ======================================
+     RADIUS
+  ====================================== */
+  
+  .surface--radius-none {
+    border-radius: var(--radius-none);
+  }
+  
+  .surface--radius-sm {
+    border-radius: var(--radius-sm);
+  }
+  
+  .surface--radius-md {
+    border-radius: var(--radius-md);
+  }
+  
+  .surface--radius-lg {
+    border-radius: var(--radius-lg);
+  }
+  
+  .surface--radius-full {
+    border-radius: var(--radius-full);
+  }

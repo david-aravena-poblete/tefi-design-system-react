@@ -1,0 +1,263 @@
+/* ======================================
+   LAYOUT
+====================================== */
+
+.layout {
+    display: flex;
+  }
+  
+  /* ======================================
+     DISPLAY
+  ====================================== */
+  
+  .layout--display-flex {
+    display: flex;
+  }
+  
+  .layout--display-inline-flex {
+    display: inline-flex;
+  }
+  
+  /* ======================================
+     DIRECTION
+  ====================================== */
+  
+  .layout--direction-row {
+    flex-direction: row;
+  }
+  
+  .layout--direction-column {
+    flex-direction: column;
+  }
+  
+  /* ======================================
+     BETWEEN
+  ====================================== */
+  
+  .layout--between-none {
+    gap: 0;
+  }
+  
+  .layout--between-xs {
+    gap: var(--space-xs);
+  }
+  
+  .layout--between-sm {
+    gap: var(--space-sm);
+  }
+  
+  .layout--between-md {
+    gap: var(--space-md);
+  }
+  
+  .layout--between-lg {
+    gap: var(--space-lg);
+  }
+  
+  .layout--between-xl {
+    gap: var(--space-xl);
+  }
+  
+  /* ======================================
+     ALIGN
+  ====================================== */
+  
+  .layout--align-start {
+    align-items: flex-start;
+  }
+  
+  .layout--align-center {
+    align-items: center;
+  }
+  
+  .layout--align-end {
+    align-items: flex-end;
+  }
+  
+  .layout--align-stretch {
+    align-items: stretch;
+  }
+  
+  .layout--align-baseline {
+    align-items: baseline;
+  }
+  
+  /* ======================================
+     JUSTIFY
+  ====================================== */
+  
+  .layout--justify-start {
+    justify-content: flex-start;
+  }
+  
+  .layout--justify-center {
+    justify-content: center;
+  }
+  
+  .layout--justify-end {
+    justify-content: flex-end;
+  }
+  
+  .layout--justify-between {
+    justify-content: space-between;
+  }
+  
+  /* ======================================
+     INSIDE
+  ====================================== */
+  
+  .layout--inside-none {
+    padding: 0;
+  }
+  
+  .layout--inside-xs {
+    padding: var(--space-xs);
+  }
+  
+  .layout--inside-sm {
+    padding: var(--space-sm);
+  }
+  
+  .layout--inside-md {
+    padding: var(--space-md);
+  }
+  
+  .layout--inside-lg {
+    padding: var(--space-lg);
+  }
+  
+  .layout--inside-xl {
+    padding: var(--space-xl);
+  }
+  
+  /* ======================================
+     INSIDE X
+  ====================================== */
+  
+  .layout--insideX-none {
+    padding-inline: 0;
+  }
+  
+  .layout--insideX-xs {
+    padding-inline: var(--space-xs);
+  }
+  
+  .layout--insideX-sm {
+    padding-inline: var(--space-sm);
+  }
+  
+  .layout--insideX-md {
+    padding-inline: var(--space-md);
+  }
+  
+  .layout--insideX-lg {
+    padding-inline: var(--space-lg);
+  }
+  
+  .layout--insideX-xl {
+    padding-inline: var(--space-xl);
+  }
+  
+  /* ======================================
+     INSIDE Y
+  ====================================== */
+  
+  .layout--insideY-none {
+    padding-block: 0;
+  }
+  
+  .layout--insideY-xs {
+    padding-block: var(--space-xs);
+  }
+  
+  .layout--insideY-sm {
+    padding-block: var(--space-sm);
+  }
+  
+  .layout--insideY-md {
+    padding-block: var(--space-md);
+  }
+  
+  .layout--insideY-lg {
+    padding-block: var(--space-lg);
+  }
+  
+  .layout--insideY-xl {
+    padding-block: var(--space-xl);
+  }
+  
+  /* ======================================
+     OUTSIDE
+  ====================================== */
+  
+  .layout--outside-none {
+    margin: 0;
+  }
+  
+  .layout--outside-xs {
+    margin: var(--space-xs);
+  }
+  
+  .layout--outside-sm {
+    margin: var(--space-sm);
+  }
+  
+  .layout--outside-md {
+    margin: var(--space-md);
+  }
+  
+  .layout--outside-lg {
+    margin: var(--space-lg);
+  }
+  
+  .layout--outside-xl {
+    margin: var(--space-xl);
+  }
+  
+  /* ======================================
+     MAX WIDTH
+  ====================================== */
+  
+  .layout--maxWidth-xs {
+    max-width: var(--width-xs);
+  }
+  
+  .layout--maxWidth-sm {
+    max-width: var(--width-sm);
+  }
+  
+  .layout--maxWidth-md {
+    max-width: var(--width-md);
+  }
+  
+  .layout--maxWidth-lg {
+    max-width: var(--width-lg);
+  }
+  
+  .layout--maxWidth-xl {
+    max-width: var(--width-xl);
+  }
+  
+  .layout--maxWidth-2xl {
+    max-width: var(--width-2xl);
+  }
+  
+  /* ======================================
+     MIN HEIGHT
+  ====================================== */
+  
+  .layout--minHeight-auto {
+    min-height: auto;
+  }
+  
+  .layout--minHeight-32 {
+    min-height: var(--size-32);
+  }
+  
+  .layout--minHeight-40 {
+    min-height: var(--size-40);
+  }
+  
+  .layout--minHeight-48 {
+    min-height: var(--size-48);
+  }
