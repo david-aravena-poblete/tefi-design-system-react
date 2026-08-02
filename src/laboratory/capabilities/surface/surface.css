@@ -2,35 +2,35 @@
    BACKGROUND
 ====================================== */
 
-.surface--background-blue {
+.tefi-surface--background-blue {
     background-color: var(--color-blue);
   }
   
-  .surface--background-blue-soft {
+  .tefi-surface--background-blue-soft {
     background-color: var(--color-blue-soft);
   }
   
-  .surface--background-gray {
+  .tefi-surface--background-gray {
     background-color: var(--color-bg-tertiary);
   }
   
-  .surface--background-gray-soft {
+  .tefi-surface--background-gray-soft {
     background-color: var(--color-bg-secondary);
   }
   
-  .surface--background-red {
+  .tefi-surface--background-red {
     background-color: var(--color-danger-base);
   }
   
-  .surface--background-red-strong {
+  .tefi-surface--background-red-strong {
     background-color: var(--color-danger-hover);
   }
   
-  .surface--background-soft {
+  .tefi-surface--background-soft {
     background-color: var(--interaction-hover-bg);
   }
   
-  .surface--background-transparent {
+  .tefi-surface--background-transparent {
     background-color: transparent;
   }
   
@@ -38,31 +38,31 @@
      TEXT
   ====================================== */
   
-  .surface--text-white {
+  .tefi-surface--text-white {
     color: var(--color-white);
   }
   
-  .surface--text-black {
+  .tefi-surface--text-black {
     color: var(--color-black);
   }
   
-  .surface--text-blue {
+  .tefi-surface--text-blue {
     color: var(--color-blue);
   }
   
-  .surface--text-blue-soft {
+  .tefi-surface--text-blue-soft {
     color: var(--color-blue-soft);
   }
   
-  .surface--text-gray {
+  .tefi-surface--text-gray {
     color: var(--color-text-secondary);
   }
   
-  .surface--text-red {
+  .tefi-surface--text-red {
     color: var(--color-danger-base);
   }
   
-  .surface--text-red-strong {
+  .tefi-surface--text-red-strong {
     color: var(--color-danger-hover);
   }
   
@@ -70,15 +70,15 @@
      BORDER
   ====================================== */
   
-  .surface--border-blue {
+  .tefi-surface--border-blue {
     border-color: var(--color-blue);
   }
   
-  .surface--border-gray {
+  .tefi-surface--border-gray {
     border-color: var(--color-border-secondary);
   }
   
-  .surface--border-red {
+  .tefi-surface--border-red {
     border-color: var(--color-danger-base);
   }
   
@@ -86,15 +86,15 @@
      BORDER WIDTH
   ====================================== */
   
-  .surface--borderWidth-none {
+  .tefi-surface--borderWidth-none {
     border-width: 0;
   }
   
-  .surface--borderWidth-1 {
+  .tefi-surface--borderWidth-1 {
     border-width: 1px;
   }
   
-  .surface--borderWidth-2 {
+  .tefi-surface--borderWidth-2 {
     border-width: 2px;
   }
   
@@ -102,11 +102,11 @@
      BORDER STYLE
   ====================================== */
   
-  .surface--borderStyle-solid {
+  .tefi-surface--borderStyle-solid {
     border-style: solid;
   }
   
-  .surface--borderStyle-dashed {
+  .tefi-surface--borderStyle-dashed {
     border-style: dashed;
   }
   
@@ -114,22 +114,22 @@
      RADIUS
   ====================================== */
   
-  .surface--radius-none {
+  .tefi-surface--radius-none {
     border-radius: var(--radius-none);
   }
   
-  .surface--radius-sm {
+  .tefi-surface--radius-sm {
     border-radius: var(--radius-sm);
   }
   
-  .surface--radius-md {
+  .tefi-surface--radius-md {
     border-radius: var(--radius-md);
   }
   
-  .surface--radius-lg {
+  .tefi-surface--radius-lg {
     border-radius: var(--radius-lg);
   }
   
-  .surface--radius-full {
+  .tefi-surface--radius-full {
     border-radius: var(--radius-full);
   }

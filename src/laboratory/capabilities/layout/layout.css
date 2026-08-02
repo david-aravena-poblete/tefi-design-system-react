@@ -2,7 +2,7 @@
    LAYOUT
 ====================================== */
 
-.layout {
+.tefi-layout {
     display: flex;
   }
   
@@ -10,11 +10,11 @@
      DISPLAY
   ====================================== */
   
-  .layout--display-flex {
+  .tefi-layout--display-flex {
     display: flex;
   }
   
-  .layout--display-inline-flex {
+  .tefi-layout--display-inline-flex {
     display: inline-flex;
   }
   
@@ -22,11 +22,11 @@
      DIRECTION
   ====================================== */
   
-  .layout--direction-row {
+  .tefi-layout--direction-row {
     flex-direction: row;
   }
   
-  .layout--direction-column {
+  .tefi-layout--direction-column {
     flex-direction: column;
   }
   
@@ -34,27 +34,27 @@
      BETWEEN
   ====================================== */
   
-  .layout--between-none {
+  .tefi-layout--between-none {
     gap: 0;
   }
   
-  .layout--between-xs {
+  .tefi-layout--between-xs {
     gap: var(--space-xs);
   }
   
-  .layout--between-sm {
+  .tefi-layout--between-sm {
     gap: var(--space-sm);
   }
   
-  .layout--between-md {
+  .tefi-layout--between-md {
     gap: var(--space-md);
   }
   
-  .layout--between-lg {
+  .tefi-layout--between-lg {
     gap: var(--space-lg);
   }
   
-  .layout--between-xl {
+  .tefi-layout--between-xl {
     gap: var(--space-xl);
   }
   
@@ -62,23 +62,23 @@
      ALIGN
   ====================================== */
   
-  .layout--align-start {
+  .tefi-layout--align-start {
     align-items: flex-start;
   }
   
-  .layout--align-center {
+  .tefi-layout--align-center {
     align-items: center;
   }
   
-  .layout--align-end {
+  .tefi-layout--align-end {
     align-items: flex-end;
   }
   
-  .layout--align-stretch {
+  .tefi-layout--align-stretch {
     align-items: stretch;
   }
   
-  .layout--align-baseline {
+  .tefi-layout--align-baseline {
     align-items: baseline;
   }
   
@@ -86,19 +86,19 @@
      JUSTIFY
   ====================================== */
   
-  .layout--justify-start {
+  .tefi-layout--justify-start {
     justify-content: flex-start;
   }
   
-  .layout--justify-center {
+  .tefi-layout--justify-center {
     justify-content: center;
   }
   
-  .layout--justify-end {
+  .tefi-layout--justify-end {
     justify-content: flex-end;
   }
   
-  .layout--justify-between {
+  .tefi-layout--justify-between {
     justify-content: space-between;
   }
   
@@ -106,27 +106,27 @@
      INSIDE
   ====================================== */
   
-  .layout--inside-none {
+  .tefi-layout--inside-none {
     padding: 0;
   }
   
-  .layout--inside-xs {
+  .tefi-layout--inside-xs {
     padding: var(--space-xs);
   }
   
-  .layout--inside-sm {
+  .tefi-layout--inside-sm {
     padding: var(--space-sm);
   }
   
-  .layout--inside-md {
+  .tefi-layout--inside-md {
     padding: var(--space-md);
   }
   
-  .layout--inside-lg {
+  .tefi-layout--inside-lg {
     padding: var(--space-lg);
   }
   
-  .layout--inside-xl {
+  .tefi-layout--inside-xl {
     padding: var(--space-xl);
   }
   
@@ -134,27 +134,27 @@
      INSIDE X
   ====================================== */
   
-  .layout--insideX-none {
+  .tefi-layout--insideX-none {
     padding-inline: 0;
   }
   
-  .layout--insideX-xs {
+  .tefi-layout--insideX-xs {
     padding-inline: var(--space-xs);
   }
   
-  .layout--insideX-sm {
+  .tefi-layout--insideX-sm {
     padding-inline: var(--space-sm);
   }
   
-  .layout--insideX-md {
+  .tefi-layout--insideX-md {
     padding-inline: var(--space-md);
   }
   
-  .layout--insideX-lg {
+  .tefi-layout--insideX-lg {
     padding-inline: var(--space-lg);
   }
   
-  .layout--insideX-xl {
+  .tefi-layout--insideX-xl {
     padding-inline: var(--space-xl);
   }
   
@@ -162,27 +162,27 @@
      INSIDE Y
   ====================================== */
   
-  .layout--insideY-none {
+  .tefi-layout--insideY-none {
     padding-block: 0;
   }
   
-  .layout--insideY-xs {
+  .tefi-layout--insideY-xs {
     padding-block: var(--space-xs);
   }
   
-  .layout--insideY-sm {
+  .tefi-layout--insideY-sm {
     padding-block: var(--space-sm);
   }
   
-  .layout--insideY-md {
+  .tefi-layout--insideY-md {
     padding-block: var(--space-md);
   }
   
-  .layout--insideY-lg {
+  .tefi-layout--insideY-lg {
     padding-block: var(--space-lg);
   }
   
-  .layout--insideY-xl {
+  .tefi-layout--insideY-xl {
     padding-block: var(--space-xl);
   }
   
@@ -190,27 +190,27 @@
      OUTSIDE
   ====================================== */
   
-  .layout--outside-none {
+  .tefi-layout--outside-none {
     margin: 0;
   }
   
-  .layout--outside-xs {
+  .tefi-layout--outside-xs {
     margin: var(--space-xs);
   }
   
-  .layout--outside-sm {
+  .tefi-layout--outside-sm {
     margin: var(--space-sm);
   }
   
-  .layout--outside-md {
+  .tefi-layout--outside-md {
     margin: var(--space-md);
   }
   
-  .layout--outside-lg {
+  .tefi-layout--outside-lg {
     margin: var(--space-lg);
   }
   
-  .layout--outside-xl {
+  .tefi-layout--outside-xl {
     margin: var(--space-xl);
   }
   
@@ -218,27 +218,27 @@
      MAX WIDTH
   ====================================== */
   
-  .layout--maxWidth-xs {
+  .tefi-layout--maxWidth-xs {
     max-width: var(--width-xs);
   }
   
-  .layout--maxWidth-sm {
+  .tefi-layout--maxWidth-sm {
     max-width: var(--width-sm);
   }
   
-  .layout--maxWidth-md {
+  .tefi-layout--maxWidth-md {
     max-width: var(--width-md);
   }
   
-  .layout--maxWidth-lg {
+  .tefi-layout--maxWidth-lg {
     max-width: var(--width-lg);
   }
   
-  .layout--maxWidth-xl {
+  .tefi-layout--maxWidth-xl {
     max-width: var(--width-xl);
   }
   
-  .layout--maxWidth-2xl {
+  .tefi-layout--maxWidth-2xl {
     max-width: var(--width-2xl);
   }
   
@@ -246,18 +246,18 @@
      MIN HEIGHT
   ====================================== */
   
-  .layout--minHeight-auto {
+  .tefi-layout--minHeight-auto {
     min-height: auto;
   }
   
-  .layout--minHeight-32 {
+  .tefi-layout--minHeight-32 {
     min-height: var(--size-32);
   }
   
-  .layout--minHeight-40 {
+  .tefi-layout--minHeight-40 {
     min-height: var(--size-40);
   }
   
-  .layout--minHeight-48 {
+  .tefi-layout--minHeight-48 {
     min-height: var(--size-48);
   }

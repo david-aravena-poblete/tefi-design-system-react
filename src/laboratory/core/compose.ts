@@ -18,7 +18,7 @@ type ComposeValue =
  *
  * Remove once the migration is complete.
  */
-const CSS_NAMESPACE = "laboratory";
+const CSS_NAMESPACE = "tefi";
 
 /* ======================================
    COMPOSE
