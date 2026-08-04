@@ -2,10 +2,19 @@
    TYPES
 ====================================== */
 
-type ComposeValue =
+type ComposePrimitive =
   | string
   | number
-  | boolean
+  | boolean;
+
+type ComposeObject = Record<
+  string,
+  ComposePrimitive | undefined
+>;
+
+type ComposeValue =
+  | ComposePrimitive
+  | ComposeObject
   | undefined;
 
 /* ======================================
@@ -44,7 +53,38 @@ export function compose<T extends object>(
       return [];
     }
 
-    return [`${component}--${String(name)}-${value}`];
+    /* ======================================
+       OBJECT
+    ====================================== */
+
+    if (
+      typeof value === "object" &&
+      !Array.isArray(value)
+    ) {
+      return Object.entries(value).flatMap(
+        ([property, nestedValue]) => {
+          if (
+            nestedValue === undefined ||
+            nestedValue === null ||
+            nestedValue === false
+          ) {
+            return [];
+          }
+
+          return [
+            `${component}--${String(name)}-${property}-${nestedValue}`,
+          ];
+        },
+      );
+    }
+
+    /* ======================================
+       PRIMITIVE
+    ====================================== */
+
+    return [
+      `${component}--${String(name)}-${value}`,
+    ];
   });
 
   return [

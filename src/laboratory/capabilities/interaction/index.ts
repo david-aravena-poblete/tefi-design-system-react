@@ -2,12 +2,12 @@
    STYLES
 ====================================== */
 
-import "./surface.css";
+import "./interaction.css";
 
 /* ======================================
    EXPORTS
 ====================================== */
 
-export * from "./surface";
-export * from "./surface.types";
-export * from "./surface.skill";
+export * from "./interaction";
+export * from "./interaction.types";
+export * from "./interaction.skill";

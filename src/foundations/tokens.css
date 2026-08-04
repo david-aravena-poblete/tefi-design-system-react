@@ -83,6 +83,44 @@ Brand tokens:
   --font-weight-bold: 700;
 
   /* ======================================
+   TYPOGRAPHY
+====================================== */
+
+/* BODY */
+
+--typography-body-sm-size: var(--font-sm);
+--typography-body-sm-weight: var(--font-weight-regular);
+--typography-body-sm-line-height: var(--line-normal);
+
+--typography-body-md-size: var(--font-md);
+--typography-body-md-weight: var(--font-weight-regular);
+--typography-body-md-line-height: var(--line-normal);
+
+--typography-body-lg-size: var(--font-lg);
+--typography-body-lg-weight: var(--font-weight-regular);
+--typography-body-lg-line-height: var(--line-normal);
+
+/* HEADING */
+
+--typography-heading-sm-size: var(--font-xl);
+--typography-heading-sm-weight: var(--font-weight-semibold);
+--typography-heading-sm-line-height: var(--line-tight);
+
+--typography-heading-md-size: var(--font-2xl);
+--typography-heading-md-weight: var(--font-weight-bold);
+--typography-heading-md-line-height: var(--line-tight);
+
+--typography-heading-lg-size: var(--font-3xl);
+--typography-heading-lg-weight: var(--font-weight-bold);
+--typography-heading-lg-line-height: var(--line-tight);
+
+/* CAPTION */
+
+--typography-caption-size: var(--font-xs);
+--typography-caption-weight: var(--font-weight-medium);
+--typography-caption-line-height: var(--line-normal);
+
+  /* ======================================
      FOUNDATIONS — SHADOWS
   ====================================== */
 

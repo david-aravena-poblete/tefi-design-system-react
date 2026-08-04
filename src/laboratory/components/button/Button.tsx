@@ -27,39 +27,29 @@ import type { ButtonProps } from "./button.types";
 
 const defaultLayout: LayoutProps = {
   display: "flex",
-
   direction: "row",
-
   align: "center",
-
   justify: "center",
-
   insideX: "md",
-
   insideY: "sm",
-
   minHeight: "40",
 };
 
 const defaultTypography: TypographyProps = {
   variant: "body-md",
+  weight: "medium",
 };
 
 const defaultSurface: SurfaceProps = {
   background: "blue",
-
   text: "white",
-
   radius: "md",
 };
 
 const defaultInteraction: InteractionProps = {
   press: "move",
-
   focusRing: "blue",
-
   transition: "fast",
-
   hover: {
     background: "blue-soft",
   },
@@ -73,30 +63,27 @@ export function Button<
   T extends HtmlElement = "button",
 >({
   children,
-
   as,
-
   layout: layoutProps,
-
   typography: typographyProps,
-
   surface: surfaceProps,
-
   interaction: interactionProps,
-
   className,
-
   ...props
 }: ButtonProps<T>) {
   const Component = html({
     as,
   }) as ElementType;
 
+  const finalLayout = {
+    ...defaultLayout,
+    ...layoutProps,
+  };
+
+  console.log("Button Layout:", finalLayout);
+
   const buttonClassName = composer(
-    layout({
-      ...defaultLayout,
-      ...layoutProps,
-    }),
+    layout(finalLayout),
 
     typography({
       ...defaultTypography,

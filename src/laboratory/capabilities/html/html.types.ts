@@ -1,13 +1,13 @@
 /* ======================================
-   STYLES
+   IMPORTS
 ====================================== */
 
-import "./surface.css";
+import type { HtmlElement } from "@/laboratory/types";
 
 /* ======================================
-   EXPORTS
+   HTML PROPS
 ====================================== */
 
-export * from "./surface";
-export * from "./surface.types";
-export * from "./surface.skill";
+export interface HtmlProps {
+  as?: HtmlElement;
+}

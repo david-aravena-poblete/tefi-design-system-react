@@ -1,0 +1,118 @@
+/* ======================================
+   HOVER
+====================================== */
+
+.tefi-interaction--hover-background-blue:hover:not(:disabled) {
+    background-color: var(--color-blue);
+  }
+  
+  .tefi-interaction--hover-background-blue-soft:hover:not(:disabled) {
+    background-color: var(--color-blue-soft);
+  }
+  
+  .tefi-interaction--hover-background-gray:hover:not(:disabled) {
+    background-color: var(--color-bg-tertiary);
+  }
+  
+  .tefi-interaction--hover-background-gray-soft:hover:not(:disabled) {
+    background-color: var(--color-bg-secondary);
+  }
+  
+  .tefi-interaction--hover-background-red:hover:not(:disabled) {
+    background-color: var(--color-danger-base);
+  }
+  
+  .tefi-interaction--hover-background-red-strong:hover:not(:disabled) {
+    background-color: var(--color-danger-hover);
+  }
+  
+  .tefi-interaction--hover-background-soft:hover:not(:disabled) {
+    background-color: var(--interaction-hover-bg);
+  }
+  
+  .tefi-interaction--hover-background-transparent:hover:not(:disabled) {
+    background-color: transparent;
+  }
+  
+  .tefi-interaction--hover-background-white:hover:not(:disabled) {
+    background-color: var(--color-white);
+  }
+  
+  .tefi-interaction--hover-border-primary:hover:not(:disabled) {
+    border-color: var(--color-border-primary);
+  }
+  
+  .tefi-interaction--hover-border-secondary:hover:not(:disabled) {
+    border-color: var(--color-border-secondary);
+  }
+  
+  .tefi-interaction--hover-color-black:hover:not(:disabled) {
+    color: var(--color-black);
+  }
+  
+  .tefi-interaction--hover-color-blue:hover:not(:disabled) {
+    color: var(--color-blue);
+  }
+  
+  .tefi-interaction--hover-color-blue-soft:hover:not(:disabled) {
+    color: var(--color-blue-soft);
+  }
+  
+  .tefi-interaction--hover-color-white:hover:not(:disabled) {
+    color: var(--color-white);
+  }
+  
+  /* ======================================
+     PRESS
+  ====================================== */
+  
+  .tefi-interaction--press-move:active:not(:disabled) {
+    transform: translateY(1px) scale(0.99);
+  }
+  
+  /* ======================================
+     FOCUS RING
+  ====================================== */
+  
+  .tefi-interaction--focusRing-blue:focus-visible {
+    outline: var(--size-2) solid var(--color-blue);
+    outline-offset: var(--space-xxs);
+  }
+  
+  .tefi-interaction--focusRing-blue-soft:focus-visible {
+    outline: var(--size-2) solid var(--color-blue-soft);
+    outline-offset: var(--space-xxs);
+  }
+  
+  .tefi-interaction--focusRing-blue-transparent:focus-visible {
+    outline: var(--size-2) solid var(--color-blue-transparent);
+    outline-offset: var(--space-xxs);
+  }
+  
+  .tefi-interaction--focusRing-white:focus-visible {
+    outline: var(--size-2) solid var(--color-white);
+    outline-offset: var(--space-xxs);
+  }
+  
+  /* ======================================
+     TRANSITION
+  ====================================== */
+  
+  .tefi-interaction--transition-fast {
+    transition:
+      background-color var(--transition-fast),
+      color var(--transition-fast),
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      transform var(--transition-fast),
+      opacity var(--transition-fast);
+  }
+  
+  /* ======================================
+     DISABLED
+  ====================================== */
+  
+  .tefi-interaction:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }

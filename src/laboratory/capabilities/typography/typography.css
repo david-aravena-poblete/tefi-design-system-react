@@ -1,0 +1,149 @@
+/* ======================================
+   TYPOGRAPHY
+====================================== */
+
+.tefi-typography {
+  font-family: var(--font-family-sans);
+}
+
+/* ======================================
+   VARIANT
+====================================== */
+
+/* BODY */
+
+.tefi-typography--variant-body-sm {
+  font-size: var(--typography-body-sm-size);
+  font-weight: var(--typography-body-sm-weight);
+  line-height: var(--typography-body-sm-line-height);
+}
+
+.tefi-typography--variant-body-md {
+  font-size: var(--typography-body-md-size);
+  font-weight: var(--typography-body-md-weight);
+  line-height: var(--typography-body-md-line-height);
+}
+
+.tefi-typography--variant-body-lg {
+  font-size: var(--typography-body-lg-size);
+  font-weight: var(--typography-body-lg-weight);
+  line-height: var(--typography-body-lg-line-height);
+}
+
+/* HEADING */
+
+.tefi-typography--variant-heading-sm {
+  font-size: var(--typography-heading-sm-size);
+  font-weight: var(--typography-heading-sm-weight);
+  line-height: var(--typography-heading-sm-line-height);
+}
+
+.tefi-typography--variant-heading-md {
+  font-size: var(--typography-heading-md-size);
+  font-weight: var(--typography-heading-md-weight);
+  line-height: var(--typography-heading-md-line-height);
+}
+
+.tefi-typography--variant-heading-lg {
+  font-size: var(--typography-heading-lg-size);
+  font-weight: var(--typography-heading-lg-weight);
+  line-height: var(--typography-heading-lg-line-height);
+}
+
+/* CAPTION */
+
+.tefi-typography--variant-caption {
+  font-size: var(--typography-caption-size);
+  font-weight: var(--typography-caption-weight);
+  line-height: var(--typography-caption-line-height);
+}
+
+/* ======================================
+   WEIGHT
+====================================== */
+
+.tefi-typography--weight-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.tefi-typography--weight-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.tefi-typography--weight-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.tefi-typography--weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* ======================================
+   ALIGN
+====================================== */
+
+.tefi-typography--align-start {
+  text-align: start;
+}
+
+.tefi-typography--align-center {
+  text-align: center;
+}
+
+.tefi-typography--align-end {
+  text-align: end;
+}
+
+.tefi-typography--align-justify {
+  text-align: justify;
+}
+  
+  /* ======================================
+     TRANSFORM
+  ====================================== */
+  
+  .tefi-typography--transform-uppercase {
+    text-transform: uppercase;
+  }
+  
+  .tefi-typography--transform-lowercase {
+    text-transform: lowercase;
+  }
+  
+  .tefi-typography--transform-capitalize {
+    text-transform: capitalize;
+  }
+  
+  /* ======================================
+     DECORATION
+  ====================================== */
+  
+  .tefi-typography--decoration-underline {
+    text-decoration: underline;
+  }
+  
+  .tefi-typography--decoration-line-through {
+    text-decoration: line-through;
+  }
+  
+  /* ======================================
+     WRAP
+  ====================================== */
+  
+  .tefi-typography--wrap-wrap {
+    white-space: normal;
+  }
+  
+  .tefi-typography--wrap-nowrap {
+    white-space: nowrap;
+  }
+  
+  /* ======================================
+     TRUNCATE
+  ====================================== */
+  
+  .tefi-typography--truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }

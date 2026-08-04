@@ -2,12 +2,12 @@
    STYLES
 ====================================== */
 
-import "./surface.css";
+import "./typography.css";
 
 /* ======================================
    EXPORTS
 ====================================== */
 
-export * from "./surface";
-export * from "./surface.types";
-export * from "./surface.skill";
+export * from "./typography";
+export * from "./typography.types";
+export * from "./typography.skill";
