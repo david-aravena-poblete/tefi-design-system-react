@@ -4,7 +4,7 @@
 
 import type { ElementType } from "react";
 
-import { composer } from "@/laboratory/composer";
+import { composer } from "@/laboratory/create-class-name";
 
 import { html } from "@/laboratory/capabilities/html";
 import { surface } from "@/laboratory/capabilities/surface";
@@ -34,10 +34,10 @@ export function Text<
 
   const textClassName = composer(
     typographyProps &&
-      typography(typographyProps),
+    typography(typographyProps),
 
     surfaceProps &&
-      surface(surfaceProps),
+    surface(surfaceProps),
 
     className,
   );

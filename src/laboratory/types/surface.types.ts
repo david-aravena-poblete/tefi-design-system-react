@@ -32,6 +32,7 @@ export type Text =
 export type Border =
   | "blue"
   | "gray"
+  | "gray-soft"
   | "red";
 
 /* ======================================

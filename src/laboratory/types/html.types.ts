@@ -3,6 +3,7 @@
 ====================================== */
 
 export type HtmlElement =
+  | "a"
   | "div"
   | "span"
   | "p"

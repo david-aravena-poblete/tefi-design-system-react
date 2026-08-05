@@ -3,36 +3,55 @@
 ====================================== */
 
 import type {
-    ComponentPropsWithoutRef,
-    ReactNode,
-  } from "react";
-  
-  import type { HtmlProps } from "@/laboratory/capabilities/html";
-  import type { InteractionProps } from "@/laboratory/capabilities/interaction";
-  import type { LayoutProps } from "@/laboratory/capabilities/layout";
-  import type { SurfaceProps } from "@/laboratory/capabilities/surface";
-  import type { TypographyProps } from "@/laboratory/capabilities/typography";
-  
-  import type { HtmlElement } from "@/laboratory/types";
-  
-  /* ======================================
-     BUTTON PROPS
-  ====================================== */
-  
-  export type ButtonProps<
-    T extends HtmlElement = "button",
-  > = {
-    children?: ReactNode;
-  
-    layout?: LayoutProps;
-  
-    typography?: TypographyProps;
-  
-    surface?: SurfaceProps;
-  
-    interaction?: InteractionProps;
-  } & HtmlProps &
-    Omit<
-      ComponentPropsWithoutRef<T>,
-      "children" | "as"
-    >;
+  ComponentPropsWithoutRef,
+  ReactNode,
+} from "react";
+
+import type { HtmlProps } from "@/laboratory/capabilities/html";
+
+/* ======================================
+   TYPES
+====================================== */
+
+export type ButtonHtml =
+  | "button"
+  | "a";
+
+export type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "ghost"
+  | "link"
+  | "danger";
+
+export type ButtonSize =
+  | "sm"
+  | "md";
+
+/* ======================================
+   BUTTON PROPS
+====================================== */
+
+export type ButtonProps<
+  T extends ButtonHtml = "button",
+> = {
+  children?: ReactNode;
+
+  variant?: ButtonVariant;
+
+  size?: ButtonSize;
+
+  fullWidth?: boolean;
+
+  loading?: boolean;
+
+  skeleton?: boolean;
+
+  startIcon?: ReactNode;
+
+  endIcon?: ReactNode;
+} & HtmlProps<T> &
+  Omit<
+    ComponentPropsWithoutRef<T>,
+    "children" | "as"
+  >;

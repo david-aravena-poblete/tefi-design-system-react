@@ -5,9 +5,17 @@
 import type { HtmlElement } from "@/laboratory/types";
 
 /* ======================================
+   EXPORTS
+====================================== */
+
+export type { HtmlElement };
+
+/* ======================================
    HTML PROPS
 ====================================== */
 
-export interface HtmlProps {
-  as?: HtmlElement;
+export interface HtmlProps<
+  T extends HtmlElement = HtmlElement,
+> {
+  as?: T;
 }

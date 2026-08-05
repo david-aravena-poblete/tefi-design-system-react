@@ -24,21 +24,40 @@ export function createArgTypes(
     for (const [name, prop] of Object.entries(
       skill.props,
     )) {
-      if (
-        allowedControls &&
-        !allowedControls.includes(name)
-      ) {
-        continue;
-      }
+      const visible =
+        !allowedControls ||
+        allowedControls.includes(name);
 
-      argTypes[name] = {
-        control: prop.type,
+      argTypes[name] = visible
+        ? {
+            control: prop.type,
 
-        ...(prop.options && {
-          options: prop.options,
-        }),
+            ...(prop.options && {
+              options: prop.options,
+            }),
 
-        description: prop.description,
+            description: prop.description,
+          }
+        : {
+            table: {
+              disable: true,
+            },
+
+            control: false,
+          };
+    }
+
+    /* ======================================
+       HIDE CAPABILITY PROP
+    ====================================== */
+
+    if (skill.namespace !== "html") {
+      argTypes[skill.namespace] = {
+        table: {
+          disable: true,
+        },
+
+        control: false,
       };
     }
   }

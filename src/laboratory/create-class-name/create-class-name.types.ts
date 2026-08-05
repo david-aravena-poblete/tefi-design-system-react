@@ -2,6 +2,6 @@
    TYPES
 ====================================== */
 
-export type ComposerClass =
+export type CreateClassNameClass =
   | string
   | undefined;

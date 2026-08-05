@@ -9,7 +9,7 @@ import "./text.css";
 ====================================== */
 
 import { Box } from "@/laboratory/box";
-import { compose } from "@/laboratory/core/compose";
+import { compose } from "@/laboratory/core/create-class-name";
 
 import type { TextProps } from "./text.types";
 

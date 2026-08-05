@@ -29,5 +29,5 @@ import type {
   
     border?: Border;
   
-    color?: Text;
+    text?: Text;
   }

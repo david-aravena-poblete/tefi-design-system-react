@@ -4,7 +4,7 @@
 
 import type { ElementType } from "react";
 
-import { composer } from "@/laboratory/composer";
+import { createClassName } from "@/laboratory/create-class-name";
 
 import { html } from "@/laboratory/capabilities/html";
 import { interaction } from "@/laboratory/capabilities/interaction";
@@ -12,18 +12,23 @@ import { layout } from "@/laboratory/capabilities/layout";
 import { surface } from "@/laboratory/capabilities/surface";
 import { typography } from "@/laboratory/capabilities/typography";
 
+import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 import type { LayoutProps } from "@/laboratory/capabilities/layout";
 import type { SurfaceProps } from "@/laboratory/capabilities/surface";
 import type { TypographyProps } from "@/laboratory/capabilities/typography";
-import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 
-import type { HtmlElement } from "@/laboratory/types";
-
-import type { ButtonProps } from "./button.types";
+import type {
+  ButtonHtml,
+  ButtonProps,
+  ButtonSize,
+  ButtonVariant,
+} from "./button.types";
 
 /* ======================================
-   DEFAULTS
+   BUTTON DEFAULT
 ====================================== */
+
+const defaultHtml: ButtonHtml = "button";
 
 const defaultLayout: LayoutProps = {
   display: "flex",
@@ -35,80 +40,160 @@ const defaultLayout: LayoutProps = {
   minHeight: "40",
 };
 
-const defaultTypography: TypographyProps = {
-  variant: "body-md",
-  weight: "medium",
-};
-
 const defaultSurface: SurfaceProps = {
   background: "blue",
   text: "white",
   radius: "md",
 };
 
+const defaultTypography: TypographyProps = {
+  variant: "body-md",
+  weight: "medium",
+};
+
 const defaultInteraction: InteractionProps = {
   press: "move",
   focusRing: "blue",
   transition: "fast",
+
   hover: {
     background: "blue-soft",
   },
 };
 
 /* ======================================
-   COMPONENT
+   BUTTON VARIANTS
+====================================== */
+
+const surfaceByVariant = {
+  primary: {},
+
+  secondary: {
+    background: "gray",
+    text: "black",
+    border: "gray",
+    borderWidth: "1",
+    borderStyle: "solid",
+  },
+
+  danger: {
+    background: "red",
+  },
+
+  ghost: {
+    background: "transparent",
+    text: "black",
+  },
+
+  link: {
+    background: "transparent",
+    text: "blue",
+  },
+} satisfies Record<ButtonVariant, SurfaceProps>;
+
+const interactionByVariant = {
+  primary: {},
+
+  secondary: {
+    hover: {
+      background: "gray-soft",
+    },
+  },
+
+  ghost: {
+    hover: {
+      background: "gray-soft",
+    },
+  },
+
+  link: {
+    hover: {
+      background: "transparent",
+      text: "blue-soft",
+    },
+  },
+
+  danger: {
+    hover: {
+      background: "red-strong",
+    },
+  },
+} satisfies Record<ButtonVariant, InteractionProps>;
+
+/* ======================================
+   BUTTON SIZES
+====================================== */
+
+const layoutBySize = {
+  sm: {
+    insideX: "sm",
+    insideY: "xs",
+    minHeight: "32",
+  },
+
+  md: {},
+} satisfies Record<ButtonSize, LayoutProps>;
+
+const typographyBySize = {
+  sm: {
+    variant: "body-sm",
+  },
+
+  md: {},
+} satisfies Record<ButtonSize, TypographyProps>;
+
+/* ======================================
+   BUTTON
 ====================================== */
 
 export function Button<
-  T extends HtmlElement = "button",
+  T extends ButtonHtml = "button",
 >({
   children,
   as,
-  layout: layoutProps,
-  typography: typographyProps,
-  surface: surfaceProps,
-  interaction: interactionProps,
+  variant = "primary",
+  size = "md",
   className,
   ...props
 }: ButtonProps<T>) {
-  const Component = html({
-    as,
+  const Element = html({
+    as: as ?? defaultHtml,
   }) as ElementType;
 
-  const finalLayout = {
+  const buttonLayout = {
     ...defaultLayout,
-    ...layoutProps,
+    ...layoutBySize[size],
   };
 
-  console.log("Button Layout:", finalLayout);
+  const buttonSurface = {
+    ...defaultSurface,
+    ...surfaceByVariant[variant],
+  };
 
-  const buttonClassName = composer(
-    layout(finalLayout),
+  const buttonTypography = {
+    ...defaultTypography,
+    ...typographyBySize[size],
+  };
 
-    typography({
-      ...defaultTypography,
-      ...typographyProps,
-    }),
+  const buttonInteraction = {
+    ...defaultInteraction,
+    ...interactionByVariant[variant],
+  };
 
-    surface({
-      ...defaultSurface,
-      ...surfaceProps,
-    }),
-
-    interaction({
-      ...defaultInteraction,
-      ...interactionProps,
-    }),
-
+  const componentClassName = createClassName(
+    layout(buttonLayout),
+    surface(buttonSurface),
+    typography(buttonTypography),
+    interaction(buttonInteraction),
     className,
   );
 
   return (
-    <Component
+    <Element
       {...props}
-      className={buttonClassName}
+      className={componentClassName}
     >
       {children}
-    </Component>
+    </Element>
   );
 }

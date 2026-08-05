@@ -46,19 +46,19 @@
     border-color: var(--color-border-secondary);
   }
   
-  .tefi-interaction--hover-color-black:hover:not(:disabled) {
+  .tefi-interaction--hover-text-black:hover:not(:disabled) {
     color: var(--color-black);
   }
   
-  .tefi-interaction--hover-color-blue:hover:not(:disabled) {
+  .tefi-interaction--hover-text-blue:hover:not(:disabled) {
     color: var(--color-blue);
   }
   
-  .tefi-interaction--hover-color-blue-soft:hover:not(:disabled) {
+  .tefi-interaction--hover-text-blue-soft:hover:not(:disabled) {
     color: var(--color-blue-soft);
   }
   
-  .tefi-interaction--hover-color-white:hover:not(:disabled) {
+  .tefi-interaction--hover-text-white:hover:not(:disabled) {
     color: var(--color-white);
   }
   
@@ -108,11 +108,12 @@
       opacity var(--transition-fast);
   }
   
+
   /* ======================================
-     DISABLED
+   DISABLED
   ====================================== */
-  
-  .tefi-interaction:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-  }
+
+  button:disabled {
+   cursor: not-allowed;
+   opacity: 0.6;
+}
