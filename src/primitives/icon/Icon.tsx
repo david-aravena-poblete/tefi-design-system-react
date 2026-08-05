@@ -2,70 +2,89 @@
    IMPORTS
 ====================================== */
 
-import clsx from "clsx";
-
-import "./icon.css";
+import { createClassName } from "@/laboratory/create-class-name";
+import { layout } from "@/laboratory/capabilities/layout";
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
 
 import { iconRegistry } from "./icons/icons.registry";
 
-import type { IconProps } from "./icon.types";
+import type {
+  IconProps,
+  IconSize,
+} from "./icon.types";
+
+/* ======================================
+   ICON DEFAULT
+====================================== */
+
+const defaultLayout: LayoutProps = {
+  width: "20",
+  height: "20",
+};
+
+/* ======================================
+   ICON SIZES
+====================================== */
+
+const layoutBySize = {
+  sm: {
+    width: "16",
+    height: "16",
+  },
+
+  md: {},
+
+  lg: {
+    width: "24",
+    height: "24",
+  },
+} satisfies Record<IconSize, LayoutProps>;
 
 /* ======================================
    ICON
 ====================================== */
 
 export function Icon({
-  /* ======================================
-     TEFI PROPS
-  ====================================== */
-
   name,
-
   size = "md",
-
   ariaHidden = true,
-
-  /* ======================================
-     REACT PROPS
-  ====================================== */
-
   className,
-
   children,
-
-  /* ======================================
-     REST PROPS
-  ====================================== */
-
-  ...rest
+  ...props
 }: IconProps) {
-  /* ======================================
-     DERIVED STATE
-  ====================================== */
+  const IconComponent = name
+    ? iconRegistry[name]
+    : undefined;
 
-  const IconComponent = name ? iconRegistry[name] : undefined;
+  const iconLayout = {
+    ...defaultLayout,
+    ...layoutBySize[size],
+  };
 
-  /* ======================================
-     CLASSES
-  ====================================== */
-
-  const classes = clsx("icon", `icon--${size}`, className);
+  const componentClassName = createClassName(
+    layout(iconLayout),
+    className,
+  );
 
   /* ======================================
      CONDITIONAL RENDER
   ====================================== */
 
   if (name && !IconComponent) {
-    console.warn(`Icon "${name}" not found in registry.`);
+    console.warn(
+      `Icon "${name}" not found in registry.`,
+    );
   }
 
-  /* ======================================
-     RENDER
-  ====================================== */
+  if (IconComponent) {
+    return (
+      <IconComponent
+        {...props}
+        className={componentClassName}
+        aria-hidden={ariaHidden}
+      />
+    );
+  }
 
-  return (
-    <span className={classes} aria-hidden={ariaHidden} {...rest}>
-      {IconComponent ? <IconComponent /> : children}
-    </span>
-  );
+  return <>{children}</>;
 }

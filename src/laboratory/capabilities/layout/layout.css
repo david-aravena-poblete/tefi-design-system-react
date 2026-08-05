@@ -213,7 +213,63 @@
   .tefi-layout--outside-xl {
     margin: var(--space-xl);
   }
-  
+
+/* ======================================
+   WIDTH
+====================================== */
+
+.tefi-layout--width-2 {
+  width: var(--size-2);
+}
+
+.tefi-layout--width-4 {
+  width: var(--size-4);
+}
+
+.tefi-layout--width-8 {
+  width: var(--size-8);
+}
+
+.tefi-layout--width-12 {
+  width: var(--size-12);
+}
+
+.tefi-layout--width-16 {
+  width: var(--size-16);
+}
+
+.tefi-layout--width-20 {
+  width: var(--size-20);
+}
+
+.tefi-layout--width-24 {
+  width: var(--size-24);
+}
+
+.tefi-layout--width-32 {
+  width: var(--size-32);
+}
+
+.tefi-layout--width-36 {
+  width: var(--size-36);
+}
+
+.tefi-layout--width-40 {
+  width: var(--size-40);
+}
+
+.tefi-layout--width-44 {
+  width: var(--size-44);
+}
+
+.tefi-layout--width-48 {
+  width: var(--size-48);
+}
+
+.tefi-layout--width-52 {
+  width: var(--size-52);
+}
+
   /* ======================================
      MAX WIDTH
   ====================================== */
@@ -241,7 +297,62 @@
   .tefi-layout--maxWidth-2xl {
     max-width: var(--width-2xl);
   }
-  
+
+/* ======================================
+   HEIGHT
+====================================== */
+
+.tefi-layout--height-2 {
+  height: var(--size-2);
+}
+
+.tefi-layout--height-4 {
+  height: var(--size-4);
+}
+
+.tefi-layout--height-8 {
+  height: var(--size-8);
+}
+
+.tefi-layout--height-12 {
+  height: var(--size-12);
+}
+
+.tefi-layout--height-16 {
+  height: var(--size-16);
+}
+
+.tefi-layout--height-20 {
+  height: var(--size-20);
+}
+
+.tefi-layout--height-24 {
+  height: var(--size-24);
+}
+
+.tefi-layout--height-32 {
+  height: var(--size-32);
+}
+
+.tefi-layout--height-36 {
+  height: var(--size-36);
+}
+
+.tefi-layout--height-40 {
+  height: var(--size-40);
+}
+
+.tefi-layout--height-44 {
+  height: var(--size-44);
+}
+
+.tefi-layout--height-48 {
+  height: var(--size-48);
+}
+
+.tefi-layout--height-52 {
+  height: var(--size-52);
+}
   /* ======================================
      MIN HEIGHT
   ====================================== */

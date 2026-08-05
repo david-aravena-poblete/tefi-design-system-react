@@ -2,124 +2,210 @@
    IMPORTS
 ====================================== */
 
-import clsx from "clsx";
+import type { ElementType } from "react";
 
-import { Skeleton } from "@/primitives/skeleton";
-import { Spinner } from "@/primitives/spinner";
+import { createClassName } from "@/laboratory/create-class-name";
 
-import "./button.css";
+import { html } from "@/laboratory/capabilities/html";
+import { interaction } from "@/laboratory/capabilities/interaction";
+import { layout } from "@/laboratory/capabilities/layout";
+import { surface } from "@/laboratory/capabilities/surface";
+import { typography } from "@/laboratory/capabilities/typography";
 
-import type { ButtonProps } from "./button.types";
+import type { InteractionProps } from "@/laboratory/capabilities/interaction";
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
+import type { SurfaceProps } from "@/laboratory/capabilities/surface";
+import type { TypographyProps } from "@/laboratory/capabilities/typography";
+
+import type {
+  ButtonHtml,
+  ButtonProps,
+  ButtonSize,
+  ButtonVariant,
+} from "./button.types";
+
+/* ======================================
+   BUTTON DEFAULT
+====================================== */
+
+const defaultHtml: ButtonHtml = "button";
+
+const defaultLayout: LayoutProps = {
+  display: "flex",
+  direction: "row",
+  align: "center",
+  justify: "center",
+
+  between: "xs",
+
+  insideX: "md",
+  insideY: "sm",
+  minHeight: "40",
+};
+
+const defaultSurface: SurfaceProps = {
+  background: "blue",
+  text: "white",
+  radius: "md",
+};
+
+const defaultTypography: TypographyProps = {
+  variant: "body-md",
+  weight: "medium",
+};
+
+const defaultInteraction: InteractionProps = {
+  press: "move",
+  focusRing: "blue",
+  transition: "fast",
+
+  hover: {
+    background: "blue-soft",
+  },
+};
+
+/* ======================================
+   BUTTON VARIANTS
+====================================== */
+
+const surfaceByVariant = {
+  primary: {},
+
+  secondary: {
+    background: "gray",
+    text: "black",
+    border: "gray",
+    borderWidth: "1",
+    borderStyle: "solid",
+  },
+
+  danger: {
+    background: "red",
+  },
+
+  ghost: {
+    background: "transparent",
+    text: "black",
+  },
+
+  link: {
+    background: "transparent",
+    text: "blue",
+  },
+} satisfies Record<ButtonVariant, SurfaceProps>;
+
+const interactionByVariant = {
+  primary: {},
+
+  secondary: {
+    hover: {
+      background: "gray-soft",
+    },
+  },
+
+  ghost: {
+    hover: {
+      background: "gray-soft",
+    },
+  },
+
+  link: {
+    hover: {
+      background: "transparent",
+      text: "blue-soft",
+    },
+  },
+
+  danger: {
+    hover: {
+      background: "red-strong",
+    },
+  },
+} satisfies Record<ButtonVariant, InteractionProps>;
+
+/* ======================================
+   BUTTON SIZES
+====================================== */
+
+const layoutBySize = {
+  sm: {
+    insideX: "sm",
+    insideY: "xs",
+    minHeight: "32",
+  },
+
+  md: {},
+} satisfies Record<ButtonSize, LayoutProps>;
+
+const typographyBySize = {
+  sm: {
+    variant: "body-sm",
+  },
+
+  md: {},
+} satisfies Record<ButtonSize, TypographyProps>;
 
 /* ======================================
    BUTTON
 ====================================== */
 
-export function Button({
-  /* ======================================
-     TEFI PROPS
-  ====================================== */
-
+export function Button<
+  T extends ButtonHtml = "button",
+>({
+  children,
+  as,
   variant = "primary",
-
   size = "md",
 
-  fullWidth = false,
-
-  loading = false,
-
-  skeleton = false,
-
   startIcon,
-
   endIcon,
 
-  /* ======================================
-     REACT PROPS
-  ====================================== */
-
-  type = "button",
-
-  disabled,
-
   className,
+  ...props
+}: ButtonProps<T>) {
+  
+  const Element = html({
+    as: as ?? defaultHtml,
+  }) as ElementType;
 
-  children,
+  const buttonLayout = {
+    ...defaultLayout,
+    ...layoutBySize[size],
+  };
 
-  ref,
+  const buttonSurface = {
+    ...defaultSurface,
+    ...surfaceByVariant[variant],
+  };
 
-  /* ======================================
-     REST PROPS
-  ====================================== */
+  const buttonTypography = {
+    ...defaultTypography,
+    ...typographyBySize[size],
+  };
 
-  ...rest
-}: ButtonProps) {
-  /* ======================================
-     DERIVED STATE
-  ====================================== */
+  const buttonInteraction = {
+    ...defaultInteraction,
+    ...interactionByVariant[variant],
+  };
 
-  const isDisabled = disabled || loading;
-
-  /* ======================================
-     CLASSES
-  ====================================== */
-
-  const classes = clsx(
-    "button",
-
-    `button--${variant}`,
-
-    `button--${size}`,
-
-    {
-      "button--full": fullWidth,
-
-      "button--loading": loading,
-    },
-
+  const componentClassName = createClassName(
+    layout(buttonLayout),
+    surface(buttonSurface),
+    typography(buttonTypography),
+    interaction(buttonInteraction),
     className,
   );
 
-  /* ======================================
-     ELEMENT
-  ====================================== */
-
-  const element = (
-    <button
-      ref={ref}
-      type={type}
-      className={classes}
-      disabled={isDisabled}
-      aria-busy={loading}
-      {...rest}
+  return (
+    <Element
+      {...props}
+      className={componentClassName}
     >
-      <span className="button__content">
-        {startIcon}
-
-        {children}
-
-        {endIcon}
-
-        {loading && <Spinner size="sm" />}
-      </span>
-    </button>
+      {startIcon}
+  
+      {children}
+  
+      {endIcon}
+    </Element>
   );
-
-  /* ======================================
-     CONDITIONAL RENDER
-  ====================================== */
-
-  if (skeleton) {
-    return (
-      <Skeleton fill={fullWidth} radius="var(--surface-button-radius)">
-        {element}
-      </Skeleton>
-    );
-  }
-
-  /* ======================================
-     RENDER
-  ====================================== */
-
-  return element;
 }

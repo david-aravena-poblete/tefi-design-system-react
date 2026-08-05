@@ -20,8 +20,14 @@ const layoutCapabilities = [
   "insideX",
   "insideY",
   "outside",
+
+  "width",
+  "minWidth",
   "maxWidth",
+
+  "height",
   "minHeight",
+  "maxHeight",
 ] as const;
 
 /* ======================================

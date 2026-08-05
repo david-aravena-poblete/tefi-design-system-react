@@ -1,116 +1,152 @@
 /* ======================================
    IMPORTS
 ====================================== */
+import { Icon } from "@/primitives";
 
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type {
+  Meta,
+  StoryObj,
+} from "@storybook/react";
 
-import { Button } from "@/components/button";
-import { Stack } from "@/layouts/stack";
-import { Icon } from "@/primitives/icon";
+import { Button } from "./Button";
+
+/* ======================================
+   CONSTANTS
+====================================== */
+
+const storyContainerStyle = {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "1rem",
+  alignItems: "center",
+} as const;
 
 /* ======================================
    META
 ====================================== */
 
-const meta: Meta<typeof Button> = {
+const meta = {
   title: "Components/Button",
 
   component: Button,
 
-  tags: ["autodocs"],
-};
+  args: {
+    children: "Button",
+    variant: "primary",
+    size: "md",
+  },
+
+  argTypes: {
+    variant: {
+      control: "select",
+
+      options: [
+        "primary",
+        "secondary",
+        "danger",
+        "ghost",
+        "link",
+      ],
+    },
+
+    size: {
+      control: "select",
+
+      options: [
+        "sm",
+        "md",
+      ],
+    },
+  },
+} satisfies Meta<typeof Button>;
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof meta>;
 
 /* ======================================
-   STORIES
+   PLAYGROUND
 ====================================== */
 
-export const Default: Story = {
-  args: {
-    children: "Button",
-  },
-};
+export const Playground: Story = {};
 
-export const Variant: Story = {
+/* ======================================
+   VARIANTS
+====================================== */
+
+export const Variants: Story = {
   render: () => (
-    <Stack gap="md">
-      <Button variant="primary">Primary</Button>
-
-      <Button variant="secondary">Secondary</Button>
-
-      <Button variant="ghost">Ghost</Button>
-
-      <Button variant="link">Link</Button>
-
-      <Button variant="danger">Danger</Button>
-    </Stack>
-  ),
-};
-
-export const Size: Story = {
-  render: () => (
-    <Stack gap="md">
-      <Button size="sm">Small</Button>
-
-      <Button size="md">Medium</Button>
-
-      <Button size="lg">Large</Button>
-    </Stack>
-  ),
-};
-
-export const WithIcons: Story = {
-  render: () => (
-    <Stack gap="md">
-      <Button startIcon={<Icon name="search" />}>
-        Start Icon
-      </Button>
-
-      <Button endIcon={<Icon name="search" />}>
-        End Icon
+    <div style={storyContainerStyle}>
+      <Button
+        variant="primary"
+        startIcon={<Icon name="search" />}
+      >
+        Primary
       </Button>
 
       <Button
-        startIcon={<Icon name="search" />}
-        endIcon={<Icon name="search" />}
+        variant="secondary"
+        startIcon={<Icon name="user" />}
       >
-        Start + End Icon
+        Secondary
       </Button>
-    </Stack>
+
+      <Button
+        variant="danger"
+        startIcon={<Icon name="close" />}
+      >
+        Danger
+      </Button>
+
+      <Button
+        variant="ghost"
+        startIcon={<Icon name="plus" />}
+      >
+        Ghost
+      </Button>
+
+      <Button
+        variant="link"
+        startIcon={<Icon name="sun" />}
+      >
+        Link
+      </Button>
+    </div>
   ),
 };
 
-export const Loading: Story = {
-  args: {
-    loading: true,
+/* ======================================
+   SIZES
+====================================== */
 
-    children: "Loading",
-  },
+export const Sizes: Story = {
+  render: () => (
+    <div style={storyContainerStyle}>
+      <Button size="sm">
+        Small
+      </Button>
+
+      <Button size="md">
+        Medium
+      </Button>
+    </div>
+  ),
 };
 
-export const Disabled: Story = {
-  args: {
-    disabled: true,
+/* ======================================
+   STATES
+====================================== */
 
-    children: "Disabled",
-  },
-};
+export const States: Story = {
+  render: () => (
+    <div style={storyContainerStyle}>
+      <Button>
+        Default
+      </Button>
 
-export const FullWidth: Story = {
-  args: {
-    fullWidth: true,
-
-    children: "Full Width",
-  },
-};
-
-export const Skeleton: Story = {
-  args: {
-    skeleton: true,
-
-    children: "Skeleton",
-  },
+      <Button disabled>
+        Disabled
+      </Button>
+    </div>
+  ),
 };

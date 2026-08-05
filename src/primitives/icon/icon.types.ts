@@ -3,19 +3,25 @@
 ====================================== */
 
 import type { ComponentProps } from "react";
-
-import type { Size } from "@/foundations/design-system.types";
-
 import type { IconName } from "./icons/icons.registry";
+
+/* ======================================
+   TYPES
+====================================== */
+
+export type IconSize =
+  | "sm"
+  | "md"
+  | "lg";
 
 /* ======================================
    PROPS
 ====================================== */
 
-export interface IconProps extends ComponentProps<"span"> {
+export interface IconProps extends ComponentProps<"svg"> {
   name?: IconName;
 
-  size?: Size;
+  size?: IconSize;
 
   ariaHidden?: boolean;
 }

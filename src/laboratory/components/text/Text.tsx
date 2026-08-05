@@ -4,50 +4,68 @@
 
 import type { ElementType } from "react";
 
-import { composer } from "@/laboratory/create-class-name";
+import { createClassName } from "@/laboratory/create-class-name";
 
 import { html } from "@/laboratory/capabilities/html";
 import { surface } from "@/laboratory/capabilities/surface";
 import { typography } from "@/laboratory/capabilities/typography";
 
-import type { HtmlElement } from "@/laboratory/types";
+import type { SurfaceProps } from "@/laboratory/capabilities/surface";
+import type { TypographyProps } from "@/laboratory/capabilities/typography";
 
-import type { TextProps } from "./text.types";
+import type {
+  TextHtml,
+  TextProps,
+} from "./text.types";
 
 /* ======================================
-   COMPONENT
+   TEXT DEFAULT
+====================================== */
+
+const defaultHtml: TextHtml = "span";
+const defaultSurface: SurfaceProps = { text: "black",};
+const defaultTypography: TypographyProps = {variant: "body-md", weight: "regular"};
+
+/* ======================================
+   TEXT
 ====================================== */
 
 export function Text<
-  T extends HtmlElement = "span",
+  T extends TextHtml = "span",
 >({
   children,
   as,
-  typography: typographyProps,
   surface: surfaceProps,
+  typography: typographyProps,
   className,
   ...props
 }: TextProps<T>) {
-  const Component = html({
-    as,
+  const HTML = html({
+    as: as ?? defaultHtml,
   }) as ElementType;
 
-  const textClassName = composer(
-    typographyProps &&
-    typography(typographyProps),
+  const textSurface = {
+    ...defaultSurface,
+    ...surfaceProps,
+  };
 
-    surfaceProps &&
-    surface(surfaceProps),
+  const textTypography = {
+    ...defaultTypography,
+    ...typographyProps,
+  };
 
+  const componentClassName = createClassName(
+    typography(textTypography),
+    surface(textSurface),
     className,
   );
 
   return (
-    <Component
+    <HTML
       {...props}
-      className={textClassName}
+      className={componentClassName}
     >
       {children}
-    </Component>
+    </HTML>
   );
 }
