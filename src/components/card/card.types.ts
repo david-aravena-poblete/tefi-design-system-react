@@ -4,29 +4,29 @@
 
 import type { ComponentProps, JSX } from "react";
 
-import type { Size } from "../../foundations/design-system.types";
-
 /* ======================================
-   TYPES
-====================================== */
+    TYPES
+ ====================================== */
 
 export type CardVariant = "outlined" | "elevated" | "flat";
+
+export type CardSize = "sm" | "md" | "lg";
 
 export type CardSectionProps = ComponentProps<"div">;
 
 /* ======================================
-   PROPS
-====================================== */
+    PROPS
+ ====================================== */
 
 export interface CardProps extends ComponentProps<"div"> {
   variant?: CardVariant;
 
-  size?: Size;
+  size?: CardSize;
 }
 
 /* ======================================
-   COMPOUND COMPONENT
-====================================== */
+    COMPOUND COMPONENT
+ ====================================== */
 
 export interface CardComponent {
   (props: CardProps): JSX.Element;

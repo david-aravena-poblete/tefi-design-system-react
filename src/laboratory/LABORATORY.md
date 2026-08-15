@@ -65,8 +65,6 @@ Una Box no tiene que controlar todo sobre sí misma. Parte de su comportamiento 
 
 Box = capacidades generales de construcción visual. Interaction = capacidades generales de comportamiento interactivo. Ninguna conoce Button, Card, Navbar, etc.
 
-
-
 # Consolidación Arquitectónica 28/07/2026
 
 Se realizó una auditoría completa de la arquitectura actual de Laboratory antes de continuar con nuevos componentes.
@@ -137,10 +135,7 @@ La arquitectura actual de Laboratory puede considerarse estable.
 
 Las futuras abstracciones (Recipes, componentes compartidos, etc.) solo se crearán cuando existan suficientes componentes que justifiquen su existencia mediante evidencia y no por anticipación.
 
-
-
 Box representa un elemento HTML genérico. Su responsabilidad es proporcionar la infraestructura común de cualquier elemento visual. No conoce conceptos tipográficos ni componentes específicos.
-
 
 Box
 ↑
@@ -158,12 +153,11 @@ Button
 ↑
 Especializa Box para interacción y utiliza Text para su contenido.
 
-
 Box representa un elemento HTML. No representa un componente, un layout ni texto. Representa el concepto más básico de la plataforma web: un elemento del DOM.
 Todo lo demás son especializaciones.
 HTML Element
-      ↓
-     Box
+↓
+Box
 Después:
 Box
 ├── Text
@@ -174,15 +168,11 @@ Box
 Y algunos siguen especializándose:
 Box
 └── Text
-      ├── Heading
-      └── Label
-
+├── Heading
+└── Label
 
 Cada especialización define su propia API pública.
 Internamente puede usar Box.
 Pero externamente solo expone las capacidades relacionadas con su responsabilidad.
 
-
 Cuando un componente redefine una prop nativa de HTML (por ejemplo color, size, width, etc.), esa prop debe omitirse de ComponentPropsWithoutRef<T> antes de volver a declararla con el tipo del Design System.
-
-

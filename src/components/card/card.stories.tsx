@@ -4,9 +4,9 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Card } from "./Card";
+import { Grid } from "@/layouts/grid";
 
-import { Grid } from "../../layouts/grid";
+import { Card } from "./Card";
 
 /* ======================================
    META
@@ -58,7 +58,7 @@ export const Variants: Story = {
       <Card variant="elevated">
         <Card.Header>Elevated</Card.Header>
 
-        <Card.Body>Uses shadow.</Card.Body>
+        <Card.Body>Elevated card style.</Card.Body>
       </Card>
 
       <Card variant="flat">

@@ -2,6 +2,4 @@
    TYPES
 ====================================== */
 
-export type CreateClassNameClass =
-  | string
-  | undefined;
+export type CreateClassNameClass = string | undefined;

@@ -2,6 +2,5 @@
    EXPORTS
 ====================================== */
 
-export { Text } from "./text";
-
-export type { TextProps, TextVariant } from "./text";
+export * from "./text";
+export * from "./expandable-text";

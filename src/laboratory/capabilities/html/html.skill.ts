@@ -13,8 +13,7 @@ export const htmlSkill = {
 
   namespace: "html",
 
-  description:
-    "Defines the semantic HTML element rendered by a component.",
+  description: "Defines the semantic HTML element rendered by a component.",
 
   props: {
     as: {
@@ -37,8 +36,7 @@ export const htmlSkill = {
         "button",
       ],
 
-      description:
-        "HTML element rendered by the component.",
+      description: "HTML element rendered by the component.",
     },
   },
 } satisfies Skill;

@@ -8,10 +8,7 @@ import type { Skill } from "@/laboratory/skill";
    GROUP ARGS
 ====================================== */
 
-export function groupArgs(
-  args: Record<string, unknown>,
-  skills: readonly Skill[],
-) {
+export function groupArgs(args: Record<string, unknown>, skills: readonly Skill[]) {
   const result: Record<string, unknown> = {
     ...args,
   };

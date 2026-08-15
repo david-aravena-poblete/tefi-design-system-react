@@ -2,25 +2,32 @@
    IMPORTS
 ====================================== */
 
-import type { ComponentProps, ElementType } from "react";
+import type { ComponentPropsWithoutRef } from "react";
+
+import type { HtmlElement } from "@/laboratory/types";
+
+import type { HtmlProps } from "@/laboratory/capabilities/html";
 
 /* ======================================
-   TYPES
-====================================== */
+    TYPES
+ ====================================== */
 
-export type ContainerSize =
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "full";
+export type ContainerHtml = Extract<
+  HtmlElement,
+  "div" | "section" | "article" | "main" | "aside" | "nav"
+>;
 
 /* ======================================
-   PROPS
-====================================== */
+    CONTAINER SIZE
+ ====================================== */
 
-export interface ContainerProps extends ComponentProps<"div"> {
-  as?: ElementType;
+export type ContainerSize = "sm" | "md" | "lg" | "xl" | "full";
 
+/* ======================================
+    CONTAINER PROPS
+ ====================================== */
+
+export type ContainerProps<T extends ContainerHtml = "div"> = {
   size?: ContainerSize;
-}
+} & HtmlProps<T> &
+  Omit<ComponentPropsWithoutRef<T>, "children" | "as">;

@@ -1,16 +1,19 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Button } from "@/components/button";
-import { Inline } from "@/layouts/inline";
+import { Inline } from "./Inline";
 
-const meta: Meta<typeof Inline> = {
+/* ======================================
+   META
+====================================== */
+
+const meta = {
   title: "Layouts/Inline",
 
   component: Inline,
-
-  parameters: {
-    layout: "centered",
-  },
 
   tags: ["autodocs"],
 
@@ -18,78 +21,75 @@ const meta: Meta<typeof Inline> = {
     gap: {
       control: "select",
 
-      options: ["xs", "sm", "md", "lg", "xl", "xxl", "xxxl"],
+      options: ["none", "xs", "sm", "md", "lg", "xl", "xxl", "xxxl"],
+    },
+
+    children: {
+      table: {
+        disable: true,
+      },
+    },
+
+    style: {
+      table: {
+        disable: true,
+      },
+    },
+
+    as: {
+      table: {
+        disable: true,
+      },
     },
   },
-};
+} satisfies Meta<typeof Inline>;
 
 export default meta;
 
-type Story = StoryObj<typeof Inline>;
+type Story = StoryObj<typeof meta>;
 
 /* ======================================
-   SHARED
+   STYLES
 ====================================== */
 
-const sharedStyle = {
-  padding: "var(--space-md)",
+const containerStyle = {
+  width: "360px",
+
+  padding: "var(--space-lg)",
+
   border: "1px dashed var(--color-border-primary)",
+
+  background: "var(--color-bg-secondary)",
+};
+
+const itemStyle = {
+  padding: "var(--space-sm) var(--space-md)",
+
+  background: "var(--color-primary-base)",
+
+  color: "var(--color-text-inverse)",
+
+  borderRadius: "var(--radius-md)",
 };
 
 /* ======================================
-   STORIES
+   PLAYGROUND
 ====================================== */
 
-export const Default: Story = {
+export const Playground: Story = {
   args: {
     gap: "md",
 
-    style: sharedStyle,
-
     children: (
       <>
-        <Button>Botón 1</Button>
+        <div style={itemStyle}>Item 1</div>
 
-        <Button>Botón 2</Button>
+        <div style={itemStyle}>Item 2</div>
 
-        <Button>Botón 3</Button>
+        <div style={itemStyle}>Item 3</div>
       </>
     ),
-  },
-};
 
-export const SmallGap: Story = {
-  args: {
-    gap: "sm",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-
-        <Button>Botón 2</Button>
-
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const LargeGap: Story = {
-  args: {
-    gap: "xl",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-
-        <Button>Botón 2</Button>
-
-        <Button>Botón 3</Button>
-      </>
-    ),
+    style: containerStyle,
   },
 };

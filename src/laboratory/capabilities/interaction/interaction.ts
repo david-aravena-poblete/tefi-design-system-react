@@ -10,23 +10,12 @@ import type { InteractionProps } from "./interaction.types";
    CAPABILITIES
 ====================================== */
 
-const interactionCapabilities = [
-  "hover",
-  "press",
-  "focusRing",
-  "transition",
-] as const;
+const interactionCapabilities = ["hover", "press", "focusRing", "transition", "disabled"] as const;
 
 /* ======================================
    INTERACTION
 ====================================== */
 
-export function interaction(
-  props: InteractionProps,
-) {
-  return compose(
-    "interaction",
-    interactionCapabilities,
-    props,
-  );
+export function interaction(props: InteractionProps) {
+  return compose("interaction", interactionCapabilities, props);
 }

@@ -4,62 +4,50 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { SIZES } from "../../foundations/design-system.types";
-
 import { Spinner } from "./Spinner";
+
+/* ======================================
+   CONSTANTS
+====================================== */
+
+const storyContainerStyle = {
+  display: "flex",
+  alignItems: "center",
+  gap: "1rem",
+} as const;
 
 /* ======================================
    META
 ====================================== */
 
 const meta = {
-  title: "Primitives/Spinner",
+  title: "  Primitives/Spinner",
 
   component: Spinner,
-
-  argTypes: {
-    size: {
-      control: "select",
-
-      options: SIZES,
-    },
-
-    className: {
-      table: {
-        disable: true,
-      },
-    },
-  },
 } satisfies Meta<typeof Spinner>;
 
 export default meta;
 
-/* ======================================
-   STORIES
-====================================== */
-
 type Story = StoryObj<typeof meta>;
 
-export const Playground: Story = {
-  args: {
-    size: "md",
-  },
-};
+/* ======================================
+   PLAYGROUND
+====================================== */
 
-export const Small: Story = {
-  args: {
-    size: "sm",
-  },
-};
+export const Playground: Story = {};
 
-export const Medium: Story = {
-  args: {
-    size: "md",
-  },
-};
+/* ======================================
+   SIZES
+====================================== */
 
-export const Large: Story = {
-  args: {
-    size: "lg",
-  },
+export const Sizes: Story = {
+  render: () => (
+    <div style={storyContainerStyle}>
+      <Spinner size="sm" />
+
+      <Spinner size="md" />
+
+      <Spinner size="lg" />
+    </div>
+  ),
 };

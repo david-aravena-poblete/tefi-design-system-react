@@ -3,133 +3,157 @@
 ====================================== */
 
 .tefi-surface--background-blue {
-    background-color: var(--color-blue);
-  }
-  
-  .tefi-surface--background-blue-soft {
-    background-color: var(--color-blue-soft);
-  }
-  
-  .tefi-surface--background-gray {
-    background-color: var(--color-bg-tertiary);
-  }
-  
-  .tefi-surface--background-gray-soft {
-    background-color: var(--color-bg-secondary);
-  }
-  
-  .tefi-surface--background-red {
-    background-color: var(--color-danger-base);
-  }
-  
-  .tefi-surface--background-red-strong {
-    background-color: var(--color-danger-hover);
-  }
-  
-  .tefi-surface--background-soft {
-    background-color: var(--interaction-hover-bg);
-  }
-  
-  .tefi-surface--background-transparent {
-    background-color: transparent;
-  }
-  
-  /* ======================================
+  background-color: var(--color-blue);
+}
+
+.tefi-surface--background-blue-soft {
+  background-color: var(--color-blue-soft);
+}
+
+.tefi-surface--background-gray {
+  background-color: var(--color-bg-tertiary);
+}
+
+.tefi-surface--background-gray-soft {
+  background-color: var(--color-bg-secondary);
+}
+
+.tefi-surface--background-red {
+  background-color: var(--color-danger-base);
+}
+
+.tefi-surface--background-red-strong {
+  background-color: var(--color-danger-hover);
+}
+
+.tefi-surface--background-soft {
+  background-color: var(--interaction-hover-bg);
+}
+
+.tefi-surface--background-transparent {
+  background-color: transparent;
+}
+
+/* ======================================
      TEXT
   ====================================== */
-  
-  .tefi-surface--text-white {
-    color: var(--color-white);
-  }
-  
-  .tefi-surface--text-black {
-    color: var(--color-black);
-  }
-  
-  .tefi-surface--text-blue {
-    color: var(--color-blue);
-  }
-  
-  .tefi-surface--text-blue-soft {
-    color: var(--color-blue-soft);
-  }
-  
-  .tefi-surface--text-gray {
-    color: var(--color-text-secondary);
-  }
-  
-  .tefi-surface--text-red {
-    color: var(--color-danger-base);
-  }
-  
-  .tefi-surface--text-red-strong {
-    color: var(--color-danger-hover);
-  }
-  
-  /* ======================================
-     BORDER
-  ====================================== */
-  
-  .tefi-surface--border-blue {
-    border-color: var(--color-blue);
-  }
-  
-  .tefi-surface--border-gray {
-    border-color: var(--color-border-secondary);
-  }
-  
-  .tefi-surface--border-red {
-    border-color: var(--color-danger-base);
-  }
-  
-  /* ======================================
+
+.tefi-surface--text-white {
+  color: var(--color-white);
+}
+
+.tefi-surface--text-black {
+  color: var(--color-black);
+}
+
+.tefi-surface--text-blue {
+  color: var(--color-blue);
+}
+
+.tefi-surface--text-blue-soft {
+  color: var(--color-blue-soft);
+}
+
+.tefi-surface--text-gray {
+  color: var(--color-text-secondary);
+}
+
+.tefi-surface--text-red {
+  color: var(--color-danger-base);
+}
+
+.tefi-surface--text-red-strong {
+  color: var(--color-danger-hover);
+}
+
+/* ======================================
+   BORDER
+====================================== */
+
+.tefi-surface--border-blue {
+  border-color: var(--color-blue);
+}
+
+.tefi-surface--border-gray {
+  border-color: var(--color-border-secondary);
+}
+
+.tefi-surface--border-gray-soft {
+  border-color: var(--color-border-primary);
+}
+
+.tefi-surface--border-red {
+  border-color: var(--color-danger-base);
+}
+
+/* ======================================
      BORDER WIDTH
   ====================================== */
-  
-  .tefi-surface--borderWidth-none {
-    border-width: 0;
-  }
-  
-  .tefi-surface--borderWidth-1 {
-    border-width: 1px;
-  }
-  
-  .tefi-surface--borderWidth-2 {
-    border-width: 2px;
-  }
-  
-  /* ======================================
+
+.tefi-surface--borderWidth-none {
+  border-width: 0;
+}
+
+.tefi-surface--borderWidth-1 {
+  border-width: 1px;
+}
+
+.tefi-surface--borderWidth-2 {
+  border-width: 2px;
+}
+
+/* ======================================
      BORDER STYLE
   ====================================== */
-  
-  .tefi-surface--borderStyle-solid {
-    border-style: solid;
-  }
-  
-  .tefi-surface--borderStyle-dashed {
-    border-style: dashed;
-  }
-  
-  /* ======================================
+
+.tefi-surface--borderStyle-solid {
+  border-style: solid;
+}
+
+.tefi-surface--borderStyle-dashed {
+  border-style: dashed;
+}
+
+/* ======================================
      RADIUS
   ====================================== */
-  
-  .tefi-surface--radius-none {
-    border-radius: var(--radius-none);
-  }
-  
-  .tefi-surface--radius-sm {
-    border-radius: var(--radius-sm);
-  }
-  
-  .tefi-surface--radius-md {
-    border-radius: var(--radius-md);
-  }
-  
-  .tefi-surface--radius-lg {
-    border-radius: var(--radius-lg);
-  }
-  
-  .tefi-surface--radius-full {
-    border-radius: var(--radius-full);
-  }
+
+.tefi-surface--radius-none {
+  border-radius: var(--radius-none);
+}
+
+.tefi-surface--radius-sm {
+  border-radius: var(--radius-sm);
+}
+
+.tefi-surface--radius-md {
+  border-radius: var(--radius-md);
+}
+
+.tefi-surface--radius-lg {
+  border-radius: var(--radius-lg);
+}
+
+.tefi-surface--radius-full {
+  border-radius: var(--radius-full);
+}
+
+/* ======================================
+   SHADOW
+  ====================================== */
+
+.tefi-surface--shadow-none {
+  box-shadow: none;
+}
+
+.tefi-surface--shadow-xs {
+  box-shadow: var(--shadow-xs);
+}
+
+.tefi-surface--shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.tefi-surface--shadow-md {
+  box-shadow: var(--shadow-md);
+}

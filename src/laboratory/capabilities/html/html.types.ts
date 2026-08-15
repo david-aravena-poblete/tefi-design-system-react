@@ -2,6 +2,8 @@
    IMPORTS
 ====================================== */
 
+import type { ComponentPropsWithoutRef } from "react";
+
 import type { HtmlElement } from "@/laboratory/types";
 
 /* ======================================
@@ -14,8 +16,6 @@ export type { HtmlElement };
    HTML PROPS
 ====================================== */
 
-export interface HtmlProps<
-  T extends HtmlElement = HtmlElement,
-> {
+export type HtmlProps<T extends HtmlElement = HtmlElement> = ComponentPropsWithoutRef<T> & {
   as?: T;
-}
+};

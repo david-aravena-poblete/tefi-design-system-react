@@ -1,38 +1,17 @@
 /* ======================================
-   BASE
+   SPINNER
 ====================================== */
 
-.spinner {
-  border: 2px solid var(--color-border-secondary);
-  border-top-color: var(--color-primary-base);
-  border-radius: 50%;
-  animation: spinner-rotate 0.8s linear infinite;
-}
-
-/* ======================================
-   SIZES
-====================================== */
-
-.spinner--sm {
-  width: 16px;
-  height: 16px;
-}
-
-.spinner--md {
-  width: 24px;
-  height: 24px;
-}
-
-.spinner--lg {
-  width: 32px;
-  height: 32px;
+.tefi-spinner {
+  border-top-color: currentcolor;
+  animation: tefi-spinner-rotate 0.8s linear infinite;
 }
 
 /* ======================================
    ANIMATIONS
 ====================================== */
 
-@keyframes spinner-rotate {
+@keyframes tefi-spinner-rotate {
   to {
     transform: rotate(360deg);
   }

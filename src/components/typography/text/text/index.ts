@@ -4,4 +4,4 @@
 
 export { Text } from "./Text";
 
-export type { TextProps, TextOwnProps, TextVariant } from "./text.types";
+export type { TextHtml, TextProps } from "./text.types";

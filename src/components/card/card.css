@@ -3,61 +3,8 @@
 ====================================== */
 
 .card {
-  display: flex;
-  flex-direction: column;
   height: 100%;
-  border-radius: var(--surface-card-radius);
-
-  --card-padding: var(--space-lg);
-
-  transition:
-    background-color var(--transition-slow),
-    border-color var(--transition-slow),
-    transform var(--transition-normal),
-    box-shadow var(--transition-slow);
-}
-
-/* ======================================
-   VARIANTS
-====================================== */
-
-.card--outlined {
-  background-color: var(--surface-card-bg);
-  border: 1px solid var(--surface-card-border);
-  backdrop-filter: blur(var(--effect-blur-md));
-}
-
-.card--outlined:hover {
-  border-color: var(--surface-card-border-hover);
-}
-
-.card--elevated {
-  background-color: var(--surface-card-bg);
-  box-shadow: var(--surface-card-shadow);
-}
-
-.card--elevated:hover {
-  box-shadow: var(--surface-card-shadow-hover);
-}
-
-.card--flat {
-  background-color: transparent;
-}
-
-/* ======================================
-   SIZES
-====================================== */
-
-.card--sm {
-  --card-padding: var(--space-md);
-}
-
-.card--md {
-  --card-padding: var(--space-lg);
-}
-
-.card--lg {
-  --card-padding: var(--space-xl);
+  overflow: hidden;
 }
 
 /* ======================================
@@ -67,20 +14,58 @@
 .card__header,
 .card__body,
 .card__footer {
-  padding: var(--card-padding);
+  padding: var(--space-lg);
 }
 
-.card__body {
-  flex: 1;
+/* ======================================
+   SIZES
+====================================== */
+
+.card--sm .card__header,
+.card--sm .card__body,
+.card--sm .card__footer {
+  padding: var(--space-md);
 }
+
+.card--md .card__header,
+.card--md .card__body,
+.card--md .card__footer {
+  padding: var(--space-lg);
+}
+
+.card--lg .card__header,
+.card--lg .card__body,
+.card--lg .card__footer {
+  padding: var(--space-xl);
+}
+
+/* ======================================
+   HEADER
+====================================== */
 
 .card__header {
   border-bottom: 1px solid var(--surface-card-border);
 }
 
+/* ======================================
+   BODY
+====================================== */
+
+.card__body {
+  flex: 1;
+}
+
+/* ======================================
+   FOOTER
+====================================== */
+
 .card__footer {
   border-top: 1px solid var(--surface-card-border);
 }
+
+/* ======================================
+   FLAT
+====================================== */
 
 .card--flat .card__header,
 .card--flat .card__footer {
@@ -92,9 +77,8 @@
 ====================================== */
 
 .card__media {
+  width: 100%;
   overflow: hidden;
-  border-top-left-radius: var(--surface-card-radius);
-  border-top-right-radius: var(--surface-card-radius);
 }
 
 .card__media img {

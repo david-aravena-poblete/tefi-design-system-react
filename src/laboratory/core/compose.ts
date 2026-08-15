@@ -2,20 +2,11 @@
    TYPES
 ====================================== */
 
-type ComposePrimitive =
-  | string
-  | number
-  | boolean;
+type ComposePrimitive = string | number | boolean;
 
-type ComposeObject = Record<
-  string,
-  ComposePrimitive | undefined
->;
+type ComposeObject = Record<string, ComposePrimitive | undefined>;
 
-type ComposeValue =
-  | ComposePrimitive
-  | ComposeObject
-  | undefined;
+type ComposeValue = ComposePrimitive | ComposeObject | undefined;
 
 /* ======================================
    CONSTANTS
@@ -38,18 +29,12 @@ export function compose<T extends object>(
   capabilities: readonly (keyof T)[],
   props: T,
 ) {
-  const component = CSS_NAMESPACE
-    ? `${CSS_NAMESPACE}-${prefix}`
-    : prefix;
+  const component = CSS_NAMESPACE ? `${CSS_NAMESPACE}-${prefix}` : prefix;
 
   const classes = capabilities.flatMap((name) => {
     const value = props[name] as ComposeValue;
 
-    if (
-      value === undefined ||
-      value === null ||
-      value === false
-    ) {
+    if (value === undefined || value === null || value === false) {
       return [];
     }
 
@@ -57,38 +42,30 @@ export function compose<T extends object>(
        OBJECT
     ====================================== */
 
-    if (
-      typeof value === "object" &&
-      !Array.isArray(value)
-    ) {
-      return Object.entries(value).flatMap(
-        ([property, nestedValue]) => {
-          if (
-            nestedValue === undefined ||
-            nestedValue === null ||
-            nestedValue === false
-          ) {
-            return [];
-          }
+    if (typeof value === "object" && !Array.isArray(value)) {
+      return Object.entries(value).flatMap(([property, nestedValue]) => {
+        if (nestedValue === undefined || nestedValue === null || nestedValue === false) {
+          return [];
+        }
 
-          return [
-            `${component}--${String(name)}-${property}-${nestedValue}`,
-          ];
-        },
-      );
+        if (nestedValue === true) {
+          return [`${component}--${String(name)}-${property}`];
+        }
+
+        return [`${component}--${String(name)}-${property}-${nestedValue}`];
+      });
     }
 
     /* ======================================
        PRIMITIVE
     ====================================== */
 
-    return [
-      `${component}--${String(name)}-${value}`,
-    ];
+    if (value === true) {
+      return [`${component}--${String(name)}`];
+    }
+
+    return [`${component}--${String(name)}-${value}`];
   });
 
-  return [
-    component,
-    ...classes,
-  ].join(" ");
+  return [component, ...classes].join(" ");
 }

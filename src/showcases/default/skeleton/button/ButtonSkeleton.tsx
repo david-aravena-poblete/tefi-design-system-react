@@ -1,4 +1,12 @@
-import { Button } from "../../../../components/button";
+/* ======================================
+   IMPORTS
+====================================== */
+
+import { Button } from "@/components/button";
+
+/* ======================================
+   SHOWCASE
+====================================== */
 
 export function ButtonSkeleton() {
   return (
@@ -12,109 +20,164 @@ export function ButtonSkeleton() {
     >
       <div>
         <Button>Primary</Button>
+
         <br />
         <br />
-        <Button skeleton>Primary</Button>
+
+        <Button skeleton>
+          Primary
+        </Button>
       </div>
 
       <div>
-        <Button size="sm">Small</Button>
+        <Button size="sm">
+          Small
+        </Button>
+
         <br />
         <br />
-        <Button skeleton size="sm">
+
+        <Button
+          skeleton
+          size="sm"
+        >
           Small
         </Button>
       </div>
 
       <div>
-        <Button size="md">Medium</Button>
+        <Button size="md">
+          Medium
+        </Button>
+
         <br />
         <br />
-        <Button skeleton size="md">
+
+        <Button
+          skeleton
+          size="md"
+        >
           Medium
         </Button>
       </div>
 
       <div>
-        <Button size="lg">Large</Button>
+        <Button>
+          Large
+        </Button>
+
         <br />
         <br />
-        <Button skeleton size="lg">
+
+        <Button skeleton>
           Large
         </Button>
       </div>
 
       <div>
-        <Button fullWidth>Full Width</Button>
+        <Button fullWidth>
+          Full Width
+        </Button>
 
         <br />
         <br />
 
-        <Button skeleton fullWidth>
+        <Button
+          skeleton
+          fullWidth
+        >
           Full Width
         </Button>
       </div>
 
       <div>
-        <Button variant="secondary">Secondary</Button>
+        <Button variant="secondary">
+          Secondary
+        </Button>
 
         <br />
         <br />
 
-        <Button skeleton variant="secondary">
+        <Button
+          skeleton
+          variant="secondary"
+        >
           Secondary
         </Button>
       </div>
 
       <div>
-        <Button variant="ghost">Ghost</Button>
+        <Button variant="ghost">
+          Ghost
+        </Button>
 
         <br />
         <br />
 
-        <Button skeleton variant="ghost">
+        <Button
+          skeleton
+          variant="ghost"
+        >
           Ghost
         </Button>
       </div>
 
       <div>
-        <Button variant="danger">Danger</Button>
+        <Button variant="danger">
+          Danger
+        </Button>
 
         <br />
         <br />
 
-        <Button skeleton variant="danger">
+        <Button
+          skeleton
+          variant="danger"
+        >
           Danger
         </Button>
       </div>
 
       <div>
-        <Button variant="link">Link</Button>
+        <Button variant="link">
+          Link
+        </Button>
 
         <br />
         <br />
 
-        <Button skeleton variant="link">
+        <Button
+          skeleton
+          variant="link"
+        >
           Link
         </Button>
       </div>
 
       <div>
-        <Button>Guardar cambios del formulario</Button>
+        <Button>
+          Guardar cambios del formulario
+        </Button>
 
         <br />
         <br />
 
-        <Button skeleton>Guardar cambios del formulario</Button>
+        <Button skeleton>
+          Guardar cambios del formulario
+        </Button>
       </div>
 
       <div>
-        <Button>OK</Button>
+        <Button>
+          OK
+        </Button>
 
         <br />
         <br />
 
-        <Button skeleton>OK</Button>
+        <Button skeleton>
+          OK
+        </Button>
       </div>
     </div>
   );

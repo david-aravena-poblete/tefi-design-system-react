@@ -4,14 +4,29 @@
 
 import { useState, type CSSProperties } from "react";
 
-import clsx from "clsx";
+import { createClassName } from "@/laboratory/create-class-name";
+
+import { layout } from "@/laboratory/capabilities/layout";
+
+import { Skeleton } from "@/primitives/skeleton";
+import { Button } from "@/components/button";
+
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
+
+import type { ExpandableTextProps } from "./expandable-text.types";
 
 import "./expandable-text.css";
 
-import { Skeleton } from "@/primitives";
-import { Button } from "@/components/button";
+/* ======================================
+   DEFAULTS
+====================================== */
 
-import type { ExpandableTextProps } from "./expandable-text.types";
+const defaultLayout: LayoutProps = {
+  display: "flex",
+  direction: "column",
+  between: "xs",
+  fill: true,
+};
 
 /* ======================================
    COMPONENT
@@ -38,7 +53,7 @@ export function ExpandableText({
      STYLES
   ====================================== */
 
-  const style = {
+  const contentStyle = {
     "--line-clamp": lines,
   } as CSSProperties;
 
@@ -48,15 +63,19 @@ export function ExpandableText({
 
   const content = (
     <div
-      className={clsx(
+      className={createClassName(
         "expandable-text__content",
-        !expanded && "expandable-text__content--collapsed",
+        !expanded ? "expandable-text__content--collapsed" : undefined,
       )}
-      style={style}
+      style={contentStyle}
     >
       {children}
     </div>
   );
+
+  /* ======================================
+     BUTTON
+  ====================================== */
 
   const button = (
     <Button
@@ -70,13 +89,19 @@ export function ExpandableText({
   );
 
   /* ======================================
+     CLASS NAME
+  ====================================== */
+
+  const componentClassName = createClassName("expandable-text", layout(defaultLayout));
+
+  /* ======================================
      CONDITIONAL RENDER
   ====================================== */
 
   if (skeleton) {
     return (
-      <div className="expandable-text">
-        <Skeleton radius="var(--radius-md)">{content}</Skeleton>
+      <div className={componentClassName}>
+        <Skeleton radius="md">{content}</Skeleton>
 
         {button}
       </div>
@@ -88,7 +113,7 @@ export function ExpandableText({
   ====================================== */
 
   return (
-    <div className="expandable-text">
+    <div className={componentClassName}>
       {content}
 
       {button}

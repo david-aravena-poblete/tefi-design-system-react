@@ -8,10 +8,7 @@ import type { LayoutProps } from "@/laboratory/capabilities/layout";
 
 import { iconRegistry } from "./icons/icons.registry";
 
-import type {
-  IconProps,
-  IconSize,
-} from "./icon.types";
+import type { IconProps, IconSize } from "./icon.types";
 
 /* ======================================
    ICON DEFAULT
@@ -52,38 +49,25 @@ export function Icon({
   children,
   ...props
 }: IconProps) {
-  const IconComponent = name
-    ? iconRegistry[name]
-    : undefined;
+  const IconComponent = name ? iconRegistry[name] : undefined;
 
   const iconLayout = {
     ...defaultLayout,
     ...layoutBySize[size],
   };
 
-  const componentClassName = createClassName(
-    layout(iconLayout),
-    className,
-  );
+  const componentClassName = createClassName(layout(iconLayout), className);
 
   /* ======================================
      CONDITIONAL RENDER
   ====================================== */
 
   if (name && !IconComponent) {
-    console.warn(
-      `Icon "${name}" not found in registry.`,
-    );
+    console.warn(`Icon "${name}" not found in registry.`);
   }
 
   if (IconComponent) {
-    return (
-      <IconComponent
-        {...props}
-        className={componentClassName}
-        aria-hidden={ariaHidden}
-      />
-    );
+    return <IconComponent {...props} className={componentClassName} aria-hidden={ariaHidden} />;
   }
 
   return <>{children}</>;

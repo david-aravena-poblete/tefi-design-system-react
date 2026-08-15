@@ -2,26 +2,32 @@
    IMPORTS
 ====================================== */
 
-import type { ComponentProps, ElementType } from "react";
+import type { ComponentPropsWithoutRef } from "react";
+
+import type { HtmlElement } from "@/laboratory/types";
+
+import type { HtmlProps } from "@/laboratory/capabilities/html";
 
 /* ======================================
-   TYPES
-====================================== */
+    TYPES
+ ====================================== */
 
-export type SectionSize =
-  | "none"
-  | "xs"
-  | "sm"
-  | "md"
-  | "lg"
-  | "xl"
-  | "2xl";
+export type SectionHtml = Extract<
+  HtmlElement,
+  "section" | "div" | "article" | "main" | "aside" | "nav"
+>;
 
 /* ======================================
-   PROPS
-====================================== */
+    SECTION SIZE
+ ====================================== */
 
-export interface SectionProps extends ComponentProps<"section"> {
-  as?: ElementType;
+export type SectionSize = "none" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+
+/* ======================================
+    SECTION PROPS
+ ====================================== */
+
+export type SectionProps<T extends SectionHtml = "section"> = {
   size?: SectionSize;
-}
+} & HtmlProps<T> &
+  Omit<ComponentPropsWithoutRef<T>, "children" | "as">;

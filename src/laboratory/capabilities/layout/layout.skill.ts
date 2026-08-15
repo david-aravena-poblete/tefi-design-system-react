@@ -13,171 +13,95 @@ export const layoutSkill = {
 
   namespace: "layout",
 
-  description:
-    "Controls the layout and spacing of an element.",
+  description: "Controls the layout and spacing of an element.",
 
   props: {
     display: {
       type: "select",
 
-      options: [
-        "flex",
-        "inline-flex",
-      ],
+      options: ["flex", "inline-flex"],
 
-      description:
-        "Defines the display mode.",
+      description: "Defines the display mode.",
     },
 
     direction: {
       type: "select",
 
-      options: [
-        "row",
-        "column",
-      ],
+      options: ["row", "column"],
 
-      description:
-        "Defines the main axis direction.",
+      description: "Defines the main axis direction.",
     },
 
     align: {
       type: "select",
 
-      options: [
-        "start",
-        "center",
-        "end",
-        "stretch",
-        "baseline",
-      ],
+      options: ["start", "center", "end", "stretch", "baseline"],
 
-      description:
-        "Aligns items on the cross axis.",
+      description: "Aligns items on the cross axis.",
     },
 
     justify: {
       type: "select",
 
-      options: [
-        "start",
-        "center",
-        "end",
-        "between",
-      ],
+      options: ["start", "center", "end", "between"],
 
-      description:
-        "Distributes items on the main axis.",
+      description: "Distributes items on the main axis.",
     },
 
     between: {
       type: "select",
 
-      options: [
-        "none",
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ],
+      options: ["none", "xs", "sm", "md", "lg", "xl"],
 
-      description:
-        "Defines the gap between children.",
+      description: "Defines the gap between children.",
     },
 
     inside: {
       type: "select",
 
-      options: [
-        "none",
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ],
+      options: ["none", "xs", "sm", "md", "lg", "xl"],
 
-      description:
-        "Applies padding to all sides.",
+      description: "Applies padding to all sides.",
     },
 
     insideX: {
       type: "select",
 
-      options: [
-        "none",
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ],
+      options: ["none", "xs", "sm", "md", "lg", "xl"],
 
-      description:
-        "Applies horizontal padding.",
+      description: "Applies horizontal padding.",
     },
 
     insideY: {
       type: "select",
 
-      options: [
-        "none",
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ],
+      options: ["none", "xs", "sm", "md", "lg", "xl"],
 
-      description:
-        "Applies vertical padding.",
+      description: "Applies vertical padding.",
     },
 
     outside: {
       type: "select",
 
-      options: [
-        "none",
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-      ],
+      options: ["none", "xs", "sm", "md", "lg", "xl"],
 
-      description:
-        "Applies margin to all sides.",
+      description: "Applies margin to all sides.",
     },
 
     maxWidth: {
       type: "select",
 
-      options: [
-        "xs",
-        "sm",
-        "md",
-        "lg",
-        "xl",
-        "2xl",
-      ],
+      options: ["xs", "sm", "md", "lg", "xl", "2xl"],
 
-      description:
-        "Defines the maximum width.",
+      description: "Defines the maximum width.",
     },
 
     minHeight: {
       type: "select",
 
-      options: [
-        "auto",
-        "32",
-        "40",
-        "48",
-      ],
+      options: ["auto", "32", "40", "48"],
 
-      description:
-        "Defines the minimum height.",
+      description: "Defines the minimum height.",
     },
   },
 } satisfies Skill;

@@ -20,7 +20,7 @@
 
   --control-color: var(--color-primary-base);
   --control-color-hover: var(--color-primary-hover);
-  --control-indicator-color: var(--color-text-inverse);
+  --control-indicator-color: #fff;
   --control-content-color: var(--color-primary-base);
 }
 

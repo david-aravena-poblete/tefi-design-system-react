@@ -1,48 +1,8 @@
 /* ======================================
-   BASE
-====================================== */
-
-.grid {
-  display: grid;
-}
-
-/* ======================================
-   GAP
-====================================== */
-
-.grid--gap-xs {
-  gap: var(--space-xs);
-}
-
-.grid--gap-sm {
-  gap: var(--space-sm);
-}
-
-.grid--gap-md {
-  gap: var(--space-md);
-}
-
-.grid--gap-lg {
-  gap: var(--space-lg);
-}
-
-.grid--gap-xl {
-  gap: var(--space-xl);
-}
-
-.grid--gap-xxl {
-  gap: var(--space-xxl);
-}
-
-.grid--gap-xxxl {
-  gap: var(--space-xxxl);
-}
-
-/* ======================================
    AUTO
 ====================================== */
 
-.grid:not([class*="grid--cols-"]) {
+.grid--auto {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 

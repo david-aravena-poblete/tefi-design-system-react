@@ -25,9 +25,9 @@
 .chip__content {
   display: inline-flex;
 
-  align-items: center;
-
   gap: var(--space-xs);
+
+  align-items: center;
 
   width: 100%;
 }

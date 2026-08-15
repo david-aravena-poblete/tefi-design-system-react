@@ -10,6 +10,7 @@ export type HtmlElement =
   | "label"
   | "strong"
   | "small"
+  | "em"
   | "section"
   | "article"
   | "header"

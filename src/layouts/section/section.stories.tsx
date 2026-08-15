@@ -1,12 +1,16 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+/* ======================================
+   IMPORTS
+====================================== */
 
-import { Button } from "@/components/button";
-import { Container } from "@/layouts/container";
-import { Stack } from "@/layouts/stack";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Section } from "./Section";
 
-const meta: Meta<typeof Section> = {
+/* ======================================
+   META
+====================================== */
+
+const meta = {
   title: "Layouts/Section",
 
   component: Section,
@@ -21,27 +25,45 @@ const meta: Meta<typeof Section> = {
     size: {
       control: "select",
 
-      options: ["none", "sm", "md", "lg"],
+      options: ["none", "xs", "sm", "md", "lg", "xl", "2xl"],
     },
   },
-};
+} satisfies Meta<typeof Section>;
 
 export default meta;
 
-type Story = StoryObj<typeof Section>;
+type Story = StoryObj<typeof meta>;
 
 /* ======================================
-   SHARED
+   STYLES
 ====================================== */
 
-const blockStyle = {
-  border: "1px dashed var(--color-border-primary)",
+const pageStyle = {
+  background: "var(--color-bg-primary)",
+};
+
+const contentStyle = {
+  minHeight: "100px",
+
+  display: "flex",
+
+  alignItems: "center",
+
+  justifyContent: "center",
+
+  border: "2px dashed var(--color-border-primary)",
+
   background: "var(--color-bg-secondary)",
-  padding: "var(--space-lg)",
+
+  color: "var(--color-text-primary)",
+
+  fontSize: "var(--font-lg)",
+
+  fontWeight: "var(--font-weight-semibold)",
 };
 
 /* ======================================
-   STORIES
+   PLAYGROUND
 ====================================== */
 
 export const Playground: Story = {
@@ -49,73 +71,55 @@ export const Playground: Story = {
     size: "md",
 
     children: (
-      <Container>
-        <div style={blockStyle}>Section Content</div>
-      </Container>
+      <>
+        <div style={contentStyle}>Content above</div>
+
+        <div style={contentStyle}>Content below</div>
+      </>
     ),
   },
-};
 
-export const Sizes: Story = {
-  render: () => (
-    <>
-      <Section size="none">
-        <Container>
-          <div style={blockStyle}>Section none</div>
-        </Container>
-      </Section>
-
-      <Section size="sm">
-        <Container>
-          <div style={blockStyle}>Section sm</div>
-        </Container>
-      </Section>
-
-      <Section size="md">
-        <Container>
-          <div style={blockStyle}>Section md</div>
-        </Container>
-      </Section>
-
-      <Section size="lg">
-        <Container>
-          <div style={blockStyle}>Section lg</div>
-        </Container>
-      </Section>
-    </>
+  render: (args) => (
+    <div style={pageStyle}>
+      <Section {...args} />
+    </div>
   ),
 };
 
-export const LandingPage: Story = {
+/* ======================================
+   SIZES
+====================================== */
+
+export const Sizes: Story = {
   render: () => (
-    <>
-      <Section size="lg">
-        <Container>
-          <div style={blockStyle}>Hero</div>
-        </Container>
+    <div style={pageStyle}>
+      <Section size="none">
+        <div style={contentStyle}>none — 0px</div>
+      </Section>
+
+      <Section size="xs">
+        <div style={contentStyle}>xs — 16px</div>
+      </Section>
+
+      <Section size="sm">
+        <div style={contentStyle}>sm — 24px</div>
       </Section>
 
       <Section size="md">
-        <Container>
-          <Stack gap="lg">
-            <div style={blockStyle}>Features</div>
-
-            <Button>Learn More</Button>
-          </Stack>
-        </Container>
-      </Section>
-
-      <Section size="md">
-        <Container>
-          <div style={blockStyle}>Testimonials</div>
-        </Container>
+        <div style={contentStyle}>md — 32px</div>
       </Section>
 
       <Section size="lg">
-        <Container>
-          <div style={blockStyle}>Footer</div>
-        </Container>
+        <div style={contentStyle}>lg — 48px</div>
       </Section>
-    </>
+
+      <Section size="xl">
+        <div style={contentStyle}>xl — 64px</div>
+      </Section>
+
+      <Section size="2xl">
+        <div style={contentStyle}>2xl — 96px</div>
+      </Section>
+    </div>
   ),
 };

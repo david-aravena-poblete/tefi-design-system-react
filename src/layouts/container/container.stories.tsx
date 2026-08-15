@@ -4,16 +4,13 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Button } from "@/components/button";
 import { Container } from "@/layouts/container";
-import { Section } from "@/layouts/section";
-import { Stack } from "@/layouts/stack";
 
 /* ======================================
    META
 ====================================== */
 
-const meta: Meta<typeof Container> = {
+const meta = {
   title: "Layouts/Container",
 
   component: Container,
@@ -31,22 +28,44 @@ const meta: Meta<typeof Container> = {
       options: ["sm", "md", "lg", "xl", "full"],
     },
   },
-};
+} satisfies Meta<typeof Container>;
 
 export default meta;
 
-type Story = StoryObj<typeof Container>;
+type Story = StoryObj<typeof meta>;
 
 /* ======================================
-   SHARED
+   STYLES
 ====================================== */
 
-const sharedStyle = {
-  padding: "var(--space-xl)",
+const pageStyle = {
+  minHeight: "400px",
 
-  border: "1px dashed var(--color-border-primary)",
+  paddingBlock: "var(--space-xxl)",
+
+  background: "var(--color-bg-primary)",
+};
+
+const containerStyle = {
+  minHeight: "160px",
+
+  display: "flex",
+
+  alignItems: "center",
+
+  justifyContent: "center",
+
+  border: "2px dashed var(--color-border-primary)",
 
   background: "var(--color-bg-secondary)",
+
+  color: "var(--color-text-primary)",
+
+  fontSize: "var(--font-lg)",
+
+  fontWeight: "var(--font-weight-semibold)",
+
+  textAlign: "center" as const,
 };
 
 /* ======================================
@@ -57,74 +76,44 @@ export const Playground: Story = {
   args: {
     size: "md",
 
-    children: <div style={sharedStyle}>Container Content</div>,
+    children: "Container",
+
+    style: containerStyle,
   },
-};
 
-/* ======================================
-   WIDTHS
-====================================== */
-
-export const Widths: Story = {
-  render: () => (
-    <Stack gap="lg">
-      <Container size="sm">
-        <div style={sharedStyle}>Small (640px)</div>
-      </Container>
-
-      <Container size="md">
-        <div style={sharedStyle}>Medium (960px)</div>
-      </Container>
-
-      <Container size="lg">
-        <div style={sharedStyle}>Large (1200px)</div>
-      </Container>
-
-      <Container size="xl">
-        <div style={sharedStyle}>Extra Large (1440px)</div>
-      </Container>
-
-      <Container size="full">
-        <div style={sharedStyle}>Full Width</div>
-      </Container>
-    </Stack>
+  render: (args) => (
+    <div style={pageStyle}>
+      <Container {...args} />
+    </div>
   ),
 };
 
 /* ======================================
-   PAGE LAYOUT
+   SIZES
 ====================================== */
 
-export const PageLayout: Story = {
+export const Sizes: Story = {
   render: () => (
-    <Section>
-      <Container size="md">
-        <Stack gap="lg">
-          <div style={sharedStyle}>Header</div>
-
-          <div style={sharedStyle}>Main Content</div>
-
-          <div style={sharedStyle}>Footer</div>
-        </Stack>
+    <div style={pageStyle}>
+      <Container size="sm" style={containerStyle}>
+        sm — 640px
       </Container>
-    </Section>
-  ),
-};
 
-/* ======================================
-   CONTACT FORM
-====================================== */
-
-export const ContactFormExample: Story = {
-  render: () => (
-    <Section>
-      <Container size="sm">
-        <Stack gap="lg">
-          <div style={sharedStyle}>Contact Form</div>
-
-          <Button>Submit</Button>
-        </Stack>
+      <Container size="md" style={containerStyle}>
+        md — 960px
       </Container>
-    </Section>
+
+      <Container size="lg" style={containerStyle}>
+        lg — 1200px
+      </Container>
+
+      <Container size="xl" style={containerStyle}>
+        xl — 1440px
+      </Container>
+
+      <Container size="full" style={containerStyle}>
+        full — no maximum width
+      </Container>
+    </div>
   ),
 };

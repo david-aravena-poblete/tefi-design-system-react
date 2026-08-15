@@ -10,7 +10,7 @@ import type { TypographyProps } from "./typography.types";
    CAPABILITIES
 ====================================== */
 
-const typographyCapabilities = [
+export const typographyCapabilities = [
   "variant",
   "weight",
   "align",
@@ -24,12 +24,6 @@ const typographyCapabilities = [
    TYPOGRAPHY
 ====================================== */
 
-export function typography(
-  props: TypographyProps,
-) {
-  return compose(
-    "typography",
-    typographyCapabilities,
-    props,
-  );
+export function typography(props: TypographyProps) {
+  return compose("typography", typographyCapabilities, props);
 }

@@ -2,58 +2,78 @@
    IMPORTS
 ====================================== */
 
-import clsx from "clsx";
+import type { ElementType } from "react";
 
-import "./container.css";
+import { createClassName } from "@/laboratory/create-class-name";
 
-import type { ContainerProps } from "./container.types";
+import { html } from "@/laboratory/capabilities/html";
+import { layout } from "@/laboratory/capabilities/layout";
+
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
+
+import type { ContainerHtml, ContainerProps, ContainerSize } from "./container.types";
+
+/* ======================================
+   DEFAULT
+====================================== */
+
+const defaultHtml: ContainerHtml = "div";
+
+/* ======================================
+   LAYOUT
+====================================== */
+
+const layoutBySize = {
+  sm: {
+    maxWidth: "md",
+  },
+
+  md: {
+    maxWidth: "lg",
+  },
+
+  lg: {
+    maxWidth: "xl",
+  },
+
+  xl: {
+    maxWidth: "2xl",
+  },
+
+  full: {},
+} satisfies Record<ContainerSize, LayoutProps>;
 
 /* ======================================
    CONTAINER
 ====================================== */
 
-export function Container({
-  /* ======================================
-     TEFI PROPS
-  ====================================== */
-
-  as: Component = "div",
+export function Container<T extends ContainerHtml = "div">({
+  children,
+  as,
 
   size = "md",
 
-  /* ======================================
-     REACT PROPS
-  ====================================== */
-
   className,
 
-  children,
+  ...props
+}: ContainerProps<T>) {
+  const Html = html({
+    as: as ?? defaultHtml,
+  }) as ElementType;
 
-  /* ======================================
-     REST PROPS
-  ====================================== */
+  const containerLayout: LayoutProps = {
+    fill: true,
+    insideX: "lg",
+    outsideX: "auto",
 
-  ...rest
-}: ContainerProps) {
-  /* ======================================
-     CLASSES
-  ====================================== */
+    ...layoutBySize[size],
+  };
 
-  const classes = clsx(
-    "container",
-
-    `container--${size}`,
-
-    className,
-  );
-
-  /* ======================================
-     RENDER
-  ====================================== */
+  const componentClassName = createClassName(layout(containerLayout), className);
 
   return (
-    <Component className={classes} {...rest}>
+    <Html {...props} className={componentClassName}>
       {children}
-    </Component>
+    </Html>
   );
 }

@@ -39,10 +39,7 @@ export function Icons() {
 
       <Chip endIcon={<Icon name="search" size="sm" />}>Search</Chip>
 
-      <Chip
-        startIcon={<Icon name="search" size="sm" />}
-        endIcon={<Icon name="search" size="sm" />}
-      >
+      <Chip startIcon={<Icon name="search" size="sm" />} endIcon={<Icon name="search" size="sm" />}>
         Search
       </Chip>
 
@@ -99,9 +96,7 @@ export function LongContent() {
         width: "220px",
       }}
     >
-      <Chip removable>
-        Very long selected item for testing truncation
-      </Chip>
+      <Chip removable>Very long selected item for testing truncation</Chip>
     </div>
   );
 }

@@ -10,7 +10,7 @@ import type { LayoutProps } from "./layout.types";
    CAPABILITIES
 ====================================== */
 
-const layoutCapabilities = [
+export const layoutCapabilities = [
   "display",
   "direction",
   "align",
@@ -20,6 +20,8 @@ const layoutCapabilities = [
   "insideX",
   "insideY",
   "outside",
+  "outsideX",
+  "outsideY",
 
   "width",
   "minWidth",
@@ -28,6 +30,10 @@ const layoutCapabilities = [
   "height",
   "minHeight",
   "maxHeight",
+
+  "aspect",
+
+  "fill",
 ] as const;
 
 /* ======================================
@@ -35,9 +41,5 @@ const layoutCapabilities = [
 ====================================== */
 
 export function layout(props: LayoutProps) {
-  return compose(
-    "layout",
-    layoutCapabilities,
-    props,
-  );
+  return compose("layout", layoutCapabilities, props);
 }

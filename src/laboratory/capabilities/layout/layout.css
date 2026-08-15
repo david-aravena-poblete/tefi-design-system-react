@@ -1,218 +1,290 @@
 /* ======================================
-   LAYOUT
+   DISPLAY
 ====================================== */
 
-.tefi-layout {
-    display: flex;
-  }
-  
-  /* ======================================
-     DISPLAY
-  ====================================== */
-  
-  .tefi-layout--display-flex {
-    display: flex;
-  }
-  
-  .tefi-layout--display-inline-flex {
-    display: inline-flex;
-  }
-  
-  /* ======================================
-     DIRECTION
-  ====================================== */
-  
-  .tefi-layout--direction-row {
-    flex-direction: row;
-  }
-  
-  .tefi-layout--direction-column {
-    flex-direction: column;
-  }
-  
-  /* ======================================
-     BETWEEN
-  ====================================== */
-  
-  .tefi-layout--between-none {
-    gap: 0;
-  }
-  
-  .tefi-layout--between-xs {
-    gap: var(--space-xs);
-  }
-  
-  .tefi-layout--between-sm {
-    gap: var(--space-sm);
-  }
-  
-  .tefi-layout--between-md {
-    gap: var(--space-md);
-  }
-  
-  .tefi-layout--between-lg {
-    gap: var(--space-lg);
-  }
-  
-  .tefi-layout--between-xl {
-    gap: var(--space-xl);
-  }
-  
-  /* ======================================
-     ALIGN
-  ====================================== */
-  
-  .tefi-layout--align-start {
-    align-items: flex-start;
-  }
-  
-  .tefi-layout--align-center {
-    align-items: center;
-  }
-  
-  .tefi-layout--align-end {
-    align-items: flex-end;
-  }
-  
-  .tefi-layout--align-stretch {
-    align-items: stretch;
-  }
-  
-  .tefi-layout--align-baseline {
-    align-items: baseline;
-  }
-  
-  /* ======================================
-     JUSTIFY
-  ====================================== */
-  
-  .tefi-layout--justify-start {
-    justify-content: flex-start;
-  }
-  
-  .tefi-layout--justify-center {
-    justify-content: center;
-  }
-  
-  .tefi-layout--justify-end {
-    justify-content: flex-end;
-  }
-  
-  .tefi-layout--justify-between {
-    justify-content: space-between;
-  }
-  
-  /* ======================================
-     INSIDE
-  ====================================== */
-  
-  .tefi-layout--inside-none {
-    padding: 0;
-  }
-  
-  .tefi-layout--inside-xs {
-    padding: var(--space-xs);
-  }
-  
-  .tefi-layout--inside-sm {
-    padding: var(--space-sm);
-  }
-  
-  .tefi-layout--inside-md {
-    padding: var(--space-md);
-  }
-  
-  .tefi-layout--inside-lg {
-    padding: var(--space-lg);
-  }
-  
-  .tefi-layout--inside-xl {
-    padding: var(--space-xl);
-  }
-  
-  /* ======================================
-     INSIDE X
-  ====================================== */
-  
-  .tefi-layout--insideX-none {
-    padding-inline: 0;
-  }
-  
-  .tefi-layout--insideX-xs {
-    padding-inline: var(--space-xs);
-  }
-  
-  .tefi-layout--insideX-sm {
-    padding-inline: var(--space-sm);
-  }
-  
-  .tefi-layout--insideX-md {
-    padding-inline: var(--space-md);
-  }
-  
-  .tefi-layout--insideX-lg {
-    padding-inline: var(--space-lg);
-  }
-  
-  .tefi-layout--insideX-xl {
-    padding-inline: var(--space-xl);
-  }
-  
-  /* ======================================
-     INSIDE Y
-  ====================================== */
-  
-  .tefi-layout--insideY-none {
-    padding-block: 0;
-  }
-  
-  .tefi-layout--insideY-xs {
-    padding-block: var(--space-xs);
-  }
-  
-  .tefi-layout--insideY-sm {
-    padding-block: var(--space-sm);
-  }
-  
-  .tefi-layout--insideY-md {
-    padding-block: var(--space-md);
-  }
-  
-  .tefi-layout--insideY-lg {
-    padding-block: var(--space-lg);
-  }
-  
-  .tefi-layout--insideY-xl {
-    padding-block: var(--space-xl);
-  }
-  
-  /* ======================================
-     OUTSIDE
-  ====================================== */
-  
-  .tefi-layout--outside-none {
-    margin: 0;
-  }
-  
-  .tefi-layout--outside-xs {
-    margin: var(--space-xs);
-  }
-  
-  .tefi-layout--outside-sm {
-    margin: var(--space-sm);
-  }
-  
-  .tefi-layout--outside-md {
-    margin: var(--space-md);
-  }
-  
-  .tefi-layout--outside-lg {
-    margin: var(--space-lg);
-  }
-  
-  .tefi-layout--outside-xl {
-    margin: var(--space-xl);
-  }
+.tefi-layout--display-flex {
+  display: flex;
+}
+
+.tefi-layout--display-inline-flex {
+  display: inline-flex;
+}
+
+.tefi-layout--display-grid {
+  display: grid;
+}
+
+/* ======================================
+   DIRECTION
+====================================== */
+
+.tefi-layout--direction-row {
+  flex-direction: row;
+}
+
+.tefi-layout--direction-column {
+  flex-direction: column;
+}
+
+/* ======================================
+   BETWEEN
+====================================== */
+
+.tefi-layout--between-none {
+  gap: 0;
+}
+
+.tefi-layout--between-xs {
+  gap: var(--space-xs);
+}
+
+.tefi-layout--between-sm {
+  gap: var(--space-sm);
+}
+
+.tefi-layout--between-md {
+  gap: var(--space-md);
+}
+
+.tefi-layout--between-lg {
+  gap: var(--space-lg);
+}
+
+.tefi-layout--between-xl {
+  gap: var(--space-xl);
+}
+
+.tefi-layout--between-xxl {
+  gap: var(--space-xxl);
+}
+
+.tefi-layout--between-xxxl {
+  gap: var(--space-xxxl);
+}
+
+/* ======================================
+   ALIGN
+====================================== */
+
+.tefi-layout--align-start {
+  align-items: flex-start;
+}
+
+.tefi-layout--align-center {
+  align-items: center;
+}
+
+.tefi-layout--align-end {
+  align-items: flex-end;
+}
+
+.tefi-layout--align-stretch {
+  align-items: stretch;
+}
+
+.tefi-layout--align-baseline {
+  align-items: baseline;
+}
+
+/* ======================================
+   JUSTIFY
+====================================== */
+
+.tefi-layout--justify-start {
+  justify-content: flex-start;
+}
+
+.tefi-layout--justify-center {
+  justify-content: center;
+}
+
+.tefi-layout--justify-end {
+  justify-content: flex-end;
+}
+
+.tefi-layout--justify-between {
+  justify-content: space-between;
+}
+
+/* ======================================
+   INSIDE
+====================================== */
+
+.tefi-layout--inside-none {
+  padding: 0;
+}
+
+.tefi-layout--inside-xs {
+  padding: var(--space-xs);
+}
+
+.tefi-layout--inside-sm {
+  padding: var(--space-sm);
+}
+
+.tefi-layout--inside-md {
+  padding: var(--space-md);
+}
+
+.tefi-layout--inside-lg {
+  padding: var(--space-lg);
+}
+
+.tefi-layout--inside-xl {
+  padding: var(--space-xl);
+}
+
+/* ======================================
+   INSIDE X
+====================================== */
+
+.tefi-layout--insideX-none {
+  padding-inline: 0;
+}
+
+.tefi-layout--insideX-xs {
+  padding-inline: var(--space-xs);
+}
+
+.tefi-layout--insideX-sm {
+  padding-inline: var(--space-sm);
+}
+
+.tefi-layout--insideX-md {
+  padding-inline: var(--space-md);
+}
+
+.tefi-layout--insideX-lg {
+  padding-inline: var(--space-lg);
+}
+
+.tefi-layout--insideX-xl {
+  padding-inline: var(--space-xl);
+}
+
+/* ======================================
+   INSIDE Y
+====================================== */
+
+.tefi-layout--insideY-none {
+  padding-block: 0;
+}
+
+.tefi-layout--insideY-xs {
+  padding-block: var(--space-xs);
+}
+
+.tefi-layout--insideY-sm {
+  padding-block: var(--space-sm);
+}
+
+.tefi-layout--insideY-md {
+  padding-block: var(--space-md);
+}
+
+.tefi-layout--insideY-lg {
+  padding-block: var(--space-lg);
+}
+
+.tefi-layout--insideY-xl {
+  padding-block: var(--space-xl);
+}
+
+/* ======================================
+   OUTSIDE
+====================================== */
+
+.tefi-layout--outside-none {
+  margin: 0;
+}
+
+.tefi-layout--outside-xs {
+  margin: var(--space-xs);
+}
+
+.tefi-layout--outside-sm {
+  margin: var(--space-sm);
+}
+
+.tefi-layout--outside-md {
+  margin: var(--space-md);
+}
+
+.tefi-layout--outside-lg {
+  margin: var(--space-lg);
+}
+
+.tefi-layout--outside-xl {
+  margin: var(--space-xl);
+}
+
+.tefi-layout--outside-auto {
+  margin: auto;
+}
+
+/* ======================================
+   OUTSIDE X
+====================================== */
+
+.tefi-layout--outsideX-none {
+  margin-inline: 0;
+}
+
+.tefi-layout--outsideX-xs {
+  margin-inline: var(--space-xs);
+}
+
+.tefi-layout--outsideX-sm {
+  margin-inline: var(--space-sm);
+}
+
+.tefi-layout--outsideX-md {
+  margin-inline: var(--space-md);
+}
+
+.tefi-layout--outsideX-lg {
+  margin-inline: var(--space-lg);
+}
+
+.tefi-layout--outsideX-xl {
+  margin-inline: var(--space-xl);
+}
+
+.tefi-layout--outsideX-auto {
+  margin-inline: auto;
+}
+
+/* ======================================
+   OUTSIDE Y
+====================================== */
+
+.tefi-layout--outsideY-none {
+  margin-block: 0;
+}
+
+.tefi-layout--outsideY-xs {
+  margin-block: var(--space-xs);
+}
+
+.tefi-layout--outsideY-sm {
+  margin-block: var(--space-sm);
+}
+
+.tefi-layout--outsideY-md {
+  margin-block: var(--space-md);
+}
+
+.tefi-layout--outsideY-lg {
+  margin-block: var(--space-lg);
+}
+
+.tefi-layout--outsideY-xl {
+  margin-block: var(--space-xl);
+}
+
+.tefi-layout--outsideY-auto {
+  margin-block: auto;
+}
 
 /* ======================================
    WIDTH
@@ -270,33 +342,53 @@
   width: var(--size-52);
 }
 
-  /* ======================================
-     MAX WIDTH
-  ====================================== */
-  
-  .tefi-layout--maxWidth-xs {
-    max-width: var(--width-xs);
-  }
-  
-  .tefi-layout--maxWidth-sm {
-    max-width: var(--width-sm);
-  }
-  
-  .tefi-layout--maxWidth-md {
-    max-width: var(--width-md);
-  }
-  
-  .tefi-layout--maxWidth-lg {
-    max-width: var(--width-lg);
-  }
-  
-  .tefi-layout--maxWidth-xl {
-    max-width: var(--width-xl);
-  }
-  
-  .tefi-layout--maxWidth-2xl {
-    max-width: var(--width-2xl);
-  }
+/* ======================================
+   MIN WIDTH
+====================================== */
+
+.tefi-layout--minWidth-auto {
+  min-width: auto;
+}
+
+.tefi-layout--minWidth-32 {
+  min-width: var(--size-32);
+}
+
+.tefi-layout--minWidth-40 {
+  min-width: var(--size-40);
+}
+
+.tefi-layout--minWidth-48 {
+  min-width: var(--size-48);
+}
+
+/* ======================================
+   MAX WIDTH
+====================================== */
+
+.tefi-layout--maxWidth-xs {
+  max-width: var(--width-xs);
+}
+
+.tefi-layout--maxWidth-sm {
+  max-width: var(--width-sm);
+}
+
+.tefi-layout--maxWidth-md {
+  max-width: var(--width-md);
+}
+
+.tefi-layout--maxWidth-lg {
+  max-width: var(--width-lg);
+}
+
+.tefi-layout--maxWidth-xl {
+  max-width: var(--width-xl);
+}
+
+.tefi-layout--maxWidth-2xl {
+  max-width: var(--width-2xl);
+}
 
 /* ======================================
    HEIGHT
@@ -353,22 +445,47 @@
 .tefi-layout--height-52 {
   height: var(--size-52);
 }
-  /* ======================================
-     MIN HEIGHT
-  ====================================== */
-  
-  .tefi-layout--minHeight-auto {
-    min-height: auto;
-  }
-  
-  .tefi-layout--minHeight-32 {
-    min-height: var(--size-32);
-  }
-  
-  .tefi-layout--minHeight-40 {
-    min-height: var(--size-40);
-  }
-  
-  .tefi-layout--minHeight-48 {
-    min-height: var(--size-48);
-  }
+
+/* ======================================
+   MIN HEIGHT
+====================================== */
+
+.tefi-layout--minHeight-auto {
+  min-height: auto;
+}
+
+.tefi-layout--minHeight-32 {
+  min-height: var(--size-32);
+}
+
+.tefi-layout--minHeight-40 {
+  min-height: var(--size-40);
+}
+
+.tefi-layout--minHeight-48 {
+  min-height: var(--size-48);
+}
+
+/* ======================================
+   ASPECT
+====================================== */
+
+.tefi-layout--aspect-1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.tefi-layout--aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.tefi-layout--aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+/* ======================================
+   FILL
+====================================== */
+
+.tefi-layout--fill {
+  width: 100%;
+}

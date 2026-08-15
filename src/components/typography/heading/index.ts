@@ -1,3 +1,7 @@
+/* ======================================
+   EXPORTS
+====================================== */
+
 export { Heading } from "./Heading";
 
-export type { HeadingProps, HeadingElement } from "./heading.types";
+export type { HeadingProps } from "./heading.types";

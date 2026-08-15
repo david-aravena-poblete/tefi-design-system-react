@@ -2,23 +2,24 @@
    IMPORTS
 ====================================== */
 
-import type { ElementType } from "react";
+import type { ReactElement } from "react";
 
 import { createClassName } from "@/laboratory/create-class-name";
 
-import { html } from "@/laboratory/capabilities/html";
-import { interaction } from "@/laboratory/capabilities/interaction";
 import { layout } from "@/laboratory/capabilities/layout";
 import { surface } from "@/laboratory/capabilities/surface";
 import { typography } from "@/laboratory/capabilities/typography";
+import { interaction } from "@/laboratory/capabilities/interaction";
 
-import type { InteractionProps } from "@/laboratory/capabilities/interaction";
+import { Skeleton } from "@/primitives/skeleton";
+import { Spinner } from "@/primitives/spinner";
+
 import type { LayoutProps } from "@/laboratory/capabilities/layout";
 import type { SurfaceProps } from "@/laboratory/capabilities/surface";
 import type { TypographyProps } from "@/laboratory/capabilities/typography";
+import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 
 import type {
-  ButtonHtml,
   ButtonProps,
   ButtonSize,
   ButtonVariant,
@@ -27,8 +28,6 @@ import type {
 /* ======================================
    BUTTON DEFAULT
 ====================================== */
-
-const defaultHtml: ButtonHtml = "button";
 
 const defaultLayout: LayoutProps = {
   display: "flex",
@@ -149,29 +148,40 @@ const typographyBySize = {
    BUTTON
 ====================================== */
 
-export function Button<
-  T extends ButtonHtml = "button",
->({
+export function Button({
   children,
-  as,
+
   variant = "primary",
   size = "md",
+
+  fullWidth,
+
+  loading,
+  skeleton,
+  disabled,
 
   startIcon,
   endIcon,
 
   className,
-  ...props
-}: ButtonProps<T>) {
-  
-  const Element = html({
-    as: as ?? defaultHtml,
-  }) as ElementType;
+  onClick,
 
-  const buttonLayout = {
+  ...props
+}: ButtonProps): ReactElement {
+  const iconOnly = children === undefined || children === null;
+
+  const buttonLayout: LayoutProps = {
     ...defaultLayout,
     ...layoutBySize[size],
+
+    fill: fullWidth,
   };
+
+  if (iconOnly) {
+    buttonLayout.insideX = "none";
+
+    buttonLayout.minWidth = size === "sm" ? "32" : "40";
+  }
 
   const buttonSurface = {
     ...defaultSurface,
@@ -183,9 +193,13 @@ export function Button<
     ...typographyBySize[size],
   };
 
+  const isDisabled = disabled || loading;
+
   const buttonInteraction = {
     ...defaultInteraction,
     ...interactionByVariant[variant],
+
+    disabled: isDisabled,
   };
 
   const componentClassName = createClassName(
@@ -196,16 +210,49 @@ export function Button<
     className,
   );
 
-  return (
-    <Element
+  const button = (
+    <button
       {...props}
+      disabled={isDisabled}
+      onClick={
+        onClick
+          ? (event) => {
+              if (isDisabled) {
+                event.preventDefault();
+
+                return;
+              }
+
+              onClick(event);
+            }
+          : undefined
+      }
       className={componentClassName}
     >
-      {startIcon}
-  
-      {children}
-  
-      {endIcon}
-    </Element>
+      <>
+        {loading ? <Spinner size="sm" /> : startIcon}
+
+        {children}
+
+        {!loading && endIcon}
+      </>
+    </button>
   );
+
+  /* ======================================
+     CONDITIONAL RENDER
+  ====================================== */
+
+  if (skeleton) {
+    return (
+      <Skeleton
+        fill={fullWidth}
+        radius={buttonSurface.radius}
+      >
+        {button}
+      </Skeleton>
+    );
+  }
+
+  return button;
 }

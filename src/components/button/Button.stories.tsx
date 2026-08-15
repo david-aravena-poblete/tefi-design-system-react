@@ -1,12 +1,10 @@
 /* ======================================
    IMPORTS
 ====================================== */
+
 import { Icon } from "@/primitives";
 
-import type {
-  Meta,
-  StoryObj,
-} from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Button } from "./Button";
 
@@ -40,22 +38,13 @@ const meta = {
     variant: {
       control: "select",
 
-      options: [
-        "primary",
-        "secondary",
-        "danger",
-        "ghost",
-        "link",
-      ],
+      options: ["primary", "secondary", "danger", "ghost", "link"],
     },
 
     size: {
       control: "select",
 
-      options: [
-        "sm",
-        "md",
-      ],
+      options: ["sm", "md"],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -77,40 +66,15 @@ export const Playground: Story = {};
 export const Variants: Story = {
   render: () => (
     <div style={storyContainerStyle}>
-      <Button
-        variant="primary"
-        startIcon={<Icon name="search" />}
-      >
-        Primary
-      </Button>
+      <Button variant="primary">Primary</Button>
 
-      <Button
-        variant="secondary"
-        startIcon={<Icon name="user" />}
-      >
-        Secondary
-      </Button>
+      <Button variant="secondary">Secondary</Button>
 
-      <Button
-        variant="danger"
-        startIcon={<Icon name="close" />}
-      >
-        Danger
-      </Button>
+      <Button variant="danger">Danger</Button>
 
-      <Button
-        variant="ghost"
-        startIcon={<Icon name="plus" />}
-      >
-        Ghost
-      </Button>
+      <Button variant="ghost">Ghost</Button>
 
-      <Button
-        variant="link"
-        startIcon={<Icon name="sun" />}
-      >
-        Link
-      </Button>
+      <Button variant="link">Link</Button>
     </div>
   ),
 };
@@ -122,13 +86,47 @@ export const Variants: Story = {
 export const Sizes: Story = {
   render: () => (
     <div style={storyContainerStyle}>
-      <Button size="sm">
-        Small
+      <Button size="sm">Small</Button>
+
+      <Button size="md">Medium</Button>
+    </div>
+  ),
+};
+
+/* ======================================
+   FULL WIDTH
+====================================== */
+
+export const FullWidth: Story = {
+  render: () => (
+    <div style={{ width: "360px" }}>
+      <Button fullWidth>Full Width</Button>
+    </div>
+  ),
+};
+
+/* ======================================
+   ICONS
+====================================== */
+
+export const Icons: Story = {
+  render: () => (
+    <div style={storyContainerStyle}>
+      <Button startIcon={<Icon name="search" />}>Start Icon</Button>
+
+      <Button endIcon={<Icon name="plus" />}>End Icon</Button>
+
+      <Button
+        startIcon={<Icon name="search" />}
+        endIcon={<Icon name="plus" />}
+      >
+        Both Icons
       </Button>
 
-      <Button size="md">
-        Medium
-      </Button>
+      <Button
+        startIcon={<Icon name="search" />}
+        aria-label="Search"
+      />
     </div>
   ),
 };
@@ -140,13 +138,11 @@ export const Sizes: Story = {
 export const States: Story = {
   render: () => (
     <div style={storyContainerStyle}>
-      <Button>
-        Default
-      </Button>
+      <Button>Default</Button>
 
-      <Button disabled>
-        Disabled
-      </Button>
+      <Button disabled>Disabled</Button>
+
+      <Button loading>Loading</Button>
     </div>
   ),
 };

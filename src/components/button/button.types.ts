@@ -7,15 +7,9 @@ import type {
    ReactNode,
  } from "react";
  
- import type { HtmlProps } from "@/laboratory/capabilities/html";
- 
  /* ======================================
     TYPES
  ====================================== */
- 
- export type ButtonHtml =
-   | "button"
-   | "a";
  
  export type ButtonVariant =
    | "primary"
@@ -32,11 +26,7 @@ import type {
     BUTTON PROPS
  ====================================== */
  
- export type ButtonProps<
-   T extends ButtonHtml = "button",
- > = {
-   children?: ReactNode;
- 
+ export type ButtonProps = {
    variant?: ButtonVariant;
  
    size?: ButtonSize;
@@ -50,8 +40,4 @@ import type {
    startIcon?: ReactNode;
  
    endIcon?: ReactNode;
- } & HtmlProps<T> &
-   Omit<
-     ComponentPropsWithoutRef<T>,
-     "children" | "as"
-   >;
+ } & ComponentPropsWithoutRef<"button">;

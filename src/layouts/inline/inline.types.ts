@@ -2,16 +2,28 @@
    IMPORTS
 ====================================== */
 
-import type { ComponentProps, ElementType } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
-import type { Spacing } from "../../foundations/design-system.types";
+import type { HtmlElement } from "@/laboratory/types";
+
+import type { HtmlProps } from "@/laboratory/capabilities/html";
+
+import type { Space } from "@/laboratory/types";
 
 /* ======================================
-   PROPS
-====================================== */
+    TYPES
+ ====================================== */
 
-export interface InlineProps extends ComponentProps<"div"> {
-  as?: ElementType;
+export type InlineHtml = Extract<
+  HtmlElement,
+  "div" | "section" | "article" | "main" | "aside" | "nav"
+>;
 
-  gap?: Spacing;
-}
+/* ======================================
+    INLINE PROPS
+ ====================================== */
+
+export type InlineProps<T extends InlineHtml = "div"> = {
+  gap?: Space;
+} & HtmlProps<T> &
+  Omit<ComponentPropsWithoutRef<T>, "children" | "as">;

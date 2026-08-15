@@ -1,91 +1,308 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
+import type { Meta, StoryObj } from "@storybook/react-vite";
+
 import { Text } from "./Text";
+
+/* ======================================
+   CONSTANTS
+====================================== */
+
+const storyContainerStyle = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "1rem",
+} as const;
 
 /* ======================================
    META
 ====================================== */
 
-export default {
+const meta = {
   title: "Components/Text",
 
   component: Text,
-};
+
+  args: {
+    children: "The quick brown fox jumps over the lazy dog.",
+
+    size: "md",
+
+    weight: "regular",
+
+    color: "black",
+  },
+
+  argTypes: {
+    size: {
+      control: "select",
+
+      options: ["sm", "md", "lg", "caption"],
+    },
+
+    color: {
+      control: "select",
+
+      options: ["black", "gray", "blue", "red", "white"],
+    },
+
+    weight: {
+      control: "select",
+
+      options: ["regular", "medium", "semibold", "bold"],
+    },
+
+    align: {
+      control: "select",
+
+      options: ["start", "center", "end", "justify"],
+    },
+
+    case: {
+      control: "select",
+
+      options: ["uppercase", "lowercase", "capitalize"],
+    },
+
+    decoration: {
+      control: "select",
+
+      options: ["underline", "line-through"],
+    },
+
+    noWrap: {
+      control: "boolean",
+    },
+
+    truncate: {
+      control: "boolean",
+    },
+
+    expandable: {
+      control: "boolean",
+    },
+
+    lines: {
+      control: "number",
+    },
+  },
+} satisfies Meta<typeof Text>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 /* ======================================
-   DEFAULT
+   PLAYGROUND
 ====================================== */
 
-export function Default() {
-  return <Text>Lorem ipsum dolor sit amet.</Text>;
-}
-
-/* ======================================
-   VARIANTS
-====================================== */
-
-export function Variants() {
-  return (
-    <div
-      style={{
-        display: "grid",
-        gap: "12px",
-      }}
-    >
-      <Text>Default text</Text>
-
-      <Text variant="secondary">Secondary text</Text>
-
-      <Text variant="muted">Muted text</Text>
-
-      <div
-        style={{
-          background: "#111827",
-          padding: "12px",
-        }}
-      >
-        <Text variant="inverse">Inverse text</Text>
-      </div>
-    </div>
-  );
-}
+export const Playground: Story = {};
 
 /* ======================================
    SIZES
 ====================================== */
 
-export function Sizes() {
-  return (
-    <div
-      style={{
-        display: "grid",
-        gap: "12px",
-      }}
-    >
-      <Text size="sm">Small text</Text>
+export const Sizes: Story = {
+  render: () => (
+    <div style={storyContainerStyle}>
+      <Text size="sm">Body Small</Text>
 
-      <Text size="md">Medium text</Text>
+      <Text size="md">Body Medium</Text>
+
+      <Text size="lg">Body Large</Text>
+
+      <Text size="caption">Caption</Text>
     </div>
-  );
-}
+  ),
+};
 
 /* ======================================
-   ELEMENTS
+   WEIGHTS
 ====================================== */
 
-export function Elements() {
-  return (
+export const Weights: Story = {
+  render: () => (
+    <div style={storyContainerStyle}>
+      <Text weight="regular">Regular</Text>
+
+      <Text weight="medium">Medium</Text>
+
+      <Text weight="semibold">Semibold</Text>
+
+      <Text weight="bold">Bold</Text>
+    </div>
+  ),
+};
+
+/* ======================================
+   COLORS
+====================================== */
+
+export const Colors: Story = {
+  render: () => (
+    <div style={storyContainerStyle}>
+      <Text color="black">Black</Text>
+
+      <Text color="gray">Gray</Text>
+
+      <Text color="blue">Blue</Text>
+
+      <Text color="red">Red</Text>
+    </div>
+  ),
+};
+
+/* ======================================
+   ALIGN
+====================================== */
+
+export const Align: Story = {
+  render: () => (
     <div
       style={{
-        display: "grid",
-        gap: "12px",
+        ...storyContainerStyle,
+        width: "400px",
       }}
     >
-      <Text as="p">Paragraph</Text>
+      <Text align="start">Start aligned text</Text>
 
-      <Text as="span">Span</Text>
+      <Text align="center">Center aligned text</Text>
 
-      <Text as="label">Label</Text>
+      <Text align="end">End aligned text</Text>
 
-      <Text as="div">Div</Text>
+      <Text align="justify">
+        Justified text with enough content to demonstrate the alignment behavior.
+      </Text>
     </div>
-  );
-}
+  ),
+};
+
+/* ======================================
+   CASE
+====================================== */
+
+export const Case: Story = {
+  render: () => (
+    <div style={storyContainerStyle}>
+      <Text case="uppercase">uppercase text</Text>
+
+      <Text case="lowercase">LOWERCASE TEXT</Text>
+
+      <Text case="capitalize">capitalize this text</Text>
+    </div>
+  ),
+};
+
+/* ======================================
+   DECORATION
+====================================== */
+
+export const Decoration: Story = {
+  render: () => (
+    <div style={storyContainerStyle}>
+      <Text decoration="underline">Underlined text</Text>
+
+      <Text decoration="line-through">Line through text</Text>
+    </div>
+  ),
+};
+
+/* ======================================
+   NO WRAP
+====================================== */
+
+export const NoWrap: Story = {
+  render: () => (
+    <div
+      style={{
+        ...storyContainerStyle,
+        width: "200px",
+      }}
+    >
+      <Text noWrap>This text should stay on one line.</Text>
+    </div>
+  ),
+};
+
+/* ======================================
+   TRUNCATE
+====================================== */
+
+export const Truncate: Story = {
+  render: () => (
+    <div
+      style={{
+        width: "200px",
+      }}
+    >
+      <Text truncate>
+        This is a very long text that should be truncated when it reaches the available width.
+      </Text>
+    </div>
+  ),
+};
+
+/* ======================================
+   EXPANDABLE
+====================================== */
+
+export const Expandable: Story = {
+  render: () => (
+    <div
+      style={{
+        width: "300px",
+      }}
+    >
+      <Text expandable lines={4}>
+        This is a very long text that should demonstrate the expandable behavior. The content is
+        initially limited to the configured number of lines and can be expanded to reveal the
+        complete text.
+      </Text>
+    </div>
+  ),
+};
+
+/* ======================================
+   SKELETON
+====================================== */
+
+export const SkeletonState: Story = {
+  render: () => (
+    <div style={storyContainerStyle}>
+      <Text skeleton>Skeleton text</Text>
+
+      <Text size="md" skeleton>
+        Skeleton medium text
+      </Text>
+
+      <Text size="lg" skeleton>
+        Skeleton large text
+      </Text>
+
+      <Text size="caption" skeleton>
+        Skeleton caption
+      </Text>
+    </div>
+  ),
+};
+
+/* ======================================
+   SKELETON LONG
+====================================== */
+
+export const SkeletonLong: Story = {
+  render: () => (
+    <div
+      style={{
+        width: "300px",
+      }}
+    >
+      <Text skeleton>
+        This is a very long text that should demonstrate how the skeleton behaves when the text
+        wraps into multiple lines.
+      </Text>
+    </div>
+  ),
+};

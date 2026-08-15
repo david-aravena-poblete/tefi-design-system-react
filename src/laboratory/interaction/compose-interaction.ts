@@ -8,25 +8,15 @@ import type { InteractionProps } from "./interaction.types";
    CAPABILITIES
 ====================================== */
 
-const interactionNames = [
-  "focusRing",
-  "press",
-  "transition",
-] as const;
+const interactionNames = ["focusRing", "press", "transition"] as const;
 
-const compositionNames = [
-  "background",
-  "border",
-  "color",
-] as const;
+const compositionNames = ["background", "border", "color"] as const;
 
 /* ======================================
    COMPOSE
 ====================================== */
 
-export function composeInteraction(
-  props: InteractionProps,
-) {
+export function composeInteraction(props: InteractionProps) {
   const classes = interactionNames.flatMap((name) => {
     const value = props[name];
 
@@ -47,17 +37,11 @@ export function composeInteraction(
     return [`interaction--hover-${name}-${value}`];
   });
 
-  const interactionClasses = [
-    ...classes,
-    ...hoverClasses,
-  ];
+  const interactionClasses = [...classes, ...hoverClasses];
 
   if (interactionClasses.length === 0) {
     return "";
   }
 
-  return [
-    "interaction",
-    ...interactionClasses,
-  ].join(" ");
+  return ["interaction", ...interactionClasses].join(" ");
 }

@@ -2,14 +2,23 @@
    IMPORTS
 ====================================== */
 
-import type { ComponentProps } from "react";
-
-import type { Size } from "@/foundations/design-system.types";
+import type { ComponentPropsWithoutRef } from "react";
+import type { HtmlElement } from "@/laboratory/types";
+import type { HtmlProps } from "@/laboratory/capabilities/html";
 
 /* ======================================
-   PROPS
+   TYPES
 ====================================== */
 
-export interface SpinnerProps extends ComponentProps<"div"> {
-  size?: Size;
-}
+export type SpinnerHtml = Extract<HtmlElement, "div">;
+
+export type SpinnerSize = "sm" | "md" | "lg";
+
+/* ======================================
+   SPINNER PROPS
+====================================== */
+
+export type SpinnerProps<T extends SpinnerHtml = "div"> = {
+  size?: SpinnerSize;
+} & HtmlProps<T> &
+  Omit<ComponentPropsWithoutRef<T>, "as">;

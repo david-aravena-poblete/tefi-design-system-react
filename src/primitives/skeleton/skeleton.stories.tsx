@@ -26,41 +26,56 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Button: Story = {
+  render: () => (
+    <Skeleton>
+      <button>Guardar</button>
+    </Skeleton>
+  ),
+};
 
 export const Text: Story = {
-  args: {
-    width: "200px",
-    height: "16px",
-  },
+  render: () => (
+    <Skeleton>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Skeleton>
+  ),
 };
 
-export const Title: Story = {
-  args: {
-    width: "300px",
-    height: "32px",
-  },
-};
-
-export const Image: Story = {
-  args: {
-    width: "100%",
-    height: "300px",
-  },
+export const Heading: Story = {
+  render: () => (
+    <Skeleton>
+      <h2>Skeleton Heading</h2>
+    </Skeleton>
+  ),
 };
 
 export const Avatar: Story = {
-  args: {
-    width: "64px",
-    height: "64px",
-    radius: "50%",
-  },
+  render: () => (
+    <Skeleton>
+      <div
+        style={{
+          width: "64px",
+          height: "64px",
+          borderRadius: "50%",
+          background: "#ddd",
+        }}
+      />
+    </Skeleton>
+  ),
 };
 
-export const Static: Story = {
-  args: {
-    width: "300px",
-    height: "32px",
-    animated: false,
-  },
+export const Card: Story = {
+  render: () => (
+    <Skeleton>
+      <div
+        style={{
+          width: "320px",
+          height: "180px",
+          borderRadius: "12px",
+          background: "#ddd",
+        }}
+      />
+    </Skeleton>
+  ),
 };

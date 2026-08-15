@@ -2,24 +2,28 @@
    IMPORTS
 ====================================== */
 
-import type { ComponentProps, ElementType } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
-import type {
-  Align,
-  Justify,
-  Spacing,
-} from "../../foundations/design-system.types";
+import type { HtmlElement } from "@/laboratory/types";
+
+import type { HtmlProps } from "@/laboratory/capabilities/html";
+
+import type { Space } from "@/laboratory/types";
 
 /* ======================================
-   PROPS
+   TYPES
 ====================================== */
 
-export interface StackProps extends ComponentProps<"div"> {
-  as?: ElementType;
+export type StackHtml = Extract<
+  HtmlElement,
+  "div" | "section" | "article" | "main" | "aside" | "nav"
+>;
 
-  gap?: Spacing;
+/* ======================================
+   STACK PROPS
+====================================== */
 
-  align?: Align;
-
-  justify?: Justify;
-}
+export type StackProps<T extends StackHtml = "div"> = {
+  gap?: Space;
+} & HtmlProps<T> &
+  Omit<ComponentPropsWithoutRef<T>, "children" | "as">;

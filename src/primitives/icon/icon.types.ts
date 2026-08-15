@@ -9,10 +9,7 @@ import type { IconName } from "./icons/icons.registry";
    TYPES
 ====================================== */
 
-export type IconSize =
-  | "sm"
-  | "md"
-  | "lg";
+export type IconSize = "sm" | "md" | "lg";
 
 /* ======================================
    PROPS

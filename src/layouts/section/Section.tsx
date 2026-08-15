@@ -2,58 +2,52 @@
    IMPORTS
 ====================================== */
 
-import clsx from "clsx";
+import type { ElementType } from "react";
 
 import "./section.css";
 
-import type { SectionProps } from "./section.types";
+import { createClassName } from "@/laboratory/create-class-name";
+
+import { html } from "@/laboratory/capabilities/html";
+import { layout } from "@/laboratory/capabilities/layout";
+
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
+
+import type { SectionHtml, SectionProps } from "./section.types";
+
+/* ======================================
+   DEFAULT
+====================================== */
+
+const defaultHtml: SectionHtml = "section";
 
 /* ======================================
    SECTION
 ====================================== */
 
-export function Section({
-  /* ======================================
-     TEFI PROPS
-  ====================================== */
-
-  as: Component = "section",
+export function Section<T extends SectionHtml = "section">({
+  children,
+  as,
 
   size = "md",
 
-  /* ======================================
-     REACT PROPS
-  ====================================== */
-
   className,
 
-  children,
-
-  /* ======================================
-     REST PROPS
-  ====================================== */
-
   ...props
-}: SectionProps) {
-  /* ======================================
-     CLASSES
-  ====================================== */
+}: SectionProps<T>) {
+  const Html = html({
+    as: as ?? defaultHtml,
+  }) as ElementType;
 
-  const classes = clsx(
-    "section",
+  const sectionLayout: LayoutProps = {
+    fill: true,
+  };
 
-    `section--${size}`,
-
-    className,
-  );
-
-  /* ======================================
-     RENDER
-  ====================================== */
+  const componentClassName = createClassName(layout(sectionLayout), `section--${size}`, className);
 
   return (
-    <Component className={classes} {...props}>
+    <Html {...props} className={componentClassName}>
       {children}
-    </Component>
+    </Html>
   );
 }

@@ -97,53 +97,53 @@
 .tefi-typography--align-justify {
   text-align: justify;
 }
-  
-  /* ======================================
-     TRANSFORM
-  ====================================== */
-  
-  .tefi-typography--transform-uppercase {
-    text-transform: uppercase;
-  }
-  
-  .tefi-typography--transform-lowercase {
-    text-transform: lowercase;
-  }
-  
-  .tefi-typography--transform-capitalize {
-    text-transform: capitalize;
-  }
-  
-  /* ======================================
-     DECORATION
-  ====================================== */
-  
-  .tefi-typography--decoration-underline {
-    text-decoration: underline;
-  }
-  
-  .tefi-typography--decoration-line-through {
-    text-decoration: line-through;
-  }
-  
-  /* ======================================
-     WRAP
-  ====================================== */
-  
-  .tefi-typography--wrap-wrap {
-    white-space: normal;
-  }
-  
-  .tefi-typography--wrap-nowrap {
-    white-space: nowrap;
-  }
-  
-  /* ======================================
-     TRUNCATE
-  ====================================== */
-  
-  .tefi-typography--truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+
+/* ======================================
+   TRANSFORM
+====================================== */
+
+.tefi-typography--transform-uppercase {
+  text-transform: uppercase;
+}
+
+.tefi-typography--transform-lowercase {
+  text-transform: lowercase;
+}
+
+.tefi-typography--transform-capitalize {
+  text-transform: capitalize;
+}
+
+/* ======================================
+   DECORATION
+====================================== */
+
+.tefi-typography--decoration-underline {
+  text-decoration: underline;
+}
+
+.tefi-typography--decoration-line-through {
+  text-decoration: line-through;
+}
+
+/* ======================================
+   WRAP
+====================================== */
+
+.tefi-typography--wrap-wrap {
+  white-space: normal;
+}
+
+.tefi-typography--wrap-nowrap {
+  white-space: nowrap;
+}
+
+/* ======================================
+   TRUNCATE
+====================================== */
+
+.tefi-typography--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

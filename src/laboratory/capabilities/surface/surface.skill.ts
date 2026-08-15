@@ -13,8 +13,7 @@ export const surfaceSkill = {
 
   namespace: "surface",
 
-  description:
-    "Controls the visual appearance of an element.",
+  description: "Controls the visual appearance of an element.",
 
   props: {
     background: {
@@ -31,78 +30,47 @@ export const surfaceSkill = {
         "transparent",
       ],
 
-      description:
-        "Defines the background color.",
+      description: "Defines the background color.",
     },
 
     text: {
       type: "select",
 
-      options: [
-        "white",
-        "black",
-        "blue",
-        "blue-soft",
-        "gray",
-        "red",
-        "red-strong",
-      ],
+      options: ["white", "black", "blue", "blue-soft", "gray", "red", "red-strong"],
 
-      description:
-        "Defines the text color.",
+      description: "Defines the text color.",
     },
 
     border: {
       type: "select",
 
-      options: [
-        "blue",
-        "gray",
-        "red",
-      ],
+      options: ["blue", "gray", "red"],
 
-      description:
-        "Defines the border color.",
+      description: "Defines the border color.",
     },
 
     borderWidth: {
       type: "select",
 
-      options: [
-        "none",
-        "1",
-        "2",
-      ],
+      options: ["none", "1", "2"],
 
-      description:
-        "Defines the border width.",
+      description: "Defines the border width.",
     },
 
     borderStyle: {
       type: "select",
 
-      options: [
-        "solid",
-        "dashed",
-      ],
+      options: ["solid", "dashed"],
 
-      description:
-        "Defines the border style.",
+      description: "Defines the border style.",
     },
 
     radius: {
       type: "select",
 
-      options: [
-        "none",
-        "sm",
-        "md",
-        "lg",
-        "full",
-      ],
+      options: ["none", "sm", "md", "lg", "full"],
 
-      description:
-        "Defines the border radius.",
+      description: "Defines the border radius.",
     },
   },
 } satisfies Skill;

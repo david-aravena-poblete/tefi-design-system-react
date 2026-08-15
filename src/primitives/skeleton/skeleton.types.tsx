@@ -2,24 +2,12 @@
    IMPORTS
 ====================================== */
 
-import type { ComponentProps, CSSProperties } from "react";
-
-import type { Aspect } from "../../foundations/design-system.types";
+import type { HtmlProps } from "@/laboratory/capabilities/html";
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
+import type { SurfaceProps } from "@/laboratory/capabilities/surface";
 
 /* ======================================
-   PROPS
+   SKELETON PROPS
 ====================================== */
 
-export interface SkeletonProps extends ComponentProps<"div"> {
-  fill?: boolean;
-
-  width?: CSSProperties["width"];
-
-  height?: CSSProperties["height"];
-
-  radius?: CSSProperties["borderRadius"];
-
-  animated?: boolean;
-
-  aspect?: Aspect;
-}
+export interface SkeletonProps extends HtmlProps<"div">, LayoutProps, SurfaceProps {}

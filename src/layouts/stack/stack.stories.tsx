@@ -1,16 +1,19 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { Button } from "@/components/button";
-import { Stack } from "@/layouts/stack";
+import { Stack } from "./Stack";
 
-const meta: Meta<typeof Stack> = {
+/* ======================================
+   META
+====================================== */
+
+const meta = {
   title: "Layouts/Stack",
 
   component: Stack,
-
-  parameters: {
-    layout: "centered",
-  },
 
   tags: ["autodocs"],
 
@@ -18,198 +21,75 @@ const meta: Meta<typeof Stack> = {
     gap: {
       control: "select",
 
-      options: ["xs", "sm", "md", "lg", "xl", "xxl", "xxxl"],
+      options: ["none", "xs", "sm", "md", "lg", "xl", "xxl", "xxxl"],
     },
 
-    align: {
-      control: "select",
-
-      options: ["start", "center", "end", "stretch"],
+    children: {
+      table: {
+        disable: true,
+      },
     },
 
-    justify: {
-      control: "select",
+    style: {
+      table: {
+        disable: true,
+      },
+    },
 
-      options: ["start", "center", "end", "between", "around"],
+    as: {
+      table: {
+        disable: true,
+      },
     },
   },
-};
+} satisfies Meta<typeof Stack>;
 
 export default meta;
 
-type Story = StoryObj<typeof Stack>;
+type Story = StoryObj<typeof meta>;
 
 /* ======================================
-   SHARED
+   STYLES
 ====================================== */
 
-const sharedStyle = {
-  width: "400px",
-  minHeight: "240px",
-  padding: "var(--space-md)",
+const containerStyle = {
+  width: "360px",
+
+  padding: "var(--space-lg)",
+
   border: "1px dashed var(--color-border-primary)",
+
+  background: "var(--color-bg-secondary)",
+};
+
+const itemStyle = {
+  padding: "var(--space-sm) var(--space-md)",
+
+  background: "var(--color-primary-base)",
+
+  color: "var(--color-text-inverse)",
+
+  borderRadius: "var(--radius-md)",
 };
 
 /* ======================================
-   STORIES
+   PLAYGROUND
 ====================================== */
 
-export const Default: Story = {
+export const Playground: Story = {
   args: {
     gap: "md",
 
-    style: sharedStyle,
-
     children: (
       <>
-        <Button>Botón 1</Button>
-        <Button>Botón 2</Button>
-        <Button>Botón 3</Button>
+        <div style={itemStyle}>Item 1</div>
+
+        <div style={itemStyle}>Item 2</div>
+
+        <div style={itemStyle}>Item 3</div>
       </>
     ),
-  },
-};
 
-export const AlignStart: Story = {
-  args: {
-    align: "start",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-        <Button>Botón 2</Button>
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const AlignCenter: Story = {
-  args: {
-    align: "center",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-        <Button>Botón 2</Button>
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const AlignEnd: Story = {
-  args: {
-    align: "end",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-        <Button>Botón 2</Button>
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const AlignStretch: Story = {
-  args: {
-    align: "stretch",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-        <Button>Botón 2</Button>
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const JustifyBetween: Story = {
-  args: {
-    justify: "between",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-        <Button>Botón 2</Button>
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const JustifyCenter: Story = {
-  args: {
-    justify: "center",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-        <Button>Botón 2</Button>
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const JustifyEnd: Story = {
-  args: {
-    justify: "end",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-        <Button>Botón 2</Button>
-        <Button>Botón 3</Button>
-      </>
-    ),
-  },
-};
-
-export const JustifyAround: Story = {
-  args: {
-    justify: "around",
-
-    gap: "md",
-
-    style: sharedStyle,
-
-    children: (
-      <>
-        <Button>Botón 1</Button>
-        <Button>Botón 2</Button>
-        <Button>Botón 3</Button>
-      </>
-    ),
+    style: containerStyle,
   },
 };

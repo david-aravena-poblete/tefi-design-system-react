@@ -8,7 +8,4 @@ export { Container } from "./Container";
    TYPES
 ====================================== */
 
-export type {
-  ContainerProps,
-  ContainerSize,
-} from "./container.types";
+export type { ContainerProps, ContainerSize } from "./container.types";

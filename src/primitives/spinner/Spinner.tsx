@@ -2,50 +2,89 @@
    IMPORTS
 ====================================== */
 
-import clsx from "clsx";
+import type { ElementType } from "react";
+
+import { createClassName } from "@/laboratory/create-class-name";
+
+import { html } from "@/laboratory/capabilities/html";
+import { layout } from "@/laboratory/capabilities/layout";
+import { surface } from "@/laboratory/capabilities/surface";
+
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
+import type { SurfaceProps } from "@/laboratory/capabilities/surface";
+
+import type { SpinnerHtml, SpinnerProps, SpinnerSize } from "./spinner.types";
 
 import "./spinner.css";
 
-import type { SpinnerProps } from "./spinner.types";
+/* ======================================
+   SPINNER DEFAULT
+====================================== */
+
+const defaultHtml: SpinnerHtml = "div";
+
+const defaultLayout: LayoutProps = {
+  width: "24",
+  height: "24",
+};
+
+const defaultSurface: SurfaceProps = {
+  text: "blue",
+  border: "gray",
+  borderWidth: "2",
+  borderStyle: "solid",
+  radius: "full",
+};
+
+/* ======================================
+   SPINNER SIZES
+====================================== */
+
+const layoutBySize = {
+  sm: {
+    width: "16",
+    height: "16",
+  },
+
+  md: {},
+
+  lg: {
+    width: "32",
+    height: "32",
+  },
+} satisfies Record<SpinnerSize, LayoutProps>;
 
 /* ======================================
    SPINNER
 ====================================== */
 
-export function Spinner({
-  /* ======================================
-     TEFI PROPS
-  ====================================== */
+export function Spinner<T extends SpinnerHtml = "div">({
+  as,
 
   size = "md",
 
-  /* ======================================
-     REACT PROPS
-  ====================================== */
-
   className,
+  ...props
+}: SpinnerProps<T>) {
+  const Element = html({
+    as: as ?? defaultHtml,
+  }) as ElementType;
 
-  /* ======================================
-     REST PROPS
-  ====================================== */
+  const spinnerLayout = {
+    ...defaultLayout,
+    ...layoutBySize[size],
+  };
 
-  ...rest
-}: SpinnerProps) {
-  /* ======================================
-     ACCESSIBILITY
-  ====================================== */
+  const spinnerSurface = {
+    ...defaultSurface,
+  };
 
-  const ariaLabel = "Loading";
+  const componentClassName = createClassName(
+    "tefi-spinner",
+    layout(spinnerLayout),
+    surface(spinnerSurface),
+    className,
+  );
 
-  /* ======================================
-     CLASSES
-  ====================================== */
-
-  const classes = clsx("spinner", `spinner--${size}`, className);
-
-  /* ======================================
-     RENDER
-  ====================================== */
-
-  return <div className={classes} role="status" aria-label={ariaLabel} {...rest} />;
+  return <Element {...props} className={componentClassName} role="status" aria-label="Loading" />;
 }

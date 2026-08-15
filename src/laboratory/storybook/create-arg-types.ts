@@ -10,23 +10,15 @@ import type { Skill } from "@/laboratory/skill";
 
 export function createArgTypes(
   skills: readonly Skill[],
-  controls?: Record<
-    string,
-    readonly string[]
-  >,
+  controls?: Record<string, readonly string[]>,
 ) {
   const argTypes: Record<string, unknown> = {};
 
   for (const skill of skills) {
-    const allowedControls =
-      controls?.[skill.namespace];
+    const allowedControls = controls?.[skill.namespace];
 
-    for (const [name, prop] of Object.entries(
-      skill.props,
-    )) {
-      const visible =
-        !allowedControls ||
-        allowedControls.includes(name);
+    for (const [name, prop] of Object.entries(skill.props)) {
+      const visible = !allowedControls || allowedControls.includes(name);
 
       argTypes[name] = visible
         ? {

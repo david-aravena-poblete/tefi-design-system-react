@@ -1,3 +1,11 @@
+/* ======================================
+   COMPONENT
+====================================== */
+
 export { Spinner } from "./Spinner";
 
-export type { SpinnerProps } from "./spinner.types";
+/* ======================================
+   TYPES
+====================================== */
+
+export type { SpinnerProps, SpinnerSize } from "./spinner.types";

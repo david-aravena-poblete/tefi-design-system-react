@@ -11,10 +11,7 @@ import type { Skill } from "@/laboratory/skill";
 export interface CreateStoryOptions {
   skills: readonly Skill[];
 
-  controls?: Record<
-    string,
-    readonly string[]
-  >;
+  controls?: Record<string, readonly string[]>;
 
   args?: Record<string, unknown>;
 }

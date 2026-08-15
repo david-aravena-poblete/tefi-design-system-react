@@ -9,32 +9,13 @@
 }
 
 /* ======================================
-   RATIO
-====================================== */
-
-.skeleton--1-1 {
-  aspect-ratio: 1 / 1;
-}
-
-.skeleton--4-3 {
-  aspect-ratio: 4 / 3;
-}
-
-.skeleton--16-9 {
-  aspect-ratio: 16 / 9;
-}
-
-/* ======================================
    WRAPPER
 ====================================== */
 
 .skeleton-wrapper {
   position: relative;
   display: inline-flex;
-}
-
-.skeleton-wrapper--fill {
-  width: 100%;
+  overflow: hidden;
 }
 
 .skeleton-content--hidden {
@@ -52,7 +33,7 @@
    ANIMATION
 ====================================== */
 
-.skeleton--animated::after {
+.skeleton::after {
   position: absolute;
   inset: 0;
   content: "";

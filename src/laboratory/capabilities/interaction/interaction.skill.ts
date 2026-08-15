@@ -13,8 +13,7 @@ export const interactionSkill = {
 
   namespace: "interaction",
 
-  description:
-    "Controls the interactive behavior of an element.",
+  description: "Controls the interactive behavior of an element.",
 
   props: {
     hover: {
@@ -32,44 +31,31 @@ export const interactionSkill = {
         "white",
       ],
 
-      description:
-        "Defines the hover appearance.",
+      description: "Defines the hover appearance.",
     },
 
     press: {
       type: "select",
 
-      options: [
-        "move",
-      ],
+      options: ["move"],
 
-      description:
-        "Defines the press behavior.",
+      description: "Defines the press behavior.",
     },
 
     focusRing: {
       type: "select",
 
-      options: [
-        "blue",
-        "blue-soft",
-        "blue-transparent",
-        "white",
-      ],
+      options: ["blue", "blue-soft", "blue-transparent", "white"],
 
-      description:
-        "Defines the focus ring style.",
+      description: "Defines the focus ring style.",
     },
 
     transition: {
       type: "select",
 
-      options: [
-        "fast",
-      ],
+      options: ["fast"],
 
-      description:
-        "Defines the transition preset.",
+      description: "Defines the transition preset.",
     },
   },
 } satisfies Skill;

@@ -2,58 +2,52 @@
    IMPORTS
 ====================================== */
 
-import clsx from "clsx";
+import type { ElementType } from "react";
 
-import "./inline.css";
+import { createClassName } from "@/laboratory/create-class-name";
 
-import type { InlineProps } from "./inline.types";
+import { html } from "@/laboratory/capabilities/html";
+import { layout } from "@/laboratory/capabilities/layout";
+
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
+
+import type { InlineHtml, InlineProps } from "./inline.types";
+
+/* ======================================
+   DEFAULT
+====================================== */
+
+const defaultHtml: InlineHtml = "div";
 
 /* ======================================
    INLINE
 ====================================== */
 
-export function Inline({
-  /* ======================================
-     TEFI PROPS
-  ====================================== */
-
-  as: Component = "div",
+export function Inline<T extends InlineHtml = "div">({
+  children,
+  as,
 
   gap = "md",
 
-  /* ======================================
-     REACT PROPS
-  ====================================== */
-
   className,
 
-  children,
+  ...props
+}: InlineProps<T>) {
+  const Html = html({
+    as: as ?? defaultHtml,
+  }) as ElementType;
 
-  /* ======================================
-     REST PROPS
-  ====================================== */
+  const inlineLayout: LayoutProps = {
+    display: "flex",
+    direction: "row",
+    between: gap,
+  };
 
-  ...rest
-}: InlineProps) {
-  /* ======================================
-     CLASSES
-  ====================================== */
-
-  const classes = clsx(
-    "inline",
-
-    `inline--gap-${gap}`,
-
-    className,
-  );
-
-  /* ======================================
-     RENDER
-  ====================================== */
+  const componentClassName = createClassName(layout(inlineLayout), className);
 
   return (
-    <Component className={classes} {...rest}>
+    <Html {...props} className={componentClassName}>
       {children}
-    </Component>
+    </Html>
   );
 }

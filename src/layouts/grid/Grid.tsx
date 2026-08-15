@@ -2,62 +2,60 @@
    IMPORTS
 ====================================== */
 
-import clsx from "clsx";
+import type { ElementType } from "react";
 
 import "./grid.css";
 
-import type { GridProps } from "./grid.types";
+import { createClassName } from "@/laboratory/create-class-name";
+
+import { html } from "@/laboratory/capabilities/html";
+import { layout } from "@/laboratory/capabilities/layout";
+
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
+
+import type { GridHtml, GridProps } from "./grid.types";
+
+/* ======================================
+   DEFAULT
+====================================== */
+
+const defaultHtml: GridHtml = "div";
 
 /* ======================================
    GRID
 ====================================== */
 
-export function Grid({
-  /* ======================================
-     TEFI PROPS
-  ====================================== */
-
-  as: Component = "div",
+export function Grid<T extends GridHtml = "div">({
+  children,
+  as,
 
   gap = "lg",
-
   columns,
-
-  /* ======================================
-     REACT PROPS
-  ====================================== */
 
   className,
 
-  children,
+  ...props
+}: GridProps<T>) {
+  const Html = html({
+    as: as ?? defaultHtml,
+  }) as ElementType;
 
-  /* ======================================
-     REST PROPS
-  ====================================== */
+  const gridLayout: LayoutProps = {
+    display: "grid",
+    between: gap,
+  };
 
-  ...rest
-}: GridProps) {
-  /* ======================================
-     CLASSES
-  ====================================== */
+  const componentClassName = createClassName(
+    layout(gridLayout),
 
-  const classes = clsx(
-    "grid",
-
-    `grid--gap-${gap}`,
-
-    columns && `grid--cols-${columns}`,
+    columns ? `grid--cols-${columns}` : "grid--auto",
 
     className,
   );
 
-  /* ======================================
-     RENDER
-  ====================================== */
-
   return (
-    <Component className={classes} {...rest}>
+    <Html {...props} className={componentClassName}>
       {children}
-    </Component>
+    </Html>
   );
 }

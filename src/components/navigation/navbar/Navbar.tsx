@@ -61,9 +61,7 @@ export function Navbar({ children, className, ...props }: NavbarProps) {
 function Brand({ children, className, ...props }: NavbarSectionProps) {
   return (
     <div className={clsx("navbar__brand", className)} {...props}>
-      <div className="navbar__brand-content">
-        {children}
-      </div>
+      <div className="navbar__brand-content">{children}</div>
     </div>
   );
 }
@@ -74,10 +72,7 @@ function Brand({ children, className, ...props }: NavbarSectionProps) {
 
 function Navigation({ children, className, ...props }: NavbarSectionProps) {
   return (
-    <nav
-      className={clsx("navbar__navigation", className)}
-      {...props}
-    >
+    <nav className={clsx("navbar__navigation", className)} {...props}>
       {children}
     </nav>
   );
@@ -90,9 +85,7 @@ function Navigation({ children, className, ...props }: NavbarSectionProps) {
 function Actions({ children, className, ...props }: NavbarSectionProps) {
   return (
     <div className={clsx("navbar__actions", className)} {...props}>
-      <div className="navbar__actions-content">
-        {children}
-      </div>
+      <div className="navbar__actions-content">{children}</div>
     </div>
   );
 }

@@ -13,8 +13,7 @@ export const typographySkill = {
 
   namespace: "typography",
 
-  description:
-    "Applies typographic appearance to an element.",
+  description: "Applies typographic appearance to an element.",
 
   props: {
     variant: {
@@ -30,80 +29,53 @@ export const typographySkill = {
         "caption",
       ],
 
-      description:
-        "Defines the typography preset.",
+      description: "Defines the typography preset.",
     },
 
     weight: {
       type: "select",
 
-      options: [
-        "regular",
-        "medium",
-        "semibold",
-        "bold",
-      ],
+      options: ["regular", "medium", "semibold", "bold"],
 
-      description:
-        "Overrides the font weight.",
+      description: "Overrides the font weight.",
     },
 
     align: {
       type: "select",
 
-      options: [
-        "start",
-        "center",
-        "end",
-        "justify",
-      ],
+      options: ["start", "center", "end", "justify"],
 
-      description:
-        "Aligns the text horizontally.",
+      description: "Aligns the text horizontally.",
     },
 
     transform: {
       type: "select",
 
-      options: [
-        "uppercase",
-        "lowercase",
-        "capitalize",
-      ],
+      options: ["uppercase", "lowercase", "capitalize"],
 
-      description:
-        "Transforms the casing of the text.",
+      description: "Transforms the casing of the text.",
     },
 
     decoration: {
       type: "select",
 
-      options: [
-        "underline",
-        "line-through",
-      ],
+      options: ["underline", "line-through"],
 
-      description:
-        "Applies text decorations.",
+      description: "Applies text decorations.",
     },
 
     wrap: {
       type: "select",
 
-      options: [
-        "wrap",
-        "nowrap",
-      ],
+      options: ["wrap", "nowrap"],
 
-      description:
-        "Controls how text wraps.",
+      description: "Controls how text wraps.",
     },
 
     truncate: {
       type: "boolean",
 
-      description:
-        "Truncates overflowing text with an ellipsis.",
+      description: "Truncates overflowing text with an ellipsis.",
     },
   },
 } satisfies Skill;

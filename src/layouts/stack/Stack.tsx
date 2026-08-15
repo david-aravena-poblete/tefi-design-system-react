@@ -2,66 +2,52 @@
    IMPORTS
 ====================================== */
 
-import clsx from "clsx";
+import type { ElementType } from "react";
 
-import "./stack.css";
+import { createClassName } from "@/laboratory/create-class-name";
 
-import type { StackProps } from "./stack.types";
+import { html } from "@/laboratory/capabilities/html";
+import { layout } from "@/laboratory/capabilities/layout";
+
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
+
+import type { StackHtml, StackProps } from "./stack.types";
+
+/* ======================================
+   DEFAULT
+====================================== */
+
+const defaultHtml: StackHtml = "div";
 
 /* ======================================
    STACK
 ====================================== */
 
-export function Stack({
-  /* ======================================
-     TEFI PROPS
-  ====================================== */
-
-  as: Component = "div",
+export function Stack<T extends StackHtml = "div">({
+  children,
+  as,
 
   gap = "md",
 
-  align,
-
-  justify,
-
-  /* ======================================
-     REACT PROPS
-  ====================================== */
-
   className,
 
-  children,
+  ...props
+}: StackProps<T>) {
+  const Html = html({
+    as: as ?? defaultHtml,
+  }) as ElementType;
 
-  /* ======================================
-     REST PROPS
-  ====================================== */
+  const stackLayout: LayoutProps = {
+    display: "flex",
+    direction: "column",
+    between: gap,
+  };
 
-  ...rest
-}: StackProps) {
-  /* ======================================
-     CLASSES
-  ====================================== */
-
-  const classes = clsx(
-    "stack",
-
-    `stack--gap-${gap}`,
-
-    align && `stack--align-${align}`,
-
-    justify && `stack--justify-${justify}`,
-
-    className,
-  );
-
-  /* ======================================
-     RENDER
-  ====================================== */
+  const componentClassName = createClassName(layout(stackLayout), className);
 
   return (
-    <Component className={classes} {...rest}>
+    <Html {...props} className={componentClassName}>
       {children}
-    </Component>
+    </Html>
   );
 }

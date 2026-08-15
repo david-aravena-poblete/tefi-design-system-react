@@ -11,30 +11,14 @@ import type { CreateStoryOptions } from "./create-story.types";
    CREATE STORY
 ====================================== */
 
-export function createStory(
-  options: CreateStoryOptions,
-) {
+export function createStory(options: CreateStoryOptions) {
   return {
-    args: groupArgs(
-      options.args ?? {},
-      options.skills,
-    ),
+    args: groupArgs(options.args ?? {}, options.skills),
 
-    argTypes: createArgTypes(
-      options.skills,
-      options.controls,
-    ),
+    argTypes: createArgTypes(options.skills, options.controls),
 
-    transformArgs<T extends object>(
-      args: T,
-    ) {
-      return groupArgs(
-        args as Record<
-          string,
-          unknown
-        >,
-        options.skills,
-      );
+    transformArgs<T extends object>(args: T) {
+      return groupArgs(args as Record<string, unknown>, options.skills);
     },
   };
 }

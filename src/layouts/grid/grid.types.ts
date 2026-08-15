@@ -2,24 +2,33 @@
    IMPORTS
 ====================================== */
 
-import type { ComponentProps, ElementType } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 
-import type { Spacing } from "../../foundations/design-system.types";
+import type { HtmlElement } from "@/laboratory/types";
+
+import type { HtmlProps } from "@/laboratory/capabilities/html";
+
+import type { Space } from "@/laboratory/types";
 
 /* ======================================
-   TYPES
-====================================== */
+    TYPES
+ ====================================== */
+
+export type GridHtml = Extract<HtmlElement, "div" | "section" | "article" | "main" | "aside">;
+
+/* ======================================
+    GRID COLUMNS
+ ====================================== */
 
 export type GridColumns = 1 | 2 | 3 | 4 | 6 | 12;
 
 /* ======================================
-   PROPS
-====================================== */
+    GRID PROPS
+ ====================================== */
 
-export interface GridProps extends ComponentProps<"div"> {
-  as?: ElementType;
-
-  gap?: Spacing;
+export type GridProps<T extends GridHtml = "div"> = {
+  gap?: Space;
 
   columns?: GridColumns;
-}
+} & HtmlProps<T> &
+  Omit<ComponentPropsWithoutRef<T>, "children" | "as">;
