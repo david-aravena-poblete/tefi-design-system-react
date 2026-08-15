@@ -14,30 +14,16 @@ import type { SidebarGroupProps } from "./sidebar-group.types";
    SIDEBAR GROUP
 ====================================== */
 
-export function SidebarGroup({
-  heading,
-  children,
-  className,
-  ...props
-}: SidebarGroupProps) {
+export function SidebarGroup({ heading, children, className, ...props }: SidebarGroupProps) {
   return (
-    <div
-      className={clsx("sidebar-group", className)}
-      {...props}
-    >
+    <div className={clsx("sidebar-group", className)} {...props}>
       {heading && (
-        <Text
-          size="sm"
-          color="gray"
-          className="sidebar-group__heading"
-        >
+        <Text size="sm" color="gray" className="sidebar-group__heading">
           {heading}
         </Text>
       )}
 
-      <div className="sidebar-group__content">
-        {children}
-      </div>
+      <div className="sidebar-group__content">{children}</div>
     </div>
   );
 }

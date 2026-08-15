@@ -116,17 +116,11 @@ export const Icons: Story = {
 
       <Button endIcon={<Icon name="plus" />}>End Icon</Button>
 
-      <Button
-        startIcon={<Icon name="search" />}
-        endIcon={<Icon name="plus" />}
-      >
+      <Button startIcon={<Icon name="search" />} endIcon={<Icon name="plus" />}>
         Both Icons
       </Button>
 
-      <Button
-        startIcon={<Icon name="search" />}
-        aria-label="Search"
-      />
+      <Button startIcon={<Icon name="search" />} aria-label="Search" />
     </div>
   ),
 };

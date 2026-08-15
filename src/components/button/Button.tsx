@@ -19,11 +19,7 @@ import type { SurfaceProps } from "@/laboratory/capabilities/surface";
 import type { TypographyProps } from "@/laboratory/capabilities/typography";
 import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 
-import type {
-  ButtonProps,
-  ButtonSize,
-  ButtonVariant,
-} from "./button.types";
+import type { ButtonProps, ButtonSize, ButtonVariant } from "./button.types";
 
 /* ======================================
    BUTTON DEFAULT
@@ -245,10 +241,7 @@ export function Button({
 
   if (skeleton) {
     return (
-      <Skeleton
-        fill={fullWidth}
-        radius={buttonSurface.radius}
-      >
+      <Skeleton fill={fullWidth} radius={buttonSurface.radius}>
         {button}
       </Skeleton>
     );

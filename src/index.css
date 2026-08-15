@@ -26,3 +26,12 @@
 @import url("./foundations/states.css");
 @import url("./foundations/typography.css");
 @import url("./foundations/base.css");
+
+/* ======================================
+   CAPABILITIES
+====================================== */
+
+@import url("./laboratory/capabilities/layout/layout.css");
+@import url("./laboratory/capabilities/surface/surface.css");
+@import url("./laboratory/capabilities/typography/typography.css");
+@import url("./laboratory/capabilities/interaction/interaction.css");

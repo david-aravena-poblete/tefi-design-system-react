@@ -20,6 +20,8 @@ export default defineConfig({
   },
 
   build: {
+    cssCodeSplit: false,
+
     lib: {
       entry: resolve(import.meta.dirname, "src/index.ts"),
 
