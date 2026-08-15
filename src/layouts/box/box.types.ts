@@ -8,30 +8,24 @@ import type { HtmlElement } from "@/laboratory/types";
 
 import type { HtmlProps } from "@/laboratory/capabilities/html";
 
-import type {
-  Align,
-  Justify,
-  Space,
-} from "@/laboratory/types";
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
+
+import type { SurfaceProps } from "@/laboratory/capabilities/surface";
 
 /* ======================================
    TYPES
 ====================================== */
 
-export type InlineHtml = Extract<
+export type BoxHtml = Extract<
   HtmlElement,
   "div" | "section" | "article" | "main" | "aside" | "nav"
 >;
 
 /* ======================================
-   INLINE PROPS
+   BOX PROPS
 ====================================== */
 
-export type InlineProps<T extends InlineHtml = "div"> = {
-  gap?: Space;
-
-  align?: Align;
-
-  justify?: Justify;
-} & HtmlProps<T> &
+export type BoxProps<T extends BoxHtml = "div"> = LayoutProps &
+  SurfaceProps &
+  HtmlProps<T> &
   Omit<ComponentPropsWithoutRef<T>, "children" | "as">;

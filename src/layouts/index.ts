@@ -3,3 +3,4 @@ export { Inline } from "./inline";
 export { Container } from "./container";
 export { Section } from "./section";
 export { Grid } from "./grid";
+export { Box } from "./box";

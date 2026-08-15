@@ -8,47 +8,35 @@ import { createClassName } from "@/laboratory/create-class-name";
 
 import { html } from "@/laboratory/capabilities/html";
 import { layout } from "@/laboratory/capabilities/layout";
+import { surface } from "@/laboratory/capabilities/surface";
 
-import type { LayoutProps } from "@/laboratory/capabilities/layout";
-
-import type { InlineHtml, InlineProps } from "./inline.types";
+import type { BoxHtml, BoxProps } from "./box.types";
 
 /* ======================================
    DEFAULT
 ====================================== */
 
-const defaultHtml: InlineHtml = "div";
+const defaultHtml: BoxHtml = "div";
 
 /* ======================================
-   INLINE
+   BOX
 ====================================== */
 
-export function Inline<T extends InlineHtml = "div">({
+export function Box<T extends BoxHtml = "div">({
   children,
   as,
-
-  gap = "md",
-  align,
-  justify,
 
   className,
 
   ...props
-}: InlineProps<T>) {
+}: BoxProps<T>) {
   const Html = html({
     as: as ?? defaultHtml,
   }) as ElementType;
 
-  const inlineLayout: LayoutProps = {
-    display: "flex",
-    direction: "row",
-    between: gap,
-    align,
-    justify,
-  };
-
   const componentClassName = createClassName(
-    layout(inlineLayout),
+    layout(props),
+    surface(props),
     className,
   );
 

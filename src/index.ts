@@ -7,22 +7,6 @@
 import "./index.css";
 
 /* ======================================
-   FOUNDATIONS
-====================================== */
-
-import "./foundations/tokens.css";
-
-import "./foundations/themes/light.css";
-import "./foundations/themes/dark.css";
-
-import "./foundations/brands/default.css";
-import "./foundations/brands/daravena.css";
-
-import "./foundations/states.css";
-import "./foundations/base.css";
-import "./foundations/typography.css";
-
-/* ======================================
    CONSTANTS
 ====================================== */
 
@@ -101,7 +85,7 @@ export {
    LAYOUTS
 ====================================== */
 
-export { Container, Grid, Inline, Section, Stack } from "./layouts";
+export { Container, Grid, Inline, Section, Stack, Box, } from "./layouts";
 
 /* ======================================
    PROVIDERS
