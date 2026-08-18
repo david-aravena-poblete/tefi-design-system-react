@@ -4,7 +4,14 @@
 
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
-import type { FontWeight, TextAlign, TextDecoration, TextTransform } from "@/laboratory/types";
+import type {
+  FontWeight,
+  TextAlign,
+  TextDecoration,
+  TextTransform,
+  TypographyLineHeight,
+  TypographySize,
+} from "@/laboratory/types";
 
 import type { HtmlElement } from "@/laboratory/types";
 
@@ -21,23 +28,19 @@ export type TextHtml = Extract<
 >;
 
 /* ======================================
-   TEXT SIZE
-====================================== */
-
-export type TextSize = "sm" | "md" | "lg" | "caption";
-
-/* ======================================
    TEXT PROPS
 ====================================== */
 
-export type TextProps<T extends TextHtml = "span"> = {
+export type TextProps<T extends TextHtml = "p"> = {
   children?: ReactNode;
 
-  size?: TextSize;
+  size?: TypographySize;
 
   color?: SurfaceProps["text"];
 
   weight?: FontWeight;
+
+  lineHeight?: TypographyLineHeight;
 
   align?: TextAlign;
 

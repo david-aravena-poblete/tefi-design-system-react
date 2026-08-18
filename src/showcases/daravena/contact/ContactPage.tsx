@@ -1,8 +1,11 @@
+import { useState, type FormEvent } from "react";
+
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
 
 import { Form, FormActions, FormField, FormRow } from "@/components/form";
 
+import { ErrorMessage } from "@/components/field/error-message";
 import { Input } from "@/components/input/input";
 import { Label } from "@/components/field/label";
 import { Textarea } from "@/components/textarea";
@@ -14,6 +17,90 @@ import { Container } from "@/layouts/container";
 import { Stack } from "@/layouts/stack";
 
 export function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const validateName = () => {
+    if (!formData.name.trim()) {
+      return "El nombre es obligatorio.";
+    }
+
+    return "";
+  };
+
+  const validateEmail = () => {
+    if (!formData.email.trim()) {
+      return "El email es obligatorio.";
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(formData.email)) {
+      return "Ingresa un email válido.";
+    }
+
+    return "";
+  };
+
+  const validatePhone = () => {
+    if (!formData.phone.trim()) {
+      return "";
+    }
+
+    const phonePattern = /^\+?[0-9\s()-]{8,}$/;
+
+    if (!phonePattern.test(formData.phone)) {
+      return "Ingresa un teléfono válido.";
+    }
+
+    return "";
+  };
+
+  const validateMessage = () => {
+    if (!formData.message.trim()) {
+      return "El mensaje es obligatorio.";
+    }
+
+    return "";
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const nameError = validateName();
+    const emailError = validateEmail();
+    const phoneError = validatePhone();
+    const messageError = validateMessage();
+
+    const nextErrors = {
+      name: nameError,
+      email: emailError,
+      phone: phoneError,
+      message: messageError,
+    };
+
+    setErrors(nextErrors);
+
+    const hasErrors = Object.values(nextErrors).some(Boolean);
+
+    if (hasErrors) {
+      return;
+    }
+
+    console.log("FORM DATA:", formData);
+  };
+
   return (
     <Container size="sm">
       <Card>
@@ -21,37 +108,91 @@ export function ContactPage() {
           <Stack gap="sm">
             <Heading as="h1">Contacto</Heading>
 
-            <Text>Envíame un mensaje o entra con tu clave de acceso.</Text>
+            <Text>Envíame un mensaje.</Text>
           </Stack>
         </Card.Header>
 
         <Card.Body>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Stack gap="lg">
-              <FormField>
-                <Label>Tu Nombre</Label>
+              <FormField state={errors.name ? "error" : "default"}>
+                <Label required>Tu Nombre</Label>
 
-                <Input placeholder="Escribe tu nombre" />
+                <Input
+                  placeholder="Escribe tu nombre"
+                  value={formData.name}
+                  onChange={(event) => {
+                    setFormData((previous) => ({
+                      ...previous,
+                      name: event.target.value,
+                    }));
+                  }}
+                />
+
+                {errors.name && (
+                  <ErrorMessage>{errors.name}</ErrorMessage>
+                )}
               </FormField>
 
               <FormRow>
-                <FormField>
-                  <Label>Email (Opcional)</Label>
+                <FormField state={errors.email ? "error" : "default"}>
+                  <Label required>Email</Label>
 
-                  <Input placeholder="tu@email.com" />
+                  <Input
+                    type="email"
+                    placeholder="tu@email.com"
+                    value={formData.email}
+                    onChange={(event) => {
+                      setFormData((previous) => ({
+                        ...previous,
+                        email: event.target.value,
+                      }));
+                    }}
+                  />
+
+                  {errors.email && (
+                    <ErrorMessage>{errors.email}</ErrorMessage>
+                  )}
                 </FormField>
 
-                <FormField>
-                  <Label>Fono (Opcional)</Label>
+                <FormField state={errors.phone ? "error" : "default"}>
+                  <Label>Fono</Label>
 
-                  <Input placeholder="+569..." />
+                  <Input
+                    type="tel"
+                    placeholder="+569..."
+                    value={formData.phone}
+                    onChange={(event) => {
+                      setFormData((previous) => ({
+                        ...previous,
+                        phone: event.target.value,
+                      }));
+                    }}
+                  />
+
+                  {errors.phone && (
+                    <ErrorMessage>{errors.phone}</ErrorMessage>
+                  )}
                 </FormField>
               </FormRow>
 
-              <FormField>
-                <Label>Mensaje para David Aravena</Label>
+              <FormField state={errors.message ? "error" : "default"}>
+                <Label required>Mensaje para David Aravena</Label>
 
-                <Textarea placeholder="Escribe tu mensaje..." />
+                <Textarea
+                  placeholder="Escribe tu mensaje..."
+                  value={formData.message}
+                  onChange={(event) => {
+                    setFormData((previous) => ({
+                      ...previous,
+                      message: event.target.value,
+                    }));
+                  }}
+                />
+
+                {errors.message && (
+                  <ErrorMessage>{errors.message}</ErrorMessage>
+                )}
               </FormField>
 
               <Button type="submit" variant="primary" fullWidth>
@@ -63,9 +204,9 @@ export function ContactPage() {
 
         <Card.Footer>
           <FormActions>
-            <Button variant="link">Tengo clave de acceso</Button>
-
-            <Button variant="link">← Volver al inicio</Button>
+            <Button variant="link">
+              Prefiero escribir un WhatsApp
+            </Button>
           </FormActions>
         </Card.Footer>
       </Card>

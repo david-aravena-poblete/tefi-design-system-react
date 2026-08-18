@@ -1,9 +1,25 @@
 /* ======================================
-   TYPOGRAPHY VARIANT
+   TYPOGRAPHY SIZE
 ====================================== */
 
-export type TypographyVariant =
-  "body-sm" | "body-md" | "body-lg" | "heading-sm" | "heading-md" | "heading-lg" | "caption";
+export type TypographySize =
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "3xl"
+  | "4xl"
+  | "5xl"
+  | "6xl"
+  | "7xl";
+
+/* ======================================
+   TYPOGRAPHY LINE HEIGHT
+====================================== */
+
+export type TypographyLineHeight = "tight" | "normal" | "relaxed";
 
 /* ======================================
    FONT WEIGHT

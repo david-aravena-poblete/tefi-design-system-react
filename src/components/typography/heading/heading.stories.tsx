@@ -28,9 +28,11 @@ const meta = {
   args: {
     children: "Heading",
 
-    size: "md",
+    size: "2xl",
 
     weight: "bold",
+
+    lineHeight: "tight",
 
     color: "black",
 
@@ -41,7 +43,7 @@ const meta = {
     size: {
       control: "select",
 
-      options: ["sm", "md", "lg"],
+      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl"],
     },
 
     color: {
@@ -54,6 +56,12 @@ const meta = {
       control: "select",
 
       options: ["regular", "medium", "semibold", "bold"],
+    },
+
+    lineHeight: {
+      control: "select",
+
+      options: ["tight", "normal", "relaxed"],
     },
 
     align: {
@@ -107,27 +115,27 @@ export const Playground: Story = {};
 export const Levels: Story = {
   render: () => (
     <div style={storyContainerStyle}>
-      <Heading as="h1" size="lg">
+      <Heading as="h1" size="4xl">
         Heading 1
       </Heading>
 
-      <Heading as="h2" size="md">
+      <Heading as="h2" size="3xl">
         Heading 2
       </Heading>
 
-      <Heading as="h3" size="sm">
+      <Heading as="h3" size="2xl">
         Heading 3
       </Heading>
 
-      <Heading as="h4" size="sm">
+      <Heading as="h4" size="xl">
         Heading 4
       </Heading>
 
-      <Heading as="h5" size="sm">
+      <Heading as="h5" size="lg">
         Heading 5
       </Heading>
 
-      <Heading as="h6" size="sm">
+      <Heading as="h6" size="md">
         Heading 6
       </Heading>
     </div>
@@ -141,11 +149,19 @@ export const Levels: Story = {
 export const Sizes: Story = {
   render: () => (
     <div style={storyContainerStyle}>
-      <Heading size="sm">Heading Small</Heading>
-
       <Heading size="md">Heading Medium</Heading>
 
       <Heading size="lg">Heading Large</Heading>
+
+      <Heading size="xl">Heading Extra Large</Heading>
+
+      <Heading size="2xl">Heading 2XL</Heading>
+
+      <Heading size="3xl">Heading 3XL</Heading>
+
+      <Heading size="4xl">Heading 4XL</Heading>
+
+      <Heading size="5xl">Heading 5XL</Heading>
     </div>
   ),
 };
@@ -157,19 +173,19 @@ export const Sizes: Story = {
 export const Weights: Story = {
   render: () => (
     <div style={storyContainerStyle}>
-      <Heading size="lg" weight="regular">
+      <Heading size="2xl" weight="regular">
         Regular — The quick brown fox
       </Heading>
 
-      <Heading size="lg" weight="medium">
+      <Heading size="2xl" weight="medium">
         Medium — The quick brown fox
       </Heading>
 
-      <Heading size="lg" weight="semibold">
+      <Heading size="2xl" weight="semibold">
         Semibold — The quick brown fox
       </Heading>
 
-      <Heading size="lg" weight="bold">
+      <Heading size="2xl" weight="bold">
         Bold — The quick brown fox
       </Heading>
     </div>

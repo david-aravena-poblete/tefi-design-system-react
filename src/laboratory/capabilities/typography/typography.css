@@ -7,55 +7,67 @@
 }
 
 /* ======================================
-   VARIANT
+   SIZE
 ====================================== */
 
-/* BODY */
-
-.tefi-typography--variant-body-sm {
-  font-size: var(--typography-body-sm-size);
-  font-weight: var(--typography-body-sm-weight);
-  line-height: var(--typography-body-sm-line-height);
+.tefi-typography--size-xs {
+  font-size: var(--font-xs);
 }
 
-.tefi-typography--variant-body-md {
-  font-size: var(--typography-body-md-size);
-  font-weight: var(--typography-body-md-weight);
-  line-height: var(--typography-body-md-line-height);
+.tefi-typography--size-sm {
+  font-size: var(--font-sm);
 }
 
-.tefi-typography--variant-body-lg {
-  font-size: var(--typography-body-lg-size);
-  font-weight: var(--typography-body-lg-weight);
-  line-height: var(--typography-body-lg-line-height);
+.tefi-typography--size-md {
+  font-size: var(--font-md);
 }
 
-/* HEADING */
-
-.tefi-typography--variant-heading-sm {
-  font-size: var(--typography-heading-sm-size);
-  font-weight: var(--typography-heading-sm-weight);
-  line-height: var(--typography-heading-sm-line-height);
+.tefi-typography--size-lg {
+  font-size: var(--font-lg);
 }
 
-.tefi-typography--variant-heading-md {
-  font-size: var(--typography-heading-md-size);
-  font-weight: var(--typography-heading-md-weight);
-  line-height: var(--typography-heading-md-line-height);
+.tefi-typography--size-xl {
+  font-size: var(--font-xl);
 }
 
-.tefi-typography--variant-heading-lg {
-  font-size: var(--typography-heading-lg-size);
-  font-weight: var(--typography-heading-lg-weight);
-  line-height: var(--typography-heading-lg-line-height);
+.tefi-typography--size-2xl {
+  font-size: var(--font-2xl);
 }
 
-/* CAPTION */
+.tefi-typography--size-3xl {
+  font-size: var(--font-3xl);
+}
 
-.tefi-typography--variant-caption {
-  font-size: var(--typography-caption-size);
-  font-weight: var(--typography-caption-weight);
-  line-height: var(--typography-caption-line-height);
+.tefi-typography--size-4xl {
+  font-size: var(--font-4xl);
+}
+
+.tefi-typography--size-5xl {
+  font-size: var(--font-5xl);
+}
+
+.tefi-typography--size-6xl {
+  font-size: var(--font-6xl);
+}
+
+.tefi-typography--size-7xl {
+  font-size: var(--font-7xl);
+}
+
+/* ======================================
+   LINE HEIGHT
+====================================== */
+
+.tefi-typography--lineHeight-tight {
+  line-height: var(--line-tight);
+}
+
+.tefi-typography--lineHeight-normal {
+  line-height: var(--line-normal);
+}
+
+.tefi-typography--lineHeight-relaxed {
+  line-height: var(--line-relaxed);
 }
 
 /* ======================================

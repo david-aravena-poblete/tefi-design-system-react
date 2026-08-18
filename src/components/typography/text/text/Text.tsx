@@ -19,67 +19,29 @@ import { Skeleton } from "@/primitives/skeleton";
 import type { SurfaceProps } from "@/laboratory/capabilities/surface";
 import type { TypographyProps } from "@/laboratory/capabilities/typography";
 
-import type { TextHtml, TextProps, TextSize } from "./text.types";
+import type { TextHtml, TextProps } from "./text.types";
 
 /* ======================================
    TEXT DEFAULT
 ====================================== */
 
-const defaultHtml: TextHtml = "span";
+const defaultHtml: TextHtml = "p";
 
 const defaultSurface: SurfaceProps = {
   text: "black",
 };
 
 const defaultTypography: TypographyProps = {
-  variant: "body-md",
+  size: "md",
   weight: "regular",
+  lineHeight: "normal",
 };
-
-/* ======================================
-   SIZE → VARIANT
-====================================== */
-
-const bodyVariantBySize = {
-  sm: "body-sm",
-  md: "body-md",
-  lg: "body-lg",
-  caption: "caption",
-} as const;
-
-const headingVariantBySize = {
-  sm: "heading-sm",
-  md: "heading-md",
-  lg: "heading-lg",
-} as const;
-
-/* ======================================
-   HEADING ELEMENTS
-====================================== */
-
-const headingElements = ["h1", "h2", "h3", "h4", "h5", "h6"] as const;
-
-/* ======================================
-   VARIANT
-====================================== */
-
-function getTypographyVariant(as: TextHtml, size: TextSize) {
-  if (headingElements.includes(as as (typeof headingElements)[number])) {
-    if (size === "caption") {
-      return "heading-md";
-    }
-
-    return headingVariantBySize[size];
-  }
-
-  return bodyVariantBySize[size];
-}
 
 /* ======================================
    TEXT
 ====================================== */
 
-export function Text<T extends TextHtml = "span">({
+export function Text<T extends TextHtml = "p">({
   children,
 
   as,
@@ -89,6 +51,8 @@ export function Text<T extends TextHtml = "span">({
   color,
 
   weight,
+
+  lineHeight,
 
   align,
 
@@ -144,11 +108,17 @@ export function Text<T extends TextHtml = "span">({
   const textTypography: TypographyProps = {
     ...defaultTypography,
 
-    variant: getTypographyVariant(elementAs, size),
+    size,
 
     ...(weight
       ? {
           weight,
+        }
+      : {}),
+
+    ...(lineHeight
+      ? {
+          lineHeight,
         }
       : {}),
 

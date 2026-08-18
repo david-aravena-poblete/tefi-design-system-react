@@ -11,8 +11,9 @@ import type { TypographyProps } from "./typography.types";
 ====================================== */
 
 export const typographyCapabilities = [
-  "variant",
+  "size",
   "weight",
+  "lineHeight",
   "align",
   "transform",
   "decoration",

@@ -39,7 +39,7 @@ const meta = {
     size: {
       control: "select",
 
-      options: ["sm", "md", "lg", "caption"],
+      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl"],
     },
 
     color: {
@@ -107,13 +107,27 @@ export const Playground: Story = {};
 export const Sizes: Story = {
   render: () => (
     <div style={storyContainerStyle}>
-      <Text size="sm">Body Small</Text>
+      <Text size="xs">Extra Small</Text>
 
-      <Text size="md">Body Medium</Text>
+      <Text size="sm">Small</Text>
 
-      <Text size="lg">Body Large</Text>
+      <Text size="md">Medium</Text>
 
-      <Text size="caption">Caption</Text>
+      <Text size="lg">Large</Text>
+
+      <Text size="xl">Extra Large</Text>
+
+      <Text size="2xl">2XL</Text>
+
+      <Text size="3xl">3XL</Text>
+
+      <Text size="4xl">4XL</Text>
+
+      <Text size="5xl">5XL</Text>
+
+      <Text size="6xl">6XL</Text>
+
+      <Text size="7xl">7XL</Text>
     </div>
   ),
 };
@@ -281,8 +295,8 @@ export const SkeletonState: Story = {
         Skeleton large text
       </Text>
 
-      <Text size="caption" skeleton>
-        Skeleton caption
+      <Text size="xs" skeleton>
+        Skeleton extra small text
       </Text>
     </div>
   ),

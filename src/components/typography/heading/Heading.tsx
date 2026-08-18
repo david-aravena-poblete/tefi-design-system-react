@@ -12,9 +12,19 @@ import type { HeadingProps } from "./heading.types";
 
 export function Heading({
   as = "h1",
-  size = "md",
+  size = "2xl",
+  weight = "bold",
+  lineHeight = "tight",
 
   ...props
 }: HeadingProps) {
-  return <Text as={as} size={size} {...props} />;
+  return (
+    <Text
+      as={as}
+      size={size}
+      weight={weight}
+      lineHeight={lineHeight}
+      {...props}
+    />
+  );
 }

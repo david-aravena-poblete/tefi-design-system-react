@@ -8,17 +8,20 @@ import type {
   TextDecoration,
   TextTransform,
   TextWrap,
-  TypographyVariant,
+  TypographyLineHeight,
+  TypographySize,
 } from "@/laboratory/types";
 
 /* ======================================
-    TYPOGRAPHY PROPS
- ====================================== */
+   TYPOGRAPHY PROPS
+====================================== */
 
 export interface TypographyProps {
-  variant?: TypographyVariant;
+  size?: TypographySize;
 
   weight?: FontWeight;
+
+  lineHeight?: TypographyLineHeight;
 
   align?: TextAlign;
 
