@@ -34,11 +34,7 @@ export function Box<T extends BoxHtml = "div">({
     as: as ?? defaultHtml,
   }) as ElementType;
 
-  const componentClassName = createClassName(
-    layout(props),
-    surface(props),
-    className,
-  );
+  const componentClassName = createClassName(layout(props), surface(props), className);
 
   return (
     <Html {...props} className={componentClassName}>

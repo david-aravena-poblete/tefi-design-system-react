@@ -47,10 +47,7 @@ export function Inline<T extends InlineHtml = "div">({
     justify,
   };
 
-  const componentClassName = createClassName(
-    layout(inlineLayout),
-    className,
-  );
+  const componentClassName = createClassName(layout(inlineLayout), className);
 
   return (
     <Html {...props} className={componentClassName}>

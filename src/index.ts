@@ -85,7 +85,7 @@ export {
    LAYOUTS
 ====================================== */
 
-export { Container, Grid, Inline, Section, Stack, Box, } from "./layouts";
+export { Container, Grid, Inline, Section, Stack, Box } from "./layouts";
 
 /* ======================================
    PROVIDERS

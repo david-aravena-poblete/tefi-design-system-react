@@ -18,13 +18,5 @@ export function Heading({
 
   ...props
 }: HeadingProps) {
-  return (
-    <Text
-      as={as}
-      size={size}
-      weight={weight}
-      lineHeight={lineHeight}
-      {...props}
-    />
-  );
+  return <Text as={as} size={size} weight={weight} lineHeight={lineHeight} {...props} />;
 }

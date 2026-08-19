@@ -18,7 +18,7 @@ export function SidebarSection({ heading, children, className, ...props }: Sideb
   return (
     <section className={clsx("sidebar-section", className)} {...props}>
       {heading && (
-        <Text size="caption" color="gray" className="sidebar-section__heading">
+        <Text size="xs" color="gray" className="sidebar-section__heading">
           {heading}
         </Text>
       )}

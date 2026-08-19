@@ -150,6 +150,10 @@
   white-space: nowrap;
 }
 
+.tefi-typography--wrap-pre-line {
+  white-space: pre-line;
+}
+
 /* ======================================
    TRUNCATE
 ====================================== */

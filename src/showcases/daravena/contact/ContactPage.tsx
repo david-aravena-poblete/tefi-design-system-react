@@ -129,9 +129,7 @@ export function ContactPage() {
                   }}
                 />
 
-                {errors.name && (
-                  <ErrorMessage>{errors.name}</ErrorMessage>
-                )}
+                {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
               </FormField>
 
               <FormRow>
@@ -150,9 +148,7 @@ export function ContactPage() {
                     }}
                   />
 
-                  {errors.email && (
-                    <ErrorMessage>{errors.email}</ErrorMessage>
-                  )}
+                  {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
                 </FormField>
 
                 <FormField state={errors.phone ? "error" : "default"}>
@@ -170,9 +166,7 @@ export function ContactPage() {
                     }}
                   />
 
-                  {errors.phone && (
-                    <ErrorMessage>{errors.phone}</ErrorMessage>
-                  )}
+                  {errors.phone && <ErrorMessage>{errors.phone}</ErrorMessage>}
                 </FormField>
               </FormRow>
 
@@ -190,9 +184,7 @@ export function ContactPage() {
                   }}
                 />
 
-                {errors.message && (
-                  <ErrorMessage>{errors.message}</ErrorMessage>
-                )}
+                {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
               </FormField>
 
               <Button type="submit" variant="primary" fullWidth>
@@ -204,9 +196,7 @@ export function ContactPage() {
 
         <Card.Footer>
           <FormActions>
-            <Button variant="link">
-              Prefiero escribir un WhatsApp
-            </Button>
+            <Button variant="link">Prefiero escribir un WhatsApp</Button>
           </FormActions>
         </Card.Footer>
       </Card>

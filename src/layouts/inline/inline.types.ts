@@ -8,11 +8,7 @@ import type { HtmlElement } from "@/laboratory/types";
 
 import type { HtmlProps } from "@/laboratory/capabilities/html";
 
-import type {
-  Align,
-  Justify,
-  Space,
-} from "@/laboratory/types";
+import type { Align, Justify, Space } from "@/laboratory/types";
 
 /* ======================================
    TYPES

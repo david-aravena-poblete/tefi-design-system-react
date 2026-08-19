@@ -45,8 +45,9 @@ const defaultSurface: SurfaceProps = {
 };
 
 const defaultTypography: TypographyProps = {
-  variant: "body-md",
+  size: "md",
   weight: "medium",
+  lineHeight: "normal",
 };
 
 const defaultInteraction: InteractionProps = {
@@ -134,7 +135,7 @@ const layoutBySize = {
 
 const typographyBySize = {
   sm: {
-    variant: "body-sm",
+    size: "sm",
   },
 
   md: {},

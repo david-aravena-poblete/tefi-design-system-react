@@ -35,6 +35,7 @@ const defaultTypography: TypographyProps = {
   size: "md",
   weight: "regular",
   lineHeight: "normal",
+  wrap: "pre-line",
 };
 
 /* ======================================

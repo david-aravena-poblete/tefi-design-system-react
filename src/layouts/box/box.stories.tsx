@@ -19,9 +19,5 @@ export const Default: Story = {
     inside: "lg",
   },
 
-  render: (args) => (
-    <Box {...args}>
-      Contenido del Box
-    </Box>
-  ),
+  render: (args) => <Box {...args}>Contenido del Box</Box>,
 };
