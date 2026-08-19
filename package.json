@@ -2,6 +2,12 @@
   "name": "@tefi/design-system",
   "version": "0.4.32",
   "type": "module",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/david-aravena-poblete/tefi-design-system-react.git"
+  },
+
   "files": [
     "dist"
   ],
