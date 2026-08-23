@@ -22,6 +22,4 @@ export interface ImageProps extends ImageSourceProps {
   fit?: ImageFit;
 
   aspect?: Aspect;
-
-  skeleton?: boolean;
 }

@@ -7,32 +7,17 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ExpandableText } from "./ExpandableText";
 
 /* ======================================
-     CONSTANTS
-  ====================================== */
+   META
+====================================== */
 
-const text = `
-    Lorem ipsum dolor sit amet, consectetur
-    adipiscing elit. Sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip
-    ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit
-    esse cillum dolore eu fugiat nulla pariatur.
-  `;
-
-/* ======================================
-     META
-  ====================================== */
-
-const meta = {
+const meta: Meta<typeof ExpandableText> = {
   title: "Components/ExpandableText",
 
   component: ExpandableText,
 
-  args: {
-    children: text,
+  tags: ["autodocs"],
 
+  args: {
     lines: 4,
 
     expandLabel: "Ver más",
@@ -41,8 +26,16 @@ const meta = {
   },
 
   argTypes: {
+    children: {
+      control: "text",
+    },
+
     lines: {
-      control: "number",
+      control: {
+        type: "number",
+        min: 1,
+        step: 1,
+      },
     },
 
     expandLabel: {
@@ -57,46 +50,121 @@ const meta = {
       control: "boolean",
     },
   },
-} satisfies Meta<typeof ExpandableText>;
+};
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
 /* ======================================
-     PLAYGROUND
-  ====================================== */
+   DEFAULT
+====================================== */
 
-export const Playground: Story = {};
-
-/* ======================================
-     LINES
-  ====================================== */
-
-export const Lines: Story = {
+export const Default: Story = {
   args: {
-    lines: 2,
+    children: `
+      Diseñé un prompt modular para generar un personaje en distintas
+      escenas manteniendo siempre su identidad visual.
+
+      El sistema permite reutilizar la misma estructura para generar
+      diferentes situaciones, escenarios y composiciones sin perder
+      las características principales del personaje.
+
+      De esta manera es posible mantener una identidad visual consistente
+      entre distintas imágenes generadas mediante inteligencia artificial.
+    `,
   },
+
+  render: (args) => (
+    <div
+      style={{
+        maxWidth: 500,
+      }}
+    >
+      <ExpandableText {...args} />
+    </div>
+  ),
 };
 
 /* ======================================
-     CUSTOM LABELS
-  ====================================== */
+   SHORT CONTENT
+====================================== */
+
+export const ShortContent: Story = {
+  args: {
+    children: "Este es un texto corto.",
+  },
+
+  render: (args) => (
+    <div
+      style={{
+        maxWidth: 500,
+      }}
+    >
+      <ExpandableText {...args} />
+    </div>
+  ),
+};
+
+/* ======================================
+   CUSTOM LABELS
+====================================== */
 
 export const CustomLabels: Story = {
   args: {
-    expandLabel: "Mostrar más",
+    children: `
+      Este texto utiliza etiquetas personalizadas para controlar
+      el contenido que aparece cuando el usuario puede expandir
+      o contraer el texto.
+      
+      Esta historia permite comprobar que ambas etiquetas se
+      muestran correctamente durante los distintos estados.
+    `,
 
-    collapseLabel: "Mostrar menos",
+    expandLabel: "Mostrar descripción",
+
+    collapseLabel: "Ocultar descripción",
   },
+
+  render: (args) => (
+    <div
+      style={{
+        maxWidth: 500,
+      }}
+    >
+      <ExpandableText {...args} />
+    </div>
+  ),
 };
 
 /* ======================================
-     SKELETON
-  ====================================== */
+   SKELETON
+====================================== */
 
 export const Skeleton: Story = {
   args: {
     skeleton: true,
+
+    children: `
+      Diseñé un prompt modular para generar un personaje en distintas
+      escenas manteniendo siempre su identidad visual.
+
+      El sistema permite reutilizar la misma estructura para generar
+      diferentes situaciones, escenarios y composiciones sin perder
+      las características principales del personaje.
+
+      De esta manera es posible mantener una identidad visual consistente
+      entre distintas imágenes generadas mediante inteligencia artificial.
+    `,
   },
+
+  render: (args) => (
+    <div
+      style={{
+        maxWidth: 500,
+      }}
+    >
+      <ExpandableText {...args} />
+    </div>
+  ),
 };

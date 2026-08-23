@@ -17,15 +17,17 @@
    COLLAPSED
 ====================================== */
 
-.expandable-text__content--collapsed > * {
+.expandable-text__content--collapsed {
   display: -webkit-box;
 
   overflow: hidden;
-  text-overflow: ellipsis;
+
+  -webkit-box-orient: vertical;
   -webkit-line-clamp: var(--line-clamp);
 
   line-clamp: var(--line-clamp);
-  -webkit-box-orient: vertical;
+
+  text-overflow: ellipsis;
 }
 
 /* ======================================
@@ -34,4 +36,17 @@
 
 .expandable-text > :last-child {
   align-self: flex-end;
+}
+
+/* ======================================
+   MEASURE
+====================================== */
+
+.expandable-text__measure {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }

@@ -2,7 +2,12 @@
    IMPORTS
 ====================================== */
 
-import { useState, type CSSProperties } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+} from "react";
 
 import { createClassName } from "@/laboratory/create-class-name";
 
@@ -49,6 +54,14 @@ export function ExpandableText({
 
   const [expanded, setExpanded] = useState(false);
 
+  const [isExpandable, setIsExpandable] = useState(false);
+
+  /* ======================================
+     REFS
+  ====================================== */
+
+  const contentRef = useRef<HTMLDivElement>(null);
+
   /* ======================================
      STYLES
   ====================================== */
@@ -58,14 +71,51 @@ export function ExpandableText({
   } as CSSProperties;
 
   /* ======================================
+     MEASURE
+  ====================================== */
+
+  useEffect(() => {
+    const content = contentRef.current;
+
+    if (!content) {
+      return;
+    }
+
+    const measure = () => {
+      const computedStyle = getComputedStyle(content);
+
+      const lineHeight = parseFloat(computedStyle.lineHeight);
+
+      const maxHeight = lineHeight * lines;
+
+      const contentHeight = content.scrollHeight;
+
+      setIsExpandable(contentHeight > maxHeight + 1);
+    };
+
+    measure();
+
+    const observer = new ResizeObserver(measure);
+
+    observer.observe(content);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [children, lines]);
+
+  /* ======================================
      CONTENT
   ====================================== */
 
   const content = (
     <div
+      ref={contentRef}
       className={createClassName(
         "expandable-text__content",
-        !expanded ? "expandable-text__content--collapsed" : undefined,
+        !expanded
+          ? "expandable-text__content--collapsed"
+          : undefined,
       )}
       style={contentStyle}
     >
@@ -77,22 +127,27 @@ export function ExpandableText({
      BUTTON
   ====================================== */
 
-  const button = (
+  const button = isExpandable ? (
     <Button
       variant="link"
       skeleton={skeleton}
       disabled={skeleton}
-      onClick={() => setExpanded(!expanded)}
+      onClick={() => {
+        setExpanded(!expanded);
+      }}
     >
       {expanded ? collapseLabel : expandLabel}
     </Button>
-  );
+  ) : null;
 
   /* ======================================
      CLASS NAME
   ====================================== */
 
-  const componentClassName = createClassName("expandable-text", layout(defaultLayout));
+  const componentClassName = createClassName(
+    "expandable-text",
+    layout(defaultLayout),
+  );
 
   /* ======================================
      CONDITIONAL RENDER
@@ -101,7 +156,9 @@ export function ExpandableText({
   if (skeleton) {
     return (
       <div className={componentClassName}>
-        <Skeleton radius="md">{content}</Skeleton>
+        <Skeleton radius="md">
+          {content}
+        </Skeleton>
 
         {button}
       </div>

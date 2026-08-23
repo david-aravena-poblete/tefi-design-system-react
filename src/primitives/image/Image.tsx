@@ -25,8 +25,6 @@ export function Image({
 
   aspect = "16:9",
 
-  skeleton = false,
-
   /* ======================================
      REACT PROPS
   ====================================== */
@@ -94,27 +92,18 @@ export function Image({
   );
 
   /* ======================================
-     MANUAL SKELETON
-  ====================================== */
-
-  if (skeleton) {
-    return (
-      <div className={wrapperClasses}>
-        <div className="image__surface">
-          <Skeleton fill className="image__skeleton" />
-        </div>
-      </div>
-    );
-  }
-
-  /* ======================================
      RENDER
   ====================================== */
 
   return (
     <div className={wrapperClasses}>
       <div className="image__surface">
-        {!isLoaded && !hasError && <Skeleton fill className="image__skeleton" />}
+        {!isLoaded && !hasError && (
+          <Skeleton
+            fill
+            className="image__skeleton"
+          />
+        )}
 
         <img
           {...rest}
