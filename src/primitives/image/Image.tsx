@@ -2,7 +2,12 @@
    IMPORTS
 ====================================== */
 
-import { useState, type ComponentProps } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ComponentProps,
+} from "react";
 
 import clsx from "clsx";
 
@@ -44,6 +49,12 @@ export function Image({
   ...rest
 }: ImageProps) {
   /* ======================================
+     REF
+  ====================================== */
+
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  /* ======================================
      STATE
   ====================================== */
 
@@ -52,11 +63,37 @@ export function Image({
   const [hasError, setHasError] = useState(false);
 
   /* ======================================
+     SOURCE
+  ====================================== */
+
+  useEffect(() => {
+    setIsLoaded(false);
+
+    setHasError(false);
+
+    const image = imageRef.current;
+
+    if (!image) {
+      return;
+    }
+
+    if (image.complete) {
+      if (image.naturalWidth > 0) {
+        setIsLoaded(true);
+      } else {
+        setHasError(true);
+      }
+    }
+  }, [rest.src]);
+
+  /* ======================================
      HANDLERS
   ====================================== */
 
   const handleLoad: ComponentProps<"img">["onLoad"] = (event) => {
     setIsLoaded(true);
+
+    setHasError(false);
 
     onLoad?.(event);
   };
@@ -107,6 +144,7 @@ export function Image({
 
         <img
           {...rest}
+          ref={imageRef}
           className={imageClasses}
           alt={alt}
           onLoad={handleLoad}

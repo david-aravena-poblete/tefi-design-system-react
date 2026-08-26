@@ -103,7 +103,7 @@ export function SkillsPage() {
 
               <Card.Body>
                 <Stack>
-                  <Heading as="h3">Desarrollo de Skills</Heading>
+                  <Heading as="h3">desarrollo de skills large text</Heading>
 
                   <Text expandable lines={4}>
                     Desarrollo skills para que una inteligencia artificial pueda utilizar archivos,

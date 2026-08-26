@@ -1,11 +1,21 @@
 /* ======================================
+   IMPORTS
+====================================== */
+
+import type {
+  TextHtml,
+  TextProps,
+} from "@/components/typography/text";
+
+/* ======================================
    TYPEWRITER PROPS
 ====================================== */
 
-export interface TypewriterProps {
-  text: string;
+export type TypewriterProps<T extends TextHtml = "p"> =
+  Omit<TextProps<T>, "children"> & {
+    text: string;
 
-  speed?: number;
+    speed?: number;
 
-  cursor?: boolean;
-}
+    cursor?: boolean;
+  };

@@ -3,7 +3,7 @@
 ====================================== */
 
 import {
-  useEffect,
+  useLayoutEffect,
   useRef,
   useState,
   type CSSProperties,
@@ -74,7 +74,7 @@ export function ExpandableText({
      MEASURE
   ====================================== */
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const content = contentRef.current;
 
     if (!content) {

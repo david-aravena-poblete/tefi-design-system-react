@@ -64,6 +64,21 @@ const defaultInteraction: InteractionProps = {
    BUTTON VARIANTS
 ====================================== */
 
+const layoutByVariant = {
+  primary: {},
+
+  secondary: {},
+
+  danger: {},
+
+  ghost: {},
+
+  link: {
+    insideX: "none",
+    insideY: "none",
+  },
+} satisfies Record<ButtonVariant, LayoutProps>;
+
 const surfaceByVariant = {
   primary: {},
 
@@ -87,6 +102,7 @@ const surfaceByVariant = {
   link: {
     background: "transparent",
     text: "blue",
+    radius: "none",
   },
 } satisfies Record<ButtonVariant, SurfaceProps>;
 
@@ -165,32 +181,70 @@ export function Button({
 
   ...props
 }: ButtonProps): ReactElement {
-  const iconOnly = children === undefined || children === null;
+  const iconOnly =
+    children === undefined ||
+    children === null;
+
+  /* ======================================
+     LAYOUT
+  ====================================== */
 
   const buttonLayout: LayoutProps = {
     ...defaultLayout,
+    ...layoutByVariant[variant],
     ...layoutBySize[size],
 
     fill: fullWidth,
   };
 
+  /*
+   * Link buttons behave like text actions.
+   * They do not need the minimum height
+   * inherited from the regular button.
+   */
+
+  if (variant === "link") {
+    buttonLayout.minHeight = undefined;
+  }
+
+  /* ======================================
+     ICON ONLY
+  ====================================== */
+
   if (iconOnly) {
     buttonLayout.insideX = "none";
 
-    buttonLayout.minWidth = size === "sm" ? "32" : "40";
+    buttonLayout.minWidth =
+      size === "sm"
+        ? "32"
+        : "40";
   }
+
+  /* ======================================
+     SURFACE
+  ====================================== */
 
   const buttonSurface = {
     ...defaultSurface,
     ...surfaceByVariant[variant],
   };
 
+  /* ======================================
+     TYPOGRAPHY
+  ====================================== */
+
   const buttonTypography = {
     ...defaultTypography,
     ...typographyBySize[size],
   };
 
-  const isDisabled = disabled || loading;
+  /* ======================================
+     INTERACTION
+  ====================================== */
+
+  const isDisabled =
+    disabled ||
+    loading;
 
   const buttonInteraction = {
     ...defaultInteraction,
@@ -199,6 +253,10 @@ export function Button({
     disabled: isDisabled,
   };
 
+  /* ======================================
+     CLASS NAME
+  ====================================== */
+
   const componentClassName = createClassName(
     layout(buttonLayout),
     surface(buttonSurface),
@@ -206,6 +264,10 @@ export function Button({
     interaction(buttonInteraction),
     className,
   );
+
+  /* ======================================
+     BUTTON ELEMENT
+  ====================================== */
 
   const button = (
     <button
@@ -227,7 +289,11 @@ export function Button({
       className={componentClassName}
     >
       <>
-        {loading ? <Spinner size="sm" /> : startIcon}
+        {loading ? (
+          <Spinner size="sm" />
+        ) : (
+          startIcon
+        )}
 
         {children}
 
@@ -242,7 +308,10 @@ export function Button({
 
   if (skeleton) {
     return (
-      <Skeleton fill={fullWidth} radius={buttonSurface.radius}>
+      <Skeleton
+        fill={fullWidth}
+        radius={buttonSurface.radius}
+      >
         {button}
       </Skeleton>
     );

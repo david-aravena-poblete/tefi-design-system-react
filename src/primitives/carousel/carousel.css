@@ -1,0 +1,57 @@
+/* ======================================
+   CAROUSEL
+====================================== */
+
+.carousel {
+   width: 100%;
+ }
+ 
+ /* ======================================
+    STAGE
+ ====================================== */
+ 
+ .carousel__stage {
+   display: grid;
+ 
+   grid-template-columns: auto minmax(0, 1fr) auto;
+ 
+   align-items: center;
+ 
+   width: 100%;
+ }
+ 
+ /* ======================================
+    VIEWPORT
+ ====================================== */
+ 
+ .carousel__viewport {
+   min-width: 0;
+   width: 100%;
+ }
+ 
+ /* ======================================
+    CONTROLS
+ ====================================== */
+ 
+ .carousel__previous,
+ .carousel__next {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+ /* ======================================
+    PREVIOUS
+ ====================================== */
+ 
+ .carousel__previous {
+   padding-right: var(--space-sm);
+ }
+ 
+ /* ======================================
+    NEXT
+ ====================================== */
+ 
+ .carousel__next {
+   padding-left: var(--space-sm);
+ }

@@ -1,32 +1,50 @@
-import { useEffect, useState } from "react";
+/* ======================================
+   IMPORTS
+====================================== */
 
-import "./typewriter.css";
+import {
+  useEffect,
+  useState,
+} from "react";
+
+import { Text } from "@/components/typography/text";
+
+import type {
+  TextHtml,
+  TextProps,
+} from "@/components/typography/text";
 
 import type { TypewriterProps } from "./typewriter.types";
 
-/* ======================================
-     TYPEWRITER
-  ====================================== */
+import "./typewriter.css";
 
-export function Typewriter({
+/* ======================================
+   TYPEWRITER
+====================================== */
+
+export function Typewriter<T extends TextHtml = "p">({
   text,
 
   speed = 50,
 
   cursor = true,
-}: TypewriterProps) {
+
+  ...props
+}: TypewriterProps<T>) {
   /* ======================================
-       STATE
-    ====================================== */
+     STATE
+  ====================================== */
 
   const [displayedText, setDisplayedText] = useState("");
 
   /* ======================================
-       EFFECT
-    ====================================== */
+     EFFECT
+  ====================================== */
 
   useEffect(() => {
     let index = 0;
+
+    setDisplayedText("");
 
     const interval = setInterval(() => {
       index++;
@@ -38,18 +56,32 @@ export function Typewriter({
       }
     }, speed);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [text, speed]);
 
   /* ======================================
-       RENDER
-    ====================================== */
+     TEXT PROPS
+  ====================================== */
+
+  const textProps = props as TextProps<T>;
+
+  /* ======================================
+     RENDER
+  ====================================== */
 
   return (
-    <span className="typewriter">
-      {displayedText}
+    <Text {...textProps}>
+      <span className="typewriter">
+        {displayedText}
 
-      {cursor && <span className="typewriter__cursor">|</span>}
-    </span>
+        {cursor && (
+          <span className="typewriter__cursor">
+            |
+          </span>
+        )}
+      </span>
+    </Text>
   );
 }

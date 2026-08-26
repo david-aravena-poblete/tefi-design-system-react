@@ -21,6 +21,7 @@ export { Icon } from "./primitives/icon";
 export { Control } from "./primitives/control";
 export { Image } from "./primitives/image";
 export { Skeleton } from "./primitives/skeleton";
+export { Carousel } from "./primitives/carousel";
 
 /* ======================================
    COMPONENTS
@@ -77,6 +78,7 @@ export {
   OptionItem,
   OptionList,
   Radio,
+  RadioGroup,
   Select,
   Switch,
 } from "./components/selection";
