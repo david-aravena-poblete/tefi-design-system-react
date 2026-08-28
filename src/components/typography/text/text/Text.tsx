@@ -9,13 +9,19 @@ import { extractProps } from "@/laboratory/core/extract-props";
 
 import { html } from "@/laboratory/capabilities/html";
 
-import { surface, surfaceCapabilities } from "@/laboratory/capabilities/surface";
+import { layout } from "@/laboratory/capabilities/layout";
+
+import {
+  surface,
+  surfaceCapabilities,
+} from "@/laboratory/capabilities/surface";
 
 import { typography } from "@/laboratory/capabilities/typography";
 
 import { ExpandableText } from "@/components/typography/text/expandable-text";
 import { Skeleton } from "@/primitives/skeleton";
 
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
 import type { SurfaceProps } from "@/laboratory/capabilities/surface";
 import type { TypographyProps } from "@/laboratory/capabilities/typography";
 
@@ -69,7 +75,7 @@ export function Text<T extends TextHtml = "p">({
 
   expandable = false,
 
-  lines = 4,
+  lines,
 
   expandLabel = "Ver más",
 
@@ -89,7 +95,13 @@ export function Text<T extends TextHtml = "p">({
      SURFACE PROPS
   ====================================== */
 
-  const { consumed: surfaceProps, remaining: htmlProps } = extractProps(props, surfaceCapabilities);
+  const {
+    consumed: surfaceProps,
+    remaining: htmlProps,
+  } = extractProps(
+    props,
+    surfaceCapabilities,
+  );
 
   const textSurface: SurfaceProps = {
     ...defaultSurface,
@@ -155,10 +167,23 @@ export function Text<T extends TextHtml = "p">({
   };
 
   /* ======================================
+     LAYOUT
+  ====================================== */
+
+  const textLayout: LayoutProps = {
+    ...(lines !== undefined
+      ? {
+          minHeight: `${lines}lh`,
+        }
+      : {}),
+  };
+
+  /* ======================================
      CLASS NAME
   ====================================== */
 
   const componentClassName = createClassName(
+    layout(textLayout),
     surface(textSurface),
     typography(textTypography),
     className,
@@ -169,7 +194,10 @@ export function Text<T extends TextHtml = "p">({
   ====================================== */
 
   const text = (
-    <Element {...htmlProps} className={componentClassName}>
+    <Element
+      {...htmlProps}
+      className={componentClassName}
+    >
       {children}
     </Element>
   );

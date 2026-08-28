@@ -13,14 +13,13 @@ import { createClassName } from "@/laboratory/create-class-name";
 import { layout } from "@/laboratory/capabilities/layout";
 
 import { Button } from "@/components/button";
+import { Dots } from "@/components/dots";
 
 import { Icon } from "@/primitives/icon";
 
 import type { LayoutProps } from "@/laboratory/capabilities/layout";
 
 import type { CarouselProps } from "./carousel.types";
-
-import "./carousel.css";
 
 /* ======================================
    DEFAULTS
@@ -30,6 +29,58 @@ const defaultLayout: LayoutProps = {
   display: "flex",
   direction: "column",
   fill: true,
+  between: "md",
+};
+
+const overlayStageLayout: LayoutProps = {
+  position: "relative",
+  fill: true,
+};
+
+const outsideStageLayout: LayoutProps = {
+  display: "flex",
+  direction: "row",
+  align: "center",
+  fill: true,
+  between: "sm",
+};
+
+const overlayPreviousLayout: LayoutProps = {
+  display: "flex",
+  align: "center",
+  justify: "center",
+
+  position: "absolute",
+  top: "none",
+  bottom: "none",
+  left: "sm",
+};
+
+const overlayNextLayout: LayoutProps = {
+  display: "flex",
+  align: "center",
+  justify: "center",
+
+  position: "absolute",
+  top: "none",
+  bottom: "none",
+  right: "sm",
+};
+
+const outsidePreviousLayout: LayoutProps = {
+  display: "flex",
+  align: "center",
+  justify: "center",
+};
+
+const outsideNextLayout: LayoutProps = {
+  display: "flex",
+  align: "center",
+  justify: "center",
+};
+
+const viewportLayout: LayoutProps = {
+  fill: true,
 };
 
 /* ======================================
@@ -38,6 +89,7 @@ const defaultLayout: LayoutProps = {
 
 export function Carousel({
   children,
+  controls = "overlay",
 }: CarouselProps): ReactElement {
   /* ======================================
      CHILDREN
@@ -78,12 +130,47 @@ export function Carousel({
   };
 
   /* ======================================
-     CLASS NAME
+     LAYOUT
+  ====================================== */
+
+  const stageLayout =
+    controls === "outside"
+      ? outsideStageLayout
+      : overlayStageLayout;
+
+  const previousLayout =
+    controls === "outside"
+      ? outsidePreviousLayout
+      : overlayPreviousLayout;
+
+  const nextLayout =
+    controls === "outside"
+      ? outsideNextLayout
+      : overlayNextLayout;
+
+  /* ======================================
+     CLASS NAMES
   ====================================== */
 
   const componentClassName = createClassName(
     "carousel",
     layout(defaultLayout),
+  );
+
+  const stageClassName = createClassName(
+    layout(stageLayout),
+  );
+
+  const previousClassName = createClassName(
+    layout(previousLayout),
+  );
+
+  const nextClassName = createClassName(
+    layout(nextLayout),
+  );
+
+  const viewportClassName = createClassName(
+    layout(viewportLayout),
   );
 
   /* ======================================
@@ -103,42 +190,104 @@ export function Carousel({
   const currentItem = items[currentIndex];
 
   /* ======================================
+     PREVIOUS CONTROL
+  ====================================== */
+
+  const previousControl = (
+    <div className={previousClassName}>
+      <Button
+        variant={
+          controls === "outside"
+            ? "secondary"
+            : "overlay"
+        }
+        radius="full"
+        onClick={previous}
+        aria-label="Anterior"
+        startIcon={
+          <Icon
+            name="chevronLeft"
+            size="sm"
+          />
+        }
+      />
+    </div>
+  );
+
+  /* ======================================
+     NEXT CONTROL
+  ====================================== */
+
+  const nextControl = (
+    <div className={nextClassName}>
+      <Button
+        variant={
+          controls === "outside"
+            ? "secondary"
+            : "overlay"
+        }
+        radius="full"
+        onClick={next}
+        aria-label="Siguiente"
+        startIcon={
+          <Icon
+            name="chevronRight"
+            size="sm"
+          />
+        }
+      />
+    </div>
+  );
+
+  /* ======================================
+     CONTENT
+  ====================================== */
+
+  const content = (
+    <div className={viewportClassName}>
+      {currentItem}
+    </div>
+  );
+
+  /* ======================================
      RENDER
   ====================================== */
 
   return (
     <div className={componentClassName}>
-      <div className="carousel__viewport">
-        <div key={currentIndex}>
-          {currentItem}
-        </div>
+      <div className={stageClassName}>
 
-        {totalItems > 1 && (
-          <div className="carousel__controls">
-            <Button
-              variant="secondary"
-              onClick={previous}
-              aria-label="Anterior"
-            >
-              <Icon
-                name="arrowLeft"
-                size="sm"
-              />
-            </Button>
+        {controls === "outside" ? (
+          <>
+            {totalItems > 1 && previousControl}
 
-            <Button
-              variant="secondary"
-              onClick={next}
-              aria-label="Siguiente"
-            >
-              <Icon
-                name="arrowRight"
-                size="sm"
-              />
-            </Button>
-          </div>
+            {content}
+
+            {totalItems > 1 && nextControl}
+          </>
+        ) : (
+          <>
+            {content}
+
+            {totalItems > 1 && previousControl}
+
+            {totalItems > 1 && nextControl}
+          </>
         )}
+
       </div>
+
+      {/* ======================================
+         DOTS
+      ====================================== */}
+
+      {totalItems > 1 && (
+        <Dots
+          count={totalItems}
+          active={currentIndex}
+          onChange={setCurrentIndex}
+        />
+      )}
     </div>
   );
 }

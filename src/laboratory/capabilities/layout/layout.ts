@@ -14,6 +14,7 @@ export const layoutCapabilities = [
   "display",
   "direction",
   "align",
+  "alignSelf",
   "justify",
   "between",
   "inside",
@@ -34,6 +35,13 @@ export const layoutCapabilities = [
   "aspect",
 
   "fill",
+
+  "position",
+  "inset",
+  "top",
+  "right",
+  "bottom",
+  "left",
 ] as const;
 
 /* ======================================

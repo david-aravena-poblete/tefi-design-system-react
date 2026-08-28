@@ -77,6 +77,8 @@ const layoutByVariant = {
     insideX: "none",
     insideY: "none",
   },
+
+  overlay: {},
 } satisfies Record<ButtonVariant, LayoutProps>;
 
 const surfaceByVariant = {
@@ -104,7 +106,16 @@ const surfaceByVariant = {
     text: "blue",
     radius: "none",
   },
+
+  overlay: {
+    background: "overlay",
+    text: "white",
+  },
 } satisfies Record<ButtonVariant, SurfaceProps>;
+
+/* ======================================
+   BUTTON INTERACTION BY VARIANT
+====================================== */
 
 const interactionByVariant = {
   primary: {},
@@ -131,6 +142,12 @@ const interactionByVariant = {
   danger: {
     hover: {
       background: "red-strong",
+    },
+  },
+
+  overlay: {
+    hover: {
+      background: "blue",
     },
   },
 } satisfies Record<ButtonVariant, InteractionProps>;
@@ -166,6 +183,7 @@ export function Button({
 
   variant = "primary",
   size = "md",
+  radius,
 
   fullWidth,
 
@@ -224,9 +242,17 @@ export function Button({
      SURFACE
   ====================================== */
 
-  const buttonSurface = {
+  const buttonSurface: SurfaceProps = {
     ...defaultSurface,
     ...surfaceByVariant[variant],
+  
+    ...(iconOnly && {
+      radius: "full",
+    }),
+  
+    ...(radius !== undefined && {
+      radius,
+    }),
   };
 
   /* ======================================

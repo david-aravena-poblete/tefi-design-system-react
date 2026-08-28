@@ -10,6 +10,11 @@
   --color-bg-tertiary: #263449;
   --color-bg-inverse: #f8fafc;
 
+  /* OVERLAY */
+
+  --surface-overlay-bg: rgb(0 0 0 / 50%);
+  --surface-overlay-text: var(--color-text-primary);
+
   /* TEXT */
 
   --color-text-primary: #f8fafc;

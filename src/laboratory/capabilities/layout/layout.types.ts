@@ -9,14 +9,23 @@ import type {
   Display,
   Justify,
   Margin,
+  Position,
   Size,
   Space,
   Width,
 } from "@/laboratory/types";
 
 /* ======================================
-    LAYOUT PROPS
- ====================================== */
+   LAYOUT LENGTH
+====================================== */
+
+export type LayoutLength =
+  | Size
+  | `${number}lh`;
+
+/* ======================================
+   LAYOUT PROPS
+====================================== */
 
 export interface LayoutProps {
   display?: Display;
@@ -24,6 +33,8 @@ export interface LayoutProps {
   direction?: Direction;
 
   align?: Align;
+
+  alignSelf?: Align;
 
   justify?: Justify;
 
@@ -49,11 +60,23 @@ export interface LayoutProps {
 
   height?: Size;
 
-  minHeight?: Size;
+  minHeight?: LayoutLength;
 
   maxHeight?: Size;
 
   aspect?: Aspect;
 
   fill?: boolean;
+
+  position?: Position;
+
+  inset?: Space;
+
+  top?: Space;
+
+  right?: Space;
+
+  bottom?: Space;
+
+  left?: Space;
 }

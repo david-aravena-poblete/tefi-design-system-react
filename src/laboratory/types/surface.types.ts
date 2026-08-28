@@ -3,7 +3,7 @@
 ====================================== */
 
 export type Background =
-  "blue" | "blue-soft" | "gray" | "gray-soft" | "red" | "red-strong" | "soft" | "transparent";
+  "blue" | "blue-soft" | "gray" | "gray-soft" | "red" | "red-strong" | "soft" | "transparent" | "overlay";
 
 /* ======================================
    TEXT

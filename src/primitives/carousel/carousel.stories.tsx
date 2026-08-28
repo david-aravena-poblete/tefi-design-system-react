@@ -34,6 +34,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    controls: "overlay",
+
     children: [
       <Image
         key="circuit-board"
@@ -75,6 +77,8 @@ export const Default: Story = {
 
 export const Cards: Story = {
   args: {
+    controls: "outside",
+
     children: [
       <Card key="spec-driven-development">
         <Card.Body>
@@ -143,6 +147,8 @@ export const Cards: Story = {
 
 export const TextContent: Story = {
   args: {
+    controls: "outside",
+
     children: [
       <Text
         key="first"
@@ -188,6 +194,8 @@ export const TextContent: Story = {
 
 export const SingleItem: Story = {
   args: {
+    controls: "overlay",
+
     children: (
       <Image
         src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200"

@@ -34,6 +34,10 @@
   background-color: transparent;
 }
 
+.tefi-surface--background-overlay {
+  background-color: var(--surface-overlay-bg);
+}
+
 /* ======================================
      TEXT
   ====================================== */

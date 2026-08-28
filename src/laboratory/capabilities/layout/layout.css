@@ -15,6 +15,170 @@
 }
 
 /* ======================================
+   POSITION
+====================================== */
+
+.tefi-layout--position-static {
+  position: static;
+}
+
+.tefi-layout--position-relative {
+  position: relative;
+}
+
+.tefi-layout--position-absolute {
+  position: absolute;
+}
+
+.tefi-layout--position-fixed {
+  position: fixed;
+}
+
+.tefi-layout--position-sticky {
+  position: sticky;
+}
+
+/* ======================================
+   INSET
+====================================== */
+
+.tefi-layout--inset-none {
+  inset: 0;
+}
+
+.tefi-layout--inset-xs {
+  inset: var(--space-xs);
+}
+
+.tefi-layout--inset-sm {
+  inset: var(--space-sm);
+}
+
+.tefi-layout--inset-md {
+  inset: var(--space-md);
+}
+
+.tefi-layout--inset-lg {
+  inset: var(--space-lg);
+}
+
+.tefi-layout--inset-xl {
+  inset: var(--space-xl);
+}
+
+/* ======================================
+   TOP
+====================================== */
+
+.tefi-layout--top-none {
+  top: 0;
+}
+
+.tefi-layout--top-xs {
+  top: var(--space-xs);
+}
+
+.tefi-layout--top-sm {
+  top: var(--space-sm);
+}
+
+.tefi-layout--top-md {
+  top: var(--space-md);
+}
+
+.tefi-layout--top-lg {
+  top: var(--space-lg);
+}
+
+.tefi-layout--top-xl {
+  top: var(--space-xl);
+}
+
+/* ======================================
+   RIGHT
+====================================== */
+
+.tefi-layout--right-none {
+  right: 0;
+}
+
+.tefi-layout--right-xs {
+  right: var(--space-xs);
+}
+
+.tefi-layout--right-sm {
+  right: var(--space-sm);
+}
+
+.tefi-layout--right-md {
+  right: var(--space-md);
+}
+
+.tefi-layout--right-lg {
+  right: var(--space-lg);
+}
+
+.tefi-layout--right-xl {
+  right: var(--space-xl);
+}
+
+/* ======================================
+   BOTTOM
+====================================== */
+
+.tefi-layout--bottom-none {
+  bottom: 0;
+}
+
+.tefi-layout--bottom-xs {
+  bottom: var(--space-xs);
+}
+
+.tefi-layout--bottom-sm {
+  bottom: var(--space-sm);
+}
+
+.tefi-layout--bottom-md {
+  bottom: var(--space-md);
+}
+
+.tefi-layout--bottom-lg {
+  bottom: var(--space-lg);
+}
+
+.tefi-layout--bottom-xl {
+  bottom: var(--space-xl);
+}
+
+/* ======================================
+   LEFT
+====================================== */
+
+.tefi-layout--left-none {
+  left: 0;
+}
+
+.tefi-layout--left-xs {
+  left: var(--space-xs);
+}
+
+.tefi-layout--left-sm {
+  left: var(--space-sm);
+}
+
+.tefi-layout--left-md {
+  left: var(--space-md);
+}
+
+.tefi-layout--left-lg {
+  left: var(--space-lg);
+}
+
+.tefi-layout--left-xl {
+  left: var(--space-xl);
+}
+
+/* ======================================
    DIRECTION
 ====================================== */
 
@@ -84,6 +248,30 @@
 
 .tefi-layout--align-baseline {
   align-items: baseline;
+}
+
+/* ======================================
+   ALIGN SELF
+====================================== */
+
+.tefi-layout--alignSelf-start {
+  align-self: flex-start;
+}
+
+.tefi-layout--alignSelf-center {
+  align-self: center;
+}
+
+.tefi-layout--alignSelf-end {
+  align-self: flex-end;
+}
+
+.tefi-layout--alignSelf-stretch {
+  align-self: stretch;
+}
+
+.tefi-layout--alignSelf-baseline {
+  align-self: baseline;
 }
 
 /* ======================================
@@ -454,16 +642,80 @@
   min-height: auto;
 }
 
+.tefi-layout--minHeight-2 {
+  min-height: var(--size-2);
+}
+
+.tefi-layout--minHeight-4 {
+  min-height: var(--size-4);
+}
+
+.tefi-layout--minHeight-8 {
+  min-height: var(--size-8);
+}
+
+.tefi-layout--minHeight-12 {
+  min-height: var(--size-12);
+}
+
+.tefi-layout--minHeight-16 {
+  min-height: var(--size-16);
+}
+
+.tefi-layout--minHeight-20 {
+  min-height: var(--size-20);
+}
+
+.tefi-layout--minHeight-24 {
+  min-height: var(--size-24);
+}
+
 .tefi-layout--minHeight-32 {
   min-height: var(--size-32);
+}
+
+.tefi-layout--minHeight-36 {
+  min-height: var(--size-36);
 }
 
 .tefi-layout--minHeight-40 {
   min-height: var(--size-40);
 }
 
+.tefi-layout--minHeight-44 {
+  min-height: var(--size-44);
+}
+
 .tefi-layout--minHeight-48 {
   min-height: var(--size-48);
+}
+
+.tefi-layout--minHeight-52 {
+  min-height: var(--size-52);
+}
+
+.tefi-layout--minHeight-1lh {
+  min-height: 1lh;
+}
+
+.tefi-layout--minHeight-2lh {
+  min-height: 2lh;
+}
+
+.tefi-layout--minHeight-3lh {
+  min-height: 3lh;
+}
+
+.tefi-layout--minHeight-4lh {
+  min-height: 4lh;
+}
+
+.tefi-layout--minHeight-5lh {
+  min-height: 5lh;
+}
+
+.tefi-layout--minHeight-6lh {
+  min-height: 6lh;
 }
 
 /* ======================================

@@ -5,6 +5,17 @@
 export type Display = "flex" | "inline-flex" | "grid";
 
 /* ======================================
+   POSITION
+====================================== */
+
+export type Position =
+  | "static"
+  | "relative"
+  | "absolute"
+  | "fixed"
+  | "sticky";
+
+/* ======================================
    DIRECTION
 ====================================== */
 
@@ -26,20 +37,46 @@ export type Justify = "start" | "center" | "end" | "between";
    SPACE
 ====================================== */
 
-export type Space = "none" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+export type Space =
+  | "none"
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "xxl"
+  | "xxxl";
 
 /* ======================================
    SIZE
 ====================================== */
 
 export type Size =
-  "2" | "4" | "8" | "12" | "16" | "20" | "24" | "32" | "36" | "40" | "44" | "48" | "52";
+  | "2"
+  | "4"
+  | "8"
+  | "12"
+  | "16"
+  | "20"
+  | "24"
+  | "32"
+  | "36"
+  | "40"
+  | "44"
+  | "48"
+  | "52";
 
 /* ======================================
    WIDTH
 ====================================== */
 
-export type Width = "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+export type Width =
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "2xl";
 
 /* ======================================
    ASPECT
@@ -51,4 +88,11 @@ export type Aspect = "1:1" | "4:3" | "16:9";
    MARGIN
 ====================================== */
 
-export type Margin = "none" | "xs" | "sm" | "md" | "lg" | "xl" | "auto";
+export type Margin =
+  | "none"
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "auto";

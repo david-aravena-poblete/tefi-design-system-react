@@ -28,13 +28,18 @@ export function SkillsPage() {
           </Heading>
 
           <Text>
-            Desarrollo soluciones para integrar inteligencia artificial en proyectos reales mediante
-            metodologías, entrenamiento de modelos y desarrollo de herramientas especializadas.
+            Desarrollo soluciones para integrar inteligencia artificial en
+            proyectos reales mediante metodologías, entrenamiento de modelos y
+            desarrollo de herramientas especializadas.
           </Text>
         </Stack>
 
         <Section>
           <Grid>
+            {/* ======================================
+               SPEC DRIVEN DEVELOPMENT
+            ====================================== */}
+
             <Card>
               <Card.Media>
                 <Image
@@ -46,22 +51,37 @@ export function SkillsPage() {
 
               <Card.Body>
                 <Stack>
-                  <Heading as="h3">Spec Driven DV</Heading>
+                  <Heading
+                    as="h3"
+                    lines={2}
+                  >
+                    Spec Driven DV
+                  </Heading>
 
-                  <Text expandable lines={4}>
-                    Documento y organizo toda la información de tu proyecto para que una IA la use
-                    como memoria de largo plazo. Así podrá trabajar todos los días bajo los mismos
-                    criterios, prácticas, ideas y decisiones. Técnicamente, estructuro y desarrollo
-                    contexto para inteligencia artificial mediante la metodología Spec-Driven
-                    Development.
+                  <Text
+                    expandable
+                    lines={4}
+                  >
+                    Documento y organizo toda la información de tu proyecto
+                    para que una IA la use como memoria de largo plazo. Así
+                    podrá trabajar todos los días bajo los mismos criterios,
+                    prácticas, ideas y decisiones. Técnicamente, estructuro y
+                    desarrollo contexto para inteligencia artificial mediante
+                    la metodología Spec-Driven Development.
                   </Text>
                 </Stack>
               </Card.Body>
 
               <Card.Footer>
-                <Button fullWidth>Contáctame</Button>
+                <Button fullWidth>
+                  Contáctame
+                </Button>
               </Card.Footer>
             </Card>
+
+            {/* ======================================
+               FINE TUNING
+            ====================================== */}
 
             <Card>
               <Card.Media>
@@ -74,23 +94,39 @@ export function SkillsPage() {
 
               <Card.Body>
                 <Stack>
-                  <Heading as="h3">Fine Tuning</Heading>
+                  <Heading
+                    as="h3"
+                    lines={2}
+                  >
+                    Fine Tuning
+                  </Heading>
 
-                  <Text expandable lines={4}>
-                    El Fine-Tuning me permite enseñarle a una IA las distintas situaciones que
-                    pueden producirse en tu proyecto para que sea capaz de reconocer intenciones,
-                    razonar y ejecutar acciones o utilizar software según el contexto. Técnicamente,
-                    preparo ejemplos de tus tareas y métodos de trabajo para enseñárselos a una IA,
-                    de modo que aprenda los patrones detrás de tus decisiones y pueda reproducirlos
-                    de forma consistente en situaciones similares.
+                  <Text
+                    expandable
+                    lines={4}
+                  >
+                    El Fine-Tuning me permite enseñarle a una IA las distintas
+                    situaciones que pueden producirse en tu proyecto para que
+                    sea capaz de reconocer intenciones, razonar y ejecutar
+                    acciones o utilizar software según el contexto.
+                    Técnicamente, preparo ejemplos de tus tareas y métodos de
+                    trabajo para enseñárselos a una IA, de modo que aprenda los
+                    patrones detrás de tus decisiones y pueda reproducirlos de
+                    forma consistente en situaciones similares.
                   </Text>
                 </Stack>
               </Card.Body>
 
               <Card.Footer>
-                <Button fullWidth>Contáctame</Button>
+                <Button fullWidth>
+                  Contáctame
+                </Button>
               </Card.Footer>
             </Card>
+
+            {/* ======================================
+               DEVELOPMENT OF SKILLS
+            ====================================== */}
 
             <Card>
               <Card.Media>
@@ -103,17 +139,28 @@ export function SkillsPage() {
 
               <Card.Body>
                 <Stack>
-                  <Heading as="h3">desarrollo de skills large text</Heading>
+                  <Heading
+                    as="h3"
+                    lines={2}
+                  >
+                    desarrollo de skills large text
+                  </Heading>
 
-                  <Text expandable lines={4}>
-                    Desarrollo skills para que una inteligencia artificial pueda utilizar archivos,
-                    código de programación y procesos específicos para resolver tareas concretas.
+                  <Text
+                    expandable
+                    lines={4}
+                  >
+                    Desarrollo skills para que una inteligencia artificial
+                    pueda utilizar archivos, código de programación y procesos
+                    específicos para resolver tareas concretas.
                   </Text>
                 </Stack>
               </Card.Body>
 
               <Card.Footer>
-                <Button fullWidth>Contáctame</Button>
+                <Button fullWidth>
+                  Contáctame
+                </Button>
               </Card.Footer>
             </Card>
           </Grid>

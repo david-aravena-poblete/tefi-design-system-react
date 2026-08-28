@@ -5,6 +5,8 @@
 import {
    ArrowLeft,
    ArrowRight,
+   ChevronLeft,
+   ChevronRight,
    Moon,
    Plus,
    Search,
@@ -14,8 +16,8 @@ import {
  } from "lucide-react";
  
  /* ======================================
-     ICON REGISTRY
-  ====================================== */
+    ICON REGISTRY
+ ====================================== */
  
  export const iconRegistry = {
    search: Search,
@@ -24,18 +26,23 @@ import {
    sun: Sun,
    moon: Moon,
    user: User,
+ 
    arrowLeft: ArrowLeft,
    arrowRight: ArrowRight,
+ 
+   chevronLeft: ChevronLeft,
+   chevronRight: ChevronRight,
  };
  
  /* ======================================
-     TYPES
-  ====================================== */
+    TYPES
+ ====================================== */
  
  export type IconName = keyof typeof iconRegistry;
  
  /* ======================================
-     CONSTANTS
-  ====================================== */
+    CONSTANTS
+ ====================================== */
  
- export const ICON_NAMES = Object.keys(iconRegistry) as IconName[];
+ export const ICON_NAMES =
+   Object.keys(iconRegistry) as IconName[];

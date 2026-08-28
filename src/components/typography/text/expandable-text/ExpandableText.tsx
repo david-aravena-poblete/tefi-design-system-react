@@ -33,6 +33,10 @@ const defaultLayout: LayoutProps = {
   fill: true,
 };
 
+const buttonLayout: LayoutProps = {
+  alignSelf: "end",
+};
+
 /* ======================================
    COMPONENT
 ====================================== */
@@ -84,13 +88,17 @@ export function ExpandableText({
     const measure = () => {
       const computedStyle = getComputedStyle(content);
 
-      const lineHeight = parseFloat(computedStyle.lineHeight);
+      const lineHeight = parseFloat(
+        computedStyle.lineHeight,
+      );
 
       const maxHeight = lineHeight * lines;
 
       const contentHeight = content.scrollHeight;
 
-      setIsExpandable(contentHeight > maxHeight + 1);
+      setIsExpandable(
+        contentHeight > maxHeight + 1,
+      );
     };
 
     measure();
@@ -135,8 +143,13 @@ export function ExpandableText({
       onClick={() => {
         setExpanded(!expanded);
       }}
+      className={createClassName(
+        layout(buttonLayout),
+      )}
     >
-      {expanded ? collapseLabel : expandLabel}
+      {expanded
+        ? collapseLabel
+        : expandLabel}
     </Button>
   ) : null;
 
