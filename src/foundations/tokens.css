@@ -158,6 +158,7 @@ Brand tokens:
   --color-blue: #6366f1;
   --color-blue-soft: #818cf8;
   --color-white: #fff;
+  --color-black: #2a1e35;
   --color-blue-transparent: color-mix(in srgb, var(--color-blue) 60%, transparent);
 
   /* ======================================

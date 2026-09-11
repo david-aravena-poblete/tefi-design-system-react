@@ -50,6 +50,10 @@
   color: var(--color-white);
 }
 
+.tefi-surface--text-black {
+  color: var(--color-black);
+}
+
 .tefi-surface--text-blue {
   color: var(--color-blue);
 }

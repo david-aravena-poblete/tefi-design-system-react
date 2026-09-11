@@ -46,6 +46,18 @@
   border-color: var(--color-border-primary);
 }
 
+.tefi-interaction--hover-border-primary:hover:not(:disabled) {
+  border-color: var(--color-border-primary);
+}
+
+.tefi-interaction--hover-border-secondary:hover:not(:disabled) {
+  border-color: var(--color-border-secondary);
+}
+
+.tefi-interaction--hover-text-black:hover:not(:disabled) {
+  color: var(--color-black);
+}
+
 .tefi-interaction--hover-text-blue:hover:not(:disabled) {
   color: var(--color-blue);
 }
@@ -57,7 +69,6 @@
 .tefi-interaction--hover-text-white:hover:not(:disabled) {
   color: var(--color-white);
 }
-
 /* ======================================
    HOVER — SHADOW
 ====================================== */
@@ -99,30 +110,22 @@
    FOCUS RING
 ====================================== */
 
-.tefi-interaction--focusRing-blue:focus-visible:not(
-  .tefi-interaction--disabled
-) {
+.tefi-interaction--focusRing-blue:focus-visible:not(.tefi-interaction--disabled) {
   outline: var(--size-2) solid var(--color-blue);
   outline-offset: var(--space-xxs);
 }
 
-.tefi-interaction--focusRing-blue-soft:focus-visible:not(
-  .tefi-interaction--disabled
-) {
+.tefi-interaction--focusRing-blue-soft:focus-visible:not(.tefi-interaction--disabled) {
   outline: var(--size-2) solid var(--color-blue-soft);
   outline-offset: var(--space-xxs);
 }
 
-.tefi-interaction--focusRing-blue-transparent:focus-visible:not(
-  .tefi-interaction--disabled
-) {
+.tefi-interaction--focusRing-blue-transparent:focus-visible:not(.tefi-interaction--disabled) {
   outline: var(--size-2) solid var(--color-blue-transparent);
   outline-offset: var(--space-xxs);
 }
 
-.tefi-interaction--focusRing-white:focus-visible:not(
-  .tefi-interaction--disabled
-) {
+.tefi-interaction--focusRing-white:focus-visible:not(.tefi-interaction--disabled) {
   outline: var(--size-2) solid var(--color-white);
   outline-offset: var(--space-xxs);
 }

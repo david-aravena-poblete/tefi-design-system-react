@@ -33,9 +33,7 @@ import type { TextHtml, TextProps } from "./text.types";
 
 const defaultHtml: TextHtml = "p";
 
-const defaultSurface: SurfaceProps = {
-  text: "black",
-};
+const defaultSurface: SurfaceProps = {};
 
 const defaultTypography: TypographyProps = {
   size: "md",

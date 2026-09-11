@@ -9,7 +9,7 @@ export type Background =
    TEXT
 ====================================== */
 
-export type Text = "white" | "blue" | "blue-soft" | "gray" | "red" | "red-strong";
+export type Text = "white" | "black" | "blue" | "blue-soft" | "gray" | "red" | "red-strong";
 
 /* ======================================
    BORDER
