@@ -86,8 +86,8 @@ const surfaceByVariant = {
 
   secondary: {
     background: "gray",
-    text: "black",
     border: "gray",
+    text:"primary",
     borderWidth: "1",
     borderStyle: "solid",
   },
@@ -98,7 +98,7 @@ const surfaceByVariant = {
 
   ghost: {
     background: "transparent",
-    text: "black",
+    text: "primary",
   },
 
   link: {

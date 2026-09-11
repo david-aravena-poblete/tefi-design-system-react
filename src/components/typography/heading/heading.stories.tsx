@@ -34,8 +34,6 @@ const meta = {
 
     lineHeight: "tight",
 
-    color: "black",
-
     as: "h1",
   },
 
