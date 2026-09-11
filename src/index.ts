@@ -31,11 +31,12 @@ export { Avatar } from "./components/avatar";
 export { Button } from "./components/button";
 export { Card } from "./components/card";
 export { Chip } from "./components/chip";
+export { Markdown } from "./components/markdown";
 export { Divider } from "./components/divider";
 export { QuantityStepper } from "./components/quantity-stepper";
 export { Typewriter } from "./components/typewriter";
 
-export { Heading, Text } from "./components/typography";
+export { Heading, Text, Code, CodeBlock } from "./components/typography";
 
 /* ======================================
    FIELD

@@ -7,6 +7,18 @@
 }
 
 /* ======================================
+   FAMILY
+====================================== */
+
+.tefi-typography--family-sans {
+  font-family: var(--font-family-sans);
+}
+
+.tefi-typography--family-mono {
+  font-family: var(--font-family-mono);
+}
+
+/* ======================================
    SIZE
 ====================================== */
 

@@ -61,28 +61,32 @@ Brand tokens:
   --radius-full: 999px;
 
   /* ======================================
-     FOUNDATIONS — TYPOGRAPHY
-  ====================================== */
+   FOUNDATIONS — TYPOGRAPHY
+====================================== */
 
-  --font-family-sans: inter, system-ui, -apple-system, sans-serif;
-  --font-xs: 12px;
-  --font-sm: 14px;
-  --font-md: 16px;
-  --font-lg: 18px;
-  --font-xl: 20px;
-  --font-2xl: 24px;
-  --font-3xl: 30px;
-  --font-4xl: 36px;
-  --font-5xl: 48px;
-  --font-6xl: 60px;
-  --font-7xl: 72px;
-  --line-tight: 1.2;
-  --line-normal: 1.5;
-  --line-relaxed: 1.7;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+--font-family-sans: inter, system-ui, -apple-system, sans-serif;
+--font-family-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+
+--font-xs: 12px;
+--font-sm: 14px;
+--font-md: 16px;
+--font-lg: 18px;
+--font-xl: 20px;
+--font-2xl: 24px;
+--font-3xl: 30px;
+--font-4xl: 36px;
+--font-5xl: 48px;
+--font-6xl: 60px;
+--font-7xl: 72px;
+
+--line-tight: 1.2;
+--line-normal: 1.5;
+--line-relaxed: 1.7;
+
+--font-weight-regular: 400;
+--font-weight-medium: 500;
+--font-weight-semibold: 600;
+--font-weight-bold: 700;
 
   /* ======================================
      FOUNDATIONS — SHADOWS
@@ -108,7 +112,9 @@ Brand tokens:
 
   --size-2: 2px;
   --size-4: 4px;
+  --size-6: 6px;
   --size-8: 8px;
+  --size-10: 10px;
   --size-12: 12px;
   --size-16: 16px;
   --size-20: 20px;

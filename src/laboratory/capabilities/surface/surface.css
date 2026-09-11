@@ -2,6 +2,10 @@
    BACKGROUND
 ====================================== */
 
+.tefi-surface--background-white {
+  background-color: var(--color-white);
+}
+
 .tefi-surface--background-blue {
   background-color: var(--color-blue);
 }
@@ -44,10 +48,6 @@
 
 .tefi-surface--text-white {
   color: var(--color-white);
-}
-
-.tefi-surface--text-black {
-  color: var(--color-black);
 }
 
 .tefi-surface--text-blue {

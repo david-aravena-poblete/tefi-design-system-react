@@ -1,70 +1,15 @@
 /* ======================================
-   CONTROL BASE
+   CONTROL
 ====================================== */
 
 .control {
   position: relative;
   display: flex;
-  gap: var(--control-gap);
   align-items: center;
+  gap: var(--space-sm);
   width: fit-content;
   cursor: pointer;
   user-select: none;
-
-  /* SIZE SYSTEM */
-
-  --control-size: var(--size-control-md);
-  --control-gap: var(--control-gap-md);
-
-  /* STATE COLORS */
-
-  --control-color: var(--color-primary-base);
-  --control-color-hover: var(--color-primary-hover);
-  --control-indicator-color: #fff;
-  --control-content-color: var(--color-primary-base);
-}
-
-/* ======================================
-   SIZE
-====================================== */
-
-.control[data-size="sm"] {
-  --control-size: var(--size-control-sm, 16px);
-  --control-gap: var(--control-gap-sm);
-}
-
-.control[data-size="md"] {
-  --control-size: var(--size-control-md, 20px);
-  --control-gap: var(--control-gap-md);
-}
-
-.control[data-size="lg"] {
-  --control-size: var(--size-control-lg, 24px);
-  --control-gap: var(--control-gap-lg);
-}
-
-/* ======================================
-   STATES
-====================================== */
-
-.control[data-state="default"] {
-  --control-color: var(--color-primary-base);
-  --control-color-hover: var(--color-primary-hover);
-}
-
-.control[data-state="error"] {
-  --control-color: var(--color-danger-base);
-  --control-color-hover: var(--color-danger-hover);
-}
-
-.control[data-state="success"] {
-  --control-color: var(--color-success-base);
-  --control-color-hover: var(--color-success-hover);
-}
-
-.control[data-state="warning"] {
-  --control-color: var(--color-warning-base);
-  --control-color-hover: var(--color-warning-hover);
 }
 
 /* ======================================
@@ -73,50 +18,10 @@
 
 .control__visual {
   position: relative;
-  box-sizing: border-box;
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: var(--control-size);
-  height: var(--control-size);
-  padding: var(--control-padding);
-  background: var(--color-bg-primary);
-  border: var(--control-border-width) solid var(--color-border-primary);
-  transition:
-    transform var(--transition-fast),
-    background var(--transition-fast),
-    border-color var(--transition-fast);
-}
-
-/* ======================================
-   CHECKED
-====================================== */
-
-.control:has(.control__input:checked):not([data-disabled="true"]) .control__visual {
-  background: var(--control-color);
-  border-color: var(--control-color);
-}
-
-/* ======================================
-   DISABLED
-====================================== */
-
-.control[data-disabled="true"] {
-  cursor: not-allowed;
-}
-
-.control[data-disabled="true"] .control__visual {
-  background: var(--color-bg-tertiary);
-  border-color: var(--color-border-primary);
-}
-
-/* ======================================
-   ACTIVE
-====================================== */
-
-.control:not([data-disabled="true"]) .control__visual:active {
-  transform: scale(0.95);
 }
 
 /* ======================================
@@ -126,20 +31,22 @@
 .control__input {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   cursor: inherit;
   opacity: 0;
 }
 
 /* ======================================
-   BOX
+   VISUAL CONTENT
 ====================================== */
 
-.control__box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+.control__visual > *:not(.control__input) {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* ======================================
@@ -147,58 +54,14 @@
 ====================================== */
 
 .control__label {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 
 /* ======================================
-   SHAPES
+   DISABLED
 ====================================== */
 
-.control[data-shape="circle"] .control__visual {
-  border-radius: 50%;
-}
-
-.control[data-shape="square"] .control__visual {
-  border-radius: var(--control-radius);
-}
-
-/* ======================================
-   SWITCH
-====================================== */
-
-.control[data-shape="pill"] .control__visual {
-  width: calc(var(--control-size) * 1.8);
-  height: var(--control-size);
-  padding: 0;
-  background: var(--color-bg-tertiary);
-  border: none;
-  border-radius: var(--radius-full);
-}
-
-.control[data-shape="pill"]:has(.control__input:checked):not([data-disabled="true"])
-  .control__visual {
-  background: var(--control-color);
-}
-
-.control[data-shape="pill"][data-disabled="true"] .control__visual {
-  background: var(--color-bg-tertiary);
-}
-
-/* ======================================
-   HOVER
-====================================== */
-
-.control:hover:not([data-disabled="true"]) {
-  background: color-mix(in srgb, var(--control-color) 6%, transparent);
-  border-radius: var(--radius-sm);
-}
-
-/* ======================================
-   FOCUS
-====================================== */
-
-.control:has(.control__input:focus-visible) {
-  border-radius: var(--radius-sm);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--control-color) 25%, transparent);
+.control:has(.control__input:disabled) {
+  cursor: not-allowed;
 }

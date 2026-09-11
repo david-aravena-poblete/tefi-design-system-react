@@ -222,6 +222,27 @@ export const Decoration: Story = {
     </div>
   ),
 };
+/* ======================================
+   LINE BREAKS
+====================================== */
+
+export const LineBreaks: Story = {
+  render: () => (
+    <div
+      style={{
+        width: "400px",
+      }}
+    >
+      <Text>
+        Primera línea.
+
+        Segunda línea después de un salto de línea.
+
+        Tercera línea después de otro salto de línea.
+      </Text>
+    </div>
+  ),
+};
 
 /* ======================================
    NO WRAP
@@ -319,4 +340,19 @@ export const SkeletonLong: Story = {
       </Text>
     </div>
   ),
+};
+
+
+/* ======================================
+   MULTILINE
+====================================== */
+
+export const Multiline: Story = {
+  render: () => {
+    const text = `Hola soy la Tefi
+
+Un gusto conocerte`;
+
+    return <Text>{text}</Text>;
+  },
 };

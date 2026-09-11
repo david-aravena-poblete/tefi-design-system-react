@@ -1,0 +1,65 @@
+.tefi-markdown > * {
+  margin-block: 0;
+}
+
+.tefi-markdown > * + * {
+  margin-block-start: var(--space-md);
+}
+
+/* ======================================
+   HEADINGS
+====================================== */
+
+.tefi-markdown > h1 + *,
+.tefi-markdown > h2 + *,
+.tefi-markdown > h3 + * {
+  margin-block-start: var(--space-sm);
+}
+
+.tefi-markdown > * + h1,
+.tefi-markdown > * + h2,
+.tefi-markdown > * + h3 {
+  margin-block-start: var(--space-lg);
+}
+
+/* ======================================
+   CODE BLOCK
+====================================== */
+
+.tefi-markdown > * + pre {
+  margin-block-start: var(--space-lg);
+}
+
+.tefi-markdown > pre + * {
+  margin-block-start: var(--space-lg);
+}
+
+/* ======================================
+   LISTS
+====================================== */
+
+.tefi-markdown > ul,
+.tefi-markdown > ol {
+  margin-block: 0;
+  padding-inline-start: var(--space-lg);
+}
+
+.tefi-markdown > * + ul,
+.tefi-markdown > * + ol {
+  margin-block-start: var(--space-sm);
+}
+
+.tefi-markdown > ul + *,
+.tefi-markdown > ol + * {
+  margin-block-start: var(--space-md);
+}
+
+/* ======================================
+   NESTED LISTS
+====================================== */
+
+.tefi-markdown li > ul,
+.tefi-markdown li > ol {
+  margin-block: 0;
+  padding-inline-start: var(--space-lg);
+}

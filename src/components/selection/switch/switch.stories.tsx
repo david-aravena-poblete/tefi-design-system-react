@@ -1,7 +1,9 @@
 /* ======================================
    IMPORTS
 ====================================== */
+
 import { useState } from "react";
+
 import { Switch } from "./Switch";
 
 /* ======================================
@@ -18,12 +20,6 @@ export default {
   },
 
   argTypes: {
-    state: {
-      control: "select",
-
-      options: ["default", "error", "success", "warning"],
-    },
-
     size: {
       control: "select",
 
@@ -42,7 +38,6 @@ export function Playground() {
   return (
     <Switch
       checked={checked}
-
       onChange={(event) => setChecked(event.target.checked)}
     />
   );
@@ -58,35 +53,10 @@ export function WithLabel() {
   return (
     <Switch
       checked={checked}
-
       onChange={(event) => setChecked(event.target.checked)}
     >
       Enable notifications
     </Switch>
-  );
-}
-
-/* ======================================
-   STATES
-====================================== */
-
-export function States() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "16px",
-      }}
-    >
-      <Switch>Default</Switch>
-
-      <Switch state="error">Error</Switch>
-
-      <Switch state="success">Success</Switch>
-
-      <Switch state="warning">Warning</Switch>
-    </div>
   );
 }
 
@@ -103,11 +73,17 @@ export function Sizes() {
         gap: "16px",
       }}
     >
-      <Switch size="sm">Small</Switch>
+      <Switch size="sm">
+        Small
+      </Switch>
 
-      <Switch size="md">Medium</Switch>
+      <Switch size="md">
+        Medium
+      </Switch>
 
-      <Switch size="lg">Large</Switch>
+      <Switch size="lg">
+        Large
+      </Switch>
     </div>
   );
 }
@@ -125,11 +101,12 @@ export function Disabled() {
         gap: "16px",
       }}
     >
-      <Switch disabled>Disabled</Switch>
+      <Switch disabled>
+        Disabled
+      </Switch>
 
       <Switch
         disabled
-
         defaultChecked
       >
         Disabled checked

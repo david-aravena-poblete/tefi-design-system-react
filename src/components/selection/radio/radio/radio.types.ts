@@ -1,20 +1,23 @@
-import type { ReactNode, InputHTMLAttributes } from "react";
+/* ======================================
+   IMPORTS
+====================================== */
 
-import type { FieldState } from "../../../../primitives/field";
+import type {
+  InputHTMLAttributes,
+  ReactNode,
+} from "react";
 
 /* ======================================
-     RADIO SIZE
-  ====================================== */
+   RADIO PROPS
+====================================== */
 
 export type RadioSize = "sm" | "md" | "lg";
 
-/* ======================================
-     RADIO PROPS
-  ====================================== */
-
-export interface RadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type"> {
-  state?: FieldState;
-
+export interface RadioProps
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "size" | "type"
+  > {
   size?: RadioSize;
 
   children?: ReactNode;

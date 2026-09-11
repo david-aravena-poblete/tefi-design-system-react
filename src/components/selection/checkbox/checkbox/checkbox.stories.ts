@@ -18,12 +18,6 @@ export default {
   },
 
   argTypes: {
-    state: {
-      control: "select",
-
-      options: ["default", "error", "success", "warning"],
-    },
-
     size: {
       control: "select",
 
@@ -50,31 +44,6 @@ export const Default = {};
 
 export const Checked = {
   args: {
-    defaultChecked: true,
-  },
-};
-
-/* ======================================
-   STATES
-====================================== */
-
-export const Error = {
-  args: {
-    state: "error",
-    defaultChecked: true,
-  },
-};
-
-export const Success = {
-  args: {
-    state: "success",
-    defaultChecked: true,
-  },
-};
-
-export const Warning = {
-  args: {
-    state: "warning",
     defaultChecked: true,
   },
 };

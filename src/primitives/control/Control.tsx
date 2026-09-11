@@ -3,7 +3,9 @@
 ====================================== */
 
 import React, { useId } from "react";
+
 import "./control.css";
+
 import type { ControlProps } from "./control.types";
 
 /* ======================================
@@ -24,12 +26,6 @@ export function Control({
   onChange,
 
   disabled = false,
-
-  state = "default",
-
-  shape = "square",
-
-  size = "md",
 
   renderControl,
 
@@ -61,17 +57,11 @@ export function Control({
 
   const inputProps: React.InputHTMLAttributes<HTMLInputElement> = {
     id: inputId,
-
     type,
-
     name,
-
     value,
-
     onChange: handleChange,
-
     disabled,
-
     className: "control__input",
   };
 
@@ -98,28 +88,19 @@ export function Control({
   return (
     <label
       htmlFor={inputId}
-
       className={["control", className].filter(Boolean).join(" ")}
-
-      data-state={state}
-
-      data-disabled={disabled ? "true" : undefined}
-
-      data-shape={shape}
-
-      data-size={size}
     >
-      {/* VISUAL */}
-
       <span className="control__visual">
         <input {...inputProps} />
 
-        <span className="control__box">{renderControl?.()}</span>
+        {renderControl?.()}
       </span>
 
-      {/* LABEL */}
-
-      {children && <span className="control__label">{children}</span>}
+      {children && (
+        <span className="control__label">
+          {children}
+        </span>
+      )}
     </label>
   );
 }

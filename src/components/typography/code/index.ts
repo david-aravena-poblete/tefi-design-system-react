@@ -2,8 +2,6 @@
    EXPORTS
 ====================================== */
 
-export { Control } from "./Control";
+export { Code } from "./Code";
 
-export type {
-  ControlProps,
-} from "./control.types";
+export type { CodeProps } from "./code.types";

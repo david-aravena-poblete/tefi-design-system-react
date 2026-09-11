@@ -7,6 +7,8 @@ import {
    ArrowRight,
    ChevronLeft,
    ChevronRight,
+   File,
+   FileCode,
    Moon,
    Plus,
    Search,
@@ -26,6 +28,9 @@ import {
    sun: Sun,
    moon: Moon,
    user: User,
+ 
+   file: File,
+   fileCode: FileCode,
  
    arrowLeft: ArrowLeft,
    arrowRight: ArrowRight,

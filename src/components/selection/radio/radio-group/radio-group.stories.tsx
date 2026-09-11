@@ -9,8 +9,8 @@ import { Radio } from "../radio/Radio";
 import { RadioGroup } from "./RadioGroup";
 
 /* ======================================
-     META
-  ====================================== */
+   META
+====================================== */
 
 export default {
   title: "Components/Selection/Radio/RadioGroup",
@@ -19,8 +19,8 @@ export default {
 };
 
 /* ======================================
-     PLAYGROUND
-  ====================================== */
+   PLAYGROUND
+====================================== */
 
 export function Playground() {
   const [value, setValue] = useState("react");
@@ -37,8 +37,8 @@ export function Playground() {
 }
 
 /* ======================================
-     ROW
-  ====================================== */
+   ROW
+====================================== */
 
 export function Row() {
   const [value, setValue] = useState("react");
@@ -47,7 +47,6 @@ export function Row() {
     <RadioGroup
       value={value}
       onChange={setValue}
-
       direction="row"
     >
       <Radio value="react">React</Radio>
@@ -60,8 +59,8 @@ export function Row() {
 }
 
 /* ======================================
-     STATES
-  ====================================== */
+   STATES
+====================================== */
 
 export function States() {
   const [value, setValue] = useState("default");
@@ -70,24 +69,16 @@ export function States() {
     <RadioGroup value={value} onChange={setValue}>
       <Radio value="default">Default</Radio>
 
-      <Radio value="error" state="error">
-        Error
-      </Radio>
+      <Radio value="selected">Selected</Radio>
 
-      <Radio value="success" state="success">
-        Success
-      </Radio>
-
-      <Radio value="warning" state="warning">
-        Warning
-      </Radio>
+      <Radio value="another">Another</Radio>
     </RadioGroup>
   );
 }
 
 /* ======================================
-     DISABLED
-  ====================================== */
+   DISABLED
+====================================== */
 
 export function Disabled() {
   return (
@@ -102,8 +93,8 @@ export function Disabled() {
 }
 
 /* ======================================
-     GAP
-  ====================================== */
+   GAP
+====================================== */
 
 export function GapLarge() {
   const [value, setValue] = useState("react");
@@ -112,7 +103,6 @@ export function GapLarge() {
     <RadioGroup
       value={value}
       onChange={setValue}
-
       gap="lg"
     >
       <Radio value="react">React</Radio>

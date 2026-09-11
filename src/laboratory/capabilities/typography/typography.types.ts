@@ -8,6 +8,7 @@ import type {
   TextDecoration,
   TextTransform,
   TextWrap,
+  TypographyFamily,
   TypographyLineHeight,
   TypographySize,
 } from "@/laboratory/types";
@@ -17,6 +18,8 @@ import type {
 ====================================== */
 
 export interface TypographyProps {
+  family?: TypographyFamily;
+
   size?: TypographySize;
 
   weight?: FontWeight;

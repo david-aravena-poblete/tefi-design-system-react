@@ -1,0 +1,39 @@
+/* ======================================
+   CAROUSEL
+====================================== */
+
+.carousel__stage {
+  min-width: 0;
+}
+
+.carousel__viewport {
+  min-width: 0;
+}
+
+/* ======================================
+   SWIPE
+====================================== */
+
+.carousel__viewport {
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.carousel__viewport img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 767px) {
+  .carousel--controls-outside
+    .carousel__previous,
+  .carousel--controls-outside
+    .carousel__next {
+    display: none;
+  }
+}

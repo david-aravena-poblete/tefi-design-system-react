@@ -1,13 +1,11 @@
 {
   "name": "@tefi/design-system",
-  "version": "0.4.37",
+  "version": "0.4.39",
   "type": "module",
-
   "repository": {
     "type": "git",
     "url": "https://github.com/david-aravena-poblete/tefi-design-system-react.git"
   },
-
   "files": [
     "dist"
   ],
@@ -44,7 +42,9 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "lucide-react": "^1.14.0"
+    "lucide-react": "^1.14.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

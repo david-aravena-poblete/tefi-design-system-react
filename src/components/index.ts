@@ -6,6 +6,7 @@ export * from "./divider";
 export * from "./field";
 export * from "./form";
 export * from "./input";
+export * from "./markdown";
 export * from "./navigation";
 export * from "./overlay";
 export * from "./quantity-stepper";

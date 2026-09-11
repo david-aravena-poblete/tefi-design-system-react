@@ -51,6 +51,11 @@ export function Icon({
 }: IconProps) {
   const IconComponent = name ? iconRegistry[name] : undefined;
 
+console.log("ICON:", {
+  name,
+  hasComponent: !!IconComponent,
+});
+
   const iconLayout = {
     ...defaultLayout,
     ...layoutBySize[size],

@@ -486,8 +486,16 @@
   width: var(--size-4);
 }
 
+.tefi-layout--width-6 {
+  width: var(--size-6);
+}
+
 .tefi-layout--width-8 {
   width: var(--size-8);
+}
+
+.tefi-layout--width-10 {
+  width: var(--size-10);
 }
 
 .tefi-layout--width-12 {
@@ -590,8 +598,16 @@
   height: var(--size-4);
 }
 
+.tefi-layout--height-6 {
+  height: var(--size-6);
+}
+
 .tefi-layout--height-8 {
   height: var(--size-8);
+}
+
+.tefi-layout--height-10 {
+  height: var(--size-10);
 }
 
 .tefi-layout--height-12 {

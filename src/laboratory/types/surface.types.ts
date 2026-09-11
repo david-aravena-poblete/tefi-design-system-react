@@ -3,13 +3,13 @@
 ====================================== */
 
 export type Background =
-  "blue" | "blue-soft" | "gray" | "gray-soft" | "red" | "red-strong" | "soft" | "transparent" | "overlay";
+  "white" | "blue" | "blue-soft" | "gray" | "gray-soft" | "red" | "red-strong" | "soft" | "transparent" | "overlay";
 
 /* ======================================
    TEXT
 ====================================== */
 
-export type Text = "white" | "black" | "blue" | "blue-soft" | "gray" | "red" | "red-strong";
+export type Text = "white" | "blue" | "blue-soft" | "gray" | "red" | "red-strong";
 
 /* ======================================
    BORDER

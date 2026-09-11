@@ -1,10 +1,15 @@
+"use client";
+
 /* ======================================
    IMPORTS
 ====================================== */
 
 import {
   Children,
+  useRef,
   useState,
+  type KeyboardEvent,
+  type PointerEvent,
   type ReactElement,
 } from "react";
 
@@ -20,6 +25,8 @@ import { Icon } from "@/primitives/icon";
 import type { LayoutProps } from "@/laboratory/capabilities/layout";
 
 import type { CarouselProps } from "./carousel.types";
+
+import "./carousel.css";
 
 /* ======================================
    DEFAULTS
@@ -130,6 +137,73 @@ export function Carousel({
   };
 
   /* ======================================
+     KEYBOARD
+  ====================================== */
+
+  const handleKeyDown = (
+    event: KeyboardEvent<HTMLDivElement>,
+  ) => {
+    if (
+      event.target instanceof HTMLInputElement ||
+      event.target instanceof HTMLTextAreaElement ||
+      event.target instanceof HTMLSelectElement
+    ) {
+      return;
+    }
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      previous();
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      next();
+    }
+  };
+
+  /* ======================================
+     SWIPE
+  ====================================== */
+
+  const pointerStartX = useRef<number | null>(null);
+
+  const handlePointerDown = (
+    event: PointerEvent<HTMLDivElement>,
+  ) => {
+    event.currentTarget.setPointerCapture(
+      event.pointerId,
+    );
+
+    pointerStartX.current = event.clientX;
+  };
+
+  const handlePointerUp = (
+    event: PointerEvent<HTMLDivElement>,
+  ) => {
+    if (pointerStartX.current === null) {
+      return;
+    }
+
+    const distance =
+      event.clientX - pointerStartX.current;
+
+    pointerStartX.current = null;
+
+    const swipeThreshold = 50;
+
+    if (Math.abs(distance) < swipeThreshold) {
+      return;
+    }
+
+    if (distance < 0) {
+      next();
+    } else {
+      previous();
+    }
+  };
+
+  /* ======================================
      LAYOUT
   ====================================== */
 
@@ -155,21 +229,28 @@ export function Carousel({
   const componentClassName = createClassName(
     "carousel",
     layout(defaultLayout),
+    controls === "outside"
+      ? "carousel--controls-outside"
+      : "carousel--controls-overlay",
   );
 
   const stageClassName = createClassName(
+    "carousel__stage",
     layout(stageLayout),
   );
 
   const previousClassName = createClassName(
+    "carousel__previous",
     layout(previousLayout),
   );
 
   const nextClassName = createClassName(
+    "carousel__next",
     layout(nextLayout),
   );
 
   const viewportClassName = createClassName(
+    "carousel__viewport",
     layout(viewportLayout),
   );
 
@@ -244,7 +325,11 @@ export function Carousel({
   ====================================== */
 
   const content = (
-    <div className={viewportClassName}>
+    <div
+      className={viewportClassName}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+    >
       {currentItem}
     </div>
   );
@@ -254,9 +339,12 @@ export function Carousel({
   ====================================== */
 
   return (
-    <div className={componentClassName}>
+    <div
+      className={componentClassName}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+    >
       <div className={stageClassName}>
-
         {controls === "outside" ? (
           <>
             {totalItems > 1 && previousControl}
@@ -274,7 +362,6 @@ export function Carousel({
             {totalItems > 1 && nextControl}
           </>
         )}
-
       </div>
 
       {/* ======================================

@@ -3,21 +3,20 @@
 ====================================== */
 
 import type {
-  InputHTMLAttributes,
+  ComponentPropsWithoutRef,
   ReactNode,
 } from "react";
 
+import type { HtmlProps } from "@/laboratory/capabilities/html";
+
 /* ======================================
-   CONTROL PROPS
+   CODE PROPS
 ====================================== */
 
-export interface ControlProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type"> {
-  type?: "checkbox" | "radio";
-
-  renderControl?: () => ReactNode;
-
+export type CodeProps = {
   children?: ReactNode;
-
-  className?: string;
-}
+} & HtmlProps<"code"> &
+  Omit<
+    ComponentPropsWithoutRef<"code">,
+    "children" | "as"
+  >;

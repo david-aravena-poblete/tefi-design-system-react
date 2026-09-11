@@ -22,12 +22,6 @@ export default {
   },
 
   argTypes: {
-    state: {
-      control: "select",
-
-      options: ["default", "error", "success", "warning"],
-    },
-
     size: {
       control: "select",
 
@@ -43,63 +37,31 @@ export default {
 export const Playground = {};
 
 /* ======================================
-   CHECKED
-====================================== */
-
-export const Checked = {
-  args: {
-    defaultChecked: true,
-  },
-};
-
-/* ======================================
-   STATES
-====================================== */
-
-export const Error = {
-  args: {
-    state: "error",
-
-    defaultChecked: true,
-  },
-};
-
-export const Success = {
-  args: {
-    state: "success",
-
-    defaultChecked: true,
-  },
-};
-
-export const Warning = {
-  args: {
-    state: "warning",
-
-    defaultChecked: true,
-  },
-};
-
-/* ======================================
    SIZES
 ====================================== */
 
-export const Small = {
-  args: {
-    size: "sm",
-  },
-};
+export const Sizes = {
+  render: () => (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "16px",
+      }}
+    >
+      <Radio size="sm">
+        Small
+      </Radio>
 
-export const Medium = {
-  args: {
-    size: "md",
-  },
-};
+      <Radio size="md">
+        Medium
+      </Radio>
 
-export const Large = {
-  args: {
-    size: "lg",
-  },
+      <Radio size="lg">
+        Large
+      </Radio>
+    </div>
+  ),
 };
 
 /* ======================================
@@ -107,17 +69,26 @@ export const Large = {
 ====================================== */
 
 export const Disabled = {
-  args: {
-    disabled: true,
-  },
-};
+  render: () => (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "16px",
+      }}
+    >
+      <Radio disabled>
+        Disabled
+      </Radio>
 
-export const DisabledChecked = {
-  args: {
-    disabled: true,
-
-    defaultChecked: true,
-  },
+      <Radio
+        disabled
+        defaultChecked
+      >
+        Disabled Checked
+      </Radio>
+    </div>
+  ),
 };
 
 /* ======================================
@@ -130,14 +101,19 @@ export function Group() {
   return (
     <RadioGroup
       value={value}
-
       onChange={setValue}
     >
-      <Radio value="react">React</Radio>
+      <Radio value="react">
+        React
+      </Radio>
 
-      <Radio value="vue">Vue</Radio>
+      <Radio value="vue">
+        Vue
+      </Radio>
 
-      <Radio value="svelte">Svelte</Radio>
+      <Radio value="svelte">
+        Svelte
+      </Radio>
     </RadioGroup>
   );
 }

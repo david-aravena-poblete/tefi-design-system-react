@@ -1,23 +1,23 @@
-import type { ReactNode, InputHTMLAttributes } from "react";
-
-import type { FieldState } from "../../../../primitives/field";
+import type {
+  InputHTMLAttributes,
+  ReactNode,
+} from "react";
 
 /* ======================================
-     CHECKBOX SIZE
-  ====================================== */
+   CHECKBOX SIZE
+====================================== */
 
 export type CheckboxSize = "sm" | "md" | "lg";
 
 /* ======================================
-     CHECKBOX PROPS
-  ====================================== */
+   CHECKBOX PROPS
+====================================== */
 
-export interface CheckboxProps extends Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  "size" | "type"
-> {
-  state?: FieldState;
-
+export interface CheckboxProps
+  extends Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    "size" | "type"
+  > {
   size?: CheckboxSize;
 
   children?: ReactNode;
