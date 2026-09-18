@@ -6,23 +6,17 @@
 
 import {
   Children,
-  useRef,
   useState,
-  type KeyboardEvent,
-  type PointerEvent,
   type ReactElement,
 } from "react";
 
 import { createClassName } from "@/laboratory/create-class-name";
-
 import { layout } from "@/laboratory/capabilities/layout";
+import type { LayoutProps } from "@/laboratory/capabilities/layout";
 
 import { Button } from "@/components/button";
 import { Dots } from "@/components/dots";
-
 import { Icon } from "@/primitives/icon";
-
-import type { LayoutProps } from "@/laboratory/capabilities/layout";
 
 import type { CarouselProps } from "./carousel.types";
 
@@ -33,8 +27,7 @@ import "./carousel.css";
 ====================================== */
 
 const defaultLayout: LayoutProps = {
-  display: "flex",
-  direction: "column",
+  display: "grid",
   fill: true,
   between: "md",
 };
@@ -47,7 +40,7 @@ const overlayStageLayout: LayoutProps = {
 const outsideStageLayout: LayoutProps = {
   display: "flex",
   direction: "row",
-  align: "center",
+  align: "stretch",
   fill: true,
   between: "sm",
 };
@@ -56,7 +49,6 @@ const overlayPreviousLayout: LayoutProps = {
   display: "flex",
   align: "center",
   justify: "center",
-
   position: "absolute",
   top: "none",
   bottom: "none",
@@ -67,7 +59,6 @@ const overlayNextLayout: LayoutProps = {
   display: "flex",
   align: "center",
   justify: "center",
-
   position: "absolute",
   top: "none",
   bottom: "none",
@@ -91,12 +82,99 @@ const viewportLayout: LayoutProps = {
 };
 
 /* ======================================
+   STAGE
+====================================== */
+
+interface StageProps {
+  children: ReactElement | ReactElement[];
+  className: string;
+}
+
+function Stage({
+  children,
+  className,
+}: StageProps): ReactElement {
+  return (
+    <div className={className}>
+      {children}
+    </div>
+  );
+}
+
+/* ======================================
+   VIEWPORT
+====================================== */
+
+interface ViewportProps {
+  children: ReactElement;
+  className: string;
+}
+
+function Viewport({
+  children,
+  className,
+}: ViewportProps): ReactElement {
+  return (
+    <div className={className}>
+      {children}
+    </div>
+  );
+}
+
+/* ======================================
+   TRACK
+====================================== */
+
+interface TrackProps {
+  children: ReactElement[];
+}
+
+function Track({
+  children,
+}: TrackProps): ReactElement {
+  return (
+    <div className="carousel__track">
+      {children}
+    </div>
+  );
+}
+
+/* ======================================
+   SLIDE
+====================================== */
+
+interface SlideProps {
+  children: ReactElement;
+  active: boolean;
+}
+
+function Slide({
+  children,
+  active,
+}: SlideProps): ReactElement {
+  return (
+    <div
+      className={createClassName(
+        "carousel__slide",
+        active
+          ? "carousel__slide--active"
+          : "carousel__slide--inactive",
+      )}
+      aria-hidden={!active}
+    >
+      {children}
+    </div>
+  );
+}
+
+/* ======================================
    CAROUSEL
 ====================================== */
 
 export function Carousel({
   children,
   controls = "overlay",
+  maxHeight,
 }: CarouselProps): ReactElement {
   /* ======================================
      CHILDREN
@@ -132,85 +210,22 @@ export function Carousel({
     }
 
     setCurrentIndex((current) => {
-      return (current - 1 + totalItems) % totalItems;
+      return (
+        (current - 1 + totalItems) % totalItems
+      );
     });
-  };
-
-  /* ======================================
-     KEYBOARD
-  ====================================== */
-
-  const handleKeyDown = (
-    event: KeyboardEvent<HTMLDivElement>,
-  ) => {
-    if (
-      event.target instanceof HTMLInputElement ||
-      event.target instanceof HTMLTextAreaElement ||
-      event.target instanceof HTMLSelectElement
-    ) {
-      return;
-    }
-
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      previous();
-    }
-
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      next();
-    }
-  };
-
-  /* ======================================
-     SWIPE
-  ====================================== */
-
-  const pointerStartX = useRef<number | null>(null);
-
-  const handlePointerDown = (
-    event: PointerEvent<HTMLDivElement>,
-  ) => {
-    event.currentTarget.setPointerCapture(
-      event.pointerId,
-    );
-
-    pointerStartX.current = event.clientX;
-  };
-
-  const handlePointerUp = (
-    event: PointerEvent<HTMLDivElement>,
-  ) => {
-    if (pointerStartX.current === null) {
-      return;
-    }
-
-    const distance =
-      event.clientX - pointerStartX.current;
-
-    pointerStartX.current = null;
-
-    const swipeThreshold = 50;
-
-    if (Math.abs(distance) < swipeThreshold) {
-      return;
-    }
-
-    if (distance < 0) {
-      next();
-    } else {
-      previous();
-    }
   };
 
   /* ======================================
      LAYOUT
   ====================================== */
 
-  const stageLayout =
-    controls === "outside"
+  const stageLayout = {
+    ...(controls === "outside"
       ? outsideStageLayout
-      : overlayStageLayout;
+      : overlayStageLayout),
+    maxHeight,
+  };
 
   const previousLayout =
     controls === "outside"
@@ -265,13 +280,7 @@ export function Carousel({
   }
 
   /* ======================================
-     CURRENT ITEM
-  ====================================== */
-
-  const currentItem = items[currentIndex];
-
-  /* ======================================
-     PREVIOUS CONTROL
+     CONTROLS
   ====================================== */
 
   const previousControl = (
@@ -295,10 +304,6 @@ export function Carousel({
     </div>
   );
 
-  /* ======================================
-     NEXT CONTROL
-  ====================================== */
-
   const nextControl = (
     <div className={nextClassName}>
       <Button
@@ -321,17 +326,28 @@ export function Carousel({
   );
 
   /* ======================================
+     SLIDES
+  ====================================== */
+
+  const slides = items.map((item, index) => (
+    <Slide
+      key={index}
+      active={index === currentIndex}
+    >
+      {item as ReactElement}
+    </Slide>
+  ));
+
+  /* ======================================
      CONTENT
   ====================================== */
 
   const content = (
-    <div
+    <Viewport
       className={viewportClassName}
-      onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
     >
-      {currentItem}
-    </div>
+      <Track>{slides}</Track>
+    </Viewport>
   );
 
   /* ======================================
@@ -339,12 +355,8 @@ export function Carousel({
   ====================================== */
 
   return (
-    <div
-      className={componentClassName}
-      tabIndex={0}
-      onKeyDown={handleKeyDown}
-    >
-      <div className={stageClassName}>
+    <div className={componentClassName}>
+      <Stage className={stageClassName}>
         {controls === "outside" ? (
           <>
             {totalItems > 1 && previousControl}
@@ -355,14 +367,14 @@ export function Carousel({
           </>
         ) : (
           <>
-            {content}
-
             {totalItems > 1 && previousControl}
+
+            {content}
 
             {totalItems > 1 && nextControl}
           </>
         )}
-      </div>
+      </Stage>
 
       {/* ======================================
          DOTS

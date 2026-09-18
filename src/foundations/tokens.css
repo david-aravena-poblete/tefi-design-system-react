@@ -110,21 +110,36 @@ Brand tokens:
   ====================================== */
   /* SCALE */
 
-  --size-2: 2px;
-  --size-4: 4px;
-  --size-6: 6px;
-  --size-8: 8px;
-  --size-10: 10px;
-  --size-12: 12px;
-  --size-16: 16px;
-  --size-20: 20px;
-  --size-24: 24px;
-  --size-32: 32px;
-  --size-36: 36px;
-  --size-40: 40px;
-  --size-44: 44px;
-  --size-48: 48px;
-  --size-52: 52px;
+/* ======================================
+   FOUNDATIONS — SIZE
+====================================== */
+
+/* SCALE */
+
+--size-2: 2px;
+--size-4: 4px;
+--size-6: 6px;
+--size-8: 8px;
+--size-10: 10px;
+--size-12: 12px;
+--size-16: 16px;
+--size-20: 20px;
+--size-24: 24px;
+--size-32: 32px;
+--size-36: 36px;
+--size-40: 40px;
+--size-44: 44px;
+--size-48: 48px;
+--size-52: 52px;
+--size-64: 64px;
+--size-80: 80px;
+--size-96: 96px;
+--size-120: 120px;
+--size-160: 160px;
+--size-200: 200px;
+--size-240: 240px;
+--size-320: 320px;
+--size-480: 480px;
 
   /* CONTROLS */
 
@@ -307,7 +322,7 @@ Brand tokens:
   --control-gap-lg: var(--space-md);
   --state-default-border: var(--color-border-primary);
   --state-default-hover: var(--color-border-secondary);
-  --state-default-ring: color-mix(in srgb, var(--color-primary-base) 40%, transparent);
+  --state-default-ring: color-mix(in srgb, var(--color-primary-base) 80%, transparent);
   --control-size: var(--size-control-md);
   --control-gap: var(--control-gap-md);
 

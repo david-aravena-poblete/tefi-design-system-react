@@ -34,6 +34,12 @@ export const layoutCapabilities = [
 
   "aspect",
 
+  "overflow",
+  "overflowX",
+  "overflowY",
+  "scrollbar",
+  "scroll",
+
   "fill",
 
   "position",
@@ -49,5 +55,16 @@ export const layoutCapabilities = [
 ====================================== */
 
 export function layout(props: LayoutProps) {
-  return compose("layout", layoutCapabilities, props);
-}
+   const layoutProps: LayoutProps = {
+     ...props,
+     ...(props.scroll && props.scrollbar === undefined
+       ? { scrollbar: "hidden" }
+       : {}),
+   };
+ 
+   return compose(
+     "layout",
+     layoutCapabilities,
+     layoutProps,
+   );
+ }

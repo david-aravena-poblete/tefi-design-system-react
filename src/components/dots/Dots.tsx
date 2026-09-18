@@ -47,7 +47,6 @@ const activeDotSurface: SurfaceProps = {
 
 const defaultDotInteraction: InteractionProps = {
   press: "move",
-  focusRing: "blue",
   transition: "fast",
 };
 

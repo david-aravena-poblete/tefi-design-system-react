@@ -8,6 +8,8 @@ import type { HtmlElement } from "@/laboratory/types";
 
 import type { HtmlProps } from "@/laboratory/capabilities/html";
 
+import type { InteractionProps } from "@/laboratory/capabilities/interaction";
+
 import type { LayoutProps } from "@/laboratory/capabilities/layout";
 
 import type { SurfaceProps } from "@/laboratory/capabilities/surface";
@@ -27,5 +29,6 @@ export type BoxHtml = Extract<
 
 export type BoxProps<T extends BoxHtml = "div"> = LayoutProps &
   SurfaceProps &
+  InteractionProps &
   HtmlProps<T> &
   Omit<ComponentPropsWithoutRef<T>, "children" | "as">;

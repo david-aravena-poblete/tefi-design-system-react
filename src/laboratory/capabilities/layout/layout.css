@@ -538,6 +538,42 @@
   width: var(--size-52);
 }
 
+.tefi-layout--width-64 {
+  width: var(--size-64);
+}
+
+.tefi-layout--width-80 {
+  width: var(--size-80);
+}
+
+.tefi-layout--width-96 {
+  width: var(--size-96);
+}
+
+.tefi-layout--width-120 {
+  width: var(--size-120);
+}
+
+.tefi-layout--width-160 {
+  width: var(--size-160);
+}
+
+.tefi-layout--width-200 {
+  width: var(--size-200);
+}
+
+.tefi-layout--width-240 {
+  width: var(--size-240);
+}
+
+.tefi-layout--width-320 {
+  width: var(--size-320);
+}
+
+.tefi-layout--width-480 {
+  width: var(--size-480);
+}
+
 /* ======================================
    MIN WIDTH
 ====================================== */
@@ -556,6 +592,106 @@
 
 .tefi-layout--minWidth-48 {
   min-width: var(--size-48);
+}
+
+/* ======================================
+   MAX HEIGHT
+====================================== */
+
+.tefi-layout--maxHeight-2 {
+  max-height: var(--size-2);
+}
+
+.tefi-layout--maxHeight-4 {
+  max-height: var(--size-4);
+}
+
+.tefi-layout--maxHeight-6 {
+  max-height: var(--size-6);
+}
+
+.tefi-layout--maxHeight-8 {
+  max-height: var(--size-8);
+}
+
+.tefi-layout--maxHeight-10 {
+  max-height: var(--size-10);
+}
+
+.tefi-layout--maxHeight-12 {
+  max-height: var(--size-12);
+}
+
+.tefi-layout--maxHeight-16 {
+  max-height: var(--size-16);
+}
+
+.tefi-layout--maxHeight-20 {
+  max-height: var(--size-20);
+}
+
+.tefi-layout--maxHeight-24 {
+  max-height: var(--size-24);
+}
+
+.tefi-layout--maxHeight-32 {
+  max-height: var(--size-32);
+}
+
+.tefi-layout--maxHeight-36 {
+  max-height: var(--size-36);
+}
+
+.tefi-layout--maxHeight-40 {
+  max-height: var(--size-40);
+}
+
+.tefi-layout--maxHeight-44 {
+  max-height: var(--size-44);
+}
+
+.tefi-layout--maxHeight-48 {
+  max-height: var(--size-48);
+}
+
+.tefi-layout--maxHeight-52 {
+  max-height: var(--size-52);
+}
+
+.tefi-layout--maxHeight-64 {
+  max-height: var(--size-64);
+}
+
+.tefi-layout--maxHeight-80 {
+  max-height: var(--size-80);
+}
+
+.tefi-layout--maxHeight-96 {
+  max-height: var(--size-96);
+}
+
+.tefi-layout--maxHeight-120 {
+  max-height: var(--size-120);
+}
+
+.tefi-layout--maxHeight-160 {
+  max-height: var(--size-160);
+}
+
+.tefi-layout--maxHeight-200 {
+  max-height: var(--size-200);
+}
+
+.tefi-layout--maxHeight-240 {
+  max-height: var(--size-240);
+}
+
+.tefi-layout--maxHeight-320 {
+  max-height: var(--size-320);
+}
+
+.tefi-layout--maxHeight-480 {
+  max-height: var(--size-480);
 }
 
 /* ======================================
@@ -650,6 +786,42 @@
   height: var(--size-52);
 }
 
+.tefi-layout--height-64 {
+  height: var(--size-64);
+}
+
+.tefi-layout--height-80 {
+  height: var(--size-80);
+}
+
+.tefi-layout--height-96 {
+  height: var(--size-96);
+}
+
+.tefi-layout--height-120 {
+  height: var(--size-120);
+}
+
+.tefi-layout--height-160 {
+  height: var(--size-160);
+}
+
+.tefi-layout--height-200 {
+  height: var(--size-200);
+}
+
+.tefi-layout--height-240 {
+  height: var(--size-240);
+}
+
+.tefi-layout--height-320 {
+  height: var(--size-320);
+}
+
+.tefi-layout--height-480 {
+  height: var(--size-480);
+}
+
 /* ======================================
    MIN HEIGHT
 ====================================== */
@@ -710,6 +882,42 @@
   min-height: var(--size-52);
 }
 
+.tefi-layout--minHeight-64 {
+  min-height: var(--size-64);
+}
+
+.tefi-layout--minHeight-80 {
+  min-height: var(--size-80);
+}
+
+.tefi-layout--minHeight-96 {
+  min-height: var(--size-96);
+}
+
+.tefi-layout--minHeight-120 {
+  min-height: var(--size-120);
+}
+
+.tefi-layout--minHeight-160 {
+  min-height: var(--size-160);
+}
+
+.tefi-layout--minHeight-200 {
+  min-height: var(--size-200);
+}
+
+.tefi-layout--minHeight-240 {
+  min-height: var(--size-240);
+}
+
+.tefi-layout--minHeight-320 {
+  min-height: var(--size-320);
+}
+
+.tefi-layout--minHeight-480 {
+  min-height: var(--size-480);
+}
+
 .tefi-layout--minHeight-1lh {
   min-height: 1lh;
 }
@@ -751,9 +959,98 @@
 }
 
 /* ======================================
-   FILL
+   OVERFLOW
 ====================================== */
 
-.tefi-layout--fill {
-  width: 100%;
+.tefi-layout--overflow-visible {
+  overflow: visible;
+}
+
+.tefi-layout--overflow-hidden {
+  overflow: hidden;
+}
+
+.tefi-layout--overflow-clip {
+  overflow: clip;
+}
+
+.tefi-layout--overflow-scroll {
+  overflow: scroll;
+}
+
+.tefi-layout--overflow-auto {
+  overflow: auto;
+}
+
+.tefi-layout--overflowX-visible {
+  overflow-x: visible;
+}
+
+.tefi-layout--overflowX-hidden {
+  overflow-x: hidden;
+}
+
+.tefi-layout--overflowX-clip {
+  overflow-x: clip;
+}
+
+.tefi-layout--overflowX-scroll {
+  overflow-x: scroll;
+}
+
+.tefi-layout--overflowX-auto {
+  overflow-x: auto;
+}
+
+.tefi-layout--overflowY-visible {
+  overflow-y: visible;
+}
+
+.tefi-layout--overflowY-hidden {
+  overflow-y: hidden;
+}
+
+.tefi-layout--overflowY-clip {
+  overflow-y: clip;
+}
+
+.tefi-layout--overflowY-scroll {
+  overflow-y: scroll;
+}
+
+.tefi-layout--overflowY-auto {
+  overflow-y: auto;
+}
+
+/* ======================================
+   SCROLL
+====================================== */
+
+.tefi-layout--scroll-vertical {
+  overflow-y: auto;
+}
+
+.tefi-layout--scroll-horizontal {
+  overflow-x: auto;
+}
+
+.tefi-layout--scroll-both {
+  overflow: auto;
+}
+/* ======================================
+   SCROLLBAR
+====================================== */
+
+.tefi-layout--scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tefi-layout--scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.tefi-layout--scrollbar-visible {
+  scrollbar-width: auto;
+  -ms-overflow-style: auto;
 }

@@ -10,12 +10,32 @@ import type { InteractionProps } from "./interaction.types";
    CAPABILITIES
 ====================================== */
 
-const interactionCapabilities = ["hover", "press", "focusRing", "transition", "disabled"] as const;
+export const interactionCapabilities = [
+  "hover",
+  "press",
+  "focusRing",
+  "transition",
+  "disabled",
+  "dragScroll",
+] as const;
 
 /* ======================================
    INTERACTION
 ====================================== */
 
 export function interaction(props: InteractionProps) {
-  return compose("interaction", interactionCapabilities, props);
+  const classes = compose(
+    "interaction",
+    interactionCapabilities,
+    props,
+  );
+
+  const defaultFocusRing =
+  props.focusRing !== false
+    ? "tefi-interaction--focusRing-default"
+    : "";
+
+  return [classes, defaultFocusRing]
+    .filter(Boolean)
+    .join(" ");
 }

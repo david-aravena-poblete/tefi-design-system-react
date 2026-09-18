@@ -10,4 +10,3 @@ import "./typography.css";
 
 export * from "./typography";
 export * from "./typography.types";
-export * from "./typography.skill";

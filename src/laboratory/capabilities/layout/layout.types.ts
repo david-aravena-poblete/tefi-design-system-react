@@ -9,7 +9,10 @@ import type {
   Display,
   Justify,
   Margin,
+  Overflow,
   Position,
+  Scroll,
+  Scrollbar,
   Size,
   Space,
   Width,
@@ -65,6 +68,16 @@ export interface LayoutProps {
   maxHeight?: Size;
 
   aspect?: Aspect;
+
+  overflow?: Overflow;
+
+  overflowX?: Overflow;
+
+  overflowY?: Overflow;
+
+  scrollbar?: Scrollbar;
+
+  scroll?: Scroll;
 
   fill?: boolean;
 

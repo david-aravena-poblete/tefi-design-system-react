@@ -10,4 +10,3 @@ import "./interaction.css";
 
 export * from "./interaction";
 export * from "./interaction.types";
-export * from "./interaction.skill";

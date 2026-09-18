@@ -52,7 +52,6 @@ const defaultTypography: TypographyProps = {
 
 const defaultInteraction: InteractionProps = {
   press: "move",
-  focusRing: "blue",
   transition: "fast",
 
   hover: {
