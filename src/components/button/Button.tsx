@@ -6,20 +6,27 @@ import type { ReactElement } from "react";
 
 import { createClassName } from "@/laboratory/create-class-name";
 
+import { focus } from "@/laboratory/capabilities/focus";
+import { interaction } from "@/laboratory/capabilities/interaction";
 import { layout } from "@/laboratory/capabilities/layout";
 import { surface } from "@/laboratory/capabilities/surface";
 import { typography } from "@/laboratory/capabilities/typography";
-import { interaction } from "@/laboratory/capabilities/interaction";
 
 import { Skeleton } from "@/primitives/skeleton";
 import { Spinner } from "@/primitives/spinner";
 
+import type { FocusProps } from "@/laboratory/capabilities/focus";
+import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 import type { LayoutProps } from "@/laboratory/capabilities/layout";
 import type { SurfaceProps } from "@/laboratory/capabilities/surface";
 import type { TypographyProps } from "@/laboratory/capabilities/typography";
-import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 
-import type { ButtonProps, ButtonSize, ButtonVariant } from "./button.types";
+import type {
+  ButtonProps,
+  ButtonSize,
+  ButtonVariant,
+} from "./button.types";
+
 
 /* ======================================
    BUTTON DEFAULT
@@ -59,6 +66,7 @@ const defaultInteraction: InteractionProps = {
   },
 };
 
+
 /* ======================================
    BUTTON VARIANTS
 ====================================== */
@@ -86,7 +94,7 @@ const surfaceByVariant = {
   secondary: {
     background: "gray",
     border: "gray",
-    text:"primary",
+    text: "primary",
     borderWidth: "1",
     borderStyle: "solid",
   },
@@ -111,6 +119,7 @@ const surfaceByVariant = {
     text: "white",
   },
 } satisfies Record<ButtonVariant, SurfaceProps>;
+
 
 /* ======================================
    BUTTON INTERACTION BY VARIANT
@@ -151,6 +160,7 @@ const interactionByVariant = {
   },
 } satisfies Record<ButtonVariant, InteractionProps>;
 
+
 /* ======================================
    BUTTON SIZES
 ====================================== */
@@ -173,6 +183,7 @@ const typographyBySize = {
   md: {},
 } satisfies Record<ButtonSize, TypographyProps>;
 
+
 /* ======================================
    BUTTON
 ====================================== */
@@ -192,6 +203,8 @@ export function Button({
 
   startIcon,
   endIcon,
+
+  focusRing,
 
   className,
   onClick,
@@ -213,12 +226,6 @@ export function Button({
 
     fill: fullWidth,
   };
-
-  /*
-   * Link buttons behave like text actions.
-   * They do not need the minimum height
-   * inherited from the regular button.
-   */
 
   if (variant === "link") {
     buttonLayout.minHeight = undefined;
@@ -244,11 +251,11 @@ export function Button({
   const buttonSurface: SurfaceProps = {
     ...defaultSurface,
     ...surfaceByVariant[variant],
-  
+
     ...(iconOnly && {
       radius: "full",
     }),
-  
+
     ...(radius !== undefined && {
       radius,
     }),
@@ -258,7 +265,7 @@ export function Button({
      TYPOGRAPHY
   ====================================== */
 
-  const buttonTypography = {
+  const buttonTypography: TypographyProps = {
     ...defaultTypography,
     ...typographyBySize[size],
   };
@@ -271,11 +278,19 @@ export function Button({
     disabled ||
     loading;
 
-  const buttonInteraction = {
+  const buttonInteraction: InteractionProps = {
     ...defaultInteraction,
     ...interactionByVariant[variant],
 
     disabled: isDisabled,
+  };
+
+  /* ======================================
+     FOCUS
+  ====================================== */
+
+  const buttonFocus: FocusProps = {
+    focusRing,
   };
 
   /* ======================================
@@ -286,6 +301,7 @@ export function Button({
     layout(buttonLayout),
     surface(buttonSurface),
     typography(buttonTypography),
+    focus(buttonFocus),
     interaction(buttonInteraction),
     className,
   );

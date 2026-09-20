@@ -2,21 +2,22 @@
    IMPORTS
 ====================================== */
 
-import type { ElementType } from "react";
-
 import { createClassName } from "@/laboratory/create-class-name";
 
-import { html } from "@/laboratory/capabilities/html";
-import { layout } from "@/laboratory/capabilities/layout";
-import { surface } from "@/laboratory/capabilities/surface";
-import { interaction } from "@/laboratory/capabilities/interaction";
+import { Box } from "@/layouts/box";
 
-import type { SurfaceProps } from "@/laboratory/capabilities/surface";
 import type { InteractionProps } from "@/laboratory/capabilities/interaction";
+import type { SurfaceProps } from "@/laboratory/capabilities/surface";
 
-import type { CardComponent, CardProps, CardVariant, CardSectionProps } from "./card.types";
+import type {
+  CardComponent,
+  CardProps,
+  CardVariant,
+  CardSectionProps,
+} from "./card.types";
 
 import "./card.css";
+
 
 /* ======================================
    CARD DEFAULTS
@@ -35,6 +36,7 @@ const defaultSurface: SurfaceProps = {
 const defaultInteraction: InteractionProps = {
   transition: "fast",
 };
+
 
 /* ======================================
    CARD VARIANTS
@@ -58,6 +60,7 @@ const surfaceByVariant = {
   },
 } satisfies Record<CardVariant, SurfaceProps>;
 
+
 /* ======================================
    CARD INTERACTIONS
 ====================================== */
@@ -78,98 +81,129 @@ const interactionByVariant = {
   flat: {},
 } satisfies Record<CardVariant, InteractionProps>;
 
+
 /* ======================================
    CARD
 ====================================== */
 
 function CardBase({
   variant = "outlined",
-
   size = "md",
-
   className,
-
   children,
-
   ...props
 }: CardProps) {
-  const Html = html({
-    as: "div",
-  }) as ElementType;
-
-  const componentClassName = createClassName(
-    "card",
-    `card--${size}`,
-
-    layout(defaultLayout),
-
-    surface({
-      ...defaultSurface,
-      ...surfaceByVariant[variant],
-    }),
-
-    interaction({
-      ...defaultInteraction,
-      ...interactionByVariant[variant],
-    }),
-
-    className,
-  );
-
   return (
-    <Html {...props} className={componentClassName}>
+    <Box
+      {...defaultLayout}
+      {...defaultSurface}
+      {...surfaceByVariant[variant]}
+      {...defaultInteraction}
+      {...interactionByVariant[variant]}
+      {...props}
+      className={createClassName(
+        "card",
+        `card--${size}`,
+        className,
+      )}
+    >
       {children}
-    </Html>
+    </Box>
   );
 }
+
 
 /* ======================================
    HEADER
 ====================================== */
 
-function Header({ children, className, ...props }: CardSectionProps) {
+function Header({
+  children,
+  className,
+  ...props
+}: CardSectionProps) {
   return (
-    <div {...props} className={createClassName("card__header", className)}>
+    <div
+      {...props}
+      className={createClassName(
+        "card__header",
+        className,
+      )}
+    >
       {children}
     </div>
   );
 }
+
 
 /* ======================================
    MEDIA
 ====================================== */
 
-function Media({ children, className, ...props }: CardSectionProps) {
+function Media({
+  children,
+  className,
+  ...props
+}: CardSectionProps) {
   return (
-    <div {...props} className={createClassName("card__media", className)}>
+    <div
+      {...props}
+      className={createClassName(
+        "card__media",
+        className,
+      )}
+    >
       {children}
     </div>
   );
 }
+
 
 /* ======================================
    BODY
 ====================================== */
 
-function Body({ children, className, ...props }: CardSectionProps) {
+function Body({
+  children,
+  className,
+  ...props
+}: CardSectionProps) {
   return (
-    <div {...props} className={createClassName("card__body", className)}>
+    <div
+      {...props}
+      className={createClassName(
+        "card__body",
+        className,
+      )}
+    >
       {children}
     </div>
   );
 }
+
 
 /* ======================================
    FOOTER
 ====================================== */
 
-function Footer({ children, className, ...props }: CardSectionProps) {
+function Footer({
+  children,
+  className,
+  ...props
+}: CardSectionProps) {
   return (
-    <div {...props} className={createClassName("card__footer", className)}>
+    <div
+      {...props}
+      className={createClassName(
+        "card__footer",
+        className,
+      )}
+    >
       {children}
     </div>
   );
 }
+
 
 /* ======================================
    COMPOUND COMPONENT

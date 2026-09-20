@@ -1,0 +1,8 @@
+/* ======================================
+   FOCUS RING
+====================================== */
+
+.tefi-focus--ring-default:focus-visible {
+    outline: var(--size-2) solid var(--state-default-ring);
+    outline-offset: var(--space-xxs);
+  }

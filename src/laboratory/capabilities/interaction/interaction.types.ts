@@ -8,6 +8,7 @@ import type {
    Transition,
  } from "@/laboratory/types";
  
+ 
  /* ======================================
     INTERACTION PROPS
  ====================================== */
@@ -16,8 +17,6 @@ import type {
    hover?: Hover;
  
    press?: Press;
- 
-   focusRing?: boolean;
  
    transition?: Transition;
  

@@ -70,6 +70,7 @@
   color: var(--color-white);
 }
 
+
 /* ======================================
    HOVER — SHADOW
 ====================================== */
@@ -90,6 +91,7 @@
   box-shadow: var(--shadow-md);
 }
 
+
 /* ======================================
    PRESS
 ====================================== */
@@ -97,6 +99,7 @@
 .tefi-interaction--press-move:active:not(.tefi-interaction--disabled) {
   transform: translateY(1px) scale(0.99);
 }
+
 
 /* ======================================
    DISABLED
@@ -107,14 +110,6 @@
   opacity: 0.6;
 }
 
-/* ======================================
-   FOCUS RING
-====================================== */
-
-.tefi-interaction--focusRing-default:focus-visible:not(.tefi-interaction--disabled) {
-  outline: var(--size-2) solid var(--state-default-ring);
-  outline-offset: var(--space-xxs);
-}
 
 /* ======================================
    TRANSITION
@@ -129,6 +124,7 @@
     transform var(--transition-fast),
     opacity var(--transition-fast);
 }
+
 
 /* ======================================
    DRAG SCROLL

@@ -2,17 +2,18 @@
    IMPORTS
 ====================================== */
 
-import type { ComponentPropsWithoutRef } from "react";
-
 import type { HtmlElement } from "@/laboratory/types";
 
 import type { HtmlProps } from "@/laboratory/capabilities/html";
+
+import type { FocusProps } from "@/laboratory/capabilities/focus";
 
 import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 
 import type { LayoutProps } from "@/laboratory/capabilities/layout";
 
 import type { SurfaceProps } from "@/laboratory/capabilities/surface";
+
 
 /* ======================================
    TYPES
@@ -23,12 +24,14 @@ export type BoxHtml = Extract<
   "div" | "section" | "article" | "main" | "aside" | "nav"
 >;
 
+
 /* ======================================
    BOX PROPS
 ====================================== */
 
-export type BoxProps<T extends BoxHtml = "div"> = LayoutProps &
+export type BoxProps<T extends BoxHtml = "div"> =
+  LayoutProps &
+  FocusProps &
   SurfaceProps &
   InteractionProps &
-  HtmlProps<T> &
-  Omit<ComponentPropsWithoutRef<T>, "children" | "as">;
+  HtmlProps<T>;

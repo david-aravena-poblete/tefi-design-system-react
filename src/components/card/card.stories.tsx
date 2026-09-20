@@ -4,9 +4,14 @@
 
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
+import { Box } from "@/layouts/box";
+
 import { Grid } from "@/layouts/grid";
 
+import { Button } from "@/components/button";
+
 import { Card } from "./Card";
+
 
 /* ======================================
    META
@@ -23,6 +28,7 @@ const meta: Meta<typeof Card> = {
 export default meta;
 
 type Story = StoryObj<typeof Card>;
+
 
 /* ======================================
    DEFAULT
@@ -41,6 +47,7 @@ export const Default: Story = {
     </Grid>
   ),
 };
+
 
 /* ======================================
    VARIANTS
@@ -70,6 +77,7 @@ export const Variants: Story = {
   ),
 };
 
+
 /* ======================================
    SIZES
 ====================================== */
@@ -98,6 +106,7 @@ export const Sizes: Story = {
   ),
 };
 
+
 /* ======================================
    MEDIA
 ====================================== */
@@ -121,6 +130,7 @@ export const Media: Story = {
   ),
 };
 
+
 /* ======================================
    SECTIONS
 ====================================== */
@@ -138,3 +148,100 @@ export const Sections: Story = {
     </Grid>
   ),
 };
+
+
+/* ======================================
+   FOCUS WITHIN
+====================================== */
+
+export const FocusWithin: Story = {
+  render: () => (
+    <Card>
+      <Card.Header>
+        Scrollable content
+      </Card.Header>
+
+      <Card.Body>
+        <Box
+          maxHeight="160"
+          scroll="vertical"
+          scrollbar="hidden"
+          inside="md"
+          background="gray-soft"
+          radius="md"
+          border="gray"
+          borderWidth="1"
+          borderStyle="solid"
+        >
+          <p>
+            Este contenido existe para probar el comportamiento del foco
+            cuando un elemento scrollable está dentro de un Card.
+          </p>
+
+          <p>
+            El Box debe recibir el foco mediante Tab y mostrar su focus ring.
+          </p>
+
+          <p>
+            El contenido debe poder desplazarse verticalmente utilizando el
+            teclado.
+          </p>
+
+          <p>
+            El Card debe reaccionar visualmente al foco del Box sin recibir
+            el foco directamente.
+          </p>
+
+          <p>
+            Estamos comprobando que el foco real y el indicador visual de la
+            unidad compuesta puedan ser diferentes.
+          </p>
+
+          <p>
+            Este párrafo adicional genera suficiente contenido para activar
+            el scroll vertical.
+          </p>
+
+          <p>
+            Otro bloque de contenido para asegurarnos de que el área
+            desplazable sea claramente visible.
+          </p>
+
+          <p>
+            Seguimos agregando contenido únicamente para la prueba de scroll.
+          </p>
+
+          <p>
+            Penúltimo bloque de contenido.
+          </p>
+
+          <p>
+            Último bloque de contenido de prueba.
+          </p>
+        </Box>
+      </Card.Body>
+    </Card>
+  ),
+};
+
+
+/* ======================================
+   BUTTON FOCUS
+====================================== */
+
+export const ButtonFocus: Story = {
+  render: () => (
+    <Card>
+      <Card.Header>
+        Button inside Card
+      </Card.Header>
+
+      <Card.Body>
+        <Button>
+          Focus me
+        </Button>
+      </Card.Body>
+    </Card>
+  ),
+};
+

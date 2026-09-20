@@ -9,22 +9,38 @@ import { createClassName } from "@/laboratory/create-class-name";
 import { splitProps } from "@/laboratory/core/split-props";
 
 import { html } from "@/laboratory/capabilities/html";
+
+import {
+  focus,
+  focusCapabilities,
+} from "@/laboratory/capabilities/focus";
+
 import {
   interaction,
   interactionCapabilities,
 } from "@/laboratory/capabilities/interaction";
-import { layout, layoutCapabilities } from "@/laboratory/capabilities/layout";
-import { surface, surfaceCapabilities } from "@/laboratory/capabilities/surface";
+
+import {
+  layout,
+  layoutCapabilities,
+} from "@/laboratory/capabilities/layout";
+
+import {
+  surface,
+  surfaceCapabilities,
+} from "@/laboratory/capabilities/surface";
 
 import { useDragScroll } from "@/laboratory/capabilities/interaction/use-drag-scroll";
 
 import type { BoxHtml, BoxProps } from "./box.types";
+
 
 /* ======================================
    DEFAULTS
 ====================================== */
 
 const defaultHtml: BoxHtml = "div";
+
 
 /* ======================================
    BOX
@@ -41,21 +57,26 @@ export function Box<T extends BoxHtml = "div">({
     as: as ?? defaultHtml,
   }) as ElementType;
 
+  const resolvedDragScroll =
+    dragScroll ?? Boolean(props.scroll);
+
   const allProps = {
     ...props,
-    dragScroll,
+    dragScroll: resolvedDragScroll,
   };
 
   const { htmlProps } = splitProps(
     allProps as Record<string, unknown>,
     [
       ...layoutCapabilities,
+      ...focusCapabilities,
       ...interactionCapabilities,
       ...surfaceCapabilities,
     ],
   );
 
-  const dragScrollProps = useDragScroll(dragScroll);
+  const dragScrollProps =
+    useDragScroll(resolvedDragScroll);
 
   const scrollTabIndex =
     props.scroll && props.tabIndex === undefined
@@ -64,6 +85,7 @@ export function Box<T extends BoxHtml = "div">({
 
   const componentClassName = createClassName(
     layout(allProps),
+    focus(allProps),
     interaction(allProps),
     surface(allProps),
     className,

@@ -7,7 +7,10 @@ import type {
    ReactNode,
  } from "react";
  
+ import type { FocusProps } from "@/laboratory/capabilities/focus";
+ 
  import type { Radius } from "@/laboratory/types";
+ 
  
  /* ======================================
     TYPES
@@ -22,6 +25,7 @@ import type {
    | "overlay";
  
  export type ButtonSize = "sm" | "md";
+ 
  
  /* ======================================
     BUTTON PROPS
@@ -43,4 +47,5 @@ import type {
    startIcon?: ReactNode;
  
    endIcon?: ReactNode;
- } & ComponentPropsWithoutRef<"button">;
+ } & FocusProps
+   & ComponentPropsWithoutRef<"button">;

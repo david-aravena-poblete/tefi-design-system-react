@@ -6,6 +6,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Box } from "./Box";
 
+
 /* ======================================
    META
 ====================================== */
@@ -18,6 +19,7 @@ const meta: Meta<typeof Box> = {
 export default meta;
 
 type Story = StoryObj<typeof Box>;
+
 
 /* ======================================
    DEFAULT
@@ -44,6 +46,7 @@ export const Default: Story = {
     </Box>
   ),
 };
+
 
 /* ======================================
    DRAG SCROLL — VERTICAL
@@ -85,6 +88,44 @@ export const DragScrollVertical: Story = {
       <p>
         Último contenido de prueba para asegurarnos de que exista suficiente
         espacio para desplazarse.
+      </p>
+    </Box>
+  ),
+};
+
+
+/* ======================================
+   FOCUS — SCROLL
+====================================== */
+
+export const FocusScroll: Story = {
+  args: {
+    background: "gray-soft",
+    radius: "lg",
+    shadow: "sm",
+    inside: "lg",
+    maxHeight: "120",
+    scroll: "vertical",
+  },
+
+  render: (args) => (
+    <Box {...args}>
+      <p>
+        Contenido de prueba para el scroll.
+      </p>
+
+      <p>
+        Este contenido es deliberadamente más alto que el Box para comprobar
+        el comportamiento del foco en un scroll container.
+      </p>
+
+      <p>
+        Si el Box recibe foco, debería aparecer el focus ring de la nueva
+        capability Focus.
+      </p>
+
+      <p>
+        Último párrafo para generar suficiente contenido vertical.
       </p>
     </Box>
   ),

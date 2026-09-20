@@ -85,3 +85,13 @@
   display: block;
   width: 100%;
 }
+
+
+/* ======================================
+   FOCUS
+====================================== */
+
+.tefi-card:has(:focus-visible) {
+  outline: var(--size-2) solid var(--state-default-ring);
+  outline-offset: var(--space-xxs);
+}
