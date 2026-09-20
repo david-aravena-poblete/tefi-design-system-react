@@ -18,7 +18,7 @@ export function SidebarGroup({ heading, children, className, ...props }: Sidebar
   return (
     <div className={clsx("sidebar-group", className)} {...props}>
       {heading && (
-        <Text size="sm" color="gray" className="sidebar-group__heading">
+        <Text size="sm" color="secondary" className="sidebar-group__heading">
           {heading}
         </Text>
       )}

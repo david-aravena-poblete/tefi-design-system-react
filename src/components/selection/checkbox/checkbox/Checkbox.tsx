@@ -1,18 +1,29 @@
+/* ======================================
+   IMPORTS
+====================================== */
+
 import { useState } from "react";
 
 import { createClassName } from "@/laboratory/create-class-name";
+
+import { interaction } from "@/laboratory/capabilities/interaction";
 import { layout } from "@/laboratory/capabilities/layout";
 import { surface } from "@/laboratory/capabilities/surface";
-import { interaction } from "@/laboratory/capabilities/interaction";
 
 import { Control } from "@/primitives/control";
 
 import { useCheckboxGroup } from "@/components/selection/checkbox/checkbox-group/checkbox-group.context";
 
+import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 import type { LayoutProps } from "@/laboratory/capabilities/layout";
 import type { SurfaceProps } from "@/laboratory/capabilities/surface";
-import type { InteractionProps } from "@/laboratory/capabilities/interaction";
+
 import type { CheckboxProps } from "./checkbox.types";
+
+
+/* ======================================
+   CHECKBOX
+====================================== */
 
 export function Checkbox({
   value,
@@ -43,15 +54,33 @@ export function Checkbox({
       ? rest.checked
       : internalChecked;
 
-  const disabled = disabledProp ?? group?.disabled ?? false;
+  const disabled =
+    disabledProp ??
+    group?.disabled ??
+    false;
 
   const sizeMap = {
-    sm: { control: "16", icon: "12" },
-    md: { control: "20", icon: "16" },
-    lg: { control: "24", icon: "20" },
+    sm: {
+      control: "16",
+      icon: "12",
+    },
+
+    md: {
+      control: "20",
+      icon: "16",
+    },
+
+    lg: {
+      control: "24",
+      icon: "20",
+    },
   } as const;
 
   const currentSize = sizeMap[size];
+
+  /* ======================================
+     CONTROL LAYOUT
+  ====================================== */
 
   const checkboxLayout: LayoutProps = {
     display: "flex",
@@ -61,13 +90,27 @@ export function Checkbox({
     height: currentSize.control,
   };
 
+  /* ======================================
+     CONTROL SURFACE
+  ====================================== */
+
   const checkboxSurface: SurfaceProps = {
-    background: checked ? "blue" : "transparent",
-    border: checked ? "blue" : "gray",
+    background: checked
+      ? "primary"
+      : "transparent",
+
+    border: checked
+      ? "primary"
+      : "default",
+
     borderWidth: "2",
     borderStyle: "solid",
     radius: "md",
   };
+
+  /* ======================================
+     CONTROL INTERACTION
+  ====================================== */
 
   const checkboxInteraction: InteractionProps = {
     transition: "fast",
@@ -80,19 +123,31 @@ export function Checkbox({
     interaction(checkboxInteraction),
   );
 
+  /* ======================================
+     ICON LAYOUT
+  ====================================== */
+
   const iconLayout: LayoutProps = {
     width: currentSize.icon,
     height: currentSize.icon,
   };
 
+  /* ======================================
+     ICON SURFACE
+  ====================================== */
+
   const iconSurface: SurfaceProps = {
-    text: "white",
+    text: "inverse",
   };
 
   const iconClassName = createClassName(
     layout(iconLayout),
     surface(iconSurface),
   );
+
+  /* ======================================
+     CHANGE
+  ====================================== */
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -111,6 +166,7 @@ export function Checkbox({
         ...groupValue,
         String(value),
       ]);
+
       return;
     }
 
@@ -120,6 +176,10 @@ export function Checkbox({
       ),
     );
   };
+
+  /* ======================================
+     RENDER
+  ====================================== */
 
   return (
     <Control

@@ -46,8 +46,8 @@ const defaultLayout: LayoutProps = {
 };
 
 const defaultSurface: SurfaceProps = {
-  background: "blue",
-  text: "white",
+  background: "primary",
+  text: "inverse",
   radius: "md",
 };
 
@@ -62,7 +62,7 @@ const defaultInteraction: InteractionProps = {
   transition: "fast",
 
   hover: {
-    background: "blue-soft",
+    background: "primary-hover",
   },
 };
 
@@ -92,15 +92,15 @@ const surfaceByVariant = {
   primary: {},
 
   secondary: {
-    background: "gray",
-    border: "gray",
+    background: "surface-secondary",
+    border: "default",
     text: "primary",
     borderWidth: "1",
     borderStyle: "solid",
   },
 
   danger: {
-    background: "red",
+    background: "danger",
   },
 
   ghost: {
@@ -110,13 +110,13 @@ const surfaceByVariant = {
 
   link: {
     background: "transparent",
-    text: "blue",
+    text: "link",
     radius: "none",
   },
 
   overlay: {
     background: "overlay",
-    text: "white",
+    text: "inverse",
   },
 } satisfies Record<ButtonVariant, SurfaceProps>;
 
@@ -130,32 +130,32 @@ const interactionByVariant = {
 
   secondary: {
     hover: {
-      background: "gray-soft",
+      background: "surface-tertiary",
     },
   },
 
   ghost: {
     hover: {
-      background: "gray-soft",
+      background: "surface-tertiary",
     },
   },
 
   link: {
     hover: {
       background: "transparent",
-      text: "blue-soft",
+      text: "link",
     },
   },
 
   danger: {
     hover: {
-      background: "red-strong",
+      background: "danger-hover",
     },
   },
 
   overlay: {
     hover: {
-      background: "blue",
+      background: "primary",
     },
   },
 } satisfies Record<ButtonVariant, InteractionProps>;

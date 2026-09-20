@@ -1,75 +1,88 @@
 /* ======================================
-   HOVER
+   HOVER — BACKGROUND
 ====================================== */
 
-.tefi-interaction--hover-background-blue:hover:not(:disabled) {
-  background-color: var(--color-blue);
+.tefi-interaction--hover-background-primary:hover:not(:disabled) {
+  background-color: var(--color-primary);
 }
 
-.tefi-interaction--hover-background-blue-soft:hover:not(:disabled) {
-  background-color: var(--color-blue-soft);
+.tefi-interaction--hover-background-primary-hover:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
 }
 
-.tefi-interaction--hover-background-gray:hover:not(:disabled) {
-  background-color: var(--color-bg-tertiary);
+.tefi-interaction--hover-background-surface-tertiary:hover:not(:disabled) {
+  background-color: var(--color-surface-tertiary);
 }
 
-.tefi-interaction--hover-background-gray-soft:hover:not(:disabled) {
-  background-color: var(--color-bg-secondary);
+.tefi-interaction--hover-background-danger:hover:not(:disabled) {
+  background-color: var(--color-danger);
 }
 
-.tefi-interaction--hover-background-red:hover:not(:disabled) {
-  background-color: var(--color-danger-base);
-}
-
-.tefi-interaction--hover-background-red-strong:hover:not(:disabled) {
+.tefi-interaction--hover-background-danger-hover:hover:not(:disabled) {
   background-color: var(--color-danger-hover);
 }
 
-.tefi-interaction--hover-background-soft:hover:not(:disabled) {
-  background-color: var(--interaction-hover-bg);
+.tefi-interaction--hover-background-overlay:hover:not(:disabled) {
+  background-color: var(--surface-overlay-bg);
 }
 
 .tefi-interaction--hover-background-transparent:hover:not(:disabled) {
   background-color: transparent;
 }
 
-.tefi-interaction--hover-background-white:hover:not(:disabled) {
-  background-color: var(--color-white);
+.tefi-interaction--hover-background-surface:hover:not(:disabled) {
+  background-color: var(--color-surface);
 }
 
-.tefi-interaction--hover-border-gray:hover:not(:disabled) {
-  border-color: var(--color-border-secondary);
+
+/* ======================================
+   HOVER — BORDER
+====================================== */
+
+.tefi-interaction--hover-border-default:hover:not(:disabled) {
+  border-color: var(--color-border);
 }
 
-.tefi-interaction--hover-border-gray-soft:hover:not(:disabled) {
-  border-color: var(--color-border-primary);
+.tefi-interaction--hover-border-subtle:hover:not(:disabled) {
+  border-color: var(--color-border-subtle);
 }
 
 .tefi-interaction--hover-border-primary:hover:not(:disabled) {
-  border-color: var(--color-border-primary);
+  border-color: var(--color-primary);
 }
 
-.tefi-interaction--hover-border-secondary:hover:not(:disabled) {
-  border-color: var(--color-border-secondary);
+.tefi-interaction--hover-border-danger:hover:not(:disabled) {
+  border-color: var(--color-danger);
 }
 
-.tefi-interaction--hover-text-black:hover:not(:disabled) {
-  color: var(--color-black);
+
+/* ======================================
+   HOVER — TEXT
+====================================== */
+
+.tefi-interaction--hover-text-primary:hover:not(:disabled) {
+  color: var(--color-text-primary);
 }
 
-.tefi-interaction--hover-text-blue:hover:not(:disabled) {
-  color: var(--color-blue);
+.tefi-interaction--hover-text-secondary:hover:not(:disabled) {
+  color: var(--color-text-secondary);
 }
 
-.tefi-interaction--hover-text-blue-soft:hover:not(:disabled) {
-  color: var(--color-blue-soft);
+.tefi-interaction--hover-text-muted:hover:not(:disabled) {
+  color: var(--color-text-muted);
 }
 
-.tefi-interaction--hover-text-white:hover:not(:disabled) {
-  color: var(--color-white);
+.tefi-interaction--hover-text-inverse:hover:not(:disabled) {
+  color: var(--color-text-inverse);
 }
 
+.tefi-interaction--hover-text-danger:hover:not(:disabled) {
+  color: var(--color-danger);
+}
+
+.tefi-interaction--hover-text-link:hover:not(:disabled) {
+  color: var(--color-primary-hover);
+}
 
 /* ======================================
    HOVER — SHADOW

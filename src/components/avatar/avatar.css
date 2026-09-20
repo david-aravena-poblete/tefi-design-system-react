@@ -11,7 +11,7 @@
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-inverse);
   user-select: none;
-  background: var(--color-primary-base);
+  background: var(--color-primary);
 }
 
 /* ======================================

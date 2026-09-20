@@ -17,7 +17,7 @@ const defaultLayout: LayoutProps = {
 };
 
 const defaultSurface: SurfaceProps = {
-  background: "gray-soft",
+  background: "surface-tertiary",
   radius: "md",
 };
 

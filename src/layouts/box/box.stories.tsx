@@ -27,7 +27,7 @@ type Story = StoryObj<typeof Box>;
 
 export const Default: Story = {
   args: {
-    background: "gray-soft",
+    background: "surface-tertiary",
     radius: "lg",
     shadow: "sm",
     inside: "lg",
@@ -54,7 +54,7 @@ export const Default: Story = {
 
 export const DragScrollVertical: Story = {
   args: {
-    background: "gray-soft",
+    background: "surface-tertiary",
     radius: "lg",
     shadow: "sm",
     inside: "lg",
@@ -100,7 +100,7 @@ export const DragScrollVertical: Story = {
 
 export const FocusScroll: Story = {
   args: {
-    background: "gray-soft",
+    background: "surface-tertiary",
     radius: "lg",
     shadow: "sm",
     inside: "lg",

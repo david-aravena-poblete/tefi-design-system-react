@@ -65,7 +65,7 @@ const containerStyle = {
 const itemStyle = {
   padding: "var(--space-sm) var(--space-md)",
 
-  background: "var(--color-primary-base)",
+  background: "var(--color-primary)",
 
   color: "var(--color-text-inverse)",
 

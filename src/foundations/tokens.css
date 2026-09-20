@@ -14,345 +14,383 @@ Brand tokens:
 */
 
 :root {
-  /* ======================================
-     FOUNDATIONS — SPACING
-  ====================================== */
-
-  --space-xxs: 2px;
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 12px;
-  --space-lg: 16px;
-  --space-xl: 24px;
-  --space-xxl: 32px;
-  --space-xxxl: 40px;
-
-  /* ======================================
-   FOUNDATIONS — WIDTH
+   /* ======================================
+      FOUNDATIONS — SPACING
    ====================================== */
-
-  --width-xs: 320px;
-  --width-sm: 480px;
-  --width-md: 640px;
-  --width-lg: 960px;
-  --width-xl: 1200px;
-  --width-2xl: 1440px;
-
-  /* ======================================
-   SECTION SPACING
-====================================== */
-
-  --section-spacing-none: 0;
-  --section-spacing-xs: 16px;
-  --section-spacing-sm: 24px;
-  --section-spacing-md: 32px;
-  --section-spacing-lg: 48px;
-  --section-spacing-xl: 64px;
-  --section-spacing-2xl: 96px;
-
-  /* ======================================
-     FOUNDATIONS — RADIUS
-  ====================================== */
-
-  --radius-none: 0;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 10px;
-  --radius-full: 999px;
-
-  /* ======================================
-   FOUNDATIONS — TYPOGRAPHY
-====================================== */
-
---font-family-sans: inter, system-ui, -apple-system, sans-serif;
---font-family-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
-
---font-xs: 12px;
---font-sm: 14px;
---font-md: 16px;
---font-lg: 18px;
---font-xl: 20px;
---font-2xl: 24px;
---font-3xl: 30px;
---font-4xl: 36px;
---font-5xl: 48px;
---font-6xl: 60px;
---font-7xl: 72px;
-
---line-tight: 1.2;
---line-normal: 1.5;
---line-relaxed: 1.7;
-
---font-weight-regular: 400;
---font-weight-medium: 500;
---font-weight-semibold: 600;
---font-weight-bold: 700;
-
-  /* ======================================
-     FOUNDATIONS — SHADOWS
-  ====================================== */
-
-  --shadow-xs: 0 1px 2px rgb(0 0 0 / 5%);
-  --shadow-sm: 0 2px 4px rgb(0 0 0 / 6%);
-  --shadow-md: 0 4px 10px rgb(0 0 0 / 8%);
-
-  /* ======================================
-     FOUNDATIONS — EFFECTS
-  ====================================== */
-
-  --effect-blur-sm: 4px;
-  --effect-blur-md: 10px;
-  --effect-blur-lg: 20px;
-  --effect-glow-primary: 0 0 24px color-mix(in srgb, var(--color-primary-base) 20%, transparent);
-
-  /* ======================================
-     FOUNDATIONS — SIZE
-  ====================================== */
-  /* SCALE */
-
-/* ======================================
-   FOUNDATIONS — SIZE
-====================================== */
-
-/* SCALE */
-
---size-2: 2px;
---size-4: 4px;
---size-6: 6px;
---size-8: 8px;
---size-10: 10px;
---size-12: 12px;
---size-16: 16px;
---size-20: 20px;
---size-24: 24px;
---size-32: 32px;
---size-36: 36px;
---size-40: 40px;
---size-44: 44px;
---size-48: 48px;
---size-52: 52px;
---size-64: 64px;
---size-80: 80px;
---size-96: 96px;
---size-120: 120px;
---size-160: 160px;
---size-200: 200px;
---size-240: 240px;
---size-320: 320px;
---size-480: 480px;
-
-  /* CONTROLS */
-
-  --size-control-sm: 16px;
-  --size-control-md: 20px;
-  --size-control-lg: 24px;
-
-  /* FIELDS */
-
-  --size-field-sm: 36px;
-  --size-field-md: 44px;
-  --size-field-lg: 52px;
-
-  /* ======================================
-     FOUNDATIONS — MOTION
-  ====================================== */
-
-  /* STANDARD UI */
-
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.2s ease;
-  --transition-slow: 0.3s ease;
-
-  /* MICROINTERACTIONS */
-
-  --motion-snappy: 0.22s cubic-bezier(0.22, 1, 0.36, 1);
-  /* ======================================
-   FOUNDATIONS — COLORS
-====================================== */
-
-  --color-blue: #6366f1;
-  --color-blue-soft: #818cf8;
-  --color-white: #fff;
-  --color-black: #2a1e35;
-  --color-blue-transparent: color-mix(in srgb, var(--color-blue) 60%, transparent);
-
-  /* ======================================
-     SEMANTIC TOKENS
-  ====================================== */
-
-  /* ======================================
-     PAGE
-  ====================================== */
-
-  --surface-page-bg: var(--color-bg-primary);
-
-  /* ======================================
-     SKELETON
-  ====================================== */
-
-  --surface-skeleton-bg: var(--color-bg-secondary);
-
-  /* ======================================
-     CARD
-  ====================================== */
-
-  /* APPEARANCE */
-
-  --surface-card-bg: var(--color-bg-secondary);
-  --surface-card-hover: var(--color-bg-tertiary);
-  --surface-card-border: var(--color-border-primary);
-  --surface-card-border-hover: var(--color-border-secondary);
-  --surface-card-radius: var(--radius-lg);
-
-  /* EFFECTS */
-
-  --surface-card-shadow: var(--shadow-sm);
-  --surface-card-shadow-hover: var(--shadow-md);
-
-  /* ======================================
-     BUTTON
-  ====================================== */
-
-  /* APPEARANCE */
-
-  --button-radius: var(--radius-md);
-  --button-primary-bg: var(--color-primary-base);
-  --button-primary-hover: var(--color-primary-hover);
-  --button-primary-text: var(--color-text-inverse);
-
-  /* SECONDARY */
-
-  --button-secondary-bg: var(--color-bg-secondary);
-  --button-secondary-hover: var(--color-bg-tertiary);
-  --button-secondary-text: var(--color-text-primary);
-  --button-secondary-border: var(--color-border-primary);
-  --button-secondary-border-hover: var(--color-border-secondary);
-
-  /* DANGER */
-
-  --button-danger-bg: var(--color-danger-base);
-  --button-danger-hover: var(--color-danger-hover);
-  --button-danger-text: var(--color-text-inverse);
-
-  /* GHOST */
-
-  --button-ghost-bg: transparent;
-  --button-ghost-hover: var(--interaction-hover-bg);
-  --button-ghost-text: var(--color-text-primary);
-  --button-ghost-border: transparent;
-
-  /* LINK */
-
-  --button-link-text: var(--color-link-base);
-  --button-link-hover: var(--color-link-hover);
-
-  /* SIZES */
-
-  --button-size-sm: var(--size-32);
-  --button-size-md: var(--size-40);
-  --button-size-lg: var(--size-48);
-
-  /* EFFECTS */
-
-  --button-shadow: none;
-  --button-shadow-hover: none;
-
-  /* ======================================
-     DIVIDER
-  ====================================== */
-
-  --surface-divider-color: var(--color-border-primary);
-
-  /* ======================================
-     NAVBAR
-  ====================================== */
-
-  --surface-navbar-bg: var(--color-bg-secondary);
-  --surface-navbar-text: var(--color-text-primary);
-  --surface-navbar-shadow: none;
-
-  /* ======================================
-   SIDEBAR
-====================================== */
-
-  /* SURFACE */
-
-  --surface-sidebar-bg: var(--color-bg-secondary);
-  --surface-sidebar-border: var(--color-border-primary);
-
-  /* LAYOUT */
-
-  --surface-sidebar-width: 280px;
-  --surface-sidebar-padding: var(--space-lg);
-
-  /* SECTION */
-
-  --surface-sidebar-section-gap: var(--space-lg);
-
-  /* GROUP */
-
-  --surface-sidebar-group-gap: var(--space-sm);
-
-  /* ITEM */
-
-  --surface-sidebar-item-radius: var(--radius-md);
-  --surface-sidebar-item-active-bg: var(--color-bg-secondary);
-  --surface-sidebar-item-active-text: var(--color-text-primary);
-  --surface-sidebar-item-hover-bg: var(--interaction-hover-bg);
-
-  /* HEADING */
-
-  --surface-sidebar-heading-color: var(--color-text-secondary);
-
-  /* ======================================
-     INTERACTION
-  ====================================== */
-
-  --interaction-hover-bg: color-mix(in srgb, var(--color-text-primary) 4%, transparent);
-
-  /* ======================================
-     CONTROL
-  ====================================== */
-
-  --control-border-width: 2px;
-  --control-padding: 2px;
-  --control-radius: var(--radius-sm);
-  --control-gap-sm: var(--space-xs);
-  --control-gap-md: var(--space-sm);
-  --control-gap-lg: var(--space-md);
-  --state-default-border: var(--color-border-primary);
-  --state-default-hover: var(--color-border-secondary);
-  --state-default-ring: color-mix(in srgb, var(--color-primary-base) 80%, transparent);
-  --control-size: var(--size-control-md);
-  --control-gap: var(--control-gap-md);
-
-  /* ======================================
-     FIELD
-  ====================================== */
-
-  /* BASE */
-
-  --field-bg-color: var(--color-bg-tertiary);
-  --field-border-color: var(--color-border-primary);
-  --field-border-hover: var(--color-border-secondary);
-  --field-border-focus: var(--color-border-focus);
-  --field-text-color: var(--color-text-primary);
-  --field-placeholder-color: var(--color-text-secondary);
-
-  /* DISABLED */
-
-  --field-disabled-bg: var(--color-bg-tertiary);
-  --field-disabled-text: var(--color-text-secondary);
-
-  /* STATES */
-
-  --field-border-error: var(--color-danger-base);
-  --field-border-success: var(--color-success-base);
-  --field-border-warning: var(--color-warning-base);
-
-  /* SIZES */
-
-  --field-height-sm: var(--size-field-sm);
-  --field-height-md: var(--size-field-md);
-  --field-height-lg: var(--size-field-lg);
-}
+ 
+   --space-xxs: 2px;
+   --space-xs: 4px;
+   --space-sm: 8px;
+   --space-md: 12px;
+   --space-lg: 16px;
+   --space-xl: 24px;
+   --space-xxl: 32px;
+   --space-xxxl: 40px;
+ 
+   /* ======================================
+      FOUNDATIONS — WIDTH
+   ====================================== */
+ 
+   --width-xs: 320px;
+   --width-sm: 480px;
+   --width-md: 640px;
+   --width-lg: 960px;
+   --width-xl: 1200px;
+   --width-2xl: 1440px;
+ 
+   /* ======================================
+      SECTION SPACING
+   ====================================== */
+ 
+   --section-spacing-none: 0;
+   --section-spacing-xs: 16px;
+   --section-spacing-sm: 24px;
+   --section-spacing-md: 32px;
+   --section-spacing-lg: 48px;
+   --section-spacing-xl: 64px;
+   --section-spacing-2xl: 96px;
+ 
+   /* ======================================
+      FOUNDATIONS — RADIUS
+   ====================================== */
+ 
+   --radius-none: 0;
+   --radius-sm: 4px;
+   --radius-md: 6px;
+   --radius-lg: 10px;
+   --radius-full: 999px;
+ 
+   /* ======================================
+      FOUNDATIONS — TYPOGRAPHY
+   ====================================== */
+ 
+   --font-family-sans: inter, system-ui, -apple-system, sans-serif;
+   --font-family-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
+ 
+   --font-xs: 12px;
+   --font-sm: 14px;
+   --font-md: 16px;
+   --font-lg: 18px;
+   --font-xl: 20px;
+   --font-2xl: 24px;
+   --font-3xl: 30px;
+   --font-4xl: 36px;
+   --font-5xl: 48px;
+   --font-6xl: 60px;
+   --font-7xl: 72px;
+ 
+   --line-tight: 1.2;
+   --line-normal: 1.5;
+   --line-relaxed: 1.7;
+ 
+   --font-weight-regular: 400;
+   --font-weight-medium: 500;
+   --font-weight-semibold: 600;
+   --font-weight-bold: 700;
+ 
+   /* ======================================
+      FOUNDATIONS — SHADOWS
+   ====================================== */
+ 
+   --shadow-xs: 0 1px 2px rgb(0 0 0 / 5%);
+   --shadow-sm: 0 2px 4px rgb(0 0 0 / 6%);
+   --shadow-md: 0 4px 10px rgb(0 0 0 / 8%);
+ 
+   /* ======================================
+      FOUNDATIONS — EFFECTS
+   ====================================== */
+ 
+   --effect-blur-sm: 4px;
+   --effect-blur-md: 10px;
+   --effect-blur-lg: 20px;
+ 
+   --effect-glow-primary: 0 0 24px
+     color-mix(
+       in srgb,
+       var(--color-primary) 20%,
+       transparent
+     );
+ 
+   /* ======================================
+      FOUNDATIONS — SIZE
+   ====================================== */
+ 
+   /* SCALE */
+ 
+   --size-2: 2px;
+   --size-4: 4px;
+   --size-6: 6px;
+   --size-8: 8px;
+   --size-10: 10px;
+   --size-12: 12px;
+   --size-16: 16px;
+   --size-20: 20px;
+   --size-24: 24px;
+   --size-32: 32px;
+   --size-36: 36px;
+   --size-40: 40px;
+   --size-44: 44px;
+   --size-48: 48px;
+   --size-52: 52px;
+   --size-64: 64px;
+   --size-80: 80px;
+   --size-96: 96px;
+   --size-120: 120px;
+   --size-160: 160px;
+   --size-200: 200px;
+   --size-240: 240px;
+   --size-320: 320px;
+   --size-480: 480px;
+ 
+   /* CONTROLS */
+ 
+   --size-control-sm: 16px;
+   --size-control-md: 20px;
+   --size-control-lg: 24px;
+ 
+   /* FIELDS */
+ 
+   --size-field-sm: 36px;
+   --size-field-md: 44px;
+   --size-field-lg: 52px;
+ 
+   /* ======================================
+      FOUNDATIONS — MOTION
+   ====================================== */
+ 
+   /* STANDARD UI */
+ 
+   --transition-fast: 0.15s ease;
+   --transition-normal: 0.2s ease;
+   --transition-slow: 0.3s ease;
+ 
+   /* MICROINTERACTIONS */
+ 
+   --motion-snappy: 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+ 
+   /* ======================================
+      FOUNDATIONS — COLORS
+   ====================================== */
+ 
+   /* BLUE */
+ 
+   --color-blue-400: #818cf8;
+   --color-blue-500: #6366f1;
+ 
+   /* WHITE / BLACK */
+ 
+   --color-white: #fff;
+   --color-black: #000;
+ 
+   /* TRANSPARENT */
+ 
+   --color-blue-transparent: color-mix(
+     in srgb,
+     var(--color-blue-500) 60%,
+     transparent
+   );
+ 
+   /* ======================================
+      SEMANTIC COLORS
+   ====================================== */
+ 
+   --color-primary: var(--brand-primary);
+   --color-primary-hover: var(--brand-primary-hover);
+ 
+   --color-success: #16a34a;
+   --color-warning: #d97706;
+   --color-danger: #dc2626;
+   --color-danger-hover: #b91c1c;
+   --color-info: #2563eb;
+ 
+   /* ======================================
+      COMPONENT TOKENS
+   ====================================== */
+ 
+   /* ======================================
+      PAGE
+   ====================================== */
+ 
+   --surface-page-bg: var(--color-background);
+ 
+   /* ======================================
+      SKELETON
+   ====================================== */
+ 
+   --surface-skeleton-bg: var(--color-surface-secondary);
+ 
+   /* ======================================
+      CARD
+   ====================================== */
+ 
+   /* APPEARANCE */
+ 
+   --surface-card-bg: var(--color-surface-secondary);
+   --surface-card-hover: var(--color-surface-tertiary);
+   --surface-card-border: var(--color-border);
+   --surface-card-border-hover: var(--color-border-subtle);
+   --surface-card-radius: var(--radius-lg);
+ 
+   /* EFFECTS */
+ 
+   --surface-card-shadow: var(--shadow-sm);
+   --surface-card-shadow-hover: var(--shadow-md);
+ 
+   /* ======================================
+      BUTTON
+   ====================================== */
+ 
+   /* APPEARANCE */
+ 
+   --button-radius: var(--radius-md);
+   --button-primary-bg: var(--color-primary);
+   --button-primary-hover: var(--color-primary-hover);
+   --button-primary-text: var(--color-text-inverse);
+ 
+   /* SECONDARY */
+ 
+   --button-secondary-bg: var(--color-surface-secondary);
+   --button-secondary-hover: var(--color-surface-tertiary);
+   --button-secondary-text: var(--color-text-primary);
+   --button-secondary-border: var(--color-border);
+   --button-secondary-border-hover: var(--color-border-subtle);
+ 
+   /* DANGER */
+ 
+   --button-danger-bg: var(--color-danger);
+   --button-danger-hover: var(--color-danger-hover);
+   --button-danger-text: var(--color-text-inverse);
+ 
+   /* GHOST */
+ 
+   --button-ghost-bg: transparent;
+   --button-ghost-hover: var(--interaction-hover-bg);
+   --button-ghost-text: var(--color-text-primary);
+   --button-ghost-border: transparent;
+ 
+   /* LINK */
+ 
+   --button-link-text: var(--color-primary);
+   --button-link-hover: var(--color-primary-hover);
+ 
+   /* SIZES */
+ 
+   --button-size-sm: var(--size-32);
+   --button-size-md: var(--size-40);
+   --button-size-lg: var(--size-48);
+ 
+   /* EFFECTS */
+ 
+   --button-shadow: none;
+   --button-shadow-hover: none;
+ 
+   /* ======================================
+      DIVIDER
+   ====================================== */
+ 
+   --surface-divider-color: var(--color-border);
+ 
+   /* ======================================
+      NAVBAR
+   ====================================== */
+ 
+   --surface-navbar-bg: var(--color-surface-secondary);
+   --surface-navbar-text: var(--color-text-primary);
+   --surface-navbar-shadow: none;
+ 
+   /* ======================================
+      SIDEBAR
+   ====================================== */
+ 
+   /* SURFACE */
+ 
+   --surface-sidebar-bg: var(--color-surface-secondary);
+   --surface-sidebar-border: var(--color-border);
+ 
+   /* LAYOUT */
+ 
+   --surface-sidebar-width: 280px;
+   --surface-sidebar-padding: var(--space-lg);
+ 
+   /* SECTION */
+ 
+   --surface-sidebar-section-gap: var(--space-lg);
+ 
+   /* GROUP */
+ 
+   --surface-sidebar-group-gap: var(--space-sm);
+ 
+   /* ITEM */
+ 
+   --surface-sidebar-item-radius: var(--radius-md);
+   --surface-sidebar-item-active-bg: var(--color-surface-tertiary);
+   --surface-sidebar-item-active-text: var(--color-text-primary);
+   --surface-sidebar-item-hover-bg: var(--interaction-hover-bg);
+ 
+   /* HEADING */
+ 
+   --surface-sidebar-heading-color: var(--color-text-secondary);
+ 
+   /* ======================================
+      INTERACTION
+   ====================================== */
+ 
+   --interaction-hover-bg: color-mix(
+     in srgb,
+     var(--color-text-primary) 4%,
+     transparent
+   );
+ 
+   /* ======================================
+      CONTROL
+   ====================================== */
+ 
+   --control-border-width: 2px;
+   --control-padding: 2px;
+   --control-radius: var(--radius-sm);
+   --control-gap-sm: var(--space-xs);
+   --control-gap-md: var(--space-sm);
+   --control-gap-lg: var(--space-md);
+ 
+   --state-default-border: var(--color-border);
+   --state-default-hover: var(--color-border-subtle);
+ 
+   --state-default-ring: color-mix(
+     in srgb,
+     var(--color-primary) 80%,
+     transparent
+   );
+ 
+   --control-size: var(--size-control-md);
+   --control-gap: var(--control-gap-md);
+ 
+   /* ======================================
+      FIELD
+   ====================================== */
+ 
+   /* BASE */
+ 
+   --field-bg-color: var(--color-surface-tertiary);
+   --field-border-color: var(--color-border);
+   --field-border-hover: var(--color-border-subtle);
+   --field-border-focus: var(--color-primary);
+   --field-text-color: var(--color-text-primary);
+   --field-placeholder-color: var(--color-text-secondary);
+ 
+   /* DISABLED */
+ 
+   --field-disabled-bg: var(--color-surface-tertiary);
+   --field-disabled-text: var(--color-text-secondary);
+ 
+   /* STATES */
+ 
+   --field-border-error: var(--color-danger);
+   --field-border-success: var(--color-success);
+   --field-border-warning: var(--color-warning);
+ 
+   /* SIZES */
+ 
+   --field-height-sm: var(--size-field-sm);
+   --field-height-md: var(--size-field-md);
+   --field-height-lg: var(--size-field-lg);
+ }

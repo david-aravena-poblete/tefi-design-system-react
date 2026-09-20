@@ -6,15 +6,16 @@ import type { ReactElement } from "react";
 
 import { createClassName } from "@/laboratory/create-class-name";
 
+import { interaction } from "@/laboratory/capabilities/interaction";
 import { layout } from "@/laboratory/capabilities/layout";
 import { surface } from "@/laboratory/capabilities/surface";
-import { interaction } from "@/laboratory/capabilities/interaction";
 
+import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 import type { LayoutProps } from "@/laboratory/capabilities/layout";
 import type { SurfaceProps } from "@/laboratory/capabilities/surface";
-import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 
 import type { DotsProps } from "./dots.types";
+
 
 /* ======================================
    DEFAULTS
@@ -36,12 +37,12 @@ const defaultDotLayout: LayoutProps = {
 };
 
 const defaultDotSurface: SurfaceProps = {
-  background: "gray-soft",
+  background: "surface-tertiary",
   radius: "full",
 };
 
 const activeDotSurface: SurfaceProps = {
-  background: "blue",
+  background: "primary",
   radius: "full",
 };
 
@@ -49,6 +50,7 @@ const defaultDotInteraction: InteractionProps = {
   press: "move",
   transition: "fast",
 };
+
 
 /* ======================================
    DOTS

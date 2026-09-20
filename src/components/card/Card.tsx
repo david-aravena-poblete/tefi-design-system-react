@@ -29,7 +29,7 @@ const defaultLayout = {
 } as const;
 
 const defaultSurface: SurfaceProps = {
-  background: "gray-soft",
+  background: "surface-secondary",
   radius: "md",
 };
 
@@ -44,14 +44,14 @@ const defaultInteraction: InteractionProps = {
 
 const surfaceByVariant = {
   outlined: {
-    background: "gray-soft",
-    border: "gray-soft",
+    background: "surface-secondary",
+    border: "default",
     borderWidth: "1",
     borderStyle: "solid",
   },
 
   elevated: {
-    background: "gray-soft",
+    background: "surface-secondary",
     shadow: "sm",
   },
 
@@ -68,7 +68,7 @@ const surfaceByVariant = {
 const interactionByVariant = {
   outlined: {
     hover: {
-      border: "gray",
+      border: "subtle",
     },
   },
 

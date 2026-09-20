@@ -5,18 +5,21 @@
 import { useState } from "react";
 
 import { createClassName } from "@/laboratory/create-class-name";
+
+import { interaction } from "@/laboratory/capabilities/interaction";
 import { layout } from "@/laboratory/capabilities/layout";
 import { surface } from "@/laboratory/capabilities/surface";
-import { interaction } from "@/laboratory/capabilities/interaction";
 
 import { Control } from "@/primitives/control";
 
 import { useRadioGroup } from "@/components/selection/radio/radio-group/radio-group.context";
 
+import type { InteractionProps } from "@/laboratory/capabilities/interaction";
 import type { LayoutProps } from "@/laboratory/capabilities/layout";
 import type { SurfaceProps } from "@/laboratory/capabilities/surface";
-import type { InteractionProps } from "@/laboratory/capabilities/interaction";
+
 import type { RadioProps } from "./radio.types";
+
 
 /* ======================================
    RADIO
@@ -51,7 +54,9 @@ export function Radio({
      INTERNAL STATE
   ====================================== */
 
-  const [internalChecked, setInternalChecked] = useState(defaultChecked);
+  const [internalChecked, setInternalChecked] = useState(
+    defaultChecked,
+  );
 
   /* ======================================
      CONTROLLED
@@ -71,7 +76,10 @@ export function Radio({
       ? checkedProp
       : internalChecked;
 
-  const disabled = disabledProp ?? group?.disabled ?? false;
+  const disabled =
+    disabledProp ??
+    group?.disabled ??
+    false;
 
   /* ======================================
      SIZE
@@ -82,10 +90,12 @@ export function Radio({
       control: "16",
       dot: "8",
     },
+
     md: {
       control: "20",
       dot: "10",
     },
+
     lg: {
       control: "24",
       dot: "12",
@@ -108,7 +118,9 @@ export function Radio({
 
   const radioSurface: SurfaceProps = {
     background: "transparent",
-    border: checked ? "blue" : "gray",
+    border: checked
+      ? "primary"
+      : "default",
     borderWidth: "2",
     borderStyle: "solid",
     radius: "full",
@@ -136,7 +148,7 @@ export function Radio({
   };
 
   const dotSurface: SurfaceProps = {
-    background: "blue",
+    background: "primary",
     radius: "full",
   };
 
@@ -149,7 +161,9 @@ export function Radio({
      CHANGE
   ====================================== */
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     if (!group && !isControlled) {
       setInternalChecked(event.target.checked);
     }
@@ -177,7 +191,9 @@ export function Radio({
       name={group?.name}
       renderControl={() => (
         <span className={radioClassName}>
-          {checked && <span className={dotClassName} />}
+          {checked && (
+            <span className={dotClassName} />
+          )}
         </span>
       )}
       {...rest}

@@ -2,9 +2,7 @@
    TEFI BRAND
 ====================================== */
 
-:root {
-  /* PRIMARY */
-
-  --color-primary-base: #71c9bf;
-  --color-primary-hover: #86cbc3;
+[data-brand="tefi"] {
+  --brand-primary: #71c9bf;
+  --brand-primary-hover: #86cbc3;
 }

@@ -6,6 +6,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Text } from "./Text";
 
+
 /* ======================================
    CONSTANTS
 ====================================== */
@@ -15,6 +16,7 @@ const storyContainerStyle = {
   flexDirection: "column",
   gap: "1rem",
 } as const;
+
 
 /* ======================================
    META
@@ -32,44 +34,79 @@ const meta = {
 
     weight: "regular",
 
-    color: "black",
+    color: "primary",
   },
 
   argTypes: {
     size: {
       control: "select",
 
-      options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl", "6xl", "7xl"],
+      options: [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "2xl",
+        "3xl",
+        "4xl",
+        "5xl",
+        "6xl",
+        "7xl",
+      ],
     },
 
     color: {
       control: "select",
 
-      options: ["black", "gray", "blue", "red", "white"],
+      options: [
+        "primary",
+        "secondary",
+        "muted",
+        "danger",
+        "inverse",
+      ],
     },
 
     weight: {
       control: "select",
 
-      options: ["regular", "medium", "semibold", "bold"],
+      options: [
+        "regular",
+        "medium",
+        "semibold",
+        "bold",
+      ],
     },
 
     align: {
       control: "select",
 
-      options: ["start", "center", "end", "justify"],
+      options: [
+        "start",
+        "center",
+        "end",
+        "justify",
+      ],
     },
 
     case: {
       control: "select",
 
-      options: ["uppercase", "lowercase", "capitalize"],
+      options: [
+        "uppercase",
+        "lowercase",
+        "capitalize",
+      ],
     },
 
     decoration: {
       control: "select",
 
-      options: ["underline", "line-through"],
+      options: [
+        "underline",
+        "line-through",
+      ],
     },
 
     noWrap: {
@@ -94,11 +131,13 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+
 /* ======================================
    PLAYGROUND
 ====================================== */
 
 export const Playground: Story = {};
+
 
 /* ======================================
    SIZES
@@ -132,6 +171,7 @@ export const Sizes: Story = {
   ),
 };
 
+
 /* ======================================
    WEIGHTS
 ====================================== */
@@ -150,6 +190,7 @@ export const Weights: Story = {
   ),
 };
 
+
 /* ======================================
    COLORS
 ====================================== */
@@ -157,16 +198,19 @@ export const Weights: Story = {
 export const Colors: Story = {
   render: () => (
     <div style={storyContainerStyle}>
-      <Text color="black">Black</Text>
+      <Text color="primary">Primary</Text>
 
-      <Text color="gray">Gray</Text>
+      <Text color="secondary">Secondary</Text>
 
-      <Text color="blue">Blue</Text>
+      <Text color="muted">Muted</Text>
 
-      <Text color="red">Red</Text>
+      <Text color="danger">Danger</Text>
+
+      <Text color="inverse">Inverse</Text>
     </div>
   ),
 };
+
 
 /* ======================================
    ALIGN
@@ -193,6 +237,7 @@ export const Align: Story = {
   ),
 };
 
+
 /* ======================================
    CASE
 ====================================== */
@@ -209,6 +254,7 @@ export const Case: Story = {
   ),
 };
 
+
 /* ======================================
    DECORATION
 ====================================== */
@@ -222,6 +268,8 @@ export const Decoration: Story = {
     </div>
   ),
 };
+
+
 /* ======================================
    LINE BREAKS
 ====================================== */
@@ -244,6 +292,7 @@ export const LineBreaks: Story = {
   ),
 };
 
+
 /* ======================================
    NO WRAP
 ====================================== */
@@ -256,10 +305,13 @@ export const NoWrap: Story = {
         width: "200px",
       }}
     >
-      <Text noWrap>This text should stay on one line.</Text>
+      <Text noWrap>
+        This text should stay on one line.
+      </Text>
     </div>
   ),
 };
+
 
 /* ======================================
    TRUNCATE
@@ -278,6 +330,7 @@ export const Truncate: Story = {
     </div>
   ),
 };
+
 
 /* ======================================
    EXPANDABLE
@@ -298,6 +351,7 @@ export const Expandable: Story = {
     </div>
   ),
 };
+
 
 /* ======================================
    SKELETON
@@ -322,6 +376,7 @@ export const SkeletonState: Story = {
     </div>
   ),
 };
+
 
 /* ======================================
    SKELETON LONG

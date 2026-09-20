@@ -167,9 +167,9 @@ export const FocusWithin: Story = {
           scroll="vertical"
           scrollbar="hidden"
           inside="md"
-          background="gray-soft"
+          background="surface-tertiary"
           radius="md"
-          border="gray"
+          border="default"
           borderWidth="1"
           borderStyle="solid"
         >
@@ -244,4 +244,3 @@ export const ButtonFocus: Story = {
     </Card>
   ),
 };
-

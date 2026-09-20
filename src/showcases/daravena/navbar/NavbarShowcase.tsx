@@ -2,7 +2,7 @@ import { Avatar, Box, Button, Container, Inline, Text } from "@/index";
 
 export function NavbarShowcase() {
   return (
-    <Box background="gray-soft" insideY="md">
+    <Box background="surface-tertiary" insideY="md">
       <Container>
         <Inline align="center" justify="between" gap="lg">
           {/* ======================================

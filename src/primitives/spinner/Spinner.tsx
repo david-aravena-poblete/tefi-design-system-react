@@ -29,8 +29,8 @@ const defaultLayout: LayoutProps = {
 };
 
 const defaultSurface: SurfaceProps = {
-  text: "blue",
-  border: "gray",
+  text: "primary",
+  border: "default",
   borderWidth: "2",
   borderStyle: "solid",
   radius: "full",

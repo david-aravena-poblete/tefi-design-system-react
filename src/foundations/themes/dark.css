@@ -5,10 +5,14 @@
 [data-theme="dark"] {
   /* BACKGROUNDS */
 
-  --color-bg-primary: #0f172a;
-  --color-bg-secondary: #1e293b;
-  --color-bg-tertiary: #263449;
-  --color-bg-inverse: #f8fafc;
+  --color-background: #0f172a;
+  --color-background-secondary: #1e293b;
+
+  /* SURFACES */
+
+  --color-surface: #1e293b;
+  --color-surface-secondary: #263449;
+  --color-surface-tertiary: #334155;
 
   /* OVERLAY */
 
@@ -24,7 +28,6 @@
 
   /* BORDERS */
 
-  --color-border-primary: rgb(255 255 255 / 8%);
-  --color-border-secondary: rgb(255 255 255 / 14%);
-  --color-border-focus: #6366f1;
+  --color-border: rgb(255 255 255 / 8%);
+  --color-border-subtle: rgb(255 255 255 / 14%);
 }

@@ -3,14 +3,15 @@
 ====================================== */
 
 export type Background =
-  | "white"
-  | "blue"
-  | "blue-soft"
-  | "gray"
-  | "gray-soft"
-  | "red"
-  | "red-strong"
-  | "soft"
+  | "background"
+  | "background-secondary"
+  | "surface"
+  | "surface-secondary"
+  | "surface-tertiary"
+  | "primary"
+  | "primary-hover"
+  | "danger"
+  | "danger-hover"
   | "transparent"
   | "overlay";
 
@@ -18,32 +19,23 @@ export type Background =
    TEXT
 ====================================== */
 
-export type TextColor =
-  | "white"
-  | "black"
-  | "blue"
-  | "blue-soft"
-  | "gray"
-  | "red"
-  | "red-strong";
-
-export type TextSemantic =
+export type Text =
   | "primary"
   | "secondary"
   | "muted"
-  | "inverse";
-
-export type Text = TextColor | TextSemantic;
+  | "inverse"
+  | "danger"
+  | "link";
 
 /* ======================================
    BORDER
 ====================================== */
 
 export type Border =
-  | "blue"
-  | "gray"
-  | "gray-soft"
-  | "red";
+  | "default"
+  | "subtle"
+  | "primary"
+  | "danger";
 
 /* ======================================
    BORDER WIDTH

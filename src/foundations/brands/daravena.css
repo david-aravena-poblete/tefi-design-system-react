@@ -3,60 +3,6 @@
 ====================================== */
 
 [data-brand="daravena"] {
-  /* ======================================
-     PRIMARY
-  ====================================== */
-
-  --color-primary-base: #0fc;
-  --color-primary-hover: #0cf;
-
-  /* ======================================
-     TEXT
-  ====================================== */
-
-  --color-text-primary: #fff;
-  --color-text-secondary: rgb(255 255 255 / 70%);
-
-  /* ======================================
-     LINKS
-  ====================================== */
-
-  --color-link-base: #0fc;
-  --color-link-hover: #7dd3fc;
-
-  /* ======================================
-     BORDERS
-  ====================================== */
-
-  --color-border-primary: rgb(255 255 255 / 8%);
-  --color-border-secondary: rgb(255 255 255 / 20%);
-
-  /* ======================================
-     SURFACES
-  ====================================== */
-
-  --surface-card-bg: rgb(255 255 255 / 3%);
-  --surface-card-hover: rgb(255 255 255 / 8%);
-  --surface-card-border: rgb(255 255 255 / 5%);
-  --surface-card-border-hover: rgb(255 255 255 / 20%);
-  --surface-card-radius: 16px;
-  --surface-card-shadow: 0 4px 30px rgb(0 0 0 / 10%);
-  --surface-card-shadow-hover: 0 10px 40px rgb(0 255 204 / 15%);
-
-  /* ======================================
-     BUTTON
-  ====================================== */
-
-  --surface-button-radius: 8px;
-  --surface-button-primary-text: #0a0a1a;
-  --surface-button-primary-bg: linear-gradient(135deg, #0fc 0%, #0cf 100%);
-  --surface-button-primary-hover: linear-gradient(135deg, #00ffd5 0%, #33d6ff 100%);
-  --surface-button-shadow: none;
-  --surface-button-shadow-hover: 0 4px 15px rgb(0 255 204 / 40%);
-
-  /* ======================================
-     EFFECTS
-  ====================================== */
-
-  --effect-blur-md: 10px;
-}
+   --brand-primary: #00ffcc;
+   --brand-primary-hover: #00ccff;
+ }

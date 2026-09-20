@@ -12,9 +12,10 @@ import type {
   Text,
 } from "@/laboratory/types";
 
+
 /* ======================================
-    SURFACE PROPS
- ====================================== */
+   SURFACE PROPS
+====================================== */
 
 export interface SurfaceProps {
   background?: Background;

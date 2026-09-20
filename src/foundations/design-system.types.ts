@@ -47,17 +47,20 @@ export const STATES = ["default", "error", "success", "warning"] as const;
 export type State = (typeof STATES)[number];
 
 /* ======================================
-    THEMING
- ====================================== */
+   THEMING
+====================================== */
 
 export const THEMES = ["light", "dark"] as const;
 
 export type Theme = (typeof THEMES)[number];
 
-export const BRANDS = ["default", "daravena"] as const;
+export const BRANDS = [
+  "default",
+  "tefi",
+  "daravena",
+] as const;
 
 export type Brand = (typeof BRANDS)[number];
-
 /* ======================================
     MEDIA
  ====================================== */

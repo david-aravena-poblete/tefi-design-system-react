@@ -41,7 +41,7 @@
 .option-item[aria-selected="true"] {
   font-weight: var(--font-weight-medium);
 
-  background-color: color-mix(in srgb, var(--color-primary-base) 12%, transparent);
+  background-color: color-mix(in srgb, var(--color-primary) 12%, transparent);
 }
 
 /* ======================================

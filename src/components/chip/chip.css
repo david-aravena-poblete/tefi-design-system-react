@@ -63,13 +63,13 @@
 }
 
 .chip__remove:hover {
-  color: var(--color-danger-base);
+  color: var(--color-danger);
 
   background-color: var(--interaction-hover-bg);
 }
 
 .chip__remove:focus-visible {
-  outline: 2px solid var(--color-border-focus);
+  outline: 2px solid var(--color-primary);
 
   outline-offset: 2px;
 }

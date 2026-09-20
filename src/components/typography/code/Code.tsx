@@ -29,8 +29,8 @@ const defaultTypography: TypographyProps = {
 
 const defaultSurface: SurfaceProps = {
   background: "transparent",
-  text: "blue",
-  border: "gray-soft",
+  text: "primary",
+  border: "subtle",
   borderWidth: "1",
   borderStyle: "solid",
   radius: "sm",
