@@ -122,8 +122,7 @@ export function Switch({
   ====================================== */
 
   const thumbSurface: SurfaceProps = {
-    background: "surface",
-    text: "primary",
+    text: "link",
     radius: "full",
   };
 
@@ -160,7 +159,12 @@ export function Switch({
       className={className}
       renderControl={() => (
         <span className={switchClassName}>
-          <span className={thumbClassName}>
+          <span
+            className={thumbClassName}
+            style={{
+              backgroundColor: "var(--color-white)",
+            }}
+          >
             {thumb}
           </span>
         </span>
