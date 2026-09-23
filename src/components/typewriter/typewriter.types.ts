@@ -7,6 +7,10 @@ import type {
   TextProps,
 } from "@/components/typography/text";
 
+import type {
+  IconName,
+} from "@/primitives/icon";
+
 /* ======================================
    TYPEWRITER PROPS
 ====================================== */
@@ -18,4 +22,6 @@ export type TypewriterProps<T extends TextHtml = "p"> =
     speed?: number;
 
     cursor?: boolean;
+
+    icon?: IconName;
   };

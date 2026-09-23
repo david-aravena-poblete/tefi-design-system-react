@@ -5,6 +5,7 @@
 import {
    ArrowLeft,
    ArrowRight,
+   Bot,
    ChevronLeft,
    ChevronRight,
    File,
@@ -28,6 +29,7 @@ import {
    sun: Sun,
    moon: Moon,
    user: User,
+   bot: Bot,
  
    file: File,
    fileCode: FileCode,

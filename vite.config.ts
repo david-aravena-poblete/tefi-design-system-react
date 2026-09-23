@@ -22,6 +22,8 @@ export default defineConfig({
   build: {
     cssCodeSplit: false,
 
+    sourcemap: true,
+
     lib: {
       entry: resolve(import.meta.dirname, "src/index.ts"),
 
@@ -31,9 +33,17 @@ export default defineConfig({
     },
 
     rolldownOptions: {
-      external: ["react", "react-dom", "react/jsx-runtime"],
+      external: [
+        "react",
+        "react-dom",
+        "react/jsx-runtime",
+        "react-markdown",
+        "remark-gfm",
+      ],
 
       output: {
+        banner: '"use client";',
+
         globals: {
           react: "React",
 

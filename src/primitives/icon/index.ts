@@ -5,7 +5,9 @@
 export { Icon } from "./Icon";
 
 /* ======================================
-     TYPES
-  ====================================== */
+   TYPES
+====================================== */
 
 export type { IconProps } from "./icon.types";
+
+export type { IconName } from "./icons/icons.registry";

@@ -7,10 +7,16 @@
 }
 
 /* ======================================
-     CURSOR
-  ====================================== */
+   CURSOR
+====================================== */
 
 .typewriter__cursor {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.typewriter__cursor--blink {
   animation: typewriter-blink 1s infinite;
 }
 

@@ -7,6 +7,8 @@ import {
   useState,
 } from "react";
 
+import { Icon } from "@/primitives/icon";
+
 import { Text } from "@/components/typography/text";
 
 import type {
@@ -28,6 +30,8 @@ export function Typewriter<T extends TextHtml = "p">({
   speed = 50,
 
   cursor = true,
+
+  icon,
 
   ...props
 }: TypewriterProps<T>) {
@@ -67,18 +71,43 @@ export function Typewriter<T extends TextHtml = "p">({
 
   const textProps = props as TextProps<T>;
 
+  const isComplete =
+    displayedText.length === text.length;
+
   /* ======================================
      RENDER
   ====================================== */
+
+  const showCursor =
+    cursor && Boolean(displayedText);
+
+  const showIcon =
+    Boolean(icon) && Boolean(displayedText);
+
+  const showIndicator =
+    showCursor || showIcon;
 
   return (
     <Text {...textProps}>
       <span className="typewriter">
         {displayedText}
 
-        {cursor && (
-          <span className="typewriter__cursor">
-            |
+        {showIndicator && (
+          <span
+            className={
+              isComplete
+                ? "typewriter__cursor typewriter__cursor--blink"
+                : "typewriter__cursor"
+            }
+          >
+            {showCursor && "|"}
+
+            {showIcon && (
+              <Icon
+                name={icon}
+                size="sm"
+              />
+            )}
           </span>
         )}
       </span>
